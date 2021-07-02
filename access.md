@@ -46,7 +46,7 @@ $.get("https://api.obis.org/export?complete=true", function(res) {
     const source = $("#export-template").html().replace(/[\u200B]/g, "");
     const template = Handlebars.compile(source);
     const html = template({
-        exp: res.results.slice(1, 2)
+        exp: res.results.slice(0, 1)
     });
     $("#placeholder").html(html);
 });
