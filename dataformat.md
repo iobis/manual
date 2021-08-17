@@ -110,13 +110,13 @@ The following vocabularies are recommended for populating `measurementTypeID`, `
 
 Event Core is perfect for enriching OBIS with interpreted information such as biological community, biotope or habitat type (collectively referred to as 'habitats'). However, the unconstrained nature of the terms `measurementTypeID`, `measurementValueID`, and `measurementUnitID` leads to a risk that habitats measurements are structured inconsistently within Darwin Core Archive standard and as a result, are not easily discoverable, understood or usable.
 
-As a result, members of the European Marine Observation and Data Network (EMODnet) Seabed Habitats and Biology thematic groups have produced a [guidance document](https://www.emodnet-seabedhabitats.eu/contribute-data/habitat-point-data-submission-process/) describing a standard approach to structuring classified habitat data using the Darwin Core eMoF Extension. Because of the numerous classification systems and priority habitat lists in existence, it is not possible to point to a single vocabulary for populating each of `measurementTypeID`, `measurementValueID` and `measurementUnitID` in the lists above. Instead, here are instructions on the *type* of information to include, with an example:
+As a result, members of the European Marine Observation and Data Network (EMODnet) Seabed Habitats and Biology thematic groups have produced a [guidance document](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5) describing a standard approach to structuring classified habitat data using the Darwin Core eMoF Extension. Because of the numerous classification systems and priority habitat lists in existence, it is not possible to point to a single vocabulary for populating each of `measurementTypeID`, `measurementValueID` and `measurementUnitID` in the lists above. Instead, here are instructions on the *type* of information to include, with an example:
 
 - `measurementTypeID`: A machine-readable URI or DOI reference describing the (version of the) classification system itself. For example: [https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/](https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/)
 - `measurementValueID`: If available, a machine-readable URI describing the habitat class in “measurementValue”. For example: [https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36](https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36)
 - `measurementUnitID`: null because habitat types are unitless.
 
-Please consult the [guidance document](https://www.emodnet-seabedhabitats.eu/contribute-data/habitat-point-data-submission-process/) for more details, including:
+Please consult the [guidance document](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5) for more details, including:
 - how to handle a single event with multiple habitat measurements
 - recommended vocabularies and terms for common habitat classification systems
 - example eMoF table 
