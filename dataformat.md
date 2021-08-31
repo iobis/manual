@@ -30,7 +30,7 @@ Besides data tables, a Darwin Core Archive also contains two XML files: one file
 
 <a class="anchor" name="envdata"></a>
 
-## OBIS holds more that just species occurrences: the ENV-DATA approach
+## OBIS holds more than just species occurrences: the ENV-DATA approach
 
 Data collected as part of marine biological research often include measurements of habitat features (such as physical and chemical parameters of the environment), biotic and biometric measurements (such as body size, abundance, biomass), as wel as details regarding the nature of the sampling or observation methods, equipment, and sampling effort.
 
