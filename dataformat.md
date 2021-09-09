@@ -108,15 +108,17 @@ The following vocabularies are recommended for populating `measurementTypeID`, `
 
 #### A special case: habitat types
 
-Event Core is perfect for enriching OBIS with interpreted information such as biological community, biotope or habitat type (collectively referred to as 'habitats'). However, the unconstrained nature of the terms `measurementTypeID`, `measurementValueID`, and `measurementUnitID` leads to a risk that habitats measurements are structured inconsistently within Darwin Core Archive standard and as a result, are not easily discoverable, understood or usable.
+Event Core is perfect for enriching OBIS with interpreted information such as biological community, biotope or habitat type (collectively referred to as 'habitats'). However, the unconstrained nature of the terms `measurementTypeID`, `measurementValueID`, and `measurementUnitID` leads to a risk that habitats measurements are structured inconsistently within the Darwin Core Archive standard and as a result, are not easily discoverable, understood or usable.
 
-As a result, members of the European Marine Observation and Data Network (EMODnet) Seabed Habitats and Biology thematic groups have produced a [guidance document](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5) describing a standard approach to structuring classified habitat data using the Darwin Core eMoF Extension. Because of the numerous classification systems and priority habitat lists in existence, it is not possible to point to a single vocabulary for populating each of `measurementTypeID`, `measurementValueID` and `measurementUnitID` in the lists above. Instead, here are instructions on the *type* of information to include, with an example:
+As a result, members of the European Marine Observation and Data Network (EMODnet) Seabed Habitats and Biology thematic groups have produced a document [Duncan et al. (2021)](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5) that recommends a consistent approach to structuring classified habitat data in Europe using the Darwin Core eMoF Extension. Note that this approach has not yet been discussed or approved at the global level so the implementation at the EurOBIS level may be considered a pilot.
+
+The overarching principles are summarised here. Note that because of the numerous classification systems and priority habitat lists in existence, it is not possible to point to a single vocabulary for populating each of `measurementTypeID`, `measurementValueID` and `measurementUnitID`, as for other measurement types, so below are the *types* of information to include, with an example, as recommended by [Duncan et al. (2021)](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5):
 
 - `measurementTypeID`: A machine-readable URI or DOI reference describing the (version of the) classification system itself. For example: [https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/](https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/)
 - `measurementValueID`: If available, a machine-readable URI describing the habitat class in “measurementValue”. For example: [https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36](https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36)
 - `measurementUnitID`: null because habitat types are unitless.
 
-Please consult the [guidance document](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5) for more details, including:
+Please consult [Duncan et al. (2021)](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5) for more details, including:
 - how to handle a single event with multiple habitat measurements
 - recommended vocabularies and terms for common habitat classification systems
 - example eMoF table 
