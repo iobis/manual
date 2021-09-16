@@ -24,7 +24,7 @@ breadcrumbs: manual
 
 ## Introduction to Darwin Core
 
-[Darwin Core](http://rs.tdwg.org/dwc/) is a body of standards for biodiversity informatics. It provides stable [terms](http://rs.tdwg.org/dwc/terms/) and vocabularies for sharing biodiversity data. Darwin Core is maintained by [TDWG](http://tdwg.org/) (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases).
+[Darwin Core](http://rs.tdwg.org/dwc/) is a body of standards for biodiversity informatics. It provides stable [terms](https://dwc.tdwg.org/terms/) and vocabularies for sharing biodiversity data. Darwin Core is maintained by [TDWG](http://tdwg.org/) (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases).
 
 The old [OBIS schema](http://old.iobis.org/node/304)  was an [OBIS extension](http://iobis.org/obis/obis.xsd) to Darwin Core 1.2., which was based on [Simple Darwin Core](http://rs.tdwg.org/dwc/terms/simple/), a subset of Darwin Core which does not allow any structure beyond rows and columns. It added some terms which were important for OBIS, but were not supported by Darwin Core at the time (e.g. start and end date and start and end latidude and longitude, depth range, lifestage and terms for abundance, biomass and sample size). 
 
