@@ -91,6 +91,10 @@ The following vocabularies are recommended for populating `measurementTypeID`, `
 - Vessels (ICES Platform Codes)
   - vocabulary: [http://vocab.nerc.ac.uk/collection/C17/current](http://vocab.nerc.ac.uk/collection/C17/current )
   - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/)
+- Sex (Gender)
+  - documentation: [https://github.com/nvs-vocabs/S10](https://github.com/nvs-vocabs/S10)
+  - vocabulary: [http://vocab.nerc.ac.uk/collection/S10/current/](http://vocab.nerc.ac.uk/collection/S10/current/)
+  - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/)  
 - Lifestage
   - documentation: [https://github.com/nvs-vocabs/S11](https://github.com/nvs-vocabs/S11)
   - vocabulary: [http://vocab.nerc.ac.uk/collection/S11/current/](http://vocab.nerc.ac.uk/collection/S11/current/)
