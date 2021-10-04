@@ -12,9 +12,9 @@ OBIS harvests occurrence records from thousands of datasets and makes them avail
 - The [mapper](https://mapper.obis.org) allows users to visualize and inspect subsets of OBIS data. A variety of filters (taxonomic, geographic, time, data quality) is available and multiple layers can be combined in a single view. Layers can be downloaded as CSV files.
 - Our [R package](/manual/accessr) provides direct access to the OBIS database from R.
 - Both the mapper and the R package are based on the OBIS [API](https://api.obis.org) which can be used by third party developers as well.
-- Full exports (see below).
+- Full exports of the quality controlled presence records as CSV or Parquet (see below).
 
-## Full export
+## Full exports
 
 We provide periodic exports of the entire set of quality controlled presence records as CSV. This is the easiest way to download data for large scale analyses. **Absence records, records of insufficient quality, or measurements records are not included. Use the API or R package to access these data or contact <a href="mailto:p.provoost@unesco.org">p.provoost@unesco.org</a>.**
 
