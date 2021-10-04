@@ -29,6 +29,7 @@ We provide periodic exports of the entire set of quality controlled presence rec
         {{#each exp}}
         <tr>
             <td>{{ title }}</td>
+            <td>{{ type }}</td>
             <td><a href="#" onclick="dl('{{ s3path }}');">download</a></td>
         </tr>
         {{/each}}
@@ -45,8 +46,12 @@ function dl(s3path) {
 $.get("https://api.obis.org/export?complete=true", function(res) {
     const source = $("#export-template").html().replace(/[\u200B]/g, "");
     const template = Handlebars.compile(source);
+
+    let csv_files = res.results.filter(x => x.type === "csv").slice(0, 1);
+    let parquet_files = res.results.filter(x => x.type === "parquet").slice(0, 1);
+
     const html = template({
-        exp: res.results.slice(0, 1)
+        exp: csv_files.concat(parquet_files)
     });
     $("#placeholder").html(html);
 });
