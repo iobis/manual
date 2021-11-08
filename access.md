@@ -78,7 +78,7 @@ Each export consists of a single occurrence table which includes all Darwin Core
 | minimumDepthInMeters | Parsed and validated by OBIS. |
 | maximumDepthInMeters | Parsed and validated by OBIS. |
 | coordinateUncertaintyInMeters | Parsed and validated by OBIS. |
-| flags | Quality flags added by OBIS. |
+| flags | Quality flags added by OBIS. The quality flags are documented [here](https://github.com/iobis/obis-qc). |
 | dropped | Record dropped by OBIS quality control? |
 | absence | Absence record? |
 | shoredistance | Distance from shore added by OBIS quality control, based on OpenStreetMap. |
