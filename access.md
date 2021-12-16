@@ -66,7 +66,7 @@ Each export consists of a single occurrence table which includes all Darwin Core
 | field | remarks |
 | --- | --- |
 | id | Globally unique identifier assigned by OBIS. |
-| dataset_id | Dataset identifier assigned by OBIS. |
+| dataset_id | Internal dataset identifier assigned by OBIS. |
 | decimalLongitude | Parsed and validated by OBIS. |
 | decimalLatitude | Parsed and validated by OBIS. |
 | date_start | Unix timestamp based on `eventDate` (start). |
@@ -81,17 +81,17 @@ Each export consists of a single occurrence table which includes all Darwin Core
 | flags | Quality flags added by OBIS. The quality flags are documented [here](https://github.com/iobis/obis-qc). |
 | dropped | Record dropped by OBIS quality control? |
 | absence | Absence record? |
-| shoredistance | Distance from shore added by OBIS quality control, based on OpenStreetMap. |
-| bathymetry | Bathymetry added by OBIS. |
-| sst | Sea surface temperature added by OBIS. |
-| sss | Sea surface salinity added by OBIS. |
-| redlist_category | IUCN Red List category. |
+| shoredistance | Distance from shore in meters added by OBIS quality control, based on OpenStreetMap. Negative value indicates that the observation was inland by -1 times that distance |
+| bathymetry | Bathymetry added by OBIS. Bathymetry values based on EMODnet Bathymetry and GEBCO, see https://github.com/iobis/xylookup (Data references) |
+| sst | Sea surface temperature added by OBIS. sst values based on Bio-Oracle, see https://github.com/iobis/xylookup (Data references) |
+| sss | Sea surface salinity added by OBIS. sss values based on Bio-Oracle, see https://github.com/iobis/xylookup (Data references)|
 | marine | Marine environment flag based on WoRMS. |
 | brackish | Brackish environment flag based on WoRMS. |
 | freshwater | Freshwater environment flag based on WoRMS. |
 | terrestrial | Terrestrial environment flag based on WoRMS. |
 | taxonRank | Based on WoRMS. |
 | AphiaID | AphiaID for the valid name based on the `scientificNameID` or derived by matching the provided `scientificName` with WoRMS. |
+| redlist_category | IUCN Red List category. |
 | superdomain | Based on WoRMS. |
 | domain | Based on WoRMS. |
 | kingdom | Based on WoRMS. |
@@ -102,6 +102,9 @@ Each export consists of a single occurrence table which includes all Darwin Core
 | subphylum (subdivision) | Based on WoRMS. |
 | subphylum | Based on WoRMS. |
 | infraphylum | Based on WoRMS. |
+| parvphylum | Based on WoRMS. |
+| gigaclass| Based on WoRMS. |
+| megaclass | Based on WoRMS. |
 | superclass | Based on WoRMS. |
 | class | Based on WoRMS. |
 | subclass | Based on WoRMS. |
@@ -131,4 +134,3 @@ Each export consists of a single occurrence table which includes all Darwin Core
 | forma | Based on WoRMS. |
 | subforma | Based on WoRMS. |
 
- 
