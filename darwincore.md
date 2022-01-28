@@ -1,5 +1,5 @@
 ---
-title: Darwin Core
+title: "Darwin Core"
 shorttitle: Darwin Core
 layout: page
 lang: en
@@ -144,11 +144,21 @@ In case of uncertain identifications, and the scientific name contains qualifier
 Example: 
 
 ```
-   scientificName   scientificNameAuthorship                          scientificNameID   taxonRank identificationQualifier
------------------ -------------------------- ----------------------------------------- ----------- ----------------------
-Lanice conchilega               Pallas, 1766 urn:lsid:marinespecies.org:taxname:131495     species 
-            Gadus             Linnaeus, 1758 urn:lsid:marinespecies.org:taxname:125732       genus             cf. morhua
+| scientificNameID                          | scientificName        | kingdom  | phylum   | class      |
+|-------------------------------------------|-----------------------|----------|----------|------------|
+| urn:lsid:marinespecies.org:taxname:142004 | Yoldiella nana        | Animalia | Mollusca | Bivalvia   |
+| urn:lsid:marinespecies.org:taxname:140584 | Ennucula tenuis       | Animalia | Mollusca | Bivalvia   |
+| urn:lsid:marinespecies.org:taxname:131573 | Terebellides stroemii | Animalia | Annelida | Polychaeta |
 ```
+
+```
+| order       | family           | genus        | specificEpithet | scientificNameAuthorship |
+|-------------|------------------|--------------|-----------------|--------------------------|
+| Nuculanoida | Yoldiidae        | Yoldiella    | nana            | (Sars M., 1865)          |
+| Nuculoida   | Nuculidae        | Ennucula     | tenuis          | (Montagu, 1808)          |
+| Terebellida | Trichobranchidae | Terebellides | stroemii        | Sars, 1835               |
+```
+_Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/resource?r=largenet_k2)._
 
 <a class="anchor" name="occurrence"></a>
 
@@ -172,6 +182,17 @@ The recommended vocabulary for `sex` see [BODC vocab : S10](http://vocab.nerc.ac
 
 `recordedBy` can hold a list (concatenated and separated) of names of people, groups, or organizations responsible for recording the original Occurrence. The primary collector or observer, especially one who applies a personal identifier (recordNumber), should be listed first. 
 
+Example:
+
+```
+| collectionCode               | occurrenceID                         | catalogNumber                        | occurrenceStatus |
+|------------------------------|--------------------------------------|--------------------------------------|------------------|
+| SluiceDock_benthic_1976/1981 | SluiceDock_benthic_1976_1            | SluiceDock_benthic_1976_1            | present          |
+| SluiceDock_benthic_1976/1981 | SluiceDock_benthic_1976_2            | SluiceDock_benthic_1976_2            | present          |
+| SluiceDock_benthic_1976/1981 | SluiceDock_benthic_1979-07/1980-06_1 | SluiceDock_benthic_1979-07/1980-06_1 | present          |
+```
+_Data from [A summary of benthic studies in the sluice dock of Ostend during 1976-1981](http://ipt.vliz.be/eurobis/resource?r=summary_of_benthic_studies_in_the_sluice_dock_ostend_during_1976-1981)._
+
 <a class="anchor" name="records"></a>
 
 ### Record level terms
@@ -184,12 +205,24 @@ When the basisOfRecord is a _preservedSpecimen_, _LivingSpecimen_ or _FossilSpec
 
 As explained before, the `occurrenceID` could for example be constructed by combining the `institutionCode`,  `collectionCode` and `catalogNumber`:
 
-```xml
-institutionCode   collectionCode   catalogNumber     occurrenceID
---------------- ---------------- --------------- ----------------
-         UGhent             NSBS             123   UGhent_NSB_123 
-         UGhent             NSBS             456   UGhent_NSB_456 
+Example:
+
 ```
+| modified            | institutionCode | collectionCode                 |
+|---------------------|-----------------|--------------------------------|
+| 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
+| 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
+| 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
+```
+
+```
+| basisOfRecord    | occurrenceID                              | catalogNumber                             |
+|------------------|-------------------------------------------|-------------------------------------------|
+| HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553 |
+| HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554 |
+| HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555 |
+```
+_Data from [Algal community on the pneumatophores of mangrove trees of Gazi Bay in July and August 1987](http://ipt.vliz.be/eurobis/resource?r=vegetation_gazi_bay_kenya_1987)._
 
 `bibliographicCitation` allows for providing different citations on record level, while a single citation for the entire dataset can and should be provided in the metadata (see [EML](/manual/eml)). The citation at record level can have the format of a chapter in a book, where the book is the dataset citation. The record citation will have preference over the dataset citation. We do not, however, recommend to create different citations for every record, as this will explode the number of citations and will hamper the re-use of data.   
 
@@ -223,6 +256,17 @@ MULTIPOLYGON (((30 20, 45 40, 10 40, 30 20)),((15 5, 40 10, 10 20, 5 10, 15 5)))
 ```
 Keep in mind while filling in `minimumDepthInMeters` and `maximumDepthInMeters` that this should be the depth at which the sample was taken and not the water column depth at that location.
 
+Example: 
+
+```
+| decimalLatitude | decimalLongitude | geodeticDatum | coordinateUncertaintyInMeters | footprintWKT                                                      | footprintSRS |
+|-----------------|------------------|---------------|-------------------------------|-------------------------------------------------------------------|--------------|
+| 38.698          | 20.95            | EPSG:4326     | 75033.17                      | LINESTRING (20.312 39.154, 21.588 38.242)                         | EPSG:4326    |
+| 42.72           | 15.228           | EPSG:4326     | 154338.87                     | LINESTRING (16.6402 41.7965, 13.8160333333333 43.6435333333333)   | EPSG:4326    |
+| 39.292          | 20.364           | EPSG:4326     | 162083.27                     | LINESTRING (19.0508833333333 40.3385333333333, 21.67635 38.24535) | EPSG:4326    |
+```
+_Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018](http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018)._
+
 <a class="anchor" name="event"></a>
 
 ### Event
@@ -233,16 +277,16 @@ Keep in mind while filling in `minimumDepthInMeters` and `maximumDepthInMeters` 
 
 Example: 
 
-```xml
-                 eventID            parentEventID     eventRemarks
-------------------------           --------------    -------------
-                Cruise-X                                    cruise
-      Cruise-X:Station-A                 Cruise-X          station
-   Cruise-X:Station-A:01       Cruise-X:Station-A           sample  
-Cruise-X:Station-A:01:aa    Cruise-X:Station-A:01        subsample
-Cruise-X:Station-A:01:bb    Cruise-X:Station-A:01        subsample   
-   Cruise-X:Station-A:02       Cruise-X:Station-A           sample
 ```
+| eventID                                 | parentEventID                           | eventDate | eventRemarks |
+|-----------------------------------------|-----------------------------------------|-----------|--------------|
+| IOF_benthos_Plominski_zaljev_2000_crs   |                                         |           | cruise       |
+| IOF_benthos_Plominski_zaljev_2000_stat1 | IOF_benthos_Plominski_zaljev_2000_crs   | 2000-08   | stationVisit |
+| IOF_benthos_Plominski_zaljev_2000_stat2 | IOF_benthos_Plominski_zaljev_2000_crs   | 2000-08   | stationVisit |
+| IOF_benthos_Plominski_zaljev_2000_s01   | IOF_benthos_Plominski_zaljev_2000_stat1 |           | sample       |
+| IOF_benthos_Plominski_zaljev_2000_s02   | IOF_benthos_Plominski_zaljev_2000_stat2 |           | sample       |
+```
+_Data from [Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)](http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10)._
 
 <a class="anchor" name="time"></a>
 
