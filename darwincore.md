@@ -259,11 +259,11 @@ Keep in mind while filling in `minimumDepthInMeters` and `maximumDepthInMeters` 
 Example: 
 
 ```
-| decimalLatitude | decimalLongitude | geodeticDatum | coordinateUncertaintyInMeters | footprintWKT                                                      | footprintSRS |
-|-----------------|------------------|---------------|-------------------------------|-------------------------------------------------------------------|--------------|
-| 38.698          | 20.95            | EPSG:4326     | 75033.17                      | LINESTRING (20.312 39.154, 21.588 38.242)                         | EPSG:4326    |
-| 42.72           | 15.228           | EPSG:4326     | 154338.87                     | LINESTRING (16.6402 41.7965, 13.8160333333333 43.6435333333333)   | EPSG:4326    |
-| 39.292          | 20.364           | EPSG:4326     | 162083.27                     | LINESTRING (19.0508833333333 40.3385333333333, 21.67635 38.24535) | EPSG:4326    |
+| decimalLatitude | decimalLongitude | geodeticDatum | coordinateUncertaintyInMeters | footprintWKT                          | footprintSRS |
+|-----------------|------------------|---------------|-------------------------------|---------------------------------------|--------------|
+| 38.698          | 20.95            | EPSG:4326     | 75033.17                      | LINESTRING (20.31 39.15, 21.58 38.24) | EPSG:4326    |
+| 42.72           | 15.228           | EPSG:4326     | 154338.87                     | LINESTRING (16.64 41.80, 13.82 43.64) | EPSG:4326    |
+| 39.292          | 20.364           | EPSG:4326     | 162083.27                     | LINESTRING (19.05 40.34, 21.68 38.25) | EPSG:4326    |
 ```
 _Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018](http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018)._
 
