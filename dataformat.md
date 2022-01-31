@@ -10,7 +10,7 @@ breadcrumbs: manual
 #### Contents
 
 - [Darwin Core Archive](#dwca)
-- [OBIS holds more that just species occurrences: the ENV-DATA approach](#envdata)
+- [OBIS holds more than just species occurrences: the ENV-DATA approach](#envdata)
   - [ExtendedMeasurementOrFact Extension](#emof)
   - [MeasurementOrFact vocabularies](#vocab)
 - [ENV-DATA: a practical example using macroalgae data](#example)
@@ -150,49 +150,43 @@ Datasets formatted in Occurrence Core can use the eMoF Extension for biotic meas
 
 <a class="anchor" name="example"></a>
 
-## ENV-DATA: a practical example using macroalgae data
+## ENV-DATA: a practical example using Marine Mammal survey data
 
-In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension.
+In this section we will explore how to encode a survey data set into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension. As an example, sections of the actual data set of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), is used.
 
-<img src="/images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-70"/>
-<p class="caption-70">Figure: A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.</p>
+<img src="/images/ENV_example_CETUS.png" class="img-responsive img-responsive-70"/><p> Figure: A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions**.</p>
 
-First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using `eventID` and `parentEventID`. As the survey sites has a fixed location we can populate `decimalLongitude` and `decimalLatitude` at the top level event. The zones have different depths, so `minimumDepthInMeters` and `maximumDepthInMeters` are populated at the zone level. Finally, as not all sampling was done on the same day, `eventDate` is populated at the quadrat and transect level.
+First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time and location, at the appropriate level. The events at the different levels are linked together using `eventID` and `parentEventID`. As the survey observations were made at locations of Cetacean sightings instead of fixed locations, we can populate `footprintWKT` and `footprintSRS` as location information. If observations were made at fixed locations we could populate `decimalLongitude` and `decimalLatitude` at the top level event, as well as `minimumDepthInMeters` and `maximumDepthInMeters` at the zone level. Finally, as not all sampling was done on the same day, `eventDate` is populated at the transect level.
 
-| eventID | parentEventID | eventDate | decimalLongitude | decimalLatitude | minimumDepthInMeters | maximumDepthInMeters |
-| --- | --- | --- | --- | --- | --- | --- |
-| site_1 | | | 54.7943 | 16.9425 | | |
-| zone_1 | site_1 | | | | 0 | 0 |
-| zone_2 | site_1 | | | | 0 | 5 |
-| zone_3 | site_1 | | | | 5 | 10 |
-| <span class="marker-green">quadrat_1</span> | zone_1 | 2019-01-02 | | | | |
-| transect_1 | zone_2 | 2019-01-03 | | | | |
-| transect_2 | zone_3 | 2019-01-04 | | | | |
+| eventID            | parentEventID | eventDate       | footprintWKT                                                                                                   | footprintSRS |
+|--------------------|---------------|-----------------|----------------------------------------------------------------------------------------------------------------|--------------|
+| Madeira            |               | 2012-07/2017-09 | POLYGON ((-16.74 31.49, -16.74 41.23, -8.70 41.23, -8.70 31.49, -16.74 31.49)) | EPSG:4326    |
+| <span class="marker-green">Madeira:Cruise-001</span> | Madeira       | 2012-07         | MULTIPOINT ( (-8.7 41.19),  (-9.15 38.7))                                                                      | EPSG:4326    |
+| Madeira:Cruise-002 | Madeira       | 2012-07         | MULTIPOINT ( (-9.15 38.7),  (-16.73 32.74))                                                                    | EPSG:4326    |
+| Madeira:Cruise-003 | Madeira       | 2012-07         | MULTIPOINT ( (-16.73 32.74),  (-9.15 38.7))                                                                    | EPSG:4326    |
 
-Next we can construct the Occurrence extension table. This table has the scientific names and links to the World Register of Marine Species in `scientificNameID`. The first column of the table references the events in the core table (see `quadrat_1` for example highlighted in green).
+Next we can construct the Occurrence extension table. This table has the scientific names and links to the World Register of Marine Species in `scientificNameID`. The first column of the table references the events in the core table (see `Madeira:Cruise-001` highlighted in green).The `occurrence ID` corresponds to the Position of the observation (see `Transect-01:Pos-0001` and `CIIMAR-CETUS-0001` highlighted in blue, or `Transect-01:Pos-0002` and `CIIMAR-CETUS-0002` highlighted in orange).
 
-| id | occurrenceID | scientificName | scientificNameID |
-| --- | --- | --- | --- |
-| <span class="marker-green">quadrat_1</span> | <span class="marker-blue">occ_1</span> | Ulva rigida | urn:lsid:marinespecies.org:taxname:145990 |
-| <span class="marker-green">quadrat_1</span> | <span class="marker-orange">occ_2</span> | Ulva lactuca | urn:lsid:marinespecies.org:taxname:145984 |
-| transect_1 | occ_3 | Plantae | urn:lsid:marinespecies.org:taxname:3 |
-| transect_1 | occ_4 | Plantae | urn:lsid:marinespecies.org:taxname:3 |
-| transect_2 | occ_5 | Gracilaria | urn:lsid:marinespecies.org:taxname:144188 |
-| transect_2 | occ_6 | Laurencia | urn:lsid:marinespecies.org:taxname:143914 |
+| id                                      | occurrenceID      | scientificNameID                        | scientificName |
+|-----------------------------------------|-------------------|-----------------------------------------|----------------|
+| <span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-blue">Transect-01:Pos-0001</span> | <span class="marker-blue">CIIMAR-CETUS-0001</span> | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-orange">Transect-01:Pos-0002</span> | <span class="marker-orange">CIIMAR-CETUS-0002</span> | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-01:Pos-0003 | CIIMAR-CETUS-0003 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0004 | CIIMAR-CETUS-0004 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0005 | CIIMAR-CETUS-0005 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0006 | CIIMAR-CETUS-0006 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0007 | CIIMAR-CETUS-0007 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
 
-And finally there is the MeasurementOrFact extension table, which has attributes of the zones (shore height), the quadrats (surface area), the transects (surface area and length), and the occurrences (percentage cover and functional group). Attributes of occurrences point to the Occurrence extension table using the `occurrenceID` column (see `occ_1` and `occ_2` highlighted in blue and orange). Note that besides NERC vocabulary terms we are also referencing the CATAMI vocabulary for macroalgal functional groups.
+And finally, there is the extendedMeasurementOrFact extension table, which has attributes of the zones (such as Vessel speed and Vessel Heading), the   Transects (such as Wave height and Wind speed), and the Positions (such as Visibility and the Number of smaal/big ships >20m). Attributes of Positions point to the Occurrence extension table using the `occurrenceID` column (see `Transect-01:Pos-0001` and `Transect-01:Pos-0002` highlighted in blue and orange, respectively).
 
-| id | occurrenceID | measurementType | measurementTypeID | measurementValue | measurementValueID | measurementUnit | measurementUnitID |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| zone_1 | | shore height | ? | high | ? | | |
-| <span class="marker-green">quadrat_1</span> | | surface area | [P01/current/AREABEDS](http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS) | 0.25 | | m2 | [P06/current/UMSQ](http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/) |
-| quadrat_1 | <span class="marker-blue">occ_1</span> | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 24 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| quadrat_1 | <span class="marker-orange">occ_2</span> | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 56 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_1 | | surface area | [P01/current/AREABEDS](http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS) | 60 | | m2 | [P06/current/UMSQ](http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/) |
-| transect_1 | | length | [P01/current/LENTRACK](http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK) | 30 | | m | [P06/current/ULAA](http://vocab.nerc.ac.uk/collection/P06/current/ULAA/) |
-| transect_1 | occ_3 | functional group | ? | sheet-like red | CATAMI:80300925 |||||
-| transect_1 | occ_4 | functional group | ? | filamentous brown | CATAMI:80300931 |||||
-| transect_1 | occ_3 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 8 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_1 | occ_4 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 24 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_2 | occ_5 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 4 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_2 | occ_6 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 16 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
+| id                                      | occurrenceID      | measurementType              | measurementTypeID                                        | measurementValue | measurementUnit                 | measurementUnitID                                    |
+|-----------------------------------------|-------------------|------------------------------|----------------------------------------------------------|------------------|---------------------------------|------------------------------------------------------|
+| <span class="marker-green">Madeira:Cruise-001</span>                      |                   | Vessel name                  | [Q01/current/Q0100001](http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/) | Monte da Guia    |                                 |                                                      |
+| Madeira:Cruise-001:Transect-01          |                   | Length of the track          | [P01/current/DSRNCV01](http://vocab.nerc.ac.uk/collection/P01/current/DSRNCV01/) | 39.75            | km                              | [P06/current/ULKM](http://vocab.nerc.ac.uk/collection/P06/current/ULKM/) |
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Visibility                   |                                                          | 2000-4000        | Meters                          | [P06/current/ULAA](http://vocab.nerc.ac.uk/collection/P06/current/ULAA/) |
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Wind speed                   | [P01/current/WMOCWFBF](http://vocab.nerc.ac.uk/collection/P01/current/WMOCWFBF/) | 1                | Beaufort scale                  |                                                      |
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Wave height                  |                                                          | 2                | Douglas scale                   |                                                      |
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Number of big ships (>20m)   |                                                          | 3                |                                 |                                                      |
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel heading               | [P01/current/HDNGGP01](http://vocab.nerc.ac.uk/collection/P01/current/HDNGGP01/) | 206              | Degrees                         | [P06/current/UAAA](http://vocab.nerc.ac.uk/collection/P06/current/UAAA/) |
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Number of small ships (<20m) |                                                          | 0                |                                 |                                                      |
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel speed                 | [P01/current/APSAGP01](http://vocab.nerc.ac.uk/collection/P01/current/APSAGP01/) | 16               | Knots (nautical miles per hour) | [P06/current/UKNT](http://vocab.nerc.ac.uk/collection/P06/current/UKNT/) |
