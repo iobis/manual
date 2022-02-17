@@ -150,13 +150,60 @@ Datasets formatted in Occurrence Core can use the eMoF Extension for biotic meas
 
 <a class="anchor" name="example"></a>
 
-## ENV-DATA: a practical example using Marine Mammal survey data
+## ENV-DATA - a practical example using: macroalgae data
 
-In this section we will explore how to encode a survey data set into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension. As an example, sections of the actual data set of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), is used.
+In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension.
+
+<img src="/images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-70"/>
+<p class="caption-70">Figure: A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.</p>
+
+First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using `eventID` and `parentEventID`. As the survey sites has a fixed location we can populate `decimalLongitude` and `decimalLatitude` at the top level event. The zones have different depths, so `minimumDepthInMeters` and `maximumDepthInMeters` are populated at the zone level. Finally, as not all sampling was done on the same day, `eventDate` is populated at the quadrat and transect level.
+
+| eventID | parentEventID | eventDate | decimalLongitude | decimalLatitude | minimumDepthInMeters | maximumDepthInMeters |
+| --- | --- | --- | --- | --- | --- | --- |
+| site_1 | | | 54.7943 | 16.9425 | | |
+| zone_1 | site_1 | | | | 0 | 0 |
+| zone_2 | site_1 | | | | 0 | 5 |
+| zone_3 | site_1 | | | | 5 | 10 |
+| <span class="marker-green">quadrat_1</span> | zone_1 | 2019-01-02 | | | | |
+| transect_1 | zone_2 | 2019-01-03 | | | | |
+| transect_2 | zone_3 | 2019-01-04 | | | | |
+
+Next we can construct the Occurrence extension table. This table has the scientific names and links to the World Register of Marine Species in `scientificNameID`. The first column of the table references the events in the core table (see `quadrat_1` for example highlighted in green).
+
+| id | occurrenceID | scientificName | scientificNameID |
+| --- | --- | --- | --- |
+| <span class="marker-green">quadrat_1</span> | <span class="marker-blue">occ_1</span> | Ulva rigida | urn:lsid:marinespecies.org:taxname:145990 |
+| <span class="marker-green">quadrat_1</span> | <span class="marker-orange">occ_2</span> | Ulva lactuca | urn:lsid:marinespecies.org:taxname:145984 |
+| transect_1 | occ_3 | Plantae | urn:lsid:marinespecies.org:taxname:3 |
+| transect_1 | occ_4 | Plantae | urn:lsid:marinespecies.org:taxname:3 |
+| transect_2 | occ_5 | Gracilaria | urn:lsid:marinespecies.org:taxname:144188 |
+| transect_2 | occ_6 | Laurencia | urn:lsid:marinespecies.org:taxname:143914 |
+
+And finally there is the MeasurementOrFact extension table, which has attributes of the zones (shore height), the quadrats (surface area), the transects (surface area and length), and the occurrences (percentage cover and functional group). Attributes of occurrences point to the Occurrence extension table using the `occurrenceID` column (see `occ_1` and `occ_2` highlighted in blue and orange). Note that besides NERC vocabulary terms we are also referencing the CATAMI vocabulary for macroalgal functional groups.
+
+| id | occurrenceID | measurementType | measurementTypeID | measurementValue | measurementValueID | measurementUnit | measurementUnitID |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| zone_1 | | shore height | ? | high | ? | | |
+| <span class="marker-green">quadrat_1</span> | | surface area | [P01/current/AREABEDS](http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS) | 0.25 | | m2 | [P06/current/UMSQ](http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/) |
+| quadrat_1 | <span class="marker-blue">occ_1</span> | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 24 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
+| quadrat_1 | <span class="marker-orange">occ_2</span> | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 56 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
+| transect_1 | | surface area | [P01/current/AREABEDS](http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS) | 60 | | m2 | [P06/current/UMSQ](http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/) |
+| transect_1 | | length | [P01/current/LENTRACK](http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK) | 30 | | m | [P06/current/ULAA](http://vocab.nerc.ac.uk/collection/P06/current/ULAA/) |
+| transect_1 | occ_3 | functional group | ? | sheet-like red | CATAMI:80300925 |||||
+| transect_1 | occ_4 | functional group | ? | filamentous brown | CATAMI:80300931 |||||
+| transect_1 | occ_3 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 8 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
+| transect_1 | occ_4 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 24 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
+| transect_2 | occ_5 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 4 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
+| transect_2 | occ_6 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 16 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
+
+## ENV-DATA - a practical example using: Marine Mammal survey data
+
+In this section we will explore how to encode a survey data set into Darwin Core using the ENV-DATA approach. As an example, sections of the actual data set of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), is used.
 
 <img src="/images/ENV_example_CETUS.png" class="img-responsive img-responsive-70"/><p> Figure: A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions**.</p>
 
-First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time and location, at the appropriate level. The events at the different levels are linked together using `eventID` and `parentEventID`. As the survey observations were made at locations of Cetacean sightings instead of fixed locations, we can populate `footprintWKT` and `footprintSRS` as location information. If observations were made at fixed locations we could populate `decimalLongitude` and `decimalLatitude` at the top level event, as well as `minimumDepthInMeters` and `maximumDepthInMeters` at the zone level. Finally, as not all sampling was done on the same day, `eventDate` is populated at the transect level.
+Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using `eventID` and `parentEventID`. As the survey observations were made at locations of Cetacean sightings instead of fixed locations, we can populate `footprintWKT` and `footprintSRS` as location information. Not all sampling was done on the same day, therefore `eventDate` is populated at the transect level.
 
 | eventID            | parentEventID | eventDate       | footprintWKT                                                                                                   | footprintSRS |
 |--------------------|---------------|-----------------|----------------------------------------------------------------------------------------------------------------|--------------|
@@ -165,7 +212,7 @@ First we can create the Event core table by extracting all events in a broad sen
 | Madeira:Cruise-002 | Madeira       | 2012-07         | MULTIPOINT ( (-9.15 38.7),  (-16.73 32.74))                                                                    | EPSG:4326    |
 | Madeira:Cruise-003 | Madeira       | 2012-07         | MULTIPOINT ( (-16.73 32.74),  (-9.15 38.7))                                                                    | EPSG:4326    |
 
-Next we can construct the Occurrence extension table. This table has the scientific names and links to the World Register of Marine Species in `scientificNameID`. The first column of the table references the events in the core table (see `Madeira:Cruise-001` highlighted in green).The `occurrence ID` corresponds to the Position of the observation (see `Transect-01:Pos-0001` and `CIIMAR-CETUS-0001` highlighted in blue, or `Transect-01:Pos-0002` and `CIIMAR-CETUS-0002` highlighted in orange).
+Construct the Occurrence extension table with the scientific names and links to the World Register of Marine Species in `scientificNameID`. The first column of the table references the events in the core table (see `Madeira:Cruise-001` highlighted in green).The `occurrence ID` corresponds to the Position of the observation (see `Transect-01:Pos-0001` and `CIIMAR-CETUS-0001` highlighted in blue, or `Transect-01:Pos-0002` and `CIIMAR-CETUS-0002` highlighted in orange).
 
 | id                                      | occurrenceID      | scientificNameID                        | scientificName |
 |-----------------------------------------|-------------------|-----------------------------------------|----------------|
@@ -177,7 +224,7 @@ Next we can construct the Occurrence extension table. This table has the scienti
 | <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0006 | CIIMAR-CETUS-0006 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
 | <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0007 | CIIMAR-CETUS-0007 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
 
-And finally, there is the extendedMeasurementOrFact extension table, which has attributes of the zones (such as Vessel speed and Vessel Heading), the   Transects (such as Wave height and Wind speed), and the Positions (such as Visibility and the Number of smaal/big ships >20m). Attributes of Positions point to the Occurrence extension table using the `occurrenceID` column (see `Transect-01:Pos-0001` and `Transect-01:Pos-0002` highlighted in blue and orange, respectively).
+And finally, the extendedMeasurementOrFact extension table has attributes of the zones (such as Vessel speed and Vessel Heading), the   Transects (such as Wave height and Wind speed), and the Positions (such as Visibility and the Number of smaal/big ships >20m). Attributes of Positions point to the Occurrence extension table using the `occurrenceID` column (see `Transect-01:Pos-0001` and `Transect-01:Pos-0002` highlighted in blue and orange, respectively).
 
 | id                                      | occurrenceID      | measurementType              | measurementTypeID                                        | measurementValue | measurementUnit                 | measurementUnitID                                    |
 |-----------------------------------------|-------------------|------------------------------|----------------------------------------------------------|------------------|---------------------------------|------------------------------------------------------|
