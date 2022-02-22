@@ -201,7 +201,8 @@ And finally there is the MeasurementOrFact extension table, which has attributes
 
 In this section we will explore how to encode a survey data set into Darwin Core using the ENV-DATA approach. As an example, sections of the actual data set of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), is used.
 
-<img src="/images/ENV_example_CETUS.png" class="img-responsive img-responsive-70"/><p> Figure: A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions**.</p>
+<img src="../images/ENV_example_CETUS.png" class="img-responsive img-responsive-70"/>
+<p class="caption-70">Figure: A representation of the observation events of <a href="http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans" target="_blank">CETUS: Cetacean monitoring surveys in the Eastern North Atlantic</a>, presenting the route <em>Madeira</em> as a site with three cruises (zones). Each <em>Cruise</em> is divided into different <em>Transects</em> and each transect contains a number of <em>Positions</em>.</p>
 
 Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using `eventID` and `parentEventID`. As the survey observations were made at locations of Cetacean sightings instead of fixed locations, we can populate `footprintWKT` and `footprintSRS` as location information. Not all sampling was done on the same day, therefore `eventDate` is populated at the transect level.
 
