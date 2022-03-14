@@ -20,16 +20,11 @@ The OBIS node manual is a dynamic document and is revised on a regular basis. Su
     - [Darwin Core Archive and dataset structure](dataformat)
   - [Data publication and sharing](/manual/contribute#publication)
     - [IPT](ipt)
-  - [OBIS data quality control procedures](/manual/contribute#qc)
-- [How to access data in OBIS?](/manual/access)
+  - [Data quality control](/manual/contribute#qc)
+- [How to access and use OBIS data?](/manual/access)
   - [Mapper](https://mapper.obis.org)
   - [API](https://api.obis.org)
   - [R package](accessr)
-- [How to visualize data from OBIS?](visualize)
-  - [Introduction to R](intror)
-  - [Data visualization using R](visualization)  
-  - [Data visualization using desktop GIS tools](desktopgis)
-- [How to quality control data using R?](processing)
 
 ## Guidelines on the sharing and use of data in OBIS
 
