@@ -25,7 +25,7 @@ The conceptual data model of the Darwin Core Archive is a star schema with a sin
 
 Besides data tables, a Darwin Core Archive also contains two XML files: one file which describes the archive and data file structure (`meta.xml`), and one file which contains the dataset's metadata (`eml.xml`).
 
-<img src="/images/dwca.png" class="img-responsive img-responsive-50"/>
+<img src="../images/dwca.png" class="img-responsive img-responsive-50"/>
 <p class="caption-50">Figure: structure of a Darwin Core Archive.</p>
 
 <a class="anchor" name="envdata"></a>
@@ -57,7 +57,7 @@ The `occurrenceID` term is used to circumvent the limitations of the star schema
 - abiotic measurements (e.g. temperature, salinity, oxygen, sediment grain size, habitat features)
 - facts documenting the sampling activity (e.g. sampling device, sampled area, sampled volume, sieve mesh size).
 
-<img src="/images/EventCoreSchema.png" class="img-responsive img-responsive-50"/>
+<img src="../images/EventCoreSchema.png" class="img-responsive img-responsive-50"/>
 <p class="caption-50">Figure: Overview of an OBIS-ENV-DATA format. Sampling parameters, abiotic measurements, and occurrences are linked to events using the eventID (full lines). Biotic measurements are linked to occurrences using the new occurrenceID field of the ExtendedMeasurementOrFact Extension (dashed lines).</p>
 
 <a class="anchor" name="vocab"></a>
@@ -154,7 +154,7 @@ Datasets formatted in Occurrence Core can use the eMoF Extension for biotic meas
 
 In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension.
 
-<img src="/images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-70"/>
+<img src="../images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-70"/>
 <p class="caption-70">Figure: A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.</p>
 
 First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using `eventID` and `parentEventID`. As the survey sites has a fixed location we can populate `decimalLongitude` and `decimalLatitude` at the top level event. The zones have different depths, so `minimumDepthInMeters` and `maximumDepthInMeters` are populated at the zone level. Finally, as not all sampling was done on the same day, `eventDate` is populated at the quadrat and transect level.
