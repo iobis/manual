@@ -14,17 +14,14 @@ The OBIS node manual is a dynamic document and is revised on a regular basis. Su
 
 - [How to contribute data to OBIS?](contribute)
   - [Become a data provider or an OBIS node](contribute#become)
-  - [Biodiversity data standards](/manual/contribute#standards)
+  - [Biodiversity data standards](contribute#standards)
     - [Darwin Core](darwincore)
     - [Ecological Metadata Language](eml)
     - [Darwin Core Archive and dataset structure](dataformat)
-  - [Data publication and sharing](/manual/contribute#publication)
+  - [Data publication and sharing](contribute#publication)
     - [IPT](ipt)
-  - [Data quality control](/manual/contribute#qc)
-- [How to access and use OBIS data?](/manual/access)
-  - [Mapper](https://mapper.obis.org)
-  - [API](https://api.obis.org)
-  - [R package](accessr)
+  - [Data quality control](contribute#qc)
+- [How to access and use OBIS data?](https:///obis.org/data/access)
 
 ## Guidelines on the sharing and use of data in OBIS
 
