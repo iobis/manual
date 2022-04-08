@@ -1,11 +1,13 @@
 name: OBIS manual
 title: OBIS manual
+baseurl: "/"
+url: "https://manual.obis.org"
 permalink: pretty
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
   auto_ids: false
-remote_theme: pieterprovoost/just-the-docs
+remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
