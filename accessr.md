@@ -7,6 +7,8 @@ identifier: accessr
 breadcrumbs: manual
 ---
 
+# Data access using the robis R package
+
 The robis R package has been developed to facilitate connecting to the OBIS API from R. The package can be installed [from CRAN](https://cran.r-project.org/web/packages/robis/index.html) or [from GitHub](https://github.com/iobis/robis) (latest development version). The package documentation including a function reference and a [getting started vignette](https://iobis.github.io/robis/articles/getting-started.html) is available at [https://iobis.github.io/robis/](https://iobis.github.io/robis/).
 
 We regularly create R notebooks showcasing the R package. Here are a few: 

@@ -7,6 +7,8 @@ identifier: dataformat
 breadcrumbs: manual
 ---
 
+# Darwin Core Archive and dataset structure
+
 #### Contents
 
 - [Darwin Core Archive](#dwca)

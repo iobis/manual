@@ -1,6 +1,6 @@
 ---
-title: Manual
-shorttitle: Manual
+title: Data quality control using R
+shorttitle: Data quality control using R
 layout: page
 lang: en
 identifier: processing

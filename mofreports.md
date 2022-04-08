@@ -7,6 +7,8 @@ identifier: mofreports
 breadcrumbs: manual
 ---
 
+# How To Use MoF Report and Tool
+
 A MEASUREMENT TYPES dataset report has been added regarding currently used measurementType and associated measurementTypeID(s), located near the bottom of the individual dataset pages (if measurementType in use for the dataset).
 
 This new dataset report was derived from this MoF statistics report <a href="https://reports.obis.org/mof/" target="_blank">https://reports.obis.org/mof/</a> and this active filtering MoF tool <a href="https://mof.obis.org/" target="_blank">https://mof.obis.org/</a>. 

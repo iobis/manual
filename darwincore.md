@@ -7,6 +7,8 @@ identifier: darwincore
 breadcrumbs: manual
 ---
 
+# Darwin Core
+
 #### Contents
 
 - [Introduction to Darwin Core](#intro)

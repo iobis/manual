@@ -1,4 +1,5 @@
 name: OBIS manual
+title: OBIS manual
 permalink: pretty
 markdown: kramdown
 kramdown:

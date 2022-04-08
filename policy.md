@@ -7,6 +7,8 @@ identifier: datapolicy
 breadcrumbs: manual
 ---
 
+# Data Policy
+
 ## Guidelines on the sharing and use of data in OBIS
 
 Adopted at SG-OBIS-IV (Feb 2015) and IODE-XXIII (March 2015).
