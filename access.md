@@ -1,5 +1,5 @@
 ---
-title: Data access
+title: How to access data in OBIS?
 shorttitle: Data access
 layout: page
 lang: en

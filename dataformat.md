@@ -11,9 +11,14 @@ breadcrumbs: manual
 
 - [Darwin Core Archive](#dwca)
 - [OBIS holds more than just species occurrences: the ENV-DATA approach](#envdata)
-  - [ExtendedMeasurementOrFact Extension](#emof)
-  - [MeasurementOrFact vocabularies](#vocab)
-- [ENV-DATA: a practical example using macroalgae data](#example)
+  - [ExtendedMeasurementOrFact Extension (eMoF)](#emof)
+     - [MeasurementOrFact vocabularies](#vocab)
+  - [eDNA & DNA derived data Extension](#dna)
+      - [eDNA & DNA derived data terms](#dna)
+  - [A special case: habitat types](#habitattypes)
+- [When to use Event Core](#whenEvent)
+- [When to use Occurrence Core](#whenOccurrence)
+- [Recommended reading](#reading)
 
 <a class="anchor" name="dwca"></a>
 
@@ -25,7 +30,9 @@ The conceptual data model of the Darwin Core Archive is a star schema with a sin
 
 Besides data tables, a Darwin Core Archive also contains two XML files: one file which describes the archive and data file structure (`meta.xml`), and one file which contains the dataset's metadata (`eml.xml`).
 
-<img src="/images/dwca.png" class="img-responsive img-responsive-50"/>
+<img src="../images/dwca.png" class="img-responsive img-responsive-50"/>
+<p class="caption-50">Figure: structure of a Darwin Core Archive.</p>
+
 <p class="caption-50">Figure: structure of a Darwin Core Archive.</p>
 
 <a class="anchor" name="envdata"></a>
@@ -57,7 +64,9 @@ The `occurrenceID` term is used to circumvent the limitations of the star schema
 - abiotic measurements (e.g. temperature, salinity, oxygen, sediment grain size, habitat features)
 - facts documenting the sampling activity (e.g. sampling device, sampled area, sampled volume, sieve mesh size).
 
-<img src="/images/EventCoreSchema.png" class="img-responsive img-responsive-50"/>
+<img src="../images/EventCoreSchema.png" class="img-responsive img-responsive-50"/>
+<p class="caption-50">Figure: Overview of an OBIS-ENV-DATA format. Sampling parameters, abiotic measurements, and occurrences are linked to events using the eventID (full lines). Biotic measurements are linked to occurrences using the new occurrenceID field of the ExtendedMeasurementOrFact Extension (dashed lines).</p>
+
 <p class="caption-50">Figure: Overview of an OBIS-ENV-DATA format. Sampling parameters, abiotic measurements, and occurrences are linked to events using the eventID (full lines). Biotic measurements are linked to occurrences using the new occurrenceID field of the ExtendedMeasurementOrFact Extension (dashed lines).</p>
 
 <a class="anchor" name="vocab"></a>
@@ -109,6 +118,100 @@ The following vocabularies are recommended for populating `measurementTypeID`, `
   - documentation: [https://github.com/nvs-vocabs/P06](https://github.com/nvs-vocabs/P06)
   - vocabulary: [http://vocab.nerc.ac.uk/collection/P06/current](http://vocab.nerc.ac.uk/collection/P06/current)
   - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/)
+  
+### eDNA & DNA derived data Extension
+
+DNA derived data are increasingly being used to document taxon occurrences. To ensure these data are useful to the broadest possible community, GBIF published a guide entitled [Publishing DNA-derived data through biodiversity data platforms](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/). This guide is supported by the DNA derived data extension for Darwin Core, which incorporates MIxS terms into the Darwin Core standard. eDNA and DNA derived data is linked to occurrence data with the use of `occurrenceID` and/ or `eventID`. Refer to the [ENV-DATA: practical examples](URL) for use case examples of eDNA and DNA derived data. 
+
+
+#### eDNA & DNA derived data terms
+
+The following terms are related to the Class _Occurrence_:
+
+- basisOfRecord (Required)
+- occurrenceID (Required)
+- occurrenceStatus (Required for ddPCR/qPCR data)
+- eventID (Highly recommended)
+- eventDate (Required)
+- recordedBy (Highly recommended)
+- organismQuantity (Highly recommended)
+- organiTypesmQuantity (Highly recommended)
+- sampleSizeValue (Highly recommended)
+- sampleSizeUnit (Highly recommended)
+- materialSampleID (Highly recommended)
+- samplingProtocol (Recommended)
+- associatedSequence (Recommended)
+- identificationRemarks (Recommended)
+- identificationReferences(Recommended)
+- decimalLatitude (Highly recommended)
+- decimalLongitude (Highly recommended)
+- taxonID (Highly recommended, if DNA sequence is not provided)
+- scientificName (Required)
+- kingdom (Highly recommended)
+- phylium (Recommended)
+- class (Recommended)
+- order (Recommended)
+- family (Recommended)
+- genus (Recommended)
+
+The following are some of the most frequently used recommended terms related to the Class _DNA derived data_: (for the complete list of terms, refer to the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/))
+
+- _16s_recover
+- _16s_recover_software
+- annealingTemp (Highly recommended for ddPCR/qPCR data)
+- annealingTempUnit (Required for ddPCR/qPCR data, if annealingTemp was given)
+- ampliconSize (Highly recommended for ddPCR/qPCR data) 
+- automaticThresholdQuantificationCycle (Recommended for ddPCR/qPCR data)
+- automaticBaselineValue (Recommended for ddPCR/qPCR data)
+- amplificationReactionVolume (Recommended for ddPCR/qPCR data)
+- amplificationReactionVolumeUnit
+- amplificationReactionUnit (Recommended for ddPCR/qPCR data)
+- assembly_qual
+- baselineValue (Highly recommended for qPCR data)
+- concentration (Recommended for ddPCR/qPCR data)
+- concentrationUnit (Recommended for ddPCR/qPCR data)
+- contaminationsAssessment (Recommended for ddPCR/qPCR data)
+- DNA_sequence (Highly recommended for metabarcoding data)
+- experimentalVariance (Recommended for ddPCR/qPCR data)
+- estimatedNumberOfCopies (Recommended for ddPCR/qPCR data)
+- env_broad_scale (Recommended)
+- env_local_scale (Recommended)
+- env_medium (Recommended)
+- lib_layout (Recommended for metabarcoding data)
+- lib_size
+- methodDeterminationConcentrationAndRatios (Recommended for ddPCR/qPCR data)
+- nucl_acid_ext
+- otu_class_appr (Highly recommended for metabarcoding data)
+- otu_seq_comp_appr (Highly recommended for metabarcoding data)
+- otu_db (Highly recommended for metabarcoding data)
+- pcr_primer_forward (Highly recommended)
+- pcr_primer_reverese (Highly recommended)
+- pcr_primer_name_forward (Highly recommended)
+- pcr_primer_name_reverese (Highly recommended)
+- pcr_primer_reference (Highly recommended)
+- pcr_analysis_software (Recommended for ddPCR/qPCR data)
+- pcr_primer_lod (Highly recommended for ddPCR/qPCR data)
+- pcr_primer_loq (Highly recommended for ddPCR/qPCR data)
+- pcr_cond (Highly recommended for ddPCR/qPCR data)
+- probeReporter (Highly recommended for ddPCR/qPCR data)
+- probeQuencher (Highly recommended for ddPCR/qPCR data)
+- quantificationCycle (Recommended for ddPCR/qPCR data) 
+- ratioOfAbsorbance260_230 (Recommended for ddPCR/qPCR data)
+- ratioOfAbsorbance260_280 (Recommended for ddPCR/qPCR data)
+- ref_db
+- reassembly_bin
+- samp_collec_method
+- samp_mat_process
+- samp_vol_we_dna_ext
+- samp_collect_device (Recommended for ddPCR/qPCR data)
+- samp_mat_process (Recommended for ddPCR/qPCR data)
+- samp_size (Recommended for ddPCR/qPCR data)
+- seq_meth (Highly recommended for metabarcoding data)
+- size_frac (Recommended for ddPCR/qPCR data)
+- sop (Recommended for metabarcoding data, Highly recommended for ddPCR/qPCR data)
+- target_gene (Highly recommended)
+- target_subfragment (Highly recommended)
+- thresholdQuantificationCycle (Highly recommended for qPCR data)
 
 ### A special case: habitat types
 
@@ -148,92 +251,3 @@ Datasets formatted in Occurrence Core can use the eMoF Extension for biotic meas
 * [De Pooter et al. 2017](https://bdj.pensoft.net/articles.php?id=10989). Toward a new data standard for combined marine biological and environmental datasets - expanding OBIS beyond species occurrences. Biodiversity Data Journal 5: e10989. hdl.handle.net/10.3897/BDJ.5.e10989
 * [Duncan, G. Lear, D., Paxman, K., Lillis, H. & Castle, L. 2021](https://www.emodnet-seabedhabitats.eu/contribute-data/habitat-point-data-submission-process/). A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension. EMODnet report.
 
-<a class="anchor" name="example"></a>
-
-## ENV-DATA - a practical example using: macroalgae data
-
-In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension.
-
-<img src="/images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-70"/>
-<p class="caption-70">Figure: A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.</p>
-
-First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using `eventID` and `parentEventID`. As the survey sites has a fixed location we can populate `decimalLongitude` and `decimalLatitude` at the top level event. The zones have different depths, so `minimumDepthInMeters` and `maximumDepthInMeters` are populated at the zone level. Finally, as not all sampling was done on the same day, `eventDate` is populated at the quadrat and transect level.
-
-| eventID | parentEventID | eventDate | decimalLongitude | decimalLatitude | minimumDepthInMeters | maximumDepthInMeters |
-| --- | --- | --- | --- | --- | --- | --- |
-| site_1 | | | 54.7943 | 16.9425 | | |
-| zone_1 | site_1 | | | | 0 | 0 |
-| zone_2 | site_1 | | | | 0 | 5 |
-| zone_3 | site_1 | | | | 5 | 10 |
-| <span class="marker-green">quadrat_1</span> | zone_1 | 2019-01-02 | | | | |
-| transect_1 | zone_2 | 2019-01-03 | | | | |
-| transect_2 | zone_3 | 2019-01-04 | | | | |
-
-Next we can construct the Occurrence extension table. This table has the scientific names and links to the World Register of Marine Species in `scientificNameID`. The first column of the table references the events in the core table (see `quadrat_1` for example highlighted in green).
-
-| id | occurrenceID | scientificName | scientificNameID |
-| --- | --- | --- | --- |
-| <span class="marker-green">quadrat_1</span> | <span class="marker-blue">occ_1</span> | Ulva rigida | urn:lsid:marinespecies.org:taxname:145990 |
-| <span class="marker-green">quadrat_1</span> | <span class="marker-orange">occ_2</span> | Ulva lactuca | urn:lsid:marinespecies.org:taxname:145984 |
-| transect_1 | occ_3 | Plantae | urn:lsid:marinespecies.org:taxname:3 |
-| transect_1 | occ_4 | Plantae | urn:lsid:marinespecies.org:taxname:3 |
-| transect_2 | occ_5 | Gracilaria | urn:lsid:marinespecies.org:taxname:144188 |
-| transect_2 | occ_6 | Laurencia | urn:lsid:marinespecies.org:taxname:143914 |
-
-And finally there is the MeasurementOrFact extension table, which has attributes of the zones (shore height), the quadrats (surface area), the transects (surface area and length), and the occurrences (percentage cover and functional group). Attributes of occurrences point to the Occurrence extension table using the `occurrenceID` column (see `occ_1` and `occ_2` highlighted in blue and orange). Note that besides NERC vocabulary terms we are also referencing the CATAMI vocabulary for macroalgal functional groups.
-
-| id | occurrenceID | measurementType | measurementTypeID | measurementValue | measurementValueID | measurementUnit | measurementUnitID |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| zone_1 | | shore height | ? | high | ? | | |
-| <span class="marker-green">quadrat_1</span> | | surface area | [P01/current/AREABEDS](http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS) | 0.25 | | m2 | [P06/current/UMSQ](http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/) |
-| quadrat_1 | <span class="marker-blue">occ_1</span> | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 24 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| quadrat_1 | <span class="marker-orange">occ_2</span> | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 56 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_1 | | surface area | [P01/current/AREABEDS](http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS) | 60 | | m2 | [P06/current/UMSQ](http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/) |
-| transect_1 | | length | [P01/current/LENTRACK](http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK) | 30 | | m | [P06/current/ULAA](http://vocab.nerc.ac.uk/collection/P06/current/ULAA/) |
-| transect_1 | occ_3 | functional group | ? | sheet-like red | CATAMI:80300925 |||||
-| transect_1 | occ_4 | functional group | ? | filamentous brown | CATAMI:80300931 |||||
-| transect_1 | occ_3 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 8 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_1 | occ_4 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 24 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_2 | occ_5 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 4 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_2 | occ_6 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 16 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-
-## ENV-DATA - a practical example using: Marine Mammal survey data
-
-In this section we will explore how to encode a survey data set into Darwin Core using the ENV-DATA approach. As an example, sections of the actual data set of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), is used.
-
-<img src="/images/ENV_example_CETUS.png" class="img-responsive img-responsive-70"/><p> Figure: A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions**.</p>
-
-Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using `eventID` and `parentEventID`. As the survey observations were made at locations of Cetacean sightings instead of fixed locations, we can populate `footprintWKT` and `footprintSRS` as location information. Not all sampling was done on the same day, therefore `eventDate` is populated at the transect level.
-
-| eventID            | parentEventID | eventDate       | footprintWKT                                                                                                   | footprintSRS |
-|--------------------|---------------|-----------------|----------------------------------------------------------------------------------------------------------------|--------------|
-| Madeira            |               | 2012-07/2017-09 | POLYGON ((-16.74 31.49, -16.74 41.23, -8.70 41.23, -8.70 31.49, -16.74 31.49)) | EPSG:4326    |
-| <span class="marker-green">Madeira:Cruise-001</span> | Madeira       | 2012-07         | MULTIPOINT ( (-8.7 41.19),  (-9.15 38.7))                                                                      | EPSG:4326    |
-| Madeira:Cruise-002 | Madeira       | 2012-07         | MULTIPOINT ( (-9.15 38.7),  (-16.73 32.74))                                                                    | EPSG:4326    |
-| Madeira:Cruise-003 | Madeira       | 2012-07         | MULTIPOINT ( (-16.73 32.74),  (-9.15 38.7))                                                                    | EPSG:4326    |
-
-Construct the Occurrence extension table with the scientific names and links to the World Register of Marine Species in `scientificNameID`. The first column of the table references the events in the core table (see `Madeira:Cruise-001` highlighted in green).The `occurrence ID` corresponds to the Position of the observation (see `Transect-01:Pos-0001` and `CIIMAR-CETUS-0001` highlighted in blue, or `Transect-01:Pos-0002` and `CIIMAR-CETUS-0002` highlighted in orange).
-
-| id                                      | occurrenceID      | scientificNameID                        | scientificName |
-|-----------------------------------------|-------------------|-----------------------------------------|----------------|
-| <span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-blue">Transect-01:Pos-0001</span> | <span class="marker-blue">CIIMAR-CETUS-0001</span> | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-orange">Transect-01:Pos-0002</span> | <span class="marker-orange">CIIMAR-CETUS-0002</span> | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:Transect-01:Pos-0003 | CIIMAR-CETUS-0003 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0004 | CIIMAR-CETUS-0004 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0005 | CIIMAR-CETUS-0005 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0006 | CIIMAR-CETUS-0006 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0007 | CIIMAR-CETUS-0007 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-
-And finally, the extendedMeasurementOrFact extension table has attributes of the zones (such as Vessel speed and Vessel Heading), the   Transects (such as Wave height and Wind speed), and the Positions (such as Visibility and the Number of smaal/big ships >20m). Attributes of Positions point to the Occurrence extension table using the `occurrenceID` column (see `Transect-01:Pos-0001` and `Transect-01:Pos-0002` highlighted in blue and orange, respectively).
-
-| id                                      | occurrenceID      | measurementType              | measurementTypeID                                        | measurementValue | measurementUnit                 | measurementUnitID                                    |
-|-----------------------------------------|-------------------|------------------------------|----------------------------------------------------------|------------------|---------------------------------|------------------------------------------------------|
-| <span class="marker-green">Madeira:Cruise-001</span>                      |                   | Vessel name                  | [Q01/current/Q0100001](http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/) | Monte da Guia    |                                 |                                                      |
-| Madeira:Cruise-001:Transect-01          |                   | Length of the track          | [P01/current/DSRNCV01](http://vocab.nerc.ac.uk/collection/P01/current/DSRNCV01/) | 39.75            | km                              | [P06/current/ULKM](http://vocab.nerc.ac.uk/collection/P06/current/ULKM/) |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Visibility                   |                                                          | 2000-4000        | Meters                          | [P06/current/ULAA](http://vocab.nerc.ac.uk/collection/P06/current/ULAA/) |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Wind speed                   | [P01/current/WMOCWFBF](http://vocab.nerc.ac.uk/collection/P01/current/WMOCWFBF/) | 1                | Beaufort scale                  |                                                      |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Wave height                  |                                                          | 2                | Douglas scale                   |                                                      |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Number of big ships (>20m)   |                                                          | 3                |                                 |                                                      |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel heading               | [P01/current/HDNGGP01](http://vocab.nerc.ac.uk/collection/P01/current/HDNGGP01/) | 206              | Degrees                         | [P06/current/UAAA](http://vocab.nerc.ac.uk/collection/P06/current/UAAA/) |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Number of small ships (<20m) |                                                          | 0                |                                 |                                                      |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel speed                 | [P01/current/APSAGP01](http://vocab.nerc.ac.uk/collection/P01/current/APSAGP01/) | 16               | Knots (nautical miles per hour) | [P06/current/UKNT](http://vocab.nerc.ac.uk/collection/P06/current/UKNT/) |

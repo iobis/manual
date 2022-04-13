@@ -1,13 +1,13 @@
 ---
-title: Manual
-shorttitle: Manual
+title: How to quality control data using R?
+shorttitle: Quality control with R
 layout: page
 lang: en
 identifier: processing
 breadcrumbs: manual
 ---
 
-# Data quality control using R
+#### Contents
 
 - [Checking points on land](#onland)
 - [Taxon matching](#taxonmatching)

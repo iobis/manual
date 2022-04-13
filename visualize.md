@@ -1,5 +1,5 @@
 ---
-title: Visualize data
+title: How to visualize data from OBIS?
 shorttitle: Visualize data
 layout: page
 lang: en

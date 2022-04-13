@@ -1,5 +1,5 @@
 ---
-title: Contribute data
+title: How to contribute data to OBIS?
 shorttitle: Contribute data
 layout: page
 lang: en
