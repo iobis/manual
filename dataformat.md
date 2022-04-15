@@ -32,7 +32,7 @@ The conceptual data model of the Darwin Core Archive is a star schema with a sin
 
 Besides data tables, a Darwin Core Archive also contains two XML files: one file which describes the archive and data file structure (`meta.xml`), and one file which contains the dataset's metadata (`eml.xml`).
 
-<img src="../images/dwca.png" class="img-responsive img-responsive-50"/>
+<img src="/images/dwca.png" class="img-responsive img-responsive-50"/>
 <p class="caption-50">Figure: structure of a Darwin Core Archive.</p>
 
 <a class="anchor" name="envdata"></a>
@@ -64,7 +64,7 @@ The `occurrenceID` term is used to circumvent the limitations of the star schema
 - abiotic measurements (e.g. temperature, salinity, oxygen, sediment grain size, habitat features)
 - facts documenting the sampling activity (e.g. sampling device, sampled area, sampled volume, sieve mesh size).
 
-<img src="../images/EventCoreSchema.png" class="img-responsive img-responsive-50"/>
+<img src="/images/EventCoreSchema.png" class="img-responsive img-responsive-50"/>
 <p class="caption-50">Figure: Overview of an OBIS-ENV-DATA format. Sampling parameters, abiotic measurements, and occurrences are linked to events using the eventID (full lines). Biotic measurements are linked to occurrences using the new occurrenceID field of the ExtendedMeasurementOrFact Extension (dashed lines).</p>
 
 <a class="anchor" name="vocab"></a>
@@ -159,3 +159,4 @@ Datasets formatted in Occurrence Core can use the eMoF Extension for biotic meas
 ### Recommended reading
 
 * [De Pooter et al. 2017](https://bdj.pensoft.net/articles.php?id=10989). Toward a new data standard for combined marine biological and environmental datasets - expanding OBIS beyond species occurrences. Biodiversity Data Journal 5: e10989. hdl.handle.net/10.3897/BDJ.5.e10989
+* [Duncan et al. (2021)](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5). A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension. EMODnet report.
