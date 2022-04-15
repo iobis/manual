@@ -56,12 +56,12 @@ Next we can construct the Occurrence extension table. This table has the scienti
 
 | id | occurrenceID | scientificName | scientificNameID |
 | --- | --- | --- | --- |
-| <span class="marker-green">quadrat_1</span> | <span class="marker-blue">occ_1</span> | Ulva rigida | urn:lsid:marinespecies.org:taxname:145990 |
-| <span class="marker-green">quadrat_1</span> | <span class="marker-orange">occ_2</span> | Ulva lactuca | urn:lsid:marinespecies.org:taxname:145984 |
-| transect_1 | occ_3 | Plantae | urn:lsid:marinespecies.org:taxname:3 |
-| transect_1 | occ_4 | Plantae | urn:lsid:marinespecies.org:taxname:3 |
-| transect_2 | occ_5 | Gracilaria | urn:lsid:marinespecies.org:taxname:144188 |
-| transect_2 | occ_6 | Laurencia | urn:lsid:marinespecies.org:taxname:143914 |
+| <span class="marker-green">quadrat_1</span> | <span class="marker-blue">occ_1</span> | Ulva rigida | [urn:lsid:marinespecies.org:taxname:145990](urn:lsid:marinespecies.org:taxname:145990) |
+| <span class="marker-green">quadrat_1</span> | <span class="marker-orange">occ_2</span> | Ulva lactuca | [urn:lsid:marinespecies.org:taxname:145984](urn:lsid:marinespecies.org:taxname:145984) |
+| transect_1 | occ_3 | Plantae | [urn:lsid:marinespecies.org:taxname:3](urn:lsid:marinespecies.org:taxname:3) |
+| transect_1 | occ_4 | Plantae | [urn:lsid:marinespecies.org:taxname:3](urn:lsid:marinespecies.org:taxname:3) |
+| transect_2 | occ_5 | Gracilaria | [urn:lsid:marinespecies.org:taxname:144188](urn:lsid:marinespecies.org:taxname:144188) |
+| transect_2 | occ_6 | Laurencia | [urn:lsid:marinespecies.org:taxname:143914](urn:lsid:marinespecies.org:taxname:143914) |
 
 And finally there is the MeasurementOrFact extension table, which has attributes of the zones (shore height), the quadrats (surface area), the transects (surface area and length), and the occurrences (percentage cover and functional group). Attributes of occurrences point to the Occurrence extension table using the `occurrenceID` column (see `occ_1` and `occ_2` highlighted in blue and orange). Note that besides NERC vocabulary terms we are also referencing the CATAMI vocabulary for macroalgal functional groups.
 
@@ -107,11 +107,11 @@ Construct the Occurrence extension table with the scientific names and links to 
 |-----------------------------------------|-------------------|-----------------------------------------|----------------|
 | <span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-blue">Transect-01:Pos-0001</span> | <span class="marker-blue">CIIMAR-CETUS-0001</span> | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
 | <span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-orange">Transect-01:Pos-0002</span> | <span class="marker-orange">CIIMAR-CETUS-0002</span> | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:Transect-01:Pos-0003 | CIIMAR-CETUS-0003 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0004 | CIIMAR-CETUS-0004 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0005 | CIIMAR-CETUS-0005 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0006 | CIIMAR-CETUS-0006 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
-| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0007 | CIIMAR-CETUS-0007 | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-01:Pos-0003 | CIIMAR-CETUS-0003 | [urn:lsid:marinespecies.org:taxname:2688](urn:lsid:marinespecies.org:taxname:2688) | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0004 | CIIMAR-CETUS-0004 | [urn:lsid:marinespecies.org:taxname:2688](urn:lsid:marinespecies.org:taxname:2688) | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0005 | CIIMAR-CETUS-0005 | [urn:lsid:marinespecies.org:taxname:2688](urn:lsid:marinespecies.org:taxname:2688) | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0006 | CIIMAR-CETUS-0006 | [urn:lsid:marinespecies.org:taxname:2688](urn:lsid:marinespecies.org:taxname:2688) | Cetacea        |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0007 | CIIMAR-CETUS-0007 | [urn:lsid:marinespecies.org:taxname:2688](urn:lsid:marinespecies.org:taxname:2688) | Cetacea        |
 
 And finally, the extendedMeasurementOrFact extension table has attributes of the zones (such as Vessel speed and Vessel Heading), the   Transects (such as Wave height and Wind speed), and the Positions (such as Visibility and the Number of smaal/big ships >20m). Attributes of Positions point to the Occurrence extension table using the `occurrenceID` column (see `Transect-01:Pos-0001` and `Transect-01:Pos-0002` highlighted in blue and orange, respectively).
 
@@ -163,9 +163,9 @@ Occurrence core (continued):
 
 | sampleSizeValue | sampleSizeUnit      | identificationReferences                        | identificationRemarks                                 |
 |-----------------|---------------------|-------------------------------------------------|-------------------------------------------------------|
-| 147220          | DNA sequence reads  | https://github.com/xxx  Djurhuus et al. 2020. | unassigned, Genbank nr Release 221 September 20 2017  |
-| 121419          | DNA sequence reads  | https://github.com/xxx  Djurhuus et al. 2020. | unassigned, Genbank nr Release 221 September 20 2017  |
-| 161525          | DNA sequence reads  | https://github.com/xxx  Djurhuus et al. 2020. | unassigned, Genbank nr Release 221 September 20 2017  |
+| 147220          | DNA sequence reads  | GitHub repository  [Djurhuus et al. 2020](https://doi.org/10.1038/s41467-019-14105-1) | unassigned, Genbank nr Release 221 September 20 2017  |
+| 121419          | DNA sequence reads  | GitHub repository  [Djurhuus et al. 2020](https://doi.org/10.1038/s41467-019-14105-1) | unassigned, Genbank nr Release 221 September 20 2017  |
+| 161525          | DNA sequence reads  | GitHub repository  [Djurhuus et al. 2020](https://doi.org/10.1038/s41467-019-14105-1) | unassigned, Genbank nr Release 221 September 20 2017  |
 
 
 Next, we can create the DNA derived data extension which will be connected to the occurrence core with the use of `occurrenceID`. This extension contains the DNA sequences and relevant DNA metadata, including sequencing procedures, primers used and SOP's. The recommended use of ENVO's biome classes were applied to describe the environmental system from which the sample was extracted. 
@@ -187,9 +187,9 @@ DNA derived data extension (continued):
 
 | samp_vol_we_dna_ext | nucl_acid_ext                            | nucl_acid_amp                            | lib_layout  | target_gene |
 |---------------------|------------------------------------------|------------------------------------------|-------------|-------------|
-| 1000ml              | dx.doi.org/10.17504/protocols.io.xjufknw | dx.doi.org/10.17504/protocols.io.n2vdge6 | paired      | 18S         |
-| 1000ml              | dx.doi.org/10.17504/protocols.io.xjufknw | dx.doi.org/10.17504/protocols.io.n2vdge6 | paired      | 18S         |
-| 1000ml              | dx.doi.org/10.17504/protocols.io.xjufknw | dx.doi.org/10.17504/protocols.io.n2vdge6 | paired      | 18S         |
+| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) | [dx.doi.org/10.17504/protocols.io.n2vdge6](dx.doi.org/10.17504/protocols.io.n2vdge6) | paired      | 18S         |
+| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) | [dx.doi.org/10.17504/protocols.io.n2vdge6](dx.doi.org/10.17504/protocols.io.n2vdge6) | paired      | 18S         |
+| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) | [dx.doi.org/10.17504/protocols.io.n2vdge6](dx.doi.org/10.17504/protocols.io.n2vdge6) | paired      | 18S         |
 
 
 For a detailed description of the steps taken to process the data, including algorithms used, see the original publication. Adding Operational Taxonomic Unit (OTU) related data are highly recommended and should be as complete as possible, for example:
@@ -198,16 +198,16 @@ DNA derived data extension (continued):
 
 | target_subfragment  | seq_meth             | otu_class_appr   | otu_seq_comp_appr                                                           |
 |---------------------|----------------------|------------------|-----------------------------------------------------------------------------|
-| V9                  | Illumina MiSeq 2x250 | dada2;1.14.0;ASV | blast;2.9.0+;80% identity;e-value cutoff: x  MEGAN6;6.18.5;bitscore:100:2% |
-| V9                  | Illumina MiSeq 2x250 | dada2;1.14.0;ASV | blast;2.9.0+;80% identity;e-value cutoff: x  MEGAN6;6.18.5;bitscore:100:2% |
-| V9                  | Illumina MiSeq 2x250 | dada2;1.14.0;ASV | blast;2.9.0+;80% identity;e-value cutoff: x  MEGAN6;6.18.5;bitscore:100:2% |
+| V9                  | Illumina MiSeq 2x250 | dada2;1.14.0;ASV | blast;2.9.0+;80% identity;e-value cutoff: x  MEGAN6;6.18.5;bitscore: 100 :2% |
+| V9                  | Illumina MiSeq 2x250 | dada2;1.14.0;ASV | blast;2.9.0+;80% identity;e-value cutoff: x  MEGAN6;6.18.5;bitscore: 100 :2% |
+| V9                  | Illumina MiSeq 2x250 | dada2;1.14.0;ASV | blast;2.9.0+;80% identity;e-value cutoff: x  MEGAN6;6.18.5;bitscore: 100 :2% |
 
 
 | otu_db         | sop                                                           | DNA_sequence     |
 |----------------|---------------------------------------------------------------|------------------|
-| Genbank nr;221 | dx.doi.org/10.17504/protocols.io.xjufknw & https://github.com | GCTACTACCGATT... |
-| Genbank nr;221 | dx.doi.org/10.17504/protocols.io.xjufknw & https://github.com | GCTACTACCGATT... |
-| Genbank nr;221 | dx.doi.org/10.17504/protocols.io.xjufknw & https://github.com | GCTACTACCGATT... |
+| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) or GitHub repository | GCTACTACCGATT... |
+| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) or GitHub repository | GCTACTACCGATT... |
+| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) or GitHub repository | GCTACTACCGATT... |
 
 
 | pcr_primer_forward | pcr_primer_reverse       | pcr_primer_name_forward | pcr_primer_name_reverse | pcr_primer_reference       |
