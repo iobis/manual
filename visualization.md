@@ -7,6 +7,8 @@ identifier: visualization
 breadcrumbs: manual
 ---
 
+# Data visualization using R
+
 #### Contents
 
 - [Introduction to the ggplot2 pckage](#ggplot)

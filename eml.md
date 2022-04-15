@@ -7,6 +7,8 @@ identifier: eml
 breadcrumbs: manual
 ---
 
+# Ecological Metadata Language
+
 OBIS (and GBIF) uses the Ecological Metadata Language (EML) as its metadata standard, which is specifically developed for the earth, environmental and ecological sciences. It is based on prior work done by the Ecological Society of America and associated efforts. EML is implemented as XML. See more information on [EML](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html).
 
 OBIS uses the [GBIF EML profile (version 1.1)](http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml-gbif-profile.xsd). In case data providers use ISO19115/ISO19139, there is a mapping available [here](http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml2iso19139.xsl). 

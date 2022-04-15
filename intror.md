@@ -7,6 +7,8 @@ identifier: intror
 breadcrumbs: manual
 ---
 
+# Introduction to R
+
 #### Contents
 
 - [What is R](#what_is_R)

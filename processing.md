@@ -1,13 +1,13 @@
 ---
-title: How to quality control data using R?
-shorttitle: Quality control with R
+title: Data quality control using R
+shorttitle: Data quality control using R
 layout: page
 lang: en
 identifier: processing
 breadcrumbs: manual
 ---
 
-#### Contents
+# Data quality control using R
 
 - [Checking points on land](#onland)
 - [Taxon matching](#taxonmatching)

@@ -7,6 +7,8 @@ identifier: quality
 breadcrumbs: manual
 ---
 
+# Data quality
+
 OBIS performs a number of quality checks on the data it receives. Records may be rejected if the quality does not meet certain expectations. In other cases quality flags are attached to the occurrence records. The checks we performs as well as the associated flags are documented [here](https://github.com/iobis/obis-qc).
 
 There are several ways to inspect the quality flags associated with a specific dataset or any other subset of data. Data downloaded through the mapper and the R package will include a column named `flags` which contains a comma separated list of flags for each record. In addition, the data quality panel on the dataset and node pages has a flag icon which can be clicked to get an overview of all flags and the number of records affected.

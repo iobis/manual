@@ -1,6 +1,6 @@
 ---
-title: Manual
-shorttitle: Manual
+title: Data visualization using online GIS tools
+shorttitle: Online GIS
 layout: page
 lang: en
 identifier: onlinegis
