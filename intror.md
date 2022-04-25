@@ -1,13 +1,13 @@
 ---
-title: Introduction to R
-shorttitle: Introduction to R
+title: Introduction to R (deprecated)
+shorttitle: Introduction to R (deprecated)
 layout: page
 lang: en
 identifier: intror
 breadcrumbs: manual
 ---
 
-# Introduction to R
+# Introduction to R (deprecated)
 
 #### Contents
 

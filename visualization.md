@@ -1,13 +1,13 @@
 ---
-title: Data visualization using R
-shorttitle: Data visualization using R
+title: Data visualization using R (deprecated)
+shorttitle: Data visualization using R (deprecated)
 layout: page
 lang: en
 identifier: visualization
 breadcrumbs: manual
 ---
 
-# Data visualization using R
+# Data visualization using R (deprecated)
 
 #### Contents
 

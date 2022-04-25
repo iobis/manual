@@ -1,11 +1,13 @@
 ---
-title: Contribute data
-shorttitle: Contribute data
+title: Contribute data to OBIS
+shorttitle: Contribute data to OBIS
 layout: page
 lang: en
 identifier: contributetoobis
 breadcrumbs: manual
 ---
+
+# Contribute data to OBIS
 
 <a class="anchor" name="become"></a>
 
