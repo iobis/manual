@@ -3,6 +3,7 @@ title: OBIS manual
 baseurl: "/"
 url: "https://manual.obis.org"
 permalink: pretty
+ga_tracking: UA-119617958-2
 markdown: kramdown
 kramdown:
   input: GFM
