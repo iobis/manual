@@ -25,7 +25,7 @@ breadcrumbs: manual
 
 ## Introduction
 
-The biodiversity datasets and its metadata are published in OBIS using the Integrated Publishing Toolkit (IPT), developed by GBIF. The IPT software assists the user in mapping data to valid Darwin Core terms and archiving and compressing the Darwin Core content with: (i) a descriptor file: `meta.xml` that maps the core and extensions files to Darwin Core terms, and describes how the core and extensions files are linked, and (ii) the `eml.xml` file, which contains the dataset metadata in [Ecological Metadata Language](https://en.wikipedia.org/wiki/Ecological_Metadata_Language) (EML) format. For instructions on how to enter the metadata go to [EML](/manual/eml). Al these components (i.e. core file, extension files, descriptor file and metadata file), compressed together (as a .zip file), comprise the Darwin Core Archive.
+The biodiversity datasets and its metadata are published in OBIS using the Integrated Publishing Toolkit (IPT), developed by GBIF. The IPT software assists the user in mapping data to valid Darwin Core terms and archiving and compressing the Darwin Core content with: (i) a descriptor file: `meta.xml` that maps the core and extensions files to Darwin Core terms, and describes how the core and extensions files are linked, and (ii) the `eml.xml` file, which contains the dataset metadata in [Ecological Metadata Language](https://en.wikipedia.org/wiki/Ecological_Metadata_Language) (EML) format. For instructions on how to enter the metadata go to [EML](../eml). Al these components (i.e. core file, extension files, descriptor file and metadata file), compressed together (as a .zip file), comprise the Darwin Core Archive.
 
 <img src="../images/dwca_1.png" class="img-responsive"/>
 
@@ -97,7 +97,7 @@ Once your source file has been uploaded correctly, a source file detail page wil
 
 ## Map your data to Darwin Core
 
-Biodiversity data are published in the [Darwin Core](/manual/darwincore) standard. It includes a list of defined terms and allows your data to be understood and used by others. It also allows an aggregator like OBIS or GBIF to integrate your data with other datasets. 
+Biodiversity data are published in the [Darwin Core](../darwincore) standard. It includes a list of defined terms and allows your data to be understood and used by others. It also allows an aggregator like OBIS or GBIF to integrate your data with other datasets. 
 
 Darwin Core mapping is the process of linking the fields in your resource file with the appropriate Darwin Core terms. It is the most challenging step in publishing your data for two reasons: 1) the list of Darwin Core terms can be overwhelming, so it might be difficult to select the ones that are appropriate for your dataset, and 2) the IPT currently only allows one-to-one mapping of fields, so the ease of mapping will depend on your database structure and on the feasibility of exporting as close to Darwin Core as possible. Contact your node manager or the OBIS secretariat at info@iobis.org to guide you through the steps, review your mapping, suggest terms etc.
 
@@ -111,7 +111,7 @@ Metadata enables users to discover, assess, understand and attribute your datase
 
 Go to your resource overview page > Metadata and click Edit to open the metadata editor. Any information you provide here will be visible on the resource homepage and bundled together with your data when you publish.
 
-Follow the [OBIS metadata standards and best practices](/manual/eml), or check the [IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#metadata) for detailed instructions about the metadata editor.
+Follow the [OBIS metadata standards and best practices](../eml), or check the [IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#metadata) for detailed instructions about the metadata editor.
 
 <a class="anchor" name="publish"></a>
 

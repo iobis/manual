@@ -32,7 +32,7 @@ library(ggplot2)
 ggplot() + geom_point(data = molram, aes(x = decimalLongitude, y = decimalLatitude))
 ```
 
-<img src="/manual/images/molram.png" class="img-responsive-50"/>
+<img src="../images/molram.png" class="img-responsive-50"/>
 
 Let's now add a world polygon to our map. ggplot2 provides a `map_data()` function to load maps of countries, continents or the entire world (this requires the maps package as well). Besides the world polygon, we also pass an aesthetic and a fill parameter to the `geom_polygon()` function.
 
@@ -45,7 +45,7 @@ ggplot() +
  geom_point(data = molram, aes(x = decimalLongitude, y = decimalLatitude))
 ```
 
-<img src="/manual/images/world.png" class="img-responsive-50"/>
+<img src="../images/world.png" class="img-responsive-50"/>
 
 Let's now use `coord_fixed()` to make sure the axes have the same scale. You may want to pass a different value to this function if you are mapping areas close to the poles:
 
@@ -56,7 +56,7 @@ ggplot() +
  coord_fixed(1)
 ```
 
-<img src="/manual/images/world2.png" class="img-responsive-50"/>
+<img src="../images/world2.png" class="img-responsive-50"/>
 
 Let's now zoom in a bit by passing `xlim` and `ylim` to `coord_fixed`:
 
@@ -67,7 +67,7 @@ ggplot() +
  coord_fixed(1, xlim = c(0, 180), ylim = c(-60, 0))
 ```
 
-<img src="/manual/images/world3.png" class="img-responsive-50"/>
+<img src="../images/world3.png" class="img-responsive-50"/>
 
 To make the plot a bit more interesting, add color to the `geom_point` aesthetic. In this example the dots are colored based on the institutionCode field of the occurrence data:
 
@@ -78,7 +78,7 @@ ggplot() +
  coord_fixed(1, xlim = c(0, 180), ylim = c(-60, 0))
 ```
 
-<img src="/manual/images/world5.png" class="img-responsive-50"/>
+<img src="../images/world5.png" class="img-responsive-50"/>
 
 There are many ways to change color scales in ggplot, look into `scale_color_brewer()` for example:
 
@@ -90,7 +90,7 @@ ggplot() +
  scale_color_brewer(palette = "Paired")
 ```
 
-<img src="/manual/images/world6.png" class="img-responsive-50"/>
+<img src="../images/world6.png" class="img-responsive-50"/>
 
 The `geom_histogram()` function can be used to create histograms. To try this, first fetch a bit more data from OBIS:
 
@@ -105,7 +105,7 @@ ggplot() +
  geom_histogram(data = dor, aes(x = yearcollected))
 ```
 
-<img src="/manual/images/hist_1.png" class="img-responsive-50"/>
+<img src="../images/hist_1.png" class="img-responsive-50"/>
 
 This produces a histogram, but we also get this warning message:
 
@@ -117,7 +117,7 @@ ggplot() +
  geom_histogram(data = dor, aes(x = yearcollected), binwidth = 2)
 ```
 
-<img src="/manual/images/hist2.png" class="img-responsive-50"/>
+<img src="../images/hist2.png" class="img-responsive-50"/>
 
 By adding fill to the aesthetic, we can color the bars based on the family:
 
@@ -127,7 +127,7 @@ ggplot() +
  scale_fill_brewer(palette = "Spectral")
 ```
 
-<img src="/manual/images/hist3.png" class="img-responsive-50"/>
+<img src="../images/hist3.png" class="img-responsive-50"/>
 
 Using `xlim()` we can zoom in a bit:
 
@@ -138,7 +138,7 @@ ggplot() +
  xlim(c(1950, 2017))
 ```
 
-<img src="/manual/images/hist4.png" class="img-responsive-50"/>
+<img src="../images/hist4.png" class="img-responsive-50"/>
 
 In case you need to split up your graph based on one or more factors, you can use `facet_grid()`. For example:
 
@@ -152,7 +152,7 @@ ggplot() +
  facet_grid(resourceID ~ species)
 ```
 
-<img src="/manual/images/facet.png" class="img-responsive-50"/>
+<img src="../images/facet.png" class="img-responsive-50"/>
 
 Make sure to take a look at the [R graph gallery](http://www.r-graph-gallery.com/all-graphs/) and the [ggplot extension gallery](http://www.ggplot2-exts.org/gallery/) and be inspired!
 
@@ -193,7 +193,7 @@ leaflet() %>%
   addCircleMarkers(lat = abrseg$decimalLatitude, lng = abrseg$decimalLongitude, radius = 3.5, weight = 0, fillOpacity = 1, fillColor = "#cc3300")
 ```
 
-<img src="/manual/images/abrseg.png" class="img-responsive-50"/>
+<img src="../images/abrseg.png" class="img-responsive-50"/>
 
 <a class="anchor" name="qc"></a>
 

@@ -13,19 +13,19 @@ OBIS performs a number of quality checks on the data it receives. Records may be
 
 There are several ways to inspect the quality flags associated with a specific dataset or any other subset of data. Data downloaded through the mapper and the R package will include a column named `flags` which contains a comma separated list of flags for each record. In addition, the data quality panel on the dataset and node pages has a flag icon which can be clicked to get an overview of all flags and the number of records affected.
 
-<img src="/manual/images/qc_flag_icon.png" class="img-responsive-50"/>
+<img src="../images/qc_flag_icon.png" class="img-responsive-50"/>
 
 This table includes quality flags, but also annotations from the WoRMS annotated names list. When OBIS receives a scientific name which cannot be matched with WoRMS automatically, it is sent to the WoRMS team. The WoRMS team will then annotate the name to indicate if and how the name can be fixed. Documentations about these annotations will be added here soon. 
 
-<img src="/manual/images/qc_flag_table.png" class="img-responsive"/>
+<img src="../images/qc_flag_table.png" class="img-responsive"/>
 
 Clicking any of these flags will take you to a table showing the affected records. For example, this is a list of records from a single dataset which have the `no_match` flag, indicating that no LSID or an invalid LSID was provided, and the name could not be matched with WoRMS. The column `originalScientificName` contains the problematic names, as `scientificName` is used for the matched name. 
 
-<img src="/manual/images/qc_flag_records.png" class="img-responsive"/>
+<img src="../images/qc_flag_records.png" class="img-responsive"/>
 
 At the top of the page there's a button to open the occurrence records in the mapper where they can be downloaded as CSV. The occurrence table also has the `flags` column, so when inspecting non matching names for example it's easy to check if the names at hand have any WoRMS annotations:
 
-<img src="/manual/images/qc_flag_flags.png" class="img-responsive-50"/>
+<img src="../images/qc_flag_flags.png" class="img-responsive-50"/>
 
 Inspecting flags using R is also very easy. The example below fetches the data from a single dataset, and lists the flags and the number of records affected. Notice that the `occurrence()` call has `dropped = TRUE` to make sure that any dropped records are included in the results:
 

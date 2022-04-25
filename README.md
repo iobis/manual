@@ -1,6 +1,6 @@
 # manual
 
-This is the OBIS manual which is published at https://obis.org/manual/.
+This is the OBIS manual which is published at https://manual.obis.org/.
 
 ## Contribute
 
