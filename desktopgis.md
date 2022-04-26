@@ -7,6 +7,8 @@ identifier: desktopgis
 breadcrumbs: manual
 ---
 
+# Data visualization using desktop GIS tools
+
 #### Contents
 
 - [QGIS: visualizing coral reefs and _Millepora_](#qgis)  
