@@ -25,16 +25,22 @@ breadcrumbs: manual
 - [12. eDNA & DNA derived data](#example_edna)
     - [12.1: eDNA data from Monterey Bay, California](#example_Ex1)
 
-<a class="anchor" name="example"></a>
+<a class="anchor" name="#example_fish"></a>
 
 ## 1. Fish abundance & distribution
 (example coming soon)
 
+<a class="anchor" name="#example_hcoral"></a>
+
 ## 2. Hard coral cover & composition
 (example coming soon)
 
+<a class="anchor" name="#example_inverts"></a>
+
 ## 3. Invertebrates abundance & distribution
 (example coming soon)
+
+<a class="anchor" name="#example_macroalgae"></a>
 
 ## 4. Macroalgae canopy cover & composition
 
@@ -82,11 +88,17 @@ And finally there is the MeasurementOrFact extension table, which has attributes
 | transect_2 | occ_5 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 4 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
 | transect_2 | occ_6 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 16 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
 
+<a class="anchor" name="#example_mangrove"></a>
+
 ## 5. Mangroves cover & composition
 (example coming soon)
 
+<a class="anchor" name="#example_mbirds"></a>
+
 ## 6. Marine birds abundance & distribution
 (example coming soon)
+
+<a class="anchor" name="#example_mmammals"></a>
 
 ## 7. Marine mammals abundance & distribution
 
@@ -129,21 +141,33 @@ And finally, the extendedMeasurementOrFact extension table has attributes of the
 | Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Number of small ships (<20m) |                                                          | 0                |                                 |                                                      |
 | Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel speed                 | [P01/current/APSAGP01](http://vocab.nerc.ac.uk/collection/P01/current/APSAGP01/) | 16               | Knots (nautical miles per hour) | [P06/current/UKNT](http://vocab.nerc.ac.uk/collection/P06/current/UKNT/) |
 
+<a class="anchor" name="#example_mturtles"></a>
+
 ## 8. Marine turtles abundance & distribution
 (example coming soon)
+
+<a class="anchor" name="#example_microbes"></a>
 
 ## 9. Microbes biomass & diversity
 (example coming soon)
 
+<a class="anchor" name="#example_plankton"></a>
+
 ## 10. Plankton biomass & diversity
 (example coming soon)
+
+<a class="anchor" name="#example_seagrass"></a>
 
 ## 11. Seagrass cover & composition
 (example coming soon)
 
+<a class="anchor" name="#example_edna"></a>
+
 ## 12. eDNA & DNA derived data
 
 The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional occurrence core terms, refer to [Occurrence](../darwincore/#occurrence). 
+
+<a class="anchor" name="#example_Ex1"></a>
 
 ### 12. 1: eDNA data from Monterey Bay, California
 
