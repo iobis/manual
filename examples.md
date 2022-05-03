@@ -159,7 +159,76 @@ And finally, the extendedMeasurementOrFact extension table has attributes of the
 <a class="anchor" name="example_seagrass"></a>
 
 ## 11. Seagrass cover & composition
-(example coming soon)
+
+Here encode seagrass survey data into Darwin Core according to the ENV-DATA approach and using sections of the actual data set of [Seagrass Monitoring at Chengue Bay, Colombia](http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia) as an example  of how the resulting Event core, Occurrence extension and ExtendedMeasurementOrFact extension should be structured.
+
+The Event core table is created by extracting all events and attributes. All events are linked together using `eventID` and `parentEventID`. `eventDate` is populated at the transect level with the recommended format that conforms to ISO 8601-1:2019. `habitat` is populated as a category or description of the habitat in which the Event occurred. Additional `fieldNotes` can also be provided if applicable. The recommended best practice for `countryCode` is to use an ISO 3166-1-alpha-2 country code. The remaining eventCore fields comprise of location data, including `maximumDepthInMeters`, `maximumDepthInMeters`, `decimalLongitude`, `decimalLatitude`, `coordinateUncertaintyInMeters`, , `footprintWKT` and `footprintSRS`.
+
+
+| eventID                                    | parentEventID            | eventDate  | habitat  | fieldNotes | countryCode | 
+|--------------------------------------------|--------------------------|------------|----------|------------|-------------|
+| USBsg-chengue-pastocoral                   |                          | 2019-05-13 | seagrass | no notes   | CO          |
+| USBsg-chengue-pastomanglar                 |                          | 2019-05-14 | seagrass | no notes   | CO          | 
+| USBsg-chengue-pastocoral-SquidPopTransect1 | USBsg-chengue-pastocoral | 2019-05-13 | seagrass | no notes   | CO          | 
+| USBsg-chengue-pastocoral-SquidPopTransect2 | USBsg-chengue-pastocoral | 2019-05-13 | seagrass | no notes   | CO          | 
+
+
+eventCore continued:
+
+| minimumDepthInMeters | maximumDepthInMeters | decimalLatitude | decimalLongitude | coordinateUncertaintyInMeters | footprintWKT                                                                      | footprintSRS |
+|----------------------|----------------------|-----------------|------------------|-------------------------------|-----------------------------------------------------------------------------------|--------------|
+| 0.8                  | 2                    | 11.32021806     | -74.12753684     | 10                            | POLYGON ((-74.1273259763024 11.320475512862,-74.1272978004008 11.3201655779439))  | EPSG:4326    |
+| 0.8                  | 0.8                  | 11.31977189     | -74.12536879     | 10                            | POLYGON ((-74.1253370891273 11.3195001294432,-74.1253337743154 11.3194968146313)) | EPSG:4326    |
+| 0.8                  | 2                    | 11.32039927     | -74.12737404     | 50                            | POINT (-74.1273740410759 11.3203992721869)                                        | EPSG:4326    |
+| 0.8                  | 2                    | 11.32027662     | -74.1273989      | 50                            | POINT (-74.1273989021655 11.3202766241445)                                        | EPSG:4326    |
+
+Addtionally in the eventCore, it is recommended to further include information regarding `license`,
+`rightsHolder`, `bibliographicCitation`, `institutionID`, `datasetID`, `institutionCode` and `datasetName`.
+
+Next, the Occurrence extension table contain data for each occurrence with an `occurrenceID` and is linked to the eventCore with the `eventID`. This table should provide information on the `basisOfRecord` and `occurrenceStatus`. Scientific names and links to the World Register of Marine Species should be provided under `scientificName` and `scientificNameID`, respectively. 
+
+| eventID                                    | occurrenceID                      | basisOfRecord    | occurrenceStatus | scientificNameID                          | scientificName         |
+|--------------------------------------------|-----------------------------------|------------------|------------------|-------------------------------------------|------------------------|
+| USBsg-chengue-pastocoral                   | USBsg-chengue-pastocoral-tt       | HumanObservation | present          | urn:lsid:marinespecies.org:taxname:374720 | Thalassia testudinum   |
+| USBsg-chengue-pastomanglar                 | USBsg-chengue-manglar-tt          | HumanObservation | present          | urn:lsid:marinespecies.org:taxname:374720 | Thalassia testudinum   |
+| USBsg-chengue-pastocoral-SquidPopTransect1 | USBsg-chengue-pastocoral-fish-001 | HumanObservation | present          | urn:lsid:marinespecies.org:taxname:158815 | Halichoeres bivittatus |
+| USBsg-chengue-pastocoral-SquidPopTransect1 | USBsg-chengue-pastocoral-fish-002 | HumanObservation | present          | urn:lsid:marinespecies.org:taxname:158932 | Lactophrys triqueter   |
+
+If a species was identified by an expert, the field `identifiedBy` can be populated. If the higher ranks of the species is known and available, these should also be populated, i.e. `kingdom`, `phylum`, `class`, `order`, `family` and `genus`. If the species is well-known by another common name, this name can be provided under `vernacularName`. 
+
+The final extension table, extendedMeasurementOrFact, contain the measurement information and data of each occurrence. This extension is also linked to the eventCore using the `eventID`, and linked to the occurrence table using the `occurrenceID`. The various measurements are populated with `measurementType`, `measurementTypeID`, `measurementUnit`, `measurementUnitID`, `measurementValue`, `measurementValueID`, `measurementAccuracy`, `measurementMethod`, `measurementDeterminedBy`, `measurementDeterminedDate`, `sampleSizeValue` and `sampleSizeUnit`. The example dataset of [Seagrass Monitoring at Chengue Bay, Colombia](http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia) recorded a number of measurements and can be used as an example of how to populate the respective fields:
+
+| eventID                  | occurrenceID                | measurementID                               | measurementType                       | 
+|--------------------------|-----------------------------|---------------------------------------------|---------------------------------------|
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-PhyQ01             | WaterTemp                             | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-PhyQ02             | Salinity                              | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-PhyQ03             | Dissolved oxygen                      | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1C1-shoot-01      | Shoot Density                         | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1C1-leafLenght-01 | Leaf Length                           | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-DryBiomass    | Total Dry Biomass                     | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-biomassGL     | Dry biomass of green leaves           | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-biomassNGL    | Dry biomass of non green leaves       | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-biomassSH     | Dry biomass of the shoots             | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassR      | Dry biomass of the roots              | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassRIZ    | Dry biomass of the rizome             | 
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassOTH    | Dry biomass of other seagrass species | 
+
+eMoF continued: 
+
+| measurementTypeID                                        | measurementValue | measurementUnit         | measurementUnitID                                    |
+|----------------------------------------------------------|------------------|-------------------------|------------------------------------------------------|
+| http://vocab.nerc.ac.uk/collection/P01/current/TEMPPP01/ | 29.23            | Degrees Celsius         | http://vocab.nerc.ac.uk/collection/P06/current/UPAA/ |
+| http://vocab.nerc.ac.uk/collection/P01/current/SSALSL01/ | 36               | Parts per thousand      | http://vocab.nerc.ac.uk/collection/P06/current/UPPT/ |
+| http://vocab.nerc.ac.uk/collection/P01/current/DOXYSE02/ | 6.58             | Milligrams per litre    | http://vocab.nerc.ac.uk/collection/P06/current/UMGL/ |
+| http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/ | 128              | Number per square metre | http://vocab.nerc.ac.uk/collection/P06/current/UPMS/ |
+| http://vocab.nerc.ac.uk/collection/P01/current/OBSMAXLX/ | 18               | Centimetres             | http://vocab.nerc.ac.uk/collection/P06/current/ULCM/ |
+| http://vocab.nerc.ac.uk/collection/S06/current/S0600087/ | 0.32055          | Grams per square metre  | http://vocab.nerc.ac.uk/collection/P06/current/UGMS/ |
+| http://vocab.nerc.ac.uk/collection/S06/current/S0600087/ | 0.05575          | Grams per square metre  | http://vocab.nerc.ac.uk/collection/P06/current/UGMS/ |
+| http://vocab.nerc.ac.uk/collection/S06/current/S0600087/ | 0.1469           | Grams per square metre  | http://vocab.nerc.ac.uk/collection/P06/current/UGMS/ |
+| http://vocab.nerc.ac.uk/collection/S06/current/S0600087/ | 0.07625          | Grams per square metre  | http://vocab.nerc.ac.uk/collection/P06/current/UGMS/ |
+| http://vocab.nerc.ac.uk/collection/S06/current/S0600087/ | 0.0385           | Grams per square metre  | http://vocab.nerc.ac.uk/collection/P06/current/UGMS/ |
+| http://vocab.nerc.ac.uk/collection/S06/current/S0600087/ | 0.02725          | Grams per square metre  | http://vocab.nerc.ac.uk/collection/P06/current/UGMS/ |
+| http://vocab.nerc.ac.uk/collection/S06/current/S0600087/ | 0                | Grams per square metre  | http://vocab.nerc.ac.uk/collection/P06/current/UGMS/ |
 
 <a class="anchor" name="example_edna"></a>
 
