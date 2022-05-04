@@ -16,7 +16,6 @@ breadcrumbs: manual
   - [ExtendedMeasurementOrFact Extension (eMoF)](#emof)
      - [MeasurementOrFact vocabularies](#vocab)
   - [eDNA & DNA derived data Extension](#dna)
-      - [eDNA & DNA derived data terms](#dna)
   - [A special case: habitat types](#habitattypes)
 - [When to use Event Core](#whenEvent)
 - [When to use Occurrence Core](#whenOccurrence)
@@ -117,11 +116,14 @@ The following vocabularies are recommended for populating `measurementTypeID`, `
   - vocabulary: [http://vocab.nerc.ac.uk/collection/P06/current](http://vocab.nerc.ac.uk/collection/P06/current)
   - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/)
 
+<a class="anchor" name="dna"></a>
 
 ### eDNA & DNA derived data Extension
 
-DNA derived data are increasingly being used to document taxon occurrences. To ensure these data are useful to the broadest possible community, GBIF published a guide entitled [Publishing DNA-derived data through biodiversity data platforms](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/). This guide is supported by the DNA derived data extension for Darwin Core, which incorporates MIxS terms into the Darwin Core standard. eDNA and DNA derived data is linked to occurrence data with the use of `occurrenceID` and/ or `eventID`. Refer to the [ENV-DATA: practical examples](URL) for use case examples of eDNA and DNA derived data. 
+DNA derived data are increasingly being used to document taxon occurrences. To ensure these data are useful to the broadest possible community, GBIF published a guide entitled [Publishing DNA-derived data through biodiversity data platforms](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/). This guide is supported by the DNA derived data extension for Darwin Core, which incorporates MIxS terms into the Darwin Core standard. eDNA and DNA derived data is linked to occurrence data with the use of `occurrenceID` and/ or `eventID`. Refer to the [Examples: ENV-DATA and DNA derived data](https://manual.obis.org/examples/#example_edna) for use case examples of eDNA and DNA derived data. 
 
+
+<a class="anchor" name="habitattypes"></a>
 
 ### A special case: habitat types
 
@@ -140,12 +142,16 @@ Please consult [Duncan et al. (2021)](https://www.emodnet-seabedhabitats.eu/reso
 - recommended vocabularies and terms for common habitat classification systems
 - example eMoF table 
 
+<a class="anchor" name="whenEvent"></a> 
+
 ### When to use Event Core
 
 * When the dataset contains abiotic measurements, or other biological measurements which are related to an entire sample (not a single specimen)
 * When specific details are known about how a biological sample was taken and processed. These details can be expressed using the eMoF and the newly developed [Q01 vocabulary](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/).
 
 Event Core should be used in combination with the Occurrence Extension and the eMoF.
+
+<a class="anchor" name="whenOccurrence"></a> 
 
 ### When to use Occurrence Core
 
@@ -155,6 +161,8 @@ Event Core should be used in combination with the Occurrence Extension and the e
 * This is often the case for museum collections, citations of occurrences from literature, individual sightings.
 
 Datasets formatted in Occurrence Core can use the eMoF Extension for biotic measurements or facts.
+
+<a class="anchor" name="reading"></a> 
 
 ### Recommended reading
 
