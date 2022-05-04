@@ -17,6 +17,7 @@ We regularly create R notebooks showcasing the R package. Here are a few:
 - [Diversity of fish and vulnerable species in Marine World Heritage Sites based on OBIS data](https://iobis.github.io/notebook-mwhs/)
 - [Data exploration - Stratified random surveys (StRS) of reef fish in the U.S. Pacific Islands](https://iobis.github.io/notebook-reeffish/)
 - [DNADerivedData extension data access](https://iobis.github.io/notebook-dnaderiveddata/)
+- [Canary Current LME](https://iobis.github.io/notebook-cclme/)
 
 The following notebooks do not make use of the R package:
 

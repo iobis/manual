@@ -23,7 +23,7 @@ The OBIS node manual is a dynamic document and is revised on a regular basis. Su
   - [Data publication and sharing](contribute#publication)
     - [IPT](ipt)
   - [Data quality control](contribute#qc)
-- [How to access and use OBIS data?](https:///obis.org/data/access)
+- [How to access and use OBIS data?](access)
 
 ## Guidelines on the sharing and use of data in OBIS
 
