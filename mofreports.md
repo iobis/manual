@@ -11,9 +11,9 @@ breadcrumbs: manual
 
 A MEASUREMENT TYPES dataset report has been added regarding currently used measurementType and associated measurementTypeID(s), located near the bottom of the individual dataset pages (if measurementType in use for the dataset).
 
-This new dataset report was derived from this MoF statistics report <a href="https://reports.obis.org/mof/" target="_blank">https://reports.obis.org/mof/</a> and this active filtering MoF tool <a href="https://mof.obis.org/" target="_blank">https://mof.obis.org/</a>. 
+This new dataset report was derived from this MoF statistics report <a href="https://r.obis.org/mof/" target="_blank">https://r.obis.org/mof/</a> and this active filtering MoF tool <a href="https://mof.obis.org/" target="_blank">https://mof.obis.org/</a>. 
 
-To more easily locate the datasets within your node that may have possible measurementType ID issues, use the MoF Statistics page: <a href="https://reports.obis.org/mof/" target="_blank">https://reports.obis.org/mof/</a>.  This contains the list of Nodes currently using measurementType/measurementValue/measurementUnit with counts and percentage missing for the associated ID(s).
+To more easily locate the datasets within your node that may have possible measurementType ID issues, use the MoF Statistics page: <a href="https://r.obis.org/mof/" target="_blank">https://r.obis.org/mof/</a>.  This contains the list of Nodes currently using measurementType/measurementValue/measurementUnit with counts and percentage missing for the associated ID(s).
 
 If there is a node in that list that you are interested in locating, searching for and possibly fixing MoF issues, select the Node from the list, then select a dataset (displaying a high percentage of missing ID(s)), and scroll down to the MEASUREMENT TYPE report
 
