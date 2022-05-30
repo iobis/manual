@@ -24,6 +24,7 @@ breadcrumbs: manual
 - [11. Seagrass cover & composition](#example_seagrass)
 - [12. eDNA & DNA derived data](#example_edna)
     - [12.1: eDNA data from Monterey Bay, California](#example_Ex1)
+    - [12.2: 16S rRNA gene metabarcoding data of Pico- to Mesoplankton](#example_Ex2)
 
 <a class="anchor" name="example_fish"></a>
 
@@ -175,7 +176,7 @@ The Event core table is created by extracting all events and attributes. All eve
 | USBsg-chengue-pastocoral-SquidPopTransect2 | USBsg-chengue-pastocoral | 2019-05-13 | seagrass | no notes   | CO          | 
 
 
-eventCore continued:
+**eventCore continued:**
 
 | minimumDepthInMeters | maximumDepthInMeters | decimalLatitude | decimalLongitude | coordinateUncertaintyInMeters | footprintWKT                                                                      | footprintSRS |
 |----------------------|----------------------|-----------------|------------------|-------------------------------|-----------------------------------------------------------------------------------|--------------|
@@ -215,7 +216,7 @@ The final extension table, extendedMeasurementOrFact, contain the measurement in
 | USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassRIZ    | Dry biomass of the rizome             | 
 | USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassOTH    | Dry biomass of other seagrass species | 
 
-eMoF continued: 
+**eMoF continued:**
 
 | measurementTypeID                                        | measurementValue | measurementUnit         | measurementUnitID                                    |
 |----------------------------------------------------------|------------------|-------------------------|------------------------------------------------------|
@@ -246,7 +247,7 @@ The data for this example is from the use case ["18S Monterey Bay Time Series: a
 
 First, we can populate the Occurrence core file with all the required and highly recommended fields, as well as considering the eDNA and DNA specific fields. The Occurrence core contain the taxonomic identification of each ASV observed; its number of reads, as well as relevant metadata including the sample collection location, references for the identification procedure, and links to archived sequences.
 
-Occurrence core:
+**Occurrence core:**
 
 | occurrenceID               | basisOfRecord  | organismQuantity | OrganismQuantityType | associatedSequences                   |
 |----------------------------|----------------|------------------|----------------------|---------------------------------------|
@@ -256,7 +257,7 @@ Occurrence core:
 
 `OccurrenceID` and `basisOfRecord` are some of the required occurrence core terms, in addition to the highly recommended fields of `organismQuantity` and `organismQuantityType`. A selection of samples from this plate were included in another publication (Djurhuus et al., 2020),which is recorded in `identificationReferences` along with the GitHub repository where the data can be found.
 
-Occurrence core (continued):
+**Occurrence core (continued):**
 
 | sampleSizeValue | sampleSizeUnit      | identificationReferences                        | identificationRemarks                                 |
 |-----------------|---------------------|-------------------------------------------------|-------------------------------------------------------|
@@ -267,7 +268,7 @@ Occurrence core (continued):
 
 Next, we can create the DNA derived data extension which will be connected to the occurrence core with the use of `occurrenceID`. This extension contains the DNA sequences and relevant DNA metadata, including sequencing procedures, primers used and SOP's. The recommended use of ENVO's biome classes were applied to describe the environmental system from which the sample was extracted. 
 
-DNA derived data extension:
+**DNA derived data extension:**
 
 
 | occurrenceID               | env-broad_scale              | env_local_scale               | env_medium                                    |
@@ -279,7 +280,7 @@ DNA derived data extension:
 
 The samples were collected by CTD rosette and filtered by a peristaltic pump system. Illumina MiSeq metabarcoding was applied for the target_gene 18S and the target_subfragment, V9 region. URL's are provided for the protocols followed for nucleic acids extraction and amplification. 
 
-DNA derived data extension (continued):
+**DNA derived data extension (continued):**
 
 
 | samp_vol_we_dna_ext | nucl_acid_ext                            | nucl_acid_amp                            | lib_layout  | target_gene |
@@ -290,8 +291,6 @@ DNA derived data extension (continued):
 
 
 For a detailed description of the steps taken to process the data, including algorithms used, see the original publication. Adding Operational Taxonomic Unit (OTU) related data are highly recommended and should be as complete as possible, for example:
-
-DNA derived data extension (continued):
 
 | target_subfragment  | seq_meth             | otu_class_appr   | otu_seq_comp_appr                                                           |
 |---------------------|----------------------|------------------|-----------------------------------------------------------------------------|
@@ -313,4 +312,73 @@ DNA derived data extension (continued):
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 
+<a class="anchor" name="example_Ex2"></a>
 
+### 12. 2: 16S rRNA gene metabarcoding data of Pico- to Mesoplankton
+
+In the publication ["Diversity of Pico- to Mesoplankton along the 2000 km Salinity Gradient of the Baltic Sea"](https://www.frontiersin.org/articles/10.3389/fmicb.2016.00679/full), a dataset with 16S rRNA gene metabarcoding data of surface water microbial communities was created from 21 off-shore stations, following a transect from Kattegat to the Gulf of Bothnia in the Baltic Sea. The full dataset entitled ["Diversity of Pico- to Mesoplankton along the 2000 km Salinity Gradient of the Baltic Sea (Hu et al. 2016)](https://www.gbif.org/dataset/9e29a2fe-d780-48a8-a93f-9ce041f9202f) is available from GBIF. 
+
+In this example, we will populate the the Occurrence core file with the required, highly recommended and recommended fields for metabarcoding data. The Occurrence core contain information about the sample including the taxonomy and quantity of organisms detected, the collection location, references for the identification procedure, and links to the sequences generated.
+
+**Occurrence core:**
+
+| basisOfRecord  | occurrenceID                                      | eventID          | eventDate           |
+|----------------|---------------------------------------------------|------------------|---------------------|
+| MaterialSample | SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730 | SBDI-ASV-3:16S_1 | 2013-07-13 07:08:00 |
+| MaterialSample | SBDI-ASV-3:16S_1:43e088977eba5732bfa45e20b1d8cdd2 | SBDI-ASV-3:16S_1 | 2013-07-13 07:08:00 |
+| MaterialSample | SBDI-ASV-3:16S_1:887bc7033b46d960e893caceb711700b | SBDI-ASV-3:16S_1 | 2013-07-13 07:08:00 |
+
+
+| organismQuantity | organismQuantityType | sampleSizeValue | sampleSizeUnit     |
+|------------------|----------------------|-----------------|--------------------|
+| 2235             | DNA sequence reads   | 12393           | DNA sequence reads |
+| 795              | DNA sequence reads   | 12393           | DNA sequence reads |
+| 40               | DNA sequence reads   | 12393           | DNA sequence reads |
+
+
+| samplingProtocol                                                                                                                            | associatedSequences                                 | identificationReferences                                                             | identificationRemarks                                                                                                             |
+|---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| 200–500 mL seawater were filtered onto 0.22 μm pore-size mixed cellulose ester membrane filters; [https://doi.org/10.3389/fmicb.2016.00679] | [https://www.ebi.ac.uk/ena/browser/view/ERR1202034] | [https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation] | DADA2:assignTaxonomy:addSpecies annotation against sbdi-gtdb=R06-RS202-1; confidence at lowest specified (ASV portal) taxon: 0.5  |
+| 200–500 mL seawater were filtered onto 0.22 μm pore-size mixed cellulose ester membrane filters; [https://doi.org/10.3389/fmicb.2016.00679] | [https://www.ebi.ac.uk/ena/browser/view/ERR1202034] | [https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation] | DADA2:assignTaxonomy:addSpecies annotation against sbdi-gtdb=R06-RS202-1; confidence at lowest specified (ASV portal) taxon: 0.56 |
+| 200–500 mL seawater were filtered onto 0.22 μm pore-size mixed cellulose ester membrane filters; [https://doi.org/10.3389/fmicb.2016.00679] | [https://www.ebi.ac.uk/ena/browser/view/ERR1202034] | [https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation] | DADA2:assignTaxonomy:addSpecies annotation against sbdi-gtdb=R06-RS202-1; confidence at lowest specified (ASV portal) taxon: 0.99 |
+
+
+| kingdom  | phylum            | class            | order              | family             | genus   |
+|----------|-------------------|------------------|--------------------|--------------------|---------|
+| Bacteria | Verrucomicrobiota | Verrucomicrobiae | Chthoniobacterales | UBA6821            | UBA6821 |
+| Bacteria | Verrucomicrobiota | Verrucomicrobiae | Chthoniobacterales | NA                 | NA      |
+| Bacteria | Actinobacteriota  | Acidimicrobiia   | Acidimicrobiales   | Ilumatobacteraceae | BACL27  |
+
+
+The DNA derived data extension for metabarcoding data contains the DNA sequences and relevant DNA metadata, primers and procedures. This example table contains the highly recommended and recommended fields as populated with the example dataset data.
+
+**DNA derived data extension:**
+
+| id                                                | env_broad_scale               | env_local_scale              | env_medium                     |
+|---------------------------------------------------|-------------------------------|------------------------------|--------------------------------|
+| SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730 | aquatic biome [ENVO_00002030] | marine biome [ENVO_00000447] | brackish water [ENVO_00002019] |
+| SBDI-ASV-3:16S_1:43e088977eba5732bfa45e20b1d8cdd2 | aquatic biome [ENVO_00002030] | marine biome [ENVO_00000447] | brackish water [ENVO_00002019] |
+| SBDI-ASV-3:16S_1:887bc7033b46d960e893caceb711700b | aquatic biome [ENVO_00002030] | marine biome [ENVO_00000447] | brackish water [ENVO_00002019] |
+
+
+| lib_layout | target_gene | target_subfragment | seq_meth       | sop                       |
+|------------|-------------|--------------------|----------------|---------------------------|
+| paired     | 16S rRNA    | V3-V4              | Illumina MiSeq | https://nf-co.re/ampliseq |
+| paired     | 16S rRNA    | V3-V4              | Illumina MiSeq | https://nf-co.re/ampliseq |
+| paired     | 16S rRNA    | V3-V4              | Illumina MiSeq | https://nf-co.re/ampliseq |
+
+
+| pcr_primer_forward | pcr_primer_reverse    | pcr_primer_name_forward | pcr_primer_name_reverse | DNA_sequence           |
+|--------------------|-----------------------|-------------------------|-------------------------|------------------------|
+| CCTACGGGNGGCWGCAG  | GACTACHVGGGTATCTAATCC | 341                     | 805R                    | TCGAGAATTTTTCACAATG... |
+| CCTACGGGNGGCWGCAG  | GACTACHVGGGTATCTAATCC | 341                     | 805R                    | TCGAGAATTTTTCACAATG... |
+| CCTACGGGNGGCWGCAG  | GACTACHVGGGTATCTAATCC | 341                     | 805R                    | TGGGGAATCTTGCGCAATG... |
+
+
+Finally, this dataset also include water temperature and salinity measurements, which are provided in an **extendedMeasurementOrFact** extension file:
+
+| measurementID                | occurrenceID                                      | measurementType | measurementValue | measurementUnit |
+|------------------------------|---------------------------------------------------|-----------------|------------------|-----------------|
+| SBDI-ASV-3:16S_1:temperature | SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730 | temperature     | 16.9             | °C              |
+| SBDI-ASV-3:16S_1:salinity    | SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730 | salinity        | 7.25             | psu             |
+| SBDI-ASV-3:16S_1:temperature | SBDI-ASV-3:16S_1:1ead98754d34073a4606f7ff1e94126e | temperature     | 16.9             | °C              |
