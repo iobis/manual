@@ -47,6 +47,7 @@ breadcrumbs: manual
 
 In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension.
 
+<img src="/images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-50"/>
 <p class="caption-70">Figure: A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.</p>
 
 First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using `eventID` and `parentEventID`. As the survey sites has a fixed location we can populate `decimalLongitude` and `decimalLatitude` at the top level event. The zones have different depths, so `minimumDepthInMeters` and `maximumDepthInMeters` are populated at the zone level. Finally, as not all sampling was done on the same day, `eventDate` is populated at the quadrat and transect level.
@@ -105,6 +106,7 @@ And finally there is the MeasurementOrFact extension table, which has attributes
 
 In this section we will explore how to encode a survey data set into Darwin Core using the ENV-DATA approach. As an example, sections of the actual data set of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), is used.
 
+<img src="/images/ENV_example_CETUS.png" class="img-responsive img-responsive-50"/>
 Figure: A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions**.</p>
 
 Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using `eventID` and `parentEventID`. As the survey observations were made at locations of Cetacean sightings instead of fixed locations, we can populate `footprintWKT` and `footprintSRS` as location information. Not all sampling was done on the same day, therefore `eventDate` is populated at the transect level.
