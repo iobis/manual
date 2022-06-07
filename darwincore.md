@@ -141,9 +141,9 @@ OBIS recommends providing information about how an identification was made, for 
 
 If the record represents a nomenclatural type specimen, the term `typeStatus` can be used, e.g. for holotype, syntype, etc. 
 
-In case of uncertain identifications, and the scientific name contains qualifiers such as _cf._, _?_ or _aff._, then this name should go in `identificationQualifier`, and `scientificName` should contain the name of the lowest possible taxon rank that refers to the most accurate identification. E.g. if the specimen was accurately identified down to genus level, but not species level, then the scientificName should contain the name of the genus, the scientificNameID should contain the LSID the genus and the identificationQualifier should contain the uncertain species name combined with _?_ or other qualifiers.    
+In case of uncertain identifications, and the scientific name contains qualifiers such as _cf._, _?_ or _aff._, then this name should go in `identificationQualifier`, and `scientificName` should contain the name of the lowest possible taxon rank that refers to the most accurate identification. E.g. if the specimen was accurately identified down to genus level, but not species level, then the scientificName should contain the name of the genus, the scientificNameID should contain the LSID the genus and the `identificationQualifier` should contain the uncertain species name combined with _?_ or other qualifiers. Below are two examples:
 
-Example: 
+Example using `identificationQualifier`: 
 
 ```
    scientificName   scientificNameAuthorship                          scientificNameID   taxonRank identificationQualifier
@@ -151,6 +151,25 @@ Example:
 Lanice conchilega               Pallas, 1766 urn:lsid:marinespecies.org:taxname:131495     species 
             Gadus             Linnaeus, 1758 urn:lsid:marinespecies.org:taxname:125732       genus             cf. morhua
 ```         
+
+Example using full taxonomy:
+
+```
+| scientificNameID                          | scientificName        | kingdom  | phylum   | class      |
+|-------------------------------------------|-----------------------|----------|----------|------------|
+| urn:lsid:marinespecies.org:taxname:142004 | Yoldiella nana        | Animalia | Mollusca | Bivalvia   |
+| urn:lsid:marinespecies.org:taxname:140584 | Ennucula tenuis       | Animalia | Mollusca | Bivalvia   |
+| urn:lsid:marinespecies.org:taxname:131573 | Terebellides stroemii | Animalia | Annelida | Polychaeta |
+```
+
+```
+| order       | family           | genus        | specificEpithet | scientificNameAuthorship |
+|-------------|------------------|--------------|-----------------|--------------------------|
+| Nuculanoida | Yoldiidae        | Yoldiella    | nana            | (Sars M., 1865)          |
+| Nuculoida   | Nuculidae        | Ennucula     | tenuis          | (Montagu, 1808)          |
+| Terebellida | Trichobranchidae | Terebellides | stroemii        | Sars, 1835               |
+```
+_Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/resource?r=largenet_k2)._
 
 <a class="anchor" name="occurrence"></a>
 
