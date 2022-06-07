@@ -146,21 +146,11 @@ In case of uncertain identifications, and the scientific name contains qualifier
 Example: 
 
 ```
-| scientificNameID                          | scientificName        | kingdom  | phylum   | class      |
-|-------------------------------------------|-----------------------|----------|----------|------------|
-| urn:lsid:marinespecies.org:taxname:142004 | Yoldiella nana        | Animalia | Mollusca | Bivalvia   |
-| urn:lsid:marinespecies.org:taxname:140584 | Ennucula tenuis       | Animalia | Mollusca | Bivalvia   |
-| urn:lsid:marinespecies.org:taxname:131573 | Terebellides stroemii | Animalia | Annelida | Polychaeta |
-```
-
-```
-| order       | family           | genus        | specificEpithet | scientificNameAuthorship |
-|-------------|------------------|--------------|-----------------|--------------------------|
-| Nuculanoida | Yoldiidae        | Yoldiella    | nana            | (Sars M., 1865)          |
-| Nuculoida   | Nuculidae        | Ennucula     | tenuis          | (Montagu, 1808)          |
-| Terebellida | Trichobranchidae | Terebellides | stroemii        | Sars, 1835               |
-```
-_Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/resource?r=largenet_k2)._
+   scientificName   scientificNameAuthorship                          scientificNameID   taxonRank identificationQualifier
+----------------- -------------------------- ----------------------------------------- ----------- ----------------------
+Lanice conchilega               Pallas, 1766 urn:lsid:marinespecies.org:taxname:131495     species 
+            Gadus             Linnaeus, 1758 urn:lsid:marinespecies.org:taxname:125732       genus             cf. morhua
+```         
 
 <a class="anchor" name="occurrence"></a>
 
