@@ -19,7 +19,7 @@ The OBIS node manual is a dynamic document and is revised on a regular basis. Su
 
 ## Guidelines on the sharing and use of data in OBIS
 
-It is important that our data providers as well as all the data users are aware and agree on the [OBIS guidelines on the sharing and use of data in OBIS](policy), which was adoped at the [4th OBIS Steering Group](https://obis.org/about/sg-obis-4).
+It is important that our data providers as well as all the data users are aware and agree on the [OBIS guidelines on the sharing and use of data in OBIS](policy.html), which was adoped at the [4th OBIS Steering Group](https://obis.org/about/sg-obis-4).
 
 ## Acknowledgements
 

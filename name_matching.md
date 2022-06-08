@@ -4,7 +4,7 @@ Three authoritative taxonomic lists are currently used in OBIS: the World Regist
 
 The OBIS node managers agreed to match all the scientific names in their datasets according to the following Name Matching workflow.
 
-<img src="../images/namematchingstrategy.png" width="400" />
+<img src="images/namematchingstrategy.png" width="400" />
 
 #### Step 1: Match with WoRMS 
 

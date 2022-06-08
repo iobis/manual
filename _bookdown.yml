@@ -1,5 +1,6 @@
 rmd_files:
   - index.Rmd
+  - policy.md
   - contribute.md
   - nodes.md
   - data_standards.md

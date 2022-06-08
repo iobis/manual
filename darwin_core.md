@@ -54,11 +54,11 @@ The following DwC terms are related to the Class _Occurrence_:
 - occurrenceID
 - occurrenceStatus
 - recordedBy
-- individualCount (OBIS recommends to add measurements to [eMoF](../dataformat/#emof))
-- organismQuantity (OBIS recommends to add measurements to [eMoF](../dataformat/#emof))
-- organismQuantityType (OBIS recommends to add measurements to [eMoF](../dataformat/#emof))
-- sex (OBIS recommends to add measurements to [eMoF](..dataformat/#emof))
-- lifeStage (OBIS recommends to add measurements to [eMoF](../dataformat/#emof))
+- individualCount (OBIS recommends to add measurements to [eMoF](../data_format/#emof))
+- organismQuantity (OBIS recommends to add measurements to [eMoF](../data_format/#emof))
+- organismQuantityType (OBIS recommends to add measurements to [eMoF](../data_format/#emof))
+- sex (OBIS recommends to add measurements to [eMoF](..data_format/#emof))
+- lifeStage (OBIS recommends to add measurements to [eMoF](../data_format/#emof))
 - behavior
 - associatedTaxa
 - occurrenceRemarks
@@ -103,10 +103,10 @@ The following DwC terms are related to the Class _Event_:
 - eventDate
 - type
 - habitat
-- samplingProtocol (OBIS recommends to add sampling facts to [eMoF](../dataformat/#emof))
-- sampleSizeValue (OBIS recommends to add sampling facts to [eMoF](../dataformat/#emof))
-- SampleSizeUnit (OBIS recommends to add sampling facts to [eMoF](../dataformat/#emof))
-- samplingEffort (OBIS recommends to add sampling facts to [eMoF](../dataformat/#emof))
+- samplingProtocol (OBIS recommends to add sampling facts to [eMoF](../data_format/#emof))
+- sampleSizeValue (OBIS recommends to add sampling facts to [eMoF](../data_format/#emof))
+- SampleSizeUnit (OBIS recommends to add sampling facts to [eMoF](../data_format/#emof))
+- samplingEffort (OBIS recommends to add sampling facts to [eMoF](../data_format/#emof))
 
 The following DwC terms are related to the Class _MaterialSample_:
 
@@ -158,11 +158,11 @@ _Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/re
 
 ##### Occurrence
 
-`occurrenceID` (required term) is an identifier for the occurrence record and should be persistent and globally unique. If the dataset does not yet contain (globally unique) occurrenceIDs, then they should be created. There are no guidelines yet on designing the persistence of this ID, the level of uniqueness (from dataset to global) and the precise algorithm and format for generating the ID, but in the absence of a persistent globally unique identifier, one could be constructed by combining the `institutionCode`, the `collectionCode` and the `catalogNumber` (or autonumber in the absence of a catalogNumber), see further below. Note that the inclusion of occurrenceID is also necessary for datasets in the [OBIS-ENV-DATA](../dataformat#obis-env-data) format.
+`occurrenceID` (required term) is an identifier for the occurrence record and should be persistent and globally unique. If the dataset does not yet contain (globally unique) occurrenceIDs, then they should be created. There are no guidelines yet on designing the persistence of this ID, the level of uniqueness (from dataset to global) and the precise algorithm and format for generating the ID, but in the absence of a persistent globally unique identifier, one could be constructed by combining the `institutionCode`, the `collectionCode` and the `catalogNumber` (or autonumber in the absence of a catalogNumber), see further below. Note that the inclusion of occurrenceID is also necessary for datasets in the [OBIS-ENV-DATA](../data_format#obis-env-data) format.
 
 `occurrenceStatus` (required term) is a statement about the presence or absence of a taxon at a location. It is an important term, because it allows us to distinguish between presence and absence records. It is a required term and should be filled in with either `present` or `absent`.
 
-A few terms related to quantity: `organismQuantity` and `organismQuantityType`, have been added to the TDWG ratified Darwin Core. This is a lot more versatile than the older `individualCount` field. However, OBIS recommends to use the [Extended MeasurementorFact extension](../dataformat/#emof) for quantitative measurements because of the standardization of terms and the fact that you can link these measurements to sampling events and factual sampling information. 
+A few terms related to quantity: `organismQuantity` and `organismQuantityType`, have been added to the TDWG ratified Darwin Core. This is a lot more versatile than the older `individualCount` field. However, OBIS recommends to use the [Extended MeasurementorFact extension](../data_format/#emof) for quantitative measurements because of the standardization of terms and the fact that you can link these measurements to sampling events and factual sampling information. 
 
 Please take note that OBIS recommends all quantitative measurements and sampling facts to be treated in the `ExtendedMeasurementOrFact` extension and not in the Darwin Core files.
 
@@ -303,6 +303,6 @@ ISO 8601 [durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) should no
 
 ##### Sampling
 
-Information on `sampleSizeValue` and `sampleSizeUnit` is very important when an organism quantity is specified. However, with [OBIS-ENV-DATA](../dataformat/) it was felt that the extended MeasurementorFact ([eMoF](http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml)) extension would be better suited than the DwC Event Core to store the sampled area and/or volume because in some cases sampleSize by itself may not be detailed enough to allow interpretation of the sample. For instance, in the case of a plankton tow, the volume of water that passed through the net is relevant. In case of Niskin bottles, the volume of sieved water is more relevant than the actual volume in the bottle. In these examples, as well as generally when recording sampling effort for all protocols, eMoF enables greater flexibility to define parameters, as well as the ability to describe the entire sample and treatment protocol through multiple parameters. eMoF also allows you to standardize your terms to a controlled vocabulary.
+Information on `sampleSizeValue` and `sampleSizeUnit` is very important when an organism quantity is specified. However, with [OBIS-ENV-DATA](../data_format/) it was felt that the extended MeasurementorFact ([eMoF](http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml)) extension would be better suited than the DwC Event Core to store the sampled area and/or volume because in some cases sampleSize by itself may not be detailed enough to allow interpretation of the sample. For instance, in the case of a plankton tow, the volume of water that passed through the net is relevant. In case of Niskin bottles, the volume of sieved water is more relevant than the actual volume in the bottle. In these examples, as well as generally when recording sampling effort for all protocols, eMoF enables greater flexibility to define parameters, as well as the ability to describe the entire sample and treatment protocol through multiple parameters. eMoF also allows you to standardize your terms to a controlled vocabulary.
 
 The next chapter deals with the metadata (description of the dataset) in [Ecological Metadata Language](../eml). 
