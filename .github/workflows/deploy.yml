@@ -17,6 +17,11 @@ jobs:
         run: Rscript -e 'install.packages(c("rmarkdown", "bookdown"))'
       - name: Render Book
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
+      - name: Create cname file
+        uses: finnp/create-file-action@master
+        env:
+          FILE_NAME: "./_book/CNAME"
+          FILE_DATA: "manual.obis.org"
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3.6.1
         with:
