@@ -1,15 +1,6 @@
----
-title: Darwin Core Archive and dataset structure
-shorttitle: Darwin Core Archive and dataset structure
-layout: page
-lang: en
-identifier: dataformat
-breadcrumbs: manual
----
+### Darwin Core Archive and dataset structure
 
-# Darwin Core Archive and dataset structure
-
-#### Contents
+**Contents**
 
 - [Darwin Core Archive](#dwca)
 - [OBIS holds more than just species occurrences: the ENV-DATA approach](#envdata)
@@ -21,9 +12,7 @@ breadcrumbs: manual
 - [When to use Occurrence Core](#whenOccurrence)
 - [Recommended reading](#reading)
 
-<a class="anchor" name="dwca"></a>
-
-## Darwin Core Archive
+#### Darwin Core Archive
 
 Darwin Core Archive (DwC-A) is the standard for packaging and publishing biodiversity data using Darwin Core terms. It is the preferred format for publishing data in OBIS and GBIF. The format is described in the [Darwin Core text guide](https://dwc.tdwg.org/text/). A Darwin Core Archive contains a number of text files, including data tables formatted as CSV.
 
@@ -31,12 +20,10 @@ The conceptual data model of the Darwin Core Archive is a star schema with a sin
 
 Besides data tables, a Darwin Core Archive also contains two XML files: one file which describes the archive and data file structure (`meta.xml`), and one file which contains the dataset's metadata (`eml.xml`).
 
-<img src="/images/dwca.png" class="img-responsive img-responsive-50"/>
+<img src="images/dwca.png" class="img-responsive img-responsive-50"/>
 <p class="caption-50">Figure: structure of a Darwin Core Archive.</p>
 
-<a class="anchor" name="envdata"></a>
-
-## OBIS holds more than just species occurrences: the ENV-DATA approach
+#### OBIS holds more than just species occurrences: the ENV-DATA approach
 
 Data collected as part of marine biological research often include measurements of habitat features (such as physical and chemical parameters of the environment), biotic and biometric measurements (such as body size, abundance, biomass), as wel as details regarding the nature of the sampling or observation methods, equipment, and sampling effort.
 
@@ -44,9 +31,7 @@ In the past, OBIS relied solely on the [Occurrence Core](http://rs.gbif.org/core
 
 With the release and adoption of a new core type [Event Core](http://rs.gbif.org/core/dwc_event_2015_05_29.xml) it became possible to associate measurements with nested events (such as cruises, stations, and samples), but the restrictive star schema of Darwin Core archive prohibited associating measurements with the event records in the Event core as well as with the occurrence records in the Occurrence extension. For this reason an extended version of the existing MeasurementOrFact extension was created.
 
-<a class="anchor" name="emof"></a>
-
-### ExtendedMeasurementOrFact Extension (eMoF)
+##### ExtendedMeasurementOrFact Extension (eMoF)
 
 As part of the IODE pilot project [Expanding OBIS with environmental data OBIS-ENV-DATA](https://www.iode.org/index.php?option=com_content&view=article&id=463&Itemid=100200), OBIS introduced a custom [ExtendedMeasurementOrFact](http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) or eMoF extension, which extends the existing [MeasurementOrFact](http://rs.gbif.org/extension/dwc/measurements_or_facts.xml) extension with 4 new terms:
 
@@ -63,18 +48,16 @@ The `occurrenceID` term is used to circumvent the limitations of the star schema
 - abiotic measurements (e.g. temperature, salinity, oxygen, sediment grain size, habitat features)
 - facts documenting the sampling activity (e.g. sampling device, sampled area, sampled volume, sieve mesh size).
 
-<img src="/images/EventCoreSchema.png" class="img-responsive img-responsive-50"/>
+<img src="images/EventCoreSchema.png" class="img-responsive img-responsive-50"/>
 <p class="caption-50">Figure: Overview of an OBIS-ENV-DATA format. Sampling parameters, abiotic measurements, and occurrences are linked to events using the eventID (full lines). Biotic measurements are linked to occurrences using the new occurrenceID field of the ExtendedMeasurementOrFact Extension (dashed lines).</p>
 
-<a class="anchor" name="vocab"></a>
-
-### MeasurementOrFact vocabularies
+##### MeasurementOrFact vocabularies
 
 The MeasurementOrFact terms `measurementType`, `measurementValue` and `measurementUnit` are completely unconstrained and can be populated with free text annotation. While free text offers the advantage of capturing complex and as yet unclassified information, the inevitable semantic heterogeneity (e.g. of spelling or wording) becomes a major challenge for effective data integration and analysis. Hence, OBIS added 3 new terms: `measurementTypeID`, `measurementValueID` and `measurementUnitID` to standardise the measurement types, values and units. Note that `measurementValueID` is not used for standardizing numeric measurements. The three new terms should be populated using controlled vocabularies referenced using Unique Resource Identifiers (URIs). OBIS recommends to use the internationally recognized [NERC Vocabulary Server](http://www.bodc.ac.uk/resources/products/web_services/vocab/), developed by the British Oceanographic Data Centre (BODC), which can be searched through [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search).
 
 The following vocabularies are recommended for populating `measurementTypeID`, `measurementValueID`, and `measurementUnitID`:
 
-#### measurementTypeID
+###### measurementTypeID
 
 - BODC Parameter Usage Vocabulary (P01)
   - documentation: [https://github.com/nvs-vocabs/P01](https://github.com/nvs-vocabs/P01)
@@ -84,7 +67,7 @@ The following vocabularies are recommended for populating `measurementTypeID`, `
   - vocabulary: [http://vocab.nerc.ac.uk/collection/Q01/current/](http://vocab.nerc.ac.uk/collection/Q01/current/)
   - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/)
 
-#### measurementValueID
+###### measurementValueID
 
 - Sampling instruments and sensors (SeaVoX Device Catalogue)
   - documentation: [https://github.com/nvs-vocabs/L22](https://github.com/nvs-vocabs/L22)
@@ -109,23 +92,18 @@ The following vocabularies are recommended for populating `measurementTypeID`, `
   - DOI
   - Handle for publications on IOC's [Ocean Best Practices repository](http://www.oceanbestpractices.net/), for example: [http://hdl.handle.net/11329/304](http://hdl.handle.net/11329/304)
 
-#### MeasurementUnitID
+###### MeasurementUnitID
 
 - Units
   - documentation: [https://github.com/nvs-vocabs/P06](https://github.com/nvs-vocabs/P06)
   - vocabulary: [http://vocab.nerc.ac.uk/collection/P06/current](http://vocab.nerc.ac.uk/collection/P06/current)
   - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/)
 
-<a class="anchor" name="dna"></a>
-
-### eDNA & DNA derived data Extension
+##### eDNA & DNA derived data Extension
 
 DNA derived data are increasingly being used to document taxon occurrences. To ensure these data are useful to the broadest possible community, GBIF published a guide entitled [Publishing DNA-derived data through biodiversity data platforms](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/). This guide is supported by the DNA derived data extension for Darwin Core, which incorporates MIxS terms into the Darwin Core standard. eDNA and DNA derived data is linked to occurrence data with the use of `occurrenceID` and/ or `eventID`. Refer to the [Examples: ENV-DATA and DNA derived data](https://manual.obis.org/examples/#example_edna) for use case examples of eDNA and DNA derived data. 
 
-
-<a class="anchor" name="habitattypes"></a>
-
-### A special case: habitat types
+##### A special case: habitat types
 
 Event Core is perfect for enriching OBIS with interpreted information such as biological community, biotope or habitat type (collectively referred to as 'habitats'). However, the unconstrained nature of the terms `measurementTypeID`, `measurementValueID`, and `measurementUnitID` leads to a risk that habitats measurements are structured inconsistently within the Darwin Core Archive standard and as a result, are not easily discoverable, understood or usable.
 
@@ -142,18 +120,14 @@ Please consult [Duncan et al. (2021)](https://www.emodnet-seabedhabitats.eu/reso
 - recommended vocabularies and terms for common habitat classification systems
 - example eMoF table 
 
-<a class="anchor" name="whenEvent"></a> 
-
-### When to use Event Core
+##### When to use Event Core
 
 * When the dataset contains abiotic measurements, or other biological measurements which are related to an entire sample (not a single specimen)
 * When specific details are known about how a biological sample was taken and processed. These details can be expressed using the eMoF and the newly developed [Q01 vocabulary](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/).
 
 Event Core should be used in combination with the Occurrence Extension and the eMoF.
 
-<a class="anchor" name="whenOccurrence"></a> 
-
-### When to use Occurrence Core
+##### When to use Occurrence Core
 
 * No information on how the data was sampled or samples were processed.
 * No abiotic measurements are taken or provided
@@ -162,9 +136,7 @@ Event Core should be used in combination with the Occurrence Extension and the e
 
 Datasets formatted in Occurrence Core can use the eMoF Extension for biotic measurements or facts.
 
-<a class="anchor" name="reading"></a> 
-
-### Recommended reading
+##### Recommended reading
 
 * [De Pooter et al. 2017](https://bdj.pensoft.net/articles.php?id=10989). Toward a new data standard for combined marine biological and environmental datasets - expanding OBIS beyond species occurrences. Biodiversity Data Journal 5: e10989. hdl.handle.net/10.3897/BDJ.5.e10989
 * [Duncan et al. (2021)](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5). A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension. EMODnet report.

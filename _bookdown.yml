@@ -1,0 +1,13 @@
+rmd_files:
+  - index.Rmd
+  - contribute.md
+  - nodes.md
+  - data_standards.md
+  - darwincore.md
+  - eml.md
+  - data_format.md
+  - data_publication.md
+  - data_qc.md
+  - name_matching.md
+  - lifewatch_qc.md
+  - access.md

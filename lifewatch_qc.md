@@ -1,21 +1,12 @@
----
-title: Geographic and data format quality control
-shorttitle: Geographic and data format quality control
-layout: page
-lang: en
-identifier: lifewatchqc
-breadcrumbs: manual
----
-
-# Geographic and data format quality control
+### Geographic and data format quality control
 
 These Data validation and QC services are available on the LifeWatch portal at [http://www.lifewatch.be/data-services](http://www.lifewatch.be/data-services). 
 
-## Geographical service
+#### Geographical service
 
 This service allows to upload a file and to plot the listed coordinates on a map. Using this web service does not require knowledge of GIS. This service allows a visual check of the available locations and makes it possible to easily identify points on land or outside the scope or study area. Geographic data are essential for OBIS and the experience is that a lot of these data is incomplete or contains errors. A visual check of the position of the sampling locations is thus a simple way of filtering out obvious errors and improving the data quality. Latitude and longitude need to be in WGS84, decimal degrees. This format is also necessary for the OBIS Schema and for uploading the dataset to IPT (Darwin Core). 
 
-## OBIS data format validation
+#### OBIS data format validation
 
 This is the most extensive check currently available and is available for data that are structured according to the OBIS Schema. This validation service checks the following items: 
 

@@ -1,15 +1,6 @@
----
-title: "Darwin Core"
-shorttitle: Darwin Core
-layout: page
-lang: en
-identifier: darwincore
-breadcrumbs: manual
----
+### Darwin Core
 
-# Darwin Core
-
-#### Contents
+**Contents**
 
 - [Introduction to Darwin Core](#intro)
 - [Darwin Core terms](#terms)  
@@ -22,9 +13,7 @@ breadcrumbs: manual
     - [Time](#time)  
     - [Sampling](#sampling)  
 
-<a class="anchor" name="intro"></a>
-
-## Introduction to Darwin Core
+#### Introduction to Darwin Core
 
 [Darwin Core](http://rs.tdwg.org/dwc/) is a body of standards for biodiversity informatics. It provides stable [terms](https://dwc.tdwg.org/terms/) and vocabularies for sharing biodiversity data. Darwin Core is maintained by [TDWG](http://tdwg.org/) (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases).
 
@@ -36,7 +25,7 @@ In December 2013, the [3rd session of the IODE Steering Group for OBIS](http://i
 
 <a class="anchor" name="terms"></a>
 
-## Darwin Core terms
+#### Darwin Core terms
 
 DwC terms correspond to the column names of your dataset. A list of all possible Darwin Core terms can be found on [TDWG](https://dwc.tdwg.org/terms/). Below is an overview of the most relevant Darwin Core terms to consider when contributing to OBIS, with guidelines regarding their use. 
 
@@ -123,13 +112,9 @@ The following DwC terms are related to the Class _MaterialSample_:
 
 - materialSampleID
 
-<a class="anchor" name="guidelines"></a>
+#### Darwin Core guidelines 
 
-## Darwin Core guidelines 
-
-<a class="anchor" name="taxonomy"></a>
-
-### Taxonomy and identification 
+##### Taxonomy and identification 
 
 `scientificName` (required term) should always contain the originally recorded scientific name, even if the name is currently a synomym. This is necessary to be able to track back records to the original dataset. The name should be at the lowest possible taxonomic rank, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc are also acceptable. We recommend to not include authorship in `scientificName`, and only use `scientificNameAuthorship` for that purpose. The `scientificName` term should only contain the name and not identification qualifications (such as ?, confer or affinity), which should instead be supplied in the `IdentificationQualifier` term, see example below. `taxonRemarks` can capture comments or notes about the taxon or name.
 
@@ -162,9 +147,7 @@ Example:
 ```
 _Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/resource?r=largenet_k2)._
 
-<a class="anchor" name="occurrence"></a>
-
-### Occurrence
+##### Occurrence
 
 `occurrenceID` (required term) is an identifier for the occurrence record and should be persistent and globally unique. If the dataset does not yet contain (globally unique) occurrenceIDs, then they should be created. There are no guidelines yet on designing the persistence of this ID, the level of uniqueness (from dataset to global) and the precise algorithm and format for generating the ID, but in the absence of a persistent globally unique identifier, one could be constructed by combining the `institutionCode`, the `collectionCode` and the `catalogNumber` (or autonumber in the absence of a catalogNumber), see further below. Note that the inclusion of occurrenceID is also necessary for datasets in the [OBIS-ENV-DATA](../dataformat#obis-env-data) format.
 
@@ -195,9 +178,7 @@ Example:
 ```
 _Data from [A summary of benthic studies in the sluice dock of Ostend during 1976-1981](http://ipt.vliz.be/eurobis/resource?r=summary_of_benthic_studies_in_the_sluice_dock_ostend_during_1976-1981)._
 
-<a class="anchor" name="records"></a>
-
-### Record level terms
+##### Record level terms
 
 `basisOfRecord` (required term) specifies the nature of the record, i.e. whether the occurrence record is based on a stored specimen or an observation. In case the specimen is collected and stored in a collection (e.g. at a museum, university, research institute), the options are `PreservedSpecimen` (e.g. preserved in ethanol, tissue etc.), `FossilSpecimen` (fossil, which allows OBIS to make the distinction between the date of collection and the time period the specimen was assumed alive) or `LivingSpecimen` (an intentionally kept/cultivated living specimen e.g. in an aquarium or culture collection). In case no specimen is deposited, the basis of record is either `HumanObservation` (e.g bird sighting, benthic sample but specimens were discarded after counting), or `MachineObservation` (e.g. for occurrences based on automated sensors such as DNA sequencers, image recognition etc). 
 
@@ -234,7 +215,7 @@ _Data from [Algal community on the pneumatophores of mangrove trees of Gazi Bay 
 
 <a class="anchor" name="location"></a>
 
-### Location
+##### Location
 
 `decimalLatitude` and `decimalLongitude` (required terms) are the geographic latitude and longitude (in decimal degrees), using the spatial reference system given in `geodeticDatum` of the geographic center of a Location. The number of decimals should be appropriate for the level of uncertainty in `coordinateUncertaintyInMeters` (at least within an order of magnitude). `coordinateUncertaintyInMeters` is the radius of the smallest circle around the given position containing the whole location. Regarding `decimalLatitude`, positive values are north of the Equator, negative values are south of it. All values lie between -90 and 90, inclusive. Regarding `decimalLongitude`, positive values are east of the Greenwich Meridian, negative values are west of it. All values lie between -180 and 180, inclusive.
 
@@ -269,9 +250,7 @@ Example:
 ```
 _Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018](http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018)._
 
-<a class="anchor" name="event"></a>
-
-### Event
+##### Event
 
 `eventID` is an identifier for the sampling or observation event. `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs). `eventID` can be used for replicate samples or sub-samples. Make sure each replicate sample receives a unique event ID, which could be based on the unique sample ID in your dataset (which can also be in recorded in `materialSampleID`). OBIS does not need to have separate `eventID`s and `materialSampleID`s, rather OBIS can treat these two terms as equivalent. The unique sample ID for each physical sample or subsample at each location and time is highly recommended information for sample tracebility and data provenance. Repeating the parentEventID in the child event (use `:` as delimiter) will make the structure of the dataset easier to understand. See also [De Pooter et al. 2017](https://bdj.pensoft.net/articles.php?id=10989&instance_id=3385375) for an example of an event hierarchy in a complex benthos dataset. 
 
@@ -290,9 +269,7 @@ Example:
 ```
 _Data from [Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)](http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10)._
 
-<a class="anchor" name="time"></a>
-
-### Time
+##### Time
 
 The date and time at which an occurrence was recorded goes in `eventDate`. This term uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601). OBIS recommends using the extended ISO 8601 format with hyphens.
 
@@ -315,9 +292,7 @@ Besides year, month and day numbers, ISO 8601 also supports ordinal dates (year 
 
 ISO 8601 [durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) should not be used.
 
-<a class="anchor" name="sampling"></a>
-
-### Sampling
+##### Sampling
 
 Information on `sampleSizeValue` and `sampleSizeUnit` is very important when an organism quantity is specified. However, with [OBIS-ENV-DATA](../dataformat/) it was felt that the extended MeasurementorFact ([eMoF](http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml)) extension would be better suited than the DwC Event Core to store the sampled area and/or volume because in some cases sampleSize by itself may not be detailed enough to allow interpretation of the sample. For instance, in the case of a plankton tow, the volume of water that passed through the net is relevant. In case of Niskin bottles, the volume of sieved water is more relevant than the actual volume in the bottle. In these examples, as well as generally when recording sampling effort for all protocols, eMoF enables greater flexibility to define parameters, as well as the ability to describe the entire sample and treatment protocol through multiple parameters. eMoF also allows you to standardize your terms to a controlled vocabulary.
 
