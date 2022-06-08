@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.4.2 Geographic and data format quality control | The OBIS manual</title>
+  <meta name="description" content="2.4.2 Geographic and data format quality control | The OBIS manual" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.4.2 Geographic and data format quality control | The OBIS manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.4.2 Geographic and data format quality control | The OBIS manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="name_matching.html"/>
+<link rel="next" href="access.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#guidelines-on-the-sharing-and-use-of-data-in-obis"><i class="fa fa-check"></i><b>1.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i><b>1.2</b> Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> Contribute data to OBIS</a><ul>
+<li class="chapter" data-level="2.1" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>2.1</b> OBIS nodes</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>2.1.1</b> Terms of Reference of OBIS nodes</a></li>
+<li class="chapter" data-level="2.1.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>2.1.2</b> How to become an OBIS node</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.2</b> Biodiversity data standards</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>2.2.1</b> Darwin Core</a></li>
+<li class="chapter" data-level="2.2.2" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.2.2</b> Ecological Metadata Language</a></li>
+<li class="chapter" data-level="2.2.3" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>2.2.3</b> Darwin Core Archive and dataset structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>2.3</b> Data publication and sharing</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="data_publication.html"><a href="data_publication.html#ipt"><i class="fa fa-check"></i><b>2.3.1</b> IPT</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data_qc.html"><a href="data_qc.html"><i class="fa fa-check"></i><b>2.4</b> Data quality control</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>2.4.1</b> Name Matching Strategy for taxonomic quality control</a></li>
+<li class="chapter" data-level="2.4.2" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>2.4.2</b> Geographic and data format quality control</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>3</b> Data access</a><ul>
+<li class="chapter" data-level="3.1" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>3.1</b> Mapper</a></li>
+<li class="chapter" data-level="3.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>3.2</b> R package</a></li>
+<li class="chapter" data-level="3.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>3.3</b> API</a></li>
+<li class="chapter" data-level="3.4" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>3.4</b> Full exports</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The OBIS manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="geographic-and-data-format-quality-control" class="section level3 hasAnchor">
+<h3><span class="header-section-number">2.4.2</span> Geographic and data format quality control<a href="lifewatch_qc.html#geographic-and-data-format-quality-control" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>These Data validation and QC services are available on the LifeWatch portal at <a href="http://www.lifewatch.be/data-services">http://www.lifewatch.be/data-services</a>.</p>
+<div id="geographical-service" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.4.2.1</span> Geographical service<a href="lifewatch_qc.html#geographical-service" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This service allows to upload a file and to plot the listed coordinates on a map. Using this web service does not require knowledge of GIS. This service allows a visual check of the available locations and makes it possible to easily identify points on land or outside the scope or study area. Geographic data are essential for OBIS and the experience is that a lot of these data is incomplete or contains errors. A visual check of the position of the sampling locations is thus a simple way of filtering out obvious errors and improving the data quality. Latitude and longitude need to be in WGS84, decimal degrees. This format is also necessary for the OBIS Schema and for uploading the dataset to IPT (Darwin Core).</p>
+</div>
+<div id="obis-data-format-validation" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.4.2.2</span> OBIS data format validation<a href="lifewatch_qc.html#obis-data-format-validation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is the most extensive check currently available and is available for data that are structured according to the OBIS Schema. This validation service checks the following items:</p>
+<ul>
+<li>Are all mandatory fields completed, what are the missing fields?</li>
+<li>Are the coordinates in the correct format (decimal degrees, taking into account the minimum and maximum possible values)?</li>
+<li>Are the sampling points on land or in water?</li>
+<li>Is the information in the date-fields valid (e.g. month between 1-12)?</li>
+<li>Can the taxon name be matched with WoRMS?</li>
+</ul>
+<p>This tool undertakes several actions simultaneously. In a first step, this data service allows you to map your own column headers to the field names used in the OBIS Schema. When you then run the format validation service, the following actions are performed:</p>
+<ul>
+<li>A check of the mandatory fields of the OBIS Scheme. If mandatory fields would be missing, these will be listed separately, so you can complete them. Without these fields, the dataset cannot be accepted by the OBIS node.</li>
+<li>A listing of all the optional fields of the OBIS Scheme that are available in your file.</li>
+<li>Validation of the content of a number of fields:</li>
+<li>Latitude &amp; longitude:
+<ul>
+<li>Are the values inside the world limit? (yes/no);</li>
+<li>Are the values different from zero? (yes/no);</li>
+<li>Are the values situated in the marine environment (sea/ocean) (=prerequisite of a marine dataset)? (yes/no)</li>
+</ul></li>
+<li>Date-related fields:
+<ul>
+<li>Do the year-month-day fields form a valid date? (yes/no)</li>
+<li>Do the start- and end-date fields form a valid date? (yes/no)</li>
+</ul></li>
+<li>Scientific name:
+<ul>
+<li>Is the scientific name available in WoRMS? (yes/no)</li>
+<li>When yes:
+<ul>
+<li>Indication whether taxon is marine or not</li>
+<li>Indication whether taxon name is valid or not</li>
+<li>Indication of the taxonomic rank</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>After matching with WoRMS, the report gives a brief overview containing:</p>
+<ul>
+<li>the number of exact matches</li>
+<li>the number of fuzzy (=non-exact) matches</li>
+<li>the number of non-matches</li>
+<li>the number of errors that might have occurred during matching</li>
+</ul>
+<p>For each of the above steps, the result report lists the number of records that passes the check. The tool also makes a ‘grand total’ of these results, indicating if the quality of record is sufficient to be imported into OBIS, taking into account the results of the above mentioned checks.</p>
+<p>If the file contains fields that do not match the OBIS schema, these are also listed. Fields that cannot be mapped to the OBIS schema will not be uploaded in OBIS.</p>
+<p>After this data format check, a number of columns are added to the originally uploaded file, where the results of each step are listed. Each check is basically a yes/no question, which is translated to a 1 (yes) or 0 (no) value in the results file and is thus easy to interpret.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="name_matching.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="access.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
