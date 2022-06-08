@@ -3,7 +3,7 @@ rmd_files:
   - contribute.md
   - nodes.md
   - data_standards.md
-  - darwincore.md
+  - darwin_core.md
   - eml.md
   - data_format.md
   - data_publication.md

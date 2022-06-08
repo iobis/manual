@@ -9,12 +9,12 @@ OBIS nodes can accept any data files from its data sources or data providers, an
 - [Introduction](#intro)
 - [Installation](#installation)  
 - [Registration](#registration)
-- [Create a resource](#create)  
-- [Upload data](#upload)  
-- [Map to Darwin Core](#map)  
-- [Add metadata](#metadata)  
-- [Publish your data](#publish)  
-- [Publish your data as a dataset paper](#paper)
+- [Publish your data](#publish-your-data)  
+- [Upload data](#upload-data)  
+- [Map to Darwin Core](#map-your-data-to-darwin-core)  
+- [Add metadata](#add-metadata)  
+- [Publish your data](#publish-your-data-1)  
+- [Publish your data as a dataset paper](#publish-your-metadata-as-a-data-paper)
 
 #### Introduction
 

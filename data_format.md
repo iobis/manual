@@ -2,15 +2,15 @@
 
 **Contents**
 
-- [Darwin Core Archive](#dwca)
-- [OBIS holds more than just species occurrences: the ENV-DATA approach](#envdata)
-  - [ExtendedMeasurementOrFact Extension (eMoF)](#emof)
-     - [MeasurementOrFact vocabularies](#vocab)
-  - [eDNA & DNA derived data Extension](#dna)
-  - [A special case: habitat types](#habitattypes)
-- [When to use Event Core](#whenEvent)
-- [When to use Occurrence Core](#whenOccurrence)
-- [Recommended reading](#reading)
+- [Darwin Core Archive](#darwin-core-archive)
+- [OBIS holds more than just species occurrences: the ENV-DATA approach](#obis-holds-more-than-just-species-occurrences-the-env-data-approach)
+  - [ExtendedMeasurementOrFact Extension (eMoF)](#extendedmeasurementorfact-extension-emof)
+     - [MeasurementOrFact vocabularies](#measurementorfact-vocabularies)
+  - [eDNA & DNA derived data Extension](#edna-dna-derived-data-extension)
+  - [A special case: habitat types](#a-special-case-habitat-types)
+- [When to use Event Core](#when-to-use-event-core)
+- [When to use Occurrence Core](#when-to-use-occurrence-core)
+- [Recommended reading](#recommended-reading)
 
 #### Darwin Core Archive
 
