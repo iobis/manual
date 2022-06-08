@@ -54,11 +54,11 @@ The following DwC terms are related to the Class _Occurrence_:
 - occurrenceID
 - occurrenceStatus
 - recordedBy
-- individualCount (OBIS recommends to add measurements to [eMoF](../data_format/#emof))
-- organismQuantity (OBIS recommends to add measurements to [eMoF](../data_format/#emof))
-- organismQuantityType (OBIS recommends to add measurements to [eMoF](../data_format/#emof))
-- sex (OBIS recommends to add measurements to [eMoF](..data_format/#emof))
-- lifeStage (OBIS recommends to add measurements to [eMoF](../data_format/#emof))
+- individualCount (OBIS recommends to add measurements to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- organismQuantity (OBIS recommends to add measurements to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- organismQuantityType (OBIS recommends to add measurements to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- sex (OBIS recommends to add measurements to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- lifeStage (OBIS recommends to add measurements to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
 - behavior
 - associatedTaxa
 - occurrenceRemarks
@@ -103,10 +103,10 @@ The following DwC terms are related to the Class _Event_:
 - eventDate
 - type
 - habitat
-- samplingProtocol (OBIS recommends to add sampling facts to [eMoF](../data_format/#emof))
-- sampleSizeValue (OBIS recommends to add sampling facts to [eMoF](../data_format/#emof))
-- SampleSizeUnit (OBIS recommends to add sampling facts to [eMoF](../data_format/#emof))
-- samplingEffort (OBIS recommends to add sampling facts to [eMoF](../data_format/#emof))
+- samplingProtocol (OBIS recommends to add sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- sampleSizeValue (OBIS recommends to add sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- SampleSizeUnit (OBIS recommends to add sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- samplingEffort (OBIS recommends to add sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
 
 The following DwC terms are related to the Class _MaterialSample_:
 
@@ -162,7 +162,7 @@ _Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/re
 
 `occurrenceStatus` (required term) is a statement about the presence or absence of a taxon at a location. It is an important term, because it allows us to distinguish between presence and absence records. It is a required term and should be filled in with either `present` or `absent`.
 
-A few terms related to quantity: `organismQuantity` and `organismQuantityType`, have been added to the TDWG ratified Darwin Core. This is a lot more versatile than the older `individualCount` field. However, OBIS recommends to use the [Extended MeasurementorFact extension](../data_format/#emof) for quantitative measurements because of the standardization of terms and the fact that you can link these measurements to sampling events and factual sampling information. 
+A few terms related to quantity: `organismQuantity` and `organismQuantityType`, have been added to the TDWG ratified Darwin Core. This is a lot more versatile than the older `individualCount` field. However, OBIS recommends to use the [Extended MeasurementorFact extension](data_format.html#extendedmeasurementorfact-extension-emof) for quantitative measurements because of the standardization of terms and the fact that you can link these measurements to sampling events and factual sampling information. 
 
 Please take note that OBIS recommends all quantitative measurements and sampling facts to be treated in the `ExtendedMeasurementOrFact` extension and not in the Darwin Core files.
 
