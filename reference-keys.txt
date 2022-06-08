@@ -1,6 +1,12 @@
 introduction
 guidelines-on-the-sharing-and-use-of-data-in-obis
 acknowledgements
+data-policy
+guidelines-on-the-sharing-and-use-of-data-in-obis-1
+data-sharing-agreement
+data-use-agreement
+citations
+disclaimer
 contribute-data-to-obis
 obis-nodes
 terms-of-reference-of-obis-nodes
@@ -30,7 +36,7 @@ temporal-coverage
 keywords
 project
 sampling-methods
-citations
+citations-1
 bibliography
 collection-data
 external-links
