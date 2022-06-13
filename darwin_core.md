@@ -54,11 +54,11 @@ The following DwC terms are related to the Class _Occurrence_:
 - occurrenceID
 - occurrenceStatus
 - recordedBy
-- individualCount (OBIS recommends to add measurements to [eMoF](data_format.html#darwin-core-archive-and-dataset-structure))
-- organismQuantity (OBIS recommends to add measurements to [eMoF](data_format.html#darwin-core-archive-and-dataset-structure))
-- organismQuantityType (OBIS recommends to add measurements to [eMoF](data_format#darwin-core-archive-and-dataset-structure))
-- sex (OBIS recommends to add measurements to [eMoF](data_format#darwin-core-archive-and-dataset-structure))
-- lifeStage (OBIS recommends to add measurements to [eMoF](data_format#darwin-core-archive-and-dataset-structure))
+- individualCount (OBIS recommends to add measurements to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- organismQuantity (OBIS recommends to add measurements to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- organismQuantityType (OBIS recommends to add measurements to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- sex (OBIS recommends to add measurements to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- lifeStage (OBIS recommends to add measurements to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
 - behavior
 - associatedTaxa
 - occurrenceRemarks
@@ -103,10 +103,10 @@ The following DwC terms are related to the Class _Event_:
 - eventDate
 - type
 - habitat
-- samplingProtocol (OBIS recommends to add sampling facts to [eMoF](data_format.html#darwin-core-archive-and-dataset-structure))
-- sampleSizeValue (OBIS recommends to add sampling facts to [eMoF](data_format.html#darwin-core-archive-and-dataset-structure))
-- SampleSizeUnit (OBIS recommends to add sampling facts to [eMoF](data_format.html#darwin-core-archive-and-dataset-structure))
-- samplingEffort (OBIS recommends to add sampling facts to [eMoF](data_format.html#darwin-core-archive-and-dataset-structure))
+- samplingProtocol (OBIS recommends to add sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- sampleSizeValue (OBIS recommends to add sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- SampleSizeUnit (OBIS recommends to add sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
+- samplingEffort (OBIS recommends to add sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
 
 The following DwC terms are related to the Class _MaterialSample_:
 
