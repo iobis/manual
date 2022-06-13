@@ -162,7 +162,7 @@ _Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/re
 
 `occurrenceStatus` (required term) is a statement about the presence or absence of a taxon at a location. It is an important term, because it allows us to distinguish between presence and absence records. It is a required term and should be filled in with either `present` or `absent`.
 
-A few terms related to quantity: `organismQuantity` and `organismQuantityType`, have been added to the TDWG ratified Darwin Core. This is a lot more versatile than the older `individualCount` field. However, OBIS recommends to use the [Extended MeasurementorFact extension](../data_format/#emof) for quantitative measurements because of the standardization of terms and the fact that you can link these measurements to sampling events and factual sampling information. 
+A few terms related to quantity: `organismQuantity` and `organismQuantityType`, have been added to the TDWG ratified Darwin Core. This is a lot more versatile than the older `individualCount` field. However, OBIS recommends to use the [Extended MeasurementorFact extension](data_format.html#extendedmeasurementorfact-extension-emof) for quantitative measurements because of the standardization of terms and the fact that you can link these measurements to sampling events and factual sampling information. 
 
 Please take note that OBIS recommends all quantitative measurements and sampling facts to be treated in the `ExtendedMeasurementOrFact` extension and not in the Darwin Core files.
 
@@ -236,7 +236,7 @@ The name of the place or location can be provided in `locality`, and if possible
 
 A [Well-Known Text](https://en.wikipedia.org/wiki/Well-known_text) (WKT) representation of the shape of the location can be provided in `footprintWKT`. This is particularly useful for tracks, transects, tows, trawls, habitat extent or when an exact location is not known. WKT strings can be created using our [WKT tool](https://obis.org/maptool). This tool also calculates a midpoint and a radius, which can then be added to `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively. There is also an [R tool](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) to calculate the centroid and radius for WKT polygons. [wktmap.com](https://wktmap.com) can be used to visualize and share WKT strings.
 
-<img src="../images/wkttool2.png" class="img-responsive"/>
+<img src="images/wkttool2.png" class="img-responsive"/>
 
 Some examples of WKT strings:
 
