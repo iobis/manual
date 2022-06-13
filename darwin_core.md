@@ -236,7 +236,7 @@ The name of the place or location can be provided in `locality`, and if possible
 
 A [Well-Known Text](https://en.wikipedia.org/wiki/Well-known_text) (WKT) representation of the shape of the location can be provided in `footprintWKT`. This is particularly useful for tracks, transects, tows, trawls, habitat extent or when an exact location is not known. WKT strings can be created using our [WKT tool](https://obis.org/maptool). This tool also calculates a midpoint and a radius, which can then be added to `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively. There is also an [R tool](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) to calculate the centroid and radius for WKT polygons. [wktmap.com](https://wktmap.com) can be used to visualize and share WKT strings.
 
-<img src="../images/wkttool2.png" class="img-responsive"/>
+<img src="images/wkttool2.png" class="img-responsive"/>
 
 Some examples of WKT strings:
 
