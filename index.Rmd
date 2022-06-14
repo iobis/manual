@@ -4,6 +4,7 @@ site: "bookdown::bookdown_site"
 output:
   bookdown::gitbook:
     split_by: rmd
+    css: "style.css"
     config:
       toc:
         before: |

@@ -1,0 +1,4 @@
+table {
+  display: inline-block !important;
+  overflow-x: scroll !important;
+}
