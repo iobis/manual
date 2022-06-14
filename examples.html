@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.2.4 Examples: ENV-DATA and DNA derived data | The OBIS manual</title>
+  <meta name="description" content="2.2.4 Examples: ENV-DATA and DNA derived data | The OBIS manual" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.2.4 Examples: ENV-DATA and DNA derived data | The OBIS manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.2.4 Examples: ENV-DATA and DNA derived data | The OBIS manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data_format.html"/>
+<link rel="next" href="data_publication.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="/">The OBIS manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#guidelines-on-the-sharing-and-use-of-data-in-obis"><i class="fa fa-check"></i><b>1.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i><b>1.2</b> Acknowledgements</a></li>
+<li class="chapter" data-level="1.3" data-path="policy.html"><a href="policy.html"><i class="fa fa-check"></i><b>1.3</b> Data Policy</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="policy.html"><a href="policy.html#guidelines-on-the-sharing-and-use-of-data-in-obis-1"><i class="fa fa-check"></i><b>1.3.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> Contribute data to OBIS</a><ul>
+<li class="chapter" data-level="2.1" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>2.1</b> OBIS nodes</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>2.1.1</b> Terms of Reference of OBIS nodes</a></li>
+<li class="chapter" data-level="2.1.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>2.1.2</b> How to become an OBIS node</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.2</b> Biodiversity data standards</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>2.2.1</b> Darwin Core</a></li>
+<li class="chapter" data-level="2.2.2" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.2.2</b> Ecological Metadata Language</a></li>
+<li class="chapter" data-level="2.2.3" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>2.2.3</b> Darwin Core Archive and dataset structure</a></li>
+<li class="chapter" data-level="2.2.4" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>2.2.4</b> Examples: ENV-DATA and DNA derived data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>2.3</b> Data publication and sharing</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="data_publication.html"><a href="data_publication.html#ipt"><i class="fa fa-check"></i><b>2.3.1</b> IPT</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data_qc.html"><a href="data_qc.html"><i class="fa fa-check"></i><b>2.4</b> Data quality control</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>2.4.1</b> Name Matching Strategy for taxonomic quality control</a></li>
+<li class="chapter" data-level="2.4.2" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>2.4.2</b> Geographic and data format quality control</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>3</b> Data access</a><ul>
+<li class="chapter" data-level="3.1" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>3.1</b> Mapper</a></li>
+<li class="chapter" data-level="3.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>3.2</b> R package</a></li>
+<li class="chapter" data-level="3.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>3.3</b> API</a></li>
+<li class="chapter" data-level="3.4" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>3.4</b> Full exports</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The OBIS manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="examples-env-data-and-dna-derived-data" class="section level3 hasAnchor">
+<h3><span class="header-section-number">2.2.4</span> Examples: ENV-DATA and DNA derived data<a href="examples.html#examples-env-data-and-dna-derived-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="examples.html#fish-abundance-distribution">1. Fish abundance &amp; distribution</a></li>
+<li><a href="examples.html#hard-coral-cover-composition">2. Hard coral cover &amp; composition</a></li>
+<li><a href="examples.html#invertebrates-abundance-distribution">3. Invertebrates abundance &amp; distribution</a></li>
+<li><a href="examples.html#macroalgae-canopy-cover-composition">4. Macroalgae canopy cover &amp; composition</a></li>
+<li><a href="examples.html#mangroves-cover-composition">5. Mangroves cover &amp; composition</a></li>
+<li><a href="examples.html#marine-birds-abundance-distribution">6. Marine birds abundance &amp; distribution</a></li>
+<li><a href="examples.html#marine-mammals-abundance-distribution">7. Marine mammals abundance &amp; distribution</a></li>
+<li><a href="examples.html#marine-turtles-abundance-distribution">8. Marine turtles abundance &amp; distribution</a></li>
+<li><a href="examples.html#microbes-biomass-diversity">9. Microbes biomass &amp; diversity</a></li>
+<li><a href="examples.html#plankton-biomass-diversity">10. Plankton biomass &amp; diversity</a></li>
+<li><a href="examples.html#seagrass-cover-composition">11. Seagrass cover &amp; composition</a></li>
+<li><a href="examples.html#edna-dna-derived-data">12. eDNA &amp; DNA derived data</a>
+<ul>
+<li><a href="examples.html#edna-data-from-monterey-bay-california">12.1: eDNA data from Monterey Bay, California</a></li>
+<li><a href="examples.html#s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton">12.2: 16S rRNA gene metabarcoding data of Pico- to Mesoplankton</a></li>
+</ul></li>
+</ul>
+<p><a class="anchor" name="example_fish"></a></p>
+<div id="fish-abundance-distribution" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.1</span> Fish abundance &amp; distribution<a href="examples.html#fish-abundance-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>(example coming soon)</p>
+<p><a class="anchor" name="example_hcoral"></a></p>
+</div>
+<div id="hard-coral-cover-composition" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.2</span> Hard coral cover &amp; composition<a href="examples.html#hard-coral-cover-composition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>(example coming soon)</p>
+<p><a class="anchor" name="example_inverts"></a></p>
+</div>
+<div id="invertebrates-abundance-distribution" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.3</span> Invertebrates abundance &amp; distribution<a href="examples.html#invertebrates-abundance-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>(example coming soon)</p>
+<p><a class="anchor" name="example_macroalgae"></a></p>
+</div>
+<div id="macroalgae-canopy-cover-composition" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.4</span> Macroalgae canopy cover &amp; composition<a href="examples.html#macroalgae-canopy-cover-composition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension.</p>
+<img src="images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-50"/>
+<p class="caption-70">
+Figure: A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.
+</p>
+<p>First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using <code>eventID</code> and <code>parentEventID</code>. As the survey sites has a fixed location we can populate <code>decimalLongitude</code> and <code>decimalLatitude</code> at the top level event. The zones have different depths, so <code>minimumDepthInMeters</code> and <code>maximumDepthInMeters</code> are populated at the zone level. Finally, as not all sampling was done on the same day, <code>eventDate</code> is populated at the quadrat and transect level.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>eventID</th>
+<th>parentEventID</th>
+<th>eventDate</th>
+<th>decimalLongitude</th>
+<th>decimalLatitude</th>
+<th>minimumDepthInMeters</th>
+<th>maximumDepthInMeters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>site_1</td>
+<td></td>
+<td></td>
+<td>54.7943</td>
+<td>16.9425</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>zone_1</td>
+<td>site_1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>zone_2</td>
+<td>site_1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>zone_3</td>
+<td>site_1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>5</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td><span class="marker-green">quadrat_1</span></td>
+<td>zone_1</td>
+<td>2019-01-02</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>transect_1</td>
+<td>zone_2</td>
+<td>2019-01-03</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>transect_2</td>
+<td>zone_3</td>
+<td>2019-01-04</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Next we can construct the Occurrence extension table. This table has the scientific names and links to the World Register of Marine Species in <code>scientificNameID</code>. The first column of the table references the events in the core table (see <code>quadrat_1</code> for example highlighted in green).</p>
+<table>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>occurrenceID</th>
+<th>scientificName</th>
+<th>scientificNameID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="marker-green">quadrat_1</span></td>
+<td><span class="marker-blue">occ_1</span></td>
+<td>Ulva rigida</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:145990">urn:lsid:marinespecies.org:taxname:145990</a></td>
+</tr>
+<tr class="even">
+<td><span class="marker-green">quadrat_1</span></td>
+<td><span class="marker-orange">occ_2</span></td>
+<td>Ulva lactuca</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:145984">urn:lsid:marinespecies.org:taxname:145984</a></td>
+</tr>
+<tr class="odd">
+<td>transect_1</td>
+<td>occ_3</td>
+<td>Plantae</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:3">urn:lsid:marinespecies.org:taxname:3</a></td>
+</tr>
+<tr class="even">
+<td>transect_1</td>
+<td>occ_4</td>
+<td>Plantae</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:3">urn:lsid:marinespecies.org:taxname:3</a></td>
+</tr>
+<tr class="odd">
+<td>transect_2</td>
+<td>occ_5</td>
+<td>Gracilaria</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:144188">urn:lsid:marinespecies.org:taxname:144188</a></td>
+</tr>
+<tr class="even">
+<td>transect_2</td>
+<td>occ_6</td>
+<td>Laurencia</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:143914">urn:lsid:marinespecies.org:taxname:143914</a></td>
+</tr>
+</tbody>
+</table>
+<p>And finally there is the MeasurementOrFact extension table, which has attributes of the zones (shore height), the quadrats (surface area), the transects (surface area and length), and the occurrences (percentage cover and functional group). Attributes of occurrences point to the Occurrence extension table using the <code>occurrenceID</code> column (see <code>occ_1</code> and <code>occ_2</code> highlighted in blue and orange). Note that besides NERC vocabulary terms we are also referencing the CATAMI vocabulary for macroalgal functional groups.</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>occurrenceID</th>
+<th>measurementType</th>
+<th>measurementTypeID</th>
+<th>measurementValue</th>
+<th>measurementValueID</th>
+<th>measurementUnit</th>
+<th>measurementUnitID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>zone_1</td>
+<td></td>
+<td>shore height</td>
+<td>?</td>
+<td>high</td>
+<td>?</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="marker-green">quadrat_1</span></td>
+<td></td>
+<td>surface area</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS">P01/current/AREABEDS</a></td>
+<td>0.25</td>
+<td></td>
+<td>m2</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/">P06/current/UMSQ</a></td>
+</tr>
+<tr class="odd">
+<td>quadrat_1</td>
+<td><span class="marker-blue">occ_1</span></td>
+<td>cover</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/">P01/current/SDBIOL10</a></td>
+<td>24</td>
+<td></td>
+<td>percent</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPCT">P06/current/UPCT</a></td>
+</tr>
+<tr class="even">
+<td>quadrat_1</td>
+<td><span class="marker-orange">occ_2</span></td>
+<td>cover</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/">P01/current/SDBIOL10</a></td>
+<td>56</td>
+<td></td>
+<td>percent</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPCT">P06/current/UPCT</a></td>
+</tr>
+<tr class="odd">
+<td>transect_1</td>
+<td></td>
+<td>surface area</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS">P01/current/AREABEDS</a></td>
+<td>60</td>
+<td></td>
+<td>m2</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/">P06/current/UMSQ</a></td>
+</tr>
+<tr class="even">
+<td>transect_1</td>
+<td></td>
+<td>length</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK">P01/current/LENTRACK</a></td>
+<td>30</td>
+<td></td>
+<td>m</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/ULAA/">P06/current/ULAA</a></td>
+</tr>
+<tr class="odd">
+<td>transect_1</td>
+<td>occ_3</td>
+<td>functional group</td>
+<td>?</td>
+<td>sheet-like red</td>
+<td>CATAMI:80300925</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>transect_1</td>
+<td>occ_4</td>
+<td>functional group</td>
+<td>?</td>
+<td>filamentous brown</td>
+<td>CATAMI:80300931</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>transect_1</td>
+<td>occ_3</td>
+<td>cover</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/">P01/current/SDBIOL10</a></td>
+<td>8</td>
+<td></td>
+<td>percent</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPCT">P06/current/UPCT</a></td>
+</tr>
+<tr class="even">
+<td>transect_1</td>
+<td>occ_4</td>
+<td>cover</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/">P01/current/SDBIOL10</a></td>
+<td>24</td>
+<td></td>
+<td>percent</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPCT">P06/current/UPCT</a></td>
+</tr>
+<tr class="odd">
+<td>transect_2</td>
+<td>occ_5</td>
+<td>cover</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/">P01/current/SDBIOL10</a></td>
+<td>4</td>
+<td></td>
+<td>percent</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPCT">P06/current/UPCT</a></td>
+</tr>
+<tr class="even">
+<td>transect_2</td>
+<td>occ_6</td>
+<td>cover</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/">P01/current/SDBIOL10</a></td>
+<td>16</td>
+<td></td>
+<td>percent</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPCT">P06/current/UPCT</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mangroves-cover-composition" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.5</span> Mangroves cover &amp; composition<a href="examples.html#mangroves-cover-composition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>(example coming soon)</p>
+</div>
+<div id="marine-birds-abundance-distribution" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.6</span> Marine birds abundance &amp; distribution<a href="examples.html#marine-birds-abundance-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>(example coming soon)</p>
+</div>
+<div id="marine-mammals-abundance-distribution" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.7</span> Marine mammals abundance &amp; distribution<a href="examples.html#marine-mammals-abundance-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In this section we will explore how to encode a survey data set into Darwin Core using the ENV-DATA approach. As an example, sections of the actual data set of <a href="http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans">CETUS: Cetacean monitoring surveys in the Eastern North Atlantic</a>, is used.</p>
+<img src="images/ENV_example_CETUS.png" class="img-responsive img-responsive-50"/>
+Figure: A representation of the observation events of <a href="http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans">CETUS: Cetacean monitoring surveys in the Eastern North Atlantic</a>, presenting the route <strong>Madeira</strong> as a site with three cruises (zones). Each <strong>Cruise</strong> is divided into different <strong>Transects</strong> and each transect contains a number of <strong>Positions</strong>.
+</p>
+<p>Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using <code>eventID</code> and <code>parentEventID</code>. As the survey observations were made at locations of Cetacean sightings instead of fixed locations, we can populate <code>footprintWKT</code> and <code>footprintSRS</code> as location information. Not all sampling was done on the same day, therefore <code>eventDate</code> is populated at the transect level.</p>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="8%" />
+<col width="9%" />
+<col width="62%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>eventID</th>
+<th>parentEventID</th>
+<th>eventDate</th>
+<th>footprintWKT</th>
+<th>footprintSRS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Madeira</td>
+<td></td>
+<td>2012-07/2017-09</td>
+<td>POLYGON ((-16.74 31.49, -16.74 41.23, -8.70 41.23, -8.70 31.49, -16.74 31.49))</td>
+<td>EPSG:4326</td>
+</tr>
+<tr class="even">
+<td><span class="marker-green">Madeira:Cruise-001</span></td>
+<td>Madeira</td>
+<td>2012-07</td>
+<td>MULTIPOINT ( (-8.7 41.19), (-9.15 38.7))</td>
+<td>EPSG:4326</td>
+</tr>
+<tr class="odd">
+<td>Madeira:Cruise-002</td>
+<td>Madeira</td>
+<td>2012-07</td>
+<td>MULTIPOINT ( (-9.15 38.7), (-16.73 32.74))</td>
+<td>EPSG:4326</td>
+</tr>
+<tr class="even">
+<td>Madeira:Cruise-003</td>
+<td>Madeira</td>
+<td>2012-07</td>
+<td>MULTIPOINT ( (-16.73 32.74), (-9.15 38.7))</td>
+<td>EPSG:4326</td>
+</tr>
+</tbody>
+</table>
+<p>Construct the Occurrence extension table with the scientific names and links to the World Register of Marine Species in <code>scientificNameID</code>. The first column of the table references the events in the core table (see <code>Madeira:Cruise-001</code> highlighted in green).The <code>occurrence ID</code> corresponds to the Position of the observation (see <code>Transect-01:Pos-0001</code> and <code>CIIMAR-CETUS-0001</code> highlighted in blue, or <code>Transect-01:Pos-0002</code> and <code>CIIMAR-CETUS-0002</code> highlighted in orange).</p>
+<table>
+<colgroup>
+<col width="35%" />
+<col width="16%" />
+<col width="35%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>occurrenceID</th>
+<th>scientificNameID</th>
+<th>scientificName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-blue">Transect-01:Pos-0001</span></td>
+<td><span class="marker-blue">CIIMAR-CETUS-0001</span></td>
+<td><a href="urn:lsid:marinespecies.org:taxname:2688" class="uri">urn:lsid:marinespecies.org:taxname:2688</a></td>
+<td>Cetacea</td>
+</tr>
+<tr class="even">
+<td><span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-orange">Transect-01:Pos-0002</span></td>
+<td><span class="marker-orange">CIIMAR-CETUS-0002</span></td>
+<td><a href="urn:lsid:marinespecies.org:taxname:2688" class="uri">urn:lsid:marinespecies.org:taxname:2688</a></td>
+<td>Cetacea</td>
+</tr>
+<tr class="odd">
+<td><span class="marker-green">Madeira:Cruise-001</span>:Transect-01:Pos-0003</td>
+<td>CIIMAR-CETUS-0003</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:2688">urn:lsid:marinespecies.org:taxname:2688</a></td>
+<td>Cetacea</td>
+</tr>
+<tr class="even">
+<td><span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0004</td>
+<td>CIIMAR-CETUS-0004</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:2688">urn:lsid:marinespecies.org:taxname:2688</a></td>
+<td>Cetacea</td>
+</tr>
+<tr class="odd">
+<td><span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0005</td>
+<td>CIIMAR-CETUS-0005</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:2688">urn:lsid:marinespecies.org:taxname:2688</a></td>
+<td>Cetacea</td>
+</tr>
+<tr class="even">
+<td><span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0006</td>
+<td>CIIMAR-CETUS-0006</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:2688">urn:lsid:marinespecies.org:taxname:2688</a></td>
+<td>Cetacea</td>
+</tr>
+<tr class="odd">
+<td><span class="marker-green">Madeira:Cruise-001</span>:Transect-02:Pos-0007</td>
+<td>CIIMAR-CETUS-0007</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:2688">urn:lsid:marinespecies.org:taxname:2688</a></td>
+<td>Cetacea</td>
+</tr>
+</tbody>
+</table>
+<p>And finally, the extendedMeasurementOrFact extension table has attributes of the zones (such as Vessel speed and Vessel Heading), the Transects (such as Wave height and Wind speed), and the Positions (such as Visibility and the Number of smaal/big ships &gt;20m). Attributes of Positions point to the Occurrence extension table using the <code>occurrenceID</code> column (see <code>Transect-01:Pos-0001</code> and <code>Transect-01:Pos-0002</code> highlighted in blue and orange, respectively).</p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="7%" />
+<col width="11%" />
+<col width="22%" />
+<col width="7%" />
+<col width="13%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>occurrenceID</th>
+<th>measurementType</th>
+<th>measurementTypeID</th>
+<th>measurementValue</th>
+<th>measurementUnit</th>
+<th>measurementUnitID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="marker-green">Madeira:Cruise-001</span></td>
+<td></td>
+<td>Vessel name</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/">Q01/current/Q0100001</a></td>
+<td>Monte da Guia</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Madeira:Cruise-001:Transect-01</td>
+<td></td>
+<td>Length of the track</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/DSRNCV01/">P01/current/DSRNCV01</a></td>
+<td>39.75</td>
+<td>km</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/ULKM/">P06/current/ULKM</a></td>
+</tr>
+<tr class="odd">
+<td>Madeira:Cruise-001:Transect-01:Pos-0001</td>
+<td><span class="marker-blue">CIIMAR-CETUS-0001</span></td>
+<td>Visibility</td>
+<td></td>
+<td>2000-4000</td>
+<td>Meters</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/ULAA/">P06/current/ULAA</a></td>
+</tr>
+<tr class="even">
+<td>Madeira:Cruise-001:Transect-01:Pos-0001</td>
+<td><span class="marker-blue">CIIMAR-CETUS-0001</span></td>
+<td>Wind speed</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/WMOCWFBF/">P01/current/WMOCWFBF</a></td>
+<td>1</td>
+<td>Beaufort scale</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Madeira:Cruise-001:Transect-01:Pos-0001</td>
+<td><span class="marker-blue">CIIMAR-CETUS-0001</span></td>
+<td>Wave height</td>
+<td></td>
+<td>2</td>
+<td>Douglas scale</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Madeira:Cruise-001:Transect-01:Pos-0001</td>
+<td><span class="marker-blue">CIIMAR-CETUS-0001</span></td>
+<td>Number of big ships (&gt;20m)</td>
+<td></td>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Madeira:Cruise-001:Transect-01:Pos-0001</td>
+<td><span class="marker-blue">CIIMAR-CETUS-0001</span></td>
+<td>Vessel heading</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/HDNGGP01/">P01/current/HDNGGP01</a></td>
+<td>206</td>
+<td>Degrees</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UAAA/">P06/current/UAAA</a></td>
+</tr>
+<tr class="even">
+<td>Madeira:Cruise-001:Transect-01:Pos-0001</td>
+<td><span class="marker-blue">CIIMAR-CETUS-0001</span></td>
+<td>Number of small ships (&lt;20m)</td>
+<td></td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Madeira:Cruise-001:Transect-01:Pos-0001</td>
+<td><span class="marker-blue">CIIMAR-CETUS-0001</span></td>
+<td>Vessel speed</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/APSAGP01/">P01/current/APSAGP01</a></td>
+<td>16</td>
+<td>Knots (nautical miles per hour)</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UKNT/">P06/current/UKNT</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="marine-turtles-abundance-distribution" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.8</span> Marine turtles abundance &amp; distribution<a href="examples.html#marine-turtles-abundance-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>(example coming soon)</p>
+</div>
+<div id="microbes-biomass-diversity" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.9</span> Microbes biomass &amp; diversity<a href="examples.html#microbes-biomass-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>(example coming soon)</p>
+</div>
+<div id="plankton-biomass-diversity" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.10</span> Plankton biomass &amp; diversity<a href="examples.html#plankton-biomass-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>(example coming soon)</p>
+</div>
+<div id="seagrass-cover-composition" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.11</span> Seagrass cover &amp; composition<a href="examples.html#seagrass-cover-composition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The structure of the Event, Occurrence and ExtendedMeasurementOrFact extensions for Seagrass Cover &amp; Composition is based on community feedback organised through the the Scientific Committee on Oceanic Research (SCOR): <a href="https://scor-int.org/group/158/">Coordinated Global Research Assessment of Seagrass System (C-GRASS)</a>. We acknowledge the work that the C-grass SCOR work group has done to develop a proposed scheme for completing Seagrass related extension files.</p>
+<p>Here encode seagrass survey data into Darwin Core according to the ENV-DATA approach and using sections of the actual data set of <a href="http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia">Seagrass Monitoring at Chengue Bay, Colombia</a> as an example dataset.</p>
+<p>The Event core table is created by extracting all events and attributes. All events are linked together using <code>eventID</code> and <code>parentEventID</code>. <code>eventDate</code> is populated at the transect level with the recommended format that conforms to ISO 8601-1:2019. <code>habitat</code> is populated as a category or description of the habitat in which the Event occurred. Additional <code>fieldNotes</code> can also be provided if applicable. The recommended best practice for <code>countryCode</code> is to use an ISO 3166-1-alpha-2 country code. The remaining eventCore fields comprise of location data including <code>maximumDepthInMeters</code>, <code>minimumDepthInMeters</code>, <code>decimalLongitude</code>, <code>decimalLatitude</code>, <code>coordinateUncertaintyInMeters</code>, <code>footprintWKT</code> and <code>footprintSRS</code>.</p>
+<table>
+<colgroup>
+<col width="37%" />
+<col width="22%" />
+<col width="10%" />
+<col width="8%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>eventID</th>
+<th>parentEventID</th>
+<th>eventDate</th>
+<th>habitat</th>
+<th>fieldNotes</th>
+<th>countryCode</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td></td>
+<td>2019-05-13</td>
+<td>seagrass</td>
+<td>no notes</td>
+<td>CO</td>
+</tr>
+<tr class="even">
+<td>USBsg-chengue-pastomanglar</td>
+<td></td>
+<td>2019-05-14</td>
+<td>seagrass</td>
+<td>no notes</td>
+<td>CO</td>
+</tr>
+<tr class="odd">
+<td>USBsg-chengue-pastocoral-SquidPopTransect1</td>
+<td>USBsg-chengue-pastocoral</td>
+<td>2019-05-13</td>
+<td>seagrass</td>
+<td>no notes</td>
+<td>CO</td>
+</tr>
+<tr class="even">
+<td>USBsg-chengue-pastocoral-SquidPopTransect2</td>
+<td>USBsg-chengue-pastocoral</td>
+<td>2019-05-13</td>
+<td>seagrass</td>
+<td>no notes</td>
+<td>CO</td>
+</tr>
+</tbody>
+</table>
+<p><strong>eventCore continued:</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="8%" />
+<col width="8%" />
+<col width="14%" />
+<col width="40%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>minimumDepthInMeters</th>
+<th>maximumDepthInMeters</th>
+<th>decimalLatitude</th>
+<th>decimalLongitude</th>
+<th>coordinateUncertaintyInMeters</th>
+<th>footprintWKT</th>
+<th>footprintSRS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.8</td>
+<td>2</td>
+<td>11.32021806</td>
+<td>-74.12753684</td>
+<td>10</td>
+<td>POLYGON ((-74.1273259763024 11.320475512862,-74.1272978004008 11.3201655779439))</td>
+<td>EPSG:4326</td>
+</tr>
+<tr class="even">
+<td>0.8</td>
+<td>0.8</td>
+<td>11.31977189</td>
+<td>-74.12536879</td>
+<td>10</td>
+<td>POLYGON ((-74.1253370891273 11.3195001294432,-74.1253337743154 11.3194968146313))</td>
+<td>EPSG:4326</td>
+</tr>
+<tr class="odd">
+<td>0.8</td>
+<td>2</td>
+<td>11.32039927</td>
+<td>-74.12737404</td>
+<td>50</td>
+<td>POINT (-74.1273740410759 11.3203992721869)</td>
+<td>EPSG:4326</td>
+</tr>
+<tr class="even">
+<td>0.8</td>
+<td>2</td>
+<td>11.32027662</td>
+<td>-74.1273989</td>
+<td>50</td>
+<td>POINT (-74.1273989021655 11.3202766241445)</td>
+<td>EPSG:4326</td>
+</tr>
+</tbody>
+</table>
+<p>Addtionally in the eventCore, it is recommended to further include information regarding <code>license</code>,
+<code>rightsHolder</code>, <code>bibliographicCitation</code>, <code>institutionID</code>, <code>datasetID</code>, <code>institutionCode</code> and <code>datasetName</code>.</p>
+<p>Next, the Occurrence extension table contain data for each occurrence with an <code>occurrenceID</code> and is linked to the eventCore with the <code>eventID</code>. This table should provide information on the <code>basisOfRecord</code> and <code>occurrenceStatus</code>. Scientific names and links to the World Register of Marine Species should be provided under <code>scientificName</code> and <code>scientificNameID</code>, respectively.</p>
+<table>
+<colgroup>
+<col width="24%" />
+<col width="19%" />
+<col width="9%" />
+<col width="9%" />
+<col width="23%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>eventID</th>
+<th>occurrenceID</th>
+<th>basisOfRecord</th>
+<th>occurrenceStatus</th>
+<th>scientificNameID</th>
+<th>scientificName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>HumanObservation</td>
+<td>present</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:374720" class="uri">urn:lsid:marinespecies.org:taxname:374720</a></td>
+<td>Thalassia testudinum</td>
+</tr>
+<tr class="even">
+<td>USBsg-chengue-pastomanglar</td>
+<td>USBsg-chengue-manglar-tt</td>
+<td>HumanObservation</td>
+<td>present</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:374720" class="uri">urn:lsid:marinespecies.org:taxname:374720</a></td>
+<td>Thalassia testudinum</td>
+</tr>
+<tr class="odd">
+<td>USBsg-chengue-pastocoral-SquidPopTransect1</td>
+<td>USBsg-chengue-pastocoral-fish-001</td>
+<td>HumanObservation</td>
+<td>present</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:158815" class="uri">urn:lsid:marinespecies.org:taxname:158815</a></td>
+<td>Halichoeres bivittatus</td>
+</tr>
+<tr class="even">
+<td>USBsg-chengue-pastocoral-SquidPopTransect1</td>
+<td>USBsg-chengue-pastocoral-fish-002</td>
+<td>HumanObservation</td>
+<td>present</td>
+<td><a href="urn:lsid:marinespecies.org:taxname:158932" class="uri">urn:lsid:marinespecies.org:taxname:158932</a></td>
+<td>Lactophrys triqueter</td>
+</tr>
+</tbody>
+</table>
+<p>If a species was identified by an expert, the field <code>identifiedBy</code> can be populated. If the higher ranks of the species is known and available, these should also be populated, i.e. <code>kingdom</code>, <code>phylum</code>, <code>class</code>, <code>order</code>, <code>family</code> and <code>genus</code>. If the species is well-known by another common name, this name can be provided under <code>vernacularName</code>.</p>
+<p>The final extension table, extendedMeasurementOrFact, contain the measurement information and data of each occurrence. This extension is also linked to the eventCore using the <code>eventID</code>, and linked to the occurrence table using the <code>occurrenceID</code>. The various measurements are populated with <code>measurementType</code>, <code>measurementTypeID</code>, <code>measurementUnit</code>, <code>measurementUnitID</code>, <code>measurementValue</code>, <code>measurementValueID</code>, <code>measurementAccuracy</code>, <code>measurementMethod</code>, <code>measurementDeterminedBy</code> and <code>measurementDeterminedDate</code>. The example dataset of <a href="http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia">Seagrass Monitoring at Chengue Bay, Colombia</a> recorded a number of measurements and can be used as an example of how to populate the respective fields:</p>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="20%" />
+<col width="32%" />
+<col width="28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>eventID</th>
+<th>occurrenceID</th>
+<th>measurementID</th>
+<th>measurementType</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-PhyQ01</td>
+<td>WaterTemp</td>
+</tr>
+<tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-PhyQ02</td>
+<td>Salinity</td>
+</tr>
+<tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-PhyQ03</td>
+<td>Dissolved oxygen</td>
+</tr>
+<tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1C1-shoot-01</td>
+<td>Shoot Density</td>
+</tr>
+<tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1C1-leafLenght-01</td>
+<td>Leaf Length</td>
+</tr>
+<tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N1-DryBiomass</td>
+<td>Total Dry Biomass</td>
+</tr>
+<tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N1-biomassGL</td>
+<td>Dry biomass of green leaves</td>
+</tr>
+<tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N1-biomassNGL</td>
+<td>Dry biomass of non green leaves</td>
+</tr>
+<tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N1-biomassSH</td>
+<td>Dry biomass of the shoots</td>
+</tr>
+<tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N2-biomassR</td>
+<td>Dry biomass of the roots</td>
+</tr>
+<tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N2-biomassRIZ</td>
+<td>Dry biomass of the rizome</td>
+</tr>
+<tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N2-biomassOTH</td>
+<td>Dry biomass of other seagrass species</td>
+</tr>
+</tbody>
+</table>
+<p><strong>eMoF continued:</strong></p>
+<table>
+<colgroup>
+<col width="37%" />
+<col width="11%" />
+<col width="16%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>measurementTypeID</th>
+<th>measurementValue</th>
+<th>measurementUnit</th>
+<th>measurementUnitID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/TEMPPP01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/TEMPPP01/</a></td>
+<td>29.23</td>
+<td>Degrees Celsius</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPAA/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPAA/</a></td>
+</tr>
+<tr class="even">
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/SSALSL01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/SSALSL01/</a></td>
+<td>36</td>
+<td>Parts per thousand</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPPT/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPPT/</a></td>
+</tr>
+<tr class="odd">
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/DOXYSE02/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/DOXYSE02/</a></td>
+<td>6.58</td>
+<td>Milligrams per litre</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UMGL/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UMGL/</a></td>
+</tr>
+<tr class="even">
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/</a></td>
+<td>128</td>
+<td>Number per square metre</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPMS/</a></td>
+</tr>
+<tr class="odd">
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/OBSMAXLX/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/OBSMAXLX/</a></td>
+<td>18</td>
+<td>Centimetres</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/ULCM/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/ULCM/</a></td>
+</tr>
+<tr class="even">
+<td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
+<td>0.32055</td>
+<td>Grams per square metre</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
+</tr>
+<tr class="odd">
+<td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
+<td>0.05575</td>
+<td>Grams per square metre</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
+</tr>
+<tr class="even">
+<td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
+<td>0.1469</td>
+<td>Grams per square metre</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
+</tr>
+<tr class="odd">
+<td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
+<td>0.07625</td>
+<td>Grams per square metre</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
+</tr>
+<tr class="even">
+<td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
+<td>0.0385</td>
+<td>Grams per square metre</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
+</tr>
+<tr class="odd">
+<td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
+<td>0.02725</td>
+<td>Grams per square metre</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
+</tr>
+<tr class="even">
+<td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
+<td>0</td>
+<td>Grams per square metre</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="edna-dna-derived-data" class="section level4 hasAnchor">
+<h4><span class="header-section-number">2.2.4.12</span> eDNA &amp; DNA derived data<a href="examples.html#edna-dna-derived-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The following example use cases draw on both the <a href="https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/">GBIF guide</a> and the <a href="https://rs.gbif-uat.org/extensions.html#http">DNA derived data extension</a> to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required occurrence core terms are shown, in addition to all eDNA &amp; DNA specific terms. For additional occurrence core terms, refer to <a href="../darwincore/#occurrence">Occurrence</a>.</p>
+<div id="edna-data-from-monterey-bay-california" class="section level5 hasAnchor">
+<h5><span class="header-section-number">2.2.4.12.1</span> eDNA data from Monterey Bay, California<a href="examples.html#edna-data-from-monterey-bay-california" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The data for this example is from the use case <a href="https://www1.usgs.gov/obis-usa/ipt/resource?r=18s_monterey_bay_time_series_edna">"18S Monterey Bay Time Series: an eDNA data set from Monterey Bay, California, including years 2006, 2013 - 2016’</a>. The data from this study originate from marine filtered seawater samples that have undergone metabarcoding for the 18S V9 region.</p>
+<p>First, we can populate the Occurrence core file with all the required and highly recommended fields, as well as considering the eDNA and DNA specific fields. The Occurrence core contain the taxonomic identification of each ASV observed; its number of reads, as well as relevant metadata including the sample collection location, references for the identification procedure, and links to archived sequences.</p>
+<p><strong>Occurrence core:</strong></p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="13%" />
+<col width="14%" />
+<col width="17%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>occurrenceID</th>
+<th>basisOfRecord</th>
+<th>organismQuantity</th>
+<th>OrganismQuantityType</th>
+<th>associatedSequences</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>11216c01_12_edna_1_S_occ1</td>
+<td>MaterialSample</td>
+<td>19312</td>
+<td>DNA sequence reads</td>
+<td>NCBI BioProject acc. nr. PRJNA433203</td>
+</tr>
+<tr class="even">
+<td>11216c01_12_edna_2_S_occ1</td>
+<td>MaterialSample</td>
+<td>16491</td>
+<td>DNA sequence reads</td>
+<td>NCBI BioProject acc. nr. PRJNA433203</td>
+</tr>
+<tr class="odd">
+<td>11216c01_12_edna_3_S_occ1</td>
+<td>MaterialSample</td>
+<td>21670</td>
+<td>DNA sequence reads</td>
+<td>NCBI BioProject acc. nr. PRJNA433203</td>
+</tr>
+</tbody>
+</table>
+<p><code>OccurrenceID</code> and <code>basisOfRecord</code> are some of the required occurrence core terms, in addition to the highly recommended fields of <code>organismQuantity</code> and <code>organismQuantityType</code>. A selection of samples from this plate were included in another publication (Djurhuus et al., 2020),which is recorded in <code>identificationReferences</code> along with the GitHub repository where the data can be found.</p>
+<p><strong>Occurrence core (continued):</strong></p>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="14%" />
+<col width="34%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>sampleSizeValue</th>
+<th>sampleSizeUnit</th>
+<th>identificationReferences</th>
+<th>identificationRemarks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>147220</td>
+<td>DNA sequence reads</td>
+<td>GitHub repository <a href="https://doi.org/10.1038/s41467-019-14105-1">Djurhuus et al. 2020</a></td>
+<td>unassigned, Genbank nr Release 221 September 20 2017</td>
+</tr>
+<tr class="even">
+<td>121419</td>
+<td>DNA sequence reads</td>
+<td>GitHub repository <a href="https://doi.org/10.1038/s41467-019-14105-1">Djurhuus et al. 2020</a></td>
+<td>unassigned, Genbank nr Release 221 September 20 2017</td>
+</tr>
+<tr class="odd">
+<td>161525</td>
+<td>DNA sequence reads</td>
+<td>GitHub repository <a href="https://doi.org/10.1038/s41467-019-14105-1">Djurhuus et al. 2020</a></td>
+<td>unassigned, Genbank nr Release 221 September 20 2017</td>
+</tr>
+</tbody>
+</table>
+<p>Next, we can create the DNA derived data extension which will be connected to the occurrence core with the use of <code>occurrenceID</code>. This extension contains the DNA sequences and relevant DNA metadata, including sequencing procedures, primers used and SOP’s. The recommended use of ENVO’s biome classes were applied to describe the environmental system from which the sample was extracted.</p>
+<p><strong>DNA derived data extension:</strong></p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="22%" />
+<col width="22%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>occurrenceID</th>
+<th>env-broad_scale</th>
+<th>env_local_scale</th>
+<th>env_medium</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>11216c01_12_edna_1_S_occ1</td>
+<td>marine biome (ENVO:00000447)</td>
+<td>coastal water (ENVO:00001250)</td>
+<td>waterborne particulate matter (ENVO:01000436)</td>
+</tr>
+<tr class="even">
+<td>11216c01_12_edna_2_S_occ1</td>
+<td>marine biome (ENVO:00000447)</td>
+<td>coastal water (ENVO:00001250)</td>
+<td>waterborne particulate matter (ENVO:01000436)</td>
+</tr>
+<tr class="odd">
+<td>11216c01_12_edna_3_S_occ1</td>
+<td>marine biome (ENVO:00000447)</td>
+<td>coastal water (ENVO:00001250)</td>
+<td>waterborne particulate matter (ENVO:01000436)</td>
+</tr>
+</tbody>
+</table>
+<p>The samples were collected by CTD rosette and filtered by a peristaltic pump system. Illumina MiSeq metabarcoding was applied for the target_gene 18S and the target_subfragment, V9 region. URL’s are provided for the protocols followed for nucleic acids extraction and amplification.</p>
+<p><strong>DNA derived data extension (continued):</strong></p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="32%" />
+<col width="32%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>samp_vol_we_dna_ext</th>
+<th>nucl_acid_ext</th>
+<th>nucl_acid_amp</th>
+<th>lib_layout</th>
+<th>target_gene</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1000ml</td>
+<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
+<td><a href="dx.doi.org/10.17504/protocols.io.n2vdge6">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
+<td>paired</td>
+<td>18S</td>
+</tr>
+<tr class="even">
+<td>1000ml</td>
+<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
+<td><a href="dx.doi.org/10.17504/protocols.io.n2vdge6">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
+<td>paired</td>
+<td>18S</td>
+</tr>
+<tr class="odd">
+<td>1000ml</td>
+<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
+<td><a href="dx.doi.org/10.17504/protocols.io.n2vdge6">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
+<td>paired</td>
+<td>18S</td>
+</tr>
+</tbody>
+</table>
+<p>For a detailed description of the steps taken to process the data, including algorithms used, see the original publication. Adding Operational Taxonomic Unit (OTU) related data are highly recommended and should be as complete as possible, for example:</p>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="13%" />
+<col width="55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>target_subfragment</th>
+<th>seq_meth</th>
+<th>otu_class_appr</th>
+<th>otu_seq_comp_appr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>V9</td>
+<td>Illumina MiSeq 2x250</td>
+<td>dada2;1.14.0;ASV</td>
+<td>blast;2.9.0+;80% identity;e-value cutoff: x MEGAN6;6.18.5;bitscore: 100 :2%</td>
+</tr>
+<tr class="even">
+<td>V9</td>
+<td>Illumina MiSeq 2x250</td>
+<td>dada2;1.14.0;ASV</td>
+<td>blast;2.9.0+;80% identity;e-value cutoff: x MEGAN6;6.18.5;bitscore: 100 :2%</td>
+</tr>
+<tr class="odd">
+<td>V9</td>
+<td>Illumina MiSeq 2x250</td>
+<td>dada2;1.14.0;ASV</td>
+<td>blast;2.9.0+;80% identity;e-value cutoff: x MEGAN6;6.18.5;bitscore: 100 :2%</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="64%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>otu_db</th>
+<th>sop</th>
+<th>DNA_sequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Genbank nr;221</td>
+<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
+<td>GCTACTACCGATT…</td>
+</tr>
+<tr class="even">
+<td>Genbank nr;221</td>
+<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
+<td>GCTACTACCGATT…</td>
+</tr>
+<tr class="odd">
+<td>Genbank nr;221</td>
+<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
+<td>GCTACTACCGATT…</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>pcr_primer_forward</th>
+<th>pcr_primer_reverse</th>
+<th>pcr_primer_name_forward</th>
+<th>pcr_primer_name_reverse</th>
+<th>pcr_primer_reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GTACACACCGCCCGTC</td>
+<td>TGATCCTTCTGCAGGTTCACCTAC</td>
+<td>1391f</td>
+<td>EukBr</td>
+<td>Amaral-Zettler et al. 2009</td>
+</tr>
+<tr class="even">
+<td>GTACACACCGCCCGTC</td>
+<td>TGATCCTTCTGCAGGTTCACCTAC</td>
+<td>1391f</td>
+<td>EukBr</td>
+<td>Amaral-Zettler et al. 2009</td>
+</tr>
+<tr class="odd">
+<td>GTACACACCGCCCGTC</td>
+<td>TGATCCTTCTGCAGGTTCACCTAC</td>
+<td>1391f</td>
+<td>EukBr</td>
+<td>Amaral-Zettler et al. 2009</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton" class="section level5 hasAnchor">
+<h5><span class="header-section-number">2.2.4.12.2</span> 16S rRNA gene metabarcoding data of Pico- to Mesoplankton<a href="examples.html#s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>DNA derived datasets can also include an extendedMeasurementsOrFact (eMoF) extension file, in addition to the occurrence and DNA derived extensions. In this example, environmental measurements were provided in an eMoF file, in addition to the DNA derived data and occurrence data. Here we show how to incorporate such measurements in the extensions.</p>
+<p>In the publication <a href="https://www.frontiersin.org/articles/10.3389/fmicb.2016.00679/full">“Diversity of Pico- to Mesoplankton along the 2000 km Salinity Gradient of the Baltic Sea”</a>, a dataset with 16S rRNA gene metabarcoding data of surface water microbial communities was created from 21 off-shore stations, following a transect from Kattegat to the Gulf of Bothnia in the Baltic Sea. The full dataset entitled <a href="https://www.gbif.org/dataset/9e29a2fe-d780-48a8-a93f-9ce041f9202f">"Diversity of Pico- to Mesoplankton along the 2000 km Salinity Gradient of the Baltic Sea (Hu et al. 2016)</a> is available from GBIF.</p>
+<p>The Occurrence core contain information about the organisms in the sample including the taxonomy and quantity of organisms detected, the collection location, references for the identification procedure, and links to the sequences generated.</p>
+<p><strong>Important note: even though this dataset uses OTU identifiers for taxonomy (therefore not including <code>scientificNameID</code>) OBIS still recommends using <code>scientificNameID</code>.</strong></p>
+<p><strong>Occurrence core:</strong></p>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="48%" />
+<col width="16%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>basisOfRecord</th>
+<th>occurrenceID</th>
+<th>eventID</th>
+<th>eventDate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MaterialSample</td>
+<td>SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730</td>
+<td>SBDI-ASV-3:16S_1</td>
+<td>2013-07-13 07:08:00</td>
+</tr>
+<tr class="even">
+<td>MaterialSample</td>
+<td>SBDI-ASV-3:16S_1:43e088977eba5732bfa45e20b1d8cdd2</td>
+<td>SBDI-ASV-3:16S_1</td>
+<td>2013-07-13 07:08:00</td>
+</tr>
+<tr class="odd">
+<td>MaterialSample</td>
+<td>SBDI-ASV-3:16S_1:887bc7033b46d960e893caceb711700b</td>
+<td>SBDI-ASV-3:16S_1</td>
+<td>2013-07-13 07:08:00</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>organismQuantity</th>
+<th>organismQuantityType</th>
+<th>sampleSizeValue</th>
+<th>sampleSizeUnit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2235</td>
+<td>DNA sequence reads</td>
+<td>12393</td>
+<td>DNA sequence reads</td>
+</tr>
+<tr class="even">
+<td>795</td>
+<td>DNA sequence reads</td>
+<td>12393</td>
+<td>DNA sequence reads</td>
+</tr>
+<tr class="odd">
+<td>40</td>
+<td>DNA sequence reads</td>
+<td>12393</td>
+<td>DNA sequence reads</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="34%" />
+<col width="12%" />
+<col width="20%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>samplingProtocol</th>
+<th>associatedSequences</th>
+<th>identificationReferences</th>
+<th>identificationRemarks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>200–500 mL seawater were filtered onto 0.22 μm pore-size mixed cellulose ester membrane filters; [<a href="https://doi.org/10.3389/fmicb.2016.00679" class="uri">https://doi.org/10.3389/fmicb.2016.00679</a>]</td>
+<td>[<a href="https://www.ebi.ac.uk/ena/browser/view/ERR1202034" class="uri">https://www.ebi.ac.uk/ena/browser/view/ERR1202034</a>]</td>
+<td>[<a href="https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation" class="uri">https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation</a>]</td>
+<td>DADA2:assignTaxonomy:addSpecies annotation against sbdi-gtdb=R06-RS202-1; confidence at lowest specified (ASV portal) taxon: 0.5</td>
+</tr>
+<tr class="even">
+<td>200–500 mL seawater were filtered onto 0.22 μm pore-size mixed cellulose ester membrane filters; [<a href="https://doi.org/10.3389/fmicb.2016.00679" class="uri">https://doi.org/10.3389/fmicb.2016.00679</a>]</td>
+<td>[<a href="https://www.ebi.ac.uk/ena/browser/view/ERR1202034" class="uri">https://www.ebi.ac.uk/ena/browser/view/ERR1202034</a>]</td>
+<td>[<a href="https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation" class="uri">https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation</a>]</td>
+<td>DADA2:assignTaxonomy:addSpecies annotation against sbdi-gtdb=R06-RS202-1; confidence at lowest specified (ASV portal) taxon: 0.56</td>
+</tr>
+<tr class="odd">
+<td>200–500 mL seawater were filtered onto 0.22 μm pore-size mixed cellulose ester membrane filters; [<a href="https://doi.org/10.3389/fmicb.2016.00679" class="uri">https://doi.org/10.3389/fmicb.2016.00679</a>]</td>
+<td>[<a href="https://www.ebi.ac.uk/ena/browser/view/ERR1202034" class="uri">https://www.ebi.ac.uk/ena/browser/view/ERR1202034</a>]</td>
+<td>[<a href="https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation" class="uri">https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation</a>]</td>
+<td>DADA2:assignTaxonomy:addSpecies annotation against sbdi-gtdb=R06-RS202-1; confidence at lowest specified (ASV portal) taxon: 0.99</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>decimalLatitude</th>
+<th>decimalLongitude</th>
+<th>taxonID</th>
+<th>scientificName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>55.185</td>
+<td>13.791</td>
+<td>ASV:919a2aa9d306e4cf3fa9ca02a2aa5730</td>
+<td>UBA6821</td>
+</tr>
+<tr class="even">
+<td>55.185</td>
+<td>13.791</td>
+<td>ASV:43e088977eba5732bfa45e20b1d8cdd2</td>
+<td>Chthoniobacterales</td>
+</tr>
+<tr class="odd">
+<td>55.185</td>
+<td>13.791</td>
+<td>ASV:887bc7033b46d960e893caceb711700b</td>
+<td>BACL27 sp014190055</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="19%" />
+<col width="18%" />
+<col width="20%" />
+<col width="20%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>kingdom</th>
+<th>phylum</th>
+<th>class</th>
+<th>order</th>
+<th>family</th>
+<th>genus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bacteria</td>
+<td>Verrucomicrobiota</td>
+<td>Verrucomicrobiae</td>
+<td>Chthoniobacterales</td>
+<td>UBA6821</td>
+<td>UBA6821</td>
+</tr>
+<tr class="even">
+<td>Bacteria</td>
+<td>Verrucomicrobiota</td>
+<td>Verrucomicrobiae</td>
+<td>Chthoniobacterales</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>Bacteria</td>
+<td>Actinobacteriota</td>
+<td>Acidimicrobiia</td>
+<td>Acidimicrobiales</td>
+<td>Ilumatobacteraceae</td>
+<td>BACL27</td>
+</tr>
+</tbody>
+</table>
+<p>The DNA derived data extension for metabarcoding data contains the DNA sequences and relevant DNA metadata, primers and procedures. This example table contains the highly recommended and recommended fields as populated with the example dataset data.</p>
+<p><strong>DNA derived data extension:</strong></p>
+<table>
+<colgroup>
+<col width="35%" />
+<col width="21%" />
+<col width="20%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>env_broad_scale</th>
+<th>env_local_scale</th>
+<th>env_medium</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730</td>
+<td>aquatic biome [ENVO_00002030]</td>
+<td>marine biome [ENVO_00000447]</td>
+<td>brackish water [ENVO_00002019]</td>
+</tr>
+<tr class="even">
+<td>SBDI-ASV-3:16S_1:43e088977eba5732bfa45e20b1d8cdd2</td>
+<td>aquatic biome [ENVO_00002030]</td>
+<td>marine biome [ENVO_00000447]</td>
+<td>brackish water [ENVO_00002019]</td>
+</tr>
+<tr class="odd">
+<td>SBDI-ASV-3:16S_1:887bc7033b46d960e893caceb711700b</td>
+<td>aquatic biome [ENVO_00002030]</td>
+<td>marine biome [ENVO_00000447]</td>
+<td>brackish water [ENVO_00002019]</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>lib_layout</th>
+<th>target_gene</th>
+<th>target_subfragment</th>
+<th>seq_meth</th>
+<th>sop</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>paired</td>
+<td>16S rRNA</td>
+<td>V3-V4</td>
+<td>Illumina MiSeq</td>
+<td><a href="https://nf-co.re/ampliseq" class="uri">https://nf-co.re/ampliseq</a></td>
+</tr>
+<tr class="even">
+<td>paired</td>
+<td>16S rRNA</td>
+<td>V3-V4</td>
+<td>Illumina MiSeq</td>
+<td><a href="https://nf-co.re/ampliseq" class="uri">https://nf-co.re/ampliseq</a></td>
+</tr>
+<tr class="odd">
+<td>paired</td>
+<td>16S rRNA</td>
+<td>V3-V4</td>
+<td>Illumina MiSeq</td>
+<td><a href="https://nf-co.re/ampliseq" class="uri">https://nf-co.re/ampliseq</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="19%" />
+<col width="21%" />
+<col width="21%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>pcr_primer_forward</th>
+<th>pcr_primer_reverse</th>
+<th>pcr_primer_name_forward</th>
+<th>pcr_primer_name_reverse</th>
+<th>DNA_sequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CCTACGGGNGGCWGCAG</td>
+<td>GACTACHVGGGTATCTAATCC</td>
+<td>341</td>
+<td>805R</td>
+<td>TCGAGAATTTTTCACAATG…</td>
+</tr>
+<tr class="even">
+<td>CCTACGGGNGGCWGCAG</td>
+<td>GACTACHVGGGTATCTAATCC</td>
+<td>341</td>
+<td>805R</td>
+<td>TCGAGAATTTTTCACAATG…</td>
+</tr>
+<tr class="odd">
+<td>CCTACGGGNGGCWGCAG</td>
+<td>GACTACHVGGGTATCTAATCC</td>
+<td>341</td>
+<td>805R</td>
+<td>TGGGGAATCTTGCGCAATG…</td>
+</tr>
+</tbody>
+</table>
+<p>For this dataset, authors additionally provided measurements of of water sample temperature and salinity, which are provided in an <strong>extendedMeasurementOrFact</strong> extension file:</p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="38%" />
+<col width="12%" />
+<col width="13%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>measurementID</th>
+<th>occurrenceID</th>
+<th>measurementType</th>
+<th>measurementValue</th>
+<th>measurementUnit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SBDI-ASV-3:16S_1:temperature</td>
+<td>SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730</td>
+<td>temperature</td>
+<td>16.9</td>
+<td>°C</td>
+</tr>
+<tr class="even">
+<td>SBDI-ASV-3:16S_1:salinity</td>
+<td>SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730</td>
+<td>salinity</td>
+<td>7.25</td>
+<td>psu</td>
+</tr>
+<tr class="odd">
+<td>SBDI-ASV-3:16S_1:temperature</td>
+<td>SBDI-ASV-3:16S_1:1ead98754d34073a4606f7ff1e94126e</td>
+<td>temperature</td>
+<td>16.9</td>
+<td>°C</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data_format.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data_publication.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
