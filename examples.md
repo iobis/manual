@@ -217,7 +217,7 @@ The final extension table, extendedMeasurementOrFact, contain the measurement in
 
 #### eDNA & DNA derived data
 
-The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional occurrence core terms, refer to [Occurrence](../darwincore/#occurrence). 
+The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional occurrence core terms, refer to [Occurrence](darwin_core.html#occurrence). 
 
 ##### eDNA data from Monterey Bay, California
 
@@ -261,9 +261,9 @@ The samples were collected by CTD rosette and filtered by a peristaltic pump sys
 
 | samp_vol_we_dna_ext | nucl_acid_ext                            | nucl_acid_amp                            | lib_layout  | target_gene |
 |---------------------|------------------------------------------|------------------------------------------|-------------|-------------|
-| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) | [dx.doi.org/10.17504/protocols.io.n2vdge6](dx.doi.org/10.17504/protocols.io.n2vdge6) | paired      | 18S         |
-| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) | [dx.doi.org/10.17504/protocols.io.n2vdge6](dx.doi.org/10.17504/protocols.io.n2vdge6) | paired      | 18S         |
-| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) | [dx.doi.org/10.17504/protocols.io.n2vdge6](dx.doi.org/10.17504/protocols.io.n2vdge6) | paired      | 18S         |
+| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) | [dx.doi.org/10.17504/protocols.io.n2vdge6](https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2) | paired      | 18S         |
+| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) | [dx.doi.org/10.17504/protocols.io.n2vdge6](https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2) | paired      | 18S         |
+| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) | [dx.doi.org/10.17504/protocols.io.n2vdge6](https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2) | paired      | 18S         |
 
 For a detailed description of the steps taken to process the data, including algorithms used, see the original publication. Adding Operational Taxonomic Unit (OTU) related data are highly recommended and should be as complete as possible, for example:
 
@@ -275,9 +275,9 @@ For a detailed description of the steps taken to process the data, including alg
 
 | otu_db         | sop                                                           | DNA_sequence     |
 |----------------|---------------------------------------------------------------|------------------|
-| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) or GitHub repository | GCTACTACCGATT... |
-| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) or GitHub repository | GCTACTACCGATT... |
-| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) or GitHub repository | GCTACTACCGATT... |
+| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) or GitHub repository | GCTACTACCGATT... |
+| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) or GitHub repository | GCTACTACCGATT... |
+| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) or GitHub repository | GCTACTACCGATT... |
 
 
 | pcr_primer_forward | pcr_primer_reverse       | pcr_primer_name_forward | pcr_primer_name_reverse | pcr_primer_reference       |

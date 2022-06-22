@@ -12,4 +12,7 @@ rmd_files:
   - data_qc.md
   - name_matching.md
   - lifewatch_qc.md
+  - mofreports.md
   - access.md
+  - dataquality.md
+  - desktopgis.md

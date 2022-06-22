@@ -1,12 +1,3 @@
----
-title: Data visualization using desktop GIS tools
-shorttitle: Data visualization using desktop GIS tools
-layout: page
-lang: en
-identifier: desktopgis
-breadcrumbs: manual
----
-
 # Data visualization using desktop GIS tools
 
 #### Contents
