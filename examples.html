@@ -53,6 +53,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -95,6 +159,7 @@
 <li class="chapter" data-level="2.4" data-path="data_qc.html"><a href="data_qc.html"><i class="fa fa-check"></i><b>2.4</b> Data quality control</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>2.4.1</b> Name Matching Strategy for taxonomic quality control</a></li>
 <li class="chapter" data-level="2.4.2" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>2.4.2</b> Geographic and data format quality control</a></li>
+<li class="chapter" data-level="2.4.3" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>2.4.3</b> How To Use MoF Report and Tool</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>3</b> Data access</a><ul>
@@ -102,6 +167,16 @@
 <li class="chapter" data-level="3.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>3.2</b> R package</a></li>
 <li class="chapter" data-level="3.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>3.3</b> API</a></li>
 <li class="chapter" data-level="3.4" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>3.4</b> Full exports</a></li>
+<li class="chapter" data-level="3.5" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>3.5</b> Data quality flags</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="desktopgis.html"><a href="desktopgis.html"><i class="fa fa-check"></i><b>4</b> Data visualization using desktop GIS tools</a><ul>
+<li class="chapter" data-level="4.1" data-path="desktopgis.html"><a href="desktopgis.html#qgis-visualizing-coral-reefs-and-millepora"><i class="fa fa-check"></i><b>4.1</b> QGIS: visualizing coral reefs and <em>Millepora</em></a><ul>
+<li class="chapter" data-level="4.1.1" data-path="desktopgis.html"><a href="desktopgis.html#installation-1"><i class="fa fa-check"></i><b>4.1.1</b> Installation</a></li>
+<li class="chapter" data-level="4.1.2" data-path="desktopgis.html"><a href="desktopgis.html#data-sources"><i class="fa fa-check"></i><b>4.1.2</b> Data sources</a></li>
+<li class="chapter" data-level="4.1.3" data-path="desktopgis.html"><a href="desktopgis.html#adding-the-base-map"><i class="fa fa-check"></i><b>4.1.3</b> Adding the base map</a></li>
+<li class="chapter" data-level="4.1.4" data-path="desktopgis.html"><a href="desktopgis.html#adding-the-coral-reef-layer"><i class="fa fa-check"></i><b>4.1.4</b> Adding the coral reef layer</a></li>
+<li class="chapter" data-level="4.1.5" data-path="desktopgis.html"><a href="desktopgis.html#adding-the-obis-occurrences"><i class="fa fa-check"></i><b>4.1.5</b> Adding the OBIS occurrences</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -1055,7 +1130,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </div>
 <div id="edna-dna-derived-data" class="section level4 hasAnchor">
 <h4><span class="header-section-number">2.2.4.12</span> eDNA &amp; DNA derived data<a href="examples.html#edna-dna-derived-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The following example use cases draw on both the <a href="https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/">GBIF guide</a> and the <a href="https://rs.gbif-uat.org/extensions.html#http">DNA derived data extension</a> to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required occurrence core terms are shown, in addition to all eDNA &amp; DNA specific terms. For additional occurrence core terms, refer to <a href="../darwincore/#occurrence">Occurrence</a>.</p>
+<p>The following example use cases draw on both the <a href="https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/">GBIF guide</a> and the <a href="https://rs.gbif-uat.org/extensions.html#http">DNA derived data extension</a> to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required occurrence core terms are shown, in addition to all eDNA &amp; DNA specific terms. For additional occurrence core terms, refer to <a href="darwin_core.html#occurrence">Occurrence</a>.</p>
 <div id="edna-data-from-monterey-bay-california" class="section level5 hasAnchor">
 <h5><span class="header-section-number">2.2.4.12.1</span> eDNA data from Monterey Bay, California<a href="examples.html#edna-data-from-monterey-bay-california" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The data for this example is from the use case <a href="https://www1.usgs.gov/obis-usa/ipt/resource?r=18s_monterey_bay_time_series_edna">"18S Monterey Bay Time Series: an eDNA data set from Monterey Bay, California, including years 2006, 2013 - 2016’</a>. The data from this study originate from marine filtered seawater samples that have undergone metabarcoding for the 18S V9 region.</p>
@@ -1200,22 +1275,22 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 <tbody>
 <tr class="odd">
 <td>1000ml</td>
-<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
-<td><a href="dx.doi.org/10.17504/protocols.io.n2vdge6">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
+<td><a href="https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
 <td>paired</td>
 <td>18S</td>
 </tr>
 <tr class="even">
 <td>1000ml</td>
-<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
-<td><a href="dx.doi.org/10.17504/protocols.io.n2vdge6">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
+<td><a href="https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
 <td>paired</td>
 <td>18S</td>
 </tr>
 <tr class="odd">
 <td>1000ml</td>
-<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
-<td><a href="dx.doi.org/10.17504/protocols.io.n2vdge6">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
+<td><a href="https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
 <td>paired</td>
 <td>18S</td>
 </tr>
@@ -1274,17 +1349,17 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 <tbody>
 <tr class="odd">
 <td>Genbank nr;221</td>
-<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
 <td>GCTACTACCGATT…</td>
 </tr>
 <tr class="even">
 <td>Genbank nr;221</td>
-<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
 <td>GCTACTACCGATT…</td>
 </tr>
 <tr class="odd">
 <td>Genbank nr;221</td>
-<td><a href="dx.doi.org/10.17504/protocols.io.xjufknw">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
 <td>GCTACTACCGATT…</td>
 </tr>
 </tbody>

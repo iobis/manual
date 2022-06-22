@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 Biodiversity data standards | The OBIS manual</title>
-  <meta name="description" content="2.2 Biodiversity data standards | The OBIS manual" />
+  <title>2.4.3 How To Use MoF Report and Tool | The OBIS manual</title>
+  <meta name="description" content="2.4.3 How To Use MoF Report and Tool | The OBIS manual" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 Biodiversity data standards | The OBIS manual" />
+  <meta property="og:title" content="2.4.3 How To Use MoF Report and Tool | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 Biodiversity data standards | The OBIS manual" />
+  <meta name="twitter:title" content="2.4.3 How To Use MoF Report and Tool | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="nodes.html"/>
-<link rel="next" href="darwin_core.html"/>
+<link rel="prev" href="lifewatch_qc.html"/>
+<link rel="next" href="access.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -195,22 +195,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="biodiversity-data-standards" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.2</span> Biodiversity data standards<a href="data_standards.html#biodiversity-data-standards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>From the very beginning, OBIS has championed the use international standards for biogeographic data. Without agreement on the application of standards and protocols, OBIS would not have been able to build a large central database. OBIS uses the following standards:</p>
+<div id="how-to-use-mof-report-and-tool" class="section level3 hasAnchor">
+<h3><span class="header-section-number">2.4.3</span> How To Use MoF Report and Tool<a href="mofreports.html#how-to-use-mof-report-and-tool" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A MEASUREMENT TYPES dataset report has been added regarding currently used measurementType and associated measurementTypeID(s), located near the bottom of the individual dataset pages (if measurementType in use for the dataset).</p>
+<p>This new dataset report was derived from this MoF statistics report <a href="https://r.obis.org/mof/" target="_blank">https://r.obis.org/mof/</a> and this active filtering MoF tool <a href="https://mof.obis.org/" target="_blank">https://mof.obis.org/</a>.</p>
+<p>To more easily locate the datasets within your node that may have possible measurementType ID issues, use the MoF Statistics page: <a href="https://r.obis.org/mof/" target="_blank">https://r.obis.org/mof/</a>. This contains the list of Nodes currently using measurementType/measurementValue/measurementUnit with counts and percentage missing for the associated ID(s).</p>
+<p>If there is a node in that list that you are interested in locating, searching for and possibly fixing MoF issues, select the Node from the list, then select a dataset (displaying a high percentage of missing ID(s)), and scroll down to the MEASUREMENT TYPE report</p>
+<p>Example, selected OBIS USA,</p>
+<p><img src="images/mofreports/usa1.png" class="img-responsive img-responsive-70"/></p>
+<p><img src="images/mofreports/usa2.png" class="img-responsive img-responsive-70"/></p>
+<p>then selected Florida Keys Reef Visual Census 1994, and scrolled down to MEASUREMENT TYPES section:</p>
+<p><img src="images/mofreports/floridakeys.png" class="img-responsive"/></p>
+<p>To locate other datasets using these MEASUREMENT TYPES, use this active filtering MoF tool <a href="https://mof.obis.org/" target="_blank">https://mof.obis.org/</a>, sort by measurementType (click column header) and scroll to measurementType(s) of interest</p>
+<p><img src="images/mofreports/locate.png" class="img-responsive"/></p>
+<p>For MEASUREMENT TYPE “Number of species observed during time period” has only one entry, which is missing associated ID. To see which datasets are using the listed measurementType, measurementTypeID combination, click on the number of records which is the last column.</p>
+<p>All are from OBIS USA.</p>
+<p><img src="images/mofreports/speciesobserved.png" class="img-responsive"/></p>
+<p>For MEASUREMENT TYPE “fish length” … To see which datasets are using this also listed measurementType, measurementTypeID combination, click on the number of records which is the last column.</p>
+<p>There are two records for fish length, one missing an ID and the other using S06, which may not be the preferred ID for this measurementType:</p>
+<p><img src="images/mofreports/fishlength.png" class="img-responsive"/></p>
+<p>Also, while scrolling through this report, you may notice something you would like to further research, click the record count value to see a list of datasets and associated node(s) using this noted type/ID. NOTE: Current USE does not indicate CORRECT use:</p>
+<p><img src="images/mofreports/notcorrect.png" class="img-responsive"/></p>
+<p>To see BODC label for the provided ID, click the Find button, second last column:</p>
+<p><img src="images/mofreports/label.png" class="img-responsive"/></p>
+<p>This is showing a different label from the (variety of) measurementType provided.</p>
+<p>To see which datasets are using a specific measurementType / ID combination, click the records count, last column:</p>
+<p><img src="images/mofreports/observed1.png" class="img-responsive"/>
+<img src="images/mofreports/observed2.png" class="img-responsive"/></p>
+<p>Things you are looking to clean up:</p>
 <ul>
-<li><a href="darwin_core.html">Darwin Core</a></li>
-<li><a href="eml.html">Ecological Metadata Language</a></li>
-<li><a href="data_format.html">Darwin Core Archive and dataset structure</a></li>
+<li>If measurementTypeID is empty this should be updated.</li>
+<li>If the same measurementType (with same meaning/purpose) is using multiple measurementTypeIDs, these should be fixed to a single, preferred BODC vocab value.</li>
 </ul>
 
+</div>
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="nodes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="darwin_core.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lifewatch_qc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="access.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 Biodiversity data standards | The OBIS manual</title>
-  <meta name="description" content="2.2 Biodiversity data standards | The OBIS manual" />
+  <title>4 Data visualization using desktop GIS tools | The OBIS manual</title>
+  <meta name="description" content="4 Data visualization using desktop GIS tools | The OBIS manual" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 Biodiversity data standards | The OBIS manual" />
+  <meta property="og:title" content="4 Data visualization using desktop GIS tools | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 Biodiversity data standards | The OBIS manual" />
+  <meta name="twitter:title" content="4 Data visualization using desktop GIS tools | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="nodes.html"/>
-<link rel="next" href="darwin_core.html"/>
+<link rel="prev" href="dataquality.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -195,22 +195,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="biodiversity-data-standards" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.2</span> Biodiversity data standards<a href="data_standards.html#biodiversity-data-standards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>From the very beginning, OBIS has championed the use international standards for biogeographic data. Without agreement on the application of standards and protocols, OBIS would not have been able to build a large central database. OBIS uses the following standards:</p>
+<div id="data-visualization-using-desktop-gis-tools" class="section level1 hasAnchor">
+<h1><span class="header-section-number">4</span> Data visualization using desktop GIS tools<a href="desktopgis.html#data-visualization-using-desktop-gis-tools" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="contents" class="section level4 hasAnchor">
+<h4><span class="header-section-number">4.0.0.1</span> Contents<a href="desktopgis.html#contents" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
-<li><a href="darwin_core.html">Darwin Core</a></li>
-<li><a href="eml.html">Ecological Metadata Language</a></li>
-<li><a href="data_format.html">Darwin Core Archive and dataset structure</a></li>
+<li><a href="#qgis">QGIS: visualizing coral reefs and <em>Millepora</em></a>
+<ul>
+<li><a href="data_publication.html#installation">Installation</a><br />
+</li>
+<li><a href="#data">Data sources</a><br />
+</li>
+<li><a href="#basemap">Adding the base map</a><br />
+</li>
+<li><a href="#coral">Adding the coral reef layer</a><br />
+</li>
+<li><a href="#obis">Adding the OBIS occurrences</a></li>
+</ul></li>
 </ul>
+<p><a class="anchor" name="qgis"></a></p>
+</div>
+<div id="qgis-visualizing-coral-reefs-and-millepora" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.1</span> QGIS: visualizing coral reefs and <em>Millepora</em><a href="desktopgis.html#qgis-visualizing-coral-reefs-and-millepora" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this demo I will show how to combine OBIS data with spatial data from other sources in the desktop GIS application <a href="http://www.qgis.org/">QGIS</a>. All required files, except the coral reef layer, can be found <a href="https://github.com/iobis/training/tree/master/demo/qgis">here</a>.</p>
+<p><a class="anchor" name="installation"></a></p>
+<div id="installation-1" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.1.1</span> Installation<a href="desktopgis.html#installation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>QGIS is available for download <a href="here">https://www.qgis.org/en/site/forusers/download.html</a>.</p>
+<p><a class="anchor" name="data"></a></p>
+</div>
+<div id="data-sources" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.1.2</span> Data sources<a href="desktopgis.html#data-sources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We’ll use three data sources to generate our map:</p>
+<ul>
+<li>Any <a href="https://cartodb.com/basemaps/">CartoDB basemap</a>.</li>
+<li>OBIS occurrences of the genus <em>Millepora</em>. Download the dataset as CSV using the <a href="http://iobis.org/mapper">OBIS mapper</a>.</li>
+<li>The <a href="http://data.unep-wcmc.org/datasets/1">Global Distribution of Coral Reefs</a> dataset compiled by the UNEP World Conservation Monitoring Centre (UNEP-WCMC). You will need to fill out a form before you can download the dataset.</li>
+</ul>
+<p><a class="anchor" name="basemap"></a></p>
+</div>
+<div id="adding-the-base-map" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.1.3</span> Adding the base map<a href="desktopgis.html#adding-the-base-map" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We’ll use a tile layer from CartoDB as our base map. To be able to do this, we need to install the TileLayer Plugin:</p>
+<div id="plugin-installation" class="section level4 hasAnchor">
+<h4><span class="header-section-number">4.1.3.1</span> Plugin installation<a href="desktopgis.html#plugin-installation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="../images/qgis_plugin.png" width="500"/>
+<img src="../images/qgis_tilelayer.png" width="500"/></p>
+</div>
+<div id="creating-the-layer-definition" class="section level4 hasAnchor">
+<h4><span class="header-section-number">4.1.3.2</span> Creating the layer definition<a href="desktopgis.html#creating-the-layer-definition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Create a file named <code>cartodb.tsv</code> (Tabbed Separated Values) containing this line:</p>
+<pre class="text"><code>CartoDB CartoDB http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png</code></pre>
+</div>
+<div id="adding-the-layer" class="section level4 hasAnchor">
+<h4><span class="header-section-number">4.1.3.3</span> Adding the layer<a href="desktopgis.html#adding-the-layer" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now open the plugin, go to <code>Settings</code> and select the directory where you stored the layer definition file.</p>
+<p><img src="../images/qgis_add.png" width="500"/></p>
+<p>You should now be able to add the CartoDB base layer:</p>
+<p><img src="../images/qgis_layers.png" width="500"/></p>
+<p><a class="anchor" name="coral"></a></p>
+</div>
+</div>
+<div id="adding-the-coral-reef-layer" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.1.4</span> Adding the coral reef layer<a href="desktopgis.html#adding-the-coral-reef-layer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To add the coral reef shapefile, first extract the zip file you downloaded earlier (<code>WCMC-008-CoralReefs2010-ver1-3.zip</code>). Then go to <code>Layer &gt; Add Layer &gt; Add Vector Layer</code>, and select <code>WCMC-008-CoralReefs2010-ver1-3.shp</code>. Adjust the styling of the coral reef layer by clicking the colored square in the layers panel. Here I chose a bright red fill and no line:</p>
+<p><img src="../images/qgis_red.png" width="500"/></p>
+<p><a class="anchor" name="obis"></a></p>
+</div>
+<div id="adding-the-obis-occurrences" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.1.5</span> Adding the OBIS occurrences<a href="desktopgis.html#adding-the-obis-occurrences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To add the <em>Millepora</em> occurrences, go to <code>Layer &gt; Add Layer &gt; Add Delimited Text Layer</code>. Select the CSV file and click <code>OK</code>. The CRS selector window will now pop up. Make sure that <code>EPSG:4326</code> is selected, because we are adding points with coordinates in decimal degrees to a map that uses the Web Mercator projection (EPSG 3857).</p>
+<p>To change the symbols, click the symbol next to the layer you just created, go to <code>Style</code>, select <code>Categorized</code>, select the column you wish to use for coloring the symbols (<code>tname</code> for example), and click <code>Classify</code>. Play around with the marker settings.</p>
+<p><img src="../images/qgis.png" width="500"/></p>
 
+</div>
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="nodes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="darwin_core.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dataquality.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
