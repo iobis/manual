@@ -40,8 +40,8 @@ We'll use a tile layer from CartoDB as our base map. To be able to do this, we n
 
 #### Plugin installation
 
-<img src="../images/qgis_plugin.png" width="500"/>
-<img src="../images/qgis_tilelayer.png" width="500"/>
+![screenshot](./images/qgis_plugin.png)
+![screenshot](./images/qgis_tilelayer.png)
 
 #### Creating the layer definition
 
@@ -55,11 +55,11 @@ CartoDB	CartoDB	http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png
 
 Now open the plugin, go to `Settings` and select the directory where you stored the layer definition file.
 
-<img src="../images/qgis_add.png" width="500"/>
+![screenshot](./images/qgis_add.png)
 
 You should now be able to add the CartoDB base layer:
 
-<img src="../images/qgis_layers.png" width="500"/>
+![screenshot](./images/qgis_layers.png)
 
 <a class="anchor" name="coral"></a>
 
@@ -67,7 +67,7 @@ You should now be able to add the CartoDB base layer:
 
 To add the coral reef shapefile, first extract the zip file you downloaded earlier (`WCMC-008-CoralReefs2010-ver1-3.zip`). Then go to `Layer > Add Layer > Add Vector Layer`, and select `WCMC-008-CoralReefs2010-ver1-3.shp`. Adjust the styling of the coral reef layer by clicking the colored square in the layers panel. Here I chose a bright red fill and no line:
 
-<img src="../images/qgis_red.png" width="500"/>
+![screenshot](./images/qgis_red.png)
 
 <a class="anchor" name="obis"></a>
 
@@ -77,7 +77,7 @@ To add the _Millepora_ occurrences, go to `Layer > Add Layer > Add Delimited Tex
 
 To change the symbols, click the symbol next to the layer you just created, go to `Style`, select `Categorized`, select the column you wish to use for coloring the symbols (`tname` for example), and click `Classify`. Play around with the marker settings.
 
-<img src="../images/qgis.png" width="500"/>
+![screenshot](./images/qgis.png)
 
 <a class="anchor" name="obisindicators"></a>
 
@@ -86,4 +86,3 @@ To change the symbols, click the symbol next to the layer you just created, go t
 [obisindicators](https://marinebon.org/obisindicators/index.html) is an R library developed during the [2022 IOOS Code Sprint](https://ioos.github.io/ioos-code-sprint/). The purpose was to create an ES50 diversity index within hexagonal grids following what [Pieter Provoost developed](https://obis.org/indicators/). The package includes several examples, limited to 1M occurrences, that demonstrate uses of the package.
 
 ![screenshot](./images/all_data.png)
-# <img src="../images/all_data.png" width="500"/>
