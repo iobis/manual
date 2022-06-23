@@ -85,5 +85,5 @@ To change the symbols, click the symbol next to the layer you just created, go t
 
 [obisindicators](https://marinebon.org/obisindicators/index.html) is an R library developed during the [2022 IOOS Code Sprint](https://ioos.github.io/ioos-code-sprint/). The purpose was to create an ES50 diversity index within hexagonal grids following what [Pieter Provoost developed](https://obis.org/indicators/). The package includes several examples, limited to 1M occurrences, that demonstrate uses of the package.
 
-![screenshot]({{ page.root }}/images/all_data.png){: .image-with-shadow }
+![screenshot](./images/all_data.png)
 # <img src="../images/all_data.png" width="500"/>
