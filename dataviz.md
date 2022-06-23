@@ -1,4 +1,4 @@
-# Data Visualization
+# Data Visualization and Analysis
 
 #### Contents
 
@@ -8,7 +8,7 @@
 	- [Adding the base map](#basemap)  
 	- [Adding the coral reef layer](#coral)  
 	- [Adding the OBIS occurrences](#obis)  
-- obisindicators: calculating & visualizing spatial biodiversity
+- [obisindicators: calculating & visualizing spatial biodiversity](#obisindicators)
 
 <a class="anchor" name="qgis"></a>
 
@@ -79,6 +79,10 @@ To change the symbols, click the symbol next to the layer you just created, go t
 
 <img src="../images/qgis.png" width="500"/>
 
+<a class="anchor" name="obisindicators"></a>
 
 ## obisindicators: calculating & visualizing spatial biodiversity
-TODO: add obisindicators text here - abby test test
+
+[obisindicators](https://marinebon.org/obisindicators/index.html) is an R library developed during the [2022 IOOS Code Sprint](https://ioos.github.io/ioos-code-sprint/). The purpose was to create an ES50 diversity index within hexagonal grids following what [Pieter Provoost developed](https://obis.org/indicators/). The package includes several examples, limited to 1M occurrences, that demonstrate uses of the package.
+
+<img src="../images/all_data.png" width="500"/>
