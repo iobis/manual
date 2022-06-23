@@ -1,4 +1,4 @@
-# Data visualization using desktop GIS tools
+# Data Visualization
 
 #### Contents
 
@@ -8,6 +8,7 @@
 	- [Adding the base map](#basemap)  
 	- [Adding the coral reef layer](#coral)  
 	- [Adding the OBIS occurrences](#obis)  
+- obisindicators: calculating & visualizing spatial biodiversity
 
 <a class="anchor" name="qgis"></a>
 
@@ -77,3 +78,7 @@ To add the _Millepora_ occurrences, go to `Layer > Add Layer > Add Delimited Tex
 To change the symbols, click the symbol next to the layer you just created, go to `Style`, select `Categorized`, select the column you wish to use for coloring the symbols (`tname` for example), and click `Classify`. Play around with the marker settings.
 
 <img src="../images/qgis.png" width="500"/>
+
+
+## obisindicators: calculating & visualizing spatial biodiversity
+TODO: add obisindicators text here
