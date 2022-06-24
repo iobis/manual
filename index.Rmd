@@ -3,6 +3,8 @@ title: "The OBIS manual"
 site: "bookdown::bookdown_site"
 output:
   bookdown::gitbook:
+    includes:
+      in_header: [google_analytics.html]
     split_by: rmd
     css: "style.css"
     config:
