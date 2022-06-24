@@ -1,87 +1,20 @@
 # Data Visualization and Analysis
 
-#### Contents
+## Example notebooks using data from OBIS
 
-- [QGIS: visualizing coral reefs and _Millepora_](#qgis)  
-	- [Installation](#installation)  
-	- [Data sources](#data)  
-	- [Adding the base map](#basemap)  
-	- [Adding the coral reef layer](#coral)  
-	- [Adding the OBIS occurrences](#obis)  
-- [obisindicators: calculating & visualizing spatial biodiversity](#obisindicators)
+Here are a few R notebooks showcasing the robis package: 
+- [Data exploration of wind farm monitoring datasets in OBIS](https://iobis.github.io/notebook-windfarms/)
+- [Diversity of fish and vulnerable species in Marine World Heritage Sites based on OBIS data](https://iobis.github.io/notebook-mwhs/)
+- [Data exploration - Stratified random surveys (StRS) of reef fish in the U.S. Pacific Islands](https://iobis.github.io/notebook-reeffish/)
+- [DNADerivedData extension data access](https://iobis.github.io/notebook-dnaderiveddata/)
+- [Canary Current LME](https://iobis.github.io/notebook-cclme/)
 
-<a class="anchor" name="qgis"></a>
+Here are others that may be of interest:
+- [Diversity indicators using OBIS data](https://iobis.github.io/notebook-diversity-indicators/)
+- [Quality control of ISA data](https://iobis.github.io/notebook-deepdata/)
+- [Accessing gridded data](https://iobis.github.io/notebook-gridded-data/)
 
-## QGIS: visualizing coral reefs and _Millepora_
-
-In this demo I will show how to combine OBIS data with spatial data from other sources in the desktop GIS application [QGIS](http://www.qgis.org/). All required files, except the coral reef layer, can be found [here](https://github.com/iobis/training/tree/master/demo/qgis).
-
-<a class="anchor" name="installation"></a>
-
-### Installation
-
-QGIS is available for download [https://www.qgis.org/en/site/forusers/download.html](here).
-
-<a class="anchor" name="data"></a>
-
-### Data sources
-
-We'll use three data sources to generate our map:
-
-- Any [CartoDB basemap](https://cartodb.com/basemaps/).
-- OBIS occurrences of the genus _Millepora_. Download the dataset as CSV using the [OBIS mapper](http://iobis.org/mapper).
-- The [Global Distribution of Coral Reefs](http://data.unep-wcmc.org/datasets/1) dataset compiled by the UNEP World Conservation Monitoring Centre (UNEP-WCMC). You will need to fill out a form before you can download the dataset.
-
-<a class="anchor" name="basemap"></a>
-
-### Adding the base map
-
-We'll use a tile layer from CartoDB as our base map. To be able to do this, we need to install the TileLayer Plugin:
-
-#### Plugin installation
-
-![screenshot](./images/qgis_plugin.png)
-![screenshot](./images/qgis_tilelayer.png)
-
-#### Creating the layer definition
-
-Create a file named `cartodb.tsv` (Tabbed Separated Values) containing this line:
-
-```text
-CartoDB	CartoDB	http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png
-``` 
-
-#### Adding the layer
-
-Now open the plugin, go to `Settings` and select the directory where you stored the layer definition file.
-
-![screenshot](./images/qgis_add.png)
-
-You should now be able to add the CartoDB base layer:
-
-![screenshot](./images/qgis_layers.png)
-
-<a class="anchor" name="coral"></a>
-
-### Adding the coral reef layer
-
-To add the coral reef shapefile, first extract the zip file you downloaded earlier (`WCMC-008-CoralReefs2010-ver1-3.zip`). Then go to `Layer > Add Layer > Add Vector Layer`, and select `WCMC-008-CoralReefs2010-ver1-3.shp`. Adjust the styling of the coral reef layer by clicking the colored square in the layers panel. Here I chose a bright red fill and no line:
-
-![screenshot](./images/qgis_red.png)
-
-<a class="anchor" name="obis"></a>
-
-### Adding the OBIS occurrences
-
-To add the _Millepora_ occurrences, go to `Layer > Add Layer > Add Delimited Text Layer`. Select the CSV file and click `OK`. The CRS selector window will now pop up. Make sure that `EPSG:4326` is selected, because we are adding points with coordinates in decimal degrees to a map that uses the Web Mercator projection (EPSG 3857).
-
-To change the symbols, click the symbol next to the layer you just created, go to `Style`, select `Categorized`, select the column you wish to use for coloring the symbols (`tname` for example), and click `Classify`. Play around with the marker settings.
-
-![screenshot](./images/qgis.png)
-
-<a class="anchor" name="obisindicators"></a>
-
-## obisindicators: calculating & visualizing spatial biodiversity
+## obisindicators: calculating & visualizing spatial biodiversity using data from OBIS
 
 [obisindicators](https://marinebon.org/obisindicators/index.html) is an R library developed during the [2022 IOOS Code Sprint](https://ioos.github.io/ioos-code-sprint/). The purpose was to create an ES50 diversity index within hexagonal grids following what [Pieter Provoost developed](https://obis.org/indicators/). The package includes several examples, limited to 1M occurrences, that demonstrate uses of the package.
 
