@@ -2,7 +2,8 @@
 
 ## Example notebooks using data from OBIS
 
-Here are a few R notebooks showcasing the robis package: 
+Here are a few R notebooks showcasing the robis package:
+
 - [Data exploration of wind farm monitoring datasets in OBIS](https://iobis.github.io/notebook-windfarms/)
 - [Diversity of fish and vulnerable species in Marine World Heritage Sites based on OBIS data](https://iobis.github.io/notebook-mwhs/)
 - [Data exploration - Stratified random surveys (StRS) of reef fish in the U.S. Pacific Islands](https://iobis.github.io/notebook-reeffish/)
@@ -10,6 +11,7 @@ Here are a few R notebooks showcasing the robis package:
 - [Canary Current LME](https://iobis.github.io/notebook-cclme/)
 
 Here are others that may be of interest:
+
 - [Diversity indicators using OBIS data](https://iobis.github.io/notebook-diversity-indicators/)
 - [Quality control of ISA data](https://iobis.github.io/notebook-deepdata/)
 - [Accessing gridded data](https://iobis.github.io/notebook-gridded-data/)
