@@ -166,10 +166,10 @@ The examples in this section is based on the definitions and examples from publi
 
 Example:
 ```
-| scientificName     | scientificNameAuthorship                 | scientificNameID                          | taxonRank | identificationQualifier | taxonConceptID             |
-|--------------------|------------------------------------------|-------------------------------------------|-----------|-------------------------|----------------------------|
-| *Pelagia*          | Péron & Lesueur, 1810                    | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.               | *Pelagia* gen. nov.        |
-| *Pelagia benovici* | Piraino, Aglieri, Scorrano & Boero, 2014 | urn:lsid:marinespecies.org:taxname:851656 | species   | sp. nov                 | *Pelagia benovici* sp. nov |
+| scientificName   | scientificNameAuthorship                 | scientificNameID                          | taxonRank | identificationQualifier | taxonConceptID          |
+|------------------|------------------------------------------|-------------------------------------------|-----------|-------------------------|--------------------------|
+| Pelagia          | Péron & Lesueur, 1810                    | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.               | Pelagia gen. nov.        |
+| Pelagia benovici | Piraino, Aglieri, Scorrano & Boero, 2014 | urn:lsid:marinespecies.org:taxname:851656 | species   | sp. nov                 | Pelagia benovici sp. nov |
 ```
 
 **Scenario 4:** If the new species resemble or have an affinity to a known species, the `identificationQualifier` comprise the genus name and unspecified species name and the unique code/ identifier, along with the ON sign _aff._ and the species that it resembles or shows an affinity to. This `identificationQualifier` is applied in the same way as for non-physical specimens. See *2. Identification based on non-physical specimens* - *Scenario 2.2*.
@@ -178,20 +178,20 @@ Example:
 
 Example:
 ```
-| scientificName | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier | taxonConceptID             |
-|----------------|--------------------------|-------------------------------------------|-----------|-------------------------|----------------------------|
-| *Gadus*        | Linnaeus, 1758           | urn:lsid:marinespecies.org:taxname:125732 | genus     | cf. *morhua*            | *Gadus* cf. *morhua*        |
-| *Polycera*     | Cuvier, 1816             | urn:lsid:marinespecies.org:taxname:138369 | genus     | cf. *hedgpethi*         | *Polycera* cf. *hedgpethi* |
+| scientificName | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier | taxonConceptID          |
+|----------------|--------------------------|-------------------------------------------|-----------|-------------------------|-------------------------|
+| Gadus          | Linnaeus, 1758           | urn:lsid:marinespecies.org:taxname:125732 | genus     | cf. morhua              | Gadus cf. morhua        |
+| Polycera       | Cuvier, 1816             | urn:lsid:marinespecies.org:taxname:138369 | genus     | cf. hedgpethi           | Polycera* cf. hedgpethi |
 ```
 
 **Scenario 6:** In case of uncertain identifications, `identificationQualifier` such as , _?_ or *inc.* can be used. 
 
 Example: 
 ```
-| scientificName | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier | taxonConceptID                         |
-|----------------|--------------------------|-------------------------------------------|-----------|-------------------------|----------------------------------------|
-| *Tubifex*      | Lamarck, 1816            | urn:lsid:marinespecies.org:taxname:137392 | genus     |  ?                      |*Tubifex tubifex* (Müller, 1774) ?      |
-| *Tubifex*      | Lamarck, 1816            | urn:lsid:marinespecies.org:taxname:137392 | genus     | sp. inc.                |*Tubifex tubifex* (Müller, 1774)sp. inc.|
+| scientificName | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier | taxonConceptID                       |
+|----------------|--------------------------|-------------------------------------------|-----------|-------------------------|--------------------------------------|
+| Tubifex        | Lamarck, 1816            | urn:lsid:marinespecies.org:taxname:137392 | genus     |  ?                      |Tubifex tubifex (Müller, 1774) ?      |
+| Tubifex        | Lamarck, 1816            | urn:lsid:marinespecies.org:taxname:137392 | genus     | sp. inc.                |Tubifex tubifex (Müller, 1774)sp. inc.|
 ```
 
 ###### 2. Identification based on non-physical specimens
@@ -204,10 +204,10 @@ The flow diagram from the publication [Recommendations for the Standardisation o
 
 Example:
 ```
-| scientificName          | scientificNameAuthorship | scientificNameID                           | taxonRank | identificationQualifier          |taxonConceptID                   |
-|-------------------------|--------------------------|--------------------------------------------|-----------|----------------------------------|---------------------------------|
-| *Brisinga*              | Asbjørnsen, 1856         | urn:lsid:marinespecies.org:taxname:123210  | genus     | gen. inc.                        |*Brisinga* gen. inc.             |
-| *Uroptychus compressus* | Baba & Wicksten, 2019    | urn:lsid:marinespecies.org:taxname:1332465 | genus     | sp. inc.                         |*Uroptychus compressus* sp. inc. |
+| scientificName      | scientificNameAuthorship | scientificNameID                           | taxonRank | identificationQualifier          |taxonConceptID                 |
+|---------------------|--------------------------|--------------------------------------------|-----------|----------------------------------|-------------------------------|
+|Brisinga             | Asbjørnsen, 1856         | urn:lsid:marinespecies.org:taxname:123210  | genus     | gen. inc.                        |Brisinga gen. inc.             |
+|Uroptychus compressus| Baba & Wicksten, 2019    | urn:lsid:marinespecies.org:taxname:1332465 | genus     | sp. inc.                         |Uroptychus compressus sp. inc. |
 ```
 
 **Scenario 2:** Taxa that are new to science/ newly described species.  Non-physical specimens may or may not resemble a known species or have an affinity with a known species. 
@@ -216,18 +216,18 @@ Example:
 
 Example:
 ```
-| scientificName | scientificNameAuthorship     | scientificNameID                          | taxonRank | identificationQualifier  |taxonConceptID                         |
-|----------------|------------------------------|-------------------------------------------|-----------|--------------------------|---------------------------------------|
-| *Eurythenes*   | S. I. Smith in Scudder, 1882 | urn:lsid:marinespecies.org:taxname:101607 | genus     |sp. DISCOLL.PAP.JC165.674 |*Eurythenes* sp. DISCOLL.PAP.JC165.674 |
+| scientificName | scientificNameAuthorship     | scientificNameID                          | taxonRank | identificationQualifier  |taxonConceptID                       |
+|----------------|------------------------------|-------------------------------------------|-----------|--------------------------|-------------------------------------|
+| Eurythenes     | S. I. Smith in Scudder, 1882 | urn:lsid:marinespecies.org:taxname:101607 | genus     |sp. DISCOLL.PAP.JC165.674 |Eurythenes sp. DISCOLL.PAP.JC165.674 |
 ```
 
 **Scenario 2.2:** If the new species resemble or have an affinity to a known species, the `identificationQualifier` comprise the genus name and unspecified species name and the unique code/ identifier, along with the ON sign _aff._ and the species that it resembles or shows an affinity to (i.e. *Genus sp.* [unique code] aff. [species it shows affinity to]). 
 
 Example: 
 ```
-| scientificName | scientificNameAuthorship     | scientificNameID                         | taxonRank | identificationQualifier      |taxonConceptID                           |
-|----------------|------------------------------|------------------------------------------|-----------|------------------------------|-----------------------------------------|
-| *Paroriza*     | Hérouard, 1902               |urn:lsid:marinespecies.org:taxname:123467 | genus     |sp. [unique123] aff. *pallens*|*Paroriza* sp. [unique123] aff. *pallens*|
+| scientificName | scientificNameAuthorship     | scientificNameID                         | taxonRank | identificationQualifier    |taxonConceptID                       |
+|----------------|------------------------------|------------------------------------------|-----------|----------------------------|-------------------------------------|
+| Paroriza       | Hérouard, 1902               |urn:lsid:marinespecies.org:taxname:123467 | genus     |sp. [unique123] aff. pallens|Paroriza sp. [unique123] aff. pallens|
 ```
 
 **Scenario 3:** In cases where a subject specimen cannot accurately be identified to species level, provide the lowest possible, accurate `taxonRank` the subject can be identified as based on visual characteristics observed along with one of the following `identificationQualifier` (ON sign):
@@ -245,19 +245,19 @@ Example:
 
 Example:
 ```
-| scientificName   | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier |taxonConceptID            |
-|------------------|--------------------------|-------------------------------------------|-----------|-------------------------|--------------------------|
-| *Nematocarcinus* | Milne-Edwards, 1881      | urn:lsid:marinespecies.org:taxname:107015 | genus     | sp.indet.               |*Nematocarcinus* sp.indet.|
+| scientificName | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier |taxonConceptID          |
+|----------------|--------------------------|-------------------------------------------|-----------|-------------------------|------------------------|
+|Nematocarcinus  | Milne-Edwards, 1881      | urn:lsid:marinespecies.org:taxname:107015 | genus     | sp.indet.               |Nematocarcinus sp.indet.|
 ```
 
 **Scenario 3.3:** If a taxon is identifiable to a specific taxonomic rank, but the identification is uncertain, use the ON sign *inc.* (*incerta*). *incerta* can be used at any level of the identification (phylum inc., class inc., order inc., fam. inc., gen. inc., sp. inc.) and can be applied in both image-based identifications (all taxonomic levels) as well as with a physical specimen (likely only used at lower ranks).This ON sign should be added after the rank of uncertainty.
 
 Example:
 ```
-| scientificName     | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier |taxonConceptID            |
-|--------------------|--------------------------|-------------------------------------------|-----------|-------------------------|--------------------------|
-| *Brisinga*         | Asbjørnsen, 1856         | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                |*Brisinga* gen.inc.       |
-| *Brisinga costata* | Verrill, 1884            | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                 |*Brisinga costata* sp.inc.|
+| scientificName  | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier |taxonConceptID          |
+|-----------------|--------------------------|-------------------------------------------|-----------|-------------------------|------------------------|
+|Brisinga         | Asbjørnsen, 1856         | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                |Brisinga gen.inc.       |
+|Brisinga costata | Verrill, 1884            | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                 |Brisinga costata sp.inc.|
 ```
 
 ##### Occurrence
