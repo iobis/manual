@@ -5,7 +5,7 @@
 - [Introduction to Darwin Core](#introduction-to-darwin-core)
 - [Darwin Core terms](#darwin-core-terms)  
 - [Darwin Core guidelines](#darwin-core-guidelines)
-    - [Taxonomy and identification](#taxonomy-and-identification)  
+    - [Taxonomy and identification](#taxonomy-and-identification) 
     - [Occurrence](#occurrence)  
     - [Record level terms](#record-level-terms)  
     - [Location](#location)  
@@ -126,16 +126,9 @@ OBIS recommends providing information about how an identification was made, for 
 
 If the record represents a nomenclatural type specimen, the term `typeStatus` can be used, e.g. for holotype, syntype, etc. 
 
-In case of uncertain identifications, and the scientific name contains qualifiers such as _cf._, _?_ or _aff._, then this name should go in `identificationQualifier`, and `scientificName` should contain the name of the lowest possible taxon rank that refers to the most accurate identification. E.g. if the specimen was accurately identified down to genus level, but not species level, then the scientificName should contain the name of the genus, the scientificNameID should contain the LSID the genus and the `identificationQualifier` should contain the uncertain species name combined with _?_ or other qualifiers. Below are two examples:
+##### Undisputed identifications of known species
 
-Example using `identificationQualifier`: 
-
-```
-   scientificName   scientificNameAuthorship                          scientificNameID   taxonRank identificationQualifier
------------------ -------------------------- ----------------------------------------- ----------- ----------------------
-Lanice conchilega               Pallas, 1766 urn:lsid:marinespecies.org:taxname:131495     species 
-            Gadus             Linnaeus, 1758 urn:lsid:marinespecies.org:taxname:125732       genus             cf. morhua
-```         
+In the case where a physical specimen can be identified to species level, to a known species, the full taxonomy should be provided. This includes populating any and all taxonomic rank fields such as `kingdom`, `phylum`, `class`, `order`, `family`, `genus`, `specificEpithet` along with the `scientificNameAuthorship`.
 
 Example using full taxonomy:
 
@@ -155,6 +148,117 @@ Example using full taxonomy:
 | Terebellida | Trichobranchidae | Terebellides | stroemii        | Sars, 1835               |
 ```
 _Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/resource?r=largenet_k2)._
+
+##### Open nomenclature using `identificationQualifier` (ON signs)
+
+###### 1. Identification based on physical specimens
+
+The examples in this section is based on the definitions and examples from publication [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594), which provides examples for using the main Open Nomenclature qualifiers associated with *physical specimens*. The following flow chart is provided in the latter publication. See the full publication for more detail on the ON signs and examples used in this section.
+
+<p align="center"><img width="80%" height="80%" src="images/physicalspONsign.png" class="img-responsive"/></p>
+
+
+**Scenario 1:** The specimen is identifiable to a specific `taxonRank` with certainty, but no further identification to lower ranks were attempted. This might be due to lack of time, funds, resources, etc., use ON sign _stet._. This `identificationQualifier` is applied in the same way as for non-physical specimens. See *2. Identification based on non-physical specimens* - *Scenario 3.1*.
+
+**Scenario 2:** In a case where the taxon is unidentifiable/ indeterminable beyond a specific taxonomic level. In this case the _indet_ ON sign is applied at any taxonomic rank, e.g. *fam.indet.*, *sp.indet.* etc. This `identificationQualifier` is applied in the same way as for  non-physical specimens. See *2. Identification based on non-physical specimens* - *Scenario 3.2*.
+
+**Scenario 3:** Specimens that are new to science will be formally described in a publication using new `taxonrank` and *nov.*.
+
+Example:
+```
+| scientificName     | scientificNameAuthorship                 | scientificNameID                          | taxonRank | identificationQualifier | taxonConceptID             |
+|--------------------|------------------------------------------|-------------------------------------------|-----------|-------------------------|----------------------------|
+| *Pelagia*          | Péron & Lesueur, 1810                    | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.               | *Pelagia* gen. nov.        |
+| *Pelagia benovici* | Piraino, Aglieri, Scorrano & Boero, 2014 | urn:lsid:marinespecies.org:taxname:851656 | species   | sp. nov                 | *Pelagia benovici* sp. nov |
+```
+
+**Scenario 4:** If the new species resemble or have an affinity to a known species, the `identificationQualifier` comprise the genus name and unspecified species name and the unique code/ identifier, along with the ON sign _aff._ and the species that it resembles or shows an affinity to. This `identificationQualifier` is applied in the same way as for non-physical specimens. See *2. Identification based on non-physical specimens* - *Scenario 2.2*.
+
+**Scenario 5:** If the new species can be compared to reference material of a known species, the `identificationQualifier` _cf._ is used.
+
+Example:
+```
+| scientificName | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier | taxonConceptID             |
+|----------------|--------------------------|-------------------------------------------|-----------|-------------------------|----------------------------|
+| *Gadus*        | Linnaeus, 1758           | urn:lsid:marinespecies.org:taxname:125732 | genus     | cf. *morhua*            | *Gadus* cf. *morhua*        |
+| *Polycera*     | Cuvier, 1816             | urn:lsid:marinespecies.org:taxname:138369 | genus     | cf. *hedgpethi*         | *Polycera* cf. *hedgpethi* |
+```
+
+**Scenario 6:** In case of uncertain identifications, `identificationQualifier` such as , _?_ or *inc.* can be used. 
+
+Example: 
+```
+| scientificName | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier | taxonConceptID                         |
+|----------------|--------------------------|-------------------------------------------|-----------|-------------------------|----------------------------------------|
+| *Tubifex*      | Lamarck, 1816            | urn:lsid:marinespecies.org:taxname:137392 | genus     |  ?                      |*Tubifex tubifex* (Müller, 1774) ?      |
+| *Tubifex*      | Lamarck, 1816            | urn:lsid:marinespecies.org:taxname:137392 | genus     | sp. inc.                |*Tubifex tubifex* (Müller, 1774)sp. inc.|
+```
+
+###### 2. Identification based on non-physical specimens
+
+The flow diagram from the publication [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full) provides the key steps in determining the lowest rank of identiﬁcation with certainty, and provides the ON signs to be used for each case of uncertain identification of *non-physical specimens (image-based)*. 
+
+<p align="center"><img width="80%" height="80%" src="images/determiningONsign.png" class="img-responsive"/></p>
+
+**Scenario 1:** If a subject specimen can be identified to specie level, but not as a known species, an uncertain `specificEpithet` (species name) is given. Thus, the lowest possible, accurate taxon rank (in this case genus) should be provided in `taxonRank` with the identification of the specimen in `scientificName`. In these cases, the scientific name contain the ON sign *sp. inc.* and should be provided in `identificationQualifier` as Genus species *sp. inc.*
+
+Example:
+```
+| scientificName          | scientificNameAuthorship | scientificNameID                           | taxonRank | identificationQualifier          |taxonConceptID                   |
+|-------------------------|--------------------------|--------------------------------------------|-----------|----------------------------------|---------------------------------|
+| *Brisinga*              | Asbjørnsen, 1856         | urn:lsid:marinespecies.org:taxname:123210  | genus     | gen. inc.                        |*Brisinga* gen. inc.             |
+| *Uroptychus compressus* | Baba & Wicksten, 2019    | urn:lsid:marinespecies.org:taxname:1332465 | genus     | sp. inc.                         |*Uroptychus compressus* sp. inc. |
+```
+
+**Scenario 2:** Taxa that are new to science/ newly described species.  Non-physical specimens may or may not resemble a known species or have an affinity with a known species. 
+
+**Scenario 2.1:** If the new species does NOT resemble or have an affinity to a known species, the unique code/ identifier is provided along with the genus name and unspecified species name as `identificationQualifier` (i.e. *Genus sp.* [unique code]). For more on how OBIS recommends creating an unique qualifier, refer to the section on [Occurrence](https://manual.obis.org/darwincore/#occurrence). 
+
+Example:
+```
+| scientificName | scientificNameAuthorship     | scientificNameID                          | taxonRank | identificationQualifier  |taxonConceptID                         |
+|----------------|------------------------------|-------------------------------------------|-----------|--------------------------|---------------------------------------|
+| *Eurythenes*   | S. I. Smith in Scudder, 1882 | urn:lsid:marinespecies.org:taxname:101607 | genus     |sp. DISCOLL.PAP.JC165.674 |*Eurythenes* sp. DISCOLL.PAP.JC165.674 |
+```
+
+**Scenario 2.2:** If the new species resemble or have an affinity to a known species, the `identificationQualifier` comprise the genus name and unspecified species name and the unique code/ identifier, along with the ON sign _aff._ and the species that it resembles or shows an affinity to (i.e. *Genus sp.* [unique code] aff. [species it shows affinity to]). 
+
+Example: 
+```
+| scientificName | scientificNameAuthorship     | scientificNameID                         | taxonRank | identificationQualifier      |taxonConceptID                           |
+|----------------|------------------------------|------------------------------------------|-----------|------------------------------|-----------------------------------------|
+| *Paroriza*     | Hérouard, 1902               |urn:lsid:marinespecies.org:taxname:123467 | genus     |sp. [unique123] aff. *pallens*|*Paroriza* sp. [unique123] aff. *pallens*|
+```
+
+**Scenario 3:** In cases where a subject specimen cannot accurately be identified to species level, provide the lowest possible, accurate `taxonRank` the subject can be identified as based on visual characteristics observed along with one of the following `identificationQualifier` (ON sign):
+
+**Scenario 3.1:** The taxon is identifiable to a specific `taxonRank` with certainty, but no further identification to lower ranks were attempted. This might be due to lack of time, funds, resources, etc., use ON sign _stet._. This `identificationQualifier` is applied in the same way for physical- and non-physical specimens. 
+
+Example:
+```
+| scientificName | scientificNameAuthorship                | scientificNameID                          | taxonRank | identificationQualifier |taxonConceptID    |
+|----------------|-----------------------------------------|-------------------------------------------|-----------|-------------------------|------------------|
+| Aristeidae     | Wood-Mason in Wood-Mason & Alcock, 1891 | urn:lsid:marinespecies.org:taxname:106725 | family    | stet.                   | Aristeidae stet. | 
+```
+
+**Scenario 3.2:**. In a case where the taxon is unidentifiable/ indeterminable beyond a specific taxonomic level. This may be as a result of diagnostic characters being unavailable either due to material deterioration or damage. This scenario is equally relevant to image-based identifications, where diagnostic characters are often not visible or resolvable. In this case the _indet_ ON sign is applied at any taxonomic rank, e.g. *fam.indet.*, *sp.indet.* etc. This `identificationQualifier` is applied in the same way for physical- and non-physical specimens. 
+
+Example:
+```
+| scientificName   | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier |taxonConceptID            |
+|------------------|--------------------------|-------------------------------------------|-----------|-------------------------|--------------------------|
+| *Nematocarcinus* | Milne-Edwards, 1881      | urn:lsid:marinespecies.org:taxname:107015 | genus     | sp.indet.               |*Nematocarcinus* sp.indet.|
+```
+
+**Scenario 3.3:** If a taxon is identifiable to a specific taxonomic rank, but the identification is uncertain, use the ON sign *inc.* (*incerta*). *incerta* can be used at any level of the identification (phylum inc., class inc., order inc., fam. inc., gen. inc., sp. inc.) and can be applied in both image-based identifications (all taxonomic levels) as well as with a physical specimen (likely only used at lower ranks).This ON sign should be added after the rank of uncertainty.
+
+Example:
+```
+| scientificName     | scientificNameAuthorship | scientificNameID                          | taxonRank | identificationQualifier |taxonConceptID            |
+|--------------------|--------------------------|-------------------------------------------|-----------|-------------------------|--------------------------|
+| *Brisinga*         | Asbjørnsen, 1856         | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                |*Brisinga* gen.inc.       |
+| *Brisinga costata* | Verrill, 1884            | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                 |*Brisinga costata* sp.inc.|
+```
 
 ##### Occurrence
 
