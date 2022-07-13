@@ -101,3 +101,4 @@ example-notebooks-using-data-from-obis
 obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis
 other-resources
 mbon-pole-to-pole-tutorial
+ioos-darwin-core-guide
