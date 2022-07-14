@@ -2,8 +2,6 @@
 
 ## Example notebooks using data from OBIS
 
-![ospar](./images/ospar.png)
-
 Here are a few R notebooks showcasing the robis package:
 
 - [Data exploration of wind farm monitoring datasets in OBIS](https://iobis.github.io/notebook-windfarms/)
