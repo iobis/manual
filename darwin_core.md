@@ -152,22 +152,22 @@ The use and definitions for additional NO signs (identificationQualifier) can be
 Examples:
 
 ```
-| scientificName      | scientificNameAuthorship               | scientificNameID                          | taxonRank | identificationQualifier  | taxonConceptID                      |
-|---------------------|-----------------------------------------|------------------------------------------|-----------|--------------------------|-------------------------------------|
-|Pelagia              | Péron & Lesueur, 1810                  | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.                |Pelagia gen. nov.                    |
-|Pelagia benovici     | Piraino, Aglieri, Scorrano & Boero, 2014| urn:lsid:marinespecies.org:taxname:851656| species   | sp. nov                  |Pelagia benovici sp. nov             |
-|Gadus                | Linnaeus, 1758                         | urn:lsid:marinespecies.org:taxname:125732 | genus     | cf. morhua               |Gadus cf. morhua                     |
-|Polycera             | Cuvier, 1816                           | urn:lsid:marinespecies.org:taxname:138369 | genus     | cf. hedgpethi            |Polycera* cf. hedgpethi              |
-|Tubifex              | Lamarck, 1816                          | urn:lsid:marinespecies.org:taxname:137392 | genus     |  ?                       |Tubifex tubifex(Müller, 1774)?       |
-|Tubifex              | Lamarck, 1816                          | urn:lsid:marinespecies.org:taxname:137392 | genus     | sp. inc.                 |Tubifex tubifex(Müller, 1774)sp. inc.|
-|Brisinga             | Asbjørnsen, 1856                       | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen. inc.                |Brisinga gen. inc.                   |
-|Uroptychus compressus| Baba & Wicksten, 2019                  | urn:lsid:marinespecies.org:taxname:1332465| genus     | sp. inc.                 |Uroptychus compressus sp. inc.       |
-|Eurythenes           | S. I. Smith in Scudder, 1882           | urn:lsid:marinespecies.org:taxname:101607 | genus     | sp. DISCOLL.PAP.JC165.674|Eurythenes sp.DISCOLL.PAP.JC165.674  |
-|Paroriza             | Hérouard, 1902                         | urn:lsid:marinespecies.org:taxname:123467 | genus     | sp.[unique123]aff.pallens|Paroriza sp.[unique123]aff. pallens  |
-|Aristeidae           | Wood-Mason in Wood-Mason & Alcock, 1891| urn:lsid:marinespecies.org:taxname:106725 | family    | stet.                    |Aristeidae stet.                     |
-|Nematocarcinus       | Milne-Edwards, 1881                    | urn:lsid:marinespecies.org:taxname:107015 | genus     | sp.indet.                |Nematocarcinus sp.indet.             |
-|Brisinga             | Asbjørnsen, 1856                       | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                 |Brisinga gen.inc.                    |
-|Brisinga costata     | Verrill, 1884                          | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                  |Brisinga costata sp.inc.             |
+| scientificName      | scientificNameAuthorship                | scientificNameID                          | taxonRank | identificationQualifier  | taxonConceptID                      |
+|---------------------|-----------------------------------------|-------------------------------------------|-----------|--------------------------|-------------------------------------|
+|Pelagia              | Péron & Lesueur, 1810                   | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.                |Pelagia gen. nov.                    |
+|Pelagia benovici     | Piraino, Aglieri, Scorrano & Boero, 2014| urn:lsid:marinespecies.org:taxname:851656 | species   | sp. nov                  |Pelagia benovici sp. nov             |
+|Gadus                | Linnaeus, 1758                          | urn:lsid:marinespecies.org:taxname:125732 | genus     | cf. morhua               |Gadus cf. morhua                     |
+|Polycera             | Cuvier, 1816                            | urn:lsid:marinespecies.org:taxname:138369 | genus     | cf. hedgpethi            |Polycera* cf. hedgpethi              |
+|Tubifex              | Lamarck, 1816                           | urn:lsid:marinespecies.org:taxname:137392 | genus     |  ?                       |Tubifex tubifex(Müller, 1774)?       |
+|Tubifex              | Lamarck, 1816                           | urn:lsid:marinespecies.org:taxname:137392 | genus     | sp. inc.                 |Tubifex tubifex(Müller, 1774)sp. inc.|
+|Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen. inc.                |Brisinga gen. inc.                   |
+|Uroptychus compressus| Baba & Wicksten, 2019                   | urn:lsid:marinespecies.org:taxname:1332465| genus     | sp. inc.                 |Uroptychus compressus sp. inc.       |
+|Eurythenes           | S. I. Smith in Scudder, 1882            | urn:lsid:marinespecies.org:taxname:101607 | genus     | sp. DISCOLL.PAP.JC165.674|Eurythenes sp.DISCOLL.PAP.JC165.674  |
+|Paroriza             | Hérouard, 1902                          | urn:lsid:marinespecies.org:taxname:123467 | genus     | sp.[unique123]aff.pallens|Paroriza sp.[unique123]aff. pallens  |
+|Aristeidae           | Wood-Mason in Wood-Mason & Alcock, 1891 | urn:lsid:marinespecies.org:taxname:106725 | family    | stet.                    |Aristeidae stet.                     |
+|Nematocarcinus       | Milne-Edwards, 1881                     | urn:lsid:marinespecies.org:taxname:107015 | genus     | sp.indet.                |Nematocarcinus sp.indet.             |
+|Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                 |Brisinga gen.inc.                    |
+|Brisinga costata     | Verrill, 1884                           | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                  |Brisinga costata sp.inc.             |
 ```
 
 ##### Occurrence
