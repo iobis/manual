@@ -13,6 +13,7 @@ Here are a few R notebooks showcasing the robis package:
 Here are others that may be of interest:
 
 - [Diversity indicators using OBIS data](https://iobis.github.io/notebook-diversity-indicators/)
+- [OBIS species richness for OSPAR](https://iobis.github.io/notebook-ospar/)
 - [Quality control of ISA data](https://iobis.github.io/notebook-deepdata/)
 - [Accessing gridded data](https://iobis.github.io/notebook-gridded-data/)
 
