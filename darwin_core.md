@@ -157,7 +157,7 @@ Examples:
 |Pelagia              | Péron & Lesueur, 1810                   | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.                |Pelagia gen. nov.                    |
 |Pelagia benovici     | Piraino, Aglieri, Scorrano & Boero, 2014| urn:lsid:marinespecies.org:taxname:851656 | species   | sp. nov                  |Pelagia benovici sp. nov             |
 |Gadus                | Linnaeus, 1758                          | urn:lsid:marinespecies.org:taxname:125732 | genus     | cf. morhua               |Gadus cf. morhua                     |
-|Polycera             | Cuvier, 1816                            | urn:lsid:marinespecies.org:taxname:138369 | genus     | cf. hedgpethi            |Polycera* cf. hedgpethi              |
+|Polycera             | Cuvier, 1816                            | urn:lsid:marinespecies.org:taxname:138369 | genus     | cf. hedgpethi            |Polycera cf. hedgpethi               |
 |Tubifex              | Lamarck, 1816                           | urn:lsid:marinespecies.org:taxname:137392 | genus     |  ?                       |Tubifex tubifex(Müller, 1774)?       |
 |Tubifex              | Lamarck, 1816                           | urn:lsid:marinespecies.org:taxname:137392 | genus     | sp. inc.                 |Tubifex tubifex(Müller, 1774)sp. inc.|
 |Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen. inc.                |Brisinga gen. inc.                   |
