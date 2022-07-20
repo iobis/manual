@@ -1,53 +1,44 @@
----
-title: "Examples: ENV-DATA and DNA derived data"
-shorttitle: "Examples: ENV-DATA and DNA derived data"
-layout: page
-lang: en
-identifier: example
-breadcrumbs: manual
----
+### Examples: ENV-DATA and DNA derived data
 
-# Examples: ENV-DATA and DNA derived data
+**Contents**
 
-#### Contents
-
-- [1. Fish abundance & distribution](#example_fish)
-- [2. Hard coral cover & composition](#example_hcoral)
-- [3. Invertebrates abundance & distribution](#example_inverts)
-- [4. Macroalgae canopy cover & composition](#example_macroalgae)
-- [5. Mangroves cover & composition](#example_mangrove)
-- [6. Marine birds abundance & distribution](#example_mbirds)
-- [7. Marine mammals abundance & distribution](#example_mmammals)
-- [8. Marine turtles abundance & distribution](#example_mturtles)
-- [9. Microbes biomass & diversity](#example_microbes)
-- [10. Plankton biomass & diversity](#example_plankton)
-- [11. Seagrass cover & composition](#example_seagrass)
-- [12. eDNA & DNA derived data](#example_edna)
-    - [12.1: eDNA data from Monterey Bay, California](#example_Ex1)
-    - [12.2: 16S rRNA gene metabarcoding data of Pico- to Mesoplankton](#example_Ex2)
+- [1. Fish abundance & distribution](#fish-abundance-distribution)
+- [2. Hard coral cover & composition](#hard-coral-cover-composition)
+- [3. Invertebrates abundance & distribution](#invertebrates-abundance-distribution)
+- [4. Macroalgae canopy cover & composition](#macroalgae-canopy-cover-composition)
+- [5. Mangroves cover & composition](#mangroves-cover-composition)
+- [6. Marine birds abundance & distribution](#marine-birds-abundance-distribution)
+- [7. Marine mammals abundance & distribution](#marine-mammals-abundance-distribution)
+- [8. Marine turtles abundance & distribution](#marine-turtles-abundance-distribution)
+- [9. Microbes biomass & diversity](#microbes-biomass-diversity)
+- [10. Plankton biomass & diversity](#plankton-biomass-diversity)
+- [11. Seagrass cover & composition](#seagrass-cover-composition)
+- [12. eDNA & DNA derived data](#edna-dna-derived-data)
+    - [12.1: eDNA data from Monterey Bay, California](#edna-data-from-monterey-bay-california)
+    - [12.2: 16S rRNA gene metabarcoding data of Pico- to Mesoplankton](#s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton)
 
 <a class="anchor" name="example_fish"></a>
 
-## 1. Fish abundance & distribution
+#### Fish abundance & distribution
 (example coming soon)
 
 <a class="anchor" name="example_hcoral"></a>
 
-## 2. Hard coral cover & composition
+#### Hard coral cover & composition
 (example coming soon)
 
 <a class="anchor" name="example_inverts"></a>
 
-## 3. Invertebrates abundance & distribution
+#### Invertebrates abundance & distribution
 (example coming soon)
 
 <a class="anchor" name="example_macroalgae"></a>
 
-## 4. Macroalgae canopy cover & composition
+#### Macroalgae canopy cover & composition
 
 In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension.
 
-<img src="/images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-50"/>
+<img src="images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-50"/>
 <p class="caption-70">Figure: A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.</p>
 
 First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using `eventID` and `parentEventID`. As the survey sites has a fixed location we can populate `decimalLongitude` and `decimalLatitude` at the top level event. The zones have different depths, so `minimumDepthInMeters` and `maximumDepthInMeters` are populated at the zone level. Finally, as not all sampling was done on the same day, `eventDate` is populated at the quadrat and transect level.
@@ -90,23 +81,19 @@ And finally there is the MeasurementOrFact extension table, which has attributes
 | transect_2 | occ_5 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 4 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
 | transect_2 | occ_6 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 16 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
 
-<a class="anchor" name="example_mangrove"></a>
+#### Mangroves cover & composition
 
-## 5. Mangroves cover & composition
 (example coming soon)
 
-<a class="anchor" name="example_mbirds"></a>
+#### Marine birds abundance & distribution
 
-## 6. Marine birds abundance & distribution
 (example coming soon)
 
-<a class="anchor" name="example_mmammals"></a>
-
-## 7. Marine mammals abundance & distribution
+#### Marine mammals abundance & distribution
 
 In this section we will explore how to encode a survey data set into Darwin Core using the ENV-DATA approach. As an example, sections of the actual data set of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), is used.
 
-<img src="/images/ENV_example_CETUS.png" class="img-responsive img-responsive-50"/>
+<img src="images/ENV_example_CETUS.png" class="img-responsive img-responsive-50"/>
 Figure: A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions**.</p>
 
 Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using `eventID` and `parentEventID`. As the survey observations were made at locations of Cetacean sightings instead of fixed locations, we can populate `footprintWKT` and `footprintSRS` as location information. Not all sampling was done on the same day, therefore `eventDate` is populated at the transect level.
@@ -144,24 +131,19 @@ And finally, the extendedMeasurementOrFact extension table has attributes of the
 | Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Number of small ships (<20m) |                                                          | 0                |                                 |                                                      |
 | Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel speed                 | [P01/current/APSAGP01](http://vocab.nerc.ac.uk/collection/P01/current/APSAGP01/) | 16               | Knots (nautical miles per hour) | [P06/current/UKNT](http://vocab.nerc.ac.uk/collection/P06/current/UKNT/) |
 
-<a class="anchor" name="example_mturtles"></a>
+#### Marine turtles abundance & distribution
 
-## 8. Marine turtles abundance & distribution
 (example coming soon)
 
-<a class="anchor" name="example_microbes"></a>
+#### Microbes biomass & diversity
 
-## 9. Microbes biomass & diversity
 (example coming soon)
 
-<a class="anchor" name="example_plankton"></a>
+#### Plankton biomass & diversity
 
-## 10. Plankton biomass & diversity
 (example coming soon)
 
-<a class="anchor" name="example_seagrass"></a>
-
-## 11. Seagrass cover & composition
+#### Seagrass cover & composition
 
 The structure of the Event, Occurrence and ExtendedMeasurementOrFact extensions for Seagrass Cover & Composition is based on community feedback organised through the the Scientific Committee on Oceanic Research (SCOR): [Coordinated Global Research Assessment of Seagrass System (C-GRASS)](https://scor-int.org/group/158/). We acknowledge the work that the C-grass SCOR work group has done to develop a proposed scheme for completing Seagrass related extension files.
 
@@ -169,14 +151,12 @@ Here encode seagrass survey data into Darwin Core according to the ENV-DATA appr
 
 The Event core table is created by extracting all events and attributes. All events are linked together using `eventID` and `parentEventID`. `eventDate` is populated at the transect level with the recommended format that conforms to ISO 8601-1:2019. `habitat` is populated as a category or description of the habitat in which the Event occurred. Additional `fieldNotes` can also be provided if applicable. The recommended best practice for `countryCode` is to use an ISO 3166-1-alpha-2 country code. The remaining eventCore fields comprise of location data including `maximumDepthInMeters`, `minimumDepthInMeters`, `decimalLongitude`, `decimalLatitude`, `coordinateUncertaintyInMeters`, `footprintWKT` and `footprintSRS`.
 
-
 | eventID                                    | parentEventID            | eventDate  | habitat  | fieldNotes | countryCode | 
 |--------------------------------------------|--------------------------|------------|----------|------------|-------------|
 | USBsg-chengue-pastocoral                   |                          | 2019-05-13 | seagrass | no notes   | CO          |
 | USBsg-chengue-pastomanglar                 |                          | 2019-05-14 | seagrass | no notes   | CO          | 
 | USBsg-chengue-pastocoral-SquidPopTransect1 | USBsg-chengue-pastocoral | 2019-05-13 | seagrass | no notes   | CO          | 
 | USBsg-chengue-pastocoral-SquidPopTransect2 | USBsg-chengue-pastocoral | 2019-05-13 | seagrass | no notes   | CO          | 
-
 
 **eventCore continued:**
 
@@ -235,15 +215,11 @@ The final extension table, extendedMeasurementOrFact, contain the measurement in
 | http://vocab.nerc.ac.uk/collection/S06/current/S0600087/ | 0.02725          | Grams per square metre  | http://vocab.nerc.ac.uk/collection/P06/current/UGMS/ |
 | http://vocab.nerc.ac.uk/collection/S06/current/S0600087/ | 0                | Grams per square metre  | http://vocab.nerc.ac.uk/collection/P06/current/UGMS/ |
 
-<a class="anchor" name="example_edna"></a>
+#### eDNA & DNA derived data
 
-## 12. eDNA & DNA derived data
+The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional occurrence core terms, refer to [Occurrence](darwin_core.html#occurrence). 
 
-The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional occurrence core terms, refer to [Occurrence](../darwincore/#occurrence). 
-
-<a class="anchor" name="example_Ex1"></a>
-
-### 12. 1: eDNA data from Monterey Bay, California
+##### eDNA data from Monterey Bay, California
 
 The data for this example is from the use case ["18S Monterey Bay Time Series: an eDNA data set from Monterey Bay, California, including years 2006, 2013 - 2016'](https://www1.usgs.gov/obis-usa/ipt/resource?r=18s_monterey_bay_time_series_edna). The data from this study originate from marine filtered seawater samples that have undergone metabarcoding for the 18S V9 region.
 
@@ -272,7 +248,6 @@ Next, we can create the DNA derived data extension which will be connected to th
 
 **DNA derived data extension:**
 
-
 | occurrenceID               | env-broad_scale              | env_local_scale               | env_medium                                    |
 |----------------------------|------------------------------|-------------------------------|-----------------------------------------------|
 | 11216c01_12_edna_1_S_occ1  | marine biome (ENVO:00000447) | coastal water (ENVO:00001250) | waterborne particulate matter (ENVO:01000436) |
@@ -284,13 +259,11 @@ The samples were collected by CTD rosette and filtered by a peristaltic pump sys
 
 **DNA derived data extension (continued):**
 
-
 | samp_vol_we_dna_ext | nucl_acid_ext                            | nucl_acid_amp                            | lib_layout  | target_gene |
 |---------------------|------------------------------------------|------------------------------------------|-------------|-------------|
-| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) | [dx.doi.org/10.17504/protocols.io.n2vdge6](dx.doi.org/10.17504/protocols.io.n2vdge6) | paired      | 18S         |
-| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) | [dx.doi.org/10.17504/protocols.io.n2vdge6](dx.doi.org/10.17504/protocols.io.n2vdge6) | paired      | 18S         |
-| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) | [dx.doi.org/10.17504/protocols.io.n2vdge6](dx.doi.org/10.17504/protocols.io.n2vdge6) | paired      | 18S         |
-
+| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) | [dx.doi.org/10.17504/protocols.io.n2vdge6](https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2) | paired      | 18S         |
+| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) | [dx.doi.org/10.17504/protocols.io.n2vdge6](https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2) | paired      | 18S         |
+| 1000ml              | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) | [dx.doi.org/10.17504/protocols.io.n2vdge6](https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2) | paired      | 18S         |
 
 For a detailed description of the steps taken to process the data, including algorithms used, see the original publication. Adding Operational Taxonomic Unit (OTU) related data are highly recommended and should be as complete as possible, for example:
 
@@ -300,12 +273,11 @@ For a detailed description of the steps taken to process the data, including alg
 | V9                  | Illumina MiSeq 2x250 | dada2;1.14.0;ASV | blast;2.9.0+;80% identity;e-value cutoff: x  MEGAN6;6.18.5;bitscore: 100 :2% |
 | V9                  | Illumina MiSeq 2x250 | dada2;1.14.0;ASV | blast;2.9.0+;80% identity;e-value cutoff: x  MEGAN6;6.18.5;bitscore: 100 :2% |
 
-
 | otu_db         | sop                                                           | DNA_sequence     |
 |----------------|---------------------------------------------------------------|------------------|
-| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) or GitHub repository | GCTACTACCGATT... |
-| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) or GitHub repository | GCTACTACCGATT... |
-| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](dx.doi.org/10.17504/protocols.io.xjufknw) or GitHub repository | GCTACTACCGATT... |
+| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) or GitHub repository | GCTACTACCGATT... |
+| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) or GitHub repository | GCTACTACCGATT... |
+| Genbank nr;221 | [dx.doi.org/10.17504/protocols.io.xjufknw](https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1) or GitHub repository | GCTACTACCGATT... |
 
 
 | pcr_primer_forward | pcr_primer_reverse       | pcr_primer_name_forward | pcr_primer_name_reverse | pcr_primer_reference       |
@@ -314,9 +286,7 @@ For a detailed description of the steps taken to process the data, including alg
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 
-<a class="anchor" name="example_Ex2"></a>
-
-### 12. 2: 16S rRNA gene metabarcoding data of Pico- to Mesoplankton
+##### 16S rRNA gene metabarcoding data of Pico- to Mesoplankton
 
 DNA derived datasets can also include an extendedMeasurementsOrFact (eMoF) extension file, in addition to the occurrence and DNA derived extensions. In this example, environmental measurements were provided in an eMoF file, in addition to the DNA derived data and occurrence data. Here we show how to incorporate such measurements in the extensions. 
 
@@ -324,8 +294,7 @@ In the publication ["Diversity of Pico- to Mesoplankton along the 2000 km Salini
 
 The Occurrence core contain information about the organisms in the sample including the taxonomy and quantity of organisms detected, the collection location, references for the identification procedure, and links to the sequences generated. 
 
-***Important note: even though this dataset uses OTU identifiers for taxonomy (therefore not including ```scientificNameID```) OBIS still recommends using ```scientificNameID```.**
-
+**Important note: even though this dataset uses OTU identifiers for taxonomy (therefore not including ```scientificNameID```) OBIS still recommends using ```scientificNameID```.**
 
 **Occurrence core:**
 
@@ -335,13 +304,11 @@ The Occurrence core contain information about the organisms in the sample includ
 | MaterialSample | SBDI-ASV-3:16S_1:43e088977eba5732bfa45e20b1d8cdd2 | SBDI-ASV-3:16S_1 | 2013-07-13 07:08:00 |
 | MaterialSample | SBDI-ASV-3:16S_1:887bc7033b46d960e893caceb711700b | SBDI-ASV-3:16S_1 | 2013-07-13 07:08:00 |
 
-
 | organismQuantity | organismQuantityType | sampleSizeValue | sampleSizeUnit     |
 |------------------|----------------------|-----------------|--------------------|
 | 2235             | DNA sequence reads   | 12393           | DNA sequence reads |
 | 795              | DNA sequence reads   | 12393           | DNA sequence reads |
 | 40               | DNA sequence reads   | 12393           | DNA sequence reads |
-
 
 | samplingProtocol                                                                                                                            | associatedSequences                                 | identificationReferences                                                             | identificationRemarks                                                                                                             |
 |---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|

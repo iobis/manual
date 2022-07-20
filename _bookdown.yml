@@ -7,8 +7,13 @@ rmd_files:
   - darwin_core.md
   - eml.md
   - data_format.md
+  - examples.md
   - data_publication.md
   - data_qc.md
   - name_matching.md
   - lifewatch_qc.md
+  - mofreports.md
   - access.md
+  - dataquality.md
+  - dataviz.md
+  - other_resources.md
