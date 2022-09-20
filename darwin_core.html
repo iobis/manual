@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.2.1 Darwin Core | The OBIS manual</title>
   <meta name="description" content="2.2.1 Darwin Core | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.2.1 Darwin Core | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -212,8 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 <li><a href="darwin_core.html#darwin-core-guidelines">Darwin Core guidelines</a>
 <ul>
-<li><a href="darwin_core.html#taxonomy-and-identification">Taxonomy and identification</a><br />
-</li>
+<li><a href="darwin_core.html#taxonomy-and-identification">Taxonomy and identification</a></li>
 <li><a href="darwin_core.html#occurrence">Occurrence</a><br />
 </li>
 <li><a href="darwin_core.html#record-level-terms">Record level terms</a><br />
@@ -324,18 +323,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">2.2.1.3</span> Darwin Core guidelines<a href="darwin_core.html#darwin-core-guidelines" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div id="taxonomy-and-identification" class="section level5 hasAnchor">
 <h5><span class="header-section-number">2.2.1.3.1</span> Taxonomy and identification<a href="darwin_core.html#taxonomy-and-identification" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p><code>scientificName</code> (required term) should always contain the originally recorded scientific name, even if the name is currently a synomym. This is necessary to be able to track back records to the original dataset. The name should be at the lowest possible taxonomic rank, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc are also acceptable. We recommend to not include authorship in <code>scientificName</code>, and only use <code>scientificNameAuthorship</code> for that purpose. The <code>scientificName</code> term should only contain the name and not identification qualifications (such as ?, confer or affinity), which should instead be supplied in the <code>IdentificationQualifier</code> term, see example below. <code>taxonRemarks</code> can capture comments or notes about the taxon or name.</p>
+<p><code>scientificName</code> (required term) should always contain the originally recorded scientific name, even if the name is currently a synomym. This is necessary to be able to track back records to the original dataset. The name should be at the lowest possible taxonomic rank, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc are also acceptable. We recommend to not include authorship in <code>scientificName</code>, and only use <code>scientificNameAuthorship</code> for that purpose. The <code>scientificName</code> term should only contain the name and not identification qualifications (such as ?, confer or affinity), which should instead be supplied in the <code>IdentificationQualifier</code> term, see examples below. <code>taxonRemarks</code> can capture comments or notes about the taxon or name.</p>
 <p>A <a href="http://www.marinespecies.org/">WoRMS</a> LSID should be added in <code>scientificNameID</code> (required term), OBIS will use this identifier to pull the taxonomic information from the World Register of Marine Species (WoRMS) into OBIS, such as the taxonomic classification and the accepted name in case of invalid names or synonyms. LSIDs are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources. More information on LSIDs can be found at <a href="http://www.lsid.info/">www.lsid.info</a>. For example, the WoRMS LSID for <em>Solea solea</em> is: <a href="urn:lsid:marinespecies.org:taxname:127160" class="uri">urn:lsid:marinespecies.org:taxname:127160</a>, and can be found at the bottom of each WoRMS taxon page, e.g. <a href="http://marinespecies.org/aphia.php?p=taxdetails&amp;id=127160"><em>Solea solea</em></a>.</p>
 <p><code>kingdom</code> and <code>taxonRank</code> can help us in identifying the provided <code>scientificName</code> in case the name is not available in WoRMS. <code>kingdom</code> in particular can help us find alternative genus-species combinations and avoids linking the name to homonyms. Please contact the WoRMS data management team (<a href="mailto:info@marinespecies.org" class="email">info@marinespecies.org</a>) in case the scientificName is missing in WoRMS. <code>kingdom</code> and <code>taxonRank</code> are not necessary when a correct <code>scientificNameID</code> is provided.</p>
 <p>OBIS recommends providing information about how an identification was made, for example by which ID key, species guide or expert; and by which method (e.g morphology vs. genomics), etc. The person’s name who made the taxonomic identification can go in <code>identifiedBy</code> and <em>when</em> in <code>dateIdentified</code>. Use the ISO 8601:2004(E) standard for date and time, for instructions see <a href="darwin_core.html#time">Time</a>. A list of references, such as field guides used for the identification can be listed in <code>identificationReferences</code>. Any other information, such as identification methods, can be added to <code>identificationRemarks</code>.</p>
-<p>If the record represents a nomenclatural type specimen, the term <code>typeStatus</code> can be used, e.g. for holotype, syntype, etc.</p>
-<p>In case of uncertain identifications, and the scientific name contains qualifiers such as <em>cf.</em>, <em>?</em> or <em>aff.</em>, then this name should go in <code>identificationQualifier</code>, and <code>scientificName</code> should contain the name of the lowest possible taxon rank that refers to the most accurate identification. E.g. if the specimen was accurately identified down to genus level, but not species level, then the scientificName should contain the name of the genus, the scientificNameID should contain the LSID the genus and the <code>identificationQualifier</code> should contain the uncertain species name combined with <em>?</em> or other qualifiers. Below are two examples:</p>
-<p>Example using <code>identificationQualifier</code>:</p>
-<pre><code>   scientificName   scientificNameAuthorship                          scientificNameID   taxonRank identificationQualifier
------------------ -------------------------- ----------------------------------------- ----------- ----------------------
-Lanice conchilega               Pallas, 1766 urn:lsid:marinespecies.org:taxname:131495     species 
-            Gadus             Linnaeus, 1758 urn:lsid:marinespecies.org:taxname:125732       genus             cf. morhua</code></pre>
-<p>Example using full taxonomy:</p>
+<p>Examples:</p>
 <pre><code>| scientificNameID                          | scientificName        | kingdom  | phylum   | class      |
 |-------------------------------------------|-----------------------|----------|----------|------------|
 | urn:lsid:marinespecies.org:taxname:142004 | Yoldiella nana        | Animalia | Mollusca | Bivalvia   |
@@ -347,6 +339,26 @@ Lanice conchilega               Pallas, 1766 urn:lsid:marinespecies.org:taxname:
 | Nuculoida   | Nuculidae        | Ennucula     | tenuis          | (Montagu, 1808)          |
 | Terebellida | Trichobranchidae | Terebellides | stroemii        | Sars, 1835               |</code></pre>
 <p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=largenet_k2">Benthic fauna around Franz Josef Land</a>.</em></p>
+<p>If the record represents a nomenclatural type specimen, the term <code>typeStatus</code> can be used, e.g. for holotype, syntype, etc.</p>
+<p><strong>In case of uncertain identifications</strong>, and the scientific name contains qualifiers such as <em>cf.</em>, <em>?</em> or <em>aff.</em>, then this name should go in <code>identificationQualifier</code>, and <code>scientificName</code> should contain the name of the lowest possible taxon rank that refers to the most accurate identification. E.g. if the specimen was accurately identified down to genus level, but not species level, then the scientificName should contain the name of the genus, the scientificNameID should contain the LSID the genus and the <code>identificationQualifier</code> should contain the uncertain species name combined with <em>?</em> or other qualifiers. The table belowe shows a few examples:</p>
+<p>The use and definitions for additional NO signs (identificationQualifier) can be found in <a href="https://doi.org/10.1111/2041-210X.12594">Open Nomenclature in the biodiversity era</a>, which provides examples for using the main Open Nomenclature qualifiers associated with <em>physical specimens</em>. The publication <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations</a> provides examples and definitions for identificationQualifiers for <em>non-physical specimens (image-based)</em>.</p>
+<p>Examples:</p>
+<pre><code>| scientificName      | scientificNameAuthorship                | scientificNameID                          | taxonRank | identificationQualifier  | taxonConceptID                      |
+|---------------------|-----------------------------------------|-------------------------------------------|-----------|--------------------------|-------------------------------------|
+|Pelagia              | Péron &amp; Lesueur, 1810                   | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.                |Pelagia gen. nov.                    |
+|Pelagia benovici     | Piraino, Aglieri, Scorrano &amp; Boero, 2014| urn:lsid:marinespecies.org:taxname:851656 | species   | sp. nov                  |Pelagia benovici sp. nov             |
+|Gadus                | Linnaeus, 1758                          | urn:lsid:marinespecies.org:taxname:125732 | genus     | cf. morhua               |Gadus cf. morhua                     |
+|Polycera             | Cuvier, 1816                            | urn:lsid:marinespecies.org:taxname:138369 | genus     | cf. hedgpethi            |Polycera cf. hedgpethi               |
+|Tubifex              | Lamarck, 1816                           | urn:lsid:marinespecies.org:taxname:137392 | genus     |  ?                       |Tubifex tubifex(Müller, 1774)?       |
+|Tubifex              | Lamarck, 1816                           | urn:lsid:marinespecies.org:taxname:137392 | genus     | sp. inc.                 |Tubifex tubifex(Müller, 1774)sp. inc.|
+|Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen. inc.                |Brisinga gen. inc.                   |
+|Uroptychus compressus| Baba &amp; Wicksten, 2019                   | urn:lsid:marinespecies.org:taxname:1332465| genus     | sp. inc.                 |Uroptychus compressus sp. inc.       |
+|Eurythenes           | S. I. Smith in Scudder, 1882            | urn:lsid:marinespecies.org:taxname:101607 | genus     | sp. DISCOLL.PAP.JC165.674|Eurythenes sp.DISCOLL.PAP.JC165.674  |
+|Paroriza             | Hérouard, 1902                          | urn:lsid:marinespecies.org:taxname:123467 | genus     | sp.[unique123]aff.pallens|Paroriza sp.[unique123]aff. pallens  |
+|Aristeidae           | Wood-Mason in Wood-Mason &amp; Alcock, 1891 | urn:lsid:marinespecies.org:taxname:106725 | family    | stet.                    |Aristeidae stet.                     |
+|Nematocarcinus       | Milne-Edwards, 1881                     | urn:lsid:marinespecies.org:taxname:107015 | genus     | sp.indet.                |Nematocarcinus sp.indet.             |
+|Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                 |Brisinga gen.inc.                    |
+|Brisinga costata     | Verrill, 1884                           | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                  |Brisinga costata sp.inc.             |</code></pre>
 </div>
 <div id="occurrence" class="section level5 hasAnchor">
 <h5><span class="header-section-number">2.2.1.3.2</span> Occurrence<a href="darwin_core.html#occurrence" class="anchor-section" aria-label="Anchor link to header"></a></h5>
