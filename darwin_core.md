@@ -5,7 +5,7 @@
 - [Introduction to Darwin Core](#introduction-to-darwin-core)
 - [Darwin Core terms](#darwin-core-terms)  
 - [Darwin Core guidelines](#darwin-core-guidelines)
-    - [Taxonomy and identification](#taxonomy-and-identification)  
+    - [Taxonomy and identification](#taxonomy-and-identification) 
     - [Occurrence](#occurrence)  
     - [Record level terms](#record-level-terms)  
     - [Location](#location)  
@@ -116,7 +116,7 @@ The following DwC terms are related to the Class _MaterialSample_:
 
 ##### Taxonomy and identification 
 
-`scientificName` (required term) should always contain the originally recorded scientific name, even if the name is currently a synomym. This is necessary to be able to track back records to the original dataset. The name should be at the lowest possible taxonomic rank, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc are also acceptable. We recommend to not include authorship in `scientificName`, and only use `scientificNameAuthorship` for that purpose. The `scientificName` term should only contain the name and not identification qualifications (such as ?, confer or affinity), which should instead be supplied in the `IdentificationQualifier` term, see example below. `taxonRemarks` can capture comments or notes about the taxon or name.
+`scientificName` (required term) should always contain the originally recorded scientific name, even if the name is currently a synomym. This is necessary to be able to track back records to the original dataset. The name should be at the lowest possible taxonomic rank, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc are also acceptable. We recommend to not include authorship in `scientificName`, and only use `scientificNameAuthorship` for that purpose. The `scientificName` term should only contain the name and not identification qualifications (such as ?, confer or affinity), which should instead be supplied in the `IdentificationQualifier` term, see examples below. `taxonRemarks` can capture comments or notes about the taxon or name.
 
 A [WoRMS](http://www.marinespecies.org/) LSID should be added in `scientificNameID` (required term), OBIS will use this identifier to pull the taxonomic information from the World Register of Marine Species (WoRMS) into OBIS, such as the taxonomic classification and the accepted name in case of invalid names or synonyms. LSIDs are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources. More information on LSIDs can be found at [www.lsid.info](http://www.lsid.info/). For example, the WoRMS LSID for _Solea solea_ is: urn:lsid:marinespecies.org:taxname:127160, and can be found at the bottom of each WoRMS taxon page, e.g. [_Solea solea_](http://marinespecies.org/aphia.php?p=taxdetails&id=127160). 
 
@@ -124,20 +124,7 @@ A [WoRMS](http://www.marinespecies.org/) LSID should be added in `scientificName
 
 OBIS recommends providing information about how an identification was made, for example by which ID key, species guide or expert; and by which method (e.g morphology vs. genomics), etc. The person's name who made the taxonomic identification can go in `identifiedBy` and _when_ in `dateIdentified`. Use the ISO 8601:2004(E) standard for date and time, for instructions see [Time](#time). A list of references, such as field guides used for the identification can be listed in `identificationReferences`. Any other information, such as identification methods, can be added to `identificationRemarks`. 
 
-If the record represents a nomenclatural type specimen, the term `typeStatus` can be used, e.g. for holotype, syntype, etc. 
-
-In case of uncertain identifications, and the scientific name contains qualifiers such as _cf._, _?_ or _aff._, then this name should go in `identificationQualifier`, and `scientificName` should contain the name of the lowest possible taxon rank that refers to the most accurate identification. E.g. if the specimen was accurately identified down to genus level, but not species level, then the scientificName should contain the name of the genus, the scientificNameID should contain the LSID the genus and the `identificationQualifier` should contain the uncertain species name combined with _?_ or other qualifiers. Below are two examples:
-
-Example using `identificationQualifier`: 
-
-```
-   scientificName   scientificNameAuthorship                          scientificNameID   taxonRank identificationQualifier
------------------ -------------------------- ----------------------------------------- ----------- ----------------------
-Lanice conchilega               Pallas, 1766 urn:lsid:marinespecies.org:taxname:131495     species 
-            Gadus             Linnaeus, 1758 urn:lsid:marinespecies.org:taxname:125732       genus             cf. morhua
-```         
-
-Example using full taxonomy:
+Examples:
 
 ```
 | scientificNameID                          | scientificName        | kingdom  | phylum   | class      |
@@ -155,6 +142,33 @@ Example using full taxonomy:
 | Terebellida | Trichobranchidae | Terebellides | stroemii        | Sars, 1835               |
 ```
 _Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/resource?r=largenet_k2)._
+
+If the record represents a nomenclatural type specimen, the term `typeStatus` can be used, e.g. for holotype, syntype, etc. 
+
+**In case of uncertain identifications**, and the scientific name contains qualifiers such as _cf._, _?_ or _aff._, then this name should go in `identificationQualifier`, and `scientificName` should contain the name of the lowest possible taxon rank that refers to the most accurate identification. E.g. if the specimen was accurately identified down to genus level, but not species level, then the scientificName should contain the name of the genus, the scientificNameID should contain the LSID the genus and the `identificationQualifier` should contain the uncertain species name combined with _?_ or other qualifiers. The table belowe shows a few examples:
+
+The use and definitions for additional NO signs (identificationQualifier) can be found in [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594), which provides examples for using the main Open Nomenclature qualifiers associated with *physical specimens*. The publication [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full) provides examples and definitions for identificationQualifiers for *non-physical specimens (image-based)*. 
+
+Examples:
+
+```
+| scientificName      | scientificNameAuthorship                | scientificNameID                          | taxonRank | identificationQualifier  | taxonConceptID                      |
+|---------------------|-----------------------------------------|-------------------------------------------|-----------|--------------------------|-------------------------------------|
+|Pelagia              | Péron & Lesueur, 1810                   | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.                |Pelagia gen. nov.                    |
+|Pelagia benovici     | Piraino, Aglieri, Scorrano & Boero, 2014| urn:lsid:marinespecies.org:taxname:851656 | species   | sp. nov                  |Pelagia benovici sp. nov             |
+|Gadus                | Linnaeus, 1758                          | urn:lsid:marinespecies.org:taxname:125732 | genus     | cf. morhua               |Gadus cf. morhua                     |
+|Polycera             | Cuvier, 1816                            | urn:lsid:marinespecies.org:taxname:138369 | genus     | cf. hedgpethi            |Polycera cf. hedgpethi               |
+|Tubifex              | Lamarck, 1816                           | urn:lsid:marinespecies.org:taxname:137392 | genus     |  ?                       |Tubifex tubifex(Müller, 1774)?       |
+|Tubifex              | Lamarck, 1816                           | urn:lsid:marinespecies.org:taxname:137392 | genus     | sp. inc.                 |Tubifex tubifex(Müller, 1774)sp. inc.|
+|Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen. inc.                |Brisinga gen. inc.                   |
+|Uroptychus compressus| Baba & Wicksten, 2019                   | urn:lsid:marinespecies.org:taxname:1332465| genus     | sp. inc.                 |Uroptychus compressus sp. inc.       |
+|Eurythenes           | S. I. Smith in Scudder, 1882            | urn:lsid:marinespecies.org:taxname:101607 | genus     | sp. DISCOLL.PAP.JC165.674|Eurythenes sp.DISCOLL.PAP.JC165.674  |
+|Paroriza             | Hérouard, 1902                          | urn:lsid:marinespecies.org:taxname:123467 | genus     | sp.[unique123]aff.pallens|Paroriza sp.[unique123]aff. pallens  |
+|Aristeidae           | Wood-Mason in Wood-Mason & Alcock, 1891 | urn:lsid:marinespecies.org:taxname:106725 | family    | stet.                    |Aristeidae stet.                     |
+|Nematocarcinus       | Milne-Edwards, 1881                     | urn:lsid:marinespecies.org:taxname:107015 | genus     | sp.indet.                |Nematocarcinus sp.indet.             |
+|Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                 |Brisinga gen.inc.                    |
+|Brisinga costata     | Verrill, 1884                           | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                  |Brisinga costata sp.inc.             |
+```
 
 ##### Occurrence
 
