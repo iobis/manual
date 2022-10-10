@@ -166,15 +166,15 @@ The DNA Derived Data extension for metabarcoding data contains the DNA sequences
 
 #### 2. Fish abundance & distribution
 (example coming soon)
-
+<p>&nbsp;</p>
 
 #### 3. Hard coral cover & composition
 (example coming soon)
-
+<p>&nbsp;</p>
 
 #### 4. Invertebrates abundance & distribution
 (example coming soon)
-
+<p>&nbsp;</p>
 
 #### 5. Macroalgae canopy cover & composition
 
@@ -232,10 +232,12 @@ And finally there is the MeasurementOrFact extension table, which has attributes
 #### 6. Mangroves cover & composition
 
 (example coming soon)
+<p>&nbsp;</p>
 
 #### 7. Marine birds abundance & distribution
 
 (example coming soon)
+<p>&nbsp;</p>
 
 #### 8. Marine mammals abundance & distribution
 
@@ -402,45 +404,38 @@ Encoding Tracking data into Darwin Core follows the same standards as that of su
 #### 10. Microbes biomass & diversity
 
 (example coming soon)
+<p>&nbsp;</p>
 
 #### 11. Phytoplankton biomass & diversity
 
-This example deals with encoding phytoplankton observation data, including environmental data, into Darwin Core. Extracts from the actual data set [LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea](https://ipt.vliz.be/eurobis/resource?r=fyto), are used as an example. 
+This example deals with encoding phytoplankton observation data, including environmental data, into Darwin Core. Extracts from the actual data set [LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea](https://obis.org/dataset/956d618f-91dc-4930-a253-cdf80ddb9371), are used as an example. 
 
 **Event extension:**
 
-The event Extension contains events at the different levels and are linked together with `eventID` and `parentEventID`. In this example,the dataset contains records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection of living specimens. In this case, the the event type information is provided in `type`. The recommended practice for providing the countryCode is to use an ISO 3166-1-alpha-2 country code. Additional information regarding licencing and institution is provided in `rightsHolder`, `accessRights`, `datasetName`, `institutionCode` and `ownerInstituteCode`. The remaining eventCore fields provide location data including `locationID`, `waterBody`, `maximumDepthInMeters`, `minimumDepthInMeters`, `decimalLongitude`, `decimalLatitude` and `coordinateUncertaintyInMeters`.
+The event Extension contains events at the different levels and are linked together with `eventID` and `parentEventID`. In this example,the dataset contains records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection of living specimens. In this case, the the event type information is provided in `type`. The recommended practice for providing the countryCode is to use an ISO 3166-1-alpha-2 country code. If additional information regarding licencing is provided, these can be populated under `rightsHolder` and `accessRights`. The remaining eventCore fields provide location data including `datasetID` and `datasetName`, `locationID`, `waterBody`, `maximumDepthInMeters`, `minimumDepthInMeters`, `decimalLongitude`, `decimalLatitude`, `coordinateUncertaintyInMeters`, `geodeticDatum` and `footprintSRS`.
 
-| eventID                                               | parentEventID                | type         | eventDate                           |
-|-------------------------------------------------------|------------------------------|--------------|-------------------------------------|
-| TripNR3242                                            |                              | cruise       | 2017-05-08T13:18Z/2017-05-11T22:14Z | 
-| TripNR3242TripStationNR16781                          | TripNR3242                   | stationVisit | 2017-05-08T20:44Z/2017-05-08T20:55Z |  
-| TripNR3242TripStationNR16781MidasTripActionID105598   | TripNR3242TripStationNR16781 | sample       | 2017-05-08T20:50Z                   | 
-| TripNR3242TripStationNR16781MidasTripActionID105598UW | TripNR3242TripStationNR16781 | sample       | 2017-05-08T20:50Z                   | 
-
-
-| rightsHolder              | accessRights | institutionCode           | datasetName                                                            |
-|---------------------------|--------------|---------------------------|------------------------------------------------------------------------|
-| Flanders Marine Institute | CC-BY 4.0    | Flanders Marine Institute | LifeWatch observatory data: phytoplankton observations by imaging flow |
-| Flanders Marine Institute | CC-BY 4.0    | Flanders Marine Institute |                                                                        |
-| Flanders Marine Institute | CC-BY 4.0    | Flanders Marine Institute |                                                                        |
-| Flanders Marine Institute | CC-BY 4.0    | Flanders Marine Institute |                                                                        |
+| eventID                                               | parentEventID                | eventRemarks | eventDate                                           | modified            |
+|-------------------------------------------------------|------------------------------|--------------|-----------------------------------------------------|---------------------|
+| TripNR3242                                            |                              | cruise       | 2017-05T13:18:00+00:00/2017-05T22:14:00+00:00       | 2021-10-21 15:52:00 |
+| TripNR3242TripStationNR16781                          | TripNR3242                   | stationVisit | 2017-05-08T20:44:00+00:00/2017-05-08T20:55:00+00:00 | 2021-10-21 15:52:00 |
+| TripNR3242TripStationNR16781MidasTripActionID105598   | TripNR3242TripStationNR16781 | sample       | 2017-05-08T20:50:00+00:00                           | 2021-10-21 15:52:00 |
+| TripNR3242TripStationNR16781MidasTripActionID105598UW | TripNR3242TripStationNR16781 | sample       | 2017-05-08T20:50:00+00:00                           | 2021-10-21 15:52:00 |
 
 
-| ownerInstitutionCode      | locationID | waterBody | country | countryCode |
-|---------------------------|------------|-----------|---------|-------------|
-| Flanders Marine Institute |            | North Sea | Belgium | Be          |
-| Flanders Marine Institute | JN17_5     |           |         |             |
-| Flanders Marine Institute | JN17_5     |           |         |             |
-| Flanders Marine Institute | JN17_5     |           |         |             |
+| datasetID                              | datasetName                                               | locationID | waterBody | country | countryCode |
+|----------------------------------------|-----------------------------------------------------------|------------|-----------|---------|-------------|
+| https://marineinfo.org/id/dataset/4688 | LifeWatch observatory data: phytoplankton observations... |            | North Sea | Belgium | BE          |
+| https://marineinfo.org/id/dataset/4688 |                                                           | JN17_5     |           |         |             |
+| https://marineinfo.org/id/dataset/4688 |                                                           | JN17_5     |           |         |             |
+| https://marineinfo.org/id/dataset/4688 |                                                           | JN17_5     |           |         |             |
 
 
-| minimumDepthInMeters | maximumDepthInMeters | decimalLatitude | decimalLongitude | coordinateUncertaintyInMeters |
-|----------------------|----------------------|-----------------|------------------|-------------------------------|
-|                      |                      |                 |                  | NA                            |
-| 0                    | 30.22                | 51.0131         | 1.90562          | 1.11                          |
-| 0                    | 1                    | 51.01203        | 1.90217          | 1.11                          |
-| 3                    | 3                    | 51.01203        | 1.90217          | 1.11                          |
+| minimumDepthInMeters | maximumDepthInMeters | decimalLatitude | decimalLongitude | geodeticDatum | coordinateUncertaintyInMeters | footprintSRS |
+|----------------------|----------------------|-----------------|------------------|---------------|-------------------------------|--------------|
+|                      |                      |                 |                  | EPSG:4326     |                               | EPSG:4326    |
+| 0                    | 30.22                | 51.0131         | 1.90562          | EPSG:4326     | 1.11                          | EPSG:4326    |
+| 0                    | 1                    | 51.01203        | 1.90217          | EPSG:4326     | 1.11                          | EPSG:4326    |
+| 3                    | 3                    | 51.01203        | 1.90217          | EPSG:4326     | 1.11                          | EPSG:4326    |
 
 
 **Occurrence extension:**
@@ -457,12 +452,12 @@ The occurrence extension contains data of each occurrence with an `occurrenceID`
 
 | modified  | basisOfRecord  | occurrenceStatus | scientificNameID                          | scientificName          |
 |-----------|----------------|------------------|-------------------------------------------|-------------------------|
-|2021-10-21 | MaterialSample | absent           | urn:lsid:marinespecies.org:taxname:160560 | Hydrodictyaceae         |
-|2021-10-21 | MaterialSample | present          | urn:lsid:marinespecies.org:taxname:148948 | Actinoptychus senarius  |
-|2021-10-21 | MaterialSample | present          | urn:lsid:marinespecies.org:taxname:148949 | Actinoptychus splendens |
-|2021-10-21 | MaterialSample | present          | urn:lsid:marinespecies.org:taxname:148947 | Actinoptychus           |
+|2021-10-21 | Occurrence     | absent           | urn:lsid:marinespecies.org:taxname:160560 | Hydrodictyaceae         |
+|2021-10-21 | Occurrence     | present          | urn:lsid:marinespecies.org:taxname:148948 | Actinoptychus senarius  |
+|2021-10-21 | Occurrence     | present          | urn:lsid:marinespecies.org:taxname:148949 | Actinoptychus splendens |
+|2021-10-21 | Occurrence     | present          | urn:lsid:marinespecies.org:taxname:148947 | Actinoptychus           |
 
-**extendedMeasurementOrFact (eMoF) extension**
+**extendedMeasurementOrFact (eMoF) extension:**
 
 The  eMoF extension contains the environmental and measurement information and data of each occurrence. This extension is also linked to the eventCore using the `eventID`, and linked to the occurrence table using the `occurrenceID`. The various measurements are populated with `measurementID`, `measurementType`, `measurementTypeID`, `measurementUnit`, `measurementUnitID`, `measurementValue`, `measurementValueID`, `measurementAccuracy`, `measurementMethod`, `measurementDeterminedBy` and `measurementDeterminedDate`. In the example dataset,the  LifeWatch observatory data was compiled using imaging flow cytometry (FlowCam) to observe and identify phytoplankton in the Belgian Part of the North Sea and recorded a number of measurements including abundance, lifestages, sampling device information as well as environmental measurements such as water termperature, slainity and conductivity with accompanying vocabulary. 
 
@@ -548,7 +543,7 @@ The Occurrence table contain data for each occurrence with an `occurrenceID` and
 
 **extendedMeasurementOrFact (eMoF) extension:**
 
-The rMoF table contains the measurement information and data of each occurrence. This extension is also linked to the eventCore using the `eventID`, and linked to the occurrence table using the `occurrenceID`. The various measurements are populated with `measurementType`, `measurementTypeID`, `measurementUnit`, `measurementUnitID`, `measurementValue`, `measurementValueID`, `measurementAccuracy`, `measurementMethod`, `measurementDeterminedBy` and `measurementDeterminedDate`. The example dataset of [Seagrass Monitoring at Chengue Bay, Colombia](http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia) recorded a number of measurements and can be used as an example of how to populate the respective fields:
+The eMoF table contains the measurement information and data of each occurrence. This extension is also linked to the eventCore using the `eventID`, and linked to the occurrence table using the `occurrenceID`. The various measurements are populated with `measurementType`, `measurementTypeID`, `measurementUnit`, `measurementUnitID`, `measurementValue`, `measurementValueID`, `measurementAccuracy`, `measurementMethod`, `measurementDeterminedBy` and `measurementDeterminedDate`. The example dataset of [Seagrass Monitoring at Chengue Bay, Colombia](http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia) recorded a number of measurements and can be used as an example of how to populate the respective fields:
 
 | eventID                  | occurrenceID                | measurementID                               | measurementType                       | 
 |--------------------------|-----------------------------|---------------------------------------------|---------------------------------------|
@@ -584,6 +579,80 @@ The rMoF table contains the measurement information and data of each occurrence.
 
 #### 13. Zooplankton biomass & diversity
 
-(example coming soon)
+Here we will encode zooplankton observation and environmental data into Darwin Core. Extracts from the actual dataset [LifeWatch observatory data: zooplankton observations by imaging (ZooScan) in the Belgian Part of the North Sea](https://obis.org/dataset/afa5b0e8-826d-4433-b698-beb176ef7880), are used as an example. 
 
+**Event extension:**
+
+The event Extension contains events at the different levels and are linked together with `eventID` and `parentEventID`. In this example,the dataset contains records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection of living specimens. In this case, the the event type information is provided in `type`. The recommended practice for providing the countryCode is to use an ISO 3166-1-alpha-2 country code. If additional information regarding licencing is provided, these can be populated under `rightsHolder` and `accessRights`. The remaining eventCore fields provide location data including `datasetID` and `datasetName`, `locationID`, `waterBody`, `maximumDepthInMeters`, `minimumDepthInMeters`, `decimalLongitude`, `decimalLatitude`, `coordinateUncertaintyInMeters`, `geodeticDatum` and `footprintSRS`.
+
+| eventID                                             | parentEventID               | eventRemarks | eventDate                                           | modified            |
+|-----------------------------------------------------|-----------------------------|--------------|-----------------------------------------------------|---------------------|
+| TripNR2547                                          |                             | cruise       | 2013-07-22T06:58:00+00:00/2013-07-22T16:58:00+00:00 | 2021-06-23 14:54:00 |
+| TripNR2547TripStationNR9781                         | TripNR2547                  | stationVisit | 2013-07-22T07:13:00+00:00/2013-07-22T07:26:00+00:00 | 2021-06-23 14:54:00 |
+| TripNR2547TripStationNR9781MidasTripActionID23024   | TripNR2547TripStationNR9781 | sample       | 2013-07-22T07:22:00+00:00                           | 2021-06-23 14:54:00 |
+| TripNR2547TripStationNR9781MidasTripActionID23024UW | TripNR2547TripStationNR9781 | sample       | 2013-07-22T07:22:00+00:00                           | 2021-06-23 14:54:00 |
+
+| datasetID                              | datasetName                                             | locationID | waterBody                     | country |
+|----------------------------------------|---------------------------------------------------------|------------|-------------------------------|---------|
+| https://marineinfo.org/id/dataset/4687 | LifeWatch observatory data: zooplankton observations... |            | Belgian Part of the North Sea | Belgium |
+| https://marineinfo.org/id/dataset/4687 | LifeWatch observatory data: zooplankton observations... | 130        |                               |         |
+| https://marineinfo.org/id/dataset/4687 | LifeWatch observatory data: zooplankton observations... | 130        |                               |         |
+| https://marineinfo.org/id/dataset/4687 | LifeWatch observatory data: zooplankton observations... | 130        |                               |         |
+
+| minimumDepthInMeters | maximumDepthInMeters | decimalLatitude | decimalLongitude | geodeticDatum | footprintSRS |
+|----------------------|----------------------|-----------------|------------------|---------------|--------------|
+|                      |                      |                 |                  | EPSG:4326     | EPSG:4326    |
+| 0                    | 13.4                 | 51.27083333     | 2.905            | EPSG:4326     | EPSG:4326    |
+| 0                    | 0                    | 51.2687318      | 2.901797         | EPSG:4326     | EPSG:4326    |
+| 3                    | 3                    | 51.2687318      | 2.901797         | EPSG:4326     | EPSG:4326    |
+
+
+**Occurrence extension:**
+
+The occurrence extension contains data of each occurrence with an `occurrenceID` and is linked to the event extension with the `eventID`. The occurrence extension should provide information on the `basisOfRecord` and `occurrenceStatus`. Scientific names and links to the World Register of Marine Species should be provided under `scientificName` and `scientificNameID`, respectively.
+
+| eventID                                           | occurrenceID                                                                                |
+|---------------------------------------------------|---------------------------------------------------------------------------------------------|
+| TripNR2547TripStationNR9781MidasTripActionID23024 | TripNR2547TripStationNR9781MidasTripActionID23024occurenceIDTA23024_Amphipoda_sub2_130      |
+| TripNR2547TripStationNR9781MidasTripActionID23024 | TripNR2547TripStationNR9781MidasTripActionID23024occurenceIDTA23024_Annelida_sub2_130       |
+| TripNR2547TripStationNR9781MidasTripActionID23024 | TripNR2547TripStationNR9781MidasTripActionID23024occurenceIDTA23024_Anomura_sub2_130        |
+| TripNR2547TripStationNR9781MidasTripActionID23024 | TripNR2547TripStationNR9781MidasTripActionID23024occurenceIDTA23024_Appendicularia_sub2_130 |
+
+| modified   | basisOfRecord | occurrenceStatus | scientificNameID                          | scientificName |
+|------------|---------------|------------------|-------------------------------------------|----------------|
+| 2021-06-22 | Occurrence    | absent           | urn:lsid:marinespecies.org:taxname:1135   | Amphipoda      |
+| 2021-06-22 | Occurrence    | present          | urn:lsid:marinespecies.org:taxname:882    | Annelida       |
+| 2021-06-22 | Occurrence    | absent           | urn:lsid:marinespecies.org:taxname:106671 | Anomura        |
+| 2021-06-22 | Occurrence    | absent           | urn:lsid:marinespecies.org:taxname:146421 | Appendicularia |
+
+**extendedMeasurementOrFact (eMoF) extension:**
+
+The eMoF table contains the measurement information and data of each occurrence. This extension is also linked to the eventCore using the `eventID`, and linked to the occurrence table using the `occurrenceID`. The various measurements are populated with `measurementType`, `measurementTypeID`, `measurementUnit`, `measurementUnitID`, `measurementValue`, `measurementValueID`, `measurementAccuracy`, `measurementMethod`, `measurementDeterminedBy` and `measurementDeterminedDate`. The example dataset of [LifeWatch observatory data: zooplankton observations by imaging (ZooScan) in the Belgian Part of the North Sea](https://obis.org/dataset/afa5b0e8-826d-4433-b698-beb176ef7880) recorded some ENV-DATA and organism measurements the can be used as an example of how to populate the respective fields, including conductivity of the water body; concentration of chlorophyll-a per unit volume of the water body; sampling instrument name; sampling net mesh size; lifestage of the organism observed; and abundance of the organism observed.
+
+| id                                                    | occurrenceID                                                                          | measurementType                                                                                    |
+|-------------------------------------------------------|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| TripNR3256TripStationNR17157MidasTripActionID106326   |                                                                                       | Sampling instrument name                                                                           |
+| TripNR3256TripStationNR17157MidasTripActionID106326   |                                                                                       | Sampling net mesh size                                                                             |
+| TripNR3529TripStationNR19242MidasTripActionID109631UW |                                                                                       | Conductivity of the water body                                                                     |
+| TripNR3529TripStationNR19243MidasTripActionID109634   |                                                                                       | Concentration of chlorophyll-a per unit volume of the water body                                   |
+| TripNR2547TripStationNR9781MidasTripActionID23024     | TripNR2547TripStationNR9781MidasTripActionID23024occurenceIDTA23024_Annelida_sub2_130 | Lifestage                                                                                          |
+| TripNR2547TripStationNR9781MidasTripActionID23024     | TripNR2547TripStationNR9781MidasTripActionID23024occurenceIDTA23024_Annelida_sub2_130 | Abundance of Annelida (ITIS: 64357: WoRMS 882) per unit volume of the water body by image analysis |
+
+| measurementTypeID                                        | measurementValue | measurementValueID                                       | measurementUnit      |
+|----------------------------------------------------------|------------------|----------------------------------------------------------|----------------------|
+| http://vocab.nerc.ac.uk/collection/Q01/current/Q0100002/ | Planktonnet WP2  | http://vocab.nerc.ac.uk/collection/L22/current/TOOL0979/ |                      |
+| http://vocab.nerc.ac.uk/collection/Q01/current/Q0100015/ | 200              |                                                          | micrometer           |
+| http://vocab.nerc.ac.uk/collection/P01/current/CNDCZZ01/ | 4.05             |                                                          | Siemens per metre    |
+| http://vocab.nerc.ac.uk/collection/P01/current/CPHLHPP1/ | 1.42             |                                                          | Micrograms per litre |
+| http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/ | unspecified      | http://vocab.nerc.ac.uk/collection/S11/current/S1152/    |                      |
+| http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL01/ | 0.50             |                                                          | specimens/m³         |
+
+| measurementUnitID                                    | measurementDeterminedBy   | measurementMethod                                                                                                                                                              |
+|------------------------------------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                                      |                           |                                                                                                                                                                                |
+| http://vocab.nerc.ac.uk/collection/P06/current/UMIC/ |                           |                                                                                                                                                                                |
+| http://vocab.nerc.ac.uk/collection/P06/current/UECA/ | Flanders Marine Institute | Electrical conductivity of the water body by thermosalinograph, based on the UnderWaySystem of the ship                                                                        |
+| http://vocab.nerc.ac.uk/collection/P06/current/UGPL/ | Flanders Marine Institute | Concentration of chlorophyll-a per unit volume of the water body [particulate >GF/F phase] by filtration, acetone extraction and high performance liquid chromatography (HPLC) |
+|                                                      | Flanders Marine Institute | identified and counted by image analysis and normalised to a unit volume of water body, validated by human                                                                     |
+| http://vocab.nerc.ac.uk/collection/P06/current/UPMM/ | Flanders Marine Insitute  | identified and counted by image analysis and normalised to a unit volume of water body, validated by human                                                                     |
 
