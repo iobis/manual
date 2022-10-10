@@ -55,6 +55,9 @@ when-to-use-event-core
 when-to-use-occurrence-core
 recommended-reading
 examples-env-data-and-dna-derived-data
+edna-dna-derived-data
+edna-data-from-monterey-bay-california
+s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton
 fish-abundance-distribution
 hard-coral-cover-composition
 invertebrates-abundance-distribution
@@ -63,12 +66,12 @@ mangroves-cover-composition
 marine-birds-abundance-distribution
 marine-mammals-abundance-distribution
 marine-turtles-abundance-distribution
+survey-sighting-data
+tracking-data
 microbes-biomass-diversity
-plankton-biomass-diversity
+phytoplankton-biomass-diversity
 seagrass-cover-composition
-edna-dna-derived-data
-edna-data-from-monterey-bay-california
-s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton
+zooplankton-biomass-diversity
 data-publication-and-sharing
 ipt
 introduction-1
