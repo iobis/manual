@@ -2,30 +2,30 @@
 
 **Contents**
 
-- [1. eDNA & DNA derived data](#edna-dna-derived-data)
-    - [1.1: eDNA data from Monterey Bay, California](#edna-data-from-monterey-bay-california)
-    - [1.2: 16S rRNA gene metabarcoding data of Pico- to Mesoplankton](#s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton)
-- [2. Fish abundance & distribution](#fish-abundance-distribution)
-- [3. Hard coral cover & composition](#hard-coral-cover-composition)
-- [4. Invertebrates abundance & distribution](#invertebrates-abundance-distribution)
-- [5. Macroalgae canopy cover & composition](#macroalgae-canopy-cover-composition)
-- [6. Mangroves cover & composition](#mangroves-cover-composition)
-- [7. Marine birds abundance & distribution](#marine-birds-abundance-distribution)
-- [8. Marine mammals abundance & distribution](#marine-mammals-abundance-distribution)
-- [9. Marine turtles abundance & distribution](#marine-turtles-abundance-distribution)
-    - [9.1: Survey & sighting data](#survey-sighting-data)
-    - [9.2: Tracking data](#tracking-data)
-- [10. Microbes biomass & diversity](#microbes-biomass-diversity)
-- [11. Phytolankton biomass & diversity](#plankton-biomass-diversity)
-- [12. Seagrass cover & composition](#seagrass-cover-composition)
-- [13. Zoolankton biomass & diversity](#plankton-biomass-diversity)
+- [eDNA & DNA derived data](#edna-dna-derived-data)
+    - [eDNA data from Monterey Bay, California](#edna-data-from-monterey-bay-california)
+    - [16S rRNA gene metabarcoding data of Pico- to Mesoplankton](#s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton)
+- [Fish abundance & distribution](#fish-abundance-distribution)
+- [Hard coral cover & composition](#hard-coral-cover-composition)
+- [Invertebrates abundance & distribution](#invertebrates-abundance-distribution)
+- [Macroalgae canopy cover & composition](#macroalgae-canopy-cover-composition)
+- [Mangroves cover & composition](#mangroves-cover-composition)
+- [Marine birds abundance & distribution](#marine-birds-abundance-distribution)
+- [Marine mammals abundance & distribution](#marine-mammals-abundance-distribution)
+- [Marine turtles abundance & distribution](#marine-turtles-abundance-distribution)
+    - [Survey & sighting data](#survey-sighting-data)
+    - [Tracking data](#tracking-data)
+- [Microbes biomass & diversity](#microbes-biomass-diversity)
+- [Phytoplankton biomass & diversity](#phytoplankton-biomass-diversity)
+- [Seagrass cover & composition](#seagrass-cover-composition)
+- [Zooplankton biomass & diversity](#zooplankton-biomass-diversity)
 
 
-#### 1. eDNA & DNA derived data
+#### eDNA & DNA derived data
 
 The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional occurrence core terms, refer to [Occurrence](darwin_core.html#occurrence). 
 
-##### 1.1 eDNA data from Monterey Bay, California
+##### eDNA data from Monterey Bay, California
 
 The data for this example is from the use case ["18S Monterey Bay Time Series: an eDNA data set from Monterey Bay, California, including years 2006, 2013 - 2016'](https://www1.usgs.gov/obis-usa/ipt/resource?r=18s_monterey_bay_time_series_edna). The data from this study originate from marine filtered seawater samples that have undergone metabarcoding of the 18S V9 region.
 
@@ -87,7 +87,7 @@ For a detailed description of the steps taken to process the data, including alg
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 
-##### 1.2 16S rRNA gene metabarcoding data of Pico- to Mesoplankton
+##### 16S rRNA gene metabarcoding data of Pico- to Mesoplankton
 
 DNA derived datasets can also include an extendedMeasurementsOrFact (eMoF) extension file, in addition to the occurrence and DNA derived extensions. In this example, environmental measurements were provided in an eMoF file, in addition to the DNA derived data and occurrence data. Here we show how to incorporate such measurements in the extensions. 
 
@@ -156,6 +156,7 @@ The DNA Derived Data extension for metabarcoding data contains the DNA sequences
 | CCTACGGGNGGCWGCAG  | GACTACHVGGGTATCTAATCC | 341                     | 805R                    | TCGAGAATTTTTCACAATG... |
 | CCTACGGGNGGCWGCAG  | GACTACHVGGGTATCTAATCC | 341                     | 805R                    | TGGGGAATCTTGCGCAATG... |
 
+**extendedMeasurementOrFact (eMoF) extension:**
 
 | measurementID                | occurrenceID                                      | measurementType | measurementValue | measurementUnit |
 |------------------------------|---------------------------------------------------|-----------------|------------------|-----------------|
@@ -164,19 +165,19 @@ The DNA Derived Data extension for metabarcoding data contains the DNA sequences
 | SBDI-ASV-3:16S_1:temperature | SBDI-ASV-3:16S_1:1ead98754d34073a4606f7ff1e94126e | temperature     | 16.9             | °C              |
 
 
-#### 2. Fish abundance & distribution
+#### Fish abundance & distribution
 (example coming soon)
 <p>&nbsp;</p>
 
-#### 3. Hard coral cover & composition
+#### Hard coral cover & composition
 (example coming soon)
 <p>&nbsp;</p>
 
-#### 4. Invertebrates abundance & distribution
+#### Invertebrates abundance & distribution
 (example coming soon)
 <p>&nbsp;</p>
 
-#### 5. Macroalgae canopy cover & composition
+#### Macroalgae canopy cover & composition
 
 In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension.
 
@@ -229,17 +230,17 @@ And finally there is the MeasurementOrFact extension table, which has attributes
 | transect_2 | occ_5 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 4 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
 | transect_2 | occ_6 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 16 || percent | [	P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
 
-#### 6. Mangroves cover & composition
+#### Mangroves cover & composition
 
 (example coming soon)
 <p>&nbsp;</p>
 
-#### 7. Marine birds abundance & distribution
+#### Marine birds abundance & distribution
 
 (example coming soon)
 <p>&nbsp;</p>
 
-#### 8. Marine mammals abundance & distribution
+#### Marine mammals abundance & distribution
 
 In this section we will explore how to encode a survey data set into Darwin Core using the ENV-DATA approach. As an example, sections of the actual data set of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), is used.
 
@@ -289,9 +290,9 @@ And finally, the extendedMeasurementOrFact extension table has attributes of the
 | Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel speed                 | [P01/current/APSAGP01](http://vocab.nerc.ac.uk/collection/P01/current/APSAGP01/) | 16               | Knots (nautical miles per hour) | [P06/current/UKNT](http://vocab.nerc.ac.uk/collection/P06/current/UKNT/) |
 
 
-#### 9. Marine turtles abundance & distribution
+#### Marine turtles abundance & distribution
 
-##### 9.1 Survey & sighting data
+##### Survey & sighting data
 This section deals with encoding survey and/ or sighting data of sea turtles into Darwin Core using the ENV-DATA approach. Extracts from the actual data set of [Presence of sea turtles collected through Fixed-Line-Transect monitoring across the Western Mediterranean Sea (Civitavecchia-Barcelona route) between 2013 and 2017](https://ipt.vliz.be/eurobis/resource?r=cc_flt_cbar_13-17#anchor-description), are used as an example. 
 
 **Event extension:**
@@ -388,7 +389,7 @@ In addition to the measurements recorded by the example dataset, other measureme
 | SS199510-002 | SS199510-002-length | SS199510-002 | Length          | http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX | 1630             | Millimetres     | http://vocab.nerc.ac.uk/collection/P06/current/UXMM |
 | SS199510-002 | SS199510-002-weight | SS199510-002 | Weight          | http://vocab.nerc.ac.uk/collection/P01/current/SPWGXX01 | 1477.7           | Grams           | http://vocab.nerc.ac.uk/collection/P06/current/UGRM |
 
-##### 9.2 Tracking data
+##### Tracking data
 Encoding Tracking data into Darwin Core follows the same standards as that of survey/ sighting data. Tracking data should additionally indicate the accuracy in latitudinal and longitudinal measurements received from the positioning system, grouped by location accuracy classes. Extracts from the **ExtendedMeasurementOrFact Extension (eMoF)** of the actual dataset [Ningaloo Outlook turtle tracking of Green turtles (Chelonia mydas), Western Australia (2018-present)](https://www.marine.csiro.au/ipt/resource?r=ningaloo_outlook_turtle_tracking), are used as an example, following [ARGOS Location class codes](http://vocab.nerc.ac.uk/collection/R05/current/).
 
 **extendedMeasurementOrFact (eMoF) extension:**
@@ -401,12 +402,12 @@ Encoding Tracking data into Darwin Core follows the same standards as that of su
 | 2347543 | 2347543-argosclass | 2347543      | ARGOS Location Class | 3                | http://vocab.nerc.ac.uk/collection/R05/current/3 |
 
 
-#### 10. Microbes biomass & diversity
+#### Microbes biomass & diversity
 
 (example coming soon)
 <p>&nbsp;</p>
 
-#### 11. Phytoplankton biomass & diversity
+#### Phytoplankton biomass & diversity
 
 This example deals with encoding phytoplankton observation data, including environmental data, into Darwin Core. Extracts from the actual data set [LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea](https://obis.org/dataset/956d618f-91dc-4930-a253-cdf80ddb9371), are used as an example. 
 
@@ -504,7 +505,7 @@ The  eMoF extension contains the environmental and measurement information and d
 | http://vocab.nerc.ac.uk/collection/P06/current/UGKG/ | Flanders Marine Institute | Practical salinity of the water body based on water from the UnderWaySystem of the ship                    |
 | http://vocab.nerc.ac.uk/collection/P06/current/UPAA/ | Flanders Marine Institute | Temperature of the water body based on water from the UnderWaySystem of the ship                           |
 
-#### 12. Seagrass cover & composition
+#### Seagrass cover & composition
 
 The structure of the Event, Occurrence and ExtendedMeasurementOrFact extensions for Seagrass Cover & Composition is based on community feedback organised through the the Scientific Committee on Oceanic Research (SCOR): [Coordinated Global Research Assessment of Seagrass System (C-GRASS)](https://scor-int.org/group/158/). We acknowledge the work that the C-grass SCOR work group has done to develop a proposed scheme for completing Seagrass related extension files.
 
@@ -577,7 +578,7 @@ The eMoF table contains the measurement information and data of each occurrence.
 | http://vocab.nerc.ac.uk/collection/S06/current/S0600087/ | 0                | Grams per square metre  | http://vocab.nerc.ac.uk/collection/P06/current/UGMS/ |
 
 
-#### 13. Zooplankton biomass & diversity
+#### Zooplankton biomass & diversity
 
 Here we will encode zooplankton observation and environmental data into Darwin Core. Extracts from the actual dataset [LifeWatch observatory data: zooplankton observations by imaging (ZooScan) in the Belgian Part of the North Sea](https://obis.org/dataset/afa5b0e8-826d-4433-b698-beb176ef7880), are used as an example. 
 
