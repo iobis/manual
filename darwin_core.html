@@ -47,7 +47,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -63,18 +62,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -94,13 +93,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +112,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -144,46 +143,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="/">The OBIS manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#guidelines-on-the-sharing-and-use-of-data-in-obis"><i class="fa fa-check"></i><b>1.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i><b>1.2</b> Acknowledgements</a></li>
-<li class="chapter" data-level="1.3" data-path="policy.html"><a href="policy.html"><i class="fa fa-check"></i><b>1.3</b> Data Policy</a><ul>
+<li class="chapter" data-level="1.3" data-path="policy.html"><a href="policy.html"><i class="fa fa-check"></i><b>1.3</b> Data Policy</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="policy.html"><a href="policy.html#guidelines-on-the-sharing-and-use-of-data-in-obis-1"><i class="fa fa-check"></i><b>1.3.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> Contribute data to OBIS</a><ul>
-<li class="chapter" data-level="2.1" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>2.1</b> OBIS nodes</a><ul>
+<li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> Contribute data to OBIS</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>2.1</b> OBIS nodes</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>2.1.1</b> Terms of Reference of OBIS nodes</a></li>
 <li class="chapter" data-level="2.1.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>2.1.2</b> How to become an OBIS node</a></li>
 <li class="chapter" data-level="2.1.3" data-path="nodes.html"><a href="nodes.html#obis-node-health-status-check-and-transition-strategy"><i class="fa fa-check"></i><b>2.1.3</b> OBIS Node Health Status Check and Transition Strategy</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.2</b> Biodiversity data standards</a><ul>
+<li class="chapter" data-level="2.2" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.2</b> Biodiversity data standards</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>2.2.1</b> Darwin Core</a></li>
 <li class="chapter" data-level="2.2.2" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.2.2</b> Ecological Metadata Language</a></li>
 <li class="chapter" data-level="2.2.3" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>2.2.3</b> Darwin Core Archive and dataset structure</a></li>
 <li class="chapter" data-level="2.2.4" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>2.2.4</b> Examples: ENV-DATA and DNA derived data</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>2.3</b> Data publication and sharing</a><ul>
+<li class="chapter" data-level="2.3" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>2.3</b> Data publication and sharing</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="data_publication.html"><a href="data_publication.html#ipt"><i class="fa fa-check"></i><b>2.3.1</b> IPT</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="data_qc.html"><a href="data_qc.html"><i class="fa fa-check"></i><b>2.4</b> Data quality control</a><ul>
+<li class="chapter" data-level="2.4" data-path="data_qc.html"><a href="data_qc.html"><i class="fa fa-check"></i><b>2.4</b> Data quality control</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>2.4.1</b> Name Matching Strategy for taxonomic quality control</a></li>
 <li class="chapter" data-level="2.4.2" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>2.4.2</b> Geographic and data format quality control</a></li>
 <li class="chapter" data-level="2.4.3" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>2.4.3</b> How To Use MoF Report and Tool</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>3</b> Data access</a><ul>
+<li class="chapter" data-level="3" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>3</b> Data access</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>3.1</b> Mapper</a></li>
 <li class="chapter" data-level="3.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>3.2</b> R package</a></li>
 <li class="chapter" data-level="3.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>3.3</b> API</a></li>
 <li class="chapter" data-level="3.4" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>3.4</b> Full exports</a></li>
 <li class="chapter" data-level="3.5" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>3.5</b> Data quality flags</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>4</b> Data Visualization and Analysis</a><ul>
+<li class="chapter" data-level="4" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>4</b> Data Visualization and Analysis</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="dataviz.html"><a href="dataviz.html#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>4.1</b> Example notebooks using data from OBIS</a></li>
 <li class="chapter" data-level="4.2" data-path="dataviz.html"><a href="dataviz.html#obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis"><i class="fa fa-check"></i><b>4.2</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>5</b> Other Resources</a><ul>
+<li class="chapter" data-level="5" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>5</b> Other Resources</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="other_resources.html"><a href="other_resources.html#mbon-pole-to-pole-tutorial"><i class="fa fa-check"></i><b>5.1</b> MBON Pole to Pole Tutorial</a></li>
 <li class="chapter" data-level="5.2" data-path="other_resources.html"><a href="other_resources.html#ioos-darwin-core-guide"><i class="fa fa-check"></i><b>5.2</b> IOOS Darwin Core Guide</a></li>
 </ul></li>
@@ -204,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="darwin-core" class="section level3 hasAnchor">
+<div id="darwin-core" class="section level3 hasAnchor" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> Darwin Core<a href="darwin_core.html#darwin-core" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Contents</strong></p>
 <ul>
@@ -226,7 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="darwin_core.html#sampling">Sampling</a></li>
 </ul></li>
 </ul>
-<div id="introduction-to-darwin-core" class="section level4 hasAnchor">
+<div id="introduction-to-darwin-core" class="section level4 hasAnchor" number="2.2.1.1">
 <h4><span class="header-section-number">2.2.1.1</span> Introduction to Darwin Core<a href="darwin_core.html#introduction-to-darwin-core" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><a href="http://rs.tdwg.org/dwc/">Darwin Core</a> is a body of standards for biodiversity informatics. It provides stable <a href="https://dwc.tdwg.org/terms/">terms</a> and vocabularies for sharing biodiversity data. Darwin Core is maintained by <a href="http://tdwg.org/">TDWG</a> (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases).</p>
 <p>The old <a href="http://old.iobis.org/node/304">OBIS schema</a> was an <a href="http://iobis.org/obis/obis.xsd">OBIS extension</a> to Darwin Core 1.2., which was based on <a href="http://rs.tdwg.org/dwc/terms/simple/">Simple Darwin Core</a>, a subset of Darwin Core which does not allow any structure beyond rows and columns. It added some terms which were important for OBIS, but were not supported by Darwin Core at the time (e.g. start and end date and start and end latitude and longitude, depth range, lifestage and terms for abundance, biomass and sample size).</p>
@@ -234,7 +243,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In December 2013, the <a href="http://iobis.org/about/sg-obis-3/">3rd session of the IODE Steering Group for OBIS</a> agreed to transition OBIS globally to the TDWG-Ratified version of Darwin Core, and the mapping of the (old) OBIS specific terms to Darwin Core can be found <a href="http://rs.tdwg.org/dwc/terms/history/versions/index.htm#dwcobis">here</a>.</p>
 <p><a class="anchor" name="terms"></a></p>
 </div>
-<div id="darwin-core-terms" class="section level4 hasAnchor">
+<div id="darwin-core-terms" class="section level4 hasAnchor" number="2.2.1.2">
 <h4><span class="header-section-number">2.2.1.2</span> Darwin Core terms<a href="darwin_core.html#darwin-core-terms" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>DwC terms correspond to the column names of your dataset. A list of all possible Darwin Core terms can be found on <a href="https://dwc.tdwg.org/terms/">TDWG</a>. Below is an overview of the most relevant Darwin Core terms to consider when contributing to OBIS, with guidelines regarding their use.</p>
 <p>Note that OBIS currently has eight required DwC terms: <code>occurrenceID</code>, <code>eventDate</code>, <code>decimalLongitude</code>, <code>decimalLatitude</code>, <code>scientificName</code>, <code>scientificNameID</code>, <code>occurrenceStatus</code>, <code>basisOfRecord</code>.</p>
@@ -320,9 +329,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>materialSampleID</li>
 </ul>
 </div>
-<div id="darwin-core-guidelines" class="section level4 hasAnchor">
+<div id="darwin-core-guidelines" class="section level4 hasAnchor" number="2.2.1.3">
 <h4><span class="header-section-number">2.2.1.3</span> Darwin Core guidelines<a href="darwin_core.html#darwin-core-guidelines" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div id="taxonomy-and-identification" class="section level5 hasAnchor">
+<div id="taxonomy-and-identification" class="section level5 hasAnchor" number="2.2.1.3.1">
 <h5><span class="header-section-number">2.2.1.3.1</span> Taxonomy and identification<a href="darwin_core.html#taxonomy-and-identification" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>scientificName</code> (required term) should always contain the originally recorded scientific name, even if the name is currently a synomym. This is necessary to be able to track back records to the original dataset. The name should be at the lowest possible taxonomic rank, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc are also acceptable. We recommend to not include authorship in <code>scientificName</code>, and only use <code>scientificNameAuthorship</code> for that purpose. The <code>scientificName</code> term should only contain the name and not identification qualifications (such as ?, confer or affinity), which should instead be supplied in the <code>IdentificationQualifier</code> term, see examples below. <code>taxonRemarks</code> can capture comments or notes about the taxon or name.</p>
 <p>A <a href="http://www.marinespecies.org/">WoRMS</a> LSID should be added in <code>scientificNameID</code> (required term), OBIS will use this identifier to pull the taxonomic information from the World Register of Marine Species (WoRMS) into OBIS, such as the taxonomic classification and the accepted name in case of invalid names or synonyms. LSIDs are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources. More information on LSIDs can be found at <a href="http://www.lsid.info/">www.lsid.info</a>. For example, the WoRMS LSID for <em>Solea solea</em> is: <a href="urn:lsid:marinespecies.org:taxname:127160" class="uri">urn:lsid:marinespecies.org:taxname:127160</a>, and can be found at the bottom of each WoRMS taxon page, e.g. <a href="http://marinespecies.org/aphia.php?p=taxdetails&amp;id=127160"><em>Solea solea</em></a>.</p>
@@ -361,7 +370,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 |Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                 |Brisinga gen.inc.                    |
 |Brisinga costata     | Verrill, 1884                           | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                  |Brisinga costata sp.inc.             |</code></pre>
 </div>
-<div id="occurrence" class="section level5 hasAnchor">
+<div id="occurrence" class="section level5 hasAnchor" number="2.2.1.3.2">
 <h5><span class="header-section-number">2.2.1.3.2</span> Occurrence<a href="darwin_core.html#occurrence" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>occurrenceID</code> (required term) is an identifier for the occurrence record and should be persistent and globally unique. If the dataset does not yet contain (globally unique) occurrenceIDs, then they should be created. There are no guidelines yet on designing the persistence of this ID, the level of uniqueness (from dataset to global) and the precise algorithm and format for generating the ID, but in the absence of a persistent globally unique identifier, one could be constructed by combining the <code>institutionCode</code>, the <code>collectionCode</code> and the <code>catalogNumber</code> (or autonumber in the absence of a catalogNumber), see further below. Note that the inclusion of occurrenceID is also necessary for datasets in the <a href="../data_format#obis-env-data">OBIS-ENV-DATA</a> format.</p>
 <p><code>occurrenceStatus</code> (required term) is a statement about the presence or absence of a taxon at a location. It is an important term, because it allows us to distinguish between presence and absence records. It is a required term and should be filled in with either <code>present</code> or <code>absent</code>.</p>
@@ -380,7 +389,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 | SluiceDock_benthic_1976/1981 | SluiceDock_benthic_1979-07/1980-06_1 | SluiceDock_benthic_1979-07/1980-06_1 | present          |</code></pre>
 <p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=summary_of_benthic_studies_in_the_sluice_dock_ostend_during_1976-1981">A summary of benthic studies in the sluice dock of Ostend during 1976-1981</a>.</em></p>
 </div>
-<div id="record-level-terms" class="section level5 hasAnchor">
+<div id="record-level-terms" class="section level5 hasAnchor" number="2.2.1.3.3">
 <h5><span class="header-section-number">2.2.1.3.3</span> Record level terms<a href="darwin_core.html#record-level-terms" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>basisOfRecord</code> (required term) specifies the nature of the record, i.e. whether the occurrence record is based on a stored specimen or an observation. In case the specimen is collected and stored in a collection (e.g. at a museum, university, research institute), the options are <code>PreservedSpecimen</code> (e.g. preserved in ethanol, tissue etc.), <code>FossilSpecimen</code> (fossil, which allows OBIS to make the distinction between the date of collection and the time period the specimen was assumed alive) or <code>LivingSpecimen</code> (an intentionally kept/cultivated living specimen e.g. in an aquarium or culture collection). In case no specimen is deposited, the basis of record is either <code>HumanObservation</code> (e.g bird sighting, benthic sample but specimens were discarded after counting), or <code>MachineObservation</code> (e.g. for occurrences based on automated sensors such as DNA sequencers, image recognition etc).</p>
 <p>When the basisOfRecord is a <em>preservedSpecimen</em>, <em>LivingSpecimen</em> or <em>FossilSpecimen</em> please also add the <code>institutionCode</code>, <code>collectionCode</code> and <code>catalogNumber</code>, which will enable people to visit the collection and re-examine the material. Sometimes, for example in case of living specimens, a dataset can contain records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection. In this case please add the event type information in <code>type</code> (see <a href="../darwincore/#event">OBIS manual: event</a>).</p>
@@ -403,7 +412,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><code>dataGeneralizations</code> refers to actions taken to make the shared data less specific or complete than in its original form. Suggests that alternative data of higher quality may be available on request. This can be the case for occurrences of vulnerable or endangered species and there positions are converted to the center of grid cells.</p>
 <p><a class="anchor" name="location"></a></p>
 </div>
-<div id="location" class="section level5 hasAnchor">
+<div id="location" class="section level5 hasAnchor" number="2.2.1.3.4">
 <h5><span class="header-section-number">2.2.1.3.4</span> Location<a href="darwin_core.html#location" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>decimalLatitude</code> and <code>decimalLongitude</code> (required terms) are the geographic latitude and longitude (in decimal degrees), using the spatial reference system given in <code>geodeticDatum</code> of the geographic center of a Location. The number of decimals should be appropriate for the level of uncertainty in <code>coordinateUncertaintyInMeters</code> (at least within an order of magnitude). <code>coordinateUncertaintyInMeters</code> is the radius of the smallest circle around the given position containing the whole location. Regarding <code>decimalLatitude</code>, positive values are north of the Equator, negative values are south of it. All values lie between -90 and 90, inclusive. Regarding <code>decimalLongitude</code>, positive values are east of the Greenwich Meridian, negative values are west of it. All values lie between -180 and 180, inclusive.</p>
 <p>In OBIS, the spatial reference system to be documented in <code>geodeticDatum</code> is <a href="https://epsg.io/4326">EPSG:4326</a>. Coordinates in degrees/minutes/seconds can be converted to decimal degrees using our <a href="http://iobis.github.io/coordinates/">coordinates tool</a>. We also provide a <a href="https://obis.org/maptool">tool</a> to check coordinates or to determine coordinates for a location (point, transect or polygon) on a map. This tool also allows geocoding location names using <a href="http://www.marineregions.org/">marineregions.org</a>.</p>
@@ -425,7 +434,7 @@ MULTIPOLYGON (((30 20, 45 40, 10 40, 30 20)),((15 5, 40 10, 10 20, 5 10, 15 5)))
 | 39.292          | 20.364           | EPSG:4326     | 162083.27                     | LINESTRING (19.05 40.34, 21.68 38.25) | EPSG:4326    |</code></pre>
 <p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018">Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018</a>.</em></p>
 </div>
-<div id="event" class="section level5 hasAnchor">
+<div id="event" class="section level5 hasAnchor" number="2.2.1.3.5">
 <h5><span class="header-section-number">2.2.1.3.5</span> Event<a href="darwin_core.html#event" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>eventID</code> is an identifier for the sampling or observation event. <code>parentEventID</code> is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs). <code>eventID</code> can be used for replicate samples or sub-samples. Make sure each replicate sample receives a unique event ID, which could be based on the unique sample ID in your dataset (which can also be in recorded in <code>materialSampleID</code>). OBIS does not need to have separate <code>eventID</code>s and <code>materialSampleID</code>s, rather OBIS can treat these two terms as equivalent. The unique sample ID for each physical sample or subsample at each location and time is highly recommended information for sample tracebility and data provenance. Repeating the parentEventID in the child event (use <code>:</code> as delimiter) will make the structure of the dataset easier to understand. See also <a href="https://bdj.pensoft.net/articles.php?id=10989&amp;instance_id=3385375">De Pooter et al. 2017</a> for an example of an event hierarchy in a complex benthos dataset.</p>
 <p><code>habitat</code> is a category or description of the habitat in which the Event occurred (e.g. seamount, hydrothermal vent, seagrass, rocky shore, intertidal, ship wreck etc.)</p>
@@ -439,7 +448,7 @@ MULTIPOLYGON (((30 20, 45 40, 10 40, 30 20)),((15 5, 40 10, 10 20, 5 10, 15 5)))
 | IOF_benthos_Plominski_zaljev_2000_s02   | IOF_benthos_Plominski_zaljev_2000_stat2 |           | sample       |</code></pre>
 <p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10">Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)</a>.</em></p>
 </div>
-<div id="time" class="section level5 hasAnchor">
+<div id="time" class="section level5 hasAnchor" number="2.2.1.3.6">
 <h5><span class="header-section-number">2.2.1.3.6</span> Time<a href="darwin_core.html#time" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The date and time at which an occurrence was recorded goes in <code>eventDate</code>. This term uses the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 standard</a>. OBIS recommends using the extended ISO 8601 format with hyphens.</p>
 <p><img src="https://imgs.xkcd.com/comics/iso_8601.png" class="img-responsive"/></p>
@@ -455,7 +464,7 @@ MULTIPOLYGON (((30 20, 45 40, 10 40, 30 20)),((15 5, 40 10, 10 20, 5 10, 15 5)))
 <p>Besides year, month and day numbers, ISO 8601 also supports ordinal dates (year and day number within that year) and week dates (year, week, and day number within that week). These dates are less common and have the formats <code>YYYY-DDD</code> (for example <code>2015-023</code>) and <code>YYYY-Www-D</code> (for example <code>2014-W26-3</code>).</p>
 <p>ISO 8601 <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">durations</a> should not be used.</p>
 </div>
-<div id="sampling" class="section level5 hasAnchor">
+<div id="sampling" class="section level5 hasAnchor" number="2.2.1.3.7">
 <h5><span class="header-section-number">2.2.1.3.7</span> Sampling<a href="darwin_core.html#sampling" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Information on <code>sampleSizeValue</code> and <code>sampleSizeUnit</code> is very important when an organism quantity is specified. However, with <a href="../data_format/">OBIS-ENV-DATA</a> it was felt that the extended MeasurementorFact (<a href="http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml">eMoF</a>) extension would be better suited than the DwC Event Core to store the sampled area and/or volume because in some cases sampleSize by itself may not be detailed enough to allow interpretation of the sample. For instance, in the case of a plankton tow, the volume of water that passed through the net is relevant. In case of Niskin bottles, the volume of sieved water is more relevant than the actual volume in the bottle. In these examples, as well as generally when recording sampling effort for all protocols, eMoF enables greater flexibility to define parameters, as well as the ability to describe the entire sample and treatment protocol through multiple parameters. eMoF also allows you to standardize your terms to a controlled vocabulary.</p>
 <p>The next chapter deals with the metadata (description of the dataset) in <a href="../eml">Ecological Metadata Language</a>.</p>
