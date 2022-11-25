@@ -11,6 +11,7 @@ contribute-data-to-obis
 obis-nodes
 terms-of-reference-of-obis-nodes
 how-to-become-an-obis-node
+obis-node-health-status-check-and-transition-strategy
 biodiversity-data-standards
 darwin-core
 introduction-to-darwin-core
