@@ -101,7 +101,7 @@ The following vocabularies are recommended for populating `measurementTypeID`, `
 
 ##### eDNA & DNA derived data Extension
 
-DNA derived data are increasingly being used to document taxon occurrences. To ensure these data are useful to the broadest possible community, GBIF published a guide entitled [Publishing DNA-derived data through biodiversity data platforms](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/). This guide is supported by the DNA derived data extension for Darwin Core, which incorporates MIxS terms into the Darwin Core standard. eDNA and DNA derived data is linked to occurrence data with the use of `occurrenceID` and/ or `eventID`. Refer to the [Examples: ENV-DATA and DNA derived data](examples.html) for use case examples of eDNA and DNA derived data. 
+DNA derived data are increasingly being used to document taxon occurrences. To ensure these data are useful to the broadest possible community, GBIF published a guide entitled [Publishing DNA-derived data through biodiversity data platforms](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/). This guide is supported by the DNA derived data extension for Darwin Core, which incorporates MIxS terms into the Darwin Core standard. eDNA and DNA derived data is linked to occurrence data with the use of `occurrenceID` and/ or `eventID`. Refer to the [Examples: ENV-DATA and DNA derived data](examples#edna-dna-derived-data.html) for use case examples of eDNA and DNA derived data. 
 
 ##### A special case: habitat types
 
