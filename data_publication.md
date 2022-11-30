@@ -1,4 +1,4 @@
-## Data publication and sharing
+# Data publication and sharing
 
 OBIS nodes can accept any data files from its data sources or data providers, and they publish these data on their OBIS nodes IPT, which are harvested by central OBIS. The Integrated Publishing Toolkit (IPT) is developed and maintained by the Global Biodiversity Information Facility (GBIF). GBIF maintains an [IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki). See here for specific OBIS instructions:
   
