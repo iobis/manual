@@ -3,7 +3,7 @@ title: "The OBIS manual"
 site: "bookdown::bookdown_site"
 output:
   bookdown::gitbook:
-    toc_depth: 3
+    toc_depth: 4
     includes:
       in_header: [google_analytics.html]
     split_by: rmd
@@ -36,5 +36,5 @@ It is important that our data providers as well as all the data users are aware 
 This manual received contributions from: [Leen Vandepitte](https://www.oceanexpert.net/expert/12313), [Mary Kennedy](https://www.oceanexpert.net/expert/13557), [Philip Goldstein](https://www.oceanexpert.net/expert/18051), [Pieter Provoost](https://www.oceanexpert.net/expert/26192), [Samuel Bosch](https://www.oceanexpert.net/expert/26577) and [Ward Appeltans](https://www.oceanexpert.net/expert/11770). 
 
 
-
+test test test
 test text
