@@ -1,1 +1,1 @@
-# How to format Occurrence tables
+## How to format Occurrence tables

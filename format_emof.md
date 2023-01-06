@@ -1,1 +1,1 @@
-# How to format extendedMeasurementOrFact tables
+## How to format extendedMeasurementOrFact tables

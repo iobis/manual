@@ -10,8 +10,6 @@ output:
     css: "style.css"
     config:
       toc:
-        toc_float:
-        collapsed: false
         before: |
           <li><a href="/">The OBIS manual</a></li>
 documentclass: book

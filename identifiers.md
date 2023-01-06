@@ -1,5 +1,5 @@
-# Constructing and using indentifier codes
+## Constructing and using indentifier codes
 
-## eventID
+### eventID
 
-## occurrenceID
+### occurrenceID

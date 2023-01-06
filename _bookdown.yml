@@ -16,7 +16,7 @@ rmd_files:
   - format_event.md
   - format_emof.md
   - vocabulary.md
-  - common_issues.md
+  - common_formatissues.md
   - examples.md
   - data_qc.md
   - mofreports.md

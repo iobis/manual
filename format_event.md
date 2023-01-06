@@ -1,1 +1,1 @@
-# How to format Event tables
+## How to format Event tables
