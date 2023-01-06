@@ -1,11 +1,10 @@
-### Darwin Core Archive and dataset structure
+### Darwin Core Archive
 
 **Contents**
 
 - [Darwin Core Archive](#darwin-core-archive)
 - [OBIS holds more than just species occurrences: the ENV-DATA approach](#obis-holds-more-than-just-species-occurrences-the-env-data-approach)
   - [ExtendedMeasurementOrFact Extension (eMoF)](#extendedmeasurementorfact-extension-emof)
-     - [MeasurementOrFact vocabularies](#measurementorfact-vocabularies)
   - [eDNA & DNA derived data Extension](#edna-dna-derived-data-extension)
   - [A special case: habitat types](#a-special-case-habitat-types)
 - [When to use Event Core](#when-to-use-event-core)
@@ -51,54 +50,6 @@ The `occurrenceID` term is used to circumvent the limitations of the star schema
 <img src="images/EventCoreSchema.png" class="img-responsive img-responsive-50"/>
 <p class="caption-50">Figure: Overview of an OBIS-ENV-DATA format. Sampling parameters, abiotic measurements, and occurrences are linked to events using the eventID (full lines). Biotic measurements are linked to occurrences using the new occurrenceID field of the ExtendedMeasurementOrFact Extension (dashed lines).</p>
 
-##### MeasurementOrFact vocabularies
-
-The MeasurementOrFact terms `measurementType`, `measurementValue` and `measurementUnit` are completely unconstrained and can be populated with free text annotation. While free text offers the advantage of capturing complex and as yet unclassified information, the inevitable semantic heterogeneity (e.g. of spelling or wording) becomes a major challenge for effective data integration and analysis. Hence, OBIS added 3 new terms: `measurementTypeID`, `measurementValueID` and `measurementUnitID` to standardise the measurement types, values and units. Note that `measurementValueID` is not used for standardizing numeric measurements. The three new terms should be populated using controlled vocabularies referenced using Unique Resource Identifiers (URIs). OBIS recommends to use the internationally recognized [NERC Vocabulary Server](http://www.bodc.ac.uk/resources/products/web_services/vocab/), developed by the British Oceanographic Data Centre (BODC), which can be searched through [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search).
-
-The following vocabularies are recommended for populating `measurementTypeID`, `measurementValueID`, and `measurementUnitID`:
-
-###### measurementTypeID
-
-- BODC Parameter Usage Vocabulary (P01)
-  - documentation: [https://github.com/nvs-vocabs/P01](https://github.com/nvs-vocabs/P01)
-  - vocabulary: [http://vocab.nerc.ac.uk/collection/P01/current/](http://vocab.nerc.ac.uk/collection/P01/current/)
-  - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P01/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P01/)
-- OBIS sampling instruments and methods attributes (Q01)
-  - vocabulary: [http://vocab.nerc.ac.uk/collection/Q01/current/](http://vocab.nerc.ac.uk/collection/Q01/current/)
-  - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/)
-
-###### measurementValueID
-
-- Sampling instruments and sensors (SeaVoX Device Catalogue)
-  - documentation: [https://github.com/nvs-vocabs/L22](https://github.com/nvs-vocabs/L22)
-  - vocabulary: [http://vocab.nerc.ac.uk/collection/L22/current](http://vocab.nerc.ac.uk/collection/L22/current)
-  - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/)
-- Sampling instrument categories (SeaDataNet device categories)
-  - documentation: [https://github.com/nvs-vocabs/L05](https://github.com/nvs-vocabs/L05)
-  - vocabulary: [http://vocab.nerc.ac.uk/collection/L05/current](http://vocab.nerc.ac.uk/collection/L05/current)
-  - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/)
-- Vessels (ICES Platform Codes)
-  - vocabulary: [http://vocab.nerc.ac.uk/collection/C17/current](http://vocab.nerc.ac.uk/collection/C17/current )
-  - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/)
-- Sex (Gender)
-  - documentation: [https://github.com/nvs-vocabs/S10](https://github.com/nvs-vocabs/S10)
-  - vocabulary: [http://vocab.nerc.ac.uk/collection/S10/current/](http://vocab.nerc.ac.uk/collection/S10/current/)
-  - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/)  
-- Lifestage
-  - documentation: [https://github.com/nvs-vocabs/S11](https://github.com/nvs-vocabs/S11)
-  - vocabulary: [http://vocab.nerc.ac.uk/collection/S11/current/](http://vocab.nerc.ac.uk/collection/S11/current/)
-  - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/)
-- Papers or manuals on the sampling protocol used
-  - DOI
-  - Handle for publications on IOC's [Ocean Best Practices repository](http://www.oceanbestpractices.net/), for example: [http://hdl.handle.net/11329/304](http://hdl.handle.net/11329/304)
-
-###### MeasurementUnitID
-
-- Units
-  - documentation: [https://github.com/nvs-vocabs/P06](https://github.com/nvs-vocabs/P06)
-  - vocabulary: [http://vocab.nerc.ac.uk/collection/P06/current](http://vocab.nerc.ac.uk/collection/P06/current)
-  - search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/)
-
 ##### eDNA & DNA derived data Extension
 
 DNA derived data are increasingly being used to document taxon occurrences. To ensure these data are useful to the broadest possible community, GBIF published a guide entitled [Publishing DNA-derived data through biodiversity data platforms](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/). This guide is supported by the DNA derived data extension for Darwin Core, which incorporates MIxS terms into the Darwin Core standard. eDNA and DNA derived data is linked to occurrence data with the use of `occurrenceID` and/ or `eventID`. Refer to the [Examples: ENV-DATA and DNA derived data](examples#edna-dna-derived-data.html) for use case examples of eDNA and DNA derived data. 
@@ -119,22 +70,6 @@ Please consult [Duncan et al. (2021)](https://www.emodnet-seabedhabitats.eu/reso
 - how to handle a single event with multiple habitat measurements
 - recommended vocabularies and terms for common habitat classification systems
 - example eMoF table 
-
-##### When to use Event Core
-
-* When the dataset contains abiotic measurements, or other biological measurements which are related to an entire sample (not a single specimen)
-* When specific details are known about how a biological sample was taken and processed. These details can be expressed using the eMoF and the newly developed [Q01 vocabulary](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/).
-
-Event Core should be used in combination with the Occurrence Extension and the eMoF.
-
-##### When to use Occurrence Core
-
-* No information on how the data was sampled or samples were processed.
-* No abiotic measurements are taken or provided
-* Biological measurements are made on individual specimens (each specimen is a single occurrence record)
-* This is often the case for museum collections, citations of occurrences from literature, individual sightings.
-
-Datasets formatted in Occurrence Core can use the eMoF Extension for biotic measurements or facts.
 
 ##### Recommended reading
 
