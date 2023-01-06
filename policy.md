@@ -40,38 +40,6 @@ The data in OBIS are freely available to everyone, following the principles of e
 * In the case you are a custodian of biogeographic data yourself you should take action to also publish these data through OBIS.
 * Consider sponsoring or partnering with OBIS and its OBIS nodes in grant proposal writing. Creating a global database like OBIS cannot happen without the, often voluntary, contribution of many scientists and data managers all over the world. Several activities, such as the coordination, data aggregation, quality control, database and website maintenance require resources including manpower at national and international level. A list of sponsors can be found [here](/about/sponsor)
 
-#### Citations
-
-General OBIS citation:
-
-```
-OBIS (YEAR) Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.obis.org.
-```
-
-Use the following format to cite data retrieved from OBIS (dataset citations are available in the zip downloads as html file):
-
-```
-[Dataset citation available from metadata] [Data provider details] [Dataset] (Available: Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.obis.org. Accessed: YYYY-MM-DD.
-```
-
-For example:
-
-```
-Sousa Pinto, I., Viera, R. (Year: if not provided use year from dataset publication date) Monitoring of the intertidal biodiversity of rocky beaches with schools in Portugal 2005-2010. CIIMAR - Interdisciplinary Centre of Marine and Environmental Research, Porto. [Dataset] (Available: Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.obis.org. Accessed: 2015-01-01)
-```
-
-When data represents a subset of many datasets taken from the integrated OBIS database, you can, in addition to cite the individual datasets (and taking into account the restrictions set at each dataset level), also cite the OBIS database as follows:
-
-```
-OBIS (YEAR) [Data e.g. Distribution records of Eledone cirrhosa (Lamarck, 1798)] [Dataset] (Available: Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.obis.org. Accessed: YYYY-MM-DD)
-```
-
-The derived information products from OBIS are published under the CC-0 license and can be cited as follows:
-
-```
-OBIS (YEAR) [Information product e.g. Global map showing the Hulbert index in a gridded view of hexagonal cells] [Map] (Available: Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.obis.org. Accessed: YYYY-MM-DD)
-```
-
 #### Disclaimer
 
 Appropriate caution is necessary in the interpretation of results derived from OBIS. Users must recognize that the analysis and interpretation of data require background knowledge and expertise about marine biodiversity (including ecosystems and taxonomy). Users should be aware of possible errors, including in the use of species names, geo-referencing, data handling, and mapping. They should crosscheck their results for possible errors, and qualify their interpretation of any results accordingly.  

@@ -22,3 +22,5 @@ Both the mapper and the R package are based on the OBIS API which can be used by
 - <https://obis.org/data/access/>
 
 Full exports of the quality controlled presence records as CSV or Parquet (see below).
+
+## Finding your own data
