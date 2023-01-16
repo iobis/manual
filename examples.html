@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.2.4 Examples: ENV-DATA and DNA derived data | The OBIS manual</title>
   <meta name="description" content="2.2.4 Examples: ENV-DATA and DNA derived data | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.2.4 Examples: ENV-DATA and DNA derived data | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -1207,10 +1207,310 @@ Figure: A fictional macroalgae survey with a single site, multiple zones, quadra
 </div>
 <div id="marine-birds-abundance-distribution" class="section level4 hasAnchor" number="2.2.4.7">
 <h4><span class="header-section-number">2.2.4.7</span> Marine birds abundance &amp; distribution<a href="examples.html#marine-birds-abundance-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-(example coming soon)
-<p>
- 
-</p>
+<p>The example for ENV-DATA collected with marine bird sightings/occurrences is based on the dataset <a href="https://www.marine.csiro.au/ipt/resource?r=in2017_v02_wov">“RV Investigator Voyage IN2017_V02 Seabird Observations, Australia (2017)”</a>. In this dataset, seabird sightings were recorded continuously during daylight hours during a voyage to recover and redeploy moorings at the SOTS site, southwest of Tasmania, Australia, in March 2017. Observations were made from c.30 minutes before sunrise to c.30 minutes after sunset, extending to 300m in the forward quadrant with the best viewing conditions. There were 1200 observations from 38 species of birds along with 3 cetacean species and one seal. This example will focus on the ENV-DATA associated with the bird sightings. The most frequently sighted bird species were <em>Puﬃnus tenuirostris</em> (Short-tailed Shearwater) and <em>Pachyptila turtur</em> (Fairy Prion).</p>
+<p>For this dataset, human observation recorded individual bird sightings (thus, each specimen is a single occurrence). The dataset contains abiotic measurements (ENV-DATA) which are related to each individual sighting, instead of an entire sample. Therefore, we can create an Occurrence Core with an eMoF extension that contain the abiotic environmental measurements or facts.</p>
+<p><strong>Occurrence Core:</strong></p>
+<p>The Occurrence Core is populated with the occurrence records of seabirds sighted during the RV voyages. Occurrence details and scientific names are provided here. All birds were observed above sea level, all <code>minimumDepthInMeters</code> and <code>maximumDepthInMeters</code> values equal zero.</p>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="20%" />
+<col width="46%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>occurrenceID</th>
+<th>eventDate</th>
+<th>institutionCode</th>
+<th>collectionCode</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>in2017_v02_00998</td>
+<td>2017-03-17 01:07:00</td>
+<td>Australasian Seabird Group, BirdLife Australia</td>
+<td>in2017_v02_wov</td>
+</tr>
+<tr class="even">
+<td>in2017_v02_01380</td>
+<td>2017-03-19 22:26:00</td>
+<td>Australasian Seabird Group, BirdLife Australia</td>
+<td>in2017_v02_wov</td>
+</tr>
+<tr class="odd">
+<td>in2017_v02_01012</td>
+<td>2017-03-17 02:38:00</td>
+<td>Australasian Seabird Group, BirdLife Australia</td>
+<td>in2017_v02_wov</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="14%" />
+<col width="20%" />
+<col width="24%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>basisOfRecord</th>
+<th>recordedBy</th>
+<th>organismQuantity</th>
+<th>organismQuantityType</th>
+<th>occurrenceStatus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HumanObservation</td>
+<td>EJW+CRC+TAH</td>
+<td>2</td>
+<td>individuals</td>
+<td>present</td>
+</tr>
+<tr class="even">
+<td>HumanObservation</td>
+<td>EJW+CRC+TAH</td>
+<td>1</td>
+<td>individuals</td>
+<td>present</td>
+</tr>
+<tr class="odd">
+<td>HumanObservation</td>
+<td>EJW+CRC+TAH</td>
+<td>1</td>
+<td>individuals</td>
+<td>present</td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="15%" />
+<col width="26%" />
+<col width="18%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>decimalLatitude</th>
+<th>decimalLongitude</th>
+<th>coordinateUncertaintyInMeters</th>
+<th>coordinatePrecision</th>
+<th>footprintWKT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-43.40741</td>
+<td>147.45576</td>
+<td>200</td>
+<td>0.0018</td>
+<td>POINT (147.45576 -43.40741)</td>
+</tr>
+<tr class="even">
+<td>-45.98644</td>
+<td>142.1445</td>
+<td>200</td>
+<td>0.0018</td>
+<td>POINT (142.14450 -45.98644)</td>
+</tr>
+<tr class="odd">
+<td>-43.40728</td>
+<td>147.45549</td>
+<td>200</td>
+<td>0.0018</td>
+<td>POINT (147.45549 -43.40728)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="34%" />
+<col width="26%" />
+<col width="21%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>scientificNameID</th>
+<th>scientificName</th>
+<th>scientificNameAuthorship</th>
+<th>vernacularName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="urn:lsid:marinespecies.org:taxname:343991" class="uri">urn:lsid:marinespecies.org:taxname:343991</a></td>
+<td>Morus serrator</td>
+<td>(Gray,1843)</td>
+<td>Australasian Gannet</td>
+</tr>
+<tr class="even">
+<td><a href="urn:lsid:marinespecies.org:taxname:212648" class="uri">urn:lsid:marinespecies.org:taxname:212648</a></td>
+<td>Pachyptila turtur</td>
+<td>(Kuhl,1820)</td>
+<td>Fairy Prion</td>
+</tr>
+<tr class="odd">
+<td><a href="urn:lsid:marinespecies.org:taxname:707545" class="uri">urn:lsid:marinespecies.org:taxname:707545</a></td>
+<td>Chroicocephalus novaehollandiae</td>
+<td>Stephens,1826</td>
+<td>Silver Gull</td>
+</tr>
+</tbody>
+</table>
+<p><strong>extendedMeasurementOrFact (eMoF) extension:</strong></p>
+<p>As shown in previous examples, the MeasurementOrFact extension table contains abiotic measurements or facts corresponding to an occurrence / sighting. Individual sightings and abiotic measurements are linked with <code>occurrenceID</code>. In the example dataset, the ENV-DATA consist of measurements taken during the moorings deployment at the SOTS site, at the time of the marine bird sightings. In addition to NERC vocabulary terms, authors also referenced the Australian Ocean Data Network (AODN) Discovery Parameter Vocabulary for <em>Sea-floor depth (m)</em> and <em>Sea Surface Temperature</em> as <code>measurementType</code>. NERC equivalents to the AODN terms are added as additional MeasurementOrFact (MoF) records.</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="23%" />
+<col width="22%" />
+<col width="42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>occurrenceID</th>
+<th>measurementID</th>
+<th>measurementType</th>
+<th>measurementTypeID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>in2017_v02_00998</td>
+<td>in2017_v02_00998-depth</td>
+<td>Sea-floor depth (m)</td>
+<td><a href="http://vocab.aodn.org.au/def/discovery_parameter/entity/574" class="uri">http://vocab.aodn.org.au/def/discovery_parameter/entity/574</a></td>
+</tr>
+<tr class="even">
+<td>in2017_v02_00998</td>
+<td>in2017_v02_00998-depth</td>
+<td>Sea-floor depth</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/MBANZZZZ/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/MBANZZZZ/</a></td>
+</tr>
+<tr class="odd">
+<td>in2017_v02_00998</td>
+<td>in2017_v02_00998-air_pressure</td>
+<td>Air Pressure (hPa)</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/CAPHZZ01" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/CAPHZZ01</a></td>
+</tr>
+<tr class="even">
+<td>in2017_v02_00998</td>
+<td>in2017_v02_00998-air_temp</td>
+<td>Atmospheric temperature (deg C)</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01</a></td>
+</tr>
+<tr class="odd">
+<td>in2017_v02_00998</td>
+<td>in2017_v02_00998-wov_sea_state</td>
+<td>Sea state</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/C39/current/" class="uri">http://vocab.nerc.ac.uk/collection/C39/current/</a></td>
+</tr>
+<tr class="even">
+<td>in2017_v02_00998</td>
+<td>in2017_v02_00998-sea_surface_temp</td>
+<td>Sea surface temperature</td>
+<td><a href="http://vocab.aodn.org.au/def/discovery_parameter/entity/97" class="uri">http://vocab.aodn.org.au/def/discovery_parameter/entity/97</a></td>
+</tr>
+<tr class="odd">
+<td>in2017_v02_00998</td>
+<td>in2017_v02_00998-sea_surface_temp</td>
+<td>Sea surface temperature</td>
+<td><a href="http://vocab.nerc.ac.uk/standard_name/sea_surface_temperature/" class="uri">http://vocab.nerc.ac.uk/standard_name/sea_surface_temperature/</a></td>
+</tr>
+<tr class="even">
+<td>in2017_v02_00998</td>
+<td>in2017_v02_00998-wind_direction</td>
+<td>Wind direction (deg)</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01</a></td>
+</tr>
+<tr class="odd">
+<td>in2017_v02_00998</td>
+<td>in2017_v02_00998-wind_speed</td>
+<td>Wind Speed (knt)</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/ESSAZZ01" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/ESSAZZ01</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="31%" />
+<col width="20%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>measurementValue</th>
+<th>measurementValueID</th>
+<th>measurementUnit</th>
+<th>measurementUnitID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>73.0313</td>
+<td>NA</td>
+<td>Metres</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/ULAA" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/ULAA</a></td>
+</tr>
+<tr class="even">
+<td>73.0313</td>
+<td>NA</td>
+<td>Metres</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/ULAA" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/ULAA</a></td>
+</tr>
+<tr class="odd">
+<td>1024.91385</td>
+<td>NA</td>
+<td>hPa</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/HPAX" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/HPAX</a></td>
+</tr>
+<tr class="even">
+<td>15.3</td>
+<td>NA</td>
+<td>degrees Celsius</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPAA" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPAA</a></td>
+</tr>
+<tr class="odd">
+<td>moderate 1.25 - 2.5 m</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/C39/current/4/" class="uri">http://vocab.nerc.ac.uk/collection/C39/current/4/</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>17.32</td>
+<td>NA</td>
+<td>degrees Celsius</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPAA" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPAA</a></td>
+</tr>
+<tr class="odd">
+<td>17.32</td>
+<td>NA</td>
+<td>degrees Celsius</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPAA" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPAA</a></td>
+</tr>
+<tr class="even">
+<td>283</td>
+<td>NA</td>
+<td>degrees</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UABB" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UABB</a></td>
+</tr>
+<tr class="odd">
+<td>5.49</td>
+<td>NA</td>
+<td>Knots (nautical miles per hour)</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UKNT" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UKNT</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="marine-mammals-abundance-distribution" class="section level4 hasAnchor" number="2.2.4.8">
 <h4><span class="header-section-number">2.2.4.8</span> Marine mammals abundance &amp; distribution<a href="examples.html#marine-mammals-abundance-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
