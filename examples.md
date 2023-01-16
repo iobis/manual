@@ -237,8 +237,65 @@ And finally there is the MeasurementOrFact extension table, which has attributes
 
 #### Marine birds abundance & distribution
 
-(example coming soon)
-<p>&nbsp;</p>
+The example for ENV-DATA collected with marine bird sightings/occurrences is based on the dataset ["RV Investigator Voyage IN2017_V02 Seabird Observations, Australia (2017)"](https://www.marine.csiro.au/ipt/resource?r=in2017_v02_wov). In this dataset, seabird sightings were recorded continuously during daylight hours during a voyage to recover and redeploy moorings at the SOTS site, southwest of Tasmania, Australia, in March 2017. Observations were made from c.30 minutes before sunrise to c.30 minutes after sunset, extending to 300m in the forward quadrant with the best viewing conditions. There were 1200 observations from 38 species of birds along with 3 cetacean species and one seal. This example will focus on the ENV-DATA associated with the bird sightings. The most frequently sighted bird species were *Puﬃnus tenuirostris* (Short-tailed Shearwater) and *Pachyptila turtur* (Fairy Prion).
+
+For this dataset, human observation recorded individual bird sightings (thus, each specimen is a single occurrence). The dataset contains abiotic measurements (ENV-DATA) which are related to each individual sighting, instead of an entire sample. Therefore, we can create an Occurrence Core with an eMoF extension that contain the abiotic environmental measurements or facts.
+
+**Occurrence Core:**
+
+The Occurrence Core is populated with the occurrence records of seabirds sighted during the RV voyages. Occurrence details and scientific names are provided here. All birds were observed above sea level, all `minimumDepthInMeters` and `maximumDepthInMeters` values equal zero. 
+
+| occurrenceID     | eventDate           | institutionCode                                | collectionCode |
+|------------------|---------------------|------------------------------------------------|----------------|
+| in2017_v02_00998 | 2017-03-17 01:07:00 | Australasian Seabird Group, BirdLife Australia | in2017_v02_wov |
+| in2017_v02_01380 | 2017-03-19 22:26:00 | Australasian Seabird Group, BirdLife Australia | in2017_v02_wov |
+| in2017_v02_01012 | 2017-03-17 02:38:00 | Australasian Seabird Group, BirdLife Australia | in2017_v02_wov |
+
+| basisOfRecord    | recordedBy  | organismQuantity | organismQuantityType | occurrenceStatus |
+|------------------|-------------|------------------|----------------------|------------------|
+| HumanObservation | EJW+CRC+TAH | 2                | individuals          | present          |
+| HumanObservation | EJW+CRC+TAH | 1                | individuals          | present          |
+| HumanObservation | EJW+CRC+TAH | 1                | individuals          | present          |
+
+| decimalLatitude | decimalLongitude | coordinateUncertaintyInMeters | coordinatePrecision | footprintWKT                |
+|-----------------|------------------|-------------------------------|---------------------|-----------------------------|
+| -43.40741       | 147.45576        | 200                           | 0.0018              | POINT (147.45576 -43.40741) |
+| -45.98644       | 142.1445         | 200                           | 0.0018              | POINT (142.14450 -45.98644) |
+| -43.40728       | 147.45549        | 200                           | 0.0018              | POINT (147.45549 -43.40728) |
+
+| scientificNameID                          | scientificName                  | scientificNameAuthorship | vernacularName      |
+|-------------------------------------------|---------------------------------|--------------------------|---------------------|
+| urn:lsid:marinespecies.org:taxname:343991 | Morus serrator                  | (Gray,1843)              | Australasian Gannet |
+| urn:lsid:marinespecies.org:taxname:212648 | Pachyptila turtur               | (Kuhl,1820)              | Fairy Prion         |
+| urn:lsid:marinespecies.org:taxname:707545 | Chroicocephalus novaehollandiae | Stephens,1826            | Silver Gull         |
+
+**extendedMeasurementOrFact (eMoF) extension:**
+
+As shown in previous examples, the MeasurementOrFact extension table contains abiotic measurements or facts corresponding to an occurrence / sighting. Individual sightings and abiotic measurements are linked with `occurrenceID`. In the example dataset, the ENV-DATA consist of measurements taken during the moorings deployment at the SOTS site, at the time of the marine bird sightings. In addition to NERC vocabulary terms, authors also referenced the Australian Ocean Data Network (AODN) Discovery Parameter Vocabulary for *Sea-floor depth (m)* and *Sea Surface Temperature* as `measurementType`. NERC equivalents to the AODN terms are added as additional MeasurementOrFact (MoF) records.
+
+| occurrenceID     | measurementID                     | measurementType                 | measurementTypeID                                              |
+|------------------|-----------------------------------|---------------------------------|----------------------------------------------------------------|
+| in2017_v02_00998 | in2017_v02_00998-depth            | Sea-floor depth (m)             | http://vocab.aodn.org.au/def/discovery_parameter/entity/574    |
+| in2017_v02_00998 | in2017_v02_00998-depth            | Sea-floor depth                 | http://vocab.nerc.ac.uk/collection/P01/current/MBANZZZZ/       |
+| in2017_v02_00998 | in2017_v02_00998-air_pressure     | Air Pressure (hPa)              | http://vocab.nerc.ac.uk/collection/P01/current/CAPHZZ01        |
+| in2017_v02_00998 | in2017_v02_00998-air_temp         | Atmospheric temperature (deg C) | http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01        |
+| in2017_v02_00998 | in2017_v02_00998-wov_sea_state    | Sea state                       | http://vocab.nerc.ac.uk/collection/C39/current/                |
+| in2017_v02_00998 | in2017_v02_00998-sea_surface_temp | Sea surface temperature         | http://vocab.aodn.org.au/def/discovery_parameter/entity/97     |
+| in2017_v02_00998 | in2017_v02_00998-sea_surface_temp | Sea surface temperature         | http://vocab.nerc.ac.uk/standard_name/sea_surface_temperature/ |
+| in2017_v02_00998 | in2017_v02_00998-wind_direction   | Wind direction (deg)            | http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01        |
+| in2017_v02_00998 | in2017_v02_00998-wind_speed       | Wind Speed (knt)                | http://vocab.nerc.ac.uk/collection/P01/current/ESSAZZ01        |
+
+| measurementValue      | measurementValueID                                | measurementUnit                 | measurementUnitID                                   |
+|-----------------------|---------------------------------------------------|---------------------------------|-----------------------------------------------------|
+| 73.0313               | NA                                                | Metres                          | http://vocab.nerc.ac.uk/collection/P06/current/ULAA |
+| 73.0313               | NA                                                | Metres                          | http://vocab.nerc.ac.uk/collection/P06/current/ULAA |
+| 1024.91385            | NA                                                | hPa                             | http://vocab.nerc.ac.uk/collection/P06/current/HPAX |
+| 15.3                  | NA                                                | degrees Celsius                 | http://vocab.nerc.ac.uk/collection/P06/current/UPAA |
+| moderate 1.25 - 2.5 m | http://vocab.nerc.ac.uk/collection/C39/current/4/ |                                 |                                                     |
+| 17.32                 | NA                                                | degrees Celsius                 | http://vocab.nerc.ac.uk/collection/P06/current/UPAA |
+| 17.32                 | NA                                                | degrees Celsius                 | http://vocab.nerc.ac.uk/collection/P06/current/UPAA |
+| 283                   | NA                                                | degrees                         | http://vocab.nerc.ac.uk/collection/P06/current/UABB |
+| 5.49                  | NA                                                | Knots (nautical miles per hour) | http://vocab.nerc.ac.uk/collection/P06/current/UKNT |
 
 #### Marine mammals abundance & distribution
 
