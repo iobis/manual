@@ -271,24 +271,28 @@ The Occurrence Core is populated with the occurrence records of seabirds sighted
 
 **extendedMeasurementOrFact (eMoF) extension:**
 
-As shown in previous examples, the MeasurementOrFact extension table contains abiotic meaasurements or facts corresponding to an occurrence / sighting. Individual sightings and abiotic measurements are linked with `occurrenceID`. In the example dataset, the ENV-DATA consist of measurements taken during the moorings deployment at the SOTS site, at the time of the marine bird sightings. In addition to NERC vocabulary terms, authors also referenced the Australian Ocean Data Network (AODN) Discovery Parameter Vocabulary for *Depth* and *Sea Surface Temperature* as `measurementType`.
+As shown in previous examples, the MeasurementOrFact extension table contains abiotic measurements or facts corresponding to an occurrence / sighting. Individual sightings and abiotic measurements are linked with `occurrenceID`. In the example dataset, the ENV-DATA consist of measurements taken during the moorings deployment at the SOTS site, at the time of the marine bird sightings. In addition to NERC vocabulary terms, authors also referenced the Australian Ocean Data Network (AODN) Discovery Parameter Vocabulary for *Sea-floor depth (m)* and *Sea Surface Temperature* as `measurementType`. NERC equivalents to the AODN terms are added as additional MeasurementOrFact (MoF) records.
 
-| occurrenceID     | measurementID                     | measurementType                 | measurementTypeID                                           |
-|------------------|-----------------------------------|---------------------------------|-------------------------------------------------------------|
-| in2017_v02_00998 | in2017_v02_00998-depth            | Depth (m)                       | http://vocab.aodn.org.au/def/discovery_parameter/entity/574 |
-| in2017_v02_00998 | in2017_v02_00998-air_pressure     | Air Pressure (hPa)              | http://vocab.nerc.ac.uk/collection/P01/current/CAPHZZ01     |
-| in2017_v02_00998 | in2017_v02_00998-air_temp         | Atmospheric temperature (deg C) | http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01     |
-| in2017_v02_00998 | in2017_v02_00998-wov_sea_state    | Sea state                       | http://vocab.nerc.ac.uk/collection/C39/current/             |
-| in2017_v02_00998 | in2017_v02_00998-sea_surface_temp | Sea surface temperature         | http://vocab.aodn.org.au/def/discovery_parameter/entity/97  |
-| in2017_v02_00998 | in2017_v02_00998-wind_direction   | Wind direction (deg)            | http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01     |
-| in2017_v02_00998 | in2017_v02_00998-wind_speed       | Wind Speed (knt)                | http://vocab.nerc.ac.uk/collection/P01/current/ESSAZZ01     |
+| occurrenceID     | measurementID                     | measurementType                 | measurementTypeID                                              |
+|------------------|-----------------------------------|---------------------------------|----------------------------------------------------------------|
+| in2017_v02_00998 | in2017_v02_00998-depth            | Sea-floor depth (m)             | http://vocab.aodn.org.au/def/discovery_parameter/entity/574    |
+| in2017_v02_00998 | in2017_v02_00998-depth            | Sea-floor depth                 | http://vocab.nerc.ac.uk/collection/P01/current/MBANZZZZ/       |
+| in2017_v02_00998 | in2017_v02_00998-air_pressure     | Air Pressure (hPa)              | http://vocab.nerc.ac.uk/collection/P01/current/CAPHZZ01        |
+| in2017_v02_00998 | in2017_v02_00998-air_temp         | Atmospheric temperature (deg C) | http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01        |
+| in2017_v02_00998 | in2017_v02_00998-wov_sea_state    | Sea state                       | http://vocab.nerc.ac.uk/collection/C39/current/                |
+| in2017_v02_00998 | in2017_v02_00998-sea_surface_temp | Sea surface temperature         | http://vocab.aodn.org.au/def/discovery_parameter/entity/97     |
+| in2017_v02_00998 | in2017_v02_00998-sea_surface_temp | Sea surface temperature         | http://vocab.nerc.ac.uk/standard_name/sea_surface_temperature/ |
+| in2017_v02_00998 | in2017_v02_00998-wind_direction   | Wind direction (deg)            | http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01        |
+| in2017_v02_00998 | in2017_v02_00998-wind_speed       | Wind Speed (knt)                | http://vocab.nerc.ac.uk/collection/P01/current/ESSAZZ01        |
 
 | measurementValue      | measurementValueID                                | measurementUnit                 | measurementUnitID                                   |
 |-----------------------|---------------------------------------------------|---------------------------------|-----------------------------------------------------|
 | 73.0313               | NA                                                | Metres                          | http://vocab.nerc.ac.uk/collection/P06/current/ULAA |
+| 73.0313               | NA                                                | Metres                          | http://vocab.nerc.ac.uk/collection/P06/current/ULAA |
 | 1024.91385            | NA                                                | hPa                             | http://vocab.nerc.ac.uk/collection/P06/current/HPAX |
 | 15.3                  | NA                                                | degrees Celsius                 | http://vocab.nerc.ac.uk/collection/P06/current/UPAA |
-| moderate 1.25 - 2.5 m | http://vocab.nerc.ac.uk/collection/C39/current/4/ |                                 |                                                   |
+| moderate 1.25 - 2.5 m | http://vocab.nerc.ac.uk/collection/C39/current/4/ |                                 |                                                     |
+| 17.32                 | NA                                                | degrees Celsius                 | http://vocab.nerc.ac.uk/collection/P06/current/UPAA |
 | 17.32                 | NA                                                | degrees Celsius                 | http://vocab.nerc.ac.uk/collection/P06/current/UPAA |
 | 283                   | NA                                                | degrees                         | http://vocab.nerc.ac.uk/collection/P06/current/UABB |
 | 5.49                  | NA                                                | Knots (nautical miles per hour) | http://vocab.nerc.ac.uk/collection/P06/current/UKNT |
