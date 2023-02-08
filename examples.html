@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.2.4 Examples: ENV-DATA and DNA derived data | The OBIS manual</title>
   <meta name="description" content="2.2.4 Examples: ENV-DATA and DNA derived data | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.2.4 Examples: ENV-DATA and DNA derived data | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -242,13 +242,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div id="edna-dna-derived-data" class="section level4 hasAnchor" number="2.2.4.1">
 <h4><span class="header-section-number">2.2.4.1</span> eDNA &amp; DNA derived data<a href="examples.html#edna-dna-derived-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The following example use cases draw on both the <a href="https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/">GBIF guide</a> and the <a href="https://rs.gbif-uat.org/extensions.html#http">DNA derived data extension</a> to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required occurrence core terms are shown, in addition to all eDNA &amp; DNA specific terms. For additional occurrence core terms, refer to <a href="darwin_core.html#occurrence">Occurrence</a>.</p>
+<p>The following example use cases draw on both the <a href="https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/">GBIF guide</a> and the <a href="https://rs.gbif-uat.org/extensions.html#http">DNA derived data extension</a> to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA &amp; DNA specific terms. For additional Occurrence core terms, refer to <a href="darwin_core.html#occurrence">Occurrence</a>.</p>
 <div id="edna-data-from-monterey-bay-california" class="section level5 hasAnchor" number="2.2.4.1.1">
 <h5><span class="header-section-number">2.2.4.1.1</span> eDNA data from Monterey Bay, California<a href="examples.html#edna-data-from-monterey-bay-california" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The data for this example is from the use case <a href="https://www1.usgs.gov/obis-usa/ipt/resource?r=18s_monterey_bay_time_series_edna">“18S Monterey Bay Time Series: an eDNA data set from Monterey Bay, California, including years 2006, 2013 - 2016’</a>. The data from this study originate from marine filtered seawater samples that have undergone metabarcoding of the 18S V9 region.</p>
-<p><strong>Occurrence extension:</strong></p>
-<p>We can populate the Occurrence extension with all the required and highly recommended fields, as well as considering the eDNA and DNA specific fields. The OccurrenceCore contain the taxonomic identification of each ASV observed; its number of reads, as well as relevant metadata including the sample collection location, references for the identification procedure, and links to archived sequences.</p>
-<p><code>OccurrenceID</code> and <code>basisOfRecord</code> are some of the required occurrence core terms, in addition to the highly recommended fields of <code>organismQuantity</code> and <code>organismQuantityType</code>. A selection of samples from this plate were included in another publication (Djurhuus et al., 2020),which is recorded in <code>identificationReferences</code> along with the GitHub repository where the data can be found.</p>
+<p><strong>Occurrence core:</strong></p>
+<p>We can populate the Occurrence core with all the required and highly recommended fields, as well as considering the eDNA and DNA specific fields. The Occurrence core contain the taxonomic identification of each ASV observed; its number of reads, as well as relevant metadata including the sample collection location, references for the identification procedure, and links to archived sequences.</p>
+<p><code>OccurrenceID</code> and <code>basisOfRecord</code> are some of the required Occurrence core terms, in addition to the highly recommended fields of <code>organismQuantity</code> and <code>organismQuantityType</code>. A selection of samples from this plate were included in another publication (Djurhuus et al., 2020),which is recorded in <code>identificationReferences</code> along with the GitHub repository where the data can be found.</p>
 <table>
 <colgroup>
 <col width="22%" />
@@ -327,7 +327,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p><strong>DNA Derived Data extension:</strong></p>
-<p>Next, we can create the <strong>DNA Derived Data extension</strong> which will be connected to the occurrence core with the use of <code>occurrenceID</code>. This extension contains the DNA sequences and relevant DNA metadata, including sequencing procedures, primers used and SOP’s. The recommended use of ENVO’s biome classes were applied to describe the environmental system from which the sample was extracted. The samples were collected by CTD rosette and filtered by a peristaltic pump system. Illumina MiSeq metabarcoding was applied for the target_gene 18S and the target_subfragment, V9 region. URL’s are provided for the protocols followed for nucleic acids extraction and amplification.</p>
+<p>Next, we can create the <strong>DNA Derived Data extension</strong> which will be connected to the Occurrence core with the use of <code>occurrenceID</code>. This extension contains the DNA sequences and relevant DNA metadata, including sequencing procedures, primers used and SOP’s. The recommended use of ENVO’s biome classes were applied to describe the environmental system from which the sample was extracted. The samples were collected by CTD rosette and filtered by a peristaltic pump system. Illumina MiSeq metabarcoding was applied for the target_gene 18S and the target_subfragment, V9 region. URL’s are provided for the protocols followed for nucleic acids extraction and amplification.</p>
 <p>For a detailed description of the steps taken to process the data, including algorithms used, see the original publication. Adding Operational Taxonomic Unit (OTU) related data are highly recommended and should be as complete as possible, for example:</p>
 <table>
 <colgroup>
@@ -517,10 +517,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton" class="section level5 hasAnchor" number="2.2.4.1.2">
 <h5><span class="header-section-number">2.2.4.1.2</span> 16S rRNA gene metabarcoding data of Pico- to Mesoplankton<a href="examples.html#s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>DNA derived datasets can also include an extendedMeasurementsOrFact (eMoF) extension file, in addition to the occurrence and DNA derived extensions. In this example, environmental measurements were provided in an eMoF file, in addition to the DNA derived data and occurrence data. Here we show how to incorporate such measurements in the extensions.</p>
+<p>DNA derived datasets can also include an extendedMeasurementsOrFact (eMoF) extension file, in addition to the Occurrence and DNA derived extensions. In this example, environmental measurements were provided in an eMoF file, in addition to the DNA derived data and occurrence data. Here we show how to incorporate such measurements in the extensions.</p>
 <p>In the publication <a href="https://www.frontiersin.org/articles/10.3389/fmicb.2016.00679/full">“Diversity of Pico- to Mesoplankton along the 2000 km Salinity Gradient of the Baltic Sea”</a>, a dataset with 16S rRNA gene metabarcoding data of surface water microbial communities was created from 21 off-shore stations, following a transect from Kattegat to the Gulf of Bothnia in the Baltic Sea. The full dataset entitled <a href="https://www.gbif.org/dataset/9e29a2fe-d780-48a8-a93f-9ce041f9202f">“Diversity of Pico- to Mesoplankton along the 2000 km Salinity Gradient of the Baltic Sea (Hu et al. 2016)</a> is available from GBIF.</p>
-<p><strong>Occurrence extension:</strong></p>
-<p>The OccurrenceCore contain information about the organisms in the sample including the taxonomy and quantity of organisms detected, the collection location, references for the identification procedure, and links to the sequences generated.</p>
+<p><strong>Occurrence core:</strong></p>
+<p>The Occurrence core contain information about the organisms in the sample including the taxonomy and quantity of organisms detected, the collection location, references for the identification procedure, and links to the sequences generated.</p>
 <p><strong>Important note: even though this dataset uses OTU identifiers for taxonomy (therefore not including <code>scientificNameID</code>) OBIS still recommends using <code>scientificNameID</code>.</strong></p>
 <table>
 <colgroup>
@@ -899,13 +899,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="macroalgae-canopy-cover-composition" class="section level4 hasAnchor" number="2.2.4.5">
 <h4><span class="header-section-number">2.2.4.5</span> Macroalgae canopy cover &amp; composition<a href="examples.html#macroalgae-canopy-cover-composition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an ExtendedMeasurementOrFact extension.</p>
+<p>In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an extendedMeasurementOrFact extension.</p>
 <img src="images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-50"/>
 <p class="caption-70">
 Figure: A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.
 </p>
-<p><strong>Event extension:</strong></p>
-<p>First we can create the EventCore table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using <code>eventID</code> and <code>parentEventID</code>. As the survey sites has a fixed location we can populate <code>decimalLongitude</code> and <code>decimalLatitude</code> at the top level event. The zones have different depths, so <code>minimumDepthInMeters</code> and <code>maximumDepthInMeters</code> are populated at the zone level. Finally, as not all sampling was done on the same day, <code>eventDate</code> is populated at the quadrat and transect level.</p>
+<p><strong>Event core:</strong></p>
+<p>First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using <code>eventID</code> and <code>parentEventID</code>. As the survey sites has a fixed location we can populate <code>decimalLongitude</code> and <code>decimalLatitude</code> at the top level event. The zones have different depths, so <code>minimumDepthInMeters</code> and <code>maximumDepthInMeters</code> are populated at the zone level. Finally, as not all sampling was done on the same day, <code>eventDate</code> is populated at the quadrat and transect level.</p>
 <table style="width:100%;">
 <colgroup>
 <col width="14%" />
@@ -1208,9 +1208,9 @@ Figure: A fictional macroalgae survey with a single site, multiple zones, quadra
 <div id="marine-birds-abundance-distribution" class="section level4 hasAnchor" number="2.2.4.7">
 <h4><span class="header-section-number">2.2.4.7</span> Marine birds abundance &amp; distribution<a href="examples.html#marine-birds-abundance-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The example for ENV-DATA collected with marine bird sightings/occurrences is based on the dataset <a href="https://www.marine.csiro.au/ipt/resource?r=in2017_v02_wov">“RV Investigator Voyage IN2017_V02 Seabird Observations, Australia (2017)”</a>. In this dataset, seabird sightings were recorded continuously during daylight hours during a voyage to recover and redeploy moorings at the SOTS site, southwest of Tasmania, Australia, in March 2017. Observations were made from c.30 minutes before sunrise to c.30 minutes after sunset, extending to 300m in the forward quadrant with the best viewing conditions. There were 1200 observations from 38 species of birds along with 3 cetacean species and one seal. This example will focus on the ENV-DATA associated with the bird sightings. The most frequently sighted bird species were <em>Puﬃnus tenuirostris</em> (Short-tailed Shearwater) and <em>Pachyptila turtur</em> (Fairy Prion).</p>
-<p>For this dataset, human observation recorded individual bird sightings (thus, each specimen is a single occurrence). The dataset contains abiotic measurements (ENV-DATA) which are related to each individual sighting, instead of an entire sample. Therefore, we can create an Occurrence Core with an eMoF extension that contain the abiotic environmental measurements or facts.</p>
-<p><strong>Occurrence Core:</strong></p>
-<p>The Occurrence Core is populated with the occurrence records of seabirds sighted during the RV voyages. Occurrence details and scientific names are provided here. All birds were observed above sea level, all <code>minimumDepthInMeters</code> and <code>maximumDepthInMeters</code> values equal zero.</p>
+<p>For this dataset, human observation recorded individual bird sightings (thus, each specimen is a single occurrence). The dataset contains abiotic measurements (ENV-DATA) which are related to each individual sighting, instead of an entire sample. Therefore, we can create an Occurrence core with an eMoF extension that contain the abiotic environmental measurements or facts.</p>
+<p><strong>Occurrence core:</strong></p>
+<p>The Occurrence core is populated with the occurrence records of seabirds sighted during the RV voyages. Occurrence details and scientific names are provided here. All birds were observed above sea level, all <code>minimumDepthInMeters</code> and <code>maximumDepthInMeters</code> values equal zero.</p>
 <table>
 <colgroup>
 <col width="17%" />
@@ -1518,8 +1518,8 @@ Figure: A fictional macroalgae survey with a single site, multiple zones, quadra
 <img src="images/ENV_example_CETUS.png" class="img-responsive img-responsive-50"/>
 Figure: A representation of the observation events of <a href="http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans">CETUS: Cetacean monitoring surveys in the Eastern North Atlantic</a>, presenting the route <strong>Madeira</strong> as a site with three cruises (zones). Each <strong>Cruise</strong> is divided into different <strong>Transects</strong> and each transect contains a number of <strong>Positions</strong>.
 </p>
-<p><strong>Event extension:</strong></p>
-<p>Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using <code>eventID</code> and <code>parentEventID</code>. As the survey observations were made at locations of Cetacean sightings instead of fixed locations, we can populate <code>footprintWKT</code> and <code>footprintSRS</code> as location information. Not all sampling was done on the same day, therefore <code>eventDate</code> is populated at the transect level.</p>
+<p><strong>Event core:</strong></p>
+<p>Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using <code>eventID</code> and <code>parentEventID</code>. As the survey observations were made at locations of cetacean sightings instead of fixed locations, we can populate <code>footprintWKT</code> and <code>footprintSRS</code> as location information. Not all sampling was done on the same day, therefore <code>eventDate</code> is populated at the transect level.</p>
 <table>
 <colgroup>
 <col width="11%" />
@@ -1569,7 +1569,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </tbody>
 </table>
 <p><strong>Occurrence extension:</strong></p>
-<p>Construct the Occurrence extension table with the scientific names and links to the World Register of Marine Species in <code>scientificNameID</code>. The first column of the table references the events in the core table (see <code>Madeira:Cruise-001</code> highlighted in green).The <code>occurrence ID</code> corresponds to the Position of the observation (see <code>Transect-01:Pos-0001</code> and <code>CIIMAR-CETUS-0001</code> highlighted in blue, or <code>Transect-01:Pos-0002</code> and <code>CIIMAR-CETUS-0002</code> highlighted in orange).</p>
+<p>Construct the Occurrence extension table with the scientific names and links to the World Register of Marine Species in <code>scientificNameID</code>. The first column of the table references the events in the core table (see <code>Madeira:Cruise-001</code> highlighted in green).The <code>occurrenceID</code> corresponds to the Position of the observation (see <code>Transect-01:Pos-0001</code> and <code>CIIMAR-CETUS-0001</code> highlighted in blue, or <code>Transect-01:Pos-0002</code> and <code>CIIMAR-CETUS-0002</code> highlighted in orange).</p>
 <table>
 <colgroup>
 <col width="35%" />
@@ -1743,8 +1743,8 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 <div id="survey-sighting-data" class="section level5 hasAnchor" number="2.2.4.9.1">
 <h5><span class="header-section-number">2.2.4.9.1</span> Survey &amp; sighting data<a href="examples.html#survey-sighting-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>This section deals with encoding survey and/ or sighting data of sea turtles into Darwin Core using the ENV-DATA approach. Extracts from the actual data set of <a href="https://ipt.vliz.be/eurobis/resource?r=cc_flt_cbar_13-17#anchor-description">Presence of sea turtles collected through Fixed-Line-Transect monitoring across the Western Mediterranean Sea (Civitavecchia-Barcelona route) between 2013 and 2017</a>, are used as an example.</p>
-<p><strong>Event extension:</strong></p>
-<p>The event extension is created by extracting all sighting events and populating the attributes at each event. The events at the different levels are linked together using <code>eventID</code> and <code>parentEventID</code>. In the example dataset, turtle sightings have been recorded since 2007, along a ferry route between Italy and Spain, as part of the monitoring project FLT Med Net (Fixed Line Transect Mediterranean monitoring Network). Turtle sighting locations can be given by populating the fields <code>footprintWKT</code> and <code>footprintSRS</code> with location information. Sightings were recorded at different dates, therefore <code>eventDate</code> is populated at the transect level.</p>
+<p><strong>Event core:</strong></p>
+<p>The Event core is created by extracting all sighting events and populating the attributes at each event. The events at the different levels are linked together using <code>eventID</code> and <code>parentEventID</code>. In the example dataset, turtle sightings have been recorded since 2007, along a ferry route between Italy and Spain, as part of the monitoring project FLT Med Net (Fixed Line Transect Mediterranean monitoring Network). Turtle sighting locations can be given by populating the fields <code>footprintWKT</code> and <code>footprintSRS</code> with location information. Sightings were recorded at different dates, therefore <code>eventDate</code> is populated at the transect level.</p>
 <table>
 <colgroup>
 <col width="9%" />
@@ -1914,7 +1914,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </tbody>
 </table>
 <p><strong>Occurrence extension:</strong></p>
-<p>The occurrence extension contain details regarding the sighted animals and include <code>scientificName</code> and the links to the World Register of Marine Species in <code>scientificNameID</code>. The <code>EventID</code> references the events as in the Events extension. This table further provides information on the <code>basisOfRecord</code> and <code>occurrenceStatus</code>.</p>
+<p>The Occurrence extension contain details regarding the sighted animals and include <code>scientificName</code> and the links to the World Register of Marine Species in <code>scientificNameID</code>. The <code>EventID</code> references the events as in the Event core. This table further provides information on the <code>basisOfRecord</code> and <code>occurrenceStatus</code>.</p>
 <table>
 <colgroup>
 <col width="18%" />
@@ -2042,7 +2042,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </tbody>
 </table>
 <p><strong>extendedMeasurementOrFact (eMoF) extension:</strong></p>
-<p>The extendedMeasurementOrFact extension (eMoF) for survey or sighting data contains additional attributes and measurements recorded during the survey, such as those regarding the Research Vessel, environmental conditions, and/ or animal measurements. These attributes are linked to the Occurrence Extension using the <code>occurrenceID</code>. The example dataset contain measurements regarding the sampling method; speed and height of the Research Vessel as platform; wind force; sighting distance; as well as the count and developmental stage of the biological entity.</p>
+<p>The extendedMeasurementOrFact extension (eMoF) for survey or sighting data contains additional attributes and measurements recorded during the survey, such as those regarding the Research Vessel, environmental conditions, and/ or animal measurements. These attributes are linked to the Occurrence extension using the <code>occurrenceID</code>. The example dataset contain measurements regarding the sampling method; speed and height of the Research Vessel as platform; wind force; sighting distance; as well as the count and developmental stage of the biological entity.</p>
 <table>
 <colgroup>
 <col width="11%" />
@@ -2220,7 +2220,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </div>
 <div id="tracking-data" class="section level5 hasAnchor" number="2.2.4.9.2">
 <h5><span class="header-section-number">2.2.4.9.2</span> Tracking data<a href="examples.html#tracking-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>Encoding Tracking data into Darwin Core follows the same standards as that of survey/ sighting data. Tracking data should additionally indicate the accuracy in latitudinal and longitudinal measurements received from the positioning system, grouped by location accuracy classes. Extracts from the <strong>ExtendedMeasurementOrFact Extension (eMoF)</strong> of the actual dataset <a href="https://www.marine.csiro.au/ipt/resource?r=ningaloo_outlook_turtle_tracking">Ningaloo Outlook turtle tracking of Green turtles (Chelonia mydas), Western Australia (2018-present)</a>, are used as an example, following <a href="http://vocab.nerc.ac.uk/collection/R05/current/">ARGOS Location class codes</a>.</p>
+<p>Encoding Tracking data into Darwin Core follows the same standards as that of survey/ sighting data. Tracking data should additionally indicate the accuracy in latitudinal and longitudinal measurements received from the positioning system, grouped by location accuracy classes. Extracts from the <strong>extendedMeasurementOrFact extension (eMoF)</strong> of the actual dataset <a href="https://www.marine.csiro.au/ipt/resource?r=ningaloo_outlook_turtle_tracking">Ningaloo Outlook turtle tracking of Green turtles (Chelonia mydas), Western Australia (2018-present)</a>, are used as an example, following <a href="http://vocab.nerc.ac.uk/collection/R05/current/">ARGOS Location class codes</a>.</p>
 <p><strong>extendedMeasurementOrFact (eMoF) extension:</strong></p>
 <table style="width:100%;">
 <colgroup>
@@ -2288,8 +2288,8 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 <div id="phytoplankton-biomass-diversity" class="section level4 hasAnchor" number="2.2.4.11">
 <h4><span class="header-section-number">2.2.4.11</span> Phytoplankton biomass &amp; diversity<a href="examples.html#phytoplankton-biomass-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>This example deals with encoding phytoplankton observation data, including environmental data, into Darwin Core. Extracts from the actual data set <a href="https://obis.org/dataset/956d618f-91dc-4930-a253-cdf80ddb9371">LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea</a>, are used as an example.</p>
-<p><strong>Event extension:</strong></p>
-<p>The event Extension contains events at the different levels and are linked together with <code>eventID</code> and <code>parentEventID</code>. In this example,the dataset contains records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection of living specimens. In this case, the the event type information is provided in <code>type</code>. The recommended practice for providing the countryCode is to use an ISO 3166-1-alpha-2 country code. If additional information regarding licencing is provided, these can be populated under <code>rightsHolder</code> and <code>accessRights</code>. The remaining eventCore fields provide location data including <code>datasetID</code> and <code>datasetName</code>, <code>locationID</code>, <code>waterBody</code>, <code>maximumDepthInMeters</code>, <code>minimumDepthInMeters</code>, <code>decimalLongitude</code>, <code>decimalLatitude</code>, <code>coordinateUncertaintyInMeters</code>, <code>geodeticDatum</code> and <code>footprintSRS</code>.</p>
+<p><strong>Event core:</strong></p>
+<p>The Event core contains events at the different levels and are linked together with <code>eventID</code> and <code>parentEventID</code>. In this example,the dataset contains records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection of living specimens. In this case, the the event type information is provided in <code>type</code>. The recommended practice for providing the countryCode is to use an ISO 3166-1-alpha-2 country code. If additional information regarding licencing is provided, these can be populated under <code>rightsHolder</code> and <code>accessRights</code>. The remaining Event core fields provide location data including <code>datasetID</code> and <code>datasetName</code>, <code>locationID</code>, <code>waterBody</code>, <code>maximumDepthInMeters</code>, <code>minimumDepthInMeters</code>, <code>decimalLongitude</code>, <code>decimalLatitude</code>, <code>coordinateUncertaintyInMeters</code>, <code>geodeticDatum</code> and <code>footprintSRS</code>.</p>
 <table>
 <colgroup>
 <col width="31%" />
@@ -2453,7 +2453,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </tbody>
 </table>
 <p><strong>Occurrence extension:</strong></p>
-<p>The occurrence extension contains data of each occurrence with an <code>occurrenceID</code> and is linked to the event extension with the <code>eventID</code>. The occurrence extension should provide information on the <code>basisOfRecord</code> and <code>occurrenceStatus</code>. Scientific names and links to the World Register of Marine Species should be provided under <code>scientificName</code> and <code>scientificNameID</code>, respectively.</p>
+<p>The Occurrence extension contains data of each occurrence with an <code>occurrenceID</code> and is linked to the Event core with the <code>eventID</code>. The Occurrence extension should provide information on the <code>basisOfRecord</code> and <code>occurrenceStatus</code>. Scientific names and links to the World Register of Marine Species should be provided under <code>scientificName</code> and <code>scientificNameID</code>, respectively.</p>
 <table>
 <colgroup>
 <col width="34%" />
@@ -2533,7 +2533,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </tbody>
 </table>
 <p><strong>extendedMeasurementOrFact (eMoF) extension:</strong></p>
-<p>The eMoF extension contains the environmental and measurement information and data of each occurrence. This extension is also linked to the eventCore using the <code>eventID</code>, and linked to the occurrence table using the <code>occurrenceID</code>. The various measurements are populated with <code>measurementID</code>, <code>measurementType</code>, <code>measurementTypeID</code>, <code>measurementUnit</code>, <code>measurementUnitID</code>, <code>measurementValue</code>, <code>measurementValueID</code>, <code>measurementAccuracy</code>, <code>measurementMethod</code>, <code>measurementDeterminedBy</code> and <code>measurementDeterminedDate</code>. In the example dataset,the LifeWatch observatory data was compiled using imaging flow cytometry (FlowCam) to observe and identify phytoplankton in the Belgian Part of the North Sea and recorded a number of measurements including abundance, lifestages, sampling device information as well as environmental measurements such as water termperature, slainity and conductivity with accompanying vocabulary.</p>
+<p>The eMoF extension contains the environmental and measurement information and data of each occurrence. This extension is also linked to the Event core using the <code>eventID</code>, and linked to the Occurrence extension table using the <code>occurrenceID</code>. The various measurements are populated with <code>measurementID</code>, <code>measurementType</code>, <code>measurementTypeID</code>, <code>measurementUnit</code>, <code>measurementUnitID</code>, <code>measurementValue</code>, <code>measurementValueID</code>, <code>measurementAccuracy</code>, <code>measurementMethod</code>, <code>measurementDeterminedBy</code> and <code>measurementDeterminedDate</code>. In the example dataset,the LifeWatch observatory data was compiled using imaging flow cytometry (FlowCam) to observe and identify phytoplankton in the Belgian Part of the North Sea and recorded a number of measurements including abundance, lifestages, sampling device information as well as environmental measurements such as water temperature, salinity and conductivity with accompanying vocabulary.</p>
 <table>
 <colgroup>
 <col width="21%" />
@@ -2763,10 +2763,10 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </div>
 <div id="seagrass-cover-composition" class="section level4 hasAnchor" number="2.2.4.12">
 <h4><span class="header-section-number">2.2.4.12</span> Seagrass cover &amp; composition<a href="examples.html#seagrass-cover-composition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The structure of the Event, Occurrence and ExtendedMeasurementOrFact extensions for Seagrass Cover &amp; Composition is based on community feedback organised through the the Scientific Committee on Oceanic Research (SCOR): <a href="https://scor-int.org/group/158/">Coordinated Global Research Assessment of Seagrass System (C-GRASS)</a>. We acknowledge the work that the C-grass SCOR work group has done to develop a proposed scheme for completing Seagrass related extension files.</p>
+<p>The structure of the Event, Occurrence and extendedMeasurementOrFact extensions for Seagrass Cover &amp; Composition is based on community feedback organised through the the Scientific Committee on Oceanic Research (SCOR): <a href="https://scor-int.org/group/158/">Coordinated Global Research Assessment of Seagrass System (C-GRASS)</a>. We acknowledge the work that the C-grass SCOR work group has done to develop a proposed scheme for completing Seagrass related extension files.</p>
 <p>Here encode seagrass survey data into Darwin Core according to the ENV-DATA approach and using sections of the actual data set of <a href="http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia">Seagrass Monitoring at Chengue Bay, Colombia</a> as an example dataset.</p>
-<p><strong>Event extension:</strong></p>
-<p>The Event core table is created by extracting all events and attributes. All events are linked together using <code>eventID</code> and <code>parentEventID</code>. <code>eventDate</code> is populated at the transect level with the recommended format that conforms to ISO 8601-1:2019. <code>habitat</code> is populated as a category or description of the habitat in which the Event occurred. Additional <code>fieldNotes</code> can also be provided if applicable. The recommended best practice for <code>countryCode</code> is to use an ISO 3166-1-alpha-2 country code. The remaining eventCore fields comprise of location data including <code>maximumDepthInMeters</code>, <code>minimumDepthInMeters</code>, <code>decimalLongitude</code>, <code>decimalLatitude</code>, <code>coordinateUncertaintyInMeters</code>, <code>footprintWKT</code> and <code>footprintSRS</code>. Addtionally in the eventCore, it is recommended to further include information regarding <code>license</code>, <code>rightsHolder</code>, <code>bibliographicCitation</code>, <code>institutionID</code>, <code>datasetID</code>, <code>institutionCode</code> and <code>datasetName</code>.</p>
+<p><strong>Event core:</strong></p>
+<p>The Event core table is created by extracting all events and attributes. All events are linked together using <code>eventID</code> and <code>parentEventID</code>. <code>eventDate</code> is populated at the transect level with the recommended format that conforms to ISO 8601-1:2019. <code>habitat</code> is populated as a category or description of the habitat in which the event occurred. Additional <code>fieldNotes</code> can also be provided if applicable. The recommended best practice for <code>countryCode</code> is to use an ISO 3166-1-alpha-2 country code. The remaining Event core fields comprise of location data including <code>maximumDepthInMeters</code>, <code>minimumDepthInMeters</code>, <code>decimalLongitude</code>, <code>decimalLatitude</code>, <code>coordinateUncertaintyInMeters</code>, <code>footprintWKT</code> and <code>footprintSRS</code>. Addtionally in the Event core, it is recommended to further include information regarding <code>license</code>, <code>rightsHolder</code>, <code>bibliographicCitation</code>, <code>institutionID</code>, <code>datasetID</code>, <code>institutionCode</code> and <code>datasetName</code>.</p>
 <table>
 <colgroup>
 <col width="37%" />
@@ -2882,7 +2882,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </tbody>
 </table>
 <p><strong>Occurrence extension:</strong></p>
-<p>The Occurrence table contain data for each occurrence with an <code>occurrenceID</code> and is linked to the eventCore with the <code>eventID</code>. This table should provide information on the <code>basisOfRecord</code> and <code>occurrenceStatus</code>. Scientific names and links to the World Register of Marine Species should be provided under <code>scientificName</code> and <code>scientificNameID</code>, respectively. If a species was identified by an expert, the field <code>identifiedBy</code> can be populated. If the species is well-known by another common name, this name can be provided under <code>vernacularName</code>.</p>
+<p>The Occurrence extension table contain data for each occurrence with an <code>occurrenceID</code> and is linked to the Event core with the <code>eventID</code>. This table should provide information on the <code>basisOfRecord</code> and <code>occurrenceStatus</code>. Scientific names and links to the World Register of Marine Species should be provided under <code>scientificName</code> and <code>scientificNameID</code>, respectively. If a species was identified by an expert, the field <code>identifiedBy</code> can be populated. If the species is well-known by another common name, this name can be provided under <code>vernacularName</code>.</p>
 <table>
 <colgroup>
 <col width="24%" />
@@ -2938,7 +2938,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </tbody>
 </table>
 <p><strong>extendedMeasurementOrFact (eMoF) extension:</strong></p>
-<p>The eMoF table contains the measurement information and data of each occurrence. This extension is also linked to the eventCore using the <code>eventID</code>, and linked to the occurrence table using the <code>occurrenceID</code>. The various measurements are populated with <code>measurementType</code>, <code>measurementTypeID</code>, <code>measurementUnit</code>, <code>measurementUnitID</code>, <code>measurementValue</code>, <code>measurementValueID</code>, <code>measurementAccuracy</code>, <code>measurementMethod</code>, <code>measurementDeterminedBy</code> and <code>measurementDeterminedDate</code>. The example dataset of <a href="http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia">Seagrass Monitoring at Chengue Bay, Colombia</a> recorded a number of measurements and can be used as an example of how to populate the respective fields:</p>
+<p>The eMoF table contains the measurement information and data of each occurrence. This extension is also linked to the Event core using the <code>eventID</code>, and linked to the Occurrence table using the <code>occurrenceID</code>. The various measurements are populated with <code>measurementType</code>, <code>measurementTypeID</code>, <code>measurementUnit</code>, <code>measurementUnitID</code>, <code>measurementValue</code>, <code>measurementValueID</code>, <code>measurementAccuracy</code>, <code>measurementMethod</code>, <code>measurementDeterminedBy</code> and <code>measurementDeterminedDate</code>. The example dataset of <a href="http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia">Seagrass Monitoring at Chengue Bay, Colombia</a> recorded a number of measurements and can be used as an example of how to populate the respective fields:</p>
 <table>
 <colgroup>
 <col width="18%" />
@@ -3123,8 +3123,8 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 <div id="zooplankton-biomass-diversity" class="section level4 hasAnchor" number="2.2.4.13">
 <h4><span class="header-section-number">2.2.4.13</span> Zooplankton biomass &amp; diversity<a href="examples.html#zooplankton-biomass-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Here we will encode zooplankton observation and environmental data into Darwin Core. Extracts from the actual dataset <a href="https://obis.org/dataset/afa5b0e8-826d-4433-b698-beb176ef7880">LifeWatch observatory data: zooplankton observations by imaging (ZooScan) in the Belgian Part of the North Sea</a>, are used as an example.</p>
-<p><strong>Event extension:</strong></p>
-<p>The event Extension contains events at the different levels and are linked together with <code>eventID</code> and <code>parentEventID</code>. In this example,the dataset contains records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection of living specimens. In this case, the the event type information is provided in <code>type</code>. The recommended practice for providing the countryCode is to use an ISO 3166-1-alpha-2 country code. If additional information regarding licencing is provided, these can be populated under <code>rightsHolder</code> and <code>accessRights</code>. The remaining eventCore fields provide location data including <code>datasetID</code> and <code>datasetName</code>, <code>locationID</code>, <code>waterBody</code>, <code>maximumDepthInMeters</code>, <code>minimumDepthInMeters</code>, <code>decimalLongitude</code>, <code>decimalLatitude</code>, <code>coordinateUncertaintyInMeters</code>, <code>geodeticDatum</code> and <code>footprintSRS</code>.</p>
+<p><strong>Event core:</strong></p>
+<p>The Event core contains events at the different levels and are linked together with <code>eventID</code> and <code>parentEventID</code>. In this example,the dataset contains records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection of living specimens. In this case, the the event type information is provided in <code>type</code>. The recommended practice for providing the countryCode is to use an ISO 3166-1-alpha-2 country code. If additional information regarding licencing is provided, these can be populated under <code>rightsHolder</code> and <code>accessRights</code>. The remaining Event core fields provide location data including <code>datasetID</code> and <code>datasetName</code>, <code>locationID</code>, <code>waterBody</code>, <code>maximumDepthInMeters</code>, <code>minimumDepthInMeters</code>, <code>decimalLongitude</code>, <code>decimalLatitude</code>, <code>coordinateUncertaintyInMeters</code>, <code>geodeticDatum</code> and <code>footprintSRS</code>.</p>
 <table>
 <colgroup>
 <col width="31%" />
@@ -3276,7 +3276,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </tbody>
 </table>
 <p><strong>Occurrence extension:</strong></p>
-<p>The occurrence extension contains data of each occurrence with an <code>occurrenceID</code> and is linked to the event extension with the <code>eventID</code>. The occurrence extension should provide information on the <code>basisOfRecord</code> and <code>occurrenceStatus</code>. Scientific names and links to the World Register of Marine Species should be provided under <code>scientificName</code> and <code>scientificNameID</code>, respectively.</p>
+<p>The Occurrence extension contains data of each occurrence with an <code>occurrenceID</code> and is linked to the Event core with the <code>eventID</code>. The Occurrence extension should provide information on the <code>basisOfRecord</code> and <code>occurrenceStatus</code>. Scientific names and links to the World Register of Marine Species should be provided under <code>scientificName</code> and <code>scientificNameID</code>, respectively.</p>
 <table>
 <colgroup>
 <col width="35%" />
@@ -3356,7 +3356,7 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </tbody>
 </table>
 <p><strong>extendedMeasurementOrFact (eMoF) extension:</strong></p>
-<p>The eMoF table contains the measurement information and data of each occurrence. This extension is also linked to the eventCore using the <code>eventID</code>, and linked to the occurrence table using the <code>occurrenceID</code>. The various measurements are populated with <code>measurementType</code>, <code>measurementTypeID</code>, <code>measurementUnit</code>, <code>measurementUnitID</code>, <code>measurementValue</code>, <code>measurementValueID</code>, <code>measurementAccuracy</code>, <code>measurementMethod</code>, <code>measurementDeterminedBy</code> and <code>measurementDeterminedDate</code>. The example dataset of <a href="https://obis.org/dataset/afa5b0e8-826d-4433-b698-beb176ef7880">LifeWatch observatory data: zooplankton observations by imaging (ZooScan) in the Belgian Part of the North Sea</a> recorded some ENV-DATA and organism measurements the can be used as an example of how to populate the respective fields, including conductivity of the water body; concentration of chlorophyll-a per unit volume of the water body; sampling instrument name; sampling net mesh size; lifestage of the organism observed; and abundance of the organism observed.</p>
+<p>The eMoF extension table contains the measurement information and data of each occurrence. This extension is also linked to the Event core using the <code>eventID</code>, and linked to the Occurrence table using the <code>occurrenceID</code>. The various measurements are populated with <code>measurementType</code>, <code>measurementTypeID</code>, <code>measurementUnit</code>, <code>measurementUnitID</code>, <code>measurementValue</code>, <code>measurementValueID</code>, <code>measurementAccuracy</code>, <code>measurementMethod</code>, <code>measurementDeterminedBy</code> and <code>measurementDeterminedDate</code>. The example dataset of <a href="https://obis.org/dataset/afa5b0e8-826d-4433-b698-beb176ef7880">LifeWatch observatory data: zooplankton observations by imaging (ZooScan) in the Belgian Part of the North Sea</a> recorded some ENV-DATA and organism measurements the can be used as an example of how to populate the respective fields, including conductivity of the water body; concentration of chlorophyll-a per unit volume of the water body; sampling instrument name; sampling net mesh size; lifestage of the organism observed; and abundance of the organism observed.</p>
 <table>
 <colgroup>
 <col width="22%" />
