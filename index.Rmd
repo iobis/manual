@@ -1,6 +1,7 @@
 --- 
 title: "The OBIS manual"
 site: "bookdown::bookdown_site"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 header-includes:
   - \usepackage[utf8]{inputenc}
   - \DeclareUnicodeCharacter{3BC}{$\mu$}
