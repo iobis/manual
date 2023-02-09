@@ -37,6 +37,7 @@ The procedure to become an OBIS node is as follows:
 OBIS nodes should operate under IODE as either IODE/ADU or IODE/NODC. As such OBIS nodes are a member of the IODE network.
 
 The IODE Steering Group (SG) for OBIS evaluates the health status of OBIS nodes at each annual SG meeting, and considers an OBIS node as **inactive** when it meets any of the following conditions:
+
 1. The OBIS node manager recurrently fails to answer the communications from the project manager or the SG co-chairs in the last 12 months
 2. The OBIS node manager or a representative fails to attend (personally or virtually) the last 2 SG meetings without any written reason
 3. The OBIS node does not have an IPT
@@ -46,6 +47,7 @@ The IODE Steering Group (SG) for OBIS evaluates the health status of OBIS nodes 
 
 The OBIS Secretariat prepares a health status check report of each OBIS node based on the six items above and informs the OBIS node manager on their status 3 months before the SG meeting. At the SG meeting, the SG-OBIS co-chair will present the results of the OBIS nodes health status check report including a listing of the inactive OBIS nodes.
 The SG-OBIS members representing active OBIS Nodes will make one of the following decisions:
+
 1. Request the inactive OBIS node to submit a plan with actions, deliverables and times to improve their performance, within 3 months, to the OBIS Secretariat. This plan is reviewed and accepted by the OBIS-Executive Committee
 Or
 2. Provide a recommendation to the IOC Committee on IODE to remove the OBIS node from the IODE network.
