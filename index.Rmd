@@ -2,7 +2,12 @@
 title: "The OBIS manual"
 site: "bookdown::bookdown_site"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
+geometry: "left=2.4cm,right=2.4cm,top=2.8cm,bottom=2.8cm"
+papersize: a4paper
+classoption: openany
 header-includes:
+  - \AtBeginEnvironment{longtable}{\tiny}
+  - \AtBeginEnvironment{verbatim}{\scriptsize}
   - \usepackage[utf8]{inputenc}
   - \DeclareUnicodeCharacter{3BC}{$\mu$}
   - \usepackage{enumitem}
@@ -32,6 +37,8 @@ link-citations: yes
 editor_options: 
   chunk_output_type: console
 ---
+
+\newpage
 
 ![](images/obis_logo.png){width=50%}
 
