@@ -5,6 +5,7 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 geometry: "left=2.4cm,right=2.4cm,top=2.8cm,bottom=2.8cm"
 papersize: a4paper
 classoption: openany
+urlcolor: Bittersweet
 header-includes:
   - \AtBeginEnvironment{longtable}{\tiny}
   - \AtBeginEnvironment{verbatim}{\scriptsize}
