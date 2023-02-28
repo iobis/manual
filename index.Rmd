@@ -1,7 +1,27 @@
 --- 
 title: "The OBIS manual"
 site: "bookdown::bookdown_site"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+geometry: "left=2.4cm,right=2.4cm,top=2.8cm,bottom=2.8cm"
+papersize: a4paper
+classoption: openany
+urlcolor: Bittersweet
+header-includes:
+  - \AtBeginEnvironment{longtable}{\tiny}
+  - \AtBeginEnvironment{verbatim}{\scriptsize}
+  - \usepackage[utf8]{inputenc}
+  - \DeclareUnicodeCharacter{3BC}{$\mu$}
+  - \usepackage{enumitem}
+  - \setlistdepth{20}
+  - \renewlist{itemize}{itemize}{20}
+  - \renewlist{enumerate}{enumerate}{20}
+  - \setlist[itemize]{label=$\cdot$}
+  - \setlist[itemize,1]{label=\textbullet}
+  - \setlist[itemize,2]{label=--}
+  - \setlist[itemize,3]{label=*}
 output:
+  bookdown::pdf_book:
+    template: null
   bookdown::gitbook:
     toc_depth: 3
     includes:
@@ -18,6 +38,8 @@ link-citations: yes
 editor_options: 
   chunk_output_type: console
 ---
+
+\newpage
 
 ![](images/obis_logo.png){width=50%}
 
