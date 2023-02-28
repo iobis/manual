@@ -11,6 +11,7 @@ rmd_files:
   - nodes.md
   - formatting.md
   - identifiers.md
+  - checklist.md
   - format_occurrence.md
   - format_event.md
   - format_emof.md

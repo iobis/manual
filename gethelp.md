@@ -6,4 +6,5 @@ Finally, you can submit an issue on relevant Github repositories:
 
 * [OBIS Manual](https://github.com/iobis/manual/issues)
 * [OBIS Website](https://github.com/iobis/web)
+* [OBIS issues GitHub repo](https://github.com/iobis/obis-issues) 
 * [All other OBIS repositories](https://github.com/iobis)

@@ -1,15 +1,6 @@
 # Data Formatting
 
-(PAGE UNDER DEVELOPMENT)
-
-Formatting data is hard! This topic will help you format data for OBIS. 
-This is all placeholder text to make sure my branch is working.
-
-## Darwin Core Term Checklist for OBIS
-
-For your convenience, we have created a [checklist](https://docs.google.com/spreadsheets/d/1kLc2HZDWf2lpkmQfwyXNkxJdXSth8CTA/edit?usp=sharing&ouid=109350792326616218070&rtpof=true&sd=true) of all the Darwin Core terms relevant for OBIS data providers. You can reference this list to quickly see which terms are required by OBIS, which file (Event, Occurrence, eMoF, DNA) they belong in, and which Darwin Core class it relates to.
-
-Note that when you publish the dataset into the IPT, if you use a term not on this list it will be an unmapped field and will **not** be published alongside your data.
+Formatting data can be challenging. This section of the manual deals with how to format data for OBIS. 
 
 ## Dataset structure
 #### When to use Event Core
@@ -27,6 +18,9 @@ Event Core should be used in combination with the Occurrence Extension and the e
 * This is often the case for museum collections, citations of occurrences from literature, individual sightings.
 
 Datasets formatted in Occurrence Core can use the eMoF Extension for biotic measurements or facts.
+
+
+## Extensions accepted by OBIS
 
 
 

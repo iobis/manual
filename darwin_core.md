@@ -15,19 +15,22 @@
 
 #### Introduction to Darwin Core
 
-[Darwin Core](http://rs.tdwg.org/dwc/) is a body of standards for biodiversity informatics. It provides stable [terms](https://dwc.tdwg.org/terms/) and vocabularies for sharing biodiversity data. Darwin Core is maintained by [TDWG](http://tdwg.org/) (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases).
+[Darwin Core](http://rs.tdwg.org/dwc/) is a body of standards (i.e., identifiers, labels, definitions) that facilitate sharing biodiversity informatics. It provides stable [terms](https://dwc.tdwg.org/terms/) and vocabularies related to biological objects/data and their collection. Darwin Core is maintained by [TDWG (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases)](http://tdwg.org/]. Stable terms and vocabularies are important for ensuring the datasets in OBIS have consistently interpretable fields. By following Darwin Core standards, both data providers and users can be certain of the definition and quality of data. 
 
-The old [OBIS schema](http://old.iobis.org/node/304)  was an [OBIS extension](http://iobis.org/obis/obis.xsd) to Darwin Core 1.2., which was based on [Simple Darwin Core](http://rs.tdwg.org/dwc/terms/simple/), a subset of Darwin Core which does not allow any structure beyond rows and columns. It added some terms which were important for OBIS, but were not supported by Darwin Core at the time (e.g. start and end date and start and end latitude and longitude, depth range, lifestage and terms for abundance, biomass and sample size). 
+##### History of Darwin Core and OBIS
+The old [OBIS schema](http://old.iobis.org/node/304) was an [OBIS extension](http://iobis.org/obis/obis.xsd) to Darwin Core 1.2., which was based on [Simple Darwin Core](http://rs.tdwg.org/dwc/terms/simple/), a subset of Darwin Core which does not allow any structure beyond rows and columns. This old schema added some terms which were important for OBIS, but were not supported by Darwin Core at the time (e.g., start and end date and start and end latitude and longitude, depth range, lifestage, and terms for abundance, biomass and sample size).
 
-In 2009, the Executive Committee of TDWG announced their ratification of an updated version of Darwin Core as a [TDWG Standard](http://www.tdwg.org/homepage-news-item/article/darwin-core-ratified-as-a-tdwg-standard/). Ratified Darwin Core unifies specializations and innovations emerge from diverse communities, and provides guidelines for ongoing enhancement. The [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/) links to TDWG’s term definitions and related practices for Ratified Darwin Core. 
+In 2009, the Executive Committee of TDWG announced their ratification of an updated version of Darwin Core as a [TDWG Standard](https://www.tdwg.org/community/dwc/#history-and-context). Ratified Darwin Core unifies specializations and innovations emerging from diverse communities, and provides guidelines for ongoing enhancement. The [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/) links to TDWG’s term definitions and related practices for Ratified Darwin Core. We will discuss the relevance of terms in this guide further below.
 
-In December 2013, the [3rd session of the IODE Steering Group for OBIS](http://iobis.org/about/sg-obis-3/) agreed to transition OBIS globally to the TDWG-Ratified version of Darwin Core, and the mapping of the (old) OBIS specific terms to Darwin Core can be found [here](http://rs.tdwg.org/dwc/terms/history/versions/index.htm#dwcobis).
+In December 2013, the [3rd session of the IODE Steering Group for OBIS](https://obis.org/about/) agreed to transition OBIS globally to the TDWG-Ratified version of Darwin Core, and the mapping of the (old) OBIS specific terms to Darwin Core can be found [here](http://rs.tdwg.org/dwc/terms/history/versions/index.htm#dwcobis).
 
 <a class="anchor" name="terms"></a>
 
-#### Darwin Core terms
+#### Darwin Core (DwC) terms
 
-DwC terms correspond to the column names of your dataset. A list of all possible Darwin Core terms can be found on [TDWG](https://dwc.tdwg.org/terms/). Below is an overview of the most relevant Darwin Core terms to consider when contributing to OBIS, with guidelines regarding their use. 
+DwC terms correspond to the column names of your dataset and can be grouped according to class type for convenience, e.g., Taxa, Occurrence, Record, Location, etc. It is important to use DwC field names because only columns using Darwin Core terms as headers will be recognized. 
+
+A list of all possible Darwin Core terms can be found on [TDWG](https://dwc.tdwg.org/terms/). However, OBIS does not parse all terms (note this doesn't mean you cannot include them, they just will not be parsed when you publish to OBIS). Below is an overview of the most relevant Darwin Core terms to consider when contributing to OBIS, with guidelines regarding their use. We have also compiled a convenient [checklist](checklist.html) of OBIS-accepted terms, their DwC class type, and which OBIS file (Event Core, Occurrence, eMoF, etc.) it is likely to be found in.
 
 Note that OBIS currently has eight required DwC terms: `occurrenceID`, `eventDate`, `decimalLongitude`, `decimalLatitude`, `scientificName`, `scientificNameID`, `occurrenceStatus`, `basisOfRecord`.
 

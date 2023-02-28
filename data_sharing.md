@@ -1,4 +1,4 @@
-## Maintaining/sharing published data
+## Maintaining published data
 
 ### Adding a DOI to datasets
 
