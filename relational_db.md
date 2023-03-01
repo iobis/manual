@@ -1,4 +1,4 @@
-## Relational databases: the underlying framework of OBIS
+### Relational databases: the underlying framework of OBIS
 
 If you are not familiar with relational databases, it can be difficult to understand the underlying framework OBIS relies on. This section will help you understand relational databases, how they relate to OBIS, the data you will format for OBIS, and the data you may download from OBIS. 
 
@@ -18,8 +18,23 @@ A fourth table could easily be created to track total school population size thr
 
 We elaborate on how this structure is applied within OBIS [here](formatting.html#dataset-structure).
 
-[An example of how a relational database works. Three tables show the student performance (blue table) in different schools (pink table) in a fictional country, and the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows.](./images/RelationalDB.drawio.png)
+<img src="RelationalDB.drawio.png" class="img-responsive"/>
+Figure. An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows.
 
 Note that when OBIS harvests data, datasets are flattened - i.e., all separate data tables are combined into one. This is the kind of file you will receive when you [download data from OBIS](access.html). The reason for this is that querying relational databases significantly reduces computational time, as opposed to querying a flat database. Relational databases also facilitate requests for subsets that meet particular criteria - e.g., all data from Norway for one species above a certain depth. 
 
 ### How to avoid redundancy 
+Avoiding redundancy and data duplication within your dataset is built into the OBIS data structure. Utilizing the star schema which delineates relationships between the core table and extension tables, we can limit the repetition of data. 
+
+For example, let us consider the dates of a ship cruise where a series of bottom trawls were taken. The sampling information (e.g., date range, equipment used, etc.) for each species collected in these trawls is the same. Because of this, we know we are dealing with unique sampling events and thus we will use [Event core](format_event.html). So, our Event core table will contain all information related to the sampling events (e.g., date, location). Then, information pertaining to each collected species (e.g., abundance, biomass, sampling methods, etc.) will be placed in an extension, the (Extended)MeasurementOrFact table. Here, each measurement for each species and sample will occur on a separate record. These records will be linked to the correct sampling event in the Event core by an identifier - the eventID. If we were to put this data in one file, the fields related to date and location (e.g., eventDate, decimalLongitude, decimalLatitude, etc.) would be repeated for each species.
+
+Let’s consider another example. If you took one temperature measurement from the water column where you took your sample, each species found in that sample would have the **same** temperature measurement. By linking such measurements to the _event_ instead of each _occurrence_, we are able to reduce the amount of data being repeated. 
+
+<img src="sampling.drawio.png" class="img-responsive"/>
+
+An advantage of structuring data this way is that if any mistakes are made, you only need to correct it once! So you can see that using relational event structures (when applicable) in combination with extension files can really simplify and reduce the number of times data are repeated.
+
+**Caveat:** However we would like to note that in some cases, data duplication may occur due to the star schema structure. For example, when publishing DNA-derived data, [Occurrence core will have to be used](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping), which necessitates the repetition of event data for each occurrence record. A possible solution to avoid duplicating Event data in these cases is to publish Event data as [sibling datasets](https://discourse.gbif.org/t/sibling-datasets-to-overcome-dwcarchive-star-schema-limitation-2/3401/2). Thus you would have two datasets, linked by the eventID:
+
+* 1 Event core + eMoF
+* 1 Occurrence core + DNA-derived data extensions + eMoF

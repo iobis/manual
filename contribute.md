@@ -1,4 +1,4 @@
-# Contribute data to OBIS
+# How to contribute data to OBIS
 
 Since 2000, OBIS has accepted, curated and published marine biodiversity data obtained by varied sources and methods. There is a common misconception that OBIS only accepts species occurrence data - however this is not true! OBIS can accept many types of marine data including:
 

@@ -1,4 +1,3 @@
-# Data management in OBIS
 ## OBIS Data Life Cycle
 
 The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:
@@ -17,6 +16,7 @@ From the very beginning, OBIS has championed the use of international standards 
 * [Darwin Core](darwin_core.html)
 * [Ecological Metadata Language](eml.html)
 * [Darwin Core Archive and dataset structure](data_format.html)
-* [Dataset Examples](examples.html)
 
+The following pages of this manual review each of these in turn. We show you how to apply these standards to format your data in the [Data Formatting](formatting.html) section.
 
+We also provide some [dataset examples](examples.html) for your reference.

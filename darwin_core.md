@@ -1,4 +1,4 @@
-## Darwin Core
+### Darwin Core
 
 **Contents**
 
