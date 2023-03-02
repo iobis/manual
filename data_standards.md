@@ -1,5 +1,7 @@
 ## OBIS Data Life Cycle
 
+<img src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block /> 
+
 The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:
 
 1. Data structure
@@ -8,6 +10,22 @@ The basic data life cycle for contributions to OBIS can be broken down into six 
 4. Publishing
 5. Data access (downloading)
 6. Data visualization
+
+Each of these phases are outlined in this manual and are composed of a number of steps which are covered in the relevant sections. 
+
+After you have decided on your [data structure](formatting.html) and have moved to the Data Formatting stage, you must first [match](name_matching.html) the taxa in your dataset to a registered list. In formatting your dataset you will ensure the [required OBIS terms](checklist.html) and [identifiers](identifiers.html) are mapped correctly to your data fields and records. 
+
+Depending on your data structure, you will then format data into a [DwC-A](data_format.html) format with the appropriate Core table ([Event](format_event) or [Occurrence](format_occurrence.html))) with any applicable extension tables. Any biotic or abiotic measurements will be moved into the [extendedMeasurementOrFact table](link #22+). Before proceeding to the [publishing](data_publication.html) stage, there are a number of [quality control](dataquality.html) steps to complete. 
+
+Once your data has been published, you and others can [access](access.html) datasets through various avenues and it becomes part of OBIS’ global database!
+
+This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of [helpful resources](gethelp.html). Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle.
+
+#### Who is responsible for each phase?
+Phases 1 through 3 are the responsibilities of the data provider, while Phases 3 and 4 are shared between the data provider and the node manager. Data users are involved in Phases 5 and 6. 
+
+The OBIS Secretariat is responsible for data processing and harvesting published resources.
+
 
 ## Biodiversity data standards
 
