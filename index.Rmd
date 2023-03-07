@@ -23,7 +23,7 @@ output:
   bookdown::pdf_book:
     template: null
   bookdown::gitbook:
-    toc_depth: 3
+    toc_depth: 4
     includes:
       in_header: [google_analytics.html]
     split_by: rmd

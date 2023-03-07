@@ -1,6 +1,6 @@
 ## OBIS Data Life Cycle
 
-<img src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block /> 
+<img src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/> 
 
 The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:
 
