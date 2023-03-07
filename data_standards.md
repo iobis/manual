@@ -1,6 +1,6 @@
 ## OBIS Data Life Cycle
 
-<img src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/> 
+<img align="right" src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/>
 
 The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:
 
@@ -19,7 +19,9 @@ Depending on your data structure, you will then format data into a [DwC-A](data_
 
 Once your data has been published, you and others can [access](access.html) datasets through various avenues and it becomes part of OBIS’ global database!
 
-This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of [helpful resources](gethelp.html). Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle.
+This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of [helpful resources](gethelp.html). Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle. 
+
+<br clear="left"/>
 
 #### Who is responsible for each phase?
 Phases 1 through 3 are the responsibilities of the data provider, while Phases 3 and 4 are shared between the data provider and the node manager. Data users are involved in Phases 5 and 6. 
