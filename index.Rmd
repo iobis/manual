@@ -30,6 +30,7 @@ output:
     css: "style.css"
     config:
       toc:
+        collapse: subsection
         before: |
           <li><a href="/">The OBIS manual</a></li>
 documentclass: book
