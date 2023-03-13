@@ -24,13 +24,14 @@ output:
     template: null
   bookdown::gitbook:
     toc_depth: 4
+    fig_caption: TRUE
     includes:
       in_header: [google_analytics.html]
     split_by: rmd
     css: "style.css"
     config:
       toc:
-        collapse: subsection
+        collapse: section
         before: |
           <li><a href="/">The OBIS manual</a></li>
 documentclass: book
