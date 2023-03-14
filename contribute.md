@@ -1,4 +1,5 @@
 # (PART\*) Contributing data to OBIS
+# What can you contribute and how?
 
 Since 2000, OBIS has accepted, curated and published marine biodiversity data obtained by varied sources and methods. There is a common misconception that OBIS only accepts species occurrence data - however this is not true! OBIS can accept many types of marine data including:
 
@@ -58,7 +59,7 @@ There are many other benefits of publishing in OBIS, even if you haven’t publi
 - There are social benefits to data publishing as your work becomes integrated into a wider dataset. It gives both you and your data more visibility. This can lead to more opportunities for collaboration and further career development as a researcher or professional.
 - Your data can be incorporated into larger analyses to better understand global ocean biodiversity, helping to shape regional and international policies. 
 
-## How to handle sensitive data
+## How to handle sensitive data?
 We recognize that sometimes your dataset may contain sensitive information (e.g., location data on endangered or poached species), or perhaps your organization does not want certain details publicly accessible. Types of sensitive data include:
 
 * Location data on endangered or protected species
