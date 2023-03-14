@@ -33,22 +33,22 @@ To publish a dataset to OBIS, there are **five** main steps you must go through.
 Each of these steps are covered in detail in the relevant sections of the manual. For an overview of this process see [data management flow in OBIS](data_standards.html).
 
 
-## Why publish data to OBIS?
+## Why publish data to OBIS
 It is important to publish and ensure your dataset follows a universal standard for several reasons. The [FAIR guiding principles](https://www.nature.com/articles/sdata201618) for scientific data management and stewardship provide a good framework to understand the reasoning behind publishing data. FAIR stands for Findable, Accessible, Interoperable, and Reusable. Let’s understand each aspect within the FAIR framework and how it is linked to publishing data in OBIS.
 
-* F - Findable
+* **F - Findable**
 
 Even if you publish your dataset on its own, publishing your data with OBIS will make your data more Findable (and Accessible) to a wider audience you might not have otherwise reached. By publishing your dataset to OBIS you are adding to a global database where your data can be found and analyzed alongside thousands of other datasets. For example, a dataset on [marine invasive species in Venezuela](https://obis.org/dataset/98ea98e8-356b-4dd5-87c6-4eeb7e3cf588) was published July 20, 2022 and as of October 5, 2022 records of this dataset were included in 1,873 data download requests. This can save you time rather than handling individual data requests.
 
-* A - Accessible
+* **A - Accessible**
 
 Similar to being Findable, OBIS makes your datasets more Accessible. Each dataset is given an identifier when you upload it on an IPT. Thus when users obtain data from OBIS, the original dataset can easily be identified and accessed. Data from OBIS is accessible in numerous ways[LINK to access section], giving data users multiple avenues to potentially access your data. 
 
-* I - Interoperable
+* **I - Interoperable**
 
 Using a standardized data format with controlled vocabularies will ensure your data are more Interoperable - more easily interpreted and processed by computers and humans alike. Increasingly, scientists use computer programs to conduct e-Science and collect data with algorithms. Formatting your data for OBIS will ensure it can be read and accessed by such programs as well as understood by users.
 
-* R - Reusable
+* **R - Reusable**
 
 Publishing your data allows it to be Reused according to your chosen [data usage license](policy.html). Very likely you expended resources to collect your data and it would be a waste of those resources to leave your unique data unpublished and inaccessible for current and future generations. Likewise, it is better to preserve any data processing done to ensure your dataset is reproducible and/or verifiable. Finally, data in OBIS is often used in several assessment processes and used as information to support policy makers around the globe making informed decisions.
 
@@ -59,7 +59,7 @@ There are many other benefits of publishing in OBIS, even if you haven’t publi
 - There are social benefits to data publishing as your work becomes integrated into a wider dataset. It gives both you and your data more visibility. This can lead to more opportunities for collaboration and further career development as a researcher or professional.
 - Your data can be incorporated into larger analyses to better understand global ocean biodiversity, helping to shape regional and international policies. 
 
-## How to handle sensitive data?
+## How to handle sensitive data
 We recognize that sometimes your dataset may contain sensitive information (e.g., location data on endangered or poached species), or perhaps your organization does not want certain details publicly accessible. Types of sensitive data include:
 
 * Location data on endangered or protected species

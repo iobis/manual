@@ -10,7 +10,11 @@ OBIS currently accepts identifiers from **three** authoritative lists:
 
 The identifiers (LSID, TSN, ID) from these registers will be used to populate the `scientificNameID` field. If you would like to include multiple identifiers, please use a concatenated list where each register is clearly identified (e.g. urn:lsid:itis.gov:itis_tsn:12345, NCBI:12345, BOLD:12345). 
 
-:warning: You should prioritize using LSIDs because they are unique identifiers which indicate the authority the ID comes from.
+:::: {.infobox .caution data-latex="caution"}
+
+You should prioritize using LSIDs because they are unique identifiers which indicate the authority the ID comes from.
+
+::::
 
 You can also use the [Interim Register of Marine and Nonmarine Genera (IRMNG)](https://www.irmng.org/aphia.php?p=search) to [distinguish marine genera from freshwater genera](common_qc#non-marine-species.html).
 
@@ -41,7 +45,8 @@ For performance reasons, the limit is set to 1,500 rows for the taxon match tool
 
 After matching, the tool will return you a file with the AphiaIDs, LSIDs, valid names, authorities, classification, and any other output you have selected.
 
-:warning: The WoRMS LSID is used for `DwC:scientificNameID`.
+> **Note**
+> The WoRMS LSID is used for `DwC:scientificNameID`.
 
 A complete online manual is available at [http://www.marinespecies.org/tutorial/taxonmatch.php](http://www.marinespecies.org/tutorial/taxonmatch.php). We have also created a [video tutorial] for using the taxon match tool, including how to attach the IDs back to your own data using Excel’s vlookup function. R script to do this is shown below.
 
@@ -56,16 +61,15 @@ data<-data.frame(scientificName=c("Thunnus thynnus", "Rhincodon typus", "Luidia 
 # this would be your matched file from WoRMS, but for example we are generating a simple list with the species names and LSIDs
 lsids<- data.frame(scientificName=c("Ginglymostoma cirratum","Luidia maculata","Thunnus thynnus", "Rhincodon typus"),
  LSID = c("urn:lsid:marinespecies.org:taxname:105846", "urn:lsid:marinespecies.org:taxname:213112","urn:lsid:marinespecies.org:taxname:127029","urn:lsid:marinespecies.org:taxname:105847"))
-)
 
+#merge data frames together
 matched_data<-merge(data, lsids, by = "scientificName")
 matched_data
 ```
 
-
 #### Step 2: Match with other registers 
 
-The [LifeWatch taxon match](http://www.lifewatch.be/data-services/) compares your taxon list to multiple taxonomic standards. Matching with multiple registers gives an indication of the correct spelling of a name, regardless of its environment. If a name would not appear in any of the registers, this could indicate a mistake in the scientific name and the name should go back to the provider for additional checking/verification.
+If you do not find a match with WoRMS, you should next check other registers. The [LifeWatch taxon match](http://www.lifewatch.be/data-services/) compares your taxon list to multiple taxonomic standards. Matching with multiple registers gives an indication of the correct spelling of a name, regardless of its environment. If a name would not appear in any of the registers, this could indicate a mistake in the scientific name and the name should go back to the provider for additional checking/verification.
 
 Contrary to the WoRMS taxon match, when several matching options are available, the LifeWatch taxon match only mentions “no exact match found, multiple possibilities” instead of listing the available options. If multiple options are available, these should be looked up and matched manually.
 
@@ -82,7 +86,8 @@ Currently, this web service matches the scientific names with the following taxo
 
 #### Step 3: Is taxon marine? 
 
-The Interim Register of Marine and Non-marine Genera (IRMNG) matching services are available through [http://www.irmng.org/](http://www.irmng.org/), as well as through the [LifeWatch taxon match](http://www.lifewatch.be/data-services/). This service allows you to search for a genus (or other taxonomic rank when you unchcek the “genera” box) to check if it is known to be marine, brackish, freshwater, or terrestrial. You can find this information in the row labeled “Environment”.
+The Interim Register of Marine and Non-marine Genera (IRMNG) matching services are available through [http://www.irmng.org/](http://www.irmng.org/), as well as through the [LifeWatch taxon match](http://www.lifewatch.be/data-services/). This service allows you to search for a genus (or other taxonomic rank when you unchcek the “genera” box) to check if it is known to be marine, brackish, freshwater, or terrestrial. You can find this information in the row labeled “Environment”. If the taxa is marine, you may have to contact
+
 ### R packages for taxon matching
 If you are familiar with R, you may use the [obistools](https://github.com/iobis/obistools#taxon-matching) function `match_taxa` to conduct taxon matching for your dataset. There is also a WoRMS package called [worrms](https://cran.r-project.org/web/packages/worrms/index.html) that has a function called `wm_records_taxamatch` you can use to conduct taxon matching.
 
@@ -92,15 +97,15 @@ The output will be the same as that from the WoRMS tool, so you should check amb
 
 | Term |OBIS Required	|DarwinCore Class|
 |---------|-----------|---------|
-|WoRMS taxon match | * Accessible online * Does not require coding knowledge | * Requires rematch information back to your data | 
-|obistools::match_taxa |* Produces same output as WoRMS taxon match * Already in R so easier to merge back with data | * Requires knowledge of R or python |
-|worrms::wm_records_taxamatch | * Outputs all WoRMS matching information | *Outputs a tibble for each taxa name specified * Requires knowledge of R or python |
+|WoRMS taxon match | Accessible online, Does not require coding knowledge | Requires rematch information back to your data | 
+|obistools::match_taxa | Produces same output as WoRMS taxon match, Already in R so easier to merge back with data | Requires knowledge of R or python |
+|worrms::wm_records_taxamatch | Outputs all WoRMS matching information | Outputs a tibble for each taxa name specified, Requires knowledge of R or python |
 
 #### How to fetch a full classification for a list of species from WoRMS?
 
 When setting up your WoRMS taxon match, to obtain the full classification for your list of species, simply check the box labeled “Classification”. This will add classification output in addition to the requested identifiers to your taxon match file, including Kingdom, Phylum, Class, Order, Family, Genus, Subgenus, Species, and Subspecies.
 
-<img src="images/WoRMS classification.png" class="img-responsive"/>
+![WoRMS classificaition box](images/WoRMS classification.png){width=50%}
 
 #### What to do with non-matching names?
 
@@ -117,7 +122,7 @@ See https://www.marinespecies.org/tutorial_taxonmatch.php for definitions of eac
 
 In each of these cases, WoRMS will try to suggest a species to match your uncertain taxon. Take care to ensure the correct species name is selected. This is especially true for near_2 or near_3 matches. When checking a potential matched name, we recommend referencing the authority and higher taxonomic levels of a given suggestion. For example, if you know the ambiguous species is a sponge, but one of the suggestions is for a mammal, you know that is not the correct name. 
 
-<img src="WoRMS-resolve-ambiguousMatches.png" class="img-responsive"/>
+![Example of choices from an abiguous match](WoRMS-resolve-ambiguousMatches.png){width=50%}
 
 In cases where no match can be found, WoRMS will indicate none. For these cases you should follow these steps:
 
