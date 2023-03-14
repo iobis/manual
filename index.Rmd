@@ -30,7 +30,7 @@ output:
     css: "style.css"
     config:
       toc:
-      collapse: none
+        collapse: none
         before: |
           <li><a href="/">The OBIS manual</a></li>
           <li><a href="https://obis.org/">Return to OBIS.org</a></li>
