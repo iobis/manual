@@ -19,7 +19,7 @@ A fourth table could easily be created to track total school population size thr
 We elaborate on how this structure is applied within OBIS [here](formatting.html#dataset-structure).
 
 <img src="images/RelationalDB.drawio.png" alt="Diagram of relational databases showing how three tables are linked by unique indentifiers" class="img-responsive"/>
-fig.cap='Figure. An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows.'
+Figure. An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows.
 
 Note that when OBIS harvests data, datasets are flattened - i.e., all separate data tables are combined into one. This is the kind of file you will receive when you [download data from OBIS](access.html). The reason for this is that querying relational databases significantly reduces computational time, as opposed to querying a flat database. Relational databases also facilitate requests for subsets that meet particular criteria - e.g., all data from Norway for one species above a certain depth. 
 
