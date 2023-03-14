@@ -15,6 +15,7 @@ rmd_files:
   - formatting.md
   - identifiers.md
   - checklist.md
+  - name_matching.md
   - format_occurrence.md
   - format_event.md
   - format_emof.md
@@ -26,7 +27,6 @@ rmd_files:
   - data_qc.md
   - mofreports.md
   - dataquality.md
-  - name_matching.md
   - lifewatch_qc.md
   - common_qc.md
   - data_publication.md

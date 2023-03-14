@@ -1,4 +1,4 @@
-# (PART\*) Additional Resources
+# (PART\*) Additional Resources {-}
 # Other Resources
 
 In this section we highlight resources created by collaborators.

@@ -212,26 +212,7 @@ When the basisOfRecord is a _preservedSpecimen_, _LivingSpecimen_ or _FossilSpec
 
 `institutionCode` identifies the custodian institute (often by acronym), `collectionCode` identifies the collection or dataset within that institute. Collections cannot belong to multiple institutes, so all records within a collection should have the same `institutionCode`. The `catalogNumber` is an identifier for the record within the dataset or collection.
 
-As explained before, the `occurrenceID` could for example be constructed by combining the `institutionCode`,  `collectionCode` and `catalogNumber`:
-
-Example:
-
-```
-| modified            | institutionCode | collectionCode                 |
-|---------------------|-----------------|--------------------------------|
-| 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
-| 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
-| 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
-```
-
-```
-| basisOfRecord    | occurrenceID                              | catalogNumber                             |
-|------------------|-------------------------------------------|-------------------------------------------|
-| HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553 |
-| HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554 |
-| HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555 |
-```
-_Data from [Algal community on the pneumatophores of mangrove trees of Gazi Bay in July and August 1987](http://ipt.vliz.be/eurobis/resource?r=vegetation_gazi_bay_kenya_1987)._
+`occurrenceID` is detailed in [Identifiers](identifiers#occurrenceid.html)
 
 `bibliographicCitation` allows for providing different citations on record level, while a single citation for the entire dataset can and should be provided in the metadata (see [EML](../eml)). The citation at record level can have the format of a chapter in a book, where the book is the dataset citation. The record citation will have preference over the dataset citation. We do not, however, recommend to create different citations for every record, as this will explode the number of citations and will hamper the re-use of data.   
 
@@ -278,22 +259,10 @@ _Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as pla
 
 ##### Event
 
-`eventID` is an identifier for the sampling or observation event. `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs). `eventID` can be used for replicate samples or sub-samples. Make sure each replicate sample receives a unique event ID, which could be based on the unique sample ID in your dataset (which can also be in recorded in `materialSampleID`). OBIS does not need to have separate `eventID`s and `materialSampleID`s, rather OBIS can treat these two terms as equivalent. The unique sample ID for each physical sample or subsample at each location and time is highly recommended information for sample tracebility and data provenance. Repeating the parentEventID in the child event (use `:` as delimiter) will make the structure of the dataset easier to understand. See also [De Pooter et al. 2017](https://bdj.pensoft.net/articles.php?id=10989&instance_id=3385375) for an example of an event hierarchy in a complex benthos dataset. 
+`eventID` is an identifier for the sampling or observation event. `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs). See [identifiers](identifiers#eventid.html) for details on how these terms can be constructed.
 
- `habitat` is a category or description of the habitat in which the Event occurred (e.g. seamount, hydrothermal vent, seagrass, rocky shore, intertidal, ship wreck etc.)
+`habitat` is a category or description of the habitat in which the Event occurred (e.g. benthos, seamount, hydrothermal vent, seagrass, rocky shore, intertidal, ship wreck etc.)
 
-Example: 
-
-```
-| eventID                                 | parentEventID                           | eventDate | eventRemarks |
-|-----------------------------------------|-----------------------------------------|-----------|--------------|
-| IOF_benthos_Plominski_zaljev_2000_crs   |                                         |           | cruise       |
-| IOF_benthos_Plominski_zaljev_2000_stat1 | IOF_benthos_Plominski_zaljev_2000_crs   | 2000-08   | stationVisit |
-| IOF_benthos_Plominski_zaljev_2000_stat2 | IOF_benthos_Plominski_zaljev_2000_crs   | 2000-08   | stationVisit |
-| IOF_benthos_Plominski_zaljev_2000_s01   | IOF_benthos_Plominski_zaljev_2000_stat1 |           | sample       |
-| IOF_benthos_Plominski_zaljev_2000_s02   | IOF_benthos_Plominski_zaljev_2000_stat2 |           | sample       |
-```
-_Data from [Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)](http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10)._
 
 ##### Time
 
