@@ -10,11 +10,8 @@ OBIS currently accepts identifiers from **three** authoritative lists:
 
 The identifiers (LSID, TSN, ID) from these registers will be used to populate the `scientificNameID` field. If you would like to include multiple identifiers, please use a concatenated list where each register is clearly identified (e.g. urn:lsid:itis.gov:itis_tsn:12345, NCBI:12345, BOLD:12345). 
 
-:::: {.infobox .caution data-latex="caution"}
-
-You should prioritize using LSIDs because they are unique identifiers which indicate the authority the ID comes from.
-
-::::
+> **Note**
+> You should prioritize using LSIDs because they are unique identifiers which indicate the authority the ID comes from.
 
 You can also use the [Interim Register of Marine and Nonmarine Genera (IRMNG)](https://www.irmng.org/aphia.php?p=search) to [distinguish marine genera from freshwater genera](common_qc#non-marine-species.html).
 
@@ -95,8 +92,8 @@ The output will be the same as that from the WoRMS tool, so you should check amb
 
 ### Taxon Match Tools Overview
 
-| Term |OBIS Required	|DarwinCore Class|
-|---------|-----------|---------|
+| Tool | Advantage | Disadvantage |
+|-----------|---------------------|-----------------|
 |WoRMS taxon match | Accessible online, Does not require coding knowledge | Requires rematch information back to your data | 
 |obistools::match_taxa | Produces same output as WoRMS taxon match, Already in R so easier to merge back with data | Requires knowledge of R or python |
 |worrms::wm_records_taxamatch | Outputs all WoRMS matching information | Outputs a tibble for each taxa name specified, Requires knowledge of R or python |

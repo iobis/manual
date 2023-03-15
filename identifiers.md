@@ -8,7 +8,8 @@ Using a unique identifier for each physical sample or subsample in your dataset 
 
 If you do not already have a `materialSampleID`, creating a unique eventID for your data records can be as straightforward as combining different fields from your data. 
 
-:warning: You should consider carefully what combination of fields will generate a **unique** event. Combinations including date, time, location, and depth are common elements to help generate such unique codes.
+> **Note** 
+> You should consider carefully what combination of fields will generate a **unique** event. Combinations including date, time, location, and depth are common elements to help generate such unique codes.
 
 Including the event type can also be useful for datasets with hierarchical sampling methods (e.g., samples taken from a station within a cruise). Repeating the parentEventID in the child event (use `:` as delimiter) can make the structure of the dataset easier to understand. Nesting event information in this way also allows you to reduce redundancy and still provide information relevant to each level of sampling. 
 
