@@ -1,5 +1,62 @@
 ### DNA dervived data
+**Contents**
+- [Introduction](dna_data#introduction.html)
+- [eDNA & DNA Derived use cases](dna_data#edna--dna-derived-data-example.html)
+- [How to find genetic data in OBIS](dna_data#how-to-find-genetic-data-in-obis.html)
+#### Introduction
+DNA derived data are increasingly being used to document taxon occurrences. This genetic data may come from a sampling event, an individual organism, may be linked to physical material (or not), or may result from DNA detection methods e.g., metabarcoding or qPCR. Thus genetic data may reflect a single organism, or may include information from bulk samples with many individuals. Still, DNA-derived occurrence data of species should be documented as standardized and as reproducible as possible.
 
+To ensure DNA data are useful to the broadest possible community, GBIF published a guide entitled [Publishing DNA-derived data through biodiversity data platforms](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/). This guide is supported by the [DNA derived data extension for Darwin Core](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml), which incorporates MIxS terms into the Darwin Core standard. There are 5 categories for which genetic data could fall into:  
+
+1. DNA-derived occurrences 
+2. Enriched occurrences
+3. Targeted species detection
+4. Name references 
+5. Metadata only
+
+For a guide and decision tree on determining which category your data falls into, see the [Data packaging and mapping](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping) section of the GBIF guide. Refer to the [examples below](dna_data#edna-dna-derived-data.html) for use case examples of eDNA and DNA derived data (Category 1). 
+
+> Currently, genetic data **must** be published with Occurrence core, not Event core. eDNA and DNA derived data are then linked to the Occurrence core data table with the use of `occurrenceID` and/or `eventID`. See below for further guidance on compiling genetic data.
+
+##### How to compile and publish genetic data
+Broadly speaking, you will need to have information on the taxonomy and sequences for each occurrence record associated with a DNA sample. You should first fill in the [Occurrence core table](format_occurrence.html), and then complete the DNA Derived Data extension (as well as the eMoF extension, if applicable, for any measurements taken). 
+
+In addition to the [usual required terms for Occurrence datasets](format_occurrence.html), you should consider the following additional terms:
+
+**Occurrence core table highly recommended terms**
+- Class Occurrence | DwC: organismQuantity
+- Class Occurrence | DwC: OrganismQuantityType
+- Class Occurrence| DwC: associatedSequences
+- Class Event | DwC: sampleSizeValue
+- Class Event | DwC: sampleSizeUnit
+- Class Event | DwC: samplingProtocol
+
+Then, you will need to format the DNADerivedData extension. The following (free-text) terms are required or highly recommended. Note that some terms are more relevant depending on the methodologies used (e.g., metabarcoding vs qPCR).
+
+**DNA Derived data extension highly recommended terms** 
+- DNA Derived | DwC: DNA_sequence
+- DNA Derived | DwC: sop
+- DNA Derived | DwC: target_gene
+- DNA Derived | DwC: target_subfragment
+- DNA Derived | DwC: pcr_primer_forward
+- DNA Derived | DwC: pcr_primer_reverse
+- DNA Derived | DwC: pcr_primer_name_forward
+- DNA Derived | DwC: pcr_primer_name_reverse
+- DNA Derived | DwC: pcr_primer_reference
+- DNA Derived | DwC: Pcr_cond
+- DNA Derived | DwC: annealingTemp
+- DNA Derived | DwC: annealinTempUnit
+- DNA Derived | DwC: probeReporter
+- DNA Derived | DwC: probeQuencher
+- DNA Derived | DwC: ampliconSize
+- DNA Derived | DwC: thresholdQuantificationCycle
+- DNA Derived | DwC: baselineValue
+
+For a complete list of terms you can map to, see [the DwC DNA Derived Data extension page](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml). See the [examples below](dna_data#edna-dna-derived-data.html) for use case examples. The Marine Biological Data Mobilization Workshop also has a [tutorial](https://ioos.github.io/bio_mobilization_workshop/edna-extension/#dna-derived-extension) for this type of data.
+
+When your data tables are formatted and you are ready to publish it on the IPT, it will follow the same process for [publishing on an IPT](data_publication.html). You will upload your source files, and add the Occurrence core Darwin Core mappings, and then the DNA Derived Data Darwin Core mappings. However the extension must first be [installed by the IPT administrator](data_publication#ipt-administration.html) (often the node manager). Once the extension is installed, you can add the Darwin Core DNA Derived Data mapping for that file.
+
+##### OBIS Bioinformatics Pipline
 OBIS recognizes the vast amount of data generated from marine DNA sampling, especially from eDNA sequencing. Thus we have been developing a bioinformatics pipeline to facilitate publication of this data into OBIS. The pipeline was initially developed for the [PacMAN project (Pacific Islands Marine Bioinvasions Alert Network)](https://pacman.obis.org/). 
 
 Broadly speaking, it creates a framework that receives raw sequence data from eDNA samples, cleans, aligns, classifies sequences, and finally outputs a DwC-compatible table. The pipeline is currently under development and for now only accepts CO1 data. It will be extended to include other genetic markers in the future. More details about the PacMAN pipeline can be found on its [associated GitHub repository](https://github.com/iobis/PacMAN-pipeline). Once fully online, we will provide guidelines on how to use the pipeline.
@@ -11,7 +68,7 @@ OBIS is developing guidelines and pipelines to accept other data types, such as:
 * [Tracking](other_data_types#tracking-data.html)
 * [Habitat](other_data_typeshabitat-data.html)
 
-#### eDNA & DNA derived data
+#### eDNA & DNA derived data example
 
 The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional Occurrence core terms, refer to [Occurrence](darwin_core.html#occurrence). 
 
@@ -153,3 +210,24 @@ The DNA Derived Data extension for metabarcoding data contains the DNA sequences
 | SBDI-ASV-3:16S_1:temperature | SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730 | temperature     | 16.9             | °C              |
 | SBDI-ASV-3:16S_1:salinity    | SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730 | salinity        | 7.25             | psu             |
 | SBDI-ASV-3:16S_1:temperature | SBDI-ASV-3:16S_1:1ead98754d34073a4606f7ff1e94126e | temperature     | 16.9             | °C              |
+
+#### How to find genetic data in OBIS
+##### Sequence Search tool
+If you want to search for sequences or related sequences in OBIS, you can do so with the [OBIS Sequence Search](https://sequence.obis.org/).
+
+1. Copy your sequence in the provided box (an example sequence is provided for testing as well)
+2. Press the Search button
+3. View results below
+4. You can also change the Minimum Alignment Score slider in the map view to see location of sequences 
+
+The search result will show you taxonomic information for species sequences that align to your sequence, the alignment score, and a link to the respective datasets.
+
+##### OBIS Mapper
+
+If you wish to find records that have the DNADerivedData extension you can add this filter when using the [Mapper](https://mapper.obis.org/). 
+
+1. Navigate to the Criteria tab
+2. Open the Extensions section 
+3. Check the box for DNADerivedData
+4. Click save to create the layer
+[5. Download the data from the layer](access.html)

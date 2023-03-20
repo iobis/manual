@@ -92,6 +92,8 @@ The output will be the same as that from the WoRMS tool, so you should check amb
 
 ### Taxon Match Tools Overview
 
+See the table below for a summary of the different tools available.
+
 | Tool | Advantage | Disadvantage |
 |-----------|---------------------|-----------------|
 |WoRMS taxon match | Accessible online, Does not require coding knowledge | Requires rematch information back to your data | 

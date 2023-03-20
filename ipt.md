@@ -44,7 +44,7 @@ In most cases, there will be a combination of these two approaches. The chosen a
 
 Desmet, P. & C. Sinou. 2012. 7-step guide to data publication. Canadensys. [http://community.canadensys.net/publication/data-publication-guide](http://community.canadensys.net/publication/data-publication-guide). 
 
-:exclamation: Make sure you have obtained the rights from the data owners to publish their data! 
+> Caution: Make sure you have obtained the rights from the data owners to publish their data! 
 
 ##### Create your resource on the IPT 
 

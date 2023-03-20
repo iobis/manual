@@ -49,6 +49,17 @@ If your core file is based on occurrences (e.g., an observation), then any exten
 Let us consider a fictional plankton trawl sampling event to demonstrate how identifiers link Core and Extension tables in OBIS. This trawl used two types of nets, occurred in March 2013, and has an eventID `plankton-northsea-2013-03`. Suppose we have information about the types of trawl used and the species abundance from this trawling event. The information (e.g., date) of the sampling event itself would be found in the Event Core, whereas the abundance data and sampling methods would be in the eMoF table. How do we ensure the abundance and sampling method data is properly linked to the correct event? By using the same eventID for each record in the eMoF table, `plankton-northsea-2013-03`, the information is properly linked between the Event Core and the eMoF extension. 
 
 
+## Data formatting tools
+
+The GBIF Norwegian Node created the [DwC Excel Template Generator](https://gbif-norway.github.io/dwc-excel-template-generator-js/). This tool will generate four different types of blank Excel spreadsheets: Occurrence Core, MeasurementOrFact, Metadata, and a README. This tool works best if you already know which Darwin Core fields you need, although a default template can be generated.
+
+Another tool from Norway is the [Excel to Darwin Core Standard (DwC) Tool](https://zenodo.org/record/6453921#.Y9KsQkHMKmU). This is a macro Excel spreadsheet that helps create templates for Event (aka Sampling-Event) and Occurrence core tables, as well as MeasurementsOrFacts, Extended MeasurementsOrFacts, and Simple Multimedia extensions. 
+GBIF provides an [Occurrence core template](https://ipt.gbif.org/manual/en/ipt/latest/occurrence-data#templates) and an [Event core template](https://ipt.gbif.org/manual/en/ipt/latest/sampling-event-data#templates). If you use these templates from GBIF, be aware that [GBIF’s required terms are different from OBIS](data_sharing#differences-between-obis-and-gbif-publication-processes.html).
+
+There are also some tools that can help you unpivot (or flatten) data tables. These can be used to flatten many columns into one, particularly useful for the [eMoF](format_emof.html) table.
+
+* [GBIF Norway’s crosstab to list converter](https://gbif-norway.github.io/crosstab2list/). Note that this tool is not completely automated
+* [Excel’s built-in unpivot function](https://www.excel-university.com/unpivot-excel-data/)
 
 
 

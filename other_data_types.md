@@ -35,7 +35,6 @@ Please consult the [Duncan et al. (2021) technical report](https://www.emodnet-s
 
 For filling measurementType with habitat-related data and/or the dwc:habitat column, you should reference the [NERC vocabulary search](http://vocab.nerc.ac.uk/search_nvs/sxv/?searchstr=habitat&options=identifier,preflabel,altlabel,definition). While the [Coastal and Marine Ecological Classification Standard (CMECS)](https://repository.library.noaa.gov/view/noaa/27552) and the [Environment Ontology (ENVO)](https://sites.google.com/site/environmentontology/?pli=1) also contain habitat vocabularies, OBIS recommends the use of NERC vocabulary. If other vocabularies are used, please provide the NERC vocabulary equivalent as additional records in the eMoF table. 
 
-
 ### Tracking data
 
 Encoding Tracking data into Darwin Core follows the same standards as that of survey/sighting data. Tracking data should additionally indicate the accuracy in latitudinal and longitudinal measurements received from the positioning system, grouped by location accuracy classes, recorded in the `coordinateUncertaintyInMeters` field. The Ocean Tracking Network (OTN) has developed some guidelines](https://github.com/tdwg/dwc-for-biologging) for formatting this type of data in Darwin Core. We summarize the main points below.

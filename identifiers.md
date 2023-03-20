@@ -31,7 +31,7 @@ Information related to your sampling events can be assigned to the highest relev
 
 
 | eventID | parentEventID | type | eventDate | maximumDepthInMeters |
-|---------------------------|---------------------|-----------|-------------|------------|
+|-----------------|--------------|---------|-----------|----------|
 |cruise_1 |  | cruise |  |  |
 |cruise_1:station_1 | cruise_1 | station |  | 15 |
 |cruise_1:station_1:core_1 | cruise_1:station_1 | sample | 2011-03-06T08:35 | |
@@ -42,14 +42,15 @@ We recommend using controlled vocabulary for the "type" column. Although no stan
 
 Consider another example from a real dataset below:
 
-
+```
 | eventID                                 | parentEventID                           | eventDate | eventRemarks |
-|-----------------------------------------|-----------------------------------------|-----------|--------------|
+|--------------------------------|------------------------------|-----------|--------------|
 | IOF_benthos_Plominski_zaljev_2000_crs   |                                         |           | cruise       |
 | IOF_benthos_Plominski_zaljev_2000_stat1 | IOF_benthos_Plominski_zaljev_2000_crs   | 2000-08   | stationVisit |
 | IOF_benthos_Plominski_zaljev_2000_stat2 | IOF_benthos_Plominski_zaljev_2000_crs   | 2000-08   | stationVisit |
 | IOF_benthos_Plominski_zaljev_2000_s01   | IOF_benthos_Plominski_zaljev_2000_stat1 |           | sample       |
 | IOF_benthos_Plominski_zaljev_2000_s02   | IOF_benthos_Plominski_zaljev_2000_stat2 |           | sample       |
+```
 _Data from [Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)](http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10)._
 
 We can see that each record has a similar eventID structure, except for the last part which indicates the event type - documented in the `eventRemarks` column. In this dataset, records with the eventID `IOF_benthos_Plominski_zaljev_2000_crs` has information applicable for records with eventIDs ending with `_stat1`, `_stat2`, `_s01`, and `_s02` because `_crs` is their parent event. Similarly, information (e.g., date of station visit, coordinates) documented in records with eventID `IOF_benthos_Plominski_zaljev_2000_stat1` is applicable for the two sample records (eventID `_s01` and `_s02`), because these samples were taken at Station 1 (indicated by the parentEventID). These eventIDs could have been nested in another way, such as `IOF_benthos_Plominsku_zaljev_2000_crs:stat1:s01` which would embed the parentEventID into the identifier.
@@ -66,17 +67,18 @@ An important consideration for museum specimens: there is the possibility that t
 
 See the example below:
 
-
+```
 | modified            | institutionCode | collectionCode                 |
 |---------------------|-----------------|--------------------------------|
 | 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
 | 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
 | 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
-
-
+```
+```
 | basisOfRecord    | occurrenceID                              | catalogNumber                             |
 |------------------|-------------------------------------------|-------------------------------------------|
 | HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553 |
 | HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554 |
 | HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555 |
+```
 _Data from [Algal community on the pneumatophores of mangrove trees of Gazi Bay in July and August 1987](http://ipt.vliz.be/eurobis/resource?r=vegetation_gazi_bay_kenya_1987)._
