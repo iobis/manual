@@ -2,29 +2,29 @@
 
 **Contents**
 
-- [Introduction](#intro)
-- [Installation](#installation)  
-- [Registration](#registration)
-- [Publish your data](#publish-your-data)  
-- [Upload data](#upload-data)  
-- [Map to Darwin Core](#map-your-data-to-darwin-core)  
-- [Add metadata](#add-metadata)  
-- [Publish your data](#publish-your-data-1)  
-- [Publish your data as a dataset paper](#publish-your-metadata-as-a-data-paper)
+- [Introduction](ipt#intro.html)
+- [Installation](ipt#installation.html)  
+- [Registration](ipt#registration.html)
+- [Intro to publishing](ipt#introduction-to-publishing-your-data.html)  
+- [Upload data](ipt#upload-data.html)  
+- [Map to Darwin Core](ipt#map-your-data-to-darwin-core.html)  
+- [Add metadata](ipt#add-metadata.html)  
+- [Publish on te IPT](ipt#publish-on-the-ipt.html)  
+- [Publish your data as a dataset paper](ipt#publish-your-metadata-as-a-data-paper.html)
 
-#### Introduction
+### Introduction
 
-The biodiversity datasets and its metadata are published in OBIS using the Integrated Publishing Toolkit (IPT), developed by GBIF. The IPT software assists the user in mapping data to valid Darwin Core terms and archiving and compressing the Darwin Core content with: (i) a descriptor file: `meta.xml` that maps the core and extensions files to Darwin Core terms, and describes how the core and extensions files are linked, and (ii) the `eml.xml` file, which contains the dataset metadata in [Ecological Metadata Language](https://en.wikipedia.org/wiki/Ecological_Metadata_Language) (EML) format. For instructions on how to enter the metadata go to [EML](../eml). Al these components (i.e. core file, extension files, descriptor file and metadata file), compressed together (as a .zip file), comprise the Darwin Core Archive.
+The biodiversity datasets and its metadata are published in OBIS using the Integrated Publishing Toolkit (IPT), developed by GBIF. The IPT software assists the user in mapping data to valid Darwin Core terms and archiving and compressing the Darwin Core content with: (i) a descriptor file: `meta.xml` that maps the core and extensions files to Darwin Core terms, and describes how the core and extensions files are linked, and (ii) the `eml.xml` file, which contains the dataset metadata in [Ecological Metadata Language](https://en.wikipedia.org/wiki/Ecological_Metadata_Language) (EML) format. For instructions on how to enter the metadata go to [EML](eml.html). Al these components (i.e. core file, extension files, descriptor file and metadata file), compressed together (as a .zip file), comprise the Darwin Core Archive.
 
-<img src="images/dwca_1.png" class="img-responsive"/>
+![](images/dwca_1.png){width=60}
 
-#### Installation
+### Installation
 
-OBIS nodes can decide to install and manage their IPT on their own institutional servers or use (at no charge!) the OBIS servers in Oostende, Belgium, provided as in-kind by the Flanders Marine Institute (VLIZ), which also runs the European OBIS node (EurOBIS). VLIZ also ensures the IPT instances run on the latest version (important for security updates). Here is an overview of the IPT instances hosted in Oostende: [http://ipt.iobis.org/](http://ipt.iobis.org/). Please contact the secretariat at info@iobis.org if you would like OBIS to host your IPT. 
+OBIS nodes can decide to install and manage their IPT on their own institutional servers or use (at no charge!) the OBIS servers in Oostende, Belgium, provided as in-kind by the Flanders Marine Institute (VLIZ), which also runs the European OBIS node (EurOBIS). VLIZ also ensures the IPT instances run on the latest version (important for security updates). Here is an overview of the IPT instances hosted in Oostende: [http://ipt.iobis.org/](http://ipt.iobis.org/). Please contact the secretariat at info@iobis.org if you would like OBIS to host your IPT.
 
 To install your own IPT, please follow the instructions in the [GBIF IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#getting-started-guide).
 
-#### Registration
+### Registration
 
 When you have installed your IPT, please provide the IPT instance URL to the OBIS secretariat, so your IPT is included in the data harvesting process. 
 
@@ -32,21 +32,21 @@ OBIS recommends to share the data as widely as possible including with other net
 
 In order to publish data with GBIF, the OBIS node also need to become a [data publisher in GBIF](https://www.gbif.org/become-a-publisher), and link the IPT installation with this publishing organization. OBIS nodes are encouraged to use the OBIS node name as the publishers's name, unless the host institution requires its institutional name to be used. In the latter case, reference to the OBIS node can be added in the description, as well as between brackets in the title. The name of the IPT instance can also refer to the OBIS node. OBIS nodes are also encouraged to select OBIS as the endorsing organization. In this way, the OBIS node is also listed on the [OBIS page](https://www.gbif.org/participant/304) at GBIF.
 
-#### Publish your data
+### Introduction to publishing your data
 
-With regard to populating the IPT with marine data for OBIS, there are two possible approaches: 
+With regard to populating the IPT with marine data for OBIS, there are two possible approaches:
 
-1. Manager driven: You as node manager take the responsibility of describing, checking and uploading the data and metadata to the IPT. The data provider can send you the data ‘as such’ or you can make agreements with your providers on the accepted OBIS data format and standards. This approach will give you a very good knowledge of what data is available. It can be time-consuming, as (extended) communication with the data provider will be necessary to document the metadata and to re-format the data to the OBIS standards. 
+1. Manager driven: You as node manager take the responsibility of describing, checking and uploading the data and metadata to the IPT. The data provider can send you the data ‘as such’ or you can make agreements with your providers on the accepted OBIS data format and standards. This approach will give you a very good knowledge of what data is available. It can be time-consuming, as (extended) communication with the data provider will be necessary to document the metadata and to re-format the data to the OBIS standards.
 
-2. User driven: You as node manager can guide (some of your) data providers to publish the data and metadata to the IPT themselves. Your main task will be to make sure that all relevant information and data for OBIS is available and that you perform the necessary quality checks before the data are released to OBIS. Once the Darwin Core Archive is created, the data provider should inform the node manager of this action, so he or she can do the necessary quality control checks. In order for the node manager to be able to look at the dataset, the data provider should add him or her as a “resource manager” to this specific dataset. 
+2. User driven: You as node manager can guide (some of your) data providers to publish the data and metadata to the IPT themselves. Your main task will be to make sure that all relevant information and data for OBIS is available and that you perform the necessary quality checks before the data are released to OBIS. Once the Darwin Core Archive is created, the data provider should inform the node manager of this action, so he or she can do the necessary quality control checks. In order for the node manager to be able to look at the dataset, the data provider should add him or her as a “resource manager” to this specific dataset.
 
 In most cases, there will be a combination of these two approaches. The chosen approach will largely depend on the capacity, availability and willingness of your data provider to invest extra time in formatting and thoroughly describing their data. If you – as node manager – would prefer a partly user driven approach, the following steps to publishing marine data to OBIS briefly explains how you or a data provider can upload, standardize and publish a dataset on the OBIS node IPT, without the hassle of installing and maintaining an IPT instance. The data are published in your organization’s name. This guide is based on the Canadensys 7-step guide to publishing marine data: 
 
-Desmet, P. & C. Sinou. 2012. 7-step guide to data publication. Canadensys. [http://community.canadensys.net/publication/data-publication-guide](http://community.canadensys.net/publication/data-publication-guide). 
+Desmet, P. & C. Sinou. 2012. 7-step guide to data publication. Canadensys. [http://community.canadensys.net/publication/data-publication-guide](http://community.canadensys.net/publication/data-publication-guide).
 
-> Caution: Make sure you have obtained the rights from the data owners to publish their data! 
+> Caution: Make sure you have obtained the rights from the data owners to publish their data!
 
-##### Create your resource on the IPT 
+#### Create your resource on the IPT
 
 The  Integrated Publishing Toolkit (IPT), developed by GBIF, is an open source web application that can be customized by the OBIS node manager. The IPT-instance is used to publish and register all the datasets. To be able to create and manage your own dataset (called a “resource” by GBIF), you will need a user account. Contact your node manager to create one for you.  
 
@@ -54,8 +54,8 @@ Once you have your account, login at the top of the IPT page. Click on the tab M
 
 We therefore advise that the shortname:
 
-* is unique, descriptive and short (max. 100 characters) 
-* does not contain a space, comma, accents or special characters
+- is unique, descriptive and short (max. 100 characters)
+- does not contain a space, comma, accents or special characters
 
 Shortname good examples:
 
@@ -80,11 +80,11 @@ Once your source file has been uploaded correctly, a source file detail page wil
 
 Biodiversity data are published in the [Darwin Core](../darwincore) standard. It includes a list of defined terms and allows your data to be understood and used by others. It also allows an aggregator like OBIS or GBIF to integrate your data with other datasets. 
 
-Darwin Core mapping is the process of linking the fields in your resource file with the appropriate Darwin Core terms. It is the most challenging step in publishing your data for two reasons: 1) the list of Darwin Core terms can be overwhelming, so it might be difficult to select the ones that are appropriate for your dataset, and 2) the IPT currently only allows one-to-one mapping of fields, so the ease of mapping will depend on your database structure and on the feasibility of exporting as close to Darwin Core as possible. Contact your node manager or the OBIS secretariat at info@iobis.org to guide you through the steps, review your mapping, suggest terms etc.
+Darwin Core mapping is the process of linking the fields in your resource file with the appropriate Darwin Core terms. It is the most challenging step in publishing your data for two reasons: (1) the list of Darwin Core terms can be overwhelming, so it might be difficult to select the ones that are appropriate for your dataset, and (2) the IPT currently only allows one-to-one mapping of fields, so the ease of mapping will depend on your database structure and on the feasibility of exporting as close to Darwin Core as possible. Contact your node manager or the OBIS secretariat at info@iobis.org to guide you through the steps, review your mapping, suggest terms etc.
 
 You can find more information regarding Darwin Core mapping in the [IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#darwin-core-mappings) (including core types, extensions, auto-mapping, default values, value translation, etc.). 
 
-#### Publish your data
+#### Publish on the IPT
 
 Go to your resource overview page > Published Release and click Publish. The IPT will now generate your data as Darwin Core, and combine the data with the metadata and package it as a standardized zip-file called a "Darwin Core Archive". See the IPT manual for more details. 
 
@@ -92,12 +92,12 @@ Go to your resource overview page > Published Release and click Publish. The IPT
 
 Back on the resource overview page > Published Release, you can see the details of your first published dataset, including the publication date and the version number. Since your dataset is published privately, the only thing left to do is to click Visibility > Public (see the IPT manual) to make it available to everyone. Warning: please do not do this with your test dataset. 
 
-It is now listed on the IPT homepage and you can share and link to it, e.g.: `http://ipt.vliz.be/resource.do?r=kielbay70`. This would be a good time to notify any regional or thematic network you are involved in, which can also have an interest in your dataset. 
+It is now listed on the IPT homepage and you can share and link to it, e.g.: `http://ipt.vliz.be/resource.do?r=kielbay70`. This would be a good time to notify any regional or thematic network you are involved in, which can also have an interest in your dataset.
 
 Your published dataset is a static snapshot of your data and will not change until you upload an updated source file and click publish again or publish a new version (do not create a new resource). This procedure has the advantage that your dataset is always available, does not require a live internet connection to your database and can be easily shared. It also allows you to control the publication process more precisely: version 1, version 2, etc. and users are informed of how recent the data are (via the last publication date). 
 
-To view an older version of the metadata about the resource, just add the trailing parameter `&v=n` to the URL where `v` stands for "version", and `n` gets replaced by the version number, e.g., `http://ipt.vliz.be/ilvo/resource.do?r=zoopl_bpns&v=1`. In this way, specific versions of a resource's EML, RTF, and DwC-A files can be retrieved. Please note, the IPT's Archival Mode must be turned on in order for old versions of DwC-A to be stored (see [Configure IPT settings](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#configure-ipt-settings) section of the IPT manual). 
+To view an older version of the metadata about the resource, just add the trailing parameter `&v=n` to the URL where `v` stands for "version", and `n` gets replaced by the version number, e.g., `http://ipt.vliz.be/ilvo/resource.do?r=zoopl_bpns&v=1`. In this way, specific versions of a resource's EML, RTF, and DwC-A files can be retrieved. Please note, the IPT's Archival Mode must be turned on in order for old versions of DwC-A to be stored (see [Configure IPT settings](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#configure-ipt-settings) section of the IPT manual).
 
-#### Publish your metadata as a data paper
+### Publish your metadata as a data paper
 
-The Metadata expressed in the EML Profile standard can also be downloaded as a Rich Text Format (RTF) file. The latter can serve as a draft manuscript for a data paper ([First database-derived 'data paper' published in journal](http://www.eurekalert.org/pub_releases/2011-11/gbif-fd112711.php), which can be submitted for peer-review to e.g. a [Pensoft journal](http://journals.pensoft.net/). 
+The Metadata expressed in the EML Profile standard can also be downloaded as a Rich Text Format (RTF) file. The latter can serve as a draft manuscript for a data paper ([First database-derived 'data paper' published in journal](http://www.eurekalert.org/pub_releases/2011-11/gbif-fd112711.php)), which can be submitted for peer-review to e.g. a [Pensoft journal](http://journals.pensoft.net/). 

@@ -1,5 +1,7 @@
 ## How to format extendedMeasurementOrFact tables
+
 ### What data goes into eMoF
+
 Any data related to abiotic or biotic measurements, including sampling information and protocols should be included in the eMoF table. Measurement data can also go into the  [MeasurementOrFact](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml) extension, however OBIS recommends using the [extendedMeasurementOrFact](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) instead, particularly if your data is based on an Event core table.
 
 Required terms for eMoF include:
@@ -47,7 +49,7 @@ By linking `measurementType` and `measurementValue` with the identifiers `eventI
 ### Stepwise Guidance to Format eMoF Table (in Excel)
 
 1. Create a blank sheet and name it eMoF
-2. Add 9 column headers for: 
+2. Add 9 column headers for:
     * `eventID`, `occurrenceID`, `measurementType`, `measurementValue`, `measurementUnit`, `measurementTypeID`, `measurementValueID`, `measurementUnitID`, `measurementRemarks`
 3. Copy `eventID` values from your Occurrence table and paste into the `eventID` field in your new, blank eMoF table 
     * Repeat for `occurrenceID` from the Occurrence table
@@ -62,6 +64,7 @@ By linking `measurementType` and `measurementValue` with the identifiers `eventI
 Note the fields [sampleSizeValue](https://dwc.tdwg.org/terms/#dwc:sampleSizeValue), [samplingEffort](https://dwc.tdwg.org/terms/#dwc:samplingEffort), and [samplingProtocol](https://dwc.tdwg.org/terms/#dwc:samplingProtocol) from the Occurrence table can be documented as separate measurements on different rows in the eMoF table. E.g., `measurementType` = samplingProtocol, `measurementValue` = description of protocol. Any values in [sampleSizeUnit](https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit) fields should be placed in the `measurementUnit` field when transferred to the eMoF.
 
 If you would like to export Event data to the eMoF, see some example R code below. This example was provided by [Abby Benson](https://orcid.org/0000-0002-4391-107X) from the [OBIS-USA node](https://www.usgs.gov/ocean-biodiversity-information-system-usa).
+
 ```R
 library(dplyr)
 cruise <- unique(eventCore[c("eventID")]) #create a list of all unique eventIDs from your event table
@@ -74,4 +77,3 @@ measurementTypeID = "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/",
 measurementUnitID = "",
 occurrenceID = "")
 ```
-

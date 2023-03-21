@@ -1,19 +1,23 @@
 # (PART\*) Data Formatting {-}
+
 # Dataset structure
+
 Formatting data can be challenging. This section of the manual deals with how to format data for OBIS, beginning with an overview of dataset structure. 
 
 Deciding on your dataset structure is one of the first steps towards getting your data ready for publishing. At this step, there are no specific actions you need to do with your data, but it is important to determine which structure best suits your dataset before proceeding. Then, once you have decided on the dataset structure, you can continue formatting your data.
 
 ## When to use Event Core
+
 Event Core describes **when** and **where** a specific sampling event happened and contains information such as location and date. It covers:
 
 * When specific details are known about **how** a biological sample was taken and processed. These details can then be defined in the eMoF Extension with the newly developed [Q01 vocabulary](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/)
 * When the dataset contains abiotic measurements, or other biological measurements which are **related to an entire sample** (not a single specimen). For example a biomass measurement for an entire sample, not each species within the sample
 
-Event Core can be used in combination with the Occurrence and eMoF extensions. The identifier that links Event Core to the extension is the `eventID`. [`parentID`](identifiers.html) can also be used to give information on hierarchical sampling. 
+Event Core can be used in combination with the Occurrence and eMoF extensions. The identifier that links Event Core to the extension is the `eventID`. [`parentID`](identifiers.html) can also be used to give information on hierarchical sampling.
 `occurrenceID` can also be used in datasets with Event Core in order to link information between the Occurrence extension and the eMoF extension.
 
 ## When to use Occurrence Core
+
 Occurrence Core datasets describe **observations** and **specimen records** and cover instances when:
 **No information** on how the data was sampled or samples were processed is available
 
@@ -26,6 +30,7 @@ Occurrence Core is also often the preferred structure for museum collections, ci
 Datasets formatted in Occurrence Core can use the eMoF Extension for when you have biotic measurements or facts of your specimen. The DNA derived data extension can also be used to link to DNA sequences. The identifier that links Occurrence Core to the extension(s) is the `occurrenceID`.
 
 ## Extensions in OBIS
+
 Currently OBIS accepts the following extensions:
 
 * Occurrence
@@ -44,10 +49,9 @@ The extension file(s) accepted by OBIS (eMoF, Occurrence, DNA) are linked to you
 
 If your core file is based on occurrences (e.g., an observation), then any extensions are linked with `occurrenceID`. If your core file is based on events (e.g., a sampling event), then the linking identifier is `eventID`. Thus, multiple records in an extension file can have the same identifier which will link them to the same event or occurrence record (depending on which is the Core). The different linking identifiers are shown in the figure below.
 
-<img src="images/coretable-identifiers.jpg" class="img-responsive img-responsive-50"/>
+![Diagram of how the different core tables are linked to their extensions by different identifiers.](images/coretable-identifiers.jpg){width=50%}
 
-Let us consider a fictional plankton trawl sampling event to demonstrate how identifiers link Core and Extension tables in OBIS. This trawl used two types of nets, occurred in March 2013, and has an eventID `plankton-northsea-2013-03`. Suppose we have information about the types of trawl used and the species abundance from this trawling event. The information (e.g., date) of the sampling event itself would be found in the Event Core, whereas the abundance data and sampling methods would be in the eMoF table. How do we ensure the abundance and sampling method data is properly linked to the correct event? By using the same eventID for each record in the eMoF table, `plankton-northsea-2013-03`, the information is properly linked between the Event Core and the eMoF extension. 
-
+Let us consider a fictional plankton trawl sampling event to demonstrate how identifiers link Core and Extension tables in OBIS. This trawl used two types of nets, occurred in March 2013, and has an eventID `plankton-northsea-2013-03`. Suppose we have information about the types of trawl used and the species abundance from this trawling event. The information (e.g., date) of the sampling event itself would be found in the Event Core, whereas the abundance data and sampling methods would be in the eMoF table. How do we ensure the abundance and sampling method data is properly linked to the correct event? By using the same eventID for each record in the eMoF table, `plankton-northsea-2013-03`, the information is properly linked between the Event Core and the eMoF extension.
 
 ## Data formatting tools
 
