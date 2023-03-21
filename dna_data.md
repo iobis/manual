@@ -14,7 +14,7 @@ To ensure DNA data are useful to the broadest possible community, GBIF published
 4. Name references 
 5. Metadata only
 
-For a guide and decision tree on determining which category your data falls into, see the [Data packaging and mapping](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping) section of the GBIF guide. Refer to the [examples below](dna_data#edna-dna-derived-data.html) for use case examples of eDNA and DNA derived data (Category 1). 
+For a guide and decision tree on determining which category your data falls into, see the [Data packaging and mapping](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping) section of the GBIF guide. Refer to the [examples below](dna_data#edna--dna-derived-data.html) for use case examples of eDNA and DNA derived data (Category 1). 
 
 > Currently, genetic data **must** be published with Occurrence core, not Event core. eDNA and DNA derived data are then linked to the Occurrence core data table with the use of `occurrenceID` and/or `eventID`. See below for further guidance on compiling genetic data.
 
@@ -52,7 +52,7 @@ Then, you will need to format the DNADerivedData extension. The following (free-
 - DNA Derived | DwC: thresholdQuantificationCycle
 - DNA Derived | DwC: baselineValue
 
-For a complete list of terms you can map to, see [the DwC DNA Derived Data extension page](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml). See the [examples below](dna_data#edna-dna-derived-data.html) for use case examples. The Marine Biological Data Mobilization Workshop also has a [tutorial](https://ioos.github.io/bio_mobilization_workshop/edna-extension/#dna-derived-extension) for this type of data.
+For a complete list of terms you can map to, see [the DwC DNA Derived Data extension page](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml). See the [examples below](dna_data#edna--dna-derived-data.html) for use case examples. The Marine Biological Data Mobilization Workshop also has a [tutorial](https://ioos.github.io/bio_mobilization_workshop/edna-extension/#dna-derived-extension) for this type of data.
 
 When your data tables are formatted and you are ready to publish it on the IPT, it will follow the same process for [publishing on an IPT](data_publication.html). You will upload your source files, and add the Occurrence core Darwin Core mappings, and then the DNA Derived Data Darwin Core mappings. However the extension must first be [installed by the IPT administrator](data_publication#ipt-administration.html) (often the node manager). Once the extension is installed, you can add the Darwin Core DNA Derived Data mapping for that file.
 
@@ -230,4 +230,4 @@ If you wish to find records that have the DNADerivedData extension you can add t
 2. Open the Extensions section 
 3. Check the box for DNADerivedData
 4. Click save to create the layer
-[5. Download the data from the layer](access.html)
+5. [Download the data from the layer](access.html)

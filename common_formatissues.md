@@ -65,13 +65,13 @@ For specifics on when to use each of these and which other fields should be popu
 
 
 ### Temporal: Dates and times
-The date and time at which an event took place or an occurrence was recorded goes in `eventDate`. This field uses the ISO 8601 standard(https://en.wikipedia.org/wiki/ISO_8601). OBIS recommends using the extended ISO 8601 format with hyphens. Note that all dates in OBIS become translated to UTC during the [quality control process implemented by OBIS](LINK). Formatting your dates correctly ensures there will be no errors during this process.
+The date and time at which an event took place or an occurrence was recorded goes in `eventDate`. This field uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601). OBIS recommends using the extended ISO 8601 format with hyphens. Note that all dates in OBIS become translated to UTC during the [quality control process implemented by OBIS](dataquality.html). Formatting your dates correctly ensures there will be no errors during this process.
 
 ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use / as a separator. Date and times are separated by `T`. Timezones can be indicated at the end by using + or - the number of hours offset from UTC. If no timezone is indicated, then the time is assumed to be local time. When a date/time is recorded in UTC, a Z should be added at the end. Times must be written in the 24-hour clock system. If you do not know the time, you do not have to provide it. Please do not indicate unknown times as “00:00” as this indicates midnight.
 
 Not every piece of time information is necessary, but a generalization of how to format dates and times looks like:
 
-> YYYY-MM-DDT[hh]:[mm]:[ss][+/-XX OR Z]
+> `YYYY-MM-DDT[hh]:[mm]:[ss][+/-XX OR Z]`
 
 Some specific examples of acceptable ISO 8601 dates are:
 
@@ -122,7 +122,7 @@ Then you can use Excel to concatenate each field together, adding the time zone 
 
 **A caution about dates and Excel**
 
-Excel is unfortunately notorious for causing issues in saving dates. The Data Carpentries have produced [this exercise]((https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/) which demonstrates how Excel interprets dates and numbers, sometimes converting numbers into dates and vice versa. This exercise is simply a demonstration of Excel - it does not provide advice on formatting dates for OBIS.
+Excel is unfortunately notorious for causing issues in saving dates. The Data Carpentries have produced [this exercise](https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/) which demonstrates how Excel interprets dates and numbers, sometimes converting numbers into dates and vice versa. This exercise is simply a demonstration of Excel - it does not provide advice on formatting dates for OBIS.
 
 Date formats in Excel can be very dependent on your computer system region custom and not all of them have the ISO 8601 format included. Therefore you can type the date in the requested format but it will automatically revert the format according to your Windows system region settings. You can change your system region by: navigating to Control Panel > All Control Panel Items > Region) and select "English (United States)" or "English (United Kingdom)" and the YYYY-MM-DD format will appear among the choices within the Format cells - Date options. 
 
