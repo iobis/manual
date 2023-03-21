@@ -1,6 +1,6 @@
 ## Common Data formatting issues
 
-**Contents**
+**Contents:**
 
 - [Missing required fields](common_formatissues#missing-required-fields.html)
 - [Temporal issues: dates/times](common_formatissues#temporal-dates-and-times.html)
@@ -20,13 +20,13 @@ To resolve missing fields [marked as required](checklist.html) by OBIS, there ar
 
 - **`eventDate`**
 
-Ensure your eventDate is specified for each event, formatted according to [ISO 8601 standards](https://en.wikipedia.org/wiki/ISO_8601) (e.g., YYYY-MM-DD). We have developed [step by step guidelines](#temporal-dates-and-times) to help you format contemporary dates and durations into ISO formatting. If your date falls outside the range of acceptable dates - i.e., historical or geological data occurring before 1583 - please follow recommendations for [historical data](#historical-data).
+Ensure your eventDate is specified for each event, formatted according to [ISO 8601 standards](https://en.wikipedia.org/wiki/ISO_8601) (e.g., YYYY-MM-DD). We have developed [step by step guidelines](common_formatissues#temporal-dates-and-times.html) to help you format contemporary dates and durations into ISO formatting. If your date falls outside the range of acceptable dates - i.e., historical or geological data occurring before 1583 - please follow recommendations for [historical data](common_formatissues#historical-data.html).
 
 For any eventDate that is inferred from literature, you should document the original date in the `verbatimEventDate` field.
 
 - **`decimalLongitude`** and **`decimalLatitude`**
 
-First, if you have coordinate data, make sure they are [converted into decimal degrees](common_formatissues#converting-coordinates.html). If you do not have specific coordinate data then you must approximate the coordinates based on locality name. You can use the [Marine Regions gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to search for your region of interest and obtain midpoint coordinates. Guidelines for using this tool and for dealing with uncertain geolocations can be found [here](common_formatissues#geographical-formats). You will have to make some comments in the `georeferenceRemarks` field if you are estimating coordinates.
+First, if you have coordinate data, make sure they are [converted into decimal degrees](common_formatissues#converting-coordinates.html). If you do not have specific coordinate data then you must approximate the coordinates based on locality name. You can use the [Marine Regions gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to search for your region of interest and obtain midpoint coordinates. Guidelines for using this tool and for dealing with uncertain geolocations can be found [here](common_formatissues#geographical-formats.html). You will have to make some comments in the `georeferenceRemarks` field if you are estimating coordinates.
 
 - **`scientificName`**
 
@@ -71,24 +71,24 @@ Not every piece of time information is necessary, but a generalization of how to
 
 Some specific examples of acceptable ISO 8601 dates are:
 
-**Dates**
+**Dates:**
 
 - 1948-09-13
 - 1993-01/02
 - 1993-01
 - 1993
 
-**Dates with Specific Times**
+**Dates with Specific Times:**
 
 - 1973-02-28T15:25:00
 - 2008-04-25T09:53
 
-**Dates with Time Zones**
+**Dates with Time Zones:**
 
 - 2005-08-31T12:11+12
 - 2013-02-16T04:28Z
 
-**Date and Time Intervals**
+**Date and Time Intervals:**
 
 - 1993-01-26T04:39+12/1993-01-26T05:48+12
 
@@ -97,15 +97,15 @@ It is important to note that although ISO 8601 also supports ordinal dates (YYYY
 **A note about intervals…**
 Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact time, you should specify that information.
 
-If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See [example](common_formatissues.html).
+If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See [example](common_formatissues#how-to-handle-mixed-date-information.html).
 
 For uncertainty regarding the date of the event, see [guidelines](common_qc.html).
 
-**Tips**
+#### Tips
 
 To ensure your date is formatted correctly, it may be easiest to begin by populating the `year`, `month`, and `day` fields first. If the specific time of sampling is known, populate that into `eventTime` as well. When you fill these fields, we recommend ensuring the numbers are encoded as Text, not as General or numeric as Excel often tries to interpret what it thinks the content “should” be. Otherwise you may run into problems with Excel auto formatting your numbers in ways you don’t want. You can do this by highlighting the cells of interest, navigating to the Number Format on the Home ribbon and selecting “Text”. Be careful when you do this change of format, as some columns (e.g. time) may become formatted into a decimal or other unexpected format.
 
-![](images/excel-text-format.png){width=50%}
+![Screenshot of how to change data type in Excel](images/excel-text-format.png){width=50%}
 
 Then you can use Excel to concatenate each field together, adding the time zone at the end, using the general format:
 
@@ -113,14 +113,12 @@ Then you can use Excel to concatenate each field together, adding the time zone 
 =CONCAT(YEAR, "-", MONTH, "-", DAY, "T", EVENTTIME, TIMEZONE)
 ```
 
-![](images/excel-concatexample.png){width=40%}
+![Example of how to concatenate dates in Excel](images/excel-concatexample.png){width=40%}
 
 > Note
 > You can also use the Canadensys [date parsing](https://data.canadensys.net/tools/dates) tool to help you convert dates or parse them into component parts.
 
-**A caution about dates and Excel**
-
-Excel is unfortunately notorious for causing issues in saving dates. The Data Carpentries have produced [this exercise](https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/) which demonstrates how Excel interprets dates and numbers, sometimes converting numbers into dates and vice versa. This exercise is simply a demonstration of Excel - it does not provide advice on formatting dates for OBIS.
+**A caution about dates and Excel**: Excel is unfortunately notorious for causing issues in saving dates. The Data Carpentries have produced [this exercise](https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/) which demonstrates how Excel interprets dates and numbers, sometimes converting numbers into dates and vice versa. This exercise is simply a demonstration of Excel - it does not provide advice on formatting dates for OBIS.
 
 Date formats in Excel can be very dependent on your computer system region custom and not all of them have the ISO 8601 format included. Therefore you can type the date in the requested format but it will automatically revert the format according to your Windows system region settings. You can change your system region by: navigating to Control Panel > All Control Panel Items > Region and then select "English (United States)" or "English (United Kingdom)". The YYYY-MM-DD format will appear among the choices within the Format cells - Date options.
 
@@ -171,7 +169,7 @@ More specific guidelines to address historical data complications are under deve
 
 All coordinates provided in the `decimalLatitude` or `decimalLongitude` fields in OBIS must be in decimal degrees. To convert coordinates from degrees-minutes-seconds into decimal degrees, you can use [this Coordinate Conversion tool](https://obis.shinyapps.io/coordinates/) that OBIS has developed. This tool will convert any coordinate (or list of coordinates on a separate line) in a degrees-minutes-seconds format into decimal degrees, even partial coordinates. To use it, simply copy and paste your coordinates into the box provided and click Convert. For example:
 
-![](images/coordinate_conversion.png){width=60%}
+![Screenshot of how to use the OBIS coordinate converter](images/coordinate_conversion.png){width=60%}
 
 The [Map Tool tutorial](access#mapper.html) also reviews use of the coordinate conversion tool.
 
@@ -185,23 +183,23 @@ In OBIS, the spatial reference system to be documented in `geodeticDatum` is [EP
 
 You can load a .csv file containing your coordinates to be reprojected into [QGIS](https://qgis.org/en/site/forusers/download.html). Opening a new project, first set the global projection to WGS84 EPSG:4326. In the bottom right corner, click the Project Properties to change the Project Coordinate Reference System (CRS). A pop up window will allow you to search for and select WGS84 EPSG:4326. Click OK.
 
-![](images/qgis_screenshot1.png){width=60%}
+![Screenshot of QGIS interface](images/qgis_screenshot1.png){width=60%}
 
 To load your .csv file containing the longitude and latitude coordinates, go to Layer < Add Layer < Add Delimited Text layer...
 
-![](images/qgis_screenshot2.png){width=60%}
+![How to add a .csv with coordinate data in QGIS](images/qgis_screenshot2.png){width=60%}
 
 A popup window will allow you to browse and select your .csv file. Open the `Geometry Definition` portion of the window and map the field containing longitude values to the `X field` and latitude to the `Y field`. Select the CRS that these coordinates were recorded as from the drop down menu. Then click `Add` and close the window.
 
-![](images/qgis_screenshot3.png){width=50%}
+![Screenshot showing how to specify CRS of a .csv file when importing into QGIS](images/qgis_screenshot3.png){width=50%}
 
 Go to Vector < Geometry Tools < Add Geometry Attributes
 
-![](images/qgis_screenshot4.png){width=50%}
+![Screenshot showing where to find the Geometry Attributes in QGIS menu](images/qgis_screenshot4.png){width=50%}
 
 Make sure the input layer is your coordinate file. Under the `Calculate using`, select Project CRS (because we set the Project CRS to the desired projection). Click `Run`. This will create a new layer with an additional two columns called Xcoord (longitude) and Ycoord (latitude). These fields contain the coordinates in the desired projection (i.e., WGS84). You can view these columns by right clicking and opening the layer’s attribute table. To export the file, right click the layer and click Make Permanent. Then save the .csv.
 
-![](images/qgis_screenshot5.png){width=40%}
+![Screenshot showing how to save a temporary layer in QGIS for export](images/qgis_screenshot5.png){width=40%}
 
 For more details see this [QGIS guide on reprojection](https://docs.qgis.org/3.22/en/docs/training_manual/processing/crs.html?highlight=reproject).
 

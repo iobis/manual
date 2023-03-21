@@ -1,6 +1,6 @@
 ### DNA dervived data
 
-**Contents**
+**Contents:**
 
 - [Introduction](dna_data#introduction.html)
 - [eDNA & DNA Derived use cases](dna_data#edna--dna-derived-data-example.html)
@@ -28,7 +28,7 @@ Broadly speaking, you will need to have information on the taxonomy and sequence
 
 In addition to the [usual required terms for Occurrence datasets](format_occurrence.html), you should consider the following additional terms:
 
-**Occurrence core table highly recommended terms**
+**Occurrence core table highly recommended terms:**
 
 - Class Occurrence | DwC: organismQuantity
 - Class Occurrence | DwC: OrganismQuantityType
@@ -39,7 +39,7 @@ In addition to the [usual required terms for Occurrence datasets](format_occurre
 
 Then, you will need to format the DNADerivedData extension. The following (free-text) terms are required or highly recommended. Note that some terms are more relevant depending on the methodologies used (e.g., metabarcoding vs qPCR).
 
-**DNA Derived data extension highly recommended terms**
+**DNA Derived data extension highly recommended terms:**
 
 - DNA Derived | DwC: DNA_sequence
 - DNA Derived | DwC: sop

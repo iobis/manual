@@ -42,7 +42,7 @@ Class Measurement | DwC:measurementValueID
 
 Structuring data for the eMoF extension may be one of the more confusing extensions in the data formatting process. It may help to think of this extension as the table that contains all information related to any kind of measurement.
 
-Rather than documenting each of your measurements in separate columns (e.g., columns for biomass, abundance, length, gear size, percent cover, etc.), these measurements will be condensed into one column: `measurementValue`. `measurementType` describes what the measurement actually is, for example whether it is an abundance value, length, percent cover, or any other biotic/abiotic measurement. `measurementUnit` is used to indicate the unit of the measurement. 
+Rather than documenting each of your measurements in separate columns (e.g., columns for biomass, abundance, length, gear size, percent cover, etc.), these measurements will be condensed into one column: `measurementValue`. `measurementType` describes what the measurement actually is, for example whether it is an abundance value, length, percent cover, or any other biotic/abiotic measurement. `measurementUnit` is used to indicate the unit of the measurement.
 
 By linking `measurementType` and `measurementValue` with the identifiers `eventID` and/or `occurrenceID`, you can have measurements linked to *one* event (e.g. temperature), measurements link to occurrence records (e.g. length), as well as sampling facts that are linked to events (size, gear, etc.). Information specifically related to how samples were taken will have the measurementTypes: `sampleSizeValue`, `sampleSizeUnit`, `samplingEffort`, and `samplingProtocol`.
 
@@ -51,7 +51,7 @@ By linking `measurementType` and `measurementValue` with the identifiers `eventI
 1. Create a blank sheet and name it eMoF
 2. Add 9 column headers for:
     * `eventID`, `occurrenceID`, `measurementType`, `measurementValue`, `measurementUnit`, `measurementTypeID`, `measurementValueID`, `measurementUnitID`, `measurementRemarks`
-3. Copy `eventID` values from your Occurrence table and paste into the `eventID` field in your new, blank eMoF table 
+3. Copy `eventID` values from your Occurrence table and paste into the `eventID` field in your new, blank eMoF table
     * Repeat for `occurrenceID` from the Occurrence table
 4. Copy the first column of measurement values, paste into the `measurementValue` field
     * Fill `measurementType` with the name of the variable (e.g., count, length, etc.)

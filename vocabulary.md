@@ -151,13 +151,13 @@ If you have already tried looking for a P01 code and were unable to identify a s
 #### How to Submit a GitHub Vocabulary Request
 
 1. Navigate to <https://github.com/nvs-vocabs/OBISVocabs/issues> and click on the New Issue button.
-![](images\Vocab_GithubRequest_1-NewIssue.png){width=50%}
+![Screenshot of how to request a new vocabulary on Github](images/Vocab_GithubRequest_1-NewIssue.png){width=50%}
 
 2. Click Get started
-![](images\Vocab_GithubRequest_2-GetStarted.png){width=50%}
+![Screenshot of submitting an issue to Github](images/Vocab_GithubRequest_2-GetStarted.png){width=50%}
 
 3. Fill in the title with short details of your request or issue. Then fill in the description. It is recommended to list any existing terms that are similar to your request, or concepts that are sub-components of the request.
-![](images\Vocab_GithubRequest_3-IssueSubmission.png){width=50%}
+![Screenshot for how to request a new measurementType on Github](images/Vocab_GithubRequest_3-IssueSubmission.png){width=50%}
 
 4. *Example*: An issue was created to address difficulties in identifying P01 codes for sex rather than gender. Gender is a concept generally applied to humans, whereas “sex” is more applicable for animals. Thus the request was to either modify the current gender P01 code, or create a P01 code that specifies sex, not gender. At the time the request was issued, when users searched for a P01 term for “sex”, only species-specific terms were available.
-![](images\Vocab_GithubRequest_4-example.png){width=50%}
+![Example of previously requested new term on Github](images/Vocab_GithubRequest_4-example.png){width=50%}
