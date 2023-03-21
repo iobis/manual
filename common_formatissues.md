@@ -109,13 +109,13 @@ For uncertainty regarding the date of the event, see [guidelines](common_qc.html
 
 To ensure your date is formatted correctly, it may be easiest to begin by populating the `year`, `month`, and `day` fields first. If the specific time of sampling is known, populate that into `eventTime` as well. When you fill these fields, we recommend ensuring the numbers are encoded as Text, not as General or numeric as Excel often tries to interpret what it thinks the content “should” be. Otherwise you may run into problems with Excel auto formatting your numbers in ways you don’t want. You can do this by highlighting the cells of interest, navigating to the Number Format on the Home ribbon and selecting “Text”. Be careful when you do this change of format, as some columns (e.g. time) may become formatted into a decimal or other unexpected format.
 
-![](images\excel-text-format.png){width=50%}
+![](images/excel-text-format.png){width=50%}
 
 Then you can use Excel to concatenate each field together, adding the time zone at the end, using the general format:
 ```Excel
 =CONCAT(YEAR, "-", MONTH, "-", DAY, "T", EVENTTIME, TIMEZONE)
 ```
-![](images\excel-concatexample.png){width=40%}
+![](images/excel-concatexample.png){width=40%}
 
 > Note
 > You can also use the Canadensys [date parsing](https://data.canadensys.net/tools/dates) tool to help you convert dates or parse them into component parts.
