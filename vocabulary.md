@@ -54,7 +54,7 @@ We provide some specific guidance for these URI fields below.
 You can use codes from other collections (e.g. P06, Q01) for `measurementValueID` and `measurementUnitID` fields, but for `measurementTypeID` you must always use a code from the P01 collection. The BODC has a [Vocabulary Builder](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/) that we recommend using to assist you in selecting a P01 code.
 
 ##### Selecting P01 codes for measurementTypeID
-P01 codes are concepts that are constructed from several associated elements (see [P01 wheel](https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf) in order to describe a measurement type. It is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object being measured, where was the measurement taken, in what environment, by what kind of methods? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. To further understand the P01 code and the semantic model it is based on, you can read documentation [here](https://github.com/nvs-vocabs/P01).
+P01 codes are concepts that are constructed from several associated elements (see [P01 wheel](https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf)) in order to describe a measurement type. It is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object being measured, where was the measurement taken, in what environment, by what kind of methods? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. To further understand the P01 code and the semantic model it is based on, you can read documentation [here](https://github.com/nvs-vocabs/P01).
 
 The P01 collection is found [here](http://vocab.nerc.ac.uk/collection/P01/current/) and can be [searched through the NERC vocabulary server](https://vocab.nerc.ac.uk/search_nvs/P01/).
 
@@ -87,8 +87,8 @@ measurementType	|	Object of interest	|	suggested measurementTypeID P01 code(s)	|
 | sex	|	Biological entity specified elsewhere	|	http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/	|
 | Life stage	|	Biological entity specified elsewhere	|	http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/	|
 | Length	|	Biological entity specified elsewhere	|	https://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=length%20%25entity%20specified%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=	|
-| Water temperature	|		|	http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/ OR look through [list](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25temperature%25water%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=)	|
-| Salinity	|		|	http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/  or see [list](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25salinity%25water%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=) for specific methods	|
+| Water temperature	|		|	http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/ OR see [list](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25temperature%25water%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=)	|
+| Salinity	|		|	http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/  OR see [list](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25salinity%25water%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=) for specific methods	|
 | Length of sample track	|	Sampling track	|	http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/	|
 
 

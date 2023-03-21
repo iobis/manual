@@ -3,8 +3,8 @@
 **Contents**
 
 - [Missing required fields](common_formatissues#missing-required-fields.html)
-- [Temporal issues: dates/times](common_formatissues#temporal-dates-and-times)
-- [Spatial issues: coordinates, geographical formats](common_formatissues#spatial)
+- [Temporal issues: dates/times](common_formatissues#temporal-dates-and-times.html)
+- [Spatial issues: coordinates, geographical formats](common_formatissues#spatial.html)
 
 ### Missing required fields
 
@@ -124,7 +124,7 @@ Then you can use Excel to concatenate each field together, adding the time zone 
 
 Excel is unfortunately notorious for causing issues in saving dates. The Data Carpentries have produced [this exercise](https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/) which demonstrates how Excel interprets dates and numbers, sometimes converting numbers into dates and vice versa. This exercise is simply a demonstration of Excel - it does not provide advice on formatting dates for OBIS.
 
-Date formats in Excel can be very dependent on your computer system region custom and not all of them have the ISO 8601 format included. Therefore you can type the date in the requested format but it will automatically revert the format according to your Windows system region settings. You can change your system region by: navigating to Control Panel > All Control Panel Items > Region) and select "English (United States)" or "English (United Kingdom)" and the YYYY-MM-DD format will appear among the choices within the Format cells - Date options. 
+Date formats in Excel can be very dependent on your computer system region custom and not all of them have the ISO 8601 format included. Therefore you can type the date in the requested format but it will automatically revert the format according to your Windows system region settings. You can change your system region by: navigating to Control Panel > All Control Panel Items > Region and then select "English (United States)" or "English (United Kingdom)". The YYYY-MM-DD format will appear among the choices within the Format cells - Date options. 
 
 If your computer language is not set to English, you may encounter additional issues with Excel. It may change the format of your date even after you save the document. Changing your computer system’s language to English can help, but you may still run into issues. You may also try using other office management softwares, like LibreOffice which in this case is more friendly. In general, we advise you to be very careful when formatting the `eventDate` field, and to select the “Text” formatting (as above) and to save your file as a .CSV.
 
@@ -174,7 +174,7 @@ All coordinates provided in the `decimalLatitude` or `decimalLongitude` fields i
 
 ![](images/coordinate_conversion.png){width=60%}
 
-The [Map Tool tutorial video](LINK) also reviews use of the coordinate conversion tool.
+The [Map Tool tutorial](access#mapper.html) also reviews use of the coordinate conversion tool.
 
 If your coordinates are in UTMs, then coordinate conversion can be a bit trickier. We suggest using the following [conversion tool](http://rcn.montana.edu/resources/Converter.aspx) to convert from UTM to decimal degrees. Note it is very important to ensure you have the correct UTM zone, otherwise the coordinate conversion will be incorrect. You can use this [ArcGIS map tool](https://www.arcgis.com/apps/View/index.html?appid=7fa64a25efd0420896c3336dc2238475) to visually confirm UTM zones.
 
