@@ -11,30 +11,30 @@ Required terms for eMoF include:
 
 Other potential fields are shown in the table below (also listed in the [checklist](checklist.html)):
 
-Class Event | DwC:habitat
-Class Event | DwC:sampleSizeUnit
-Class Event | DwC:sampleSizeValue
-Class Event | DwC:samplingEffort
-Class Event | DwC:samplingProtocol
-Class Occurrence | DwC:behavior
-Class Occurrence | DwC:individualCount
-Class Occurrence | DwC:lifeStage
-Class Occurrence | DwC:organismQuantity
-Class Occurrence | DwC:organismQuantityType
-Class Occurrence | DwC:sex
-Class Occurrence | DwC:type
-Class Measurement | DwC:measurementAccuracy
-Class Measurement | DwC:measurementDeterminedBy
-Class Measurement | DwC:measurementDeterminedDate
-Class Measurement | DwC:measurementID
-Class Measurement | DwC:measurementMethod
-Class Measurement | DwC:measurementRemarks
-Class Measurement | DwC:measurementType*
-Class Measurement | DwC:measurementTypeID*
-Class Measurement | DwC:measurementUnit*
-Class Measurement | DwC:measurementUnitID*
-Class Measurement | DwC:measurementValue
-Class Measurement | DwC:measurementValueID
+* Class Event | DwC:habitat
+* Class Event | DwC:sampleSizeUnit
+* Class Event | DwC:sampleSizeValue
+* Class Event | DwC:samplingEffort
+* Class Event | DwC:samplingProtocol
+* Class Occurrence | DwC:behavior
+* Class Occurrence | DwC:individualCount
+* Class Occurrence | DwC:lifeStage
+* Class Occurrence | DwC:organismQuantity
+* Class Occurrence | DwC:organismQuantityType
+* Class Occurrence | DwC:sex
+* Class Occurrence | DwC:type
+* Class Measurement | DwC:measurementAccuracy
+* Class Measurement | DwC:measurementDeterminedBy
+* Class Measurement | DwC:measurementDeterminedDate
+* Class Measurement | DwC:measurementID
+* Class Measurement | DwC:measurementMethod
+* Class Measurement | DwC:measurementRemarks
+* Class Measurement | DwC:measurementType*
+* Class Measurement | DwC:measurementTypeID*
+* Class Measurement | DwC:measurementUnit*
+* Class Measurement | DwC:measurementUnitID*
+* Class Measurement | DwC:measurementValue
+* Class Measurement | DwC:measurementValueID
 
 *For `measurementTypeID`, `measurementUnitID`, and `measurementValueID` you must use controlled vocabulary terms. We know choosing the correct vocabulary term can be challenging, so we have provided some guidance on how to [select the correct vocabulary](vocabulary.html). It is strongly recommended to ensure these fields are filled as correctly as possible. Missing or incorrect terms will be documented in the [measurementOrFact reports](https://r.obis.org/mof/).
 

@@ -169,7 +169,7 @@ More specific guidelines to address historical data complications are under deve
 
 All coordinates provided in the `decimalLatitude` or `decimalLongitude` fields in OBIS must be in decimal degrees. To convert coordinates from degrees-minutes-seconds into decimal degrees, you can use [this Coordinate Conversion tool](https://obis.shinyapps.io/coordinates/) that OBIS has developed. This tool will convert any coordinate (or list of coordinates on a separate line) in a degrees-minutes-seconds format into decimal degrees, even partial coordinates. To use it, simply copy and paste your coordinates into the box provided and click Convert. For example:
 
-![Screenshot of how to use the OBIS coordinate converter](images/coordinate_conversion.png){width=60%}
+![Screenshot of how to use the OBIS coordinate converter](images/coordinate_conversion.png){width=40%}
 
 The [Map Tool tutorial](access#mapper.html) also reviews use of the coordinate conversion tool.
 
@@ -187,7 +187,7 @@ You can load a .csv file containing your coordinates to be reprojected into [QGI
 
 To load your .csv file containing the longitude and latitude coordinates, go to Layer < Add Layer < Add Delimited Text layer...
 
-![How to add a .csv with coordinate data in QGIS](images/qgis_screenshot2.png){width=60%}
+![How to add a .csv with coordinate data in QGIS](images/qgis_screenshot2.png){width=50%}
 
 A popup window will allow you to browse and select your .csv file. Open the `Geometry Definition` portion of the window and map the field containing longitude values to the `X field` and latitude to the `Y field`. Select the CRS that these coordinates were recorded as from the drop down menu. Then click `Add` and close the window.
 
@@ -195,7 +195,7 @@ A popup window will allow you to browse and select your .csv file. Open the `Geo
 
 Go to Vector < Geometry Tools < Add Geometry Attributes
 
-![Screenshot showing where to find the Geometry Attributes in QGIS menu](images/qgis_screenshot4.png){width=50%}
+![Screenshot showing where to find the Geometry Attributes in QGIS menu](images/qgis_screenshot4.png){width=30%}
 
 Make sure the input layer is your coordinate file. Under the `Calculate using`, select Project CRS (because we set the Project CRS to the desired projection). Click `Run`. This will create a new layer with an additional two columns called Xcoord (longitude) and Ycoord (latitude). These fields contain the coordinates in the desired projection (i.e., WGS84). You can view these columns by right clicking and opening the layer’s attribute table. To export the file, right click the layer and click Make Permanent. Then save the .csv.
 

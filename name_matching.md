@@ -19,7 +19,7 @@ You can also use the [Interim Register of Marine and Nonmarine Genera (IRMNG)](h
 
 The OBIS node managers have agreed to match all the scientific names in their datasets according to the following Name Matching workflow:
 
-![Workflow for matching a list of taxon names to WoRMS](images/WoRMS-taxa-match.png){width=60%}
+![Workflow for matching a list of taxon names to WoRMS](images/WoRMS-taxa-match.png){width=40%}
 
 #### Step 1: Match with WoRMS
 

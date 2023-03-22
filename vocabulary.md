@@ -86,7 +86,7 @@ We have provided a list of commonly used measurementTypes and associated P01 cod
 
 In some cases there are multiple potential P01 codes associated with a measurementType. Be sure to choose carefully. It is better to leave the field blank and return to it later than to use an incorrect vocabulary.
 
-measurementType | Object of interest | suggested measurementTypeID P01 code(s) |
+|measurementType | Object of interest | suggested measurementTypeID P01 code(s) |
 |---------- |-------------|---------- |
 | sex | Biological entity specified elsewhere | <http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/> |
 | Life stage | Biological entity specified elsewhere | <http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/> |
