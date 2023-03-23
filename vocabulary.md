@@ -90,7 +90,7 @@ In some cases there are multiple potential P01 codes associated with a measureme
 |---------- |-------------|---------- |
 | sex | Biological entity specified elsewhere | <http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/> |
 | Life stage | Biological entity specified elsewhere | <http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/> |
-| Length | Biological entity specified elsewhere | <https://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=length%20%25entity%20specified%25&options=identifier>,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2= |
+| Length | Biological entity specified elsewhere | [list](https://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=length%20%25entity%20specified%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=) |
 | Water temperature |  | <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/> OR see [list](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25temperature%25water%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=) |
 | Salinity |  | <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/>  OR see [list](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25salinity%25water%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=) for specific methods |
 | Length of sample track | Sampling track | <http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/> |

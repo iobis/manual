@@ -3,5 +3,5 @@ table {
   overflow-x: scroll !important;
 }
 .book .book-body .page-wrapper .page-inner {
-  max-width: 95% !important;
+  max-width: 80% !important;
 }

@@ -50,21 +50,19 @@ Once you have formatted your data for OBIS, or have received a formatted dataset
 To use `obistools` to conduct quality control, you can follow this general order:
 
 1. Check that the taxa match with WoRMS
-    * obistools::match_taxa
+    * [`obistools::match_taxa`](https://github.com/iobis/obistools#taxon-matching)
 2. Check that all required fields are present in the occurrence table
-    * obistools::check_fields
+    * [`obistools::check_fields`](https://github.com/iobis/obistools#check-required-fields)
 3. Check coordinates
-    * Plot them on a map to identify any points that appear outside the scope of the dataset (obistools::plot_map or plot_map_leaflet)
+    * Plot them on a map to identify any points that appear outside the scope of the dataset [`obistools::plot_map`](https://github.com/iobis/obistools#plot-points-on-a-map)
     * Identify points with obistools::identify_map
-    * Check that points are not on land (obistools::check_onland)
-    * Ensure depth ranges are valid (obistools::check_depth)
-4. Check for statistical outliers which may have had data entry errors
-    * obistools::check_outliers_species and obistools::check_outliers_dataset 
-5. Check that the eventID and parentEventID are structured correctly (obistools::check_eventids)
-    * Ensure all eventIDs in extensions have matching eventIDs in the core table (obistools::check_extension_eventids)
-6. Check that eventDate is formatted properly  (obistools::check_eventdate)
-7. Generate a data quality report to summarize any issues that may exist in the dataset
-    * obistools::report
+    * Check that points are not on land [`obistools::check_onland`](https://github.com/iobis/obistools#check-points-on-land)
+    * Ensure depth ranges are valid [`obistools::check_depth`](https://github.com/iobis/obistools#check-depth)
+4. Check for [statistical outliers](https://github.com/iobis/obistools#check-outliers) which may have had data entry errors
+    * obistools::check_outliers_species and obistools::check_outliers_dataset
+5. Check that the eventID and parentEventID are structured correctly [`obistools::check_eventids`](https://github.com/iobis/obistools#check-outliers)
+    * Ensure all eventIDs in extensions have matching eventIDs in the core table [`obistools::check_extension_eventids`](https://github.com/iobis/obistools#check-eventid-in-an-extension)
+6. Check that eventDate is formatted properly [`obistools::check_eventdate`](https://github.com/iobis/obistools#check-eventdate)
 
 ### QC with R package Hmisc
 
@@ -74,5 +72,32 @@ It will summarize each of your variables for a given data field. This can help y
 
 ```R
 library(Hmisc)
+library(Hmisc)
+data<-read.csv("example_data_occur.csv")
+describe(data)
+ 
+ 12  Variables      407  Observations
+------------------------------------------------------------------------------------------------------------------
+CollectionCode 
+       n  missing distinct    value 
+     407        0        1  BIOFUN1 
+                  
+Value      BIOFUN1
+Frequency      407
+Proportion       1
+------------------------------------------------------------------------------------------------------------------
+eventID 
+       n  missing distinct 
+     407        0       27 
+
+lowest : BIOFUN1_BF1A01 BIOFUN1_BF1A02 BIOFUN1_BF1A03 BIOFUN1_BF1A04 BIOFUN1_BF1A05
+highest: BIOFUN1_BF1M3  BIOFUN1_BF1M4  BIOFUN1_BF1M6  BIOFUN1_BF1M8  BIOFUN1_BF1M9 
+------------------------------------------------------------------------------------------------------------------
+occurrenceID 
+       n  missing distinct 
+     407        0      407 
+
+lowest : CSIC_BIOFUN1_1   CSIC_BIOFUN1_10  CSIC_BIOFUN1_100 CSIC_BIOFUN1_101 CSIC_BIOFUN1_102
+highest: CSIC_BIOFUN1_95  CSIC_BIOFUN1_96  CSIC_BIOFUN1_97  CSIC_BIOFUN1_98  CSIC_BIOFUN1_99 
 
 ```

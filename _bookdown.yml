@@ -25,8 +25,8 @@ rmd_files:
   - dna_data.md
   - other_data_types.md
   - data_qc.md
-  - mofreports.md
   - dataquality.md
+  - mofreports.md
   - lifewatch_qc.md
   - common_qc.md
   - data_publication.md

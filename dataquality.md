@@ -115,19 +115,3 @@ df %>%
 16 Tmetonyx barentsi                 worms_annotation_await_editor           2
 17 Triaxonida                        worms_annotation_todo                   6
 ```
-### Other QC tools
-
-The following is a list of other tools you can use to help you perform quality checks on your data:
-
-* EMODnet Biocheck
-  * [Web UI](https://rshiny.lifewatch.be/BioCheck/)
-  * [R package](https://github.com/EMODnet/EMODnetBiocheck)
-* [Lifewatch data services](https://www.lifewatch.be/data-services/)
-* [obistools](https://github.com/iobis/obistools)
-* [Bio data guide](https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md)
-* [WoRMS taxon match tool](https://www.marinespecies.org/aphia.php?p=match)
-* [Other WoRMS web services, incl. taxon match](https://www.marinespecies.org/aphia.php?p=webservice)
-* Excel Conditional Formating tool
-  * Excel > Home > Conditional Formating > Highlight cells Rules > Duplicate values...
-* [GBIF data validator](https://www.gbif.org/tools/data-validator)
-* [Python library for OBIS QC](https://github.com/cioos-siooc/pyobistools) developed by Canadian Integrated Ocean Observing System
