@@ -164,7 +164,7 @@ The IPT will now generate your data as Darwin Core, and combine the data with th
 
 Your dataset will only be harvested by GBIF when you change Registration to Registered. This step is not needed for OBIS to harvest your datasets. Please do not register your dataset with GBIF if your dataset is already published in GBIF by another publisher. Note that the IPT itself must be [registered with GBIF](ipt_admin.html) in order to publish to GBIF. The node manager can do this.
 
-![Screenshot showing where to register your dataset with GBIF. This is only available if the IPT itself is registered with GBIF as well.](images/ipt-ss8-gbifpub.png){width=50%}
+![Screenshot showing where to register your dataset with GBIF. This is only available if the IPT itself is registered with GBIF as well.](images/ipt-ss8-gbifreg.png){width=50%}
 
 Back on the resource overview page > Published Release, you can see the details of your first published dataset, including the publication date and the version number. Since your dataset is published privately, the only thing left to do is to click Visibility to Public (see the IPT manual) to make it available to everyone.
 

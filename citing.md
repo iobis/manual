@@ -1,15 +1,17 @@
 ## Citing Data from OBIS
 
+Depending on how you access data from OBIS, there are different ways you should cite downloaded datasets.
+
 General OBIS citation:
 
 ```
 OBIS (YEAR) Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.obis.org.
 ```
 
-Use the following format to cite data retrieved from OBIS (dataset citations are available in the zip downloads as html file):
+For individual datasets retrieved from OBIS (dataset citations are available in the zip downloads as html file):
 
 ```
-[Dataset citation available from metadata] [Data provider details] [Dataset] (Available: Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.obis.org. Accessed: YYYY-MM-DD.
+[Dataset citation available from metadata] [Data provider details] [Dataset] (Available: Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.obis.org. Accessed: YYYY-MM-DD).
 ```
 
 For example:
@@ -18,7 +20,7 @@ For example:
 Sousa Pinto, I., Viera, R. (Year: if not provided use year from dataset publication date) Monitoring of the intertidal biodiversity of rocky beaches with schools in Portugal 2005-2010. CIIMAR - Interdisciplinary Centre of Marine and Environmental Research, Porto. [Dataset] (Available: Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.obis.org. Accessed: 2015-01-01)
 ```
 
-When data represents a subset of many datasets taken from the integrated OBIS database, you can, in addition to cite the individual datasets (and taking into account the restrictions set at each dataset level), also cite the OBIS database as follows:
+When data represents a subset of many datasets taken from the integrated OBIS database (e.g. downloaded from the [Mapper](https://mapper.obis.org/)), you can, in addition to citing the individual datasets (and taking into account the restrictions set at each dataset level), also cite the OBIS database as follows:
 
 ```
 OBIS (YEAR) [Data e.g. Distribution records of Eledone cirrhosa (Lamarck, 1798)] [Dataset] (Available: Ocean Biodiversity Information System. Intergovernmental Oceanographic Commission of UNESCO. www.obis.org. Accessed: YYYY-MM-DD)
