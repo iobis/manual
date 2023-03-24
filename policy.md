@@ -15,13 +15,7 @@ Unless data are collected through activities funded by IOC/IODE, neither UNESCO,
 
 #### Data sharing agreement
 
-The data providers retain all rights and responsibilities associated with the data they make available to OBIS via the OBIS nodes. The OBIS nodes warrant that they have made the necessary agreements with the original data providers that it can make the data available to OBIS data under the following Creative Commons licenses:
-
-* [CC-0](http://creativecommons.org/about/cc0)
-* [CC-BY](http://creativecommons.org/licenses/by/4.0/) 
-* [CC-BY-NC](http://creativecommons.org/licenses/by-nc/4.0/)
-
-[CC-0](http://creativecommons.org/about/cc0) is the preferred one and [CC-BY-NC](http://creativecommons.org/licenses/by-nc/4.0/) the least preferred. 
+The data providers retain all rights and responsibilities associated with the data they make available to OBIS via the OBIS nodes. The OBIS nodes warrant that they have made the necessary agreements with the original data providers that it can make the data available to OBIS data under the [Creative Commons licenses](data_publication.html#licenses).
 
 The data providers are responsible for the completeness of the data and metadata profiles. When data is made available to OBIS, OBIS is granted permission to:
 

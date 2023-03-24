@@ -20,7 +20,7 @@ OBIS ignores records that do not meet a number of standards. For example, all sp
 
 For each dataset published, a quality report is generated where the number of dropped records and other quality issues will be flagged. Such reports can also be found when searching for data in OBIS. For example, if we searched for ‘Crustacea’ records, the following data quality report is given:
 
-~[](images/crustacean-droppedrecords.png)
+![Number of Crustacean records dropped](images/crustacean-droppedrecords.png)
 
 We can see that >110,222 Crustacean records have been dropped, mostly due to records missing coordinates or species being flagged as non-marine. Because species are determined as being marine by WoRMS, we acknowledge that sometimes species are marked as `not_marine` erroneously.For specific advice on this topic, see the [common QC issues page](common_qc.html#non-marine-species).
 

@@ -137,21 +137,17 @@ OBIS recommends providing information about how an identification was made, for 
 
 Examples:
 
-```
 | scientificNameID                          | scientificName        | kingdom  | phylum   | class      |
 |-------------------------------------------|-----------------------|----------|----------|------------|
 | urn:lsid:marinespecies.org:taxname:142004 | Yoldiella nana        | Animalia | Mollusca | Bivalvia   |
 | urn:lsid:marinespecies.org:taxname:140584 | Ennucula tenuis       | Animalia | Mollusca | Bivalvia   |
 | urn:lsid:marinespecies.org:taxname:131573 | Terebellides stroemii | Animalia | Annelida | Polychaeta |
-```
 
-```
 | order       | family           | genus        | specificEpithet | scientificNameAuthorship |
 |-------------|------------------|--------------|-----------------|--------------------------|
 | Nuculanoida | Yoldiidae        | Yoldiella    | nana            | (Sars M., 1865)          |
 | Nuculoida   | Nuculidae        | Ennucula     | tenuis          | (Montagu, 1808)          |
 | Terebellida | Trichobranchidae | Terebellides | stroemii        | Sars, 1835               |
-```
 
 _Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/resource?r=largenet_k2)._
 
@@ -163,7 +159,6 @@ The use and definitions for additional NO signs (identificationQualifier) can be
 
 Examples:
 
-```
 | scientificName      | scientificNameAuthorship                | scientificNameID                          | taxonRank | identificationQualifier  | taxonConceptID                      |
 |---------------------|-----------------------------------------|-------------------------------------------|-----------|--------------------------|-------------------------------------|
 |Pelagia              | Péron & Lesueur, 1810                   | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.                |Pelagia gen. nov.                    |
@@ -179,8 +174,7 @@ Examples:
 |Aristeidae           | Wood-Mason in Wood-Mason & Alcock, 1891 | urn:lsid:marinespecies.org:taxname:106725 | family    | stet.                    |Aristeidae stet.                     |
 |Nematocarcinus       | Milne-Edwards, 1881                     | urn:lsid:marinespecies.org:taxname:107015 | genus     | sp.indet.                |Nematocarcinus sp.indet.             |
 |Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                 |Brisinga gen.inc.                    |
-|Brisinga costata     | Verrill, 1884                           | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                  |Brisinga costata sp.inc.             |
-```
+|Brisinga costata     | Verrill, 1884                           | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                  |Brisinga costata sp.inc.             |56888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
 
 ##### Occurrence
 
