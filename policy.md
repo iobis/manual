@@ -9,7 +9,7 @@ The OBIS data policy is based on the principles of timely, free and unrestricted
 * [IOC data exchange policy](http://iode.org/policy)
 * [IOC guidelines on transfer of marine technology](http://unesdoc.unesco.org/images/0013/001391/139193m.pdf)
 * [IODE objectives](http://www.iode.org/index.php?option=com_content&amp;view=article&amp;id=385&amp;Itemid=34)
-* [OBIS vision and mission](/about)
+* [OBIS vision and mission](https://obis.org/about/)
 
 Unless data are collected through activities funded by IOC/IODE, neither UNESCO, IOC, IODE, the OBIS Secretariat, nor its employees or contractors, own the data in OBIS and they take no responsibility for the quality of data or products based on OBIS, or the use or misuse that people may make of them nor can it control or limit the use of any data or products accessible through its website, other than through the use of a published Data Sharing and Use Terms and Conditions.
 
@@ -29,10 +29,10 @@ In pursuance of copyright compliance, OBIS endeavours to secure permission from 
 
 The data in OBIS are freely available to everyone, following the principles of equitable access and benefit sharing and supporting capacity development and participation of all IOC Member States in global programmes. However, data users are expected to give attribution to the data providers (see Citations) and the use of data from OBIS should happen in the light of fair use, i.e.:
 
-* Recognize that the OBIS portal holds the master copy of the integrated database and hence users should refrain from online redistribution of the OBIS database. Because the OBIS database is updated regularly (every so months) with new datasets and revisions of existing datasets, copies of the OBIS database will become out of date quickly. If you wish to build access web services on top of OBIS, please contact the [OBIS secretariat](/contact/).
+* Recognize that the OBIS portal holds the master copy of the integrated database and hence users should refrain from online redistribution of the OBIS database. Because the OBIS database is updated regularly (every so months) with new datasets and revisions of existing datasets, copies of the OBIS database will become out of date quickly. If you wish to build access web services on top of OBIS, please contact the [OBIS secretariat](https://obis.org/contact/).
 * Respect the data providers, and provide helpful feedback on data quality.
 * In the case you are a custodian of biogeographic data yourself you should take action to also publish these data through OBIS.
-* Consider sponsoring or partnering with OBIS and its OBIS nodes in grant proposal writing. Creating a global database like OBIS cannot happen without the, often voluntary, contribution of many scientists and data managers all over the world. Several activities, such as the coordination, data aggregation, quality control, database and website maintenance require resources including manpower at national and international level. A list of sponsors can be found [here](/about/sponsor)
+* Consider sponsoring or partnering with OBIS and its OBIS nodes in grant proposal writing. Creating a global database like OBIS cannot happen without the, often voluntary, contribution of many scientists and data managers all over the world. Several activities, such as the coordination, data aggregation, quality control, database and website maintenance require resources including manpower at national and international level. A list of sponsors can be found [here](https://obis.org/about/sponsor/)
 
 #### Disclaimer
 

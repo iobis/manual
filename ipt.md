@@ -8,7 +8,7 @@
 - [Upload data](ipt.html#upload-data)  
 - [Map to Darwin Core](ipt.html#map-your-data-to-darwin-core)  
 - [Add metadata](ipt.html#add-metadata)  
-- [Publish on te IPT](ipt.html#publish-on-the-ipt)  
+- [Publish on the IPT](ipt.html#publish-on-the-ipt)  
 - [Publish your data as a dataset paper](ipt.html#publish-your-metadata-as-a-data-paper)
 
 ### Introduction to the IPT
@@ -134,7 +134,7 @@ Finally, click Save. You may return to the Overview page by clicking Back. To ad
 
 The IPT may identify Redundant terms if certain terms appear in the e.g., Event core and Occurrence extension. If your Occurrence extension (or core) contains information about individualCount and organismQuantity, you can map such fields in both the Occurrence and the eMoF as a measurementType.
 
-![Screenshot showing other DwC extensions you can map to](images/ipt-ss6-othermaps){width=50%}
+![Screenshot showing other DwC extensions you can map to](images/ipt-ss6-othermaps.png){width=50%}
 
 You can find more information regarding Darwin Core mapping in the [IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#darwin-core-mappings) (including core types, extensions, auto-mapping, default values, value translation, etc.).
 

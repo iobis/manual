@@ -10,7 +10,7 @@ Once this has been configured, a data provider or admin can easily reserve a DOI
 
 ![Screenshot indicating how to reserve a DOI for your dataset](images/ipt-doi.png){width=50%}
 
-### User tracking?
+### User tracking
 
 OBIS tracks the number of times your dataset is downloaded. This information is available on your dataset’s page under the Statistics box.
 

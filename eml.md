@@ -143,14 +143,12 @@ The acronym or working title could still be documented in the metadata, so there
 
 > **Caution:** Always consult the data provider when changing a dataset title to a more workable and descriptive version.
 
-```
-Originally received title     Title Recommended by Node Manager
--------------------------     ---------------------------------
-BIOCEAN                       BIOCEAN database on deep sea benthic fauna
-Biomôr                        Benthic data from the Southern Irish Sea from 1989-1991
-Kyklades                      Zoobenthos of the Kyklades (Aegean Sea)
-REPHY                         Réseau de Surveillance phytoplanctonique
-```
+|Originally received title |    Title Recommended by Node Manager|
+|------------------------- |    ---------------------------------|
+|BIOCEAN               |        BIOCEAN database on deep sea benthic fauna|
+|Biomôr                 |       Benthic data from the Southern Irish Sea from 1989-1991|
+|Kyklades              |        Zoobenthos of the Kyklades (Aegean Sea)|
+|REPHY                |         Réseau de Surveillance phytoplanctonique|
 
 ##### Abstract
 
@@ -169,7 +167,7 @@ _Example:_ The Louis-Marie herbarium grants a priority to the Arctic-alpine, sub
 
 The EML has several possible roles/functions to describe a contact, creator, metadata provider and associated party.
 
- The `contact` is the person or organization that curates the resource and who should be contacted to get more information or to whom questions with the resource or data should be addressed. Although a number of fields are not required, we strongly recommend providing as much information as possible, and in particular the email address. This will also be the contact information that appears on the OBIS metadata pages.
+The `contact` is the person or organization that curates the resource and who should be contacted to get more information or to whom questions with the resource or data should be addressed. Although a number of fields are not required, we strongly recommend providing as much information as possible, and in particular the email address. This will also be the contact information that appears on the OBIS metadata pages.
 
 The `creator` is the person or organization responsible for the original creation of the resource content. When there are multiple creators, the one that bears the greatest responsibility is the resource creator, and other people can be added as associated parties with a role such as ‘originator’, ‘content provider’, 'principal investigator', etc.
 
@@ -206,13 +204,13 @@ OBIS has published its guidelines on the sharing and use of data [here](policy.h
   - to create => to produce works from the database
   - to adapt => to modify, transform and build upon the database
 
-- In case of CC-0:
+**In case of CC-0:**
 `public domain`: CC-0 is the preferred option identified by the OBIS steering group. You waive any copyright you might have over the data(set) and dedicate it to the public domain. You cannot be held liable for any (mis)use of the data either. Although CC-0 doesn’t legally require users of the data to cite the source, it does not take away the moral responsibility to give attribution, as is common in scientific research. A good blog on why using CC-0 can be found [here](https://community.canadensys.net/2012/why-we-should-publish-our-data-under-cc0).
 
-- In case of CC-BY:
+**In case of CC-BY:**
 `Attribution`: You must attribute any public use of the database, or works produced from the database, in the manner specified in the license. For any use or redistribution of the database, or works produced from it, you must make clear to others the license of the database and keep intact any notices on the original database.
 
-- In case of CC-BY-NC:
+**In case of CC-BY-NC:**
 `non-commercial`: like CC-BY but commercial use is not allowed. This licence can be problematic when the data is re-used in scientific journals.
 
 ##### Coverage
