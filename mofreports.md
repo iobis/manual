@@ -1,4 +1,4 @@
-### How To Use MoF Report and Tool
+## How To Use MoF Report and Tool
 
 A MEASUREMENT TYPES dataset report has been added regarding currently used measurementType and associated measurementTypeID(s), located near the bottom of the individual dataset pages (if measurementType in use for the dataset).
 
@@ -18,7 +18,7 @@ then selected Florida Keys Reef Visual Census 1994, and scrolled down to MEASURE
 
 <img src="images/mofreports/floridakeys.png" class="img-responsive"/>
 
-To locate other datasets using these MEASUREMENT TYPES, use this active filtering MoF tool <https://mof.obis.org/" target="_blank">https://mof.obis.org/>, sort by measurementType (click column header) and scroll to measurementType(s) of interest
+To locate other datasets using these MEASUREMENT TYPES, use this active filtering MoF tool <https://mof.obis.org>, sort by measurementType (click column header) and scroll to measurementType(s) of interest
 
 <img src="images/mofreports/locate.png" class="img-responsive"/>
 

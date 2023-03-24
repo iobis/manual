@@ -285,7 +285,8 @@ This overview will contribute to a better understanding of the data as these pub
 
 This IPT section should only be filled out if there are specimens held in a museum.
 If relevant, it is strongly recommended that this information is supplied by the data provider or left blank. The collection name, specimen preservation method, and curatorial units should be provided, as applicable.
-![Screenshot of the Collection Data page showing what information can be provided for museum specimens](images/ipt-ss17-meta-collection.png)
+
+![Screenshot of the Collection Data page showing what information can be provided for museum specimens](images/ipt-ss17-meta-collection.png){width=50%}
 
 ##### External Links
 
