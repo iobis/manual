@@ -106,7 +106,7 @@ See the table below for a summary of the different tools available.
 
 When setting up your WoRMS taxon match, to obtain the full classification for your list of species, simply check the box labeled “Classification”. This will add classification output in addition to the requested identifiers to your taxon match file, including Kingdom, Phylum, Class, Order, Family, Genus, Subgenus, Species, and Subspecies.
 
-![WoRMS classification box](images/WoRMS_classification.png){width=50%}
+![WoRMS classification box](images/WoRMS_classification.png){width=70%}
 
 #### What to do with non-matching names?
 
@@ -123,7 +123,7 @@ See <https://www.marinespecies.org/tutorial_taxonmatch.php> for definitions of e
 
 In each of these cases, WoRMS will try to suggest a species to match your uncertain taxon. Take care to ensure the correct species name is selected. This is especially true for near_2 or near_3 matches. When checking a potential matched name, we recommend referencing the authority and higher taxonomic levels of a given suggestion. For example, if you know the ambiguous species is a sponge, but one of the suggestions is for a mammal, you know that is not the correct name.
 
-![Example of choices from an abiguous match](images/WoRMS-resolve-ambiguousMatches.png){width=50%}
+![Example of choices from an abiguous match](images/WoRMS-resolve-ambiguousMatches.png){width=70%}
 
 In cases where no match can be found, WoRMS will indicate none. For these cases you should follow these steps:
 

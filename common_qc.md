@@ -85,6 +85,19 @@ Since we are obtaining all this locality data from Marine Regions, we must also 
 |---|---|---|---|---|---|---|
 |Bay of Fundy | <http://marineregions.org/mrgid/4289> | 44.97985204 | -65.80601556 | 196726 | Marine Regions | Coordinates are a midpoint inferred from location name|
 
+#### DwC Terms obtained from Maptool and Gazetteers
+
+Below is a table summarizing the different DwC terms you can obtain from the OBIS Maptool or from the Gazeteers discussed above.
+
+| Maptool Term | Marine Regions Term | DarwinCore Term | Notes |
+|--|--|--|--|
+| Latitude | Latitude | decimalLatitude |  |
+| Longitude | Longitude | decimalLongitude |  |
+| Depth |  | maximumDepthInMeters | No minimum depth is provided from either Mapper or Marine Regions |
+|  | MRGID | locationID |  |
+| radius | precision (not always available) | coordinateUncertaintyInMeters |  |
+| WKT |  | footprintWKT |  |
+
 ### Uncertain taxonomic information
 
 In case of uncertain taxonomic identifications, and/or the scientific name contains qualifiers such as cf., ?, or aff., then you should:
