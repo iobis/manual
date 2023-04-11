@@ -15,7 +15,7 @@
 
 #### Introduction to Darwin Core
 
-[Darwin Core](http://rs.tdwg.org/dwc/) is a body of standards (i.e., identifiers, labels, definitions) that facilitate sharing biodiversity informatics. It provides stable [terms](https://dwc.tdwg.org/terms/) and vocabularies related to biological objects/data and their collection. Darwin Core is maintained by [TDWG (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases)](http://tdwg.org/]. Stable terms and vocabularies are important for ensuring the datasets in OBIS have consistently interpretable fields. By following Darwin Core standards, both data providers and users can be certain of the definition and quality of data.
+[Darwin Core](http://rs.tdwg.org/dwc/) is a body of standards (i.e., identifiers, labels, definitions) that facilitate sharing biodiversity informatics. It provides stable [terms](https://dwc.tdwg.org/terms/) and vocabularies related to biological objects/data and their collection. Darwin Core is maintained by [TDWG (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases)](http://tdwg.org/). Stable terms and vocabularies are important for ensuring the datasets in OBIS have consistently interpretable fields. By following Darwin Core standards, both data providers and users can be certain of the definition and quality of data.
 
 ##### History of Darwin Core and OBIS
 
@@ -120,7 +120,7 @@ The following DwC terms are related to the Class _MaterialSample_:
 
 ##### Taxonomy and identification
 
-`scientificName` (required term) should always contain the originally recorded scientific name, even if the name is currently a synomym. This is necessary to be able to track back records to the original dataset. The name should be at the lowest possible taxonomic rank, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc are also acceptable. We recommend to not include authorship in `scientificName`, and only use `scientificNameAuthorship` for that purpose. The `scientificName` term should only contain the name and not identification qualifications (such as ?, confer or affinity), which should instead be supplied in the `IdentificationQualifier` term, see examples below. `taxonRemarks` can capture comments or notes about the taxon or name.
+`scientificName` (required term) should always contain the originally recorded scientific name, even if the name is currently a synonym. This is necessary to be able to track back records to the original dataset. The name should be at the lowest possible taxonomic rank, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc. are also acceptable. We recommend to not include authorship in `scientificName`, and only use `scientificNameAuthorship` for that purpose. The `scientificName` term should only contain the name and not identification qualifications (such as ?, confer or affinity), which should instead be supplied in the `IdentificationQualifier` term, see examples below. `taxonRemarks` can capture comments or notes about the taxon or name.
 
 A [WoRMS](http://www.marinespecies.org/) LSID should be added in `scientificNameID` (required term), OBIS will use this identifier to pull the taxonomic information from the World Register of Marine Species (WoRMS) into OBIS and attach it to your dataset. This information includes:
 
@@ -178,13 +178,13 @@ Examples:
 
 ##### Occurrence
 
-`occurrenceID` (required term) is an identifier for the occurrence record and should be persistent and globally unique. If the dataset does not yet contain (globally unique) occurrenceIDs, then they should be created. There are no guidelines yet on designing the persistence of this ID, the level of uniqueness (from dataset to global) and the precise algorithm and format for generating the ID, but in the absence of a persistent globally unique identifier, one could be constructed by combining the `institutionCode`, the `collectionCode` and the `catalogNumber` (or autonumber in the absence of a catalogNumber), see further below. Note that the inclusion of occurrenceID is also necessary for datasets in the [OBIS-ENV-DATA](data_format#obis-env-data.html) format.
+`occurrenceID` (required term) is an identifier for the occurrence record and should be persistent and globally unique. If the dataset does not yet contain (globally unique) occurrenceIDs, then they should be created. Guideline for ID creation can be found [here](identifiers.html)
 
 `occurrenceStatus` (required term) is a statement about the presence or absence of a taxon at a location. It is an important term, because it allows us to distinguish between presence and absence records. It is a required term and should be filled in with either `present` or `absent`.
 
 A few terms related to quantity: `organismQuantity` and `organismQuantityType`, have been added to the TDWG ratified Darwin Core. This is a lot more versatile than the older `individualCount` field. However, OBIS recommends to use the [Extended MeasurementorFact extension](data_format.html#extendedmeasurementorfact-extension-emof) for quantitative measurements because of the standardization of terms and the fact that you can link these measurements to sampling events and factual sampling information.
 
-Please take note that OBIS recommends all quantitative measurements and sampling facts to be treated in the `ExtendedMeasurementOrFact` extension and not in the Darwin Core files.
+Please take note that OBIS recommends all quantitative measurements and sampling facts to be placed in the `ExtendedMeasurementOrFact` extension and not in the Darwin Core files.
 
 In the case specimens were collected and stored (e.g. museum collections), the `catalogNumber` and `preparations` terms can be used to provide the identifier for the record in the collection and to document the preparation and preservation methods. The term `typeStatus` see above (under identification) can be used in this context too.
 
@@ -214,9 +214,7 @@ _Data from [A summary of benthic studies in the sluice dock of Ostend during 197
 
 When the basisOfRecord is a _preservedSpecimen_, _LivingSpecimen_ or _FossilSpecimen_ please also add the `institutionCode`, `collectionCode` and `catalogNumber`, which will enable people to visit the collection and re-examine the material. Sometimes, for example in case of living specimens, a dataset can contain records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection. In this case please add the event type information in `type` (see [OBIS manual: event](darwin_core#event.html)).
 
-`institutionCode` identifies the custodian institute (often by acronym), `collectionCode` identifies the collection or dataset within that institute. Collections cannot belong to multiple institutes, so all records within a collection should have the same `institutionCode`. The `catalogNumber` is an identifier for the record within the dataset or collection.
-
-`occurrenceID` is detailed in [Identifiers](identifiers#occurrenceid.html)
+`institutionCode` identifies the custodian institute (often by acronym), `collectionCode` identifies the collection or dataset within that institute. Collections cannot belong to multiple institutes, so all records within a collection should have the same `institutionCode`. The `collectionID` is an identifier for the record within the dataset or collection.
 
 `bibliographicCitation` allows for providing different citations on record level, while a single citation for the entire dataset can and should be provided in the metadata (see [EML](eml.html)). The citation at record level can have the format of a chapter in a book, where the book is the dataset citation. The record citation will have preference over the dataset citation. We do not, however, recommend to create different citations for every record, as this will explode the number of citations and will hamper the re-use of data.
 
@@ -271,26 +269,11 @@ _Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as pla
 
 ##### Time
 
-The date and time at which an occurrence was recorded goes in `eventDate`. This term uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601). OBIS recommends using the extended ISO 8601 format with hyphens.
+The date and time at which an occurrence was recorded goes in `eventDate`. This term uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601) and OBIS recommends using the extended ISO 8601 format with hyphens.
 
 <img src="https://imgs.xkcd.com/comics/iso_8601.png" class="img-responsive"/>
 
-ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use `/` as a separator. Date and time are separated by `T`. Times can have a time zone indicator at the end, if this is not the case then the time is assumed to be local time. When a time is UTC, a `Z` is added. Some examples of ISO 8601 dates are:
-
-```text
-1973-02-28T15:25:00
-2005-08-31T12:11+12
-1993-01-26T04:39+12/1993-01-26T05:48+12
-2008-04-25T09:53
-1948-09-13
-1993-01/02
-1993-01
-1993
-```
-
-Besides year, month and day numbers, ISO 8601 also supports ordinal dates (year and day number within that year) and week dates (year, week, and day number within that week). These dates are less common and have the formats `YYYY-DDD` (for example `2015-023`) and `YYYY-Www-D` (for example `2014-W26-3`).
-
-ISO 8601 [durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) should not be used.
+More specific guidelines on formatting dates and times can be found in the [Common Data formatting issues page](common_formatissues#temporal-dates-and-times)
 
 ##### Sampling
 

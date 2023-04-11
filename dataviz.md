@@ -1,5 +1,7 @@
 # (PART\*) Data Visualization and Analysis {-}
 
+# Data Visualization
+
 ## Example notebooks using data from OBIS
 
 Here are a few R notebooks showcasing the robis package:

@@ -2,9 +2,9 @@
 
 **Contents:**
 
-- [Missing required fields](common_formatissues#missing-required-fields.html)
-- [Temporal issues: dates/times](common_formatissues#temporal-dates-and-times.html)
-- [Spatial issues: coordinates, geographical formats](common_formatissues#spatial.html)
+- [Missing required fields](#missing-required-fields)
+- [Temporal issues: dates/times](#temporal-dates-and-times)
+- [Spatial issues: coordinates, geographical formats](#spatial)
 
 ### Missing required fields
 
