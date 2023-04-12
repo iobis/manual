@@ -74,7 +74,7 @@ Our search returned 5 results from different sources (indicated in brackets). So
 
 Notice that no region has the exact same geographic extent. Let’s select the IHO Bay of Fundy locality (the first search result) to ensure we are covering the entire area of the Bay of Fundy, but not the Gulf. Inspecting the rest of the page, there is a lot of other useful information we can use. We can populate the following OBIS fields for our dataset, copying the information outlined in the red boxes:
 
-1. `locationID` from MRGID: http://marineregions.org/mrgid/4289
+1. `locationID` from MRGID: <http://marineregions.org/mrgid/4289>
 2. `decimalLatitude` and `decimalLongitude` latitude and longitude coordinates of the location’s midpoint in decimal degrees: 44.97985204, -65.80601556
 3. `coordinateUncertaintyInMeters` precision: 196726 meters
 ![Screenshot of Marine Region placedetails, highlighting important information for OBIS](images/MarineRegions-Gazetteer_placedetails){width=40%}
@@ -89,14 +89,14 @@ Since we are obtaining all this locality data from Marine Regions, we must also 
 
 Below is a table summarizing the different DwC terms you can obtain from the OBIS Maptool or from the Gazeteers discussed above.
 
-| Maptool Term | Marine Regions Term | DarwinCore Term | Notes |
+| DarwinCore Term | Maptool Term | Marine Regions Term | Notes |
 |--|--|--|--|
-| Latitude | Latitude | decimalLatitude |  |
-| Longitude | Longitude | decimalLongitude |  |
-| Depth |  | maximumDepthInMeters | No minimum depth is provided from either Mapper or Marine Regions |
-|  | MRGID | locationID |  |
-| radius | precision (not always available) | coordinateUncertaintyInMeters |  |
-| WKT |  | footprintWKT |  |
+| decimalLatitude | Latitude | Latitude |  |
+| decimalLongitude | Longitude | Longitude |  |
+| maximumDepthInMeters | Depth |  | No minimum depth is provided from either Mapper or Marine Regions |
+| locationID |  | MRGID |  |
+| coordinateUncertaintyInMeters | radius | precision (not always available) |  |
+| footprintWKT | WKT |  |  |
 
 ### Uncertain taxonomic information
 
