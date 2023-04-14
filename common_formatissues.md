@@ -57,7 +57,7 @@ For records pertaining to an observation in the wild, you should use:
 
 For records pertaining to literature data, `basisOfRecord` should always reflect the evidence upon which the Occurrence record was based. For example, a researcher's record based on photographs should specify `MachineObservation`, otherwise specifications should be `HumanObservation` (see [relevant GitHub discussion](https://github.com/tdwg/dwc-qa/issues/134#issuecomment-491827863)).
 
-For specifics on when to use each of these and which other fields should be populated along with them, see the guidelines on [record-level terms](darwin_core#record-level-terms.html).
+For specifics on when to use each of these and which other fields should be populated along with them, see the guidelines on [record-level terms](darwin_core.html#record-level-terms).
 
 ### Temporal: Dates and times
 
@@ -97,7 +97,7 @@ It is important to note that although ISO 8601 also supports ordinal dates (YYYY
 **A note about intervals…**
 Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact time, you should specify that information.
 
-If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See [example](common_formatissues#how-to-handle-mixed-date-information.html).
+If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See [example](#how-to-handle-mixed-date-information).
 
 For uncertainty regarding the date of the event, see [guidelines](common_qc.html).
 
