@@ -1,13 +1,20 @@
 ## Common Quality Control issues
 
-### Missing required fields
+**Content:**
+
+- [Uncertain temporal range](#uncertain-temporal-range)
+- [Uncertain geolocation](#uncertain-geolocation)
+  - [How to use OBIS Maptool](#how-to-use-obis-map-tool)
+  - [How to use Gazetteers to obtain geolocation information](#how-to-use-marine-regions-gazetteer-tool)
+- [Uncertain taxonomic information](#uncertain-taxonomic-information)
+- [Uncertain measurements](#uncertain-measurements)
 
 ### Uncertain temporal range
 
 When the eventDate or temporal scope of your dataset is in question or provided in an invalid format (e.g., textual description), there are a number of options to ensure the most accurate date is provided.
 
 1. You may provide a range of dates in the ISO 8601 format if the range of dates is certain. Do not include a date range if you are making assumptions. Notes about any assumptions or interpretations on date ranges can be documented in the `eventRemarks` field.
-    * Be careful when entering date ranges. For example, entering 1870/1875-08-04 is equivalent to any date between 1870 and 1875-08-04. Date ranges can be used in this way to capture some level of uncertainty in when an event occurred.
+    - Be careful when entering date ranges. For example, entering 1870/1875-08-04 is equivalent to any date between 1870 and 1875-08-04. Date ranges can be used in this way to capture some level of uncertainty in when an event occurred.
 2. If only parts of the date are known (e.g., year but not month and day), you may provide the date in ISO 8601 format while excluding the unknown elements. **Do not use zero** to populate incomplete dates, simply end the date with the known information (e.g., 2011-03 instead of 2011-03-00). Additionally, if the year is unknown, you should only populate the `month` and `day` fields because `eventDate` cannot be formatted to exclude year. In these cases, `eventDate` is not necessary to fill.
 3. If date was provided as a textual description that is accurately interpretable, include the text description in the `verbatimEventDate` field. Then provide the interpreted date in ISO 8601 format in the `eventDate` field. Be sure to document any other important information in ‘eventRemarks’.
 4. For historical dates that do not conform to the ISO 8601 format, [guidelines](common_formatissues.html#historical-data) are still under development. But the dwc:class:GeologicalContext can be used to capture some information for records pertaining to fossilized specimens.
@@ -16,19 +23,19 @@ When the eventDate or temporal scope of your dataset is in question or provided 
 
 Sometimes locality information can be difficult to interpret, especially if records originate from historical data with vague descriptions, or descriptions/names of areas that no longer exist. If your dataset is missing `decimalLongitude` and `decimalLatitude`, but the locality name is given, there are a number of approaches you can take. You can:
 
-* Use the OBIS [Map Tool](https://obis.org/maptool/) to [obtain a WKT](access.html#mapper) string for point, line, or polygon features to put in the `footprintWKT` field. The corresponding projection should be placed in the `footprintSRS` field. Note the accepted spatial reference system for OBIS is EPSG:4326 (WGS84). The [Marine Regions Gazetteer](https://www.marineregions.org/gazetteer.php?p=search) is available for use within the Map tool to help find locations.
-* Search for locations with the [Marine Regions Gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to obtain coordinates and a `locationID`. For information on how to use this tool, [see below](LINK to below tutorial).
-  * You can also use the [Getty Thesaurus of Geographic Names](http://www.getty.edu/research/tools/vocabularies/tgn/) or Google Maps. [See below](#how-to-use-obis-map-tool)
-  * **Note:** Always be sure to fill in the `georeferenceSources` field to indicate the sources you used to obtain locality information when appropriate
-* If you have a set of points, a line, or a polygon (perhaps from the Map tool), you can find the centroid of the features using either [obistools::calculate_centroid](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) or [PostGIS](https://postgis.net/docs/ST_PointOnSurface.html), and then enter this coordinate into the `decimalLatitude` and `decimalLongitude` fields. This PostGIS guideline will help you select a centroid that is guaranteed to fall within your designated area.
-* Estimate `coordinateUncertaintyinMeters` that is wide enough to cover the area
-  * If the location is provided as an array or WKT format, you can use R package [obistools::calculate_centroid](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) to obtain coordinate uncertainty.
-  * Use the [OBIS maptool](https://obis.org/maptool/) to obtain from the “radius” column. This is only applicable for lines or polygons, not point features.
+- Use the OBIS [Map Tool](https://obis.org/maptool/) to [obtain a WKT](access.html#mapper) string for point, line, or polygon features to put in the `footprintWKT` field. The corresponding projection should be placed in the `footprintSRS` field. Note the accepted spatial reference system for OBIS is EPSG:4326 (WGS84). The [Marine Regions Gazetteer](https://www.marineregions.org/gazetteer.php?p=search) is available for use within the Map tool to help find locations.
+- Search for locations with the [Marine Regions Gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to obtain coordinates and a `locationID`. For information on how to use this tool, [see below](LINK to below tutorial).
+  - You can also use the [Getty Thesaurus of Geographic Names](http://www.getty.edu/research/tools/vocabularies/tgn/) or Google Maps. [See below](#how-to-use-obis-map-tool)
+  - **Note:** Always be sure to fill in the `georeferenceSources` field to indicate the sources you used to obtain locality information when appropriate
+- If you have a set of points, a line, or a polygon (perhaps from the Map tool), you can find the centroid of the features using either [obistools::calculate_centroid](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) or [PostGIS](https://postgis.net/docs/ST_PointOnSurface.html), and then enter this coordinate into the `decimalLatitude` and `decimalLongitude` fields. This PostGIS guideline will help you select a centroid that is guaranteed to fall within your designated area.
+- Estimate `coordinateUncertaintyinMeters` that is wide enough to cover the area
+  - If the location is provided as an array or WKT format, you can use R package [obistools::calculate_centroid](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) to obtain coordinate uncertainty.
+  - Use the [OBIS maptool](https://obis.org/maptool/) to obtain from the “radius” column. This is only applicable for lines or polygons, not point features.
 
 For data that only has **textual descriptions**:
 
-* Try GBIF’s [GEOLocate Web Application](https://geo-locate.org/web/default.html). You can use this tool for one location at a time with the [Standard Client](https://geo-locate.org/web/WebGeoref.aspx), or upload a CSV file for [batch processing](https://geo-locate.org/web/WebFileGeoref.aspx). This tool lets you enter text descriptions in the “Locality String” field, and other relevant locality information (e.g. country, state, county) to obtain geographic coordinates.
-* Use this [Biodiversity Enhanced Location Services](https://localityservice.uc.r.appspot.com/) tool developed by VertNet. It can translate textual descriptions and provide decimalLatitude, decimalLongitude, geodeticDatum, and coordinateUncertaintyInMeters as a csv sent to an email address. For more information on this service, see the associated [GitHub](https://github.com/VertNet/bels).
+- Try GBIF’s [GEOLocate Web Application](https://geo-locate.org/web/default.html). You can use this tool for one location at a time with the [Standard Client](https://geo-locate.org/web/WebGeoref.aspx), or upload a CSV file for [batch processing](https://geo-locate.org/web/WebFileGeoref.aspx). This tool lets you enter text descriptions in the “Locality String” field, and other relevant locality information (e.g. country, state, county) to obtain geographic coordinates.
+- Use this [Biodiversity Enhanced Location Services](https://localityservice.uc.r.appspot.com/) tool developed by VertNet. It can translate textual descriptions and provide decimalLatitude, decimalLongitude, geodeticDatum, and coordinateUncertaintyInMeters as a csv sent to an email address. For more information on this service, see the associated [GitHub](https://github.com/VertNet/bels).
 
 GBIF also provides some guidelines for [difficult localities](https://docs.gbif.org/georeferencing-best-practices/1.0/en/#difficult-localities) as well as other [georeferencing tips](https://docs.gbif.org/georeferencing-quick-reference-guide/1.0/en/#georeferencing-methods-by-locality-type) for different geographic features, such as when only a distance or heading is provided (e.g., 10 km off Sao Paulo’s coast, north of Fiji).
 
@@ -89,7 +96,7 @@ Since we are obtaining all this locality data from Marine Regions, we must also 
 
 Below is a table summarizing the different DwC terms you can obtain from the OBIS Maptool or from the Gazeteers discussed above.
 
-| DarwinCore Term | Maptool Term | Marine Regions Term | Notes |
+|DarwinCore Term | Maptool Term | Marine Regions Term | Notes |
 |--|--|--|--|
 | decimalLatitude | Latitude | Latitude |  |
 | decimalLongitude | Longitude | Longitude |  |
@@ -102,19 +109,19 @@ Below is a table summarizing the different DwC terms you can obtain from the OBI
 
 In case of uncertain taxonomic identifications, and/or the scientific name contains qualifiers such as cf., ?, or aff., then you should:
 
-* Put the name of the lowest possible taxon rank referring to the most accurate identification in `scientificName` (usually Genus in these cases)
-* Put qualifiers in [`identificationQualifier`](https://dwc.tdwg.org/terms/#dwciri:identificationQualifier) (e.g., cf., aff.)
-* Put the species name in [`specificEpithet`](https://dwc.tdwg.org/terms/#dwc:specificEpithet)
-* Place the rank of the taxon documented in scientificName (e.g., genus) in [`taxonRank`](https://dwc.tdwg.org/terms/#dwc:taxonRank)
-* Document any relevant comments in [`taxonRemarks`](https://dwc.tdwg.org/terms/#dwc:taxonRemarks) or [`identificationRemarks`](https://dwc.tdwg.org/terms/#dwc:identificationRemarks)
+- Put the name of the lowest possible taxon rank referring to the most accurate identification in `scientificName` (usually Genus in these cases)
+- Put qualifiers in [`identificationQualifier`](https://dwc.tdwg.org/terms/#dwciri:identificationQualifier) (e.g., cf., aff.)
+- Put the species name in [`specificEpithet`](https://dwc.tdwg.org/terms/#dwc:specificEpithet)
+- Place the rank of the taxon documented in scientificName (e.g., genus) in [`taxonRank`](https://dwc.tdwg.org/terms/#dwc:taxonRank)
+- Document any relevant comments in [`taxonRemarks`](https://dwc.tdwg.org/terms/#dwc:taxonRemarks) or [`identificationRemarks`](https://dwc.tdwg.org/terms/#dwc:identificationRemarks)
 
 Take an example specimen named Pterois cf. volitans. The associated occurrence record would have the following taxonomic information:
 
-* `scientificName` = Pterois
-* `identificationQualifier` = cf.
-* `specificEpithet` =volitans
-* `scientificNameID` =the one for Pterois
-* `taxonRank` = species
+- `scientificName` = Pterois
+- `identificationQualifier` = cf.
+- `specificEpithet` =volitans
+- `scientificNameID` =the one for Pterois
+- `taxonRank` = species
 
 If the provided genus name is unaccepted in WoRMS, it is okay to use the unaccepted name in this field. `scientificNameID` should contain the WoRMS LSID for the genus.
 
@@ -144,9 +151,9 @@ In cases where only certain body parts (e.g., head, tail, arm) are recorded, you
 
 When providing a range to estimate the count, there are two [suggested](https://github.com/tdwg/dwc/issues/338#issuecomment-828002051) approaches:
 
-* Use MOF/eMoF: place the data in the (extended)MeasurementOrFact extension. This requires an additional two rows per Occurrence. One with the equivalent of a minimumIndividualCount and one with the equivalent of maximumIndividualCount.
-* Place data into `dynamicProperties`: Include the information in the Occurrence record itself, with no extension, and instead document it in `dynamicProperties`, with a value such as {“minimumIndividualCount”:0, “maximumIndividualCount”:5}
-  * We note that documenting the data in ‘dynamicProperties’ means the information will not be machine readable and may be more difficult for users to extract.
+- Use MOF/eMoF: place the data in the (extended)MeasurementOrFact extension. This requires an additional two rows per Occurrence. One with the equivalent of a minimumIndividualCount and one with the equivalent of maximumIndividualCount.
+- Place data into `dynamicProperties`: Include the information in the Occurrence record itself, with no extension, and instead document it in `dynamicProperties`, with a value such as {“minimumIndividualCount”:0, “maximumIndividualCount”:5}
+  - We note that documenting the data in ‘dynamicProperties’ means the information will not be machine readable and may be more difficult for users to extract.
 
 **Abundance vs Count data:**
 A brief clarification on abundance and count data: abundance is the number of individuals within an area or volume. This type of data is recorded in `organismQuantity`, where [`organismQuantityType`](https://dwc.tdwg.org/terms/#dwc:organismQuantityType) should be used to specify the type of quantity (e.g., individuals, percent biomass, Braun Blanquet Scale, etc.).

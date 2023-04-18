@@ -65,6 +65,37 @@ matched_data<-merge(data, lsids, by = "scientificName")
 matched_data
 ```
 
+#### How to fetch a full classification for a list of species from WoRMS?
+
+When setting up your WoRMS taxon match, to obtain the full classification for your list of species, simply check the box labeled “Classification”. This will add classification output in addition to the requested identifiers to your taxon match file, including Kingdom, Phylum, Class, Order, Family, Genus, Subgenus, Species, and Subspecies.
+
+![WoRMS classification box](images/WoRMS_classification.png){width=70%}
+
+#### What to do with non-matching names?
+
+If your scientificName does not find an exact match to the WoRMS database, you may get an  **ambiguous** match. According to WoRMS guidelines, ambiguous matches can be marked as one of the following:
+
+* phonetic
+* near_1
+* near_2
+* near_3
+* match_quarantine
+* match_deleted
+
+See <https://www.marinespecies.org/tutorial_taxonmatch.php> for definitions of each of these terms.
+
+In each of these cases, WoRMS will try to suggest a species to match your uncertain taxon. Take care to ensure the correct species name is selected. This is especially true for near_2 or near_3 matches. When checking a potential matched name, we recommend referencing the authority and higher taxonomic levels of a given suggestion. For example, if you know the ambiguous species is a sponge, but one of the suggestions is for a mammal, you know that is not the correct name.
+
+![Example of choices from an abiguous match](images/WoRMS-resolve-ambiguousMatches.png){width=70%}
+
+In cases where no match can be found, WoRMS will indicate none. For these cases you should follow these steps:
+
+* Ensure the name was entered correctly and any other information (e.g., authority, year, identification qualifiers) are included in separate columns, not the same cell as the name.
+* Match with [LifeWatch](https://www.lifewatch.be/data-services/) or another register (see Step 2 below)
+* Check that the species [is marine](common_qc#non-marine-species.html)
+
+If a scientific name does not appear in any register, you should contact the original data provider, where possible, to confirm taxonomic spelling, authority, and obtain any original description documents, then attempt to match again. If even after this there are no matches, you should contact info@marinespecies.org to see if the taxon should be added to the WoRMS register.
+
 #### Step 2: Match with other registers
 
 If you do not find a match with WoRMS, you should next check other registers. The [LifeWatch taxon match](http://www.lifewatch.be/data-services/) compares your taxon list to multiple taxonomic standards. Matching with multiple registers gives an indication of the correct spelling of a name, regardless of its environment. If a name would not appear in any of the registers, this could indicate a mistake in the scientific name and the name should go back to the provider for additional checking/verification.
@@ -84,7 +115,7 @@ Currently, this web service matches the scientific names with the following taxo
 
 #### Step 3: Is taxon marine?
 
-The Interim Register of Marine and Non-marine Genera (IRMNG) matching services are available through [http://www.irmng.org/](http://www.irmng.org/), as well as through the [LifeWatch taxon match](http://www.lifewatch.be/data-services/). This service allows you to search for a genus (or other taxonomic rank when you unchcek the “genera” box) to check if it is known to be marine, brackish, freshwater, or terrestrial. You can find this information in the row labeled “Environment”. If the taxa is marine, you may have to contact
+The Interim Register of Marine and Non-marine Genera (IRMNG) matching services are available through [http://www.irmng.org/](http://www.irmng.org/), as well as through the [LifeWatch taxon match](http://www.lifewatch.be/data-services/). This service allows you to search for a genus (or other taxonomic rank when you uncheck the “genera” box) to check if it is known to be marine, brackish, freshwater, or terrestrial. You can find this information in the row labeled “Environment”. If the taxa is marine, you may have to contact the WoRMS taxa editor to have the taxon added to the WoRMS register (note you may have to provide supporting information confirming taxonomic and marine status).
 
 ### R packages for taxon matching
 
@@ -101,34 +132,3 @@ See the table below for a summary of the different tools available.
 |WoRMS taxon match | Accessible online, Does not require coding knowledge | Requires rematch information back to your data |
 |obistools::match_taxa | Produces same output as WoRMS taxon match, Already in R so easier to merge back with data | Requires knowledge of R or python |
 |worrms::wm_records_taxamatch | Outputs all WoRMS matching information | Outputs a tibble for each taxa name specified, Requires knowledge of R or python |
-
-#### How to fetch a full classification for a list of species from WoRMS?
-
-When setting up your WoRMS taxon match, to obtain the full classification for your list of species, simply check the box labeled “Classification”. This will add classification output in addition to the requested identifiers to your taxon match file, including Kingdom, Phylum, Class, Order, Family, Genus, Subgenus, Species, and Subspecies.
-
-![WoRMS classification box](images/WoRMS_classification.png){width=70%}
-
-#### What to do with non-matching names?
-
-If your scientificName does not find an exact match to the WoRMS database, you may get an  **ambiguous** match. According to WoRMS guidelines, ambiguous matches can be marked as one of the following :
-
-* phonetic
-* near_1
-* near_2
-* near_3
-* match_quarantine
-* match_deleted
-
-See <https://www.marinespecies.org/tutorial_taxonmatch.php> for definitions of each of these terms.
-
-In each of these cases, WoRMS will try to suggest a species to match your uncertain taxon. Take care to ensure the correct species name is selected. This is especially true for near_2 or near_3 matches. When checking a potential matched name, we recommend referencing the authority and higher taxonomic levels of a given suggestion. For example, if you know the ambiguous species is a sponge, but one of the suggestions is for a mammal, you know that is not the correct name.
-
-![Example of choices from an abiguous match](images/WoRMS-resolve-ambiguousMatches.png){width=70%}
-
-In cases where no match can be found, WoRMS will indicate none. For these cases you should follow these steps:
-
-* First ensure the name was entered correctly and any other information (e.g., authority, year, identification qualifiers) are included in separate columns, not the same cell as the name.
-* Match with [LifeWatch](https://www.lifewatch.be/data-services/)
-* Check that the species [is marine](common_qc#non-marine-species.html)
-
-If a scientific name does not appear in any register, you should contact the original data provider, where possible, to confirm taxonomic spelling, authority, and obtain any original description documents, then attempt to match again. If even after this there are no matches, you should contact info@marinespecies.org to see if the taxon should be added to the WoRMS register.
