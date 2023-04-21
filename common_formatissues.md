@@ -46,9 +46,9 @@ Because occurrenceStatus is a binary field, “presence” or “absence”, thi
 
 `basisOfRecord` distinguishes what type of record is in your data. For records pertaining to a collected or stored specimen, you must choose one of the following terms:
 
-`PreservedSpecimen`
-`FossilSpecimen`
-`LivingSpecimen`
+- `PreservedSpecimen`
+- `FossilSpecimen`
+- `LivingSpecimen`
 
 For records pertaining to an observation in the wild, you should use:
 

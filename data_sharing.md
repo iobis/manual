@@ -4,7 +4,7 @@
 
 DOIs are important for tracking your dataset. Fortunately you can easily reserve a DOI for your dataset if the IPT administrator has configured the IPT accordingly.
 
-As the IPT administrator, you must enable the capacity for users to reserve DOIs. To do this you first need a [DataCite account](https://datacite.org/) associated with an Organization. Only one DataCite account can be used to register DOIs in this manner (i.e. IPT users do not need an account). The IPT’s archival mode, configurable on the IPT settings page, must also be turned on (note that enabling this mode will use more disk space) to enable this feature. For more information see the [IPT administration manual](https://github.com/gbif/ipt/wiki/IPT2ManualAdministration.wiki#configure-organisations).
+As the IPT administrator, you must enable the capacity for users to reserve DOIs. To do this you first need a [DataCite account](https://datacite.org/) associated with an Organization. Only one DataCite account can be used to register DOIs in this manner (i.e. IPT users do not need an account). The IPT’s archival mode, configurable on the IPT settings page, must also be turned on (note that enabling this mode will use more disk space) to enable this feature. For more information see the [IPT administration manual](https://ipt.gbif.org/manual/en/ipt/latest/administration).
 
 Once this has been configured, a data provider or admin can easily reserve a DOI for a dataset. First log in to the IPT, navigate to the Manage Resources tab, then select the dataset for which you wish to reserve a DOI. On the overview page for the dataset, scroll to the Publication section, click the three vertical dots and select “Reserve DOI”.  
 
@@ -20,14 +20,14 @@ OBIS tracks the number of times your dataset is downloaded. This information is 
 
 To update your own data in OBIS, the process is largely the same as [publishing your first version](ipt.html#publish-on-the-ipt). Follow the steps below:
 
-Log in to the IPT where your data are hosted
-Under the Manage Resources tab, locate your dataset
-Upload new files, complete the DwC mapping, and/or update any metadata that may have changed
-In the Publication section, click just as you did before Publish
+- Log in to the IPT where your data are hosted
+- Under the Manage Resources tab, locate your dataset
+- Upload new files, complete the DwC mapping, and/or update any metadata that may have changed
+- In the Publication section, click Publish just as you did before
 
 The new version will be automatically updated. A new DOI will be generated only if you generate it yourself on the new version. Deciding when to generate a new DOI is up to you, but generally you should generate a new DOI when there have been major changes to your dataset, such as significant changes in your metadata or a move to a 2.0 resource version within the IPT.
 
-![Example of IPT version control](images/ipt-pubVersion.png){width=50%}
+![Example of IPT version control](images/ipt-pubVersion.png){width=60%}
 
 ## Simultaneous publishing to GBIF
 
@@ -48,8 +48,9 @@ Some of the other main differences in how OBIS and GBIF structure and publish da
 See below for a quick reference on which terms are required or recommended in OBIS and GBIF for Occurrence and Event tables.
 
 **Event Table:**
+
 | Term | Status in OBIS | Status in GBIF |
-|---|---|---|
+|----|----|---|
 | eventID | **required** | **required** |
 | eventDate | **required** | **required** |
 | decimalLatitude & decimalLongitude | **required** | strongly recommended |
@@ -65,8 +66,9 @@ See below for a quick reference on which terms are required or recommended in OB
 | occurrenceStatus | required in occurrence extension | strongly recommended |
 
 **Occurrence Table:**
+
 | Term | Status in OBIS | Status in GBIF |
-|---|---|---|
+|----|----|---|
 | occurrenceID | **required**  | **required**  |
 | eventDate | **required**  | **required**  |
 | scientificName | **required**  | **required**  |

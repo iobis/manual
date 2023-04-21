@@ -148,7 +148,7 @@ Go to your resource overview page > Metadata and click Edit to open the metadata
 
 ![Screenshot showing where to add or upload metadata](images/ipt-ss12-metadata.png){width=50%}
 
-Follow the [OBIS metadata standards and best practices](eml.html), or check the [IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#metadata) for detailed instructions about the metadata editor. You can also upload a file with metadata information.
+Follow the [OBIS metadata standards and best practices](eml.html), or check the [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#metadata) for detailed instructions about the metadata editor. You can also upload a file with metadata information.
 
 ### Publish on the IPT
 
@@ -174,7 +174,7 @@ It is now listed on the IPT homepage and you can share and link to it, e.g.: `ht
 
 Your published dataset is a static snapshot of your data and will not change until you upload an updated source file and click publish again or publish a new version (do not create a new resource). This procedure has the advantage that your dataset is always available, does not require a live internet connection to your database and can be easily shared. It also allows you to control the publication process more precisely: version 1, version 2, etc. and users are informed of how recent the data are (via the last publication date).
 
-To view an older version of the metadata about the resource, just add the trailing parameter `&v=n` to the URL where `v` stands for "version", and `n` gets replaced by the version number, e.g., `http://ipt.vliz.be/ilvo/resource.do?r=zoopl_bpns&v=1`. In this way, specific versions of a resource's EML, RTF, and DwC-A files can be retrieved. Please note, the IPT's Archival Mode must be turned on in order for old versions of DwC-A to be stored (see [Configure IPT settings](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#configure-ipt-settings) section of the IPT manual).
+To view an older version of the metadata about the resource, just add the trailing parameter `&v=n` to the URL where `v` stands for "version", and `n` gets replaced by the version number, e.g., `http://ipt.vliz.be/ilvo/resource.do?r=zoopl_bpns&v=1`. In this way, specific versions of a resource's EML, RTF, and DwC-A files can be retrieved. Please note, the IPT's Archival Mode must be turned on in order for old versions of DwC-A to be stored (see [Configure IPT settings](https://ipt.gbif.org/manual/en/ipt/latest/administration) section of the IPT manual).
 
 #### Publish your metadata as a data paper
 

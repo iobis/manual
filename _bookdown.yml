@@ -31,6 +31,7 @@ rmd_files:
   - common_qc.md
   - data_publication.md
   - ipt.md
+  - ipt_admin.md
   - data_sharing.md
   - access.md
   - citing.md
