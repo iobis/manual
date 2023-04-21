@@ -19,8 +19,8 @@ Event Core can be used in combination with the Occurrence and eMoF extensions. T
 ## When to use Occurrence Core
 
 Occurrence Core datasets describe **observations** and **specimen records** and cover instances when:
-**No information** on how the data was sampled or samples were processed is available
 
+* **No information** on how the data was sampled or samples were processed is available
 * No abiotic measurements are taken or provided
 * You have [eDNA and DNA derived data](examples.html#edna-dna-derived-data.html)
 * Biological measurements are made on **individual specimens** (each specimen is a single occurrence record)

@@ -29,12 +29,12 @@ These examples are not exhaustive and other similarly structured variations that
 
 Information related to your sampling events can be assigned to the highest relevant event level in order to avoid repetition of information. For example, if all samples taken from a station occurred at the same depth, this information can be listed once. Variation between samples (e.g., exact time or coordinates) can also be easily reflected for each event. See the table below for a demonstration.
 
-| eventID | parentEventID | type | eventDate | maximumDepthInMeters |
+| eventID | parentEventID | eventRemarks | eventDate | maximumDepthInMeters |
 |-----------------|--------------|---------|-----------|----------|
 |cruise_1 |  | cruise |  |  |
 |cruise_1:station_1 | cruise_1 | station |  | 15 |
 |cruise_1:station_1:core_1 | cruise_1:station_1 | sample | 2011-03-06T08:35 | |
-|cruise_1:station_1:core_2 | cruise_1:station_1 | cruise_1:station_1 | sample | 2011-03-06T08:52 | |
+|cruise_1:station_1:core_2 | cruise_1:station_1 | sample | 2011-03-06T08:52 | |
 |cruise_1:station_1:core_1:subsample_1 | cruise_1:station_1:core_1 | subsample |  |  |
 
 We recommend using controlled vocabulary for the "type" column. Although no standards have been agreed upon yet, commonly used terms for event `type` included are `cruise`, `stationVisit`, `transect`, `quadrat`, `sample`, `subSample`.

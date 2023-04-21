@@ -30,7 +30,7 @@ First, if you have coordinate data, make sure they are [converted into decimal d
 
 - **`scientificName`**
 
-This field should contain only the **originally documented** scientific name down to the lowest possible taxon rank, even if there are misspellings or if it is a current synonym. Class, or even Kingdom levels are accepted if more specific taxonomic levels are unknown. Comments about misspellings, etc. can be documented in the `taxonRemarks` field.
+This field should contain only the **originally documented** scientific name down to the lowest possible taxon rank, even if there are misspellings or if it is a current synonym. Class, or even Kingdom levels are accepted if more specific taxonomic levels are unknown. Comments about misspellings, etc. can be documented in the `taxonRemarks` field. Note that there may be special cases for eDNA and DNA derived data, see [specific guidelines](dna_data.html) for these cases.
 
 You may encounter challenges filling this field if the species name is based on description or if its taxonomy was uncertain at time of sampling. For such uncertain taxonomy situations, see our guidelines [here](common_qc#uncertain-taxaonomic-information.html).
 

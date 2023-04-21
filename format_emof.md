@@ -56,7 +56,7 @@ By linking `measurementType` and `measurementValue` with the identifiers `eventI
 4. Copy the first column of measurement values, paste into the `measurementValue` field
     * Fill `measurementType` with the name of the variable (e.g., count, length, etc.)
 5. Add unit of measurements where applicable to the `measurementUnit` field
-6. For any other measurements related to occurrences, repeat steps 4-6, pasting additional measurements below the preceding ones
+6. For any other measurements related to occurrences, repeat steps 3-5, pasting additional measurements below the preceding ones
     * Be sure to copy and paste the associated occurrenceIDs and/or eventIDs for the additional measurements
 7. Fill the fields `measurementTypeID`, `measurementUnitID`, and `measurementValueID` with controlled vocabularies that suit your data (see [vocabulary guidelines](vocabulary.html))
 8. Repeat for any measurements in the Event table
