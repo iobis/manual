@@ -19,7 +19,7 @@ OBIS has over 100 million records of marine data accessible for downloading. To 
 
 We have produced a video demonstration of how to use the Mapper.
 
-The mapper allows users to visualize and inspect subsets of OBIS data. A variety of filters (taxonomic, geographic, time, data quality) is available and multiple layers can be combined in a single view. Layers can be downloaded as CSV files.
+The mapper allows users to visualize and inspect subsets of OBIS data. A variety of filters are available (taxonomic, geographic, time, data quality) and multiple layers can be combined in a single view. Layers can be downloaded as CSV files.
 
 ![Screenshot demonstrating where how to download a particular layer](images/mapper-DL.png){width=40%}
 
@@ -28,8 +28,6 @@ When you download data from the mapper, you will be given the option to include 
 ![Screenshot showing the popup confirmation for which extensions you want to include in your download from the OBIS Mapper](images/mapper-extensions.png){width=40%}
 
 After downloading, you will notice that the Event and Occurrence data is flattened into one table, called “Occurrence.csv”. Upon inspecting this file in your viewer of choice, you will see it contains all 225 possible DwC fields, although not every field will contain data for each observation. Any extensions you checked will be downloaded as separate tables.
-
-When you download data you will also be given the opportunity to fill in a [short survey (~10 minutes)](https://www.surveymonkey.com/r/F8QPMCK) to provide feedback on your experience using the quality controlled data from OBIS. We greatly appreciate your feedback!
 
 ## R package
 
