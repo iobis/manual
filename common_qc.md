@@ -84,7 +84,8 @@ Notice that no region has the exact same geographic extent. Let’s select the I
 1. `locationID` from MRGID: <http://marineregions.org/mrgid/4289>
 2. `decimalLatitude` and `decimalLongitude` latitude and longitude coordinates of the location’s midpoint in decimal degrees: 44.97985204, -65.80601556
 3. `coordinateUncertaintyInMeters` precision: 196726 meters
-![Screenshot of Marine Region placedetails, highlighting important information for OBIS](images/MarineRegions-Gazetteer_placedetails){width=40%}
+
+![Screenshot of Marine Region placedetails, highlighting important information for OBIS](images/MarineRegions-Gazetteer_placedetails.png){width=40%}
 
 Since we are obtaining all this locality data from Marine Regions, we must also populate the `locationAccordingTo` field. Here, we will provide the name of the gazetteer we used to obtain the coordinates for the locality - in this case you would write “Marine Regions”. In `georeferenceRemarks` we must document that the coordinates are the region’s midpoint, that locality information was inferred by geographic name, and, where applicable, place the original locality name in the field `verbatimLocality`. Finally, the location portion of our dataset would look something like this:
 

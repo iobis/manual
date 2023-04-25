@@ -38,16 +38,17 @@ Other terms you should consider adding are identified by their associated Darwin
 Note that any terms related to measurements, either biotic (e.g., sex, lifestage, biomass) or abiotic will be included in extendedMeasurementOrFact table not the Occurrence table.
 
 ### Stepwise Guidance to Format an Occurrence Table (in Excel)
-Before proceeding with formatting the Occurrence table, be sure you have [completed taxon matching](name_matching.html) to obtain WoRMS LSIDs for the scientificNameID field. 
+
+Before proceeding with formatting the Occurrence table, be sure you have [completed taxon matching](name_matching.html) to obtain WoRMS LSIDs for the scientificNameID field.
 
 1. Identify columns in your raw data that match with Occurrence fields
     * Include columns with measurements for now, but they will be added to the [eMoF table](format_emof.html)
-3. Copy these columns to a new sheet named Occurrence (note it is good practice to never make changes to your original datasheet)
-3. Create and add [occurrenceIDs](format_occurrence.html) for each unique occurrence record
+2. Copy these columns to a new sheet named Occurrence (note it is good practice to never make changes to your original datasheet)
+3. Create and add [occurrenceIDs](identifiers.html#occurrenceid) for each unique occurrence record
 4. Add and fill `basisOfRecord` and `occurrenceStatus` fields
 5. Ensure your column names [map to Darwin Core terms](vocabulary.html)
     * scientificName + scientificNameID
 
-Watch our video tutorial for a demonstration of this procedure. 
+Watch our video tutorial for a demonstration of this procedure.
 
-After formatting your Occurrence Core or Extension table, you can format your extendedMeasurementOrFact table. 
+After formatting your Occurrence Core or Extension table, you can format your extendedMeasurementOrFact table.
