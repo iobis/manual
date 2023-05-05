@@ -21,11 +21,11 @@ We have produced a video demonstration of how to use the Mapper.
 
 The mapper allows users to visualize and inspect subsets of OBIS data. A variety of filters are available (taxonomic, geographic, time, data quality) and multiple layers can be combined in a single view. Layers can be downloaded as CSV files.
 
-![Screenshot demonstrating where how to download a particular layer](images/mapper-DL.png){width=40%}
+![*Screenshot demonstrating where how to download a particular layer*](images/mapper-DL.png){width=60%}
 
 When you download data from the mapper, you will be given the option to include eMoF and/or DNA Derived Data extensions alongside the Event and Occurrence data. You must check the boxes of extensions you want to include in your download.
 
-![Screenshot showing the popup confirmation for which extensions you want to include in your download from the OBIS Mapper](images/mapper-extensions.png){width=40%}
+![*Screenshot showing the popup confirmation for which extensions you want to include in your download from the OBIS Mapper*](images/mapper-extensions.png){width=70%}
 
 After downloading, you will notice that the Event and Occurrence data is flattened into one table, called “Occurrence.csv”. Upon inspecting this file in your viewer of choice, you will see it contains all 225 possible DwC fields, although not every field will contain data for each observation. Any extensions you checked will be downloaded as separate tables.
 
@@ -83,7 +83,7 @@ From the OBIS homepage, you can search for data in the search bar in the middle 
 
 When you search by dataset you will notice an additional option appears for [advanced search options](https://obis.org/datasets). This will allow you to identify specific datasets, and apply filters for OBIS nodes and whether datasets include extensions.
 
-![OBIS homepage search, showing where to find the advanced search link](images/obis-homepagesearch.png){width=50%}
+![*OBIS homepage search, showing where to find the advanced search link*](images/obis-homepagesearch.png){width=70%}
 
 Regardless if you found a dataset through the homepage or the advanced Dataset search, you will be able to navigate to individual dataset pages. For individual dataset pages (instead of aggregate pages for e.g., a Family) there are three buttons available:
 
@@ -91,7 +91,7 @@ Regardless if you found a dataset through the homepage or the advanced Dataset s
 * Source DwC-A - download the dataset as a Darwin Core-Archive file. This will provide all data tables as separate files within a zipped folder
 * To mapper - this will open another browser with the data shown in the Mapper
 
-![Dataset download](images/dataset-DL.png){width=50%}
+![*Dataset download*](images/dataset-DL.png){width=70%}
 
 If you searched for aggregate datasets (e.g., all Crustacea records, all records from OBIS-Canada, etc.), the `source DwC-A` button will not be available to you. To download these data subsets, you must click `to mapper` and then [download the data from the Mapper as a CSV](#mapper).
 
@@ -101,11 +101,11 @@ If you searched for aggregate datasets (e.g., all Crustacea records, all records
 
 To obtain a full export of OBIS data, navigate to the OBIS homepage, click on Data from the top navigation bar, then select [Data Access](https://obis.org/data/access/) from the dropdown menu.
 
-![OBIS homepage showing where to navigate to access full database exports](images/full-export1.png){width=50%}
+![*OBIS homepage showing where to navigate to access full database exports*](images/full-export1.png){width=70%}
 
 Here you will be able to download all occurrence records as a CSV or Parquet file. Note the disclaimer that such exports will not include measurement data, dropped records, or absence records. As with downloads from the Mapper, the exported file is a single Occurrence table. This table includes all provided Event and Occurrence data, as well as 68 fields added by the OBIS Quality Control Pipeline, including taxonomic information obtained from WoRMS.
 
-![OBIS Data Access page](images/full-export2.png){width=50%}
+![*OBIS Data Access page*](images/full-export2.png){width=70%}
 
 ## Finding your own data in OBIS
 
@@ -120,7 +120,7 @@ To find your own dataset in OBIS, you can use the same tools as finding any data
 
 To contact the data provider, navigate to the page for the individual dataset in question (e.g., <https://obis.org/dataset/80479e14-2730-436d-acaa-b63bdc7dd06f>). Under the “Contacts” section, there will be a list of individuals you can contact. Clicking any name will direct you to your system’s default email program. For example:
 
-![Example of contact section on a dataset homepage access via the OBIS search](images/contact-dataprovider.png){width=40%}
+![*Example of contact section on a dataset homepage access via the OBIS search*](images/contact-dataprovider.png){width=70%}
 
 If you are the node manager and need to contact the data provider about a particular dataset, contact information should be provided in the metadata and you can contact them from information provided.
 

@@ -32,10 +32,10 @@ As the IPT administrator, you must make sure the IPT is kept up to date, dataset
 
 To add or update extensions, navigate to the Darwin Core Types and Extensions page from the Administration menu. To install an extension (e.g., DNA Derived Data), simply scroll down the page and click the `Install` button to the right of the desired extension.
 
-![Screenshot of IPT Admin page](images/iptadmin-installex.png){width=50%}
+![Screenshot of IPT Admin page](images/iptadmin-installex.png){width=70%}
 
 For extensions already installed, you may notice yellow flags indicating a core or extension is out of date. You can update these easily by clicking the `Update` button.
 
-![Screenshot demonstrating when core or extensions need to be updated](images/iptadmin-core.png){width=50%}
+![Screenshot demonstrating when core or extensions need to be updated](images/iptadmin-core.png){width=70%}
 
 For a detailed breakdown of administrator options, see the [IPT guide](https://github.com/gbif/ipt/wiki/IPT2ManualAdministration.wiki#administration-menu).

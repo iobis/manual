@@ -59,7 +59,7 @@ By linking `measurementType` and `measurementValue` with the identifiers `eventI
 6. For any other measurements related to occurrences, repeat steps 3-5, pasting additional measurements below the preceding ones
     * Be sure to copy and paste the associated occurrenceIDs and/or eventIDs for the additional measurements
 7. Fill the fields `measurementTypeID`, `measurementUnitID`, and `measurementValueID` with controlled vocabularies that suit your data (see [vocabulary guidelines](vocabulary.html))
-8. Repeat for any measurements in the Event table
+8. Repeat steps 3-7 for any measurements in the Event table
 
 Note the fields [sampleSizeValue](https://dwc.tdwg.org/terms/#dwc:sampleSizeValue), [samplingEffort](https://dwc.tdwg.org/terms/#dwc:samplingEffort), and [samplingProtocol](https://dwc.tdwg.org/terms/#dwc:samplingProtocol) from the Occurrence table can be documented as separate measurements on different rows in the eMoF table. E.g., `measurementType` = samplingProtocol, `measurementValue` = description of protocol. Any values in [sampleSizeUnit](https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit) fields should be placed in the `measurementUnit` field when transferred to the eMoF.
 

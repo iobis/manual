@@ -2,9 +2,9 @@
 
 **Contents:**
 
-- [Introduction](dna_data#introduction.html)
-- [eDNA & DNA Derived use cases](dna_data#edna--dna-derived-data-example.html)
-- [How to find genetic data in OBIS](dna_data#how-to-find-genetic-data-in-obis.html)
+- [Introduction](dna_data.html#introduction)
+- [eDNA & DNA Derived use cases](dna_data.html#edna--dna-derived-data-example)
+- [How to find genetic data in OBIS](dna_data.html#how-to-find-genetic-data-in-obis)
 
 #### Introduction
 
@@ -18,7 +18,7 @@ To ensure DNA data are useful to the broadest possible community, GBIF published
 4. Name references
 5. Metadata only
 
-For a guide and decision tree on determining which category your data falls into, see the [Data packaging and mapping](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping) section of the GBIF guide. Refer to the [examples below](dna_data#edna--dna-derived-data.html) for use case examples of eDNA and DNA derived data (Category 1).
+For a guide and decision tree on determining which category your data falls into, see the [Data packaging and mapping](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping) section of the GBIF guide. Refer to the [examples below](dna_data.html#edna--dna-derived-data) for use case examples of eDNA and DNA derived data (Category 1).
 
 > Currently, genetic data **must** be published with Occurrence core, not Event core. eDNA and DNA derived data are then linked to the Occurrence core data table with the use of `occurrenceID` and/or `eventID`. See below for further guidance on compiling genetic data.
 
@@ -59,9 +59,9 @@ Then, you will need to format the DNADerivedData extension. The following (free-
 - DNA Derived | DwC: thresholdQuantificationCycle
 - DNA Derived | DwC: baselineValue
 
-For a complete list of terms you can map to, see [the DwC DNA Derived Data extension page](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml). See the [examples below](dna_data#edna--dna-derived-data.html) for use case examples. The Marine Biological Data Mobilization Workshop also has a [tutorial](https://ioos.github.io/bio_mobilization_workshop/edna-extension/#dna-derived-extension) for this type of data.
+For a complete list of terms you can map to, see [the DwC DNA Derived Data extension page](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml). See the [examples below](dna_data.html#edna--dna-derived-data) for use case examples. The Marine Biological Data Mobilization Workshop also has a [tutorial](https://ioos.github.io/bio_mobilization_workshop/edna-extension/#dna-derived-extension) for this type of data.
 
-When your data tables are formatted and you are ready to publish it on the IPT, it will follow the same process for [publishing on an IPT](data_publication.html). You will upload your source files, and add the Occurrence core Darwin Core mappings, and then the DNA Derived Data Darwin Core mappings. However the extension must first be [installed by the IPT administrator](data_publication#ipt-administration.html) (often the node manager). Once the extension is installed, you can add the Darwin Core DNA Derived Data mapping for that file.
+When your data tables are formatted and you are ready to publish it on the IPT, it will follow the same process for [publishing on an IPT](data_publication.html). You will upload your source files, and add the Occurrence core Darwin Core mappings, and then the DNA Derived Data Darwin Core mappings. However the extension must first be [installed by the IPT administrator](data_publication.html#ipt-administration) (often the node manager). Once the extension is installed, you can add the Darwin Core DNA Derived Data mapping for that file.
 
 ##### OBIS Bioinformatics Pipline
 
@@ -71,14 +71,14 @@ Broadly speaking, it creates a framework that receives raw sequence data from eD
 
 OBIS is developing guidelines and pipelines to accept other data types, such as:
 
-- [Acoustic](other_data_types#multimedia-data.html)
-- [Imaging](other_data_types#multimedia-data.html)
-- [Tracking](other_data_types#tracking-data.html)
-- [Habitat](other_data_types#habitat-data.html)
+- [Acoustic](other_data_types.html#multimedia-data)
+- [Imaging](other_data_types.html#multimedia-data)
+- [Tracking](other_data_types.html#tracking-data)
+- [Habitat](other_data_types.html#habitat-data)
 
 #### eDNA & DNA derived data example
 
-The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional Occurrence core terms, refer to [Occurrence](darwin_core#occurrence.html).
+The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional Occurrence core terms, refer to [Occurrence](darwin_core.html#occurrence).
 
 ##### eDNA data from Monterey Bay, California
 

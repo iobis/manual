@@ -1,7 +1,8 @@
 ## OBIS nodes
+
 _Note the OBIS node TOR and system architecture is currently under review and will be updated after the 2023 Steering Group meeting. The information below may change._
 
-OBIS Nodes are either national projects, programmes, institutes, or organizations, National Ocean Data Centers or regional or international projects, programmes and institutions or organizations that carry out data management functions. 
+OBIS Nodes are either national projects, programmes, institutes, or organizations, National Ocean Data Centers or regional or international projects, programmes and institutions or organizations that carry out data management functions.
 
 OBIS nodes are responsible for **representing all aspects of OBIS within a particular region or taxonomic domain**. Additional responsibilities include:
 
@@ -10,11 +11,12 @@ OBIS nodes are responsible for **representing all aspects of OBIS within a parti
 * Responsibility for **all aspects of the data**
 * Gaining permission to providing access to the data
 * Ensuring a certain level of data quality
-* Transfer of these datasets to the global OBIS database 
+* Transfer of these datasets to the global OBIS database
 * Provide support for the full implementation of OBIS worldwide by serving on the IODE Steering Group for OBIS and any relevant Task Teams or ad hoc project teams
 * Each node may also maintain a data presence on the Internet representing their specific area of responsibility
 
-### Terms of Reference of OBIS nodes 
+### Terms of Reference of OBIS nodes
+
 **Data Responsibilities**
 
 * Receiving or harvesting marine biodiversity data (and metadata) from national, regional, and international programs, and the scientific community at large, and from Tier III nodes by Tier II nodes, and from Tier II nodes by Tier I nodes
@@ -36,7 +38,7 @@ OBIS nodes are responsible for **representing all aspects of OBIS within a parti
 * Outreach and Capacity Building (i.e., providing expertise, training and support in data management, technologies, standards and best practices)
 * Engage in stakeholder groups (recommended)
 
-### How to become an OBIS node 
+### How to become an OBIS node
 
 OBIS nodes now operate under the IODE network as either National Oceanographic Data Centres (NODCs) or Associate Data Unites (ADUs). Prospective nodes are required to apply to the IODE for membership.
 
@@ -48,6 +50,7 @@ The procedure to become an OBIS node is as follows:
   * Email your [application form](http://iode.org/index.php?option=com_oe&task=viewDocumentRecord&docID=11793) to become an IODE Associate Data Unit (ADU), with a specific role as OBIS node. Applications for ADU membership in OBIS shall be reviewed by the IODE Officers in consultation with the IODE Steering Group for OBIS.
 
 ### OBIS Node Health Status Check and Transition Strategy
+
 OBIS nodes should operate under IODE as either IODE/ADU or IODE/NODC. As such OBIS nodes are a member of the IODE network.
 
 The IODE Steering Group (SG) for OBIS evaluates the health status of OBIS nodes at each annual SG meeting, and considers an OBIS node as **inactive** when it meets any of the following conditions:

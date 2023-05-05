@@ -13,13 +13,13 @@ The identifiers (LSID, TSN, ID) from these registers will be used to populate th
 > **Note**
 > You should prioritize using LSIDs because they are unique identifiers which indicate the authority the ID comes from.
 
-You can also use the [Interim Register of Marine and Nonmarine Genera (IRMNG)](https://www.irmng.org/aphia.php?p=search) to [distinguish marine genera from freshwater genera](common_qc#non-marine-species.html).
+You can also use the [Interim Register of Marine and Nonmarine Genera (IRMNG)](https://www.irmng.org/aphia.php?p=search) to [distinguish marine genera from freshwater genera](common_qc.html#non-marine-species).
 
 ### Taxon Matching Workflow
 
 The OBIS node managers have agreed to match all the scientific names in their datasets according to the following Name Matching workflow:
 
-![Workflow for matching a list of taxon names to WoRMS](images/WoRMS-taxa-match.png){width=40%}
+![Workflow for matching a list of taxon names to WoRMS](images/WoRMS-taxa-match.png){width=60%}
 
 #### Step 1: Match with WoRMS
 
@@ -92,7 +92,7 @@ In cases where no match can be found, WoRMS will indicate none. For these cases 
 
 * Ensure the name was entered correctly and any other information (e.g., authority, year, identification qualifiers) are included in separate columns, not the same cell as the name.
 * Match with [LifeWatch](https://www.lifewatch.be/data-services/) or another register (see Step 2 below)
-* Check that the species [is marine](common_qc#non-marine-species.html)
+* Check that the species [is marine](common_qc.html#non-marine-species)
 
 If a scientific name does not appear in any register, you should contact the original data provider, where possible, to confirm taxonomic spelling, authority, and obtain any original description documents, then attempt to match again. If even after this there are no matches, you should contact info@marinespecies.org to see if the taxon should be added to the WoRMS register.
 

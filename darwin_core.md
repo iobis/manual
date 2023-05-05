@@ -212,7 +212,7 @@ _Data from [A summary of benthic studies in the sluice dock of Ostend during 197
 
 `basisOfRecord` (required term) specifies the nature of the record, i.e. whether the occurrence record is based on a stored specimen or an observation. In case the specimen is collected and stored in a collection (e.g. at a museum, university, research institute), the options are `PreservedSpecimen` (e.g. preserved in ethanol, tissue etc.), `FossilSpecimen` (fossil, which allows OBIS to make the distinction between the date of collection and the time period the specimen was assumed alive) or `LivingSpecimen` (an intentionally kept/cultivated living specimen e.g. in an aquarium or culture collection). In case no specimen is deposited, the basis of record is either `HumanObservation` (e.g bird sighting, benthic sample but specimens were discarded after counting), or `MachineObservation` (e.g. for occurrences based on automated sensors such as DNA sequencers, image recognition etc).
 
-When the basisOfRecord is a _preservedSpecimen_, _LivingSpecimen_ or _FossilSpecimen_ please also add the `institutionCode`, `collectionCode` and `catalogNumber`, which will enable people to visit the collection and re-examine the material. Sometimes, for example in case of living specimens, a dataset can contain records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection. In this case please add the event type information in `type` (see [OBIS manual: event](darwin_core#event.html)).
+When the basisOfRecord is a _preservedSpecimen_, _LivingSpecimen_ or _FossilSpecimen_ please also add the `institutionCode`, `collectionCode` and `catalogNumber`, which will enable people to visit the collection and re-examine the material. Sometimes, for example in case of living specimens, a dataset can contain records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection. In this case please add the event type information in `type` (see [OBIS manual: event](darwin_core.html#event)).
 
 `institutionCode` identifies the custodian institute (often by acronym), `collectionCode` identifies the collection or dataset within that institute. Collections cannot belong to multiple institutes, so all records within a collection should have the same `institutionCode`. The `collectionID` is an identifier for the record within the dataset or collection.
 
@@ -263,7 +263,7 @@ _Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as pla
 
 ##### Event
 
-`eventID` is an identifier for the sampling or observation event. `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs). See [identifiers](identifiers#eventid.html) for details on how these terms can be constructed.
+`eventID` is an identifier for the sampling or observation event. `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs). See [identifiers](identifiers.html#eventid) for details on how these terms can be constructed.
 
 `habitat` is a category or description of the habitat in which the Event occurred (e.g. benthos, seamount, hydrothermal vent, seagrass, rocky shore, intertidal, ship wreck etc.)
 
@@ -273,7 +273,7 @@ The date and time at which an occurrence was recorded goes in `eventDate`. This 
 
 <img src="https://imgs.xkcd.com/comics/iso_8601.png" class="img-responsive"/>
 
-More specific guidelines on formatting dates and times can be found in the [Common Data formatting issues page](common_formatissues#temporal-dates-and-times)
+More specific guidelines on formatting dates and times can be found in the [Common Data formatting issues page](common_formatissues.html#temporal-dates-and-times)
 
 ##### Sampling
 

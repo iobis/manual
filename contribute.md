@@ -21,7 +21,7 @@ Since 2000, OBIS has accepted, curated and published marine biodiversity data ob
 
 So if you have any of these types of marine data linked to your occurrence data and also want to contribute to OBIS - great! OBIS accepts data from any organization, consortium, project or individual who wants to contribute data. OBIS Data Sources are the authors, editors, and/or organisations that have published one or more datasets through OBIS. They remain the owners or custodians of the data, not OBIS!
 
-OBIS harvests and publishes data from recognized IPTs from OBIS nodes or GBIF publishers. If you own data or have the right to publish data in OBIS, you can contact the [OBIS secretariat or one of the OBIS nodes](https://obis.org/contact/), or additionally a [GBIF publisher](LINK). Your organization or programme can also [become an OBIS node](nodes.html). An OBIS node usually publishes data from multiple data holders, effectively being a node in a network of data providers. So you may have to first find a [relevant node](https://obis.org/contact/)  before you get your data ready to publish.
+OBIS harvests and publishes data from recognized IPTs from OBIS nodes or GBIF publishers. If you own data or have the right to publish data in OBIS, you can contact the [OBIS secretariat or one of the OBIS nodes](https://obis.org/contact/), or additionally a GBIF publisher. Your organization or programme can also [become an OBIS node](nodes.html). An OBIS node usually publishes data from multiple data holders, effectively being a node in a network of data providers. So you may have to first find a [relevant node](https://obis.org/contact/)  before you get your data ready to publish.
 
 To publish a dataset to OBIS, there are **five** main steps you must go through.
 
@@ -72,8 +72,8 @@ To accommodate sensitivity but still be able to contribute to OBIS, we suggest:
 
 * [Generalizing location](common_qc.html#uncertain-geolocation) information by:
 Obtaining regional coordinates using [MarineRegions](http://www.marineregions.org/gazetteer.php?p=search), [Getty Thesaurus of Geographic Names](http://www.getty.edu/research/tools/vocabularies/tgn/), or [Google Maps](http://maps.google.com/)
-* Using the [OBIS Map tool](https://obis.org/maptool/) to generate a polygon area with a Well-Known Text (WKT) representation of the geometry to paste into the `footprintWKT` field. [Maptool tutorial](LINK)
-Delay timing of publication (e.g., to accommodate mobile species)
+* Using the [OBIS Map tool](https://obis.org/maptool/) to generate a polygon area with a Well-Known Text (WKT) representation of the geometry to paste into the `footprintWKT` field.
+* Delay timing of publication (e.g., to accommodate mobile species)
 * [Submit your dataset, but mark it as private in the IPT](ipt.html) so it is not published right away (i.e., until you set it as public). Alternatively, you can set a password on your dataset in order to share with specific individuals. Note that setting passwords will require some coordination with the IPT manager. By submitting your data to an IPT but not immediately publishing it, you can ensure that the dataset will be in a place to be incorporated at a later date when it is ready to be made public. This not only saves time and helps retain details while relatively fresh in your mind, but also ensures the dataset is still ready to be mobilized in case jobs are changed at a later date.
 
 GBIF has created the following [Best Practices for Generalizing Sensitive data](https://docs.gbif.org/sensitive-species-best-practices/master/en/) which can provide you with additional guidance.

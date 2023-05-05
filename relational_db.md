@@ -18,7 +18,7 @@ A fourth table could easily be created to track total school population size thr
 
 We elaborate on how this structure is applied within OBIS [here](formatting.html#dataset-structure).
 
-![An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows.](images/RelationalDB.drawio.png){width=60%}
+![An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows.](images/RelationalDB.drawio.png){width=70%}
 
 Note that when OBIS harvests data, datasets are flattened - i.e., all separate data tables are combined into one. This is the kind of file you will receive when you [download data from OBIS](access.html). The reason for this is that querying relational databases significantly reduces computational time, as opposed to querying a flat database. Relational databases also facilitate requests for subsets that meet particular criteria - e.g., all data from Norway for one species above a certain depth.
 
@@ -30,7 +30,7 @@ For example, let us consider the dates of a ship cruise where a series of bottom
 
 Let’s consider another example. If you took one temperature measurement from the water column where you took your sample, each species found in that sample would have the **same** temperature measurement. By linking such measurements to the _event_ instead of each _occurrence_, we are able to reduce the amount of data being repeated.
 
-![Example of how the sample data is distributed to Core and Extension tables, and how these tables are connected in OBIS](images/OBISsampling-example.png){width=60%}
+![Example of how the sample data is distributed to Core and Extension tables, and how these tables are connected in OBIS](images/OBISsampling-example.png){width=70%}
 
 An advantage of structuring data this way is that if any mistakes are made, you only need to correct it once! So you can see that using relational event structures (when applicable) in combination with extension files can really simplify and reduce the number of times data are repeated.
 

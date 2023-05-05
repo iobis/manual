@@ -57,10 +57,11 @@ Please see the [video tutorial](access.html#mapper) on how to use our Map tool. 
 
 For both the [Getty thesaurus](https://www.getty.edu/research/tools/vocabularies/tgn/) and [Google Maps](https://www.google.com/maps/) you can simply search the name of a locality, for example the Cook Strait in New Zealand. The search result on the Getty thesaurus will bring you to a page where you can obtain `decimalLatitude` and `decimalLongitdue`.
 
-![Screenshot of Cook Strait page on the Getty Thersaurus](images/getty-thesaurus-NZexample.png){width=50%}
+![Screenshot of Cook Strait page on the Getty Thersaurus](images/getty-thesaurus-NZexample.png){width=60%}
 
 For Google Maps, the coordinates can be found in the url after searching.
-![Screenshot of Google Maps showing where coordinates can be foun din the URL](images/google-maps-coordinates.png){width=50%}
+
+![Screenshot of Google Maps showing where coordinates can be foun din the URL](images/google-maps-coordinates.png){width=60%}
 
 ### How to use Marine Regions Gazetteer tool
 
@@ -69,15 +70,15 @@ Marine Regions offers a marine gazetteer search engine to obtain geographic info
 For this example we will search by geographic name for the Bay of Fundy.
 
 ![Marine regions gazetteer search](images/marinegazeeteer-search.png){width=50%}
-![Marine regions gazetteer search](images/marinegazeeteer-bayfundy.png){width=40%}
+![Marine regions gazetteer search](images/marinegazeeteer-bayfundy.png){width=60%}
 
 Our search returned 5 results from different sources (indicated in brackets). So how do we select the correct one? We can notice right away that the second result, from SeaVox SeaArea, has a preferred alternative, which when you click on the link brings you to the IHO Sea Area description for Bay of Fundy. So already we can likely drop SeaVox as a potential candidate. A good next step may be to compare the geographical extent for each to ensure it covers the desired area. If you are uncertain about exactly where your locality is, it may be better to be safe and choose a wider geographic region. Let’s compare the maps for all 5 results:
 
-![Bay of Fundy source IHO](images/marinegazeeteer-bayfundy-1-IHO.png){width=40%}
-![Bay of Fundy source SeaVoX](images/marinegazeeteer-bayfundy-2-SeaVoX.png){width=40%}
-![Canadian part of Bay of Fundy source Marine Region](images/marinegazeeteer-bayfundy-3-MarRegion.png)
-![Bay of Fundy source MEOW](images/marinegazeeteer-bayfundy-4-MEOW.png){width=40%}
-![United States part of Bay of Fundy source Marine Region](images/marinegazeeteer-bayfundy-5-MarRegion.png){width=40%}
+![Bay of Fundy source IHO](images/marinegazeeteer-bayfundy-1-IHO.png){width=450%}
+![Bay of Fundy source SeaVoX](images/marinegazeeteer-bayfundy-2-SeaVoX.png){width=50%}
+![Canadian part of Bay of Fundy source Marine Region](images/marinegazeeteer-bayfundy-3-MarRegion.png){width=50%}
+![Bay of Fundy source MEOW](images/marinegazeeteer-bayfundy-4-MEOW.png){width=50%}
+![United States part of Bay of Fundy source Marine Region](images/marinegazeeteer-bayfundy-5-MarRegion.png){width=50%}
 
 Notice that no region has the exact same geographic extent. Let’s select the IHO Bay of Fundy locality (the first search result) to ensure we are covering the entire area of the Bay of Fundy, but not the Gulf. Inspecting the rest of the page, there is a lot of other useful information we can use. We can populate the following OBIS fields for our dataset, copying the information outlined in the red boxes:
 
@@ -101,7 +102,6 @@ Below is a table summarizing the different DwC terms you can obtain from the OBI
 |--|--|--|--|
 | decimalLatitude | Latitude | Latitude |  |
 | decimalLongitude | Longitude | Longitude |  |
-| maximumDepthInMeters | Depth |  | No minimum depth is provided from either Mapper or Marine Regions |
 | locationID |  | MRGID |  |
 | coordinateUncertaintyInMeters | radius | precision (not always available) |  |
 | footprintWKT | WKT |  |  |
@@ -130,7 +130,9 @@ There is a new Darwin Core term [`verbatimIdentification`](https://dwc.tdwg.org/
 
 The use and definitions for additional Open Nomenclature (ON) signs (`identificationQualifier`) can be found in [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594), which provides examples for using the main Open Nomenclature qualifiers associated with physical specimens (Figure 1). Whereas the publication [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full) provides examples and definitions for identificationQualifiers for non-physical specimens (image-based) (Figure 2).
 
-![Figure 1. Flow diagram with the main Open Nomenclature qualifiers associated with physical specimens. The degree of confidence in the correct identifier increases from the top down. More info and figure copied from [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594).](images/fig1-openNomenclature.png){width=50%} ![Figure 2: Flow diagram with the main Open Nomenclature qualifiers for the identification of specimens from images (non-physical, image-based) . More information and figure copied from [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full)](images/fig2-flowDiagram.jpg){width=50%}
+![Figure 1. Flow diagram with the main Open Nomenclature qualifiers associated with physical specimens. The degree of confidence in the correct identifier increases from the top down. More info and figure copied from [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594).](images/fig1-openNomenclature.png){width=60%}
+
+![Figure 2: Flow diagram with the main Open Nomenclature qualifiers for the identification of specimens from images (non-physical, image-based) . More information and figure copied from [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full)](images/fig2-flowDiagram.jpg){width=60%}
 
 #### Changes in taxonomic classification
 
@@ -168,15 +170,19 @@ If you are given an error that your taxon is not marine, please confirm first wh
 Otherwise, records marked as non-marine will be dropped from the published dataset, and this will be flagged in the data quality associated with your dataset.
 
 Let’s consider an example within [this dataset](https://obis.org/dataset/9fbaeb21-a0dc-4a29-8237-1cd7ada266e0) on benthic macroalgae. Inspecting the data quality report we can see there are three dropped records due to species not being marine.
+
 ![Dropped records from a benthic macroalgae dataset](images/dropped-records1.png){width=40%}
 
 Clicking on the dropped records we can see which three species were dropped. By scrolling to the right of the table, we can see these records have two quality flags: NO_DEPTH and NOT_MARINE.
+
 ![Flags specifying why certain records were dropped](images/dropped-records2.png){width=40%}
 
 Let’s take a look at the first species, Pseudochantransia venezuelensis. When we search for this species on [WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=836900) we can see that the species is marked as freshwater.
-![ ](images/nonmarine-spp-worms.png){width=40%}
+
+![ ](images/nonmarine-spp-worms.png){width=60%}
 
 Cross-referencing with IRMNG, if we search for the genus-species, the species is not even found, an indication that it is not in the database (and also why it can be good to check multiple sources). Searching for just the genus, we can see that marine and brackish are stricken out, indicating the species is not marine.
-![ ](images/nonmarine-spp-irmng.png){width=40%}
+
+![ ](images/nonmarine-spp-irmng.png){width=60%}
 
 If you have species that are marked as non-marine in these registers but are either supposed to be marine, or were found in a marine environment, then you should contact WoRMS to discuss adding it to the register. For additions and/or edits to environmental or distribution records of a species, contact the WoRMS Data Management Team at info@marinespecies.org with your request along with your record or publication substantiating the addition/change.

@@ -1,15 +1,15 @@
-## Integrated Publishing Toolkit (IPT)
+## IPT: Integrated Publishing Toolkit
 
 **Contents:**
 
-- [Introduction](ipt.html#introduction-to-the-ipt)
+- [Introduction](#introduction-to-the-ipt)
 - [How to access the IPT](#how-to-access-the-ipt)
-- [Who populates IPTs?](ipt.html#who-populates-the-ipt-with-datasets)  
-- [Upload data](ipt.html#upload-data)  
-- [Map to Darwin Core](ipt.html#map-your-data-to-darwin-core)  
-- [Add metadata](ipt.html#add-metadata)  
-- [Publish on the IPT](ipt.html#publish-on-the-ipt)  
-- [Publish your data as a dataset paper](ipt.html#publish-your-metadata-as-a-data-paper)
+- [Who populates IPTs?](#who-populates-the-ipt-with-datasets)  
+- [Upload data](#upload-data)  
+- [Map to Darwin Core](#map-your-data-to-darwin-core)  
+- [Add metadata](#add-metadata)  
+- [Publish on the IPT](#publish-on-the-ipt)  
+- [Publish your data as a dataset paper](#publish-your-metadata-as-a-data-paper)
 
 ### Introduction to the IPT
 
@@ -20,13 +20,13 @@ Before we get into the details for accessing and using the IPT, let’s understa
 
 All these components (i.e., core file, extension files, descriptor file, and metadata file) become compressed together (as a .zip file) and comprise the Darwin Core Archive.
 
-![Example showing how Occurrence core, EML, and meta.xml files make up a Darwin Core-Archive file](images/dwca_1.png){width=50%}
+![Example showing how Occurrence core, EML, and meta.xml files make up a Darwin Core-Archive file](images/dwca_1.png){width=70%}
 
 ### How to access the IPT
 
 Once you have determined which [OBIS node IPT](https://ipt.iobis.org/) is suited for your dataset, you can contact your node manager to create an associated account for you. There will be a link on the sign in page that will direct you to the IPT’s administrator to contact them. If your node’s IPT is not listed here, you will have to [contact the node manager](https://obis.org/contact/) to get the link to their IPT.
 
-![Screenshot of IPT login page, highlighting link to IPT admin and the login button](images/ipt-login.png){width=60%}
+![Screenshot of IPT login page, highlighting link to IPT admin and the login button](images/ipt-login.png){width=70%}
 
 If you are an IPT admin and want to know how to set up an IPT yourself, see the [IPT admin page](ipt_admin.html).
 
@@ -48,7 +48,7 @@ Desmet, P. & C. Sinou. 2012. 7-step guide to data publication. Canadensys. <http
 
 Once you have your account, login at the top of the IPT page. Click on the tab Manage resources: it will display all the datasets you are managing and will be empty at first. You can create a new resource at the bottom of the page. Follow the [GBIF IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#create-a-new-resource) for more detailed instructions.
 
-![Screenshot of the manage resources page on the IPT](images/ipt-manageresources.png){width=50%}
+![Screenshot of the manage resources page on the IPT](images/ipt-manageresources.png){width=70%}
 
 The first thing that needs to be completed is the shortname of your resource. This shortname uniquely identifies your resource (i.e. dataset) and will eventually show up in the URL of this resource on IPT. These shortname identifiers are also used to create folders on the IPT and **they cannot be changed**.
 
@@ -81,13 +81,13 @@ You might want to compress/zip your source file first to improve the upload spee
 
 Accepted formats are delimited text files (csv, tab and files using any other delimiter), either directly or compressed as zip or gzip.
 
-![Screenshot of where on the IPT page you can add source data](images/ipt-ss1.png){width=50%}
+![Screenshot of where on the IPT page you can add source data](images/ipt-ss1.png){width=70%}
 
 Let’s follow an example Event core dataset. The first file we will upload will be a .csv file containing the Event core table. After it’s been selected, we click “Add”.
 
 A source file detail page will then be shown, displaying how the IPT has interpreted your file (number of columns, rows, header rows, character encoding, delimiters, etc.). Click the preview button to verify everything is correct, click anywhere on the screen to exit the preview, then click save.
 
-![Screenshot of page shown after you upload a source file for the first time](images/ipt-ss2.png){width=50%}
+![Screenshot of page shown after you upload a source file for the first time](images/ipt-ss2.png){width=70%}
 
 You can also provide information about how the data table is encoded, how many header rows exist, the type of delimiters, and what type of character encoding you used. You may need to double check the [character encoding](https://en.wikipedia.org/wiki/Character_encoding) for your file, especially if you used any special characters (e.g., in species or place names). **UTF-8** is one of the most common encoding standards, and you can select this encoding when saving files, depending on the software used:
 
@@ -103,7 +103,7 @@ You can also provide information about how the data table is encoded, how many h
 
   Once you have specified all the above information, click Save, This will redirect you back to the Overview page for your dataset. You can add multiple files for each of your tables by clicking the three vertical dots to the right and “+ Add”. We will add a .csv file for an Occurrence extension, as well as one for the eMoF extension.
 
-![Example screenshot of the different files, core and extensions, you can upload to an IPT](images/ipt-ss3.png){width=50%}
+![Example screenshot of the different files, core and extensions, you can upload to an IPT](images/ipt-ss3.png){width=70%}
 
 ### Map your data to Darwin Core
 
@@ -118,11 +118,11 @@ You can find more information regarding Darwin Core mapping in the [IPT manual](
 
 To add the DwC mappings, click the three vertical dots to the right of this section and select “+ Add”
 
-![Screenshot of the IPT demonstrating where to add new DwC mappings](images/ipt-ss4-dwcmap.png){width=50%}
+![Screenshot of the IPT demonstrating where to add new DwC mappings](images/ipt-ss4-dwcmap.png){width=70%}
 
 A popup window will allow you to select your Core type to facilitate mapping - Occurrence or Event core. In this example, we will select Darwin Core Event for the Event core table.
 
-![Screenshot showing the two Core types you can map a datafile to](images/ipt-ss5-eventmap.png){width=50%}
+![Screenshot showing the two Core types you can map a datafile to](images/ipt-ss5-eventmap.png){width=70%}
 
 Next we will confirm which file we are mapping to: the .csv file containing our event data. Then click Save.
 
@@ -134,7 +134,7 @@ Finally, click Save. You may return to the Overview page by clicking Back. To ad
 
 The IPT may identify Redundant terms if certain terms appear in the e.g., Event core and Occurrence extension. If your Occurrence extension (or core) contains information about individualCount and organismQuantity, you can map such fields in both the Occurrence and the eMoF as a measurementType.
 
-![Screenshot showing other DwC extensions you can map to](images/ipt-ss6-othermaps.png){width=50%}
+![Screenshot showing other DwC extensions you can map to](images/ipt-ss6-othermaps.png){width=70%}
 
 You can find more information regarding Darwin Core mapping in the [IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#darwin-core-mappings) (including core types, extensions, auto-mapping, default values, value translation, etc.).
 
@@ -146,7 +146,7 @@ Metadata enables users to discover, assess, understand and attribute your datase
 
 Go to your resource overview page > Metadata and click Edit to open the metadata editor. Any information you provide here will be visible on the resource homepage and bundled together with your data when you publish.
 
-![Screenshot showing where to add or upload metadata](images/ipt-ss12-metadata.png){width=50%}
+![Screenshot showing where to add or upload metadata](images/ipt-ss12-metadata.png){width=70%}
 
 Follow the [OBIS metadata standards and best practices](eml.html), or check the [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#metadata) for detailed instructions about the metadata editor. You can also upload a file with metadata information.
 
@@ -154,17 +154,17 @@ Follow the [OBIS metadata standards and best practices](eml.html), or check the 
 
 With your dataset uploaded, properly mapped to DwC, and all the metadata filled, you can publish your dataset. On your resource overview page, go to the Publication section, click the vertical dots and select Publish.
 
-![Screenshot showing where to manage the publishing of your dataset](images/ipt-ss7-pub.png){width=50%}
+![Screenshot showing where to manage the publishing of your dataset](images/ipt-ss7-pub.png){width=70%}
 
 The IPT will now generate your data as Darwin Core, and combine the data with the metadata to package it as a standardized zip-file called a “Darwin Core Archive”. See the IPT manual for more details.
 
 > **Note:** Hitting the "publish" button does not mean that your dataset is available to everyone, it is still private, with access limited to the resource managers. It will only be publicly available when you have changed Visibility to Public. You can choose to do this immediately or at a set date.
 
-![Screenshot showing how to change the visibility of your dataset](images/ipt-ss9-vis.png){width=50%}
+![Screenshot showing how to change the visibility of your dataset](images/ipt-ss9-vis.png){width=70%}
 
 Your dataset will only be harvested by GBIF when you change Registration to Registered. This step is not needed for OBIS to harvest your datasets. Please do not register your dataset with GBIF if your dataset is already published in GBIF by another publisher. Note that the IPT itself must be [registered with GBIF](ipt_admin.html) in order to publish to GBIF. The node manager can do this.
 
-![Screenshot showing where to register your dataset with GBIF. This is only available if the IPT itself is registered with GBIF as well.](images/ipt-ss8-gbifreg.png){width=50%}
+![Screenshot showing where to register your dataset with GBIF. This is only available if the IPT itself is registered with GBIF as well.](images/ipt-ss8-gbifreg.png){width=70%}
 
 Back on the resource overview page > Published Release, you can see the details of your first published dataset, including the publication date and the version number. Since your dataset is published privately, the only thing left to do is to click Visibility to Public (see the IPT manual) to make it available to everyone.
 
@@ -184,8 +184,8 @@ The Metadata expressed in the EML Profile standard can also be downloaded as a R
 
 To download a dataset from an IPT, simply login, and from the home page (not the Manage Resources tab) search for the dataset in question. You can search for keywords in the Filter box on the right side of the page.
 
-![Overview of home page of an IPT](images/ipt-ss10-download1.png){width=50%}
+![Overview of home page of an IPT](images/ipt-ss10-download1.png){width=70%}
 
 Once you navigate to the page of a dataset, at the top of the page you will have options to download the whole Darwin Core Archive file, or just the metadata as an EML or RTF file.
 
-![Overview of a dataset page on an IPT, emphasizing where to download the resource](images/ipt-ss11-download2.png){width=50%}
+![Overview of a dataset page on an IPT, emphasizing where to download the resource](images/ipt-ss11-download2.png){width=70%}

@@ -223,7 +223,7 @@ The information given in this section can also help the OBIS node manager in geo
 
 If the dataset covers multiple areas (e.g. samples from the North Sea and the Mediterranean Sea), then this should clearly be mentioned in the `geographicDescription` field. Note that the IPT only allows one bounding box, and you have to uncheck the “Set global coverage” box to change box bounds.
 
-![Screenshot of the Geographical Coverage section of the metadata, emphasizing how to change the bounds of the coverage box in the map.](images/ipt-ss13-meta-geo.png){width=50%}
+![Screenshot of the Geographical Coverage section of the metadata, emphasizing how to change the bounds of the coverage box in the map.](images/ipt-ss13-meta-geo.png){width=60%}
 
 ###### Taxonomic Coverage
 
@@ -234,7 +234,7 @@ This section can capture two things:
 
 > _Note:_ OBIS also recommends to add information on the (higher) taxonomic groups in the (descriptive) dataset title and abstract.
 
-![Example of the Taxonomic Coverage section of the metadata](images/ipt-ss14-meta-taxa.png){width=50%}
+![Example of the Taxonomic Coverage section of the metadata](images/ipt-ss14-meta-taxa.png){width=70%}
 
 ###### Temporal Coverage
 
@@ -242,14 +242,15 @@ The temporal coverage will be a date range, which can easily be documented. If i
 
 You can also document the Formation Period or the Living Time Period in this section for specimens that may not have been alive during the collection period, or to indicate the time during which the collection occurred.
 
-![Example of the Temporal Coverage section of the metadata](images/ipt-ss15-meta-time.png){width=50%}
+![Example of the Temporal Coverage section of the metadata](images/ipt-ss15-meta-time.png){width=70%}
 
 ##### Keywords
 
 Relevant keywords facilitate the discovery of a dataset. An indication of the represented functional groups can help in a general search (e.g. plankton, benthos, zooplankton, phytoplankton, macrobenthos, meiobenthos …). Assigned keywords can be related to taxonomy, habitat, geography or relevant keywords extracted from thesauri such as the [ASFA thesaurus](https://vocabularyserver.com/asfa/), the [CAB thesaurus](http://www.cabi.org/cabthesaurus/) or [GCMD keywords](https://www.earthdata.nasa.gov/learn/find-data/idn/gcmd-keywords).
 
 As taxonomy and geography are already covered in previous sections, there is no need to repeat related keywords here. Please consult your data provider which (relevant) keywords can be assigned.
-![Example of the Keywords section of the metadata, showing input for a marine fishes dataset](images/ipt-ss16-meta-keyword.png){width=50%}
+
+![Example of the Keywords section of the metadata, showing input for a marine fishes dataset](images/ipt-ss16-meta-keyword.png){width=70%}
 
 ##### Project
 
@@ -284,7 +285,7 @@ This overview will contribute to a better understanding of the data as these pub
 This IPT section should only be filled out if there are specimens held in a museum.
 If relevant, it is strongly recommended that this information is supplied by the data provider or left blank. The collection name, specimen preservation method, and curatorial units should be provided, as applicable.
 
-![Screenshot of the Collection Data page showing what information can be provided for museum specimens](images/ipt-ss17-meta-collection.png){width=50%}
+![Screenshot of the Collection Data page showing what information can be provided for museum specimens](images/ipt-ss17-meta-collection.png){width=70%}
 
 ##### External Links
 

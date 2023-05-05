@@ -20,19 +20,19 @@ To resolve missing fields [marked as required](checklist.html) by OBIS, there ar
 
 - **`eventDate`**
 
-Ensure your eventDate is specified for each event, formatted according to [ISO 8601 standards](https://en.wikipedia.org/wiki/ISO_8601) (e.g., YYYY-MM-DD). We have developed [step by step guidelines](common_formatissues#temporal-dates-and-times.html) to help you format contemporary dates and durations into ISO formatting. If your date falls outside the range of acceptable dates - i.e., historical or geological data occurring before 1583 - please follow recommendations for [historical data](common_formatissues#historical-data.html).
+Ensure your eventDate is specified for each event, formatted according to [ISO 8601 standards](https://en.wikipedia.org/wiki/ISO_8601) (e.g., YYYY-MM-DD). We have developed [step by step guidelines](common_formatissues.html#temporal-dates-and-times) to help you format contemporary dates and durations into ISO formatting. If your date falls outside the range of acceptable dates - i.e., historical or geological data occurring before 1583 - please follow recommendations for [historical data](common_formatissues.html#historical-data).
 
 For any eventDate that is inferred from literature, you should document the original date in the `verbatimEventDate` field.
 
 - **`decimalLongitude`** and **`decimalLatitude`**
 
-First, if you have coordinate data, make sure they are [converted into decimal degrees](common_formatissues#converting-coordinates.html). If you do not have specific coordinate data then you must approximate the coordinates based on locality name. You can use the [Marine Regions gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to search for your region of interest and obtain midpoint coordinates. Guidelines for using this tool and for dealing with uncertain geolocations can be found [here](common_formatissues#geographical-formats.html). You will have to make some comments in the `georeferenceRemarks` field if you are estimating coordinates.
+First, if you have coordinate data, make sure they are [converted into decimal degrees](common_formatissues.html#converting-coordinates). If you do not have specific coordinate data then you must approximate the coordinates based on locality name. You can use the [Marine Regions gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to search for your region of interest and obtain midpoint coordinates. Guidelines for using this tool and for dealing with uncertain geolocations can be found [here](common_formatissues.html#geographical-formats). You will have to make some comments in the `georeferenceRemarks` field if you are estimating coordinates.
 
 - **`scientificName`**
 
 This field should contain only the **originally documented** scientific name down to the lowest possible taxon rank, even if there are misspellings or if it is a current synonym. Class, or even Kingdom levels are accepted if more specific taxonomic levels are unknown. Comments about misspellings, etc. can be documented in the `taxonRemarks` field. Note that there may be special cases for eDNA and DNA derived data, see [specific guidelines](dna_data.html) for these cases.
 
-You may encounter challenges filling this field if the species name is based on description or if its taxonomy was uncertain at time of sampling. For such uncertain taxonomy situations, see our guidelines [here](common_qc#uncertain-taxaonomic-information.html).
+You may encounter challenges filling this field if the species name is based on description or if its taxonomy was uncertain at time of sampling. For such uncertain taxonomy situations, see our guidelines [here](common_qc.html#uncertain-taxaonomic-information).
 
 - **`scientificNameID`**
 
@@ -61,7 +61,7 @@ For specifics on when to use each of these and which other fields should be popu
 
 ### Temporal: Dates and times
 
-The date and time at which an event took place or an occurrence was recorded goes in `eventDate`. This field uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601). OBIS recommends using the extended ISO 8601 format with hyphens. Note that all dates in OBIS become translated to UTC during the [quality control process implemented by OBIS](dataquality.html). Formatting your dates correctly ensures there will be no errors during this process.
+The date and time at which an event took place or an occurrence was recorded goes in `eventDate`. This field uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601). OBIS recommends using the extended ISO 8601 format with hyphens. Note that all dates in OBIS become translated to UTC during the [quality control process implemented by OBIS](https://github.com/iobis/obis-qc). Formatting your dates correctly ensures there will be no errors during this process.
 
 ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use / as a separator. Date and times are separated by `T`. Timezones can be indicated at the end by using + or - the number of hours offset from UTC. If no timezone is indicated, then the time is assumed to be local time. When a date/time is recorded in UTC, a Z should be added at the end. Times must be written in the 24-hour clock system. If you do not know the time, you do not have to provide it. Please do not indicate unknown times as “00:00” as this indicates midnight.
 
@@ -171,7 +171,7 @@ All coordinates provided in the `decimalLatitude` or `decimalLongitude` fields i
 
 ![Screenshot of how to use the OBIS coordinate converter](images/coordinate_conversion.png){width=40%}
 
-The [Map Tool tutorial](access#mapper.html) also reviews use of the coordinate conversion tool.
+The [Map Tool tutorial](access.html#mapper) also reviews use of the coordinate conversion tool.
 
 If your coordinates are in UTMs, then coordinate conversion can be a bit trickier. We suggest using the following [conversion tool](http://rcn.montana.edu/resources/Converter.aspx) to convert from UTM to decimal degrees. Note it is very important to ensure you have the correct UTM zone, otherwise the coordinate conversion will be incorrect. You can use this [ArcGIS map tool](https://www.arcgis.com/apps/View/index.html?appid=7fa64a25efd0420896c3336dc2238475) to visually confirm UTM zones.
 

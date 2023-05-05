@@ -37,20 +37,20 @@ Other terms you should consider adding are grouped by their associated Darwin Co
 
 Terms related to measurements, either biotic (e.g., sex, lifestage) or abiotic will be included in extendedMeasurementOrFact table _not_ the Event Core or Occurrence extension table.
 
-### Stepwise Guidance to Format Event Table (in Excel)
+### Stepwise Guidance to Format Event Table (with spreadsheets)
 
 Before proceeding with the below, make sure each record already has an [eventID](identifiers.html).
 
-1. Identify columns in your data that will match with Darwin Core event fields
-    * Include any relevant abiotic measurements (ENV-DATA) related to sampling events (e.g. sampling protocols). We will add these to the eMoF table later.
-2. Copy these columns to a new sheet and name it Event
-3. Delete duplicate data so only unique events are left.
-4. Identify the hierarchical event structure in your data, if present
-5. Add and fill the `parentEventID` and `type` fields as applicable
-6. Create new records for parent Events
-7. Ensure dates and time are [formatted according to ISO 8601 standards](link #30) in the eventDate field
-8. Add any other relevant fields as indicated above
+1. Add and fill the `parentEventID` and `eventRemarks` fields as applicable
+2. Identify the hierarchical event structure in your data, if present and create new records for parent Events, filling in any relevant fields
+3. Identify all columns in your data that will match with Darwin Core Event fields
+    * Include any relevant abiotic measurements (ENV-DATA) related to sampling events (e.g. sampling protocols). We will add these to the eMoF table later
+4. Copy these columns to a new sheet and name it Event
+5. Delete duplicate data so only unique events are left
+6. Ensure dates and time are [formatted according to ISO 8601 standards](common_formatissues.html#temporal-dates-and-times) in the eventDate field
+7. Add any other relevant fields as indicated above
+8. Map fields to Darwin Core
 
-Watch the video tutorial of this process.
+Watch the video tutorial of this process. (Link coming soon)
 
 After completing the formatting of your Event Core table, you can next format your extendedMeasurementOrFact table. To format the Occurrence extension table, see the [Occurrence table](format_occurrence.html) section of this manual.

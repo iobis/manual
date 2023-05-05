@@ -22,7 +22,7 @@ Occurrence Core datasets describe **observations** and **specimen records** and 
 
 * **No information** on how the data was sampled or samples were processed is available
 * No abiotic measurements are taken or provided
-* You have [eDNA and DNA derived data](examples.html#edna-dna-derived-data.html)
+* You have [eDNA and DNA derived data](examples.html#edna-dna-derived-data)
 * Biological measurements are made on **individual specimens** (each specimen is a single occurrence record)
 
 Occurrence Core is also often the preferred structure for museum collections, citations of occurrences from literature, and sampling activities.
@@ -58,7 +58,7 @@ Let us consider a fictional plankton trawl sampling event to demonstrate how ide
 The GBIF Norwegian Node created the [DwC Excel Template Generator](https://gbif-norway.github.io/dwc-excel-template-generator-js/). This tool will generate four different types of blank Excel spreadsheets: Occurrence Core, MeasurementOrFact, Metadata, and a README. This tool works best if you already know which Darwin Core fields you need, although a default template can be generated.
 
 Another tool from Norway is the [Excel to Darwin Core Standard (DwC) Tool](https://zenodo.org/record/6453921#.Y9KsQkHMKmU). This is a macro Excel spreadsheet that helps create templates for Event (aka Sampling-Event) and Occurrence core tables, as well as MeasurementsOrFacts, Extended MeasurementsOrFacts, and Simple Multimedia extensions.
-GBIF provides an [Occurrence core template](https://ipt.gbif.org/manual/en/ipt/latest/occurrence-data#templates) and an [Event core template](https://ipt.gbif.org/manual/en/ipt/latest/sampling-event-data#templates). If you use these templates from GBIF, be aware that [GBIF’s required terms are different from OBIS](data_sharing#differences-between-obis-and-gbif-publication-processes.html).
+GBIF provides an [Occurrence core template](https://ipt.gbif.org/manual/en/ipt/latest/occurrence-data#templates) and an [Event core template](https://ipt.gbif.org/manual/en/ipt/latest/sampling-event-data#templates). If you use these templates from GBIF, be aware that [GBIF’s required terms are different from OBIS](data_sharing.html#differences-between-obis-and-gbif-publication-processes).
 
 There are also some tools that can help you unpivot (or flatten) data tables. These can be used to flatten many columns into one, particularly useful for the [eMoF](format_emof.html) table.
 
