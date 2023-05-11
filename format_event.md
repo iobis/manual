@@ -37,7 +37,7 @@ Other terms you should consider adding are grouped by their associated Darwin Co
 
 Terms related to measurements, either biotic (e.g., sex, lifestage) or abiotic will be included in extendedMeasurementOrFact table _not_ the Event Core or Occurrence extension table.
 
-### Stepwise Guidance to Format Event Table (with spreadsheets)
+#### Stepwise Guidance to Format Event Table (with spreadsheets)
 
 Before proceeding with the below, make sure each record already has an [eventID](identifiers.html).
 

@@ -5,7 +5,7 @@
 - [Introduction](#introduction-to-the-ipt)
 - [How to access the IPT](#how-to-access-the-ipt)
 - [Who populates IPTs?](#who-populates-the-ipt-with-datasets)  
-- [Upload data](#upload-data)  
+- [Upload data](#create-your-resource-on-the-ipt)  
 - [Map to Darwin Core](#map-your-data-to-darwin-core)  
 - [Add metadata](#add-metadata)  
 - [Publish on the IPT](#publish-on-the-ipt)  
@@ -148,7 +148,7 @@ Go to your resource overview page > Metadata and click Edit to open the metadata
 
 ![Screenshot showing where to add or upload metadata](images/ipt-ss12-metadata.png){width=70%}
 
-Follow the [OBIS metadata standards and best practices](eml.html), or check the [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#metadata) for detailed instructions about the metadata editor. You can also upload a file with metadata information.
+Follow the guidelines on the [OBIS metadata standards and best practices](eml.html) page, or check the [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#metadata) for detailed instructions about the metadata editor. You can also upload a file with metadata information.
 
 ### Publish on the IPT
 

@@ -37,7 +37,7 @@ Record number, sample number, observation number | occurrenceID (either ID or in
 
 The obistools R package also has the [map_fields function](https://github.com/iobis/obistools#map-column-names-to-darwin-core-terms) that you can use to map your dataset fields to a DwC term.
 
-## How to correctly map eMoF terms to preferred BODC vocabulary
+## How to map eMoF terms to preferred BODC vocabulary
 
 ### MeasurementOrFact vocabularies
 

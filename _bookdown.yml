@@ -5,6 +5,7 @@ rmd_files:
   - index.Rmd
   - policy.md
   - gethelp.md
+  - FAQ.md
   - contribute.md
   - data_standards.md
   - darwin_core.md

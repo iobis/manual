@@ -1,6 +1,6 @@
 ## How to format extendedMeasurementOrFact tables
 
-### What data goes into eMoF
+#### What data goes into eMoF
 
 Any data related to abiotic or biotic measurements, including sampling information and protocols should be included in the eMoF table. Measurement data can also go into the  [MeasurementOrFact](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml) extension, however OBIS recommends using the [extendedMeasurementOrFact](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) instead, particularly if your data is based on an Event core table.
 
@@ -38,7 +38,7 @@ Other potential fields are shown in the table below (also listed in the [checkli
 
 *For `measurementTypeID`, `measurementUnitID`, and `measurementValueID` you must use controlled vocabulary terms. We know choosing the correct vocabulary term can be challenging, so we have provided some guidance on how to [select the correct vocabulary](vocabulary.html). It is strongly recommended to ensure these fields are filled as correctly as possible. Missing or incorrect terms will be documented in the [measurementOrFact reports](https://r.obis.org/mof/).
 
-## How to structure eMoF
+#### How to structure eMoF
 
 Structuring data for the eMoF extension may be one of the more confusing extensions in the data formatting process. It may help to think of this extension as the table that contains all information related to any kind of measurement.
 
@@ -46,7 +46,7 @@ Rather than documenting each of your measurements in separate columns (e.g., col
 
 By linking `measurementType` and `measurementValue` with the identifiers `eventID` and/or `occurrenceID`, you can have measurements linked to *one* event (e.g. temperature), measurements link to occurrence records (e.g. length), as well as sampling facts that are linked to events (size, gear, etc.). Information specifically related to how samples were taken will have the measurementTypes: `sampleSizeValue`, `sampleSizeUnit`, `samplingEffort`, and `samplingProtocol`.
 
-### Stepwise Guidance to Format eMoF Table (in Excel)
+#### Stepwise Guidance to Format eMoF Table (in Excel)
 
 1. Create a blank sheet and name it eMoF
 2. Add 9 column headers for:
