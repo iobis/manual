@@ -1,3 +1,9 @@
+**Content**
+
+- [Multimedia data](#multimedia-data-acoustic-imaging)
+- [Habitat data](#habitat-data)
+- [Tracking data](#tracking-data)
+
 ### Multimedia data (Acoustic, Imaging)
 
 If you have multimedia data (e.g. images, acoustic, video) that you want to publish alongside your dataset, you can do so by documenting information in the `associatedMedia` field in your Occurrence table. The usage of this field requires the media in question to be hosted somewhere, e.g., a publication, museum database, etc. Then you simply copy this link to the  `associatedMedia` field for a given occurrence. You may also include a concatenated list if you need to list multiple sources.

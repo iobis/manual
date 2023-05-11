@@ -16,7 +16,7 @@ Example, selected OBIS USA,
 
 then selected Florida Keys Reef Visual Census 1994, and scrolled down to MEASUREMENT TYPES section:
 
-<img src="images/mofreports/floridakeys.png" class="img-responsive"/>
+![ ](images/mofreports/floridakeys.png)
 
 To locate other datasets using these MEASUREMENT TYPES, use this active filtering MoF tool <https://mof.obis.org>, sort by measurementType (click column header) and scroll to measurementType(s) of interest
 
@@ -32,7 +32,7 @@ For MEASUREMENT TYPE “fish length” …  To see which datasets are using this
 
 There are two records for fish length, one missing an ID and the other using S06, which may not be the preferred ID for this measurementType:
 
-<img src="images/mofreports/fishlength.png" class="img-responsive"/>
+![ ](images/mofreports/fishlength.png)
 
 Also, while scrolling through this report,  you may notice something you would like to further research, click the record count value to see a list of datasets and associated node(s) using this noted type/ID.  NOTE: Current USE does not indicate CORRECT use:
 

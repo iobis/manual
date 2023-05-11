@@ -1,5 +1,12 @@
 ## Maintaining and sharing published data
 
+**Content**
+ 
+* [Add a DOI](#adding-a-doi-to-datasets)
+* [User tracking](#user-tracking)
+* [Update your own data](#update-your-data-in-obis)
+* [Publish to OBIS and GBIF](#simultaneous-publishing-to-gbif)
+
 ### Adding a DOI to datasets
 
 DOIs are important for tracking your dataset. Fortunately you can easily reserve a DOI for your dataset if the IPT administrator has configured the IPT accordingly.
@@ -8,13 +15,13 @@ As the IPT administrator, you must enable the capacity for users to reserve DOIs
 
 Once this has been configured, a data provider or admin can easily reserve a DOI for a dataset. First log in to the IPT, navigate to the Manage Resources tab, then select the dataset for which you wish to reserve a DOI. On the overview page for the dataset, scroll to the Publication section, click the three vertical dots and select “Reserve DOI”.  
 
-![Screenshot indicating how to reserve a DOI for your dataset](images/ipt-doi.png){width=60%}
+![*Screenshot indicating how to reserve a DOI for your dataset*](images/ipt-doi.png){width=80%}
 
 ### User tracking
 
 OBIS tracks the number of times your dataset is downloaded. This information is available on your dataset’s page under the Statistics box.
 
-![Example screenshot of how dataset downloads can be tracked](images/data-tracking.png){width=60%}
+![*Example screenshot of how dataset downloads can be tracked*](images/data-tracking.png){width=70%}
 
 ## Update your data in OBIS
 
@@ -27,7 +34,7 @@ To update your own data in OBIS, the process is largely the same as [publishing 
 
 The new version will be automatically updated. A new DOI will be generated only if you generate it yourself on the new version. Deciding when to generate a new DOI is up to you, but generally you should generate a new DOI when there have been major changes to your dataset, such as significant changes in your metadata or a move to a 2.0 resource version within the IPT.
 
-![Example of IPT version control](images/ipt-pubVersion.png){width=60%}
+![*Example of IPT version control*](images/ipt-pubVersion.png){width=80%}
 
 ## Simultaneous publishing to GBIF
 

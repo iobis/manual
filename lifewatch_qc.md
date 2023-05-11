@@ -1,4 +1,4 @@
-### Geographic and data format quality control
+## Geographic and data format quality control
 
 These Data validation and QC services are available on the LifeWatch portal at [http://www.lifewatch.be/data-services](http://www.lifewatch.be/data-services).
 

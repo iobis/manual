@@ -83,7 +83,7 @@ From the OBIS homepage, you can search for data in the search bar in the middle 
 
 When you search by dataset you will notice an additional option appears for [advanced search options](https://obis.org/datasets). This will allow you to identify specific datasets, and apply filters for OBIS nodes and whether datasets include extensions.
 
-![*OBIS homepage search, showing where to find the advanced search link*](images/obis-homepagesearch.png){width=70%}
+![*OBIS homepage search, showing where to find the advanced search link*](images/obis-homepagesearch.png){width=90%}
 
 Regardless if you found a dataset through the homepage or the advanced Dataset search, you will be able to navigate to individual dataset pages. For individual dataset pages (instead of aggregate pages for e.g., a Family) there are three buttons available:
 
@@ -91,7 +91,7 @@ Regardless if you found a dataset through the homepage or the advanced Dataset s
 * Source DwC-A - download the dataset as a Darwin Core-Archive file. This will provide all data tables as separate files within a zipped folder
 * To mapper - this will open another browser with the data shown in the Mapper
 
-![*Dataset download*](images/dataset-DL.png){width=70%}
+![*Dataset download*](images/dataset-DL.png){width=90%}
 
 If you searched for aggregate datasets (e.g., all Crustacea records, all records from OBIS-Canada, etc.), the `source DwC-A` button will not be available to you. To download these data subsets, you must click `to mapper` and then [download the data from the Mapper as a CSV](#mapper).
 
@@ -101,11 +101,11 @@ If you searched for aggregate datasets (e.g., all Crustacea records, all records
 
 To obtain a full export of OBIS data, navigate to the OBIS homepage, click on Data from the top navigation bar, then select [Data Access](https://obis.org/data/access/) from the dropdown menu.
 
-![*OBIS homepage showing where to navigate to access full database exports*](images/full-export1.png){width=70%}
+![*OBIS homepage showing where to navigate to access full database exports*](images/full-export1.png)
 
 Here you will be able to download all occurrence records as a CSV or Parquet file. Note the disclaimer that such exports will not include measurement data, dropped records, or absence records. As with downloads from the Mapper, the exported file is a single Occurrence table. This table includes all provided Event and Occurrence data, as well as 68 fields added by the OBIS Quality Control Pipeline, including taxonomic information obtained from WoRMS.
 
-![*OBIS Data Access page*](images/full-export2.png){width=70%}
+![*OBIS Data Access page*](images/full-export2.png)
 
 ## Finding your own data in OBIS
 

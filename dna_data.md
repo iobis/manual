@@ -2,9 +2,9 @@
 
 **Contents:**
 
-- [Introduction](dna_data.html#introduction)
-- [eDNA & DNA Derived use cases](dna_data.html#edna--dna-derived-data-example)
-- [How to find genetic data in OBIS](dna_data.html#how-to-find-genetic-data-in-obis)
+- [Introduction](#introduction)
+- [eDNA & DNA Derived use cases](#edna-and-dna-derived-data-example)
+- [How to find genetic data in OBIS](#how-to-find-genetic-data-in-obis)
 
 #### Introduction
 
@@ -76,7 +76,7 @@ OBIS is developing guidelines and pipelines to accept other data types, such as:
 - [Tracking](other_data_types.html#tracking-data)
 - [Habitat](other_data_types.html#habitat-data)
 
-#### eDNA & DNA derived data example
+#### eDNA and DNA derived data example
 
 The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional Occurrence core terms, refer to [Occurrence](darwin_core.html#occurrence).
 

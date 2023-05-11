@@ -4,7 +4,9 @@
 
 - [Missing required fields](#missing-required-fields)
 - [Temporal issues: dates/times](#temporal-dates-and-times)
-- [Spatial issues: coordinates, geographical formats](#spatial)
+- [Historical data](#historical-data)
+- [Spatial issues: coordinate conversion](#spatial)
+  - [Convert geographical formats](#geographical-format-conversion)
 
 ### Missing required fields
 
@@ -105,7 +107,7 @@ For uncertainty regarding the date of the event, see [guidelines](common_qc.html
 
 To ensure your date is formatted correctly, it may be easiest to begin by populating the `year`, `month`, and `day` fields first. If the specific time of sampling is known, populate that into `eventTime` as well. When you fill these fields, we recommend ensuring the numbers are encoded as Text, not as General or numeric as Excel often tries to interpret what it thinks the content “should” be. Otherwise you may run into problems with Excel auto formatting your numbers in ways you don’t want. You can do this by highlighting the cells of interest, navigating to the Number Format on the Home ribbon and selecting “Text”. Be careful when you do this change of format, as some columns (e.g. time) may become formatted into a decimal or other unexpected format.
 
-![Screenshot of how to change data type in Excel](images/excel-text-format.png){width=50%}
+![*Screenshot of how to change data type in Excel*](images/excel-text-format.png){width=70%}
 
 Then you can use Excel to concatenate each field together, adding the time zone at the end, using the general format:
 
@@ -113,7 +115,7 @@ Then you can use Excel to concatenate each field together, adding the time zone 
 =CONCAT(YEAR, "-", MONTH, "-", DAY, "T", EVENTTIME, TIMEZONE)
 ```
 
-![Example of how to concatenate dates in Excel](images/excel-concatexample.png){width=40%}
+![*Example of how to concatenate dates in Excel*](images/excel-concatexample.png){width=70%}
 
 > Note
 > You can also use the Canadensys [date parsing](https://data.canadensys.net/tools/dates) tool to help you convert dates or parse them into component parts.
@@ -153,7 +155,7 @@ Our example dataset would then look like the following:
 
 You can see that the eventDate for the parent events does not need to be provided - only the dates for the actual samples are required.
 
-#### Historical data
+### Historical data
 
 Formatting historical data (data published before 1583 CE) can pose additional challenges due to restraints with the ISO 8601 standards. Namely, the shift from the Julian calendar to the currently used Gregorian calendar, as well as issues arising from the definition of [Year Zero](https://en.wikipedia.org/wiki/Year_zero).
 
@@ -169,7 +171,7 @@ More specific guidelines to address historical data complications are under deve
 
 All coordinates provided in the `decimalLatitude` or `decimalLongitude` fields in OBIS must be in decimal degrees. To convert coordinates from degrees-minutes-seconds into decimal degrees, you can use [this Coordinate Conversion tool](https://obis.shinyapps.io/coordinates/) that OBIS has developed. This tool will convert any coordinate (or list of coordinates on a separate line) in a degrees-minutes-seconds format into decimal degrees, even partial coordinates. To use it, simply copy and paste your coordinates into the box provided and click Convert. For example:
 
-![Screenshot of how to use the OBIS coordinate converter](images/coordinate_conversion.png){width=40%}
+![*Screenshot of how to use the OBIS coordinate converter*](images/coordinate_conversion.png){width=70%}
 
 The [Map Tool tutorial](access.html#mapper) also reviews use of the coordinate conversion tool.
 
@@ -183,23 +185,23 @@ In OBIS, the spatial reference system to be documented in `geodeticDatum` is [EP
 
 You can load a .csv file containing your coordinates to be reprojected into [QGIS](https://qgis.org/en/site/forusers/download.html). Opening a new project, first set the global projection to WGS84 EPSG:4326. In the bottom right corner, click the Project Properties to change the Project Coordinate Reference System (CRS). A pop up window will allow you to search for and select WGS84 EPSG:4326. Click OK.
 
-![Screenshot of QGIS interface](images/qgis_screenshot1.png){width=60%}
+![*Screenshot of QGIS interface*](images/qgis_screenshot1.png){width=70%}
 
 To load your .csv file containing the longitude and latitude coordinates, go to Layer < Add Layer < Add Delimited Text layer...
 
-![How to add a .csv with coordinate data in QGIS](images/qgis_screenshot2.png){width=50%}
+![*How to add a .csv with coordinate data in QGIS*](images/qgis_screenshot2.png){width=70%}
 
 A popup window will allow you to browse and select your .csv file. Open the `Geometry Definition` portion of the window and map the field containing longitude values to the `X field` and latitude to the `Y field`. Select the CRS that these coordinates were recorded as from the drop down menu. Then click `Add` and close the window.
 
-![Screenshot showing how to specify CRS of a .csv file when importing into QGIS](images/qgis_screenshot3.png){width=50%}
+![*Screenshot showing how to specify CRS of a .csv file when importing into QGIS*](images/qgis_screenshot3.png){width=70%}
 
 Go to Vector < Geometry Tools < Add Geometry Attributes
 
-![Screenshot showing where to find the Geometry Attributes in QGIS menu](images/qgis_screenshot4.png){width=30%}
+![*Screenshot showing where to find the Geometry Attributes in QGIS menu*](images/qgis_screenshot4.png){width=70%}
 
 Make sure the input layer is your coordinate file. Under the `Calculate using`, select Project CRS (because we set the Project CRS to the desired projection). Click `Run`. This will create a new layer with an additional two columns called Xcoord (longitude) and Ycoord (latitude). These fields contain the coordinates in the desired projection (i.e., WGS84). You can view these columns by right clicking and opening the layer’s attribute table. To export the file, right click the layer and click Make Permanent. Then save the .csv.
 
-![Screenshot showing how to save a temporary layer in QGIS for export](images/qgis_screenshot5.png){width=40%}
+![*Screenshot showing how to save a temporary layer in QGIS for export*](images/qgis_screenshot5.png){width=40%}
 
 For more details see this [QGIS guide on reprojection](https://docs.qgis.org/3.22/en/docs/training_manual/processing/crs.html?highlight=reproject).
 
