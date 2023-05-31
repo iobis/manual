@@ -44,7 +44,7 @@ GBIF also provides some guidelines for [difficult localities](https://docs.gbif.
 
 ### How to use OBIS Map Tool
 
-Please see the [video tutorial](access.html#mapper) on how to use our Map tool. This video covers the following topics:
+A video tutorial on how to use our Map tool will be available soon. This video covers the following topics:
 
 1. Estimating coordinates
 2. Geocoding using names from Marine Regions

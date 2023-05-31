@@ -24,7 +24,7 @@ OBIS recommends to share the data as widely as possible including with other net
 
 In order to publish data with GBIF, the OBIS node also needs to become a [data publisher in GBIF](https://www.gbif.org/become-a-publisher), and link the IPT installation with this publishing organization. OBIS nodes are encouraged to use the OBIS node name as the publishers's name, unless the host institution requires its institutional name to be used. In the latter case, reference to the OBIS node can be added in the description, as well as between brackets in the title. The name of the IPT instance can also refer to the OBIS node. OBIS nodes are also encouraged to select OBIS as the endorsing organization. In this way, the OBIS node is also listed on the [OBIS page](https://www.gbif.org/participant/304) at GBIF.
 
-We have created this short video to help guide you on registering your OBIS node IPT with GBIF.
+A video tutorial will soon be available to help guide you on registering your OBIS node IPT with GBIF.
 
 ### Maintaining the IPT
 

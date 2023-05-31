@@ -51,6 +51,6 @@ Before proceeding with the below, make sure each record already has an [eventID]
 7. Add any other relevant fields as indicated above
 8. Map fields to Darwin Core
 
-Watch the video tutorial of this process. (Link coming soon)
+Watch the video tutorial of this process (coming soon).
 
 After completing the formatting of your Event Core table, you can next format your extendedMeasurementOrFact table. To format the Occurrence extension table, see the [Occurrence table](format_occurrence.html) section of this manual.

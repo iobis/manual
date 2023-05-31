@@ -17,7 +17,7 @@ OBIS has over 100 million records of marine data accessible for downloading. To 
 
 * <https://mapper.obis.org>
 
-We have produced a video demonstration of how to use the Mapper.
+A video demonstration of how to use the Mapper will be available soon.
 
 The mapper allows users to visualize and inspect subsets of OBIS data. A variety of filters are available (taxonomic, geographic, time, data quality) and multiple layers can be combined in a single view. Layers can be downloaded as CSV files.
 
@@ -75,7 +75,7 @@ When searching with the API, you may need to know certain identifiers, including
 * Institute ID - this should be the Ocean Expert ID (e.g., the ID for [NOAA Fisheries Service, Southeast Regional Office St. Petersburg](https://oceanexpert.org/institution/7532) is 7532)
 * OBIS node UUID
 
-We have created a short video demonstrating use of the API here.
+A short video demonstrating use of the API will be available soon.
 
 ## OBIS Homepage and dataset pages
 

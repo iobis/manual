@@ -46,7 +46,7 @@ After matching, the tool will return you a file with the AphiaIDs, LSIDs, valid 
 > **Note**
 > The WoRMS LSID is used for `DwC:scientificNameID`.
 
-A complete online manual is available at [http://www.marinespecies.org/tutorial/taxonmatch.php](http://www.marinespecies.org/tutorial/taxonmatch.php). We have also created a [video tutorial] for using the taxon match tool, including how to attach the IDs back to your own data using Excel’s vlookup function. R script to do this is shown below.
+A complete online manual is available at [http://www.marinespecies.org/tutorial/taxonmatch.php](http://www.marinespecies.org/tutorial/taxonmatch.php). A video tutorial for using the taxon match tool will be available soon. You can attach IDs obtained from WoRMS back to your own data using [Excel’s vlookup function](https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1). R script to do this is shown below.
 
 **R script for attaching Taxon Lists to ID Lists:**
 
