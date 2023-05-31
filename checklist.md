@@ -18,7 +18,7 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 | occurrenceStatus | required | occurrence |  | x |  |  |
 | basisOfRecord | required | record |  | x |  | x |
 | scientificName | required | taxon |  | x |  |  |
-| scientificNameID | required | taxon |  | x |  |  |
+| scientificNameID |  strongly recommended | taxon |  | x |  |  |
 | DNA_sequence | strongly recommended | dna |  |  |  | x |
 | env_broad_scale | strongly recommended | dna |  |  |  | x |
 | env_local scale | recommended | dna |  |  |  | x |

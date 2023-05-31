@@ -6,7 +6,7 @@ If your dataset structure is [based on Occurrence core](formatting.html), or has
 * `occurrenceStatus`
 * `basisOfRecord`
 * `scientificName`
-* `scientificNameID`
+* `scientificNameID` (strongly recommended)
 * `eventDate` (not required for Occurrence extension, required for Occurrence Core)
 * `decimalLatitude` (not required for Occurrence extension)
 * `decimalLongitude` (not required for Occurrence extension)

@@ -11,6 +11,8 @@
 * [How are extension tables (e.g. eMOF, occurrence) linked with the core table?](formatting.html#extensions-in-obis)
 * [What is the difference between Occurence Core and Event Core?](formatting.html#dataset-structure)
 * [What are the responsibilities of node managers?](nodes.html)
+* [Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?](https://github.com/iobis/obis-network-datasets/)
+* [Where can I make suggestions for improvements on this Manual?](https://github.com/iobis/manual)
 
 #### Formatting Data
 

@@ -94,7 +94,7 @@ In cases where no match can be found, WoRMS will indicate none. For these cases 
 * Match with [LifeWatch](https://www.lifewatch.be/data-services/) or another register (see Step 2 below)
 * Check that the species [is marine](common_qc.html#non-marine-species)
 
-If a scientific name does not appear in any register, you should contact the original data provider, where possible, to confirm taxonomic spelling, authority, and obtain any original description documents, then attempt to match again. If even after this there are no matches, you should contact info@marinespecies.org to see if the taxon should be added to the WoRMS register.
+If a scientific name does not appear in any register, you should contact the original data provider, where possible, to confirm taxonomic spelling, authority, and obtain any original description documents, then attempt to match again. If even after this there are no matches, please contact the WoRMS tean at <info@marinespecies.org> to see if the taxon should be added to the WoRMS register.
 
 #### Step 2: Match with other registers
 

@@ -106,29 +106,29 @@ Below is a table summarizing the different DwC terms you can obtain from the OBI
 | coordinateUncertaintyInMeters | radius | precision (not always available) |  |
 | footprintWKT | WKT |  |  |
 
-### Uncertain taxonomic information
+### Low confidence taxonomic identification
 
-In case of uncertain taxonomic identifications, and/or the scientific name contains qualifiers such as cf., ?, or aff., then you should:
+In case of low confidence taxonomic identifications, and/or the scientific name contains qualifiers such as cf., ?, or aff., then you should:
 
-- Put the name of the lowest possible taxon rank referring to the most accurate identification in `scientificName` (usually Genus in these cases)
-- Put qualifiers in [`identificationQualifier`](https://dwc.tdwg.org/terms/#dwciri:identificationQualifier) (e.g., cf., aff.)
+- Put the name of the lowest possible taxon rank that can be determined with high-confidence in `scientificName` (e.g. the genus)
+- Put any text regarding identification with low confidence and/or qualifiers in [`identificationQualifier`](https://dwc.tdwg.org/terms/#dwciri:identificationQualifier) (e.g., cf., aff.)
 - Put the species name in [`specificEpithet`](https://dwc.tdwg.org/terms/#dwc:specificEpithet)
 - Place the rank of the taxon documented in scientificName (e.g., genus) in [`taxonRank`](https://dwc.tdwg.org/terms/#dwc:taxonRank)
-- Document any relevant comments in [`taxonRemarks`](https://dwc.tdwg.org/terms/#dwc:taxonRemarks) or [`identificationRemarks`](https://dwc.tdwg.org/terms/#dwc:identificationRemarks)
+- Document any relevant comments in [`taxonRemarks`](https://dwc.tdwg.org/terms/#dwc:taxonRemarks) or [`identificationRemarks`](https://dwc.tdwg.org/terms/#dwc:identificationRemarks) (e.g. reasoning for identification)
 
 Take an example specimen named Pterois cf. volitans. The associated occurrence record would have the following taxonomic information:
 
 - `scientificName` = Pterois
 - `identificationQualifier` = cf.
-- `specificEpithet` =volitans
-- `scientificNameID` =the one for Pterois
+- `specificEpithet` = volitans
+- `scientificNameID` = the one for Pterois
 - `taxonRank` = species
 
-If the provided genus name is unaccepted in WoRMS, it is okay to use the unaccepted name in this field. `scientificNameID` should contain the WoRMS LSID for the genus.
+If the provided name is unaccepted in WoRMS, it is okay to use the unaccepted name in this field. `scientificNameID` should contain the [WoRMS LSID](name_matching.html) for the genus.
 
 There is a new Darwin Core term [`verbatimIdentification`](https://dwc.tdwg.org/terms/#dwc:verbatimIdentification) meant for containing the originally documented name, however this term is not yet implemented in OBIS so if you populate this field it will not be indexed alongside your data. However you can use `originalNameUsage` to document original species names.
 
-The use and definitions for additional Open Nomenclature (ON) signs (`identificationQualifier`) can be found in [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594), which provides examples for using the main Open Nomenclature qualifiers associated with physical specimens (Figure 1). Whereas the publication [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full) provides examples and definitions for identificationQualifiers for non-physical specimens (image-based) (Figure 2).
+The use and definitions for additional Open Nomenclature (ON) signs (`identificationQualifier`) can be found in [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594), which provides examples for using the main Open Nomenclature qualifiers associated with physical specimens (Figure 1). Whereas the publication [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full) provides examples and definitions for identificationQualifiers for image-based non-physical specimens  (Figure 2).
 
 ![*Figure 1. Flow diagram with the main Open Nomenclature qualifiers associated with physical specimens. The degree of confidence in the correct identifier increases from the top down. More info and figure copied from [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594).*](images/fig1-openNomenclature.png){width=80%}
 

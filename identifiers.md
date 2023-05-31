@@ -1,5 +1,9 @@
 ## Constructing and using indentifier codes
 
+**Content**
+
+* [eventID](#eventid)
+* [occurrenceID](#occurrenceid)
 ### eventID
 
 Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance.  `eventID` is an identifier for an individual sampling or observation event, whereas `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs).
@@ -57,9 +61,9 @@ We can see that each record has a similar eventID structure, except for the last
 
 ### occurrenceID
 
-`occurrenceID` is an identifier for occurrence records. Each occurrence record must have a unique identifier. Because `occurrenceID` is a required term, you may have to construct a persistent and globally unique identifier for each of your data records if none already exist.
+`occurrenceID` is an identifier for occurrence records. Each occurrence record should have a globally unique identifier. Because `occurrenceID` is a required term, you may have to construct a persistent and globally unique identifier for each of your data records if none already exist.
 
-There are no standardized guidelines yet on designing the persistence of this ID, the level of uniqueness (from within a dataset to globally in OBIS), and the precise algorithm and format for generating the ID. But in the absence of a persistent globally unique identifier, one can be constructed by combining the `institutionCode`, the `collectionCode` and the `catalogNumber` (or autonumber in the absence of a catalogNumber).  This is similar to how [eventID](identifiers.html#eventid) is constructed. Note that the inclusion of `occurrenceID` is also necessary for datasets in the [OBIS-ENV-DATA](data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach) format.
+There are no standardized guidelines yet on designing the persistence of this ID, the level of uniqueness (from within a dataset to globally in OBIS), and the precise algorithm and format for generating the ID. But in the absence of a persistent globally unique identifier, one can be constructed by combining the `institutionCode`, the `collectionCode` and the `catalogNumber` (or autonumber in the absence of a catalogNumber).  This is similar to how [eventID](#eventid) is constructed. You may also follow [Life Science Identifiers](https://www.labkey.org/Documentation/wiki-page.view?name=lsidOverview) guidelines. Note that the inclusion of `occurrenceID` is also necessary for datasets in the [OBIS-ENV-DATA](data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach) format.
 
 An important consideration for museum specimens: there is the possibility that the institution a specimen is housed at may change. Therefore you may consider omitting institution identifiers within an occurrenceID, because occurrenceID should **not** change over time.
 

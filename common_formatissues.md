@@ -161,7 +161,7 @@ Formatting historical data (data published before 1583 CE) can pose additional c
 
 For records related to fossils or that have other geological contexts, the [Darwin Core class GeologicalContext](https://dwc.tdwg.org/terms/#geologicalcontext) has terms that can be used in the Event core, Occurrence core, or Occurrence table to specify additional information. For such records, `eventDate` would be populated with the date of collection.
 
-For historical data originating from old records, such as ship logs or other archival records, we understand there can be additional issues in interpreting and formatting data according to DwC standards. Often the location, date, species, and other measurements have to be interpreted from textual descriptions or poor quality documents. As these issues can vary wildly, we currently recommend [submitting a Github issue](https://github.com/iobis/obis-issues/issues) to get assistance with an issue.
+For historical data originating from old records, such as ship logs or other archival records, we understand there can be additional issues in interpreting and formatting data according to DwC standards. Often the location, date, species, and other measurements have to be interpreted from textual descriptions or poor quality documents. As these issues can vary wildly, we currently recommend [submitting a Github issue](https://github.com/iobis/obis-issues/issues) to get assistance.
 
 More specific guidelines to address historical data complications are under development - stay tuned!
 

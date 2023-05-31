@@ -54,49 +54,21 @@ We provide some specific guidance for these URI fields below.
 > Important note!
 > **P01 codes are required for the `measurementTypeID` field**.
 
-You can use codes from other collections (e.g. P06, Q01) for `measurementValueID` and `measurementUnitID` fields, but for `measurementTypeID` you must always use a code from the P01 collection. The BODC has a [Vocabulary Builder](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/) that we recommend using to assist you in selecting a P01 code.
+You can use codes from other collections (e.g. P06, Q01) for `measurementValueID` and `measurementUnitID` fields, but for `measurementTypeID` you must always use a code from the P01 collection (limited exceptions, see below).
 
-##### Selecting P01 codes for measurementTypeID
+##### Selecting P01 codes for measurementTypeID (WORK IN PROGRESS)
 
 P01 codes are concepts that are constructed from several associated elements (see [P01 wheel](https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf)) in order to describe a measurement type. It is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object being measured, where was the measurement taken, in what environment, by what kind of methods? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. To further understand the P01 code and the semantic model it is based on, you can read documentation [here](https://github.com/nvs-vocabs/P01).
 
 The P01 collection is found [here](http://vocab.nerc.ac.uk/collection/P01/current/) and can be [searched through the NERC vocabulary server](https://vocab.nerc.ac.uk/search_nvs/P01/).
 
-You may notice when searching for measurement types related to an occurrence that specific taxonomic codes are available to you, e.g., abundance of Notommata. For OBIS, **all P01 codes should be generalized** - i.e. do not select species-specific codes. Instead only choose codes for “biological entities specified elsewhere”.
+You may notice when searching for measurement types related to an occurrence that specific taxonomic codes are available to you, e.g., abundance of Notommata. For OBIS, **all P01 codes should be generalized** - i.e. **do not** select species-specific codes. Instead only choose codes for “biological entities specified elsewhere” when the measurement is related to an occurrence record.
 
-To assist you in selecting the correct P01 code, we worked with BODC to develop decision trees. These decision trees will help you identify each element that makes up a P01 code, and will help you understand the uniqueness of your data measurement (e.g. to differentiate abundance per unit area of the bed vs per unit volume of the water body). Any individual element may be found within different vocabulary collections, but taking them all together will point you to a P01 code that most accurately represents your measurement type.
+To assist you in selecting the correct P01 code, we are working with [BODC](https://www.bodc.ac.uk/) to develop decision trees. These decision trees will help you understand the uniqueness of your data measurement (e.g. to differentiate abundance per unit area of the bed vs per unit volume of the water body). An individual element of a P01 code may be found within different vocabulary collections (e.g. S02, L22, S22, etc.), but combining concepts together points you to a P01 code that most accurately represents your measurement type.
 
-General guidelines for understanding the different elements that make up a measurementType are found below. Note that although we point to different vocabulary collections, you do not necessarily need to search these collections. We recommend using the following guides along with the [NERC vocabulary builder](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/) to find P01 codes.
+General guidelines for understanding the different elements that make up a measurementType are in development and will be added to this page soon. In the meantime we recommend using either the the [SeaDataNet P01 vocabulary search](https://vocab.seadatanet.org/p01-facet-search) or the [NERC vocabulary builder](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/) to assist in finding P01 codes.
 
-1. First identify what property is being measured. Is it an abundance, temperature measurement, length, concentration? You can identify this element in the [S06 collection](https://vocab.nerc.ac.uk/search_nvs/S06/?searchstr=&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=).
-2. Determine if the measurement is statistically derived - is it a mean, a minimum, maximum, variation? These can be found in the [S07 collection](https://vocab.nerc.ac.uk/search_nvs/S07/?searchstr=&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=)
-3. What are the units of the measurement? [P06](https://vocab.nerc.ac.uk/search_nvs/P06/?searchstr=&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=)
-4. What is the object of interest?
-  a. For most measurements documented in OBIS, this will be “biological entity specified elsewhere” (*not* a specific species), a sub-group ([S13](https://vocab.nerc.ac.uk/search_nvs/S13/)) or a sub-component ([S12](https://vocab.nerc.ac.uk/search_nvs/S12/)). However it could be a chemical ([S27](https://vocab.nerc.ac.uk/search_nvs/S27/)) or physical object or a physical phenomenon (S18-S20). Sometimes the environmental  matrix itself is the object of interest (e.g. pH of water body, atmospheric temperature).
-5. What is the relationship of the object to the environmental matrix? ([S02](https://vocab.nerc.ac.uk/search_nvs/S02/)) Is it per unit weight, unit volume, in, etc.?
-6. What is the environmental matrix? ([S21](https://vocab.nerc.ac.uk/search_nvs/S21/) or [S23](https://vocab.nerc.ac.uk/search_nvs/S23/)) Is there a sub-component of the matrix? ([S22](https://vocab.nerc.ac.uk/search_nvs/S22/) or [S24](https://vocab.nerc.ac.uk/search_nvs/S24/)) This is a vitally important element in order to resolve ambiguity.
-  a.  Was the measurement taken from the sediment, from the water? Was a filter used? If the sample was filtered, the type and size is additional information that should be captured in the matrix definition. [S22](https://vocab.nerc.ac.uk/search_nvs/S22/) or [S24](https://vocab.nerc.ac.uk/search_nvs/S24/) contain the concepts for filtered samples.
-7. What method was used to obtain the measurement? This is different from the sampling methods as mentioned in Step 5. This element refers to any methods applied after the measurement was taken such as sample preparation ([S03](https://vocab.nerc.ac.uk/search_nvs/S03/)), analysis ([S04](https://vocab.nerc.ac.uk/search_nvs/S04/)), or data processing ([S05](https://vocab.nerc.ac.uk/search_nvs/S05/)). A good example would be the validation and standardization of chlorophyll-a concentration measurements.
-
-##### Common P01 Vocabularies
-
-We have provided a list of commonly used measurementTypes and associated P01 codes. However, it is extremely important to note the following before selecting a code:
-
-> **WARNING:**
-> **DO NOT USE A VOCABULARY CODE UNLESS YOU ARE CERTAIN IT MATCHES YOUR DATA**
-
-In some cases there are multiple potential P01 codes associated with a measurementType. Be sure to choose carefully. It is better to leave the field blank and return to it later than to use an incorrect vocabulary.
-
-|measurementType | Object of interest | suggested measurementTypeID P01 code(s) |
-|---------- |-------------|---------- |
-| sex | Biological entity specified elsewhere | <http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/> |
-| Life stage | Biological entity specified elsewhere | <http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/> |
-| Length | Biological entity specified elsewhere | [list](https://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=length%20%25entity%20specified%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=) |
-| Water temperature |  | <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/> OR see [list](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25temperature%25water%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=) |
-| Salinity |  | <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/>  OR see [list](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25salinity%25water%25&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=) for specific methods |
-| Length of sample track | Sampling track | <http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/> |
-
-For OBIS sampling instruments and methods attributes, see the Q01 collection:
+For measurementTypes related to sampling instruments and/or methods attributes, see the Q01 collection:
 
 * Vocabulary: [http://vocab.nerc.ac.uk/collection/Q01/current/](http://vocab.nerc.ac.uk/collection/Q01/current/)
 * Search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/)

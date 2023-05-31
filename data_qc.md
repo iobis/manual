@@ -7,6 +7,8 @@ OBIS ignores records that do not meet a number of standards. For example, all sp
 * [QC tool for species names](name_matching.html)
 * [QC tool for geography and data format](lifewatch_qc.html)
 
+For specific concerns regarding quality control checks or issues, please submit a GitHub ticket to the [OBIS QC repository](https://github.com/iobis/obis-qc/issues).
+
 ## Why are records dropped?
 
  Records can be dropped and therefore not published with your dataset for a number of reasons, including:
