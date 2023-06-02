@@ -4,19 +4,37 @@ clean: ["manual.tex", "manual.log", "manual.Rmd"]
 rmd_files:
   - index.Rmd
   - policy.md
+  - gethelp.md
+  - FAQ.md
   - contribute.md
-  - nodes.md
   - data_standards.md
   - darwin_core.md
-  - eml.md
   - data_format.md
-  - examples.md
-  - data_qc.md
+  - relational_db.md
+  - eml.md
+  - nodes.md
+  - formatting.md
+  - identifiers.md
+  - checklist.md
   - name_matching.md
-  - lifewatch_qc.md
-  - mofreports.md
-  - data_publication.md
-  - access.md
+  - format_occurrence.md
+  - format_event.md
+  - format_emof.md
+  - vocabulary.md
+  - common_formatissues.md
+  - examples.md
+  - dna_data.md
+  - other_data_types.md
+  - data_qc.md
   - dataquality.md
+  - mofreports.md
+  - lifewatch_qc.md
+  - common_qc.md
+  - data_publication.md
+  - ipt.md
+  - ipt_admin.md
+  - data_sharing.md
+  - access.md
+  - citing.md
   - dataviz.md
   - other_resources.md

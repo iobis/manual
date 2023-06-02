@@ -1,4 +1,6 @@
-# Data Visualization and Analysis
+# (PART\*) Data Visualization and Analysis {-}
+
+# Data Visualization
 
 ## Example notebooks using data from OBIS
 
