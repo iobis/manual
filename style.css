@@ -1,0 +1,7 @@
+table {
+  display: inline-block !important;
+  overflow-x: scroll !important;
+}
+.book .book-body .page-wrapper .page-inner {
+  max-width: 80% !important;
+}

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.8 Common Data formatting issues | The OBIS manual</title>
+  <meta name="description" content="4.8 Common Data formatting issues | The OBIS manual" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.8 Common Data formatting issues | The OBIS manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.8 Common Data formatting issues | The OBIS manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="vocabulary.html"/>
+<link rel="next" href="examples.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBW0JFMNBJ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JBW0JFMNBJ');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="/">The OBIS manual</a></li>
+<li><a href="https://obis.org/">Return to OBIS.org</a></li>
+
+<li class="divider"></li>
+<li class="part"><span><b>Overview</b></span></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#guidelines-on-the-sharing-and-use-of-data-in-obis"><i class="fa fa-check"></i><b>1.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i><b>1.2</b> Acknowledgements</a></li>
+<li class="chapter" data-level="1.3" data-path="policy.html"><a href="policy.html"><i class="fa fa-check"></i><b>1.3</b> Data Policy</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="policy.html"><a href="policy.html#guidelines-on-the-sharing-and-use-of-data-in-obis-1"><i class="fa fa-check"></i><b>1.3.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="gethelp.html"><a href="gethelp.html"><i class="fa fa-check"></i><b>1.4</b> Getting Help in OBIS</a></li>
+<li class="chapter" data-level="1.5" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>1.5</b> Frequency Asked Questions</a></li>
+</ul></li>
+<li class="part"><span><b>Contributing data to OBIS</b></span></li>
+<li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS</a></li>
+<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data</a></li>
+<li class="chapter" data-level="2.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.3</b> OBIS Data Life Cycle</a></li>
+<li class="chapter" data-level="2.4" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>2.4</b> Biodiversity data standards</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>2.4.1</b> Darwin Core</a></li>
+<li class="chapter" data-level="2.4.2" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>2.4.2</b> Darwin Core Archive</a></li>
+<li class="chapter" data-level="2.4.3" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>2.4.3</b> Relational databases: the underlying framework of OBIS</a></li>
+<li class="chapter" data-level="2.4.4" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.4.4</b> Ecological Metadata Language</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>2.5</b> OBIS nodes</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>2.5.1</b> Terms of Reference of OBIS nodes</a></li>
+<li class="chapter" data-level="2.5.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>2.5.2</b> How to become an OBIS node</a></li>
+<li class="chapter" data-level="2.5.3" data-path="nodes.html"><a href="nodes.html#obis-node-health-status-check-and-transition-strategy"><i class="fa fa-check"></i><b>2.5.3</b> OBIS Node Health Status Check and Transition Strategy</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Data Formatting</b></span></li>
+<li class="chapter" data-level="3" data-path="formatting.html"><a href="formatting.html"><i class="fa fa-check"></i><b>3</b> Dataset structure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="formatting.html"><a href="formatting.html#when-to-use-event-core"><i class="fa fa-check"></i><b>3.1</b> When to use Event Core</a></li>
+<li class="chapter" data-level="3.2" data-path="formatting.html"><a href="formatting.html#when-to-use-occurrence-core"><i class="fa fa-check"></i><b>3.2</b> When to use Occurrence Core</a></li>
+<li class="chapter" data-level="3.3" data-path="formatting.html"><a href="formatting.html#extensions-in-obis"><i class="fa fa-check"></i><b>3.3</b> Extensions in OBIS</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="formatting.html"><a href="formatting.html#how-are-extensions-linked-to-core-tables-in-obis"><i class="fa fa-check"></i><b>3.3.1</b> How are extensions linked to core tables in OBIS?</a></li>
+<li class="chapter" data-level="3.3.2" data-path="formatting.html"><a href="formatting.html#differences-between-identifiers"><i class="fa fa-check"></i><b>3.3.2</b> Differences between identifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
+<li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.1</b> occurrenceID</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>4</b> Formatting data tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="checklist.html"><a href="checklist.html#darwin-core-term-checklist-for-obis"><i class="fa fa-check"></i><b>4.1</b> Darwin Core Term Checklist for OBIS</a></li>
+<li class="chapter" data-level="4.2" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>4.2</b> Name Matching Strategy for taxonomic quality control</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="name_matching.html"><a href="name_matching.html#taxon-matching-workflow"><i class="fa fa-check"></i><b>4.2.1</b> Taxon Matching Workflow</a></li>
+<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#r-packages-for-taxon-matching"><i class="fa fa-check"></i><b>4.2.2</b> R packages for taxon matching</a></li>
+<li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
+<li class="chapter" data-level="4.6" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.6</b> Choosing Vocabularies for your dataset</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="vocabulary.html"><a href="vocabulary.html#map-your-data-with-dwc-vocabulary"><i class="fa fa-check"></i><b>4.6.1</b> Map your data with DwC vocabulary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="vocabulary.html"><a href="vocabulary.html#how-to-map-emof-terms-to-preferred-bodc-vocabulary"><i class="fa fa-check"></i><b>4.7</b> How to map eMoF terms to preferred BODC vocabulary</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="vocabulary.html"><a href="vocabulary.html#measurementorfact-vocabularies"><i class="fa fa-check"></i><b>4.7.1</b> MeasurementOrFact vocabularies</a></li>
+<li class="chapter" data-level="4.7.2" data-path="vocabulary.html"><a href="vocabulary.html#requesting-new-vocabulary-terms"><i class="fa fa-check"></i><b>4.7.2</b> Requesting new vocabulary terms</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="common_formatissues.html"><a href="common_formatissues.html"><i class="fa fa-check"></i><b>4.8</b> Common Data formatting issues</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="common_formatissues.html"><a href="common_formatissues.html#missing-required-fields"><i class="fa fa-check"></i><b>4.8.1</b> Missing required fields</a></li>
+<li class="chapter" data-level="4.8.2" data-path="common_formatissues.html"><a href="common_formatissues.html#temporal-dates-and-times"><i class="fa fa-check"></i><b>4.8.2</b> Temporal: Dates and times</a></li>
+<li class="chapter" data-level="4.8.3" data-path="common_formatissues.html"><a href="common_formatissues.html#historical-data"><i class="fa fa-check"></i><b>4.8.3</b> Historical data</a></li>
+<li class="chapter" data-level="4.8.4" data-path="common_formatissues.html"><a href="common_formatissues.html#spatial"><i class="fa fa-check"></i><b>4.8.4</b> Spatial</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4.9</b> Examples: ENV-DATA and DNA derived data</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>4.9.1</b> DNA dervived data</a></li>
+<li class="chapter" data-level="4.9.2" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.9.2</b> Multimedia data (Acoustic, Imaging)</a></li>
+<li class="chapter" data-level="4.9.3" data-path="other_data_types.html"><a href="other_data_types.html#habitat-data"><i class="fa fa-check"></i><b>4.9.3</b> Habitat data</a></li>
+<li class="chapter" data-level="4.9.4" data-path="other_data_types.html"><a href="other_data_types.html#tracking-data"><i class="fa fa-check"></i><b>4.9.4</b> Tracking data</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Ensuring Data Quality</b></span></li>
+<li class="chapter" data-level="5" data-path="data_qc.html"><a href="data_qc.html"><i class="fa fa-check"></i><b>5</b> Data quality control</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data_qc.html"><a href="data_qc.html#why-are-records-dropped"><i class="fa fa-check"></i><b>5.1</b> Why are records dropped?</a></li>
+<li class="chapter" data-level="5.2" data-path="data_qc.html"><a href="data_qc.html#how-to-conduct-quality-control"><i class="fa fa-check"></i><b>5.2</b> How to conduct Quality Control</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="data_qc.html"><a href="data_qc.html#conducting-qc-with-obistools"><i class="fa fa-check"></i><b>5.2.1</b> Conducting QC with obistools</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data_qc.html"><a href="data_qc.html#qc-with-r-package-hmisc"><i class="fa fa-check"></i><b>5.2.2</b> QC with R package Hmisc</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>5.3</b> Data quality flags</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="dataquality.html"><a href="dataquality.html#qc-flags-in-downloaded-data"><i class="fa fa-check"></i><b>5.3.1</b> QC Flags in downloaded data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="dataquality.html"><a href="dataquality.html#inspecting-qc-flags-with-r"><i class="fa fa-check"></i><b>5.3.2</b> Inspecting QC flags with R</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>5.4</b> How To Use MoF Report and Tool</a></li>
+<li class="chapter" data-level="5.5" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>5.5</b> Geographic and data format quality control</a></li>
+<li class="chapter" data-level="5.6" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>5.6</b> Common Quality Control issues</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.6.1</b> Uncertain temporal range</a></li>
+<li class="chapter" data-level="5.6.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.6.2</b> Uncertain geolocation</a></li>
+<li class="chapter" data-level="5.6.3" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.6.3</b> How to use OBIS Map Tool</a></li>
+<li class="chapter" data-level="5.6.4" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.6.4</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
+<li class="chapter" data-level="5.6.5" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.6.5</b> How to use Marine Regions Gazetteer tool</a></li>
+<li class="chapter" data-level="5.6.6" data-path="common_qc.html"><a href="common_qc.html#low-confidence-taxonomic-identification"><i class="fa fa-check"></i><b>5.6.6</b> Low confidence taxonomic identification</a></li>
+<li class="chapter" data-level="5.6.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.6.7</b> Uncertain measurements</a></li>
+<li class="chapter" data-level="5.6.8" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.6.8</b> Non-marine species</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Publishing Data</b></span></li>
+<li class="chapter" data-level="6" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>6</b> Data publication and sharing</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.1</b> Licenses</a></li>
+<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> IPT: Integrated Publishing Toolkit</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="ipt.html"><a href="ipt.html#introduction-to-the-ipt"><i class="fa fa-check"></i><b>6.2.1</b> Introduction to the IPT</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ipt.html"><a href="ipt.html#how-to-access-the-ipt"><i class="fa fa-check"></i><b>6.2.2</b> How to access the IPT</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ipt.html"><a href="ipt.html#create-your-resource-on-the-ipt"><i class="fa fa-check"></i><b>6.2.3</b> Create your resource on the IPT</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ipt.html"><a href="ipt.html#map-your-data-to-darwin-core"><i class="fa fa-check"></i><b>6.2.4</b> Map your data to Darwin Core</a></li>
+<li class="chapter" data-level="6.2.5" data-path="ipt.html"><a href="ipt.html#add-metadata"><i class="fa fa-check"></i><b>6.2.5</b> Add metadata</a></li>
+<li class="chapter" data-level="6.2.6" data-path="ipt.html"><a href="ipt.html#publish-on-the-ipt"><i class="fa fa-check"></i><b>6.2.6</b> Publish on the IPT</a></li>
+<li class="chapter" data-level="6.2.7" data-path="ipt.html"><a href="ipt.html#downloading-datasets-from-an-ipt"><i class="fa fa-check"></i><b>6.2.7</b> Downloading datasets from an IPT</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ipt_admin.html"><a href="ipt_admin.html"><i class="fa fa-check"></i><b>6.3</b> IPT Administration Responsibilities</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="ipt_admin.html"><a href="ipt_admin.html#creating-and-installing-ipts"><i class="fa fa-check"></i><b>6.3.1</b> Creating and Installing IPTs</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ipt_admin.html"><a href="ipt_admin.html#registration"><i class="fa fa-check"></i><b>6.3.2</b> Registration</a></li>
+<li class="chapter" data-level="6.3.3" data-path="ipt_admin.html"><a href="ipt_admin.html#maintaining-the-ipt"><i class="fa fa-check"></i><b>6.3.3</b> Maintaining the IPT</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data_sharing.html"><a href="data_sharing.html"><i class="fa fa-check"></i><b>6.4</b> Maintaining and sharing published data</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="data_sharing.html"><a href="data_sharing.html#adding-a-doi-to-datasets"><i class="fa fa-check"></i><b>6.4.1</b> Adding a DOI to datasets</a></li>
+<li class="chapter" data-level="6.4.2" data-path="data_sharing.html"><a href="data_sharing.html#user-tracking"><i class="fa fa-check"></i><b>6.4.2</b> User tracking</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="data_sharing.html"><a href="data_sharing.html#update-your-data-in-obis"><i class="fa fa-check"></i><b>6.5</b> Update your data in OBIS</a></li>
+<li class="chapter" data-level="6.6" data-path="data_sharing.html"><a href="data_sharing.html#simultaneous-publishing-to-gbif"><i class="fa fa-check"></i><b>6.6</b> Simultaneous publishing to GBIF</a></li>
+</ul></li>
+<li class="part"><span><b>Access Data from OBIS</b></span></li>
+<li class="chapter" data-level="7" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>7</b> Data access</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.1</b> Mapper</a></li>
+<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.2</b> R package</a></li>
+<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.3</b> API</a></li>
+<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.4</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.5" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>7.5</b> Full exports</a></li>
+<li class="chapter" data-level="7.6" data-path="access.html"><a href="access.html#finding-your-own-data-in-obis"><i class="fa fa-check"></i><b>7.6</b> Finding your own data in OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="access.html"><a href="access.html#how-to-contact-data-provider"><i class="fa fa-check"></i><b>7.7</b> How to contact data provider</a></li>
+<li class="chapter" data-level="7.8" data-path="access.html"><a href="access.html#interpreting-downloaded-files-from-obis"><i class="fa fa-check"></i><b>7.8</b> Interpreting downloaded files from OBIS</a></li>
+<li class="chapter" data-level="7.9" data-path="citing.html"><a href="citing.html"><i class="fa fa-check"></i><b>7.9</b> Citing Data from OBIS</a></li>
+</ul></li>
+<li class="part"><span><b>Data Visualization and Analysis</b></span></li>
+<li class="chapter" data-level="8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="dataviz.html"><a href="dataviz.html#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>8.1</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="8.2" data-path="dataviz.html"><a href="dataviz.html#obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis"><i class="fa fa-check"></i><b>8.2</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
+</ul></li>
+<li class="part"><span><b>Additional Resources</b></span></li>
+<li class="chapter" data-level="9" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>9</b> Other Resources</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="other_resources.html"><a href="other_resources.html#mbon-pole-to-pole-tutorial"><i class="fa fa-check"></i><b>9.1</b> MBON Pole to Pole Tutorial</a></li>
+<li class="chapter" data-level="9.2" data-path="other_resources.html"><a href="other_resources.html#ioos-darwin-core-guide"><i class="fa fa-check"></i><b>9.2</b> IOOS Darwin Core Guide</a></li>
+<li class="chapter" data-level="9.3" data-path="other_resources.html"><a href="other_resources.html#emodnet-biology"><i class="fa fa-check"></i><b>9.3</b> EMODnet Biology</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The OBIS manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="common-data-formatting-issues" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Common Data formatting issues<a href="common_formatissues.html#common-data-formatting-issues" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Contents:</strong></p>
+<ul>
+<li><a href="common_formatissues.html#missing-required-fields">Missing required fields</a></li>
+<li><a href="common_formatissues.html#temporal-dates-and-times">Temporal issues: dates/times</a></li>
+<li><a href="common_formatissues.html#historical-data">Historical data</a></li>
+<li><a href="common_formatissues.html#spatial">Spatial issues: coordinate conversion</a>
+<ul>
+<li><a href="common_formatissues.html#geographical-format-conversion">Convert geographical formats</a></li>
+</ul></li>
+</ul>
+<div id="missing-required-fields" class="section level3 hasAnchor" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> Missing required fields<a href="common_formatissues.html#missing-required-fields" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you are a <em>node manager</em> and one of the datasets in your IPT is missing data, you should prepare a brief report to contact the data provider and outline what is missing. <a href="citing.html">Get in contact with original data provider</a> if possible. If it is not possible to contact the original data provider (frequently the case for historical datasets), do your best to follow the guidelines below to fill in data. However, <strong>do not guess or make assumptions</strong> if you are unsure. For all fields inferred, please record notes in the <code>eventRemarks</code>, <code>occurrenceRemarks</code>, or ’identificationRemarks` field, as applicable.</p>
+<p>If you are a <em>data provider</em> and notice or been notified that you are missing one (or more) of the eight required terms for OBIS, please proceed accordingly for each term.</p>
+<p>To resolve missing fields <a href="checklist.html">marked as required</a> by OBIS, there are several things you can do, depending on which required field is missing. Follow the guidelines below for each term.</p>
+<ul>
+<li><strong><code>occurrenceID</code></strong> or <strong><code>eventID</code></strong></li>
+</ul>
+<p><a href="identifiers.html">Create a unique occurrenceID</a> for each of your observations. These IDs can be generated by combining dates, location names, and sampling methods.</p>
+<ul>
+<li><strong><code>eventDate</code></strong></li>
+</ul>
+<p>Ensure your eventDate is specified for each event, formatted according to <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 standards</a> (e.g., YYYY-MM-DD). We have developed <a href="common_formatissues.html#temporal-dates-and-times">step by step guidelines</a> to help you format contemporary dates and durations into ISO formatting. If your date falls outside the range of acceptable dates - i.e., historical or geological data occurring before 1583 - please follow recommendations for <a href="common_formatissues.html#historical-data">historical data</a>.</p>
+<p>For any eventDate that is inferred from literature, you should document the original date in the <code>verbatimEventDate</code> field.</p>
+<ul>
+<li><strong><code>decimalLongitude</code></strong> and <strong><code>decimalLatitude</code></strong></li>
+</ul>
+<p>First, if you have coordinate data, make sure they are <a href="common_formatissues.html#converting-coordinates">converted into decimal degrees</a>. If you do not have specific coordinate data then you must approximate the coordinates based on locality name. You can use the <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions gazetteer</a> to search for your region of interest and obtain midpoint coordinates. Guidelines for using this tool and for dealing with uncertain geolocations can be found <a href="common_formatissues.html#geographical-formats">here</a>. You will have to make some comments in the <code>georeferenceRemarks</code> field if you are estimating coordinates.</p>
+<ul>
+<li><strong><code>scientificName</code></strong></li>
+</ul>
+<p>This field should contain only the <strong>originally documented</strong> scientific name down to the lowest possible taxon rank, even if there are misspellings or if it is a current synonym. Class, or even Kingdom levels are accepted if more specific taxonomic levels are unknown. Comments about misspellings, etc. can be documented in the <code>taxonRemarks</code> field. Note that there may be special cases for eDNA and DNA derived data, see <a href="dna_data.html">specific guidelines</a> for these cases.</p>
+<p>You may encounter challenges filling this field if the species name is based on description or if its taxonomy was uncertain at time of sampling. For such uncertain taxonomy situations, see our guidelines <a href="common_qc.html#uncertain-taxaonomic-information">here</a>.</p>
+<ul>
+<li><strong><code>scientificNameID</code></strong></li>
+</ul>
+<p>If you cannot obtain the required Life Science Identifier (LSID) from <a href="name_matching.html">taxon matching with WoRMS</a> then you must contact World Register Marine Species to have an LSID created for your taxon. You will need to confirm that the species is marine. OBIS does not parse LSIDs from other sources (e.g., <a href="https://www.itis.gov">Integrated Taxonomic Information System</a>, <a href="https://www.catalogueoflife.org">Catalog of Life</a>), but if you want to include WoRMS and other LSIDs, they must be specified in a predictable format.</p>
+<ul>
+<li><strong><code>occurrenceStatus</code></strong></li>
+</ul>
+<p>Because occurrenceStatus is a binary field, “presence” or “absence”, this field can usually be easily inferred by data. If there are associated measurements or a record of an observation, the taxon in question would be present. If a particular species is present in one sample, but missing from another, then you could identify that species as absent from the second sample.</p>
+<ul>
+<li><strong><code>basisOfRecord</code></strong></li>
+</ul>
+<p><code>basisOfRecord</code> distinguishes what type of record is in your data. For records pertaining to a collected or stored specimen, you must choose one of the following terms:</p>
+<ul>
+<li><code>PreservedSpecimen</code></li>
+<li><code>FossilSpecimen</code></li>
+<li><code>LivingSpecimen</code></li>
+</ul>
+<p>For records pertaining to an observation in the wild, you should use:</p>
+<p><code>HumanObservation</code> (e.g., observation in the wild)
+<code>MachineObservation</code> (e.g., photograph, DNA sequences)</p>
+<p>For records pertaining to literature data, <code>basisOfRecord</code> should always reflect the evidence upon which the Occurrence record was based. For example, a researcher’s record based on photographs should specify <code>MachineObservation</code>, otherwise specifications should be <code>HumanObservation</code> (see <a href="https://github.com/tdwg/dwc-qa/issues/134#issuecomment-491827863">relevant GitHub discussion</a>).</p>
+<p>For specifics on when to use each of these and which other fields should be populated along with them, see the guidelines on <a href="darwin_core.html#record-level-terms">record-level terms</a>.</p>
+</div>
+<div id="temporal-dates-and-times" class="section level3 hasAnchor" number="4.8.2">
+<h3><span class="header-section-number">4.8.2</span> Temporal: Dates and times<a href="common_formatissues.html#temporal-dates-and-times" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The date and time at which an event took place or an occurrence was recorded goes in <code>eventDate</code>. This field uses the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 standard</a>. OBIS recommends using the extended ISO 8601 format with hyphens. Note that all dates in OBIS become translated to UTC during the <a href="https://github.com/iobis/obis-qc">quality control process implemented by OBIS</a>. Formatting your dates correctly ensures there will be no errors during this process.</p>
+<p>ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use / as a separator. Date and times are separated by <code>T</code>. Timezones can be indicated at the end by using + or - the number of hours offset from UTC. If no timezone is indicated, then the time is assumed to be local time. When a date/time is recorded in UTC, a Z should be added at the end. Times must be written in the 24-hour clock system. If you do not know the time, you do not have to provide it. Please do not indicate unknown times as “00:00” as this indicates midnight.</p>
+<p>Not every piece of time information is necessary, but a generalization of how to format dates and times looks like:</p>
+<blockquote>
+<p><code>YYYY-MM-DDT[hh]:[mm]:[ss] [+/-XX OR Z]</code></p>
+</blockquote>
+<p>Some specific examples of acceptable ISO 8601 dates are:</p>
+<p><strong>Dates:</strong></p>
+<ul>
+<li>1948-09-13</li>
+<li>1993-01/02</li>
+<li>1993-01</li>
+<li>1993</li>
+</ul>
+<p><strong>Dates with Specific Times:</strong></p>
+<ul>
+<li>1973-02-28T15:25:00</li>
+<li>2008-04-25T09:53</li>
+</ul>
+<p><strong>Dates with Time Zones:</strong></p>
+<ul>
+<li>2005-08-31T12:11+12</li>
+<li>2013-02-16T04:28Z</li>
+</ul>
+<p><strong>Date and Time Intervals:</strong></p>
+<ul>
+<li>1993-01-26T04:39+12/1993-01-26T05:48+12</li>
+</ul>
+<p>It is important to note that although ISO 8601 also supports ordinal dates (YYYY-DDD) and week dates (YYYY-Www-D), these formats are not supported by OBIS. Additionally, ISO 8601 guidelines for <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">durations</a> should not be used. Durations for an event (e.g., length of observation) can instead be indicated with the DwC terms <a href="https://dwc.tdwg.org/list/#dwc_startDayOfYear">startDayOfYear</a> and <a href="https://dwc.tdwg.org/list/#dwc_endDayOfYear">endDayOfYear</a>. Durations refer to the actual length of time an event (e.g., occurrence) occurred, whereas intervals indicate the time period during which an event was recorded.</p>
+<p><strong>A note about intervals…</strong>
+Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact time, you should specify that information.</p>
+<p>If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See <a href="common_formatissues.html#how-to-handle-mixed-date-information">example</a>.</p>
+<p>For uncertainty regarding the date of the event, see <a href="common_qc.html">guidelines</a>.</p>
+<div id="tips" class="section level4 hasAnchor" number="4.8.2.1">
+<h4><span class="header-section-number">4.8.2.1</span> Tips<a href="common_formatissues.html#tips" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To ensure your date is formatted correctly, it may be easiest to begin by populating the <code>year</code>, <code>month</code>, and <code>day</code> fields first. If the specific time of sampling is known, populate that into <code>eventTime</code> as well. When you fill these fields, we recommend ensuring the numbers are encoded as Text, not as General or numeric as Excel often tries to interpret what it thinks the content “should” be. Otherwise you may run into problems with Excel auto formatting your numbers in ways you don’t want. You can do this by highlighting the cells of interest, navigating to the Number Format on the Home ribbon and selecting “Text”. Be careful when you do this change of format, as some columns (e.g. time) may become formatted into a decimal or other unexpected format.</p>
+<div class="figure">
+<img src="images/excel-text-format.png" style="width:70.0%" alt="" />
+<p class="caption"><em>Screenshot of how to change data type in Excel</em></p>
+</div>
+<p>Then you can use Excel to concatenate each field together, adding the time zone at the end, using the general format:</p>
+<pre class="excel"><code>=CONCAT(YEAR, &quot;-&quot;, MONTH, &quot;-&quot;, DAY, &quot;T&quot;, EVENTTIME, TIMEZONE)</code></pre>
+<div class="figure">
+<img src="images/excel-concatexample.png" style="width:70.0%" alt="" />
+<p class="caption"><em>Example of how to concatenate dates in Excel</em></p>
+</div>
+<blockquote>
+<p>Note
+You can also use the Canadensys <a href="https://data.canadensys.net/tools/dates">date parsing</a> tool to help you convert dates or parse them into component parts.</p>
+</blockquote>
+<p><strong>A caution about dates and Excel</strong>: Excel is unfortunately notorious for causing issues in saving dates. The Data Carpentries have produced <a href="https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/">this exercise</a> which demonstrates how Excel interprets dates and numbers, sometimes converting numbers into dates and vice versa. This exercise is simply a demonstration of Excel - it does not provide advice on formatting dates for OBIS.</p>
+<p>Date formats in Excel can be very dependent on your computer system region custom and not all of them have the ISO 8601 format included. Therefore you can type the date in the requested format but it will automatically revert the format according to your Windows system region settings. You can change your system region by: navigating to Control Panel &gt; All Control Panel Items &gt; Region and then select “English (United States)” or “English (United Kingdom)”. The YYYY-MM-DD format will appear among the choices within the Format cells - Date options.</p>
+<p>If your computer language is not set to English, you may encounter additional issues with Excel. It may change the format of your date even after you save the document. Changing your computer system’s language to English can help, but you may still run into issues. You may also try using other office management softwares, like LibreOffice which in this case is more friendly. In general, we advise you to be very careful when formatting the <code>eventDate</code> field, and to select the “Text” formatting (as above) and to save your file as a .CSV.</p>
+<p>It is good practice to place the verbatim event date/time description into the <code>verbatimEventDate</code> field. Any modifications you make during data formatting should be recorded in the <code>eventRemarks</code> field, and we recommend taking good notes in a personal reference file.</p>
+</div>
+<div id="how-to-handle-mixed-date-information" class="section level4 hasAnchor" number="4.8.2.2">
+<h4><span class="header-section-number">4.8.2.2</span> How to handle mixed date information<a href="common_formatissues.html#how-to-handle-mixed-date-information" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>When the sampling date is unclear due to a mix of date types and durations, you can use the hierarchical event structure in the Event core to help format and associate dates (and other information) with the correct sampling event. Often times it is useful to break up each type of event into separate records according to the event hierarchy.</p>
+<p>Let’s look at a fictional dataset to demonstrate this. In this example, there is a project called Maple. This project has a cruise that takes place in May and June which takes samples at three different sites. The project has data for three years, beginning in 1993. How do we capture all this information in our dataset? And how do we format <code>eventDate</code> to reflect these different times and durations?</p>
+<p>We can embed this information using a different <code>eventID</code> and <code>parentEventID</code> for each level within the project - the reoccurring cruise, the station sites, and then the samples themselves. We have added a column here for “Event Type” for the sake of example. At this time, there is no Darwin Core event type term, however there is <a href="https://github.com/tdwg/dwc/issues/408">discussion</a> for its creation.</p>
+<p>Our example dataset would then look like the following:</p>
+<table>
+<colgroup>
+<col width="19%" />
+<col width="19%" />
+<col width="12%" />
+<col width="19%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>parentEventID</th>
+<th>eventID</th>
+<th>Event type</th>
+<th>eventDate</th>
+<th>eventRemarks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>MAPLE_1993_crs</td>
+<td>cruise</td>
+<td></td>
+<td>This is the first year</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>MAPLE_1994_crs</td>
+<td>cruise</td>
+<td></td>
+<td>This is the second year</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>MAPLE_1995_crs</td>
+<td>cruise</td>
+<td></td>
+<td>This is the third year</td>
+</tr>
+<tr class="even">
+<td>MAPLE_1993_crs</td>
+<td>MAPLE_1993_crs_st1</td>
+<td>station</td>
+<td></td>
+<td>This is the first year, first site</td>
+</tr>
+<tr class="odd">
+<td>MAPLE_1993_crs</td>
+<td>MAPLE_1993_crs_st2</td>
+<td>station</td>
+<td></td>
+<td>This is the first year, second site where samples were taken over two days</td>
+</tr>
+<tr class="even">
+<td>MAPLE_1993_crs</td>
+<td>MAPLE_1993_crs_st3</td>
+<td>station</td>
+<td></td>
+<td>This is the first year, third site</td>
+</tr>
+<tr class="odd">
+<td>MAPLE_1993_crs_st1</td>
+<td>MAPLE_1993_crs_st1_s1</td>
+<td>sample</td>
+<td>1993-05-05T10:13-04</td>
+<td>This is the first year, first site, first sample</td>
+</tr>
+<tr class="even">
+<td>MAPLE_1993_crs_st1</td>
+<td>MAPLE_1993_crs_st1_s2</td>
+<td>sample</td>
+<td>1993-05-05T10:38-04</td>
+<td>This is the first year, first site, second sample</td>
+</tr>
+<tr class="odd">
+<td>MAPLE_1993_crs_st2</td>
+<td>MAPLE_1993_crs_st2_s1</td>
+<td>sample</td>
+<td>1993-05-19T23:40-04</td>
+<td>This is the first year, second site, first sample</td>
+</tr>
+<tr class="even">
+<td>MAPLE_1993_crs_st2</td>
+<td>MAPLE_1993_crs_st2_s2</td>
+<td>sample</td>
+<td>1993-05-20T01:24-04</td>
+<td>This is the first year, second site, second sample</td>
+</tr>
+<tr class="odd">
+<td>MAPLE_1993_crs_st3</td>
+<td>MAPLE_1993_crs_st3_s1</td>
+<td>sample</td>
+<td>1993-06-01T09:21-04</td>
+<td>This is the first year, third site, first sample</td>
+</tr>
+<tr class="even">
+<td>MAPLE_1993_crs_st3</td>
+<td>MAPLE_1993_crs_st3_s2</td>
+<td>sample</td>
+<td>1993-06-01T09:57-04</td>
+<td>This is the first year, third site, second sample</td>
+</tr>
+</tbody>
+</table>
+<p>You can see that the eventDate for the parent events does not need to be provided - only the dates for the actual samples are required.</p>
+</div>
+</div>
+<div id="historical-data" class="section level3 hasAnchor" number="4.8.3">
+<h3><span class="header-section-number">4.8.3</span> Historical data<a href="common_formatissues.html#historical-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Formatting historical data (data published before 1583 CE) can pose additional challenges due to restraints with the ISO 8601 standards. Namely, the shift from the Julian calendar to the currently used Gregorian calendar, as well as issues arising from the definition of <a href="https://en.wikipedia.org/wiki/Year_zero">Year Zero</a>.</p>
+<p>For records related to fossils or that have other geological contexts, the <a href="https://dwc.tdwg.org/terms/#geologicalcontext">Darwin Core class GeologicalContext</a> has terms that can be used in the Event core, Occurrence core, or Occurrence table to specify additional information. For such records, <code>eventDate</code> would be populated with the date of collection.</p>
+<p>For historical data originating from old records, such as ship logs or other archival records, we understand there can be additional issues in interpreting and formatting data according to DwC standards. Often the location, date, species, and other measurements have to be interpreted from textual descriptions or poor quality documents. As these issues can vary wildly, we currently recommend <a href="https://github.com/iobis/obis-issues/issues">submitting a Github issue</a> to get assistance.</p>
+<p>More specific guidelines to address historical data complications are under development - stay tuned!</p>
+</div>
+<div id="spatial" class="section level3 hasAnchor" number="4.8.4">
+<h3><span class="header-section-number">4.8.4</span> Spatial<a href="common_formatissues.html#spatial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="converting-coordinates" class="section level4 hasAnchor" number="4.8.4.1">
+<h4><span class="header-section-number">4.8.4.1</span> Converting Coordinates<a href="common_formatissues.html#converting-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>All coordinates provided in the <code>decimalLatitude</code> or <code>decimalLongitude</code> fields in OBIS must be in decimal degrees. To convert coordinates from degrees-minutes-seconds into decimal degrees, you can use <a href="https://obis.shinyapps.io/coordinates/">this Coordinate Conversion tool</a> that OBIS has developed. This tool will convert any coordinate (or list of coordinates on a separate line) in a degrees-minutes-seconds format into decimal degrees, even partial coordinates. To use it, simply copy and paste your coordinates into the box provided and click Convert. For example:</p>
+<div class="figure">
+<img src="images/coordinate_conversion.png" style="width:70.0%" alt="" />
+<p class="caption"><em>Screenshot of how to use the OBIS coordinate converter</em></p>
+</div>
+<p>The <a href="access.html#mapper">Map Tool tutorial</a> also reviews use of the coordinate conversion tool.</p>
+<p>If your coordinates are in UTMs, then coordinate conversion can be a bit trickier. We suggest using the following <a href="http://rcn.montana.edu/resources/Converter.aspx">conversion tool</a> to convert from UTM to decimal degrees. Note it is very important to ensure you have the correct UTM zone, otherwise the coordinate conversion will be incorrect. You can use this <a href="https://www.arcgis.com/apps/View/index.html?appid=7fa64a25efd0420896c3336dc2238475">ArcGIS map tool</a> to visually confirm UTM zones.</p>
+</div>
+<div id="geographical-format-conversion" class="section level4 hasAnchor" number="4.8.4.2">
+<h4><span class="header-section-number">4.8.4.2</span> Geographical format conversion<a href="common_formatissues.html#geographical-format-conversion" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In OBIS, the spatial reference system to be documented in <code>geodeticDatum</code> is <a href="https://epsg.io/4326">EPSG:4326 (WGS84)</a>. If your spatial data are not already in this format, you may have to convert it. To do this there are a few approaches: QGIS (or ArcGIS), R, or Python. We provide some short guidance for each, however if you are struggling to convert your data to WGS84 please contact <a href="mailto:helpdesk@obis.org" class="email">helpdesk@obis.org</a> or send a message on the <a href="https://join.slack.com/t/obishq/shared_invite/zt-1nrokd987-aSah0CfXb5MoY10t1olnhQ">OBIS Slack</a>.</p>
+<div id="qgis" class="section level5 hasAnchor" number="4.8.4.2.1">
+<h5><span class="header-section-number">4.8.4.2.1</span> QGIS<a href="common_formatissues.html#qgis" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>You can load a .csv file containing your coordinates to be reprojected into <a href="https://qgis.org/en/site/forusers/download.html">QGIS</a>. Opening a new project, first set the global projection to WGS84 EPSG:4326. In the bottom right corner, click the Project Properties to change the Project Coordinate Reference System (CRS). A pop up window will allow you to search for and select WGS84 EPSG:4326. Click OK.</p>
+<div class="figure">
+<img src="images/qgis_screenshot1.png" style="width:70.0%" alt="" />
+<p class="caption"><em>Screenshot of QGIS interface</em></p>
+</div>
+<p>To load your .csv file containing the longitude and latitude coordinates, go to Layer &lt; Add Layer &lt; Add Delimited Text layer…</p>
+<div class="figure">
+<img src="images/qgis_screenshot2.png" style="width:70.0%" alt="" />
+<p class="caption"><em>How to add a .csv with coordinate data in QGIS</em></p>
+</div>
+<p>A popup window will allow you to browse and select your .csv file. Open the <code>Geometry Definition</code> portion of the window and map the field containing longitude values to the <code>X field</code> and latitude to the <code>Y field</code>. Select the CRS that these coordinates were recorded as from the drop down menu. Then click <code>Add</code> and close the window.</p>
+<div class="figure">
+<img src="images/qgis_screenshot3.png" style="width:70.0%" alt="" />
+<p class="caption"><em>Screenshot showing how to specify CRS of a .csv file when importing into QGIS</em></p>
+</div>
+<p>Go to Vector &lt; Geometry Tools &lt; Add Geometry Attributes</p>
+<div class="figure">
+<img src="images/qgis_screenshot4.png" style="width:70.0%" alt="" />
+<p class="caption"><em>Screenshot showing where to find the Geometry Attributes in QGIS menu</em></p>
+</div>
+<p>Make sure the input layer is your coordinate file. Under the <code>Calculate using</code>, select Project CRS (because we set the Project CRS to the desired projection). Click <code>Run</code>. This will create a new layer with an additional two columns called Xcoord (longitude) and Ycoord (latitude). These fields contain the coordinates in the desired projection (i.e., WGS84). You can view these columns by right clicking and opening the layer’s attribute table. To export the file, right click the layer and click Make Permanent. Then save the .csv.</p>
+<div class="figure">
+<img src="images/qgis_screenshot5.png" style="width:40.0%" alt="" />
+<p class="caption"><em>Screenshot showing how to save a temporary layer in QGIS for export</em></p>
+</div>
+<p>For more details see this <a href="https://docs.qgis.org/3.22/en/docs/training_manual/processing/crs.html?highlight=reproject">QGIS guide on reprojection</a>.</p>
+</div>
+<div id="r" class="section level5 hasAnchor" number="4.8.4.2.2">
+<h5><span class="header-section-number">4.8.4.2.2</span> R<a href="common_formatissues.html#r" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>To reproject coordinates in R, you can use functions in the <code>sf</code> package. A thorough tutorial using this package can be found <a href="https://geocompr.robinlovelace.net/reproj-geo-data.html#reproj-geo-data">here</a>.</p>
+</div>
+<div id="python" class="section level5 hasAnchor" number="4.8.4.2.3">
+<h5><span class="header-section-number">4.8.4.2.3</span> Python<a href="common_formatissues.html#python" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>You also have the option to reproject data using the Python library <a href="https://geopandas.org/en/stable/getting_started.html">Geopandas</a>. In this package there is a utility called <code>to_crs</code> that will reproject data. A tutorial to do this can be found here <a href="https://geopandas.org/en/stable/docs/user_guide/projections.html#re-projecting">here</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="vocabulary.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="examples.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manual.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

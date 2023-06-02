@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5.3 Data quality flags | The OBIS manual</title>
+  <meta name="description" content="5.3 Data quality flags | The OBIS manual" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5.3 Data quality flags | The OBIS manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5.3 Data quality flags | The OBIS manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data_qc.html"/>
+<link rel="next" href="mofreports.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBW0JFMNBJ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JBW0JFMNBJ');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="/">The OBIS manual</a></li>
+<li><a href="https://obis.org/">Return to OBIS.org</a></li>
+
+<li class="divider"></li>
+<li class="part"><span><b>Overview</b></span></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#guidelines-on-the-sharing-and-use-of-data-in-obis"><i class="fa fa-check"></i><b>1.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i><b>1.2</b> Acknowledgements</a></li>
+<li class="chapter" data-level="1.3" data-path="policy.html"><a href="policy.html"><i class="fa fa-check"></i><b>1.3</b> Data Policy</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="policy.html"><a href="policy.html#guidelines-on-the-sharing-and-use-of-data-in-obis-1"><i class="fa fa-check"></i><b>1.3.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="gethelp.html"><a href="gethelp.html"><i class="fa fa-check"></i><b>1.4</b> Getting Help in OBIS</a></li>
+<li class="chapter" data-level="1.5" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>1.5</b> Frequency Asked Questions</a></li>
+</ul></li>
+<li class="part"><span><b>Contributing data to OBIS</b></span></li>
+<li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS</a></li>
+<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data</a></li>
+<li class="chapter" data-level="2.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.3</b> OBIS Data Life Cycle</a></li>
+<li class="chapter" data-level="2.4" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>2.4</b> Biodiversity data standards</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>2.4.1</b> Darwin Core</a></li>
+<li class="chapter" data-level="2.4.2" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>2.4.2</b> Darwin Core Archive</a></li>
+<li class="chapter" data-level="2.4.3" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>2.4.3</b> Relational databases: the underlying framework of OBIS</a></li>
+<li class="chapter" data-level="2.4.4" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.4.4</b> Ecological Metadata Language</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>2.5</b> OBIS nodes</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>2.5.1</b> Terms of Reference of OBIS nodes</a></li>
+<li class="chapter" data-level="2.5.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>2.5.2</b> How to become an OBIS node</a></li>
+<li class="chapter" data-level="2.5.3" data-path="nodes.html"><a href="nodes.html#obis-node-health-status-check-and-transition-strategy"><i class="fa fa-check"></i><b>2.5.3</b> OBIS Node Health Status Check and Transition Strategy</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Data Formatting</b></span></li>
+<li class="chapter" data-level="3" data-path="formatting.html"><a href="formatting.html"><i class="fa fa-check"></i><b>3</b> Dataset structure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="formatting.html"><a href="formatting.html#when-to-use-event-core"><i class="fa fa-check"></i><b>3.1</b> When to use Event Core</a></li>
+<li class="chapter" data-level="3.2" data-path="formatting.html"><a href="formatting.html#when-to-use-occurrence-core"><i class="fa fa-check"></i><b>3.2</b> When to use Occurrence Core</a></li>
+<li class="chapter" data-level="3.3" data-path="formatting.html"><a href="formatting.html#extensions-in-obis"><i class="fa fa-check"></i><b>3.3</b> Extensions in OBIS</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="formatting.html"><a href="formatting.html#how-are-extensions-linked-to-core-tables-in-obis"><i class="fa fa-check"></i><b>3.3.1</b> How are extensions linked to core tables in OBIS?</a></li>
+<li class="chapter" data-level="3.3.2" data-path="formatting.html"><a href="formatting.html#differences-between-identifiers"><i class="fa fa-check"></i><b>3.3.2</b> Differences between identifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
+<li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.1</b> occurrenceID</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>4</b> Formatting data tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="checklist.html"><a href="checklist.html#darwin-core-term-checklist-for-obis"><i class="fa fa-check"></i><b>4.1</b> Darwin Core Term Checklist for OBIS</a></li>
+<li class="chapter" data-level="4.2" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>4.2</b> Name Matching Strategy for taxonomic quality control</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="name_matching.html"><a href="name_matching.html#taxon-matching-workflow"><i class="fa fa-check"></i><b>4.2.1</b> Taxon Matching Workflow</a></li>
+<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#r-packages-for-taxon-matching"><i class="fa fa-check"></i><b>4.2.2</b> R packages for taxon matching</a></li>
+<li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
+<li class="chapter" data-level="4.6" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.6</b> Choosing Vocabularies for your dataset</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="vocabulary.html"><a href="vocabulary.html#map-your-data-with-dwc-vocabulary"><i class="fa fa-check"></i><b>4.6.1</b> Map your data with DwC vocabulary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="vocabulary.html"><a href="vocabulary.html#how-to-map-emof-terms-to-preferred-bodc-vocabulary"><i class="fa fa-check"></i><b>4.7</b> How to map eMoF terms to preferred BODC vocabulary</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="vocabulary.html"><a href="vocabulary.html#measurementorfact-vocabularies"><i class="fa fa-check"></i><b>4.7.1</b> MeasurementOrFact vocabularies</a></li>
+<li class="chapter" data-level="4.7.2" data-path="vocabulary.html"><a href="vocabulary.html#requesting-new-vocabulary-terms"><i class="fa fa-check"></i><b>4.7.2</b> Requesting new vocabulary terms</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="common_formatissues.html"><a href="common_formatissues.html"><i class="fa fa-check"></i><b>4.8</b> Common Data formatting issues</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="common_formatissues.html"><a href="common_formatissues.html#missing-required-fields"><i class="fa fa-check"></i><b>4.8.1</b> Missing required fields</a></li>
+<li class="chapter" data-level="4.8.2" data-path="common_formatissues.html"><a href="common_formatissues.html#temporal-dates-and-times"><i class="fa fa-check"></i><b>4.8.2</b> Temporal: Dates and times</a></li>
+<li class="chapter" data-level="4.8.3" data-path="common_formatissues.html"><a href="common_formatissues.html#historical-data"><i class="fa fa-check"></i><b>4.8.3</b> Historical data</a></li>
+<li class="chapter" data-level="4.8.4" data-path="common_formatissues.html"><a href="common_formatissues.html#spatial"><i class="fa fa-check"></i><b>4.8.4</b> Spatial</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4.9</b> Examples: ENV-DATA and DNA derived data</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>4.9.1</b> DNA dervived data</a></li>
+<li class="chapter" data-level="4.9.2" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.9.2</b> Multimedia data (Acoustic, Imaging)</a></li>
+<li class="chapter" data-level="4.9.3" data-path="other_data_types.html"><a href="other_data_types.html#habitat-data"><i class="fa fa-check"></i><b>4.9.3</b> Habitat data</a></li>
+<li class="chapter" data-level="4.9.4" data-path="other_data_types.html"><a href="other_data_types.html#tracking-data"><i class="fa fa-check"></i><b>4.9.4</b> Tracking data</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Ensuring Data Quality</b></span></li>
+<li class="chapter" data-level="5" data-path="data_qc.html"><a href="data_qc.html"><i class="fa fa-check"></i><b>5</b> Data quality control</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data_qc.html"><a href="data_qc.html#why-are-records-dropped"><i class="fa fa-check"></i><b>5.1</b> Why are records dropped?</a></li>
+<li class="chapter" data-level="5.2" data-path="data_qc.html"><a href="data_qc.html#how-to-conduct-quality-control"><i class="fa fa-check"></i><b>5.2</b> How to conduct Quality Control</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="data_qc.html"><a href="data_qc.html#conducting-qc-with-obistools"><i class="fa fa-check"></i><b>5.2.1</b> Conducting QC with obistools</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data_qc.html"><a href="data_qc.html#qc-with-r-package-hmisc"><i class="fa fa-check"></i><b>5.2.2</b> QC with R package Hmisc</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>5.3</b> Data quality flags</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="dataquality.html"><a href="dataquality.html#qc-flags-in-downloaded-data"><i class="fa fa-check"></i><b>5.3.1</b> QC Flags in downloaded data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="dataquality.html"><a href="dataquality.html#inspecting-qc-flags-with-r"><i class="fa fa-check"></i><b>5.3.2</b> Inspecting QC flags with R</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>5.4</b> How To Use MoF Report and Tool</a></li>
+<li class="chapter" data-level="5.5" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>5.5</b> Geographic and data format quality control</a></li>
+<li class="chapter" data-level="5.6" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>5.6</b> Common Quality Control issues</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.6.1</b> Uncertain temporal range</a></li>
+<li class="chapter" data-level="5.6.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.6.2</b> Uncertain geolocation</a></li>
+<li class="chapter" data-level="5.6.3" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.6.3</b> How to use OBIS Map Tool</a></li>
+<li class="chapter" data-level="5.6.4" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.6.4</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
+<li class="chapter" data-level="5.6.5" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.6.5</b> How to use Marine Regions Gazetteer tool</a></li>
+<li class="chapter" data-level="5.6.6" data-path="common_qc.html"><a href="common_qc.html#low-confidence-taxonomic-identification"><i class="fa fa-check"></i><b>5.6.6</b> Low confidence taxonomic identification</a></li>
+<li class="chapter" data-level="5.6.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.6.7</b> Uncertain measurements</a></li>
+<li class="chapter" data-level="5.6.8" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.6.8</b> Non-marine species</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Publishing Data</b></span></li>
+<li class="chapter" data-level="6" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>6</b> Data publication and sharing</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.1</b> Licenses</a></li>
+<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> IPT: Integrated Publishing Toolkit</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="ipt.html"><a href="ipt.html#introduction-to-the-ipt"><i class="fa fa-check"></i><b>6.2.1</b> Introduction to the IPT</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ipt.html"><a href="ipt.html#how-to-access-the-ipt"><i class="fa fa-check"></i><b>6.2.2</b> How to access the IPT</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ipt.html"><a href="ipt.html#create-your-resource-on-the-ipt"><i class="fa fa-check"></i><b>6.2.3</b> Create your resource on the IPT</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ipt.html"><a href="ipt.html#map-your-data-to-darwin-core"><i class="fa fa-check"></i><b>6.2.4</b> Map your data to Darwin Core</a></li>
+<li class="chapter" data-level="6.2.5" data-path="ipt.html"><a href="ipt.html#add-metadata"><i class="fa fa-check"></i><b>6.2.5</b> Add metadata</a></li>
+<li class="chapter" data-level="6.2.6" data-path="ipt.html"><a href="ipt.html#publish-on-the-ipt"><i class="fa fa-check"></i><b>6.2.6</b> Publish on the IPT</a></li>
+<li class="chapter" data-level="6.2.7" data-path="ipt.html"><a href="ipt.html#downloading-datasets-from-an-ipt"><i class="fa fa-check"></i><b>6.2.7</b> Downloading datasets from an IPT</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ipt_admin.html"><a href="ipt_admin.html"><i class="fa fa-check"></i><b>6.3</b> IPT Administration Responsibilities</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="ipt_admin.html"><a href="ipt_admin.html#creating-and-installing-ipts"><i class="fa fa-check"></i><b>6.3.1</b> Creating and Installing IPTs</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ipt_admin.html"><a href="ipt_admin.html#registration"><i class="fa fa-check"></i><b>6.3.2</b> Registration</a></li>
+<li class="chapter" data-level="6.3.3" data-path="ipt_admin.html"><a href="ipt_admin.html#maintaining-the-ipt"><i class="fa fa-check"></i><b>6.3.3</b> Maintaining the IPT</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data_sharing.html"><a href="data_sharing.html"><i class="fa fa-check"></i><b>6.4</b> Maintaining and sharing published data</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="data_sharing.html"><a href="data_sharing.html#adding-a-doi-to-datasets"><i class="fa fa-check"></i><b>6.4.1</b> Adding a DOI to datasets</a></li>
+<li class="chapter" data-level="6.4.2" data-path="data_sharing.html"><a href="data_sharing.html#user-tracking"><i class="fa fa-check"></i><b>6.4.2</b> User tracking</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="data_sharing.html"><a href="data_sharing.html#update-your-data-in-obis"><i class="fa fa-check"></i><b>6.5</b> Update your data in OBIS</a></li>
+<li class="chapter" data-level="6.6" data-path="data_sharing.html"><a href="data_sharing.html#simultaneous-publishing-to-gbif"><i class="fa fa-check"></i><b>6.6</b> Simultaneous publishing to GBIF</a></li>
+</ul></li>
+<li class="part"><span><b>Access Data from OBIS</b></span></li>
+<li class="chapter" data-level="7" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>7</b> Data access</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.1</b> Mapper</a></li>
+<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.2</b> R package</a></li>
+<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.3</b> API</a></li>
+<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.4</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.5" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>7.5</b> Full exports</a></li>
+<li class="chapter" data-level="7.6" data-path="access.html"><a href="access.html#finding-your-own-data-in-obis"><i class="fa fa-check"></i><b>7.6</b> Finding your own data in OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="access.html"><a href="access.html#how-to-contact-data-provider"><i class="fa fa-check"></i><b>7.7</b> How to contact data provider</a></li>
+<li class="chapter" data-level="7.8" data-path="access.html"><a href="access.html#interpreting-downloaded-files-from-obis"><i class="fa fa-check"></i><b>7.8</b> Interpreting downloaded files from OBIS</a></li>
+<li class="chapter" data-level="7.9" data-path="citing.html"><a href="citing.html"><i class="fa fa-check"></i><b>7.9</b> Citing Data from OBIS</a></li>
+</ul></li>
+<li class="part"><span><b>Data Visualization and Analysis</b></span></li>
+<li class="chapter" data-level="8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="dataviz.html"><a href="dataviz.html#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>8.1</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="8.2" data-path="dataviz.html"><a href="dataviz.html#obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis"><i class="fa fa-check"></i><b>8.2</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
+</ul></li>
+<li class="part"><span><b>Additional Resources</b></span></li>
+<li class="chapter" data-level="9" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>9</b> Other Resources</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="other_resources.html"><a href="other_resources.html#mbon-pole-to-pole-tutorial"><i class="fa fa-check"></i><b>9.1</b> MBON Pole to Pole Tutorial</a></li>
+<li class="chapter" data-level="9.2" data-path="other_resources.html"><a href="other_resources.html#ioos-darwin-core-guide"><i class="fa fa-check"></i><b>9.2</b> IOOS Darwin Core Guide</a></li>
+<li class="chapter" data-level="9.3" data-path="other_resources.html"><a href="other_resources.html#emodnet-biology"><i class="fa fa-check"></i><b>9.3</b> EMODnet Biology</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The OBIS manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-quality-flags" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Data quality flags<a href="dataquality.html#data-quality-flags" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As you are following the guidelines in this manual to <a href="data_formatting.html">format data</a>, it is important to consider the potential quality flags that could be produced when your dataset is published to OBIS. OBIS performs a number of automatic quality checks on the data it receives. This informs data users of any potential issues with a dataset they may be interested in. A complete list of flags can be found <a href="https://github.com/iobis/obis-qc/blob/master/obisqc/util/flags.py">here</a> but broadly speaking potential flags relate to issues with:</p>
+<ul>
+<li>Location - coordinates</li>
+<li>Event time - start, end dates</li>
+<li>Depth values out of range</li>
+<li>Taxonomic</li>
+<li>WoRMS name matching</li>
+<li>Non-marine or terrestrial</li>
+</ul>
+<p>When you are filling these fields it is important to double check that correct coordinates are entered, eventDates are accurate and in the correct format, and depth values are in meters. Records may be <a href="data_qc.html#why-are-records-dropped">rejected</a> and not published with your dataset if the quality does not meet certain expectations. In other cases quality flags are attached to individual occurrence records.</p>
+<p>We acknowledge that sometimes you may encounter a QC flag for data that is accurate. For example, you may document a depth value that gets flagged as <code>DEPTH_OUT_OF_RANGE</code>. Sometimes this occurs because your measured depth value is more accurate than the GEBCO bathymetry data which OBIS bases its depth data on. In these cases, you can ignore the flag, but we recommend adding a note in <code>eventRemarks</code>, <code>measurementRemarks</code>,or <code>occurrenceRemarks</code>.</p>
+<p>The checks we perform as well as the associated flags are documented <a href="https://github.com/iobis/obis-qc">here</a>.</p>
+<div id="qc-flags-in-downloaded-data" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> QC Flags in downloaded data<a href="dataquality.html#qc-flags-in-downloaded-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are several ways to inspect the quality flags associated with a specific dataset or any other subset of data. Data downloaded through the mapper and the R package will include a column named <code>flags</code> which contains a comma separated list of flags for each record. In addition, the data quality panel on the dataset and node pages has a flag icon which can be clicked to get an overview of all flags and the number of records affected.</p>
+<p><img src="images/qc_flag_icon.png" class="img-responsive-50"/></p>
+<p>This table includes quality flags, but also annotations from the WoRMS annotated names list. When OBIS receives a scientific name which cannot be matched with WoRMS automatically, it is sent to the WoRMS team. The WoRMS team will then annotate the name to indicate if and how the name can be fixed. Documentations about these annotations will be added here soon.</p>
+<p><img src="images/qc_flag_table.png" class="img-responsive"/></p>
+<p>Clicking any of these flags will take you to a table showing the affected records. For example, this is a list of records from a single dataset which have the <code>no_match</code> flag, indicating that no LSID or an invalid LSID was provided, and the name could not be matched with WoRMS. The column <code>originalScientificName</code> contains the problematic names, as <code>scientificName</code> is used for the matched name.</p>
+<p><img src="images/qc_flag_records.png" class="img-responsive"/></p>
+<p>At the top of the page there’s a button to open the occurrence records in the mapper where they can be downloaded as CSV. The occurrence table also has the <code>flags</code> column, so when inspecting non matching names for example it’s easy to check if the names at hand have any WoRMS annotations:</p>
+<p><img src="images/qc_flag_flags.png" class="img-responsive-50"/></p>
+</div>
+<div id="inspecting-qc-flags-with-r" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Inspecting QC flags with R<a href="dataquality.html#inspecting-qc-flags-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Inspecting flags using R is also very easy. The example below fetches the data from a single dataset, and lists the flags and the number of records affected. Notice that the <code>occurrence()</code> call has <code>dropped = TRUE</code> to make sure that any dropped records are included in the results:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="dataquality.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
+<span id="cb8-2"><a href="dataquality.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb8-3"><a href="dataquality.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-4"><a href="dataquality.html#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="dataquality.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
+<span id="cb8-6"><a href="dataquality.html#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="dataquality.html#cb8-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-8"><a href="dataquality.html#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="dataquality.html#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># unnest flags</span></span>
+<span id="cb8-10"><a href="dataquality.html#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="dataquality.html#cb8-11" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb8-12"><a href="dataquality.html#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-13"><a href="dataquality.html#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(flags)</span>
+<span id="cb8-14"><a href="dataquality.html#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="dataquality.html#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># get frequency per flag</span></span>
+<span id="cb8-16"><a href="dataquality.html#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="dataquality.html#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="fu">table</span>(df_long<span class="sc">$</span>flags))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="dataquality.html#cb9-1" aria-hidden="true" tabindex="-1"></a>                                Var1 Freq</span>
+<span id="cb9-2"><a href="dataquality.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>                 depth_exceeds_bath   <span class="dv">78</span></span>
+<span id="cb9-3"><a href="dataquality.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>                   no_accepted_name   <span class="dv">17</span></span>
+<span id="cb9-4"><a href="dataquality.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>                           no_depth    <span class="dv">5</span></span>
+<span id="cb9-5"><a href="dataquality.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>                           no_match  <span class="dv">138</span></span>
+<span id="cb9-6"><a href="dataquality.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>                         not_marine    <span class="dv">2</span></span>
+<span id="cb9-7"><a href="dataquality.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>                            on_land    <span class="dv">1</span></span>
+<span id="cb9-8"><a href="dataquality.html#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>      worms_annotation_await_editor    <span class="dv">5</span></span>
+<span id="cb9-9"><a href="dataquality.html#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>  worms_annotation_reject_ambiguous    <span class="dv">2</span></span>
+<span id="cb9-10"><a href="dataquality.html#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>    worms_annotation_reject_habitat    <span class="dv">2</span></span>
+<span id="cb9-11"><a href="dataquality.html#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>             worms_annotation_todo    <span class="dv">9</span></span>
+<span id="cb9-12"><a href="dataquality.html#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span>     worms_annotation_unresolvable    <span class="dv">7</span></span></code></pre></div>
+<p>This second example creates a list of annotated names for a dataset:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="dataquality.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
+<span id="cb10-2"><a href="dataquality.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb10-3"><a href="dataquality.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb10-4"><a href="dataquality.html#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="dataquality.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
+<span id="cb10-6"><a href="dataquality.html#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="dataquality.html#cb10-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-8"><a href="dataquality.html#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="dataquality.html#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># only keep WoRMS annotations and summarize</span></span>
+<span id="cb10-10"><a href="dataquality.html#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="dataquality.html#cb10-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb10-12"><a href="dataquality.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
+<span id="cb10-13"><a href="dataquality.html#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-14"><a href="dataquality.html#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(flags) <span class="sc">%&gt;%</span></span>
+<span id="cb10-15"><a href="dataquality.html#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(flags, <span class="st">&quot;worms&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-16"><a href="dataquality.html#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
+<span id="cb10-17"><a href="dataquality.html#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="dataquality.html#cb11-1" aria-hidden="true" tabindex="-1"></a>   originalScientificName            flags                             records</span>
+<span id="cb11-2"><a href="dataquality.html#cb11-2" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>                             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                               <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb11-3"><a href="dataquality.html#cb11-3" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span> Alcyonidium fruticosa             worms_annotation_reject_habitat         <span class="dv">1</span></span>
+<span id="cb11-4"><a href="dataquality.html#cb11-4" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> <span class="fu">Apicularia</span> (Thapsiella) rudis sp. worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb11-5"><a href="dataquality.html#cb11-5" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span> Arcoscalpellum vegae              worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb11-6"><a href="dataquality.html#cb11-6" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span> Balanus evermanni                 worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb11-7"><a href="dataquality.html#cb11-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span> Chloramidae                       worms_annotation_reject_ambiguous       <span class="dv">2</span></span>
+<span id="cb11-8"><a href="dataquality.html#cb11-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span> Cleippides quadridentatus         worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb11-9"><a href="dataquality.html#cb11-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span> Enhydrosoma hoplacantha           worms_annotation_reject_habitat         <span class="dv">1</span></span>
+<span id="cb11-10"><a href="dataquality.html#cb11-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span> Hippomedon setosa                 worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb11-11"><a href="dataquality.html#cb11-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span> Leionucula tenuis                 worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb11-12"><a href="dataquality.html#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> Ophiocten borealis                worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb11-13"><a href="dataquality.html#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span> Ophiopholis gracilis              worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb11-14"><a href="dataquality.html#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> Priapulus australis               worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb11-15"><a href="dataquality.html#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="dv">13</span> Primnoella residaeformis          worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb11-16"><a href="dataquality.html#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="dv">14</span> Robulus orbigny                   worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb11-17"><a href="dataquality.html#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span> Tetraxonia                        worms_annotation_unresolvable           <span class="dv">2</span></span>
+<span id="cb11-18"><a href="dataquality.html#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="dv">16</span> Tmetonyx barentsi                 worms_annotation_await_editor           <span class="dv">2</span></span>
+<span id="cb11-19"><a href="dataquality.html#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="dv">17</span> Triaxonida                        worms_annotation_todo                   <span class="dv">6</span></span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data_qc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mofreports.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manual.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
