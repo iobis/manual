@@ -6,7 +6,7 @@
 - [Uncertain geolocation](#uncertain-geolocation)
   - [How to use OBIS Maptool](#how-to-use-obis-map-tool)
   - [How to use Gazetteers to obtain geolocation information](#how-to-use-marine-regions-gazetteer-tool)
-- [Uncertain taxonomic information](#uncertain-taxonomic-information)
+- [Low confidence taxonomic information](#low-confidence-taxonomic-identification)
 - [Uncertain measurements](#uncertain-measurements)
 
 ### Uncertain temporal range
@@ -119,14 +119,14 @@ In case of low confidence taxonomic identifications, and/or the scientific name 
 Take an example specimen named Pterois cf. volitans. The associated occurrence record would have the following taxonomic information:
 
 - `scientificName` = Pterois
-- `identificationQualifier` = cf.
-- `specificEpithet` = volitans
+- `identificationQualifier` = cf. volitans
+- `specificEpithet` = *leave blank*
 - `scientificNameID` = the one for Pterois
-- `taxonRank` = species
+- `taxonRank` = genus
 
 If the provided name is unaccepted in WoRMS, it is okay to use the unaccepted name in this field. `scientificNameID` should contain the [WoRMS LSID](name_matching.html) for the genus.
 
-There is a new Darwin Core term [`verbatimIdentification`](https://dwc.tdwg.org/terms/#dwc:verbatimIdentification) meant for containing the originally documented name, however this term is not yet implemented in OBIS so if you populate this field it will not be indexed alongside your data. However you can use `originalNameUsage` to document original species names.
+There is a new Darwin Core term [`verbatimIdentification`](https://dwc.tdwg.org/terms/#dwc:verbatimIdentification) meant for containing the originally documented name, however this term is not yet implemented in OBIS so if you populate this field it will not be indexed alongside your data. However you can use `identificationRemarks` to add extra information.
 
 The use and definitions for additional Open Nomenclature (ON) signs (`identificationQualifier`) can be found in [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594), which provides examples for using the main Open Nomenclature qualifiers associated with physical specimens (Figure 1). Whereas the publication [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full) provides examples and definitions for identificationQualifiers for image-based non-physical specimens  (Figure 2).
 
