@@ -341,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="common_qc.html#how-to-use-obis-map-tool">How to use OBIS Maptool</a></li>
 <li><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool">How to use Gazetteers to obtain geolocation information</a></li>
 </ul></li>
-<li><a href="#uncertain-taxonomic-information">Uncertain taxonomic information</a></li>
+<li><a href="common_qc.html#low-confidence-taxonomic-identification">Low confidence taxonomic information</a></li>
 <li><a href="common_qc.html#uncertain-measurements">Uncertain measurements</a></li>
 </ul>
 <div id="uncertain-temporal-range" class="section level3 hasAnchor" number="5.6.1">
@@ -531,13 +531,13 @@ If you are making any inferences and/or decisions about locality coordinates, pl
 <p>Take an example specimen named Pterois cf. volitans. The associated occurrence record would have the following taxonomic information:</p>
 <ul>
 <li><code>scientificName</code> = Pterois</li>
-<li><code>identificationQualifier</code> = cf.</li>
-<li><code>specificEpithet</code> = volitans</li>
+<li><code>identificationQualifier</code> = cf. volitans</li>
+<li><code>specificEpithet</code> = <em>leave blank</em></li>
 <li><code>scientificNameID</code> = the one for Pterois</li>
-<li><code>taxonRank</code> = species</li>
+<li><code>taxonRank</code> = genus</li>
 </ul>
 <p>If the provided name is unaccepted in WoRMS, it is okay to use the unaccepted name in this field. <code>scientificNameID</code> should contain the <a href="name_matching.html">WoRMS LSID</a> for the genus.</p>
-<p>There is a new Darwin Core term <a href="https://dwc.tdwg.org/terms/#dwc:verbatimIdentification"><code>verbatimIdentification</code></a> meant for containing the originally documented name, however this term is not yet implemented in OBIS so if you populate this field it will not be indexed alongside your data. However you can use <code>originalNameUsage</code> to document original species names.</p>
+<p>There is a new Darwin Core term <a href="https://dwc.tdwg.org/terms/#dwc:verbatimIdentification"><code>verbatimIdentification</code></a> meant for containing the originally documented name, however this term is not yet implemented in OBIS so if you populate this field it will not be indexed alongside your data. However you can use <code>identificationRemarks</code> to add extra information.</p>
 <p>The use and definitions for additional Open Nomenclature (ON) signs (<code>identificationQualifier</code>) can be found in <a href="https://doi.org/10.1111/2041-210X.12594">Open Nomenclature in the biodiversity era</a>, which provides examples for using the main Open Nomenclature qualifiers associated with physical specimens (Figure 1). Whereas the publication <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations</a> provides examples and definitions for identificationQualifiers for image-based non-physical specimens (Figure 2).</p>
 <div class="figure">
 <img src="images/fig1-openNomenclature.png" style="width:80.0%" alt="" />
