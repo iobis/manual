@@ -4,6 +4,7 @@
 
 * [eventID](#eventid)
 * [occurrenceID](#occurrenceid)
+
 ### eventID
 
 Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance.  `eventID` is an identifier for an individual sampling or observation event, whereas `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs).
