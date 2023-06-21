@@ -193,7 +193,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
 <li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.1</b> occurrenceID</a></li>
+<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#eventid"><i class="fa fa-check"></i><b>3.5.1</b> eventID</a></li>
+<li class="chapter" data-level="3.5.2" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.2</b> occurrenceID</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>4</b> Formatting data tables</a>
@@ -335,10 +336,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.5</span> Constructing and using indentifier codes<a href="identifiers.html#constructing-and-using-indentifier-codes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Content</strong></p>
 <ul>
-<li><a href="#eventid">eventID</a></li>
-<li><a href="identifiers.html#occurrenceid">occurrenceID</a>
-### eventID</li>
+<li><a href="identifiers.html#eventid">eventID</a></li>
+<li><a href="identifiers.html#occurrenceid">occurrenceID</a></li>
 </ul>
+<div id="eventid" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> eventID<a href="identifiers.html#eventid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance. <code>eventID</code> is an identifier for an individual sampling or observation event, whereas <code>parentEventID</code> is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs).</p>
 <p><code>eventID</code> can be used for replicated samples or sub-samples. It is important to make sure each replicate sample receives a unique <code>eventID</code>, which could be based on the unique sample ID in your dataset. Sample ID can also be recorded in <code>materialSampleID</code>, as OBIS does not need to have separate eventIDs and <code>materialSampleIDs</code>. Rather OBIS can treat these two terms as equivalent. Be sure to still fill in the eventID field if you want to use materialSampleID, as OBIS only uses eventID and parentID for structuring datasets, not sample ID. This does not prevent you from using the field if you would like to.</p>
 <p>If you do not already have a <code>materialSampleID</code>, creating a unique eventID for your data records can be as straightforward as combining different fields from your data.</p>
@@ -474,10 +476,11 @@ You should consider carefully what combination of fields will generate a <strong
 <p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10">Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)</a>.</em></p>
 <p>We can see that each record has a similar eventID structure, except for the last part which indicates the event type - documented in the <code>eventRemarks</code> column. In this dataset, records with the eventID <code>IOF_benthos_Plominski_zaljev_2000_crs</code> has information applicable for records with eventIDs ending with <code>_stat1</code>, <code>_stat2</code>, <code>_s01</code>, and <code>_s02</code> because <code>_crs</code> is their parent event. Similarly, information (e.g., date of station visit, coordinates) documented in records with eventID <code>IOF_benthos_Plominski_zaljev_2000_stat1</code> is applicable for the two sample records (eventID <code>_s01</code> and <code>_s02</code>), because these samples were taken at Station 1 (indicated by the parentEventID). These eventIDs could have been nested in another way, such as <code>IOF_benthos_Plominsku_zaljev_2000_crs:stat1:s01</code> which would embed the parentEventID into the identifier.</p>
 <p>See also <a href="https://bdj.pensoft.net/articles.php?id=10989&amp;instance_id=3385375">De Pooter et al. 2017</a> for an example of an event hierarchy in a complex benthos dataset.</p>
-<div id="occurrenceid" class="section level3 hasAnchor" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> occurrenceID<a href="identifiers.html#occurrenceid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="occurrenceid" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> occurrenceID<a href="identifiers.html#occurrenceid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>occurrenceID</code> is an identifier for occurrence records. Each occurrence record should have a globally unique identifier. Because <code>occurrenceID</code> is a required term, you may have to construct a persistent and globally unique identifier for each of your data records if none already exist.</p>
-<p>There are no standardized guidelines yet on designing the persistence of this ID, the level of uniqueness (from within a dataset to globally in OBIS), and the precise algorithm and format for generating the ID. But in the absence of a persistent globally unique identifier, one can be constructed by combining the <code>institutionCode</code>, the <code>collectionCode</code> and the <code>catalogNumber</code> (or autonumber in the absence of a catalogNumber). This is similar to how <a href="#eventid">eventID</a> is constructed. You may also follow <a href="https://www.labkey.org/Documentation/wiki-page.view?name=lsidOverview">Life Science Identifiers</a> guidelines. Note that the inclusion of <code>occurrenceID</code> is also necessary for datasets in the <a href="data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach">OBIS-ENV-DATA</a> format.</p>
+<p>There are no standardized guidelines yet on designing the persistence of this ID, the level of uniqueness (from within a dataset to globally in OBIS), and the precise algorithm and format for generating the ID. But in the absence of a persistent globally unique identifier, one can be constructed by combining the <code>institutionCode</code>, the <code>collectionCode</code> and the <code>catalogNumber</code> (or autonumber in the absence of a catalogNumber). This is similar to how <a href="identifiers.html#eventid">eventID</a> is constructed. You may also follow <a href="https://www.labkey.org/Documentation/wiki-page.view?name=lsidOverview">Life Science Identifiers</a> guidelines. Note that the inclusion of <code>occurrenceID</code> is also necessary for datasets in the <a href="data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach">OBIS-ENV-DATA</a> format.</p>
 <p>An important consideration for museum specimens: there is the possibility that the institution a specimen is housed at may change. Therefore you may consider omitting institution identifiers within an occurrenceID, because occurrenceID should <strong>not</strong> change over time.</p>
 <p>See the example below:</p>
 <table>

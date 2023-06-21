@@ -71,6 +71,7 @@ how-are-extensions-linked-to-core-tables-in-obis
 differences-between-identifiers
 data-formatting-tools
 constructing-and-using-indentifier-codes
+eventid
 occurrenceid
 formatting-data-tables
 darwin-core-term-checklist-for-obis
