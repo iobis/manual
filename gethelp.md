@@ -5,7 +5,6 @@ If you require additional assistance with OBIS we recommend you first get in tou
 You can submit issues and questions on relevant Github repositories:
 
 * [OBIS Manual](https://github.com/iobis/manual/issues)
-* [OBIS Website](https://github.com/iobis/web)
 * [OBIS issues GitHub repo](https://github.com/iobis/obis-issues)
 * [OBIS quality control issues](https://github.com/iobis/obis-qc)
 * [All other OBIS repositories](https://github.com/iobis)
