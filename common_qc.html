@@ -158,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.1" data-path="policy.html"><a href="policy.html#guidelines-on-the-sharing-and-use-of-data-in-obis-1"><i class="fa fa-check"></i><b>1.3.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="gethelp.html"><a href="gethelp.html"><i class="fa fa-check"></i><b>1.4</b> Getting Help in OBIS</a></li>
-<li class="chapter" data-level="1.5" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>1.5</b> Frequency Asked Questions</a></li>
+<li class="chapter" data-level="1.5" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>1.5</b> Frequently Asked Questions</a></li>
 </ul></li>
 <li class="part"><span><b>Contributing data to OBIS</b></span></li>
 <li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
@@ -363,7 +363,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Sometimes locality information can be difficult to interpret, especially if records originate from historical data with vague descriptions, or descriptions/names of areas that no longer exist. If your dataset is missing <code>decimalLongitude</code> and <code>decimalLatitude</code>, but the locality name is given, there are a number of approaches you can take. You can:</p>
 <ul>
 <li>Use the OBIS <a href="https://obis.org/maptool/">Map Tool</a> to <a href="access.html#mapper">obtain a WKT</a> string for point, line, or polygon features to put in the <code>footprintWKT</code> field. The corresponding projection should be placed in the <code>footprintSRS</code> field. Note the accepted spatial reference system for OBIS is EPSG:4326 (WGS84). The <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions Gazetteer</a> is available for use within the Map tool to help find locations.</li>
-<li>Search for locations with the <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions Gazetteer</a> to obtain coordinates and a <code>locationID</code>. For information on how to use this tool, <a href="LINK%20to%20below%20tutorial">see below</a>.
+<li>Search for locations with the <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions Gazetteer</a> to obtain coordinates and a <code>locationID</code>. For information on how to use this tool, <a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool">see below</a>.
 <ul>
 <li>You can also use the <a href="http://www.getty.edu/research/tools/vocabularies/tgn/">Getty Thesaurus of Geographic Names</a> or Google Maps. <a href="common_qc.html#how-to-use-obis-map-tool">See below</a></li>
 <li><strong>Note:</strong> Always be sure to fill in the <code>georeferenceSources</code> field to indicate the sources you used to obtain locality information when appropriate</li>

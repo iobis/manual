@@ -7,7 +7,7 @@ data-sharing-agreement
 data-use-agreement
 disclaimer
 getting-help-in-obis
-frequency-asked-questions
+frequently-asked-questions
 general
 formatting-data
 tools

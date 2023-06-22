@@ -158,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.1" data-path="policy.html"><a href="policy.html#guidelines-on-the-sharing-and-use-of-data-in-obis-1"><i class="fa fa-check"></i><b>1.3.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="gethelp.html"><a href="gethelp.html"><i class="fa fa-check"></i><b>1.4</b> Getting Help in OBIS</a></li>
-<li class="chapter" data-level="1.5" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>1.5</b> Frequency Asked Questions</a></li>
+<li class="chapter" data-level="1.5" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>1.5</b> Frequently Asked Questions</a></li>
 </ul></li>
 <li class="part"><span><b>Contributing data to OBIS</b></span></li>
 <li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
@@ -387,7 +387,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="create-your-resource-on-the-ipt" class="section level3 hasAnchor" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Create your resource on the IPT<a href="ipt.html#create-your-resource-on-the-ipt" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Once you have your account, login at the top of the IPT page. Click on the tab Manage resources: it will display all the datasets you are managing and will be empty at first. You can create a new resource at the bottom of the page. Follow the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#create-a-new-resource">GBIF IPT manual</a> for more detailed instructions.</p>
+<p>Once you have your account, login at the top of the IPT page. Click on the tab Manage resources: it will display all the datasets you are managing and will be empty at first. You can create a new resource at the bottom of the page. Follow the <a href="https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#create-a-new-resource">GBIF IPT manual</a> for more detailed instructions.</p>
 <div class="figure">
 <img src="images/ipt-manageresources.png" style="width:80.0%" alt="" />
 <p class="caption"><em>Screenshot of the manage resources page on the IPT</em></p>
@@ -408,13 +408,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>When you would delete a resource, please inform your node manager of this action! If you create a test-file, please include <code>_test</code> at the end of your shortname.</strong></p>
 </blockquote>
 <p>Then select the type of data you are uploading: Occurrence, Checklist, Sampling-Event (i.e. Event Core), Metadata only, or Other. Note that <a href="https://www.gbif.org/data-quality-requirements-checklists">Checklist datasets</a> are accepted by GBIF, but not currently implemented in OBIS. However, you can still have checklist data hosted on OBIS IPTs.</p>
-<p>You can also create an entirely new resource by uploading an existing archived resource. See the IPT manual section <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#upload-a-darwin-core-archive">Upload a DwC-A</a> for instructions.</p>
-<p>Please note the IPT has a 100MB file upload limit, however, there is no limit to the size of a Darwin Core Archive that the IPT can export/publish. Refer to the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#file-upload">File upload</a> section in the IPT manual, to find out how to work around the file upload limit.</p>
+<p>You can also create an entirely new resource by uploading an existing archived resource. See the IPT manual section <a href="https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#upload-a-darwin-core-archive">Upload a Darwin Core-Archive</a> for instructions.</p>
+<p>Please note the IPT has a 100MB file upload limit, however, there is no limit to the size of a Darwin Core Archive that the IPT can export/publish. Refer to <a href="https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#upload-limits">this note</a> in the IPT manual to find out how to work around the file upload limit.</p>
 <p>Once you have created your resource, you will see an empty resource overview page.</p>
 <div id="upload-data" class="section level4 hasAnchor" number="6.2.3.1">
 <h4><span class="header-section-number">6.2.3.1</span> Upload data<a href="ipt.html#upload-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Uploading your source file to the IPT is easy: go to &gt; your resource overview page &gt; Source Data and click on Choose File. This is where you will select and add the files containing your Core table and (if applicable) extensions.</p>
-<p>You might want to compress/zip your source file first to improve the upload speed of large files. The IPT will unzip them automatically once received. Follow the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#create-a-new-resource">IPT manual</a> for more detailed instructions (including the option to use multiple source files or to upload via a direct database connection).</p>
+<p>You might want to compress/zip your source file first to improve the upload speed of large files. The IPT will unzip them automatically once received. Follow the <a href="https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#create-a-new-resource">IPT manual</a> for more detailed instructions (including the option to use multiple source files or to upload via a direct database connection).</p>
 <p>Accepted formats are delimited text files (csv, tab and files using any other delimiter), either directly or compressed as zip or gzip.</p>
 <div class="figure">
 <img src="images/ipt-ss1.png" style="width:80.0%" alt="" />
@@ -457,7 +457,7 @@ Once you have specified all the above information, click Save, This will redirec
 <li>The list of Darwin Core terms can be overwhelming, so it might be difficult to select the ones that are appropriate for your dataset</li>
 <li>The IPT currently only allows one-to-one mapping of fields, so the ease of mapping will depend on your database structure and on the feasibility of exporting as close to Darwin Core as possible. You can contact your node manager or the OBIS secretariat at <a href="mailto:info@iobis.org" class="email">info@iobis.org</a> to help guide you through the steps, review your mapping, suggest terms etc. You also welcome to post questions in the <a href="https://join.slack.com/t/obishq/shared_invite/zt-1nrokd987-aSah0CfXb5MoY10t1olnhQ">OBIS Slack</a>.</li>
 </ol>
-<p>You can find more information regarding Darwin Core mapping in the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualManageResources.wiki#darwin-core-mappings">IPT manual</a> (including core types, extensions, auto-mapping, default values, value translation, etc.).</p>
+<p>You can find more information regarding Darwin Core mapping in the <a href="https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#darwin-core-mappings">IPT manual</a> (including core types, extensions, auto-mapping, default values, value translation, etc.).</p>
 <p>To add the DwC mappings, click the three vertical dots to the right of this section and select “+ Add”</p>
 <div class="figure">
 <img src="images/ipt-ss4-dwcmap.png" style="width:90.0%" alt="" />
@@ -477,7 +477,6 @@ Once you have specified all the above information, click Save, This will redirec
 <img src="images/ipt-ss6-othermaps.png" style="width:70.0%" alt="" />
 <p class="caption"><em>Screenshot showing other DwC extensions you can map to</em></p>
 </div>
-<p>You can find more information regarding Darwin Core mapping in the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#darwin-core-mappings">IPT manual</a> (including core types, extensions, auto-mapping, default values, value translation, etc.).</p>
 <p>The next step is to fill in or upload metadata.</p>
 </div>
 <div id="add-metadata" class="section level3 hasAnchor" number="6.2.5">
