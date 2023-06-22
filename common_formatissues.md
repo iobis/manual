@@ -120,7 +120,7 @@ Then you can use Excel to concatenate each field together, adding the time zone 
 > Note
 > You can also use the Canadensys [date parsing](https://data.canadensys.net/tools/dates) tool to help you convert dates or parse them into component parts.
 
-**A caution about dates and Excel**: Excel is unfortunately notorious for causing issues in saving dates. The Data Carpentries have produced [this exercise](https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/) which demonstrates how Excel interprets dates and numbers, sometimes converting numbers into dates and vice versa. This exercise is simply a demonstration of Excel - it does not provide advice on formatting dates for OBIS.
+**A caution about dates and Excel**: Excel is unfortunately notorious for causing issues in saving dates. The Data Carpentries have produced [this exercise](https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data.html) which demonstrates how Excel interprets dates and numbers, sometimes converting numbers into dates and vice versa. This exercise is simply a demonstration of Excel - it does not provide advice on formatting dates for OBIS.
 
 Date formats in Excel can be very dependent on your computer system region custom and not all of them have the ISO 8601 format included. Therefore you can type the date in the requested format but it will automatically revert the format according to your Windows system region settings. You can change your system region by: navigating to Control Panel > All Control Panel Items > Region and then select "English (United States)" or "English (United Kingdom)". The YYYY-MM-DD format will appear among the choices within the Format cells - Date options.
 
@@ -211,4 +211,4 @@ To reproject coordinates in R, you can use functions in the `sf` package. A thor
 
 ##### Python
 
-You also have the option to reproject data using the Python library [Geopandas](https://geopandas.org/en/stable/getting_started.html). In this package there is a utility called `to_crs` that will reproject data. A tutorial to do this can be found here [here](https://geopandas.org/en/stable/docs/user_guide/projections.html#re-projecting).
+You also have the option to reproject data using the Python library [Geopandas](https://geopandas.org/en/stable/getting_started.html). In this package there is a utility called `to_crs` that will reproject data. A tutorial to do this can be found [here](https://geopandas.org/en/stable/docs/user_guide/projections.html#re-projecting).

@@ -2,7 +2,7 @@
 
 A MEASUREMENT TYPES dataset report has been added regarding currently used measurementType and associated measurementTypeID(s), located near the bottom of the individual dataset pages (if measurementType in use for the dataset).
 
-This new dataset report was derived from this MoF statistics report <https://r.obis.org/mof/"> and this active filtering MoF tool <https://mof.obis.org/>.
+This new dataset report was derived from this MoF statistics report <https://r.obis.org/mof/> and this active filtering MoF tool <https://mof.obis.org/>.
 
 To more easily locate the datasets within your node that may have possible measurementType ID issues, use the MoF Statistics page: <https://r.obis.org/mof/>.  This contains the list of Nodes currently using measurementType/measurementValue/measurementUnit with counts and percentage missing for the associated ID(s).
 

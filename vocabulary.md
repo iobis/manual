@@ -33,7 +33,7 @@ Data collector, data creator | recordedBy | Event, Occurrence
 Taxonomist, identifier | identifiedBy | Occurrence
 Record number, sample number, observation number | occurrenceID (either ID or incorporated into ID) | Occurrence
 
-*Note that mapping abiotic/biotic measurement fields (sex, temperature, abundance, lengths, etc.) will occur within the [extendedMeasurementOrFact extension](vocabulary.html). Here this data will go from being a separate column to being condensed into the `measurementType` and `measurementValue` fields.*
+*Note that mapping abiotic/biotic measurement fields (sex, temperature, abundance, lengths, etc.) will occur within the [extendedMeasurementOrFact extension](format_emof.html). Here this data will go from being a separate column to being condensed into the `measurementType` and `measurementValue` fields.*
 
 The obistools R package also has the [map_fields function](https://github.com/iobis/obistools#map-column-names-to-darwin-core-terms) that you can use to map your dataset fields to a DwC term.
 

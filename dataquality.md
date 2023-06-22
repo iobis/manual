@@ -1,6 +1,6 @@
 ## Data quality flags
 
-As you are following the guidelines in this manual to [format data](data_formatting.html), it is important to consider the potential quality flags that could be produced when your dataset is published to OBIS. OBIS performs a number of automatic quality checks on the data it receives. This informs data users of any potential issues with a dataset they may be interested in. A complete list of flags can be found [here](https://github.com/iobis/obis-qc/blob/master/obisqc/util/flags.py) but broadly speaking potential flags relate to issues with:
+As you are following the guidelines in this manual to [format data](data_format.html), it is important to consider the potential quality flags that could be produced when your dataset is published to OBIS. OBIS performs a number of automatic quality checks on the data it receives. This informs data users of any potential issues with a dataset they may be interested in. A complete list of flags can be found [here](https://github.com/iobis/obis-qc/blob/master/obisqc/util/flags.py) but broadly speaking potential flags relate to issues with:
 
 * Location - coordinates
 * Event time - start, end dates

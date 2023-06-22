@@ -46,7 +46,7 @@ Desmet, P. & C. Sinou. 2012. 7-step guide to data publication. Canadensys. <http
 
 ### Create your resource on the IPT
 
-Once you have your account, login at the top of the IPT page. Click on the tab Manage resources: it will display all the datasets you are managing and will be empty at first. You can create a new resource at the bottom of the page. Follow the [GBIF IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#create-a-new-resource) for more detailed instructions.
+Once you have your account, login at the top of the IPT page. Click on the tab Manage resources: it will display all the datasets you are managing and will be empty at first. You can create a new resource at the bottom of the page. Follow the [GBIF IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#create-a-new-resource) for more detailed instructions.
 
 ![*Screenshot of the manage resources page on the IPT*](images/ipt-manageresources.png){width=80%}
 
@@ -67,9 +67,9 @@ Shortname good examples:
 
 Then select the type of data you are uploading: Occurrence, Checklist, Sampling-Event (i.e. Event Core), Metadata only, or Other. Note that [Checklist datasets](https://www.gbif.org/data-quality-requirements-checklists) are accepted by GBIF, but not currently implemented in OBIS. However, you can still have checklist data hosted on OBIS IPTs.
 
-You can also create an entirely new resource by uploading an existing archived resource. See the IPT manual section [Upload a DwC-A](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#upload-a-darwin-core-archive) for instructions.
+You can also create an entirely new resource by uploading an existing archived resource. See the IPT manual section [Upload a Darwin Core-Archive](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#upload-a-darwin-core-archive) for instructions.
 
-Please note the IPT has a 100MB file upload limit, however, there is no limit to the size of a Darwin Core Archive that the IPT can export/publish. Refer to the [File upload](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#file-upload) section in the IPT manual, to find out how to work around the file upload limit.
+Please note the IPT has a 100MB file upload limit, however, there is no limit to the size of a Darwin Core Archive that the IPT can export/publish. Refer to [this note](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#upload-limits) in the IPT manual to find out how to work around the file upload limit.
 
 Once you have created your resource, you will see an empty resource overview page.
 
@@ -77,7 +77,7 @@ Once you have created your resource, you will see an empty resource overview pag
 
 Uploading your source file to the IPT is easy: go to > your resource overview page > Source Data and click on Choose File. This is where you will select and add the files containing your Core table and (if applicable) extensions.
 
-You might want to compress/zip your source file first to improve the upload speed of large files. The IPT will unzip them automatically once received. Follow the [IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#create-a-new-resource) for more detailed instructions (including the option to use multiple source files or to upload via a direct database connection).
+You might want to compress/zip your source file first to improve the upload speed of large files. The IPT will unzip them automatically once received. Follow the [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#create-a-new-resource) for more detailed instructions (including the option to use multiple source files or to upload via a direct database connection).
 
 Accepted formats are delimited text files (csv, tab and files using any other delimiter), either directly or compressed as zip or gzip.
 
@@ -114,7 +114,7 @@ Darwin Core mapping is the process of linking the fields in your resource file w
 1. The list of Darwin Core terms can be overwhelming, so it might be difficult to select the ones that are appropriate for your dataset
 2. The IPT currently only allows one-to-one mapping of fields, so the ease of mapping will depend on your database structure and on the feasibility of exporting as close to Darwin Core as possible. You can contact your node manager or the OBIS secretariat at info@iobis.org to help guide you through the steps, review your mapping, suggest terms etc. You also welcome to post questions in the [OBIS Slack](https://join.slack.com/t/obishq/shared_invite/zt-1nrokd987-aSah0CfXb5MoY10t1olnhQ).
 
-You can find more information regarding Darwin Core mapping in the [IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualManageResources.wiki#darwin-core-mappings) (including core types, extensions, auto-mapping, default values, value translation, etc.).
+You can find more information regarding Darwin Core mapping in the [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#darwin-core-mappings) (including core types, extensions, auto-mapping, default values, value translation, etc.).
 
 To add the DwC mappings, click the three vertical dots to the right of this section and select “+ Add”
 
@@ -135,8 +135,6 @@ Finally, click Save. You may return to the Overview page by clicking Back. To ad
 The IPT may identify Redundant terms if certain terms appear in the e.g., Event core and Occurrence extension. If your Occurrence extension (or core) contains information about individualCount and organismQuantity, you can map such fields in both the Occurrence and the eMoF as a measurementType.
 
 ![*Screenshot showing other DwC extensions you can map to*](images/ipt-ss6-othermaps.png){width=70%}
-
-You can find more information regarding Darwin Core mapping in the [IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#darwin-core-mappings) (including core types, extensions, auto-mapping, default values, value translation, etc.).
 
 The next step is to fill in or upload metadata.
 

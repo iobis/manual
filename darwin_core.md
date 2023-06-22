@@ -15,7 +15,7 @@
 
 #### Introduction to Darwin Core
 
-[Darwin Core](http://rs.tdwg.org/dwc/) is a body of standards (i.e., identifiers, labels, definitions) that facilitate sharing biodiversity informatics. It provides stable [terms](https://dwc.tdwg.org/terms/) and vocabularies related to biological objects/data and their collection. Darwin Core is maintained by [TDWG (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases)](http://tdwg.org/). Stable terms and vocabularies are important for ensuring the datasets in OBIS have consistently interpretable fields. By following Darwin Core standards, both data providers and users can be certain of the definition and quality of data.
+[Darwin Core](https://dwc.tdwg.org/) is a body of standards (i.e., identifiers, labels, definitions) that facilitate sharing biodiversity informatics. It provides stable [terms](https://dwc.tdwg.org/terms/) and vocabularies related to biological objects/data and their collection. Darwin Core is maintained by [TDWG (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases)](http://tdwg.org/). Stable terms and vocabularies are important for ensuring the datasets in OBIS have consistently interpretable fields. By following Darwin Core standards, both data providers and users can be certain of the definition and quality of data.
 
 ##### History of Darwin Core and OBIS
 
@@ -126,7 +126,7 @@ A [WoRMS](http://www.marinespecies.org/) LSID should be added in `scientificName
 
 - Taxonomic classification (kingdom through species)
 - The accepted name in case of invalid names or synonyms
-- AlphiaID
+- AphiaID
 - IUCN red list category
 
 LSIDs are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources. More information on LSIDs can be found at [www.lsid.info](http://www.lsid.info/). For example, the WoRMS LSID for _Solea solea_ is: urn:lsid:marinespecies.org:taxname:127160, and can be found at the bottom of each WoRMS taxon page, e.g. [_Solea solea_](http://marinespecies.org/aphia.php?p=taxdetails&id=127160).
@@ -153,9 +153,9 @@ _Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/re
 
 If the record represents a nomenclatural type specimen, the term `typeStatus` can be used, e.g. for holotype, syntype, etc.
 
-**In case of low confidence identifications**, and the scientific name contains qualifiers such as _cf._, _?_ or _aff._, then this name should go in `identificationQualifier`, and `scientificName` should contain the name of the lowest possible taxon rank that refers to the most accurate identification. E.g. if the specimen was accurately identified down to genus level, but not species level, then the scientificName should contain the name of the genus, the scientificNameID should contain the LSID the genus and the `identificationQualifier` should contain the low confidence species name combined with _?_ or other qualifiers. The table belowe shows a few examples:
+**In case of low confidence identifications**, and the scientific name contains qualifiers such as _cf._, _?_ or _aff._, then this name should go in `identificationQualifier`, and `scientificName` should contain the name of the lowest possible taxon rank that refers to the most accurate identification. E.g. if the specimen was accurately identified down to genus level, but not species level, then the scientificName should contain the name of the genus, the scientificNameID should contain the LSID the genus and the `identificationQualifier` should contain the low confidence species name combined with _?_ or other qualifiers. The table below shows a few examples:
 
-The use and definitions for additional NO signs (identificationQualifier) can be found in [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594), which provides examples for using the main Open Nomenclature qualifiers associated with _physical specimens_. The publication [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full) provides examples and definitions for identificationQualifiers for _non-physical specimens (image-based)_.
+The use and definitions for additional ON signs (`identificationQualifier`) can be found in [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594), which provides examples for using the main Open Nomenclature qualifiers associated with _physical specimens_. The publication [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full) provides examples and definitions for `identificationQualifiers` for _non-physical specimens (image-based)_.
 
 Examples:
 

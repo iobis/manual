@@ -15,7 +15,7 @@ Each of these phases are outlined in this manual and are composed of a number of
 
 After you have decided on your [data structure](formatting.html) and have moved to the Data Formatting stage, you must first [match](name_matching.html) the taxa in your dataset to a registered list. In formatting your dataset you will ensure the [required OBIS terms](checklist.html) and [identifiers](identifiers.html) are mapped correctly to your data fields and records.
 
-Depending on your data structure, you will then format data into a [DwC-A](data_format.html) format with the appropriate Core table ([Event](format_event.html) or [Occurrence](format_occurrence.html)) with any applicable extension tables. Any biotic or abiotic measurements will be moved into the [extendedMeasurementOrFact table](link #22+). Before proceeding to the [publishing](data_publication.html) stage, there are a number of [quality control](dataquality.html) steps to complete.
+Depending on your data structure, you will then format data into a [DwC-A](data_format.html) format with the appropriate Core table ([Event](format_event.html) or [Occurrence](format_occurrence.html)) with any applicable extension tables. Any biotic or abiotic measurements will be moved into the [extendedMeasurementOrFact table](format_emof.html). Before proceeding to the [publishing](data_publication.html) stage, there are a number of [quality control](dataquality.html) steps to complete.
 
 Once your data has been published, you and others can [access](access.html) datasets through various avenues and it becomes part of OBIS’ global database!
 

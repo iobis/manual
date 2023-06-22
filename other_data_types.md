@@ -33,7 +33,7 @@ The overarching principles are summarised here. Note that because of the numerou
 * `measurementValueID`: If available, a machine-readable URI describing the habitat class in “measurementValue”. For example: [https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36](https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36)
 * `measurementUnitID`: null because habitat types are unitless.
 
-Please consult the [Duncan et al. (2021) technical report](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5) (title: A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension) for more details, including:
+Please consult the [Duncan et al. (2021) technical report](https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5) (title: A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension; note you must refine search to Technical Reports from 2021 to identify this report) for more details, including:
 
 * how to handle a single event with multiple habitat measurements
 * recommended vocabularies and terms for common habitat classification systems

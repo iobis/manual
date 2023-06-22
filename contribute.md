@@ -28,7 +28,7 @@ To publish a dataset to OBIS, there are **five** main steps you must go through.
 1. First, you must [identify](https://obis.org/contact/) which OBIS node is best suited to host your published data. If you would like to [publish to GBIF](data_sharing.html#simultaneous-publishing-to-gbif) at the same time, that is also possible. If your organization is already affiliated with a GBIF node with which you must publish from, OBIS can also [harvest from GBIF nodes](data_sharing.html#simultaneous-publishing-to-gbif).
 2. Second, you must determine the [structure](formatting.html) of your data and which format will best suit your dataset. OBIS follows Darwin Core Archive (DwC-A) standards for datasets, and currently follows a star schema format. This format is based on relational databases. If you are unfamiliar with such database structures, or would like to refamiliarize yourself with them, please read [here](relational_db.html)
 3. Then, you need to actually [format](formatting.html) your data according to OBIS and DwC-A standards and guidelines
-4. Once formatted, you should run a series of [quality control](data_qc.md) measures to ensure you are not missing any required information and that all standards are being met. This helps ensure all data published in OBIS is formatted in a standardized way. When published in OBIS, OBIS provides a quality report to inform data owners and users of any quality control issues. By completing quality control before you publish your dataset you ensure there are fewer errors to fix later.
+4. Once formatted, you should run a series of [quality control](data_qc.html) measures to ensure you are not missing any required information and that all standards are being met. This helps ensure all data published in OBIS is formatted in a standardized way. When published in OBIS, OBIS provides a quality report to inform data owners and users of any quality control issues. By completing quality control before you publish your dataset you ensure there are fewer errors to fix later.
 5. Now that your dataset is ready for publishing, the relevant metadata must be filled in, and then published on the previously identified IPT.
 
 Each of these steps are covered in detail in the relevant sections of the manual. For an overview of this process see [data management flow in OBIS](data_standards.html).
@@ -43,7 +43,7 @@ Even if you publish your dataset on its own, publishing your data with OBIS will
 
 * **A - Accessible**
 
-Similar to being Findable, OBIS makes your datasets more Accessible. Each dataset is given an identifier when you upload it on an IPT. Thus when users obtain data from OBIS, the original dataset can easily be identified and accessed. Data from OBIS is accessible in numerous ways[LINK to access section], giving data users multiple avenues to potentially access your data.
+Similar to being Findable, OBIS makes your datasets more Accessible. Each dataset is given an identifier when you upload it on an IPT. Thus when users obtain data from OBIS, the original dataset can easily be identified and accessed. Data from OBIS is accessible in [numerous ways](access.html), giving data users multiple avenues to potentially access your data.
 
 * **I - Interoperable**
 
@@ -55,7 +55,7 @@ Publishing your data allows it to be Reused according to your chosen [data usage
 
 There are many other benefits of publishing in OBIS, even if you haven’t published any work on it yet. This includes:
 
-* Your dataset can be [associated with a DOI](link #50), allowing for your dataset to be more easily cited. By ensuring your dataset citation is complete you will ensure you are being cited properly.
+* Your dataset can be [associated with a DOI](data_sharing#adding-a-doi-to-datasets), allowing for your dataset to be more easily cited. By ensuring your dataset citation is complete you will ensure you are being cited properly.
 * Publishing your dataset with OBIS makes it easier to set it up as a [Data paper](https://www.gbif.org/data-papers), which generates value for you and other researchers.
 * There are social benefits to data publishing as your work becomes integrated into a wider dataset. It gives both you and your data more visibility. This can lead to more opportunities for collaboration and further career development as a researcher or professional.
 * Your data can be incorporated into larger analyses to better understand global ocean biodiversity, helping to shape regional and international policies.

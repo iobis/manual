@@ -63,7 +63,7 @@ For OBIS, the following 4 terms are the bare minimum required: `Title`, `Citatio
       - `taxonRankValue`
       - `commonName`
 
-- `intellectualRights`: Statement about IPR, Copyright or various Property Rights. Also read the [guidelines on the sharing and use of data in OBIS](http://iobis.org/data/policy/).
+- `intellectualRights`: Statement about IPR, Copyright or various Property Rights. Also read the [guidelines on the sharing and use of data in OBIS](policy.html).
   - `para`
 - `purpose`: A description of the purpose of this dataset.
   - `para`

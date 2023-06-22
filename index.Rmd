@@ -59,4 +59,3 @@ It is important that our data providers as well as all the data users are aware 
 ## Acknowledgements
 
 This manual received contributions from: [Leen Vandepitte](https://www.oceanexpert.net/expert/12313), [Mary Kennedy](https://www.oceanexpert.net/expert/13557), [Philip Goldstein](https://www.oceanexpert.net/expert/18051), [Pieter Provoost](https://www.oceanexpert.net/expert/26192), [Samuel Bosch](https://www.oceanexpert.net/expert/26577), [Ward Appeltans](https://www.oceanexpert.net/expert/11770), [Abby Benson](https://orcid.org/0000-0002-4391-107X), [Yi-Ming Gan](https://orcid.org/0000-0001-7087-2646), [Carolina Peralta Brichtova](https://oceanexpert.org/expert/26345), [Saara Suominen](https://oceanexpert.org/expert/43352), [Serita van der Wal](https://oceanexpert.org/expert/49876), and [Elizabeth Lawrence](https://oceanexpert.org/expert/50997).
-
