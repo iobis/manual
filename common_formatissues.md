@@ -32,17 +32,17 @@ First, if you have coordinate data, make sure they are [converted into decimal d
 
 - **`scientificName`**
 
-This field should contain only the **originally documented** scientific name down to the lowest possible taxon rank, even if there are misspellings or if it is a current synonym. Class, or even Kingdom levels are accepted if more specific taxonomic levels are unknown. Comments about misspellings, etc. can be documented in the `taxonRemarks` field. Note that there may be special cases for eDNA and DNA derived data, see [specific guidelines](dna_data.html) for these cases.
+This field should contain only the **originally documented** scientific name down to the lowest possible taxon rank, even if there are misspellings or if it is a current synonym. Class or even Kingdom levels are accepted if more specific taxonomic levels are unknown. Comments about misspellings, etc. can be documented in the `taxonRemarks` field. Note that there may be special cases for eDNA and DNA derived data, see [specific guidelines](dna_data.html) for these cases.
 
-You may encounter challenges filling this field if the species name is based on description or if its taxonomy was uncertain at time of sampling. For such uncertain taxonomy situations, see our guidelines [here](common_qc.html#uncertain-taxaonomic-information).
+You may encounter challenges filling this field if the species name is based on description or if its taxonomy was uncertain at the time of sampling. For such uncertain taxonomy situations, see our guidelines [here](common_qc.html#uncertain-taxaonomic-information).
 
-- **`scientificNameID`**
+- **`scientificNameID`** (strongly recommended)
 
-If you cannot obtain the required Life Science Identifier (LSID) from [taxon matching with WoRMS](name_matching.html) then you must contact World Register Marine Species to have an LSID created for your taxon. You will need to confirm that the species is marine. OBIS does not parse LSIDs from other sources (e.g., [Integrated Taxonomic Information System](https://www.itis.gov), [Catalog of Life](https://www.catalogueoflife.org)), but if you want to include WoRMS and other LSIDs, they must be specified in a predictable format.
+If you cannot obtain the required Life Science Identifier (LSID) from [taxon matching with WoRMS](name_matching.html) then you must contact World Register Marine Species to have an LSID created for your taxon. You will need to confirm that the species is marine. OBIS does not parse LSIDs from other sources (e.g., [Integrated Taxonomic Information System](https://www.itis.gov), [Catalog of Life](https://www.catalogueoflife.org)), but if you want to include other LSIDs alongside the WoRMS LSID, they must be specified in a predictable format.
 
 - **`occurrenceStatus`**
 
-Because occurrenceStatus is a binary field, “presence” or “absence”, this field can usually be easily inferred by data. If there are associated measurements or a record of an observation, the taxon in question would be present. If a particular species is present in one sample, but missing from another, then you could identify that species as absent from the second sample.
+Because occurrenceStatus is a binary field, “presence” or “absence”, this field can usually be easily inferred by data. If there are associated measurements or a record of an observation, the taxon in question would be present. If a particular species/taxa is present in one sample, but missing from another, then you could identify that species as absent from the second sample.
 
 - **`basisOfRecord`**
 
@@ -97,7 +97,7 @@ Some specific examples of acceptable ISO 8601 dates are:
 It is important to note that although ISO 8601 also supports ordinal dates (YYYY-DDD) and week dates (YYYY-Www-D), these formats are not supported by OBIS. Additionally, ISO 8601 guidelines for [durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) should not be used. Durations for an event (e.g., length of observation) can instead be indicated with the DwC terms [startDayOfYear](https://dwc.tdwg.org/list/#dwc_startDayOfYear) and [endDayOfYear](https://dwc.tdwg.org/list/#dwc_endDayOfYear). Durations refer to the actual length of time an event (e.g., occurrence) occurred, whereas intervals indicate the time period during which an event was recorded.
 
 **A note about intervals…**
-Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact time, you should specify that information.
+Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact date and time, you should specify that information. This also helps for continuous samplings and time-series integrated datasets.
 
 If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See [example](#how-to-handle-mixed-date-information).
 
@@ -127,6 +127,14 @@ Date formats in Excel can be very dependent on your computer system region custo
 If your computer language is not set to English, you may encounter additional issues with Excel. It may change the format of your date even after you save the document. Changing your computer system’s language to English can help, but you may still run into issues. You may also try using other office management softwares, like LibreOffice which in this case is more friendly. In general, we advise you to be very careful when formatting the `eventDate` field, and to select the “Text” formatting (as above) and to save your file as a .CSV.
 
 It is good practice to place the verbatim event date/time description into the `verbatimEventDate` field. Any modifications you make during data formatting should be recorded in the `eventRemarks` field, and we recommend taking good notes in a personal reference file.
+
+This video provides a demonstration of how you can format dates to ISO 8601, including how to resolve difficulties you might run into (some which are also discussed below).
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/0xIJWdIeTxo"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
 
 #### How to handle mixed date information
 
@@ -173,7 +181,13 @@ All coordinates provided in the `decimalLatitude` or `decimalLongitude` fields i
 
 ![*Screenshot of how to use the OBIS coordinate converter*](images/coordinate_conversion.png){width=70%}
 
-The [Map Tool tutorial](access.html#mapper) also reviews use of the coordinate conversion tool.
+Watch this video for a demonstration on use of this tool.
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/E_TkWIUcoJw"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
 
 If your coordinates are in UTMs, then coordinate conversion can be a bit trickier. We suggest using the following [conversion tool](http://rcn.montana.edu/resources/Converter.aspx) to convert from UTM to decimal degrees. Note it is very important to ensure you have the correct UTM zone, otherwise the coordinate conversion will be incorrect. You can use this [ArcGIS map tool](https://www.arcgis.com/apps/View/index.html?appid=7fa64a25efd0420896c3336dc2238475) to visually confirm UTM zones.
 

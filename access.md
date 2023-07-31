@@ -4,8 +4,8 @@
 
 OBIS has over 100 million records of marine data accessible for downloading. To download data from OBIS, there are several options:
 
-* [OBIS Mapper](https://mapper.obis.org)
 * [OBIS homepage](https://obis.org/) or [advanced dataset search](https://obis.org/datasets)
+* [OBIS Mapper](https://mapper.obis.org)
 * Accessible through the [R package robis](https://github.com/iobis/robis)
 * OBIS [API](https://api.obis.org/)
 * [Full data exports](#full-exports)
@@ -13,11 +13,35 @@ OBIS has over 100 million records of marine data accessible for downloading. To 
 
 **NOTE** When you download data from the Mapper or full export, the data you will receive is flattened into one table with occurrence plus event data. eMoF data tables are separate upon request. However when you download a dataset from the OBIS homepage or dataset page, all tables (Event, Occurrence, eMoF) are separate files.
 
+## OBIS Homepage and dataset pages
+
+From the OBIS homepage, you can search for data in the search bar in the middle of the page. You can search by particular taxonomic groups, common names, dataset names, OBIS nodes, institute name, areas (e.g., Exclusive Economic Zone (EEZ)), or by the data provider’s country.
+
+When you search by dataset you will notice an additional option appears for [advanced search options](https://obis.org/datasets). This will allow you to identify specific datasets, and apply filters for OBIS nodes and whether datasets include extensions.
+
+![*OBIS homepage search, showing where to find the advanced search link*](images/obis-homepagesearch.png){width=90%}
+
+Regardless if you found a dataset through the homepage or the advanced Dataset search, you will be able to navigate to individual dataset pages. For individual dataset pages (instead of aggregate pages for e.g., a Family) there are three buttons available:
+
+* Report issue - allows you to report any issues with the dataset in question
+* Source DwC-A - download the dataset as a Darwin Core-Archive file. This will provide all data tables as separate files within a zipped folder
+* To mapper - this will open another browser with the data shown in the Mapper
+
+![*Dataset download*](images/dataset-DL.png){width=90%}
+
+If you searched for aggregate datasets (e.g., all Crustacea records, all records from OBIS-Canada, etc.), the `source DwC-A` button will not be available to you. To download these data subsets, you must click `to mapper` and then [download the data from the Mapper as a CSV](#mapper).
+
 ## Mapper
 
 * <https://mapper.obis.org>
 
-A video demonstration of how to use the Mapper will be available soon.
+Watch this video demonstration of how to use the Mapper as well as the OBIS homepage search.
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/9PSPEtqgjUI"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
 
 The mapper allows users to visualize and inspect subsets of OBIS data. A variety of filters are available (taxonomic, geographic, time, data quality) and multiple layers can be combined in a single view. Layers can be downloaded as CSV files.
 
@@ -47,6 +71,14 @@ This file will be saved to your working directory (if you are not familiar with 
 
 To use `robis` for visualizing and mapping occurrences, see the [Visualization](dataviz.html) section of the manual.
 
+Watch the video below for a walkthrough of how to use the robis package to obtain OBIS data.
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/8Ep4fGICQWU"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+
 ## API
 
 * <https://api.obis.org/>
@@ -75,25 +107,13 @@ When searching with the API, you may need to know certain identifiers, including
 * Institute ID - this should be the Ocean Expert ID (e.g., the ID for [NOAA Fisheries Service, Southeast Regional Office St. Petersburg](https://oceanexpert.org/institution/7532) is 7532)
 * OBIS node UUID
 
-A short video demonstrating use of the API will be available soon.
+A short video demonstrating use of the API is shown below.
 
-## OBIS Homepage and dataset pages
-
-From the OBIS homepage, you can search for data in the search bar in the middle of the page. You can search by particular taxonomic groups, common names, dataset names, OBIS nodes, institute name, areas (e.g., Exclusive Economic Zone (EEZ)), or by the data provider’s country.
-
-When you search by dataset you will notice an additional option appears for [advanced search options](https://obis.org/datasets). This will allow you to identify specific datasets, and apply filters for OBIS nodes and whether datasets include extensions.
-
-![*OBIS homepage search, showing where to find the advanced search link*](images/obis-homepagesearch.png){width=90%}
-
-Regardless if you found a dataset through the homepage or the advanced Dataset search, you will be able to navigate to individual dataset pages. For individual dataset pages (instead of aggregate pages for e.g., a Family) there are three buttons available:
-
-* Report issue - allows you to report any issues with the dataset in question
-* Source DwC-A - download the dataset as a Darwin Core-Archive file. This will provide all data tables as separate files within a zipped folder
-* To mapper - this will open another browser with the data shown in the Mapper
-
-![*Dataset download*](images/dataset-DL.png){width=90%}
-
-If you searched for aggregate datasets (e.g., all Crustacea records, all records from OBIS-Canada, etc.), the `source DwC-A` button will not be available to you. To download these data subsets, you must click `to mapper` and then [download the data from the Mapper as a CSV](#mapper).
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/Hocr3N6zpH0"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
 
 ## Full exports
 

@@ -44,14 +44,19 @@ GBIF also provides some guidelines for [difficult localities](https://docs.gbif.
 
 ### How to use OBIS Map Tool
 
-A video tutorial on how to use our Map tool will be available soon. This video covers the following topics:
+A video tutorial on how to use our Map tool is available below. This video covers the following topics:
 
 1. Estimating coordinates
-2. Geocoding using names from Marine Regions
-3. Using the line and polygon tool
-4. Obtaining and exporting WKT* strings
+2. Using the line and polygon tool
+3. Obtaining and exporting WKT strings
 
-*[Well-Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text) strings are representations of the shape of the location and can be provided in the `footprintWKT` field. This is particularly useful for tracks, transects, tows, trawls, habitat extent, or when an exact location is not known. WKT strings can be created using the Map tool’s WKT function. The Map tool also calculates a midpoint and a radius for line or polygon features, which can then be added to `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters`, respectively. As mentioned above, the [`obistools::calculate_centroid`](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) function can be used to calculate the centroid and radius for WKT polygons. This [wktmap](https://wktmap.com/) tool can also be used to visualize and share WKT strings.
+[Well-Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text) strings are representations of the shape of the location and can be provided in the `footprintWKT` field. This is particularly useful for tracks, transects, tows, trawls, habitat extent, or when an exact location is not known. WKT strings can be created using the Map tool’s WKT function. The Map tool also calculates a midpoint and a radius for line or polygon features, which can then be added to `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters`, respectively. As mentioned above, the [`obistools::calculate_centroid`](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) function can be used to calculate the centroid and radius for WKT polygons. This [wktmap](https://wktmap.com/) tool can also be used to visualize and share WKT strings.
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/XM23WEvE364"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
 
 ### Using Getty Thesaurus & Google Maps to obtain locality coordinates
 
@@ -93,6 +98,14 @@ Since we are obtaining all this locality data from Marine Regions, we must also 
 |locality |locationID | decimalLatitude |decimalLongitude |coordinateUncertaintyInMeters |locationAccordingTo | georeferenceRemarks |
 |---|---|---|---|---|---|---|
 |Bay of Fundy | <http://marineregions.org/mrgid/4289> | 44.97985204 | -65.80601556 | 196726 | Marine Regions | Coordinates are a midpoint inferred from location name|
+
+The OBIS Mapper has built-in access to the Marine Regions Gazetteer. The video below demonstrates how to use this built-in tool, as well as how to navigate the Marine Regions Gazetter to obtain important georeferencing information to include in your data.
+  
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/XM23WEvE364"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
 
 #### DwC Terms obtained from Maptool and Gazetteers
 

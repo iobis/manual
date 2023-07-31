@@ -103,3 +103,11 @@ lowest : CSIC_BIOFUN1_1   CSIC_BIOFUN1_10  CSIC_BIOFUN1_100 CSIC_BIOFUN1_101 CSI
 highest: CSIC_BIOFUN1_95  CSIC_BIOFUN1_96  CSIC_BIOFUN1_97  CSIC_BIOFUN1_98  CSIC_BIOFUN1_99 
 
 ```
+
+This video shows how to use both `obistools` and `Hmisc` to conduct QC checks in R.
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/sNzipC6-r90"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>

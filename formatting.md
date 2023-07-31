@@ -4,13 +4,13 @@
 
 Formatting data can be challenging. This section of the manual deals with how to format data for OBIS, beginning with an overview of dataset structure.
 
-Deciding on your dataset structure is one of the first steps towards getting your data ready for publishing. At this step, there are no specific actions you need to do with your data, but it is important to determine which structure best suits your dataset before proceeding. Then, once you have decided on the dataset structure, you can continue formatting your data.
+Deciding on your dataset structure is one of the first steps towards getting your data ready for publishing. At this step, there are different non arbitrary you need to do with your data, but it is important to determine which structure best suits your dataset before proceeding. Then, once you have decided on the dataset structure, you can continue formatting your data.
 
 ## When to use Event Core
 
-Event Core describes **when** and **where** a specific sampling event happened and contains information such as location and date. It covers:
+Event Core describes **when** and **where** a specific sampling event happened and contains information such as location and date. Event Core is often used to organize your data tables when there are more than one sampling occasion and/or location, and different occurrences linked to each sampling. This organization follows the rationale of most ecological studies and typical marine sampling design. It covers:
 
-* When specific details are known about **how** a biological sample was taken and processed. These details can then be defined in the eMoF Extension with the newly developed [Q01 vocabulary](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/)
+* When specific details are known about **how** a biological sample was taken and processed. These details can then be defined in the eMoF Extension with the [Q01 vocabulary](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/)
 * When the dataset contains abiotic measurements, or other biological measurements which are **related to an entire sample** (not a single specimen). For example a biomass measurement for an entire sample, not each species within the sample
 
 Event Core can be used in combination with the Occurrence and eMoF extensions. The identifier that links Event Core to the extension is the `eventID`. [`parentID`](identifiers.html) can also be used to give information on hierarchical sampling.
@@ -22,12 +22,12 @@ Occurrence Core datasets describe **observations** and **specimen records** and 
 
 * **No information** on how the data was sampled or samples were processed is available
 * No abiotic measurements are taken or provided
-* You have [eDNA and DNA derived data](examples.html#edna-dna-derived-data)
+* You have [eDNA and DNA-derived data](examples.html#edna-dna-derived-data)
 * Biological measurements are made on **individual specimens** (each specimen is a single occurrence record)
 
 Occurrence Core is also often the preferred structure for museum collections, citations of occurrences from literature, and sampling activities.
 
-Datasets formatted in Occurrence Core can use the eMoF Extension for when you have biotic measurements or facts of your specimen. The DNA derived data extension can also be used to link to DNA sequences. The identifier that links Occurrence Core to the extension(s) is the `occurrenceID`.
+Datasets formatted in Occurrence Core can use the eMoF Extension for when you have biotic measurements or facts about your specimen. The DNA derived data extension can also be used to link to DNA sequences. The identifier that links Occurrence Core to the extension(s) is the `occurrenceID`.
 
 ## Extensions in OBIS
 
@@ -47,7 +47,7 @@ The extension file(s) accepted by OBIS (eMoF, Occurrence, DNA) are linked to you
 
 ### Differences between identifiers
 
-If your core file is based on occurrences (e.g., an observation), then any extensions are linked with `occurrenceID`. If your core file is based on events (e.g., a sampling event), then the linking identifier is `eventID`. Thus, multiple records in an extension file can have the same identifier which will link them to the same event or occurrence record (depending on which is the Core). The different linking identifiers are shown in the figure below.
+If your core file is based on occurrences (e.g., a record of one or more taxa specimens), then any extensions are linked with `occurrenceID`. If your core file is based on events (e.g., a sampling event, cruise, observation, etc.), then the linking identifier is `eventID`. In the Core tables, identifiers are always unique, which means, they do not repeat and each line has a different identifier. On the other hand, multiple records in an extension file can have the same identifier which will link them to the same event or occurrence record (depending on which is the Core). The different linking identifiers are shown in the figure below.
 
 ![Diagram of how the different core tables are linked to their extensions by different identifiers.](images/coretable-identifiers.jpg){width=50%}
 

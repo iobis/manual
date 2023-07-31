@@ -1,10 +1,12 @@
+### Other data types
+
 **Content**
 
 - [Multimedia data](#multimedia-data-acoustic-imaging)
 - [Habitat data](#habitat-data)
 - [Tracking data](#tracking-data)
 
-### Multimedia data (Acoustic, Imaging)
+#### Multimedia data (Acoustic, Imaging)
 
 If you have multimedia data (e.g. images, acoustic, video) that you want to publish alongside your dataset, you can do so by documenting information in the `associatedMedia` field in your Occurrence table. The usage of this field requires the media in question to be hosted somewhere, e.g., a publication, museum database, etc. Then you simply copy this link to the  `associatedMedia` field for a given occurrence. You may also include a concatenated list if you need to list multiple sources.
 
@@ -21,7 +23,7 @@ Martin-Cabrera et al. (2022) have created a best practices document for [plankto
 
 Data originating from ROV (Remote Operating Vehicle) observations may require additional processing. Ocean Networks Canada (ONC) is developing a [pipeline for publishing ROV data to OBIS](https://doi.org/10.1109/OCEANS47191.2022.9977379). ROV datasets should have an Event core that documents the hierarchical nature of ROV dives (e.g., ROV dives nested within a cruise), with Occurrence and eMoF extensions to record taxonomic and other measurement data e.g., from sensors. ONC’s pipeline outlines the importance of including `identifiedBy` in order to vet taxon identifications by experts.
 
-### Habitat data
+#### Habitat data
 
 Event Core is perfect for enriching OBIS with interpreted information such as biological community, biotope or habitat type (collectively referred to as 'habitats'). However, the unconstrained nature of the terms `measurementTypeID`, `measurementValueID`, and `measurementUnitID` leads to a risk that habitats measurements are structured inconsistently within the Darwin Core Archive standard and as a result, are not easily discoverable, understood or usable.
 
@@ -41,7 +43,7 @@ Please consult the [Duncan et al. (2021) technical report](https://www.emodnet-s
 
 For filling measurementType with habitat-related data and/or the dwc:habitat column, you should reference the [NERC vocabulary search](http://vocab.nerc.ac.uk/search_nvs/sxv/?searchstr=habitat&options=identifier,preflabel,altlabel,definition). While the [Coastal and Marine Ecological Classification Standard (CMECS)](https://repository.library.noaa.gov/view/noaa/27552) and the [Environment Ontology (ENVO)](https://sites.google.com/site/environmentontology/?pli=1) also contain habitat vocabularies, OBIS recommends the use of NERC vocabulary. If other vocabularies are used, please provide the NERC vocabulary equivalent as additional records in the eMoF table.
 
-### Tracking data
+#### Tracking data
 
 Encoding Tracking data into Darwin Core follows the same standards as that of survey/sighting data. Tracking data should additionally indicate the accuracy in latitudinal and longitudinal measurements received from the positioning system, grouped by location accuracy classes, recorded in the `coordinateUncertaintyInMeters` field. The Ocean Tracking Network (OTN) has developed some [guidelines](https://github.com/tdwg/dwc-for-biologging) for formatting this type of data in Darwin Core. We summarize the main points below.
 

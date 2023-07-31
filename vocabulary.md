@@ -45,7 +45,7 @@ The MeasurementOrFact terms `measurementType`, `measurementValue`, and `measurem
 
 Hence, OBIS added 3 new terms: `measurementTypeID`, `measurementValueID` and `measurementUnitID` to standardize the measurement types, values and units. Note however `measurementValueID` is **not** used for standardizing numeric measurements.
 
-These three new terms should be populated using controlled vocabularies referenced using Unique Resource Identifiers (URIs). OBIS recommends using the internationally recognized [NERC Vocabulary Server](http://www.bodc.ac.uk/resources/products/web_services/vocab/), developed by the British Oceanographic Data Centre (BODC), which can be searched through [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search). Such controlled vocabulary is incredibly important to ensure datasets in OBIS will be interoperable - readable by both humans and machines. In this way, you could search for a single measurementTypeID and obtain all related records, regardless of differences in wording.
+These three new terms should be populated using controlled vocabularies referenced using Unique Resource Identifiers (URIs). OBIS recommends using the internationally recognized [NERC Vocabulary Server](http://www.bodc.ac.uk/resources/products/web_services/vocab/), developed by the British Oceanographic Data Centre (BODC), which can be searched through [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search). It also compiles vocabulary and terms from different institutions and authorities (e.g., ISO, SeaDataNet), and you can relate your data to them. Such controlled vocabulary is incredibly important to ensure datasets in OBIS will be interoperable - readable by both humans and machines. In this way, you could search for a single `measurementTypeID` and obtain all related records, regardless of differences in wording.
 
 We provide some specific guidance for these URI fields below.
 
@@ -125,16 +125,16 @@ If you have already tried looking for a P01 code and were unable to identify a s
 
 1. Navigate to <https://github.com/nvs-vocabs/OBISVocabs/issues> and click on the New Issue button.
 
-![Screenshot of how to request a new vocabulary on Github](images/Vocab_GithubRequest_1-NewIssue.png){width=50%}
+![*Screenshot of how to request a new vocabulary on Github*](images/Vocab_GithubRequest_1-NewIssue.png){width=50%}
 
 2. Click Get started
 
-![Screenshot of submitting an issue to Github](images/Vocab_GithubRequest_2-GetStarted.png){width=80%}
+![*Screenshot of submitting an issue to Github*](images/Vocab_GithubRequest_2-GetStarted.png){width=80%}
 
 3. Fill in the title with short details of your request or issue. Then fill in the description. It is recommended to list any existing terms that are similar to your request, or concepts that are sub-components of the request.
 
-![Screenshot for how to request a new measurementType on Github](images/Vocab_GithubRequest_3-IssueSubmission.png){width=50%}
+![*Screenshot for how to request a new measurementType on Github*](images/Vocab_GithubRequest_3-IssueSubmission.png){width=50%}
 
 4. *Example*: An issue was created to address difficulties in identifying P01 codes for sex rather than gender. Gender is a concept generally applied to humans, whereas “sex” is more applicable for animals. Thus the request was to either modify the current gender P01 code, or create a P01 code that specifies sex, not gender. At the time the request was issued, when users searched for a P01 term for “sex”, only species-specific terms were available.
 
-![Example of previously requested new term on Github](images/Vocab_GithubRequest_4-example.png){width=80%}
+![*Example of previously requested new term on Github*](images/Vocab_GithubRequest_4-example.png){width=80%}

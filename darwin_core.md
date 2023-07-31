@@ -198,13 +198,11 @@ The recommended vocabulary for `sex` see [BODC vocab : S10](http://vocab.nerc.ac
 
 Example:
 
-```
 | collectionCode               | occurrenceID                         | catalogNumber                        | occurrenceStatus |
 |------------------------------|--------------------------------------|--------------------------------------|------------------|
 | SluiceDock_benthic_1976/1981 | SluiceDock_benthic_1976_1            | SluiceDock_benthic_1976_1            | present          |
 | SluiceDock_benthic_1976/1981 | SluiceDock_benthic_1976_2            | SluiceDock_benthic_1976_2            | present          |
 | SluiceDock_benthic_1976/1981 | SluiceDock_benthic_1979-07/1980-06_1 | SluiceDock_benthic_1979-07/1980-06_1 | present          |
-```
 
 _Data from [A summary of benthic studies in the sluice dock of Ostend during 1976-1981](http://ipt.vliz.be/eurobis/resource?r=summary_of_benthic_studies_in_the_sluice_dock_ostend_during_1976-1981)._
 

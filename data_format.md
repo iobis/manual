@@ -7,8 +7,6 @@
   - [ExtendedMeasurementOrFact Extension (eMoF)](#extendedmeasurementorfact-extension-emof)
   - [eDNA & DNA derived data Extension](#edna-dna-derived-data-extension)
   - [A special case: habitat types](#a-special-case-habitat-types)
-- [When to use Event Core](#when-to-use-event-core)
-- [When to use Occurrence Core](#when-to-use-occurrence-core)
 - [Recommended reading](#recommended-reading)
 
 #### Darwin Core Archive

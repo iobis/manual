@@ -7,20 +7,20 @@
 
 ### eventID
 
-Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance.  `eventID` is an identifier for an individual sampling or observation event, whereas `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs).
+Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance.  `eventID` is an identifier for an individual sampling or observation event, whereas `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (`eventIDs`).
 
-`eventID` can be used for replicated samples or sub-samples. It is important to make sure each replicate sample receives a unique `eventID`, which could be based on the unique sample ID in your dataset. Sample ID can also be recorded in `materialSampleID`, as OBIS does not need to have separate eventIDs and `materialSampleIDs`. Rather OBIS can treat these two terms as equivalent. Be sure to still fill in the eventID field if you want to use materialSampleID, as OBIS only uses eventID and parentID for structuring datasets, not sample ID. This does not prevent you from using the field if you would like to.
+`eventID` can be used for replicated samples or sub-samples. It is important to make sure each replicate sample receives a unique `eventID`, which could be based on the unique sample ID in your dataset. Sample ID can also be recorded in `materialSampleID`, as OBIS does not need to have separate `eventID`s and `materialSampleIDs`. Rather OBIS can treat these two terms as equivalent. Be sure to still fill in the `eventID` field if you want to use `materialSampleID`, as OBIS only uses `eventID` and `parentEventID` for structuring datasets, not sample ID. This does not prevent you from using the field if you would like to.
 
-If you do not already have a `materialSampleID`, creating a unique eventID for your data records can be as straightforward as combining different fields from your data.
+If you do not already have a `materialSampleID`, creating a unique `eventID` for your data records can be as straightforward as combining different fields from your data.
 
 > **Note**
 > You should consider carefully what combination of fields will generate a **unique** event. Combinations including date, time, location, and depth are common elements to help generate such unique codes.
 
-Including the event type can also be useful for datasets with hierarchical sampling methods (e.g., samples taken from a station within a cruise). Repeating the parentEventID in the child event (use `:` as delimiter) can make the structure of the dataset easier to understand. Nesting event information in this way also allows you to reduce redundancy and still provide information relevant to each level of sampling.
+Including the event type can also be useful for datasets with hierarchical sampling methods (e.g., samples taken from a station within a cruise). Repeating the `parentEventID` in the child event (use `:` as delimiter) can make the structure of the dataset easier to understand. Nesting event information in this way also allows you to reduce redundancy and still provide information relevant to each level of sampling.
 
-Broadly, an eventID can take the form of `[parentEventID]:[sample type]_[sample ID]`
+Broadly, an `eventID` can take the form of `[parentEventID]:[sample type]_[sample ID]`
 
-Thus to construct a unique eventID for parent and child events, you join relevant sampling information. Possible configurations (with examples) could include:
+Thus to construct a unique `eventID` for parent and child events, you join relevant sampling information. Possible configurations (with examples) could include:
 
 - Project_cruise_station_date_sample
   - STAR_arcticsea_st3520_1989-04-04_s01
@@ -30,7 +30,7 @@ Thus to construct a unique eventID for parent and child events, you join relevan
   - Concordia_2003_Coast_Station1_seine_s01
   - Concordia_2003_Coast_Station1_trap_s01
 
-These examples are not exhaustive and other similarly structured variations that fit your data are acceptable. Consider also including year within your eventIDs to ensure codes remain globally unique in subsequent years, which is particularly useful if your sampling protocol is repeated temporally.
+These examples are not exhaustive and other similarly structured variations that fit your data are acceptable. Consider also including year within your `eventID`s to ensure codes remain globally unique in subsequent years, which is particularly useful if your sampling protocol is repeated temporally. Remember, what is the main information about a sampling event that helps you identify it? For instance, it is helpful when we know the location, date, project, habitat. So you can build your `eventID` code based on this information and ensuring they will not repeat (e.g., will result in a unique identifier).
 
 Information related to your sampling events can be assigned to the highest relevant event level in order to avoid repetition of information. For example, if all samples taken from a station occurred at the same depth, this information can be listed once. Variation between samples (e.g., exact time or coordinates) can also be easily reflected for each event. See the table below for a demonstration.
 
@@ -56,17 +56,25 @@ Consider another example from a real dataset below:
 
 _Data from [Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)](http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10)._
 
-We can see that each record has a similar eventID structure, except for the last part which indicates the event type - documented in the `eventRemarks` column. In this dataset, records with the eventID `IOF_benthos_Plominski_zaljev_2000_crs` has information applicable for records with eventIDs ending with `_stat1`, `_stat2`, `_s01`, and `_s02` because `_crs` is their parent event. Similarly, information (e.g., date of station visit, coordinates) documented in records with eventID `IOF_benthos_Plominski_zaljev_2000_stat1` is applicable for the two sample records (eventID `_s01` and `_s02`), because these samples were taken at Station 1 (indicated by the parentEventID). These eventIDs could have been nested in another way, such as `IOF_benthos_Plominsku_zaljev_2000_crs:stat1:s01` which would embed the parentEventID into the identifier.
+We can see that each record has a similar `eventID` structure, except for the last part which indicates the event type - documented in the `eventRemarks` column. In this dataset, records with the `eventID` `IOF_benthos_Plominski_zaljev_2000_crs` has information applicable for records with `eventID`s ending with `_stat1`, `_stat2`, `_s01`, and `_s02` because `_crs` is their parent event. Similarly, information (e.g., date of station visit, coordinates) documented in records with `eventID` `IOF_benthos_Plominski_zaljev_2000_stat1` is applicable for the two sample records (`eventID` `_s01` and `_s02`), because these samples were taken at Station 1 (indicated by the `parentEventID`). These `eventID`s could have been nested in another way, such as `IOF_benthos_Plominsku_zaljev_2000_crs:stat1:s01` which would embed the `parentEventID` into the identifier.
 
  See also [De Pooter et al. 2017](https://bdj.pensoft.net/articles.php?id=10989&instance_id=3385375) for an example of an event hierarchy in a complex benthos dataset.
 
+Watch this video for a demonstration on how to construct eventIDs:
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/Upt6LPJ0Bn8"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+
 ### occurrenceID
 
-`occurrenceID` is an identifier for occurrence records. Each occurrence record should have a globally unique identifier. Because `occurrenceID` is a required term, you may have to construct a persistent and globally unique identifier for each of your data records if none already exist.
+`occurrenceID` is an identifier for occurrence records. Each occurrence record should have a globally unique identifier. Because `occurrenceID` is a required term, you may have to construct a persistent and globally unique identifier for each of your data records if none already exists (e.g., if records were not labeled with unique identifiers before, such as during sample processing or image/sensor detection).
 
-There are no standardized guidelines yet on designing the persistence of this ID, the level of uniqueness (from within a dataset to globally in OBIS), and the precise algorithm and format for generating the ID. But in the absence of a persistent globally unique identifier, one can be constructed by combining the `institutionCode`, the `collectionCode` and the `catalogNumber` (or autonumber in the absence of a catalogNumber).  This is similar to how [eventID](#eventid) is constructed. You may also follow [Life Science Identifiers](https://www.labkey.org/Documentation/wiki-page.view?name=lsidOverview) guidelines. Note that the inclusion of `occurrenceID` is also necessary for datasets in the [OBIS-ENV-DATA](data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach) format.
+There are no standardized guidelines yet on designing the persistence of this ID, the level of uniqueness (from within a dataset to globally in OBIS), and the precise algorithm and format for generating the ID. But in the absence of a persistent globally unique identifier, one can be constructed by combining the `institutionCode`, the `collectionCode` and the `catalogNumber` (or autonumber in the absence of a catalogNumber).  This is similar to how [`eventID`](#eventid) is constructed. You may also follow [Life Science Identifiers](https://www.labkey.org/Documentation/wiki-page.view?name=lsidOverview) guidelines. Note that the inclusion of `occurrenceID` is also necessary for datasets in the [OBIS-ENV-DATA](data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach) format.
 
-An important consideration for museum specimens: there is the possibility that the institution a specimen is housed at may change. Therefore you may consider omitting institution identifiers within an occurrenceID, because occurrenceID should **not** change over time.
+An important consideration for museum specimens: there is the possibility that the institution a specimen is housed at may change. Therefore you may consider omitting institution identifiers within an `occurrenceID`, because `occurrenceID` should **not** change over time.
 
 See the example below:
 

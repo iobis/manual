@@ -13,6 +13,7 @@
 * [What are the responsibilities of node managers?](nodes.html)
 * [Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?](https://github.com/iobis/obis-network-datasets/)
 * [Where can I make suggestions for improvements on this Manual?](https://github.com/iobis/manual)
+* [Where can I find OBIS related training videos?](https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF)
 
 #### Formatting Data
 
