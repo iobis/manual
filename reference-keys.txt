@@ -138,6 +138,7 @@ s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton
 how-to-find-genetic-data-in-obis
 sequence-search-tool
 obis-mapper
+other-data-types
 multimedia-data-acoustic-imaging
 habitat-data
 tracking-data
@@ -188,10 +189,10 @@ user-tracking
 update-your-data-in-obis
 simultaneous-publishing-to-gbif
 data-access
+obis-homepage-and-dataset-pages
 mapper
 r-package
 api
-obis-homepage-and-dataset-pages
 full-exports
 finding-your-own-data-in-obis
 how-to-contact-data-provider

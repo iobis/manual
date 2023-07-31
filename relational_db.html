@@ -228,9 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.9" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4.9</b> Examples: ENV-DATA and DNA derived data</a>
 <ul>
 <li class="chapter" data-level="4.9.1" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>4.9.1</b> DNA dervived data</a></li>
-<li class="chapter" data-level="4.9.2" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.9.2</b> Multimedia data (Acoustic, Imaging)</a></li>
-<li class="chapter" data-level="4.9.3" data-path="other_data_types.html"><a href="other_data_types.html#habitat-data"><i class="fa fa-check"></i><b>4.9.3</b> Habitat data</a></li>
-<li class="chapter" data-level="4.9.4" data-path="other_data_types.html"><a href="other_data_types.html#tracking-data"><i class="fa fa-check"></i><b>4.9.4</b> Tracking data</a></li>
+<li class="chapter" data-level="4.9.2" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.9.2</b> Other data types</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Ensuring Data Quality</b></span></li>
@@ -292,10 +290,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Access Data from OBIS</b></span></li>
 <li class="chapter" data-level="7" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>7</b> Data access</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.1</b> Mapper</a></li>
-<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.2</b> R package</a></li>
-<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.3</b> API</a></li>
-<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.4</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.1</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.2</b> Mapper</a></li>
+<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.3</b> R package</a></li>
+<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.4</b> API</a></li>
 <li class="chapter" data-level="7.5" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>7.5</b> Full exports</a></li>
 <li class="chapter" data-level="7.6" data-path="access.html"><a href="access.html#finding-your-own-data-in-obis"><i class="fa fa-check"></i><b>7.6</b> Finding your own data in OBIS</a></li>
 <li class="chapter" data-level="7.7" data-path="access.html"><a href="access.html#how-to-contact-data-provider"><i class="fa fa-check"></i><b>7.7</b> How to contact data provider</a></li>
@@ -344,8 +342,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A fourth table could easily be created to track total school population size through time. In contrast, if this information was only presented in the pink Schools in Country table, the school information would be duplicated as you add rows for each year. In this way, you can easily see how useful relational databases are. Of course, this is a simplified example but it demonstrates how related tables can be linked by identifiers to reduce table complexity and data replication.</p>
 <p>We elaborate on how this structure is applied within OBIS <a href="formatting.html#dataset-structure">here</a>.</p>
 <div class="figure">
-<img src="images/RelationalDB.drawio.png" style="width:70.0%" alt="" />
-<p class="caption">An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows.</p>
+<img src="images/relationalDB-updated.png" style="width:80.0%" alt="" />
+<p class="caption"><em>An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows</em></p>
 </div>
 <p>Note that when OBIS harvests data, datasets are flattened - i.e., all separate data tables are combined into one. This is the kind of file you will receive when you <a href="access.html">download data from OBIS</a>. The reason for this is that querying relational databases significantly reduces computational time, as opposed to querying a flat database. Relational databases also facilitate requests for subsets that meet particular criteria - e.g., all data from Norway for one species above a certain depth.</p>
 <div id="how-to-avoid-redundancy" class="section level4 hasAnchor" number="2.4.3.1">
@@ -354,15 +352,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>For example, let us consider the dates of a ship cruise where a series of bottom trawls were taken. The sampling information (e.g., date range, equipment used, etc.) for each species collected in these trawls is the same. Because of this, we know we are dealing with unique sampling events and thus we will use <a href="format_event.html">Event core</a>. So, our Event core table will contain all information related to the sampling events (e.g., date, location). Then, information pertaining to each collected species (e.g., abundance, biomass, sampling methods, etc.) will be placed in an extension, the (Extended)MeasurementOrFact table. Here, each measurement for each species and sample will occur on a separate record. These records will be linked to the correct sampling event in the Event core by an identifier - the eventID. If we were to put this data in one file, the fields related to date and location (e.g., eventDate, decimalLongitude, decimalLatitude, etc.) would be repeated for each species.</p>
 <p>Let’s consider another example. If you took one temperature measurement from the water column where you took your sample, each species found in that sample would have the <strong>same</strong> temperature measurement. By linking such measurements to the <em>event</em> instead of each <em>occurrence</em>, we are able to reduce the amount of data being repeated.</p>
 <div class="figure">
-<img src="images/OBISsampling-example.png" style="width:70.0%" alt="" />
-<p class="caption">Example of how the sample data is distributed to Core and Extension tables, and how these tables are connected in OBIS</p>
+<img src="images/OBIS-sampling-schema-example-update.png" style="width:80.0%" alt="" />
+<p class="caption"><em>Example of how the sample data is distributed to Core and Extension tables, and how these tables are connected in OBIS</em></p>
 </div>
 <p>An advantage of structuring data this way is that if any mistakes are made, you only need to correct it once! So you can see that using relational event structures (when applicable) in combination with extension files can really simplify and reduce the number of times data are repeated.</p>
-<p><strong>Caveat:</strong> However we would like to note that in some cases, data duplication may occur due to the star schema structure. For example, when publishing DNA-derived data, <a href="https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping">Occurrence core will have to be used</a>, which necessitates the repetition of event data for each occurrence record. A possible solution to avoid duplicating Event data in these cases is to publish Event data as <a href="https://discourse.gbif.org/t/sibling-datasets-to-overcome-dwcarchive-star-schema-limitation-2/3401/2">sibling datasets</a>. Thus you would have two datasets, linked by the eventID:</p>
-<ul>
-<li>1 Event core + eMoF</li>
-<li>1 Occurrence core + DNA-derived data extensions + eMoF</li>
-</ul>
+<p><strong>Caveat:</strong> However we would like to note that in some cases, data duplication may occur due to the star schema structure. For example, when publishing DNA-derived data, <a href="https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping">Occurrence core will have to be used</a>, which necessitates the repetition of event data for each occurrence record.</p>
 
 </div>
 </div>

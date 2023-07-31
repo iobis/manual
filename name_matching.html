@@ -228,9 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.9" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4.9</b> Examples: ENV-DATA and DNA derived data</a>
 <ul>
 <li class="chapter" data-level="4.9.1" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>4.9.1</b> DNA dervived data</a></li>
-<li class="chapter" data-level="4.9.2" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.9.2</b> Multimedia data (Acoustic, Imaging)</a></li>
-<li class="chapter" data-level="4.9.3" data-path="other_data_types.html"><a href="other_data_types.html#habitat-data"><i class="fa fa-check"></i><b>4.9.3</b> Habitat data</a></li>
-<li class="chapter" data-level="4.9.4" data-path="other_data_types.html"><a href="other_data_types.html#tracking-data"><i class="fa fa-check"></i><b>4.9.4</b> Tracking data</a></li>
+<li class="chapter" data-level="4.9.2" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.9.2</b> Other data types</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Ensuring Data Quality</b></span></li>
@@ -292,10 +290,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Access Data from OBIS</b></span></li>
 <li class="chapter" data-level="7" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>7</b> Data access</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.1</b> Mapper</a></li>
-<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.2</b> R package</a></li>
-<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.3</b> API</a></li>
-<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.4</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.1</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.2</b> Mapper</a></li>
+<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.3</b> R package</a></li>
+<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.4</b> API</a></li>
 <li class="chapter" data-level="7.5" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>7.5</b> Full exports</a></li>
 <li class="chapter" data-level="7.6" data-path="access.html"><a href="access.html#finding-your-own-data-in-obis"><i class="fa fa-check"></i><b>7.6</b> Finding your own data in OBIS</a></li>
 <li class="chapter" data-level="7.7" data-path="access.html"><a href="access.html#how-to-contact-data-provider"><i class="fa fa-check"></i><b>7.7</b> How to contact data provider</a></li>
@@ -334,67 +332,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="name-matching-strategy-for-taxonomic-quality-control" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Name Matching Strategy for taxonomic quality control<a href="name_matching.html#name-matching-strategy-for-taxonomic-quality-control" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>OBIS requires all your species names to be matched against an authoritative taxonomic register. This effectively attaches stable identifiers to each of your species. Meaning, if a taxonomic ranking or a species name changes in the future, there will be no question as to which species your dataset is actually referring to.</p>
+<p>OBIS requires all your specimens to be classified and matched against an authoritative taxonomic register. This effectively attaches unique stable identifiers (and digitally traceable) to each of your species. Meaning, if a taxonomic ranking or a species name changes in the future, there will be no question as to which species your dataset is actually referring to. Matching to registers also helps to avoid misspelled or unused terms.</p>
 <p>OBIS currently accepts identifiers from <strong>three</strong> authoritative lists:</p>
 <ul>
 <li><a href="https://www.marinespecies.org/">World Register Marine Species (WoRMS)</a> LSIDs</li>
 <li><a href="https://www.itis.gov/">Integrated Taxonomic Information System (ITIS)</a> TSNs</li>
 <li><a href="https://biodiversitygenomics.net/projects/bold/">Barcode of Life Data Systems (BOLD)</a> and <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> identifiers</li>
 </ul>
-<p>The identifiers (LSID, TSN, ID) from these registers will be used to populate the <code>scientificNameID</code> field. If you would like to include multiple identifiers, please use a concatenated list where each register is clearly identified (e.g. <a href="urn:lsid:itis.gov:itis_tsn:12345" class="uri">urn:lsid:itis.gov:itis_tsn:12345</a>, NCBI:12345, BOLD:12345).</p>
+<p>The identifiers (LSID, TSN, ID) from these registers will be used to populate the <code>scientificNameID</code> field. OBIS can accept other LSIDS besides WoRMS, as long as they are mapped in WoRMS. If you would like to include multiple identifiers, please use a concatenated list where each register is clearly identified (e.g. <a href="urn:lsid:itis.gov:itis_tsn:12345" class="uri">urn:lsid:itis.gov:itis_tsn:12345</a>, NCBI:12345, BOLD:12345).</p>
 <blockquote>
 <p><strong>Note</strong>
-You should prioritize using LSIDs because they are unique identifiers which indicate the authority the ID comes from.</p>
+You should prioritize using LSIDs because they are unique identifiers that indicate the authority the ID comes from.WoRMS LSIDs are also the taxonomic backbone that OBIS relies on, as it is built on marine systems and is linked to the other taxonomic authoritative lists.</p>
 </blockquote>
 <p>You can also use the <a href="https://www.irmng.org/aphia.php?p=search">Interim Register of Marine and Nonmarine Genera (IRMNG)</a> to <a href="common_qc.html#non-marine-species">distinguish marine genera from freshwater genera</a>.</p>
 <div id="taxon-matching-workflow" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Taxon Matching Workflow<a href="name_matching.html#taxon-matching-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The OBIS node managers have agreed to match all the scientific names in their datasets according to the following Name Matching workflow:</p>
 <div class="figure">
-<img src="images/WoRMS-taxa-match.png" style="width:60.0%" alt="" />
+<img src="images/WoRMS-taxaMatch-workflow.png" style="width:70.0%" alt="" />
 <p class="caption">Workflow for matching a list of taxon names to WoRMS</p>
 </div>
 <div id="step-1-match-with-worms" class="section level4 hasAnchor" number="4.2.1.1">
 <h4><span class="header-section-number">4.2.1.1</span> Step 1: Match with WoRMS<a href="name_matching.html#step-1-match-with-worms" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The procedure for matching to WoRMS and then attaching successful matches back to your data can be simplified to:</p>
 <ul>
-<li>Prepare list of your species</li>
-<li>Upload to WoRMS taxon match tool
+<li>Prepare a file (.csv, .txt, .xlsx, etc.) with the list of your specimens/taxa</li>
+<li>Upload the file to WoRMS taxon match tool
 <ul>
 <li>Check relevant boxes</li>
 </ul></li>
 <li>Review returned file</li>
-<li>Identify data to include for OBIS
+<li>Resolve any ambiguous matches</li>
+<li>Download file and identify data to include in your Occurrence data table for OBIS
 <ul>
 <li>LSIDs, taxonomic fields, etc.</li>
 </ul></li>
-<li>Attach LSIDs back to your data using either:
+<li>Attach LSIDs back to your data using e.g.:
 <ul>
 <li>R (merge)</li>
 <li>Excel (vlookup)</li>
 </ul></li>
 </ul>
-<p>The taxon match tool of the World Register of Marine Species (WoRMS) is available at <a href="http://www.marinespecies.org/aphia.php?p=match">http://www.marinespecies.org/aphia.php?p=match</a>. The WoRMS taxon match will compare your taxon list to the taxa available in WoRMS.</p>
-<p>This taxon match takes into account exact matches and fuzzy matches. Fuzzy matches include possible spelling variations of a name available in WoRMS. WoRMS also identifies ambiguous matches, indicating that several potential matching options are available (e.g. homonyms). You can check these ambiguous matches and select the correct one, based on e.g., the general group information (a sponge dataset) or the authority. If this would be impossible with the available information (e.g., missing authority or very diverse dataset), then you need to contact the data provider for clarification.</p>
-<p>For performance reasons, the limit is set to 1,500 rows for the taxon match tool. Larger files can be sent to <a href="mailto:info@marinespecies.org">info@marinespecies.org</a> and will be returned as quickly as possible.</p>
+<p>The taxon match tool of the World Register of Marine Species (WoRMS) is an automatic way to download the taxonomic information about your occurrence records, without having to look for each name in the site. It is available at <a href="http://www.marinespecies.org/aphia.php?p=match">http://www.marinespecies.org/aphia.php?p=match</a>. The WoRMS taxon match will compare your taxon list to the taxa available in WoRMS. The following video demonstrates the basic steps for using the WoRMS Taxon match.</p>
+<p><iframe width="560" height="315"
+src="https://www.youtube.com/embed/yZKwtr14JVM"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe></p>
+<p>The taxon match takes into account exact matches and fuzzy matches. Fuzzy matches include possible spelling variations of a name available in WoRMS. WoRMS also identifies ambiguous matches, indicating that several potential matching options are available (e.g. homonyms). You can check these ambiguous matches and select the correct one, based on e.g., the general group information (a sponge dataset) or the authority. If this would be impossible with the available information (e.g., missing authority or very diverse dataset), then you need to contact the data provider for clarification. Watch the video below for a demonstration on how to resolve ambiguous or fuzzy matches.</p>
+<p><iframe width="560" height="315"
+src="https://www.youtube.com/embed/yZKwtr14JVM"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe></p>
+<p>For performance reasons, the limit is set to 1,500 rows for the taxon match tool. Larger files can be sent to <a href="mailto:info@marinespecies.org">info@marinespecies.org</a> and will be returned as quickly as possible. In case you have recorded a taxon that is not registered in WoRMS (e.g., newly discovered species), you should contact them so the database can be updated.</p>
 <p>After matching, the tool will return you a file with the AphiaIDs, LSIDs, valid names, authorities, classification, and any other output you have selected.</p>
 <blockquote>
 <p><strong>Note</strong>
 The WoRMS LSID is used for <code>DwC:scientificNameID</code>.</p>
 </blockquote>
-<p>A complete online manual is available at <a href="http://www.marinespecies.org/tutorial/taxonmatch.php">http://www.marinespecies.org/tutorial/taxonmatch.php</a>. A video tutorial for using the taxon match tool will be available soon. You can attach IDs obtained from WoRMS back to your own data using <a href="https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1">Excel’s vlookup function</a>. R script to do this is shown below.</p>
+<p>A complete online manual is available at <a href="http://www.marinespecies.org/tutorial/taxonmatch.php">http://www.marinespecies.org/tutorial/taxonmatch.php</a>. You can attach IDs obtained from WoRMS back to your own data using <a href="https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1">Excel’s vlookup function</a>. R script to do this is shown below.</p>
 <p><strong>R script for attaching Taxon Lists to ID Lists:</strong></p>
 <p>If you are familiar enough with R, you can use the <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/merge"><code>merge</code></a> function to attach the two lists to your data. We provide a short example of how to use this function below.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="name_matching.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate example data table with species occurences, for this example we will only have one column with the scientificName</span></span>
-<span id="cb4-2"><a href="name_matching.html#cb4-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>, <span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Ginglymostoma cirratum&quot;</span>))</span>
-<span id="cb4-3"><a href="name_matching.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="name_matching.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># this would be your matched file from WoRMS, but for example we are generating a simple list with the species names and LSIDs</span></span>
-<span id="cb4-5"><a href="name_matching.html#cb4-5" aria-hidden="true" tabindex="-1"></a>lsids<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Ginglymostoma cirratum&quot;</span>,<span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>),</span>
-<span id="cb4-6"><a href="name_matching.html#cb4-6" aria-hidden="true" tabindex="-1"></a> <span class="at">LSID =</span> <span class="fu">c</span>(<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105846&quot;</span>, <span class="st">&quot;urn:lsid:marinespecies.org:taxname:213112&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:127029&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105847&quot;</span>))</span>
-<span id="cb4-7"><a href="name_matching.html#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="name_matching.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#merge data frames together</span></span>
-<span id="cb4-9"><a href="name_matching.html#cb4-9" aria-hidden="true" tabindex="-1"></a>matched_data<span class="ot">&lt;-</span><span class="fu">merge</span>(data, lsids, <span class="at">by =</span> <span class="st">&quot;scientificName&quot;</span>)</span>
-<span id="cb4-10"><a href="name_matching.html#cb4-10" aria-hidden="true" tabindex="-1"></a>matched_data</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="name_matching.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate example data table with species occurences, for this example we will only have one column with the scientificName</span></span>
+<span id="cb3-2"><a href="name_matching.html#cb3-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>, <span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Ginglymostoma cirratum&quot;</span>))</span>
+<span id="cb3-3"><a href="name_matching.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="name_matching.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># this would be your matched file from WoRMS, but for example we are generating a simple list with the species names and LSIDs</span></span>
+<span id="cb3-5"><a href="name_matching.html#cb3-5" aria-hidden="true" tabindex="-1"></a>lsids<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Ginglymostoma cirratum&quot;</span>,<span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>),</span>
+<span id="cb3-6"><a href="name_matching.html#cb3-6" aria-hidden="true" tabindex="-1"></a> <span class="at">LSID =</span> <span class="fu">c</span>(<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105846&quot;</span>, <span class="st">&quot;urn:lsid:marinespecies.org:taxname:213112&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:127029&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105847&quot;</span>))</span>
+<span id="cb3-7"><a href="name_matching.html#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="name_matching.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#merge data frames together</span></span>
+<span id="cb3-9"><a href="name_matching.html#cb3-9" aria-hidden="true" tabindex="-1"></a>matched_data<span class="ot">&lt;-</span><span class="fu">merge</span>(data, lsids, <span class="at">by =</span> <span class="st">&quot;scientificName&quot;</span>)</span>
+<span id="cb3-10"><a href="name_matching.html#cb3-10" aria-hidden="true" tabindex="-1"></a>matched_data</span></code></pre></div>
 </div>
 <div id="how-to-fetch-a-full-classification-for-a-list-of-species-from-worms" class="section level4 hasAnchor" number="4.2.1.2">
 <h4><span class="header-section-number">4.2.1.2</span> How to fetch a full classification for a list of species from WoRMS?<a href="name_matching.html#how-to-fetch-a-full-classification-for-a-list-of-species-from-worms" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -427,7 +436,7 @@ The WoRMS LSID is used for <code>DwC:scientificNameID</code>.</p>
 <li>Match with <a href="https://www.lifewatch.be/data-services/">LifeWatch</a> or another register (see Step 2 below)</li>
 <li>Check that the species <a href="common_qc.html#non-marine-species">is marine</a></li>
 </ul>
-<p>If a scientific name does not appear in any register, you should contact the original data provider, where possible, to confirm taxonomic spelling, authority, and obtain any original description documents, then attempt to match again. If even after this there are no matches, please contact the WoRMS tean at <a href="mailto:info@marinespecies.org" class="email">info@marinespecies.org</a> to see if the taxon should be added to the WoRMS register.</p>
+<p>If a scientific name does not appear in any register, you should contact the original data provider, where possible, to confirm taxonomic spelling, authority, and obtain any original description documents, then attempt to match again. If even after this there are no matches, please contact the WoRMS data management team at <a href="mailto:info@marinespecies.org" class="email">info@marinespecies.org</a> to see if the taxon should be added to the WoRMS register.</p>
 </div>
 <div id="step-2-match-with-other-registers" class="section level4 hasAnchor" number="4.2.1.4">
 <h4><span class="header-section-number">4.2.1.4</span> Step 2: Match with other registers<a href="name_matching.html#step-2-match-with-other-registers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -447,7 +456,7 @@ The WoRMS LSID is used for <code>DwC:scientificNameID</code>.</p>
 </div>
 <div id="step-3-is-taxon-marine" class="section level4 hasAnchor" number="4.2.1.5">
 <h4><span class="header-section-number">4.2.1.5</span> Step 3: Is taxon marine?<a href="name_matching.html#step-3-is-taxon-marine" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The Interim Register of Marine and Non-marine Genera (IRMNG) matching services are available through <a href="http://www.irmng.org/">http://www.irmng.org/</a>, as well as through the <a href="http://www.lifewatch.be/data-services/">LifeWatch taxon match</a>. This service allows you to search for a genus (or other taxonomic rank when you uncheck the “genera” box) to check if it is known to be marine, brackish, freshwater, or terrestrial. You can find this information in the row labeled “Environment”. If the taxa is marine, you may have to contact the WoRMS taxa editor to have the taxon added to the WoRMS register (note you may have to provide supporting information confirming taxonomic and marine status).</p>
+<p>The Interim Register of Marine and Non-marine Genera (IRMNG) matching services are available through <a href="http://www.irmng.org/">http://www.irmng.org/</a>, as well as through the <a href="http://www.lifewatch.be/data-services/">LifeWatch taxon match</a>. This service allows you to search for a genus (or other taxonomic rank when you uncheck the “genera” box) to check if it is known to be marine, brackish, freshwater, or terrestrial. You can find this information in the row labeled “Environment”. If the taxa is marine, you may have to contact the WoRMS data management team (<a href="mailto:info@marinespecies.org" class="email">info@marinespecies.org</a>) to have the taxon added to the WoRMS register (note you may have to provide supporting information confirming taxonomic and marine status).</p>
 </div>
 </div>
 <div id="r-packages-for-taxon-matching" class="section level3 hasAnchor" number="4.2.2">

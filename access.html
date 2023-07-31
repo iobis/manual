@@ -228,9 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.9" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4.9</b> Examples: ENV-DATA and DNA derived data</a>
 <ul>
 <li class="chapter" data-level="4.9.1" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>4.9.1</b> DNA dervived data</a></li>
-<li class="chapter" data-level="4.9.2" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.9.2</b> Multimedia data (Acoustic, Imaging)</a></li>
-<li class="chapter" data-level="4.9.3" data-path="other_data_types.html"><a href="other_data_types.html#habitat-data"><i class="fa fa-check"></i><b>4.9.3</b> Habitat data</a></li>
-<li class="chapter" data-level="4.9.4" data-path="other_data_types.html"><a href="other_data_types.html#tracking-data"><i class="fa fa-check"></i><b>4.9.4</b> Tracking data</a></li>
+<li class="chapter" data-level="4.9.2" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.9.2</b> Other data types</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Ensuring Data Quality</b></span></li>
@@ -292,10 +290,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Access Data from OBIS</b></span></li>
 <li class="chapter" data-level="7" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>7</b> Data access</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.1</b> Mapper</a></li>
-<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.2</b> R package</a></li>
-<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.3</b> API</a></li>
-<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.4</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.1</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.2</b> Mapper</a></li>
+<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.3</b> R package</a></li>
+<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.4</b> API</a></li>
 <li class="chapter" data-level="7.5" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>7.5</b> Full exports</a></li>
 <li class="chapter" data-level="7.6" data-path="access.html"><a href="access.html#finding-your-own-data-in-obis"><i class="fa fa-check"></i><b>7.6</b> Finding your own data in OBIS</a></li>
 <li class="chapter" data-level="7.7" data-path="access.html"><a href="access.html#how-to-contact-data-provider"><i class="fa fa-check"></i><b>7.7</b> How to contact data provider</a></li>
@@ -336,20 +334,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">7</span> Data access<a href="access.html#data-access" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>OBIS has over 100 million records of marine data accessible for downloading. To download data from OBIS, there are several options:</p>
 <ul>
-<li><a href="https://mapper.obis.org">OBIS Mapper</a></li>
 <li><a href="https://obis.org/">OBIS homepage</a> or <a href="https://obis.org/datasets">advanced dataset search</a></li>
+<li><a href="https://mapper.obis.org">OBIS Mapper</a></li>
 <li>Accessible through the <a href="https://github.com/iobis/robis">R package robis</a></li>
 <li>OBIS <a href="https://api.obis.org/">API</a></li>
 <li><a href="access.html#full-exports">Full data exports</a></li>
 <li><a href="ipt.html">IPT</a></li>
 </ul>
 <p><strong>NOTE</strong> When you download data from the Mapper or full export, the data you will receive is flattened into one table with occurrence plus event data. eMoF data tables are separate upon request. However when you download a dataset from the OBIS homepage or dataset page, all tables (Event, Occurrence, eMoF) are separate files.</p>
-<div id="mapper" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Mapper<a href="access.html#mapper" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="obis-homepage-and-dataset-pages" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> OBIS Homepage and dataset pages<a href="access.html#obis-homepage-and-dataset-pages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>From the OBIS homepage, you can search for data in the search bar in the middle of the page. You can search by particular taxonomic groups, common names, dataset names, OBIS nodes, institute name, areas (e.g., Exclusive Economic Zone (EEZ)), or by the data provider’s country.</p>
+<p>When you search by dataset you will notice an additional option appears for <a href="https://obis.org/datasets">advanced search options</a>. This will allow you to identify specific datasets, and apply filters for OBIS nodes and whether datasets include extensions.</p>
+<div class="figure">
+<img src="images/obis-homepagesearch.png" style="width:90.0%" alt="" />
+<p class="caption"><em>OBIS homepage search, showing where to find the advanced search link</em></p>
+</div>
+<p>Regardless if you found a dataset through the homepage or the advanced Dataset search, you will be able to navigate to individual dataset pages. For individual dataset pages (instead of aggregate pages for e.g., a Family) there are three buttons available:</p>
+<ul>
+<li>Report issue - allows you to report any issues with the dataset in question</li>
+<li>Source DwC-A - download the dataset as a Darwin Core-Archive file. This will provide all data tables as separate files within a zipped folder</li>
+<li>To mapper - this will open another browser with the data shown in the Mapper</li>
+</ul>
+<div class="figure">
+<img src="images/dataset-DL.png" style="width:90.0%" alt="" />
+<p class="caption"><em>Dataset download</em></p>
+</div>
+<p>If you searched for aggregate datasets (e.g., all Crustacea records, all records from OBIS-Canada, etc.), the <code>source DwC-A</code> button will not be available to you. To download these data subsets, you must click <code>to mapper</code> and then <a href="access.html#mapper">download the data from the Mapper as a CSV</a>.</p>
+</div>
+<div id="mapper" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Mapper<a href="access.html#mapper" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><a href="https://mapper.obis.org" class="uri">https://mapper.obis.org</a></li>
 </ul>
-<p>A video demonstration of how to use the Mapper will be available soon.</p>
+<p>Watch this video demonstration of how to use the Mapper as well as the OBIS homepage search.</p>
+<p><iframe width="560" height="315"
+src="https://www.youtube.com/embed/9PSPEtqgjUI"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe></p>
 <p>The mapper allows users to visualize and inspect subsets of OBIS data. A variety of filters are available (taxonomic, geographic, time, data quality) and multiple layers can be combined in a single view. Layers can be downloaded as CSV files.</p>
 <div class="figure">
 <img src="images/mapper-DL.png" style="width:60.0%" alt="" />
@@ -362,21 +385,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>After downloading, you will notice that the Event and Occurrence data is flattened into one table, called “Occurrence.csv”. Upon inspecting this file in your viewer of choice, you will see it contains all 225 possible DwC fields, although not every field will contain data for each observation. Any extensions you checked will be downloaded as separate tables.</p>
 </div>
-<div id="r-package" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> R package<a href="access.html#r-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="r-package" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> R package<a href="access.html#r-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><a href="https://github.com/iobis/robis" class="uri">https://github.com/iobis/robis</a></li>
 </ul>
 <p>The robis R package has been developed to facilitate connecting to the OBIS API from R. The package can be installed <a href="https://cran.r-project.org/web/packages/robis/index.html">from CRAN</a> or <a href="https://github.com/iobis/robis">from GitHub</a> (latest development version). The package documentation includes a function reference as well as a <a href="https://iobis.github.io/robis/articles/getting-started.html">getting started vignette</a>. As a quick example of what the package can do, you can obtain raw occurrence data by feeding a taxon name or AphiaID to the <code>occurrence</code> function.</p>
 <p>If you’d like to then download this data, you can simply export R objects with the <code>write.csv</code> function. For example, if we wanted to obtain Mollusc data from OBIS:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="access.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
-<span id="cb12-2"><a href="access.html#cb12-2" aria-hidden="true" tabindex="-1"></a>moll<span class="ot">&lt;-</span><span class="fu">occurrence</span>(“Mollusca”)</span>
-<span id="cb12-3"><a href="access.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(moll, “mollusca<span class="sc">-</span>obis.csv”)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="access.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
+<span id="cb11-2"><a href="access.html#cb11-2" aria-hidden="true" tabindex="-1"></a>moll<span class="ot">&lt;-</span><span class="fu">occurrence</span>(“Mollusca”)</span>
+<span id="cb11-3"><a href="access.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(moll, “mollusca<span class="sc">-</span>obis.csv”)</span></code></pre></div>
 <p>This file will be saved to your working directory (if you are not familiar with working directories, read <a href="https://bookdown.org/ndphillips/YaRrr/the-working-directory.html">here</a>). After opening the file, you will notice that the fields in the download do not include every possible field, but instead only those where information has been recorded by data providers, plus the <a href="access.html#interpreting-downloaded-files-from-obis">fields added by OBIS’s quality control pipeline</a>.</p>
 <p>To use <code>robis</code> for visualizing and mapping occurrences, see the <a href="dataviz.html">Visualization</a> section of the manual.</p>
+<p>Watch the video below for a walkthrough of how to use the robis package to obtain OBIS data.</p>
+<p><iframe width="560" height="315"
+src="https://www.youtube.com/embed/8Ep4fGICQWU"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe></p>
 </div>
-<div id="api" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> API<a href="access.html#api" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="api" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> API<a href="access.html#api" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><a href="https://api.obis.org/" class="uri">https://api.obis.org/</a></li>
 </ul>
@@ -405,27 +434,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Institute ID - this should be the Ocean Expert ID (e.g., the ID for <a href="https://oceanexpert.org/institution/7532">NOAA Fisheries Service, Southeast Regional Office St. Petersburg</a> is 7532)</li>
 <li>OBIS node UUID</li>
 </ul>
-<p>A short video demonstrating use of the API will be available soon.</p>
-</div>
-<div id="obis-homepage-and-dataset-pages" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> OBIS Homepage and dataset pages<a href="access.html#obis-homepage-and-dataset-pages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>From the OBIS homepage, you can search for data in the search bar in the middle of the page. You can search by particular taxonomic groups, common names, dataset names, OBIS nodes, institute name, areas (e.g., Exclusive Economic Zone (EEZ)), or by the data provider’s country.</p>
-<p>When you search by dataset you will notice an additional option appears for <a href="https://obis.org/datasets">advanced search options</a>. This will allow you to identify specific datasets, and apply filters for OBIS nodes and whether datasets include extensions.</p>
-<div class="figure">
-<img src="images/obis-homepagesearch.png" style="width:90.0%" alt="" />
-<p class="caption"><em>OBIS homepage search, showing where to find the advanced search link</em></p>
-</div>
-<p>Regardless if you found a dataset through the homepage or the advanced Dataset search, you will be able to navigate to individual dataset pages. For individual dataset pages (instead of aggregate pages for e.g., a Family) there are three buttons available:</p>
-<ul>
-<li>Report issue - allows you to report any issues with the dataset in question</li>
-<li>Source DwC-A - download the dataset as a Darwin Core-Archive file. This will provide all data tables as separate files within a zipped folder</li>
-<li>To mapper - this will open another browser with the data shown in the Mapper</li>
-</ul>
-<div class="figure">
-<img src="images/dataset-DL.png" style="width:90.0%" alt="" />
-<p class="caption"><em>Dataset download</em></p>
-</div>
-<p>If you searched for aggregate datasets (e.g., all Crustacea records, all records from OBIS-Canada, etc.), the <code>source DwC-A</code> button will not be available to you. To download these data subsets, you must click <code>to mapper</code> and then <a href="access.html#mapper">download the data from the Mapper as a CSV</a>.</p>
+<p>A short video demonstrating use of the API is shown below.</p>
+<p><iframe width="560" height="315"
+src="https://www.youtube.com/embed/Hocr3N6zpH0"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe></p>
 </div>
 <div id="full-exports" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">7.5</span> Full exports<a href="access.html#full-exports" class="anchor-section" aria-label="Anchor link to header"></a></h2>

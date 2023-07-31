@@ -228,9 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.9" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4.9</b> Examples: ENV-DATA and DNA derived data</a>
 <ul>
 <li class="chapter" data-level="4.9.1" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>4.9.1</b> DNA dervived data</a></li>
-<li class="chapter" data-level="4.9.2" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.9.2</b> Multimedia data (Acoustic, Imaging)</a></li>
-<li class="chapter" data-level="4.9.3" data-path="other_data_types.html"><a href="other_data_types.html#habitat-data"><i class="fa fa-check"></i><b>4.9.3</b> Habitat data</a></li>
-<li class="chapter" data-level="4.9.4" data-path="other_data_types.html"><a href="other_data_types.html#tracking-data"><i class="fa fa-check"></i><b>4.9.4</b> Tracking data</a></li>
+<li class="chapter" data-level="4.9.2" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.9.2</b> Other data types</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Ensuring Data Quality</b></span></li>
@@ -292,10 +290,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Access Data from OBIS</b></span></li>
 <li class="chapter" data-level="7" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>7</b> Data access</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.1</b> Mapper</a></li>
-<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.2</b> R package</a></li>
-<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.3</b> API</a></li>
-<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.4</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.1</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.2</b> Mapper</a></li>
+<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.3</b> R package</a></li>
+<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.4</b> API</a></li>
 <li class="chapter" data-level="7.5" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>7.5</b> Full exports</a></li>
 <li class="chapter" data-level="7.6" data-path="access.html"><a href="access.html#finding-your-own-data-in-obis"><i class="fa fa-check"></i><b>7.6</b> Finding your own data in OBIS</a></li>
 <li class="chapter" data-level="7.7" data-path="access.html"><a href="access.html#how-to-contact-data-provider"><i class="fa fa-check"></i><b>7.7</b> How to contact data provider</a></li>
@@ -402,17 +400,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Repeat steps 3-7 for any measurements in the Event table</li>
 </ol>
 <p>Note the fields <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeValue">sampleSizeValue</a>, <a href="https://dwc.tdwg.org/terms/#dwc:samplingEffort">samplingEffort</a>, and <a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol">samplingProtocol</a> from the Occurrence table can be documented as separate measurements on different rows in the eMoF table. E.g., <code>measurementType</code> = samplingProtocol, <code>measurementValue</code> = description of protocol. Any values in <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit">sampleSizeUnit</a> fields should be placed in the <code>measurementUnit</code> field when transferred to the eMoF.</p>
+<p>Watch the video tutorial for how to format the eMoF table below.</p>
+<p><iframe width="560" height="315"
+src="https://www.youtube.com/embed/EjM0HRrF1B4"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe></p>
 <p>If you would like to export Event data to the eMoF, see some example R code below. This example was provided by <a href="https://orcid.org/0000-0002-4391-107X">Abby Benson</a> from the <a href="https://www.usgs.gov/ocean-biodiversity-information-system-usa">OBIS-USA node</a>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="format_emof.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb5-2"><a href="format_emof.html#cb5-2" aria-hidden="true" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> <span class="fu">unique</span>(eventCore[<span class="fu">c</span>(<span class="st">&quot;eventID&quot;</span>)]) <span class="co">#create a list of all unique eventIDs from your event table</span></span>
-<span id="cb5-3"><a href="format_emof.html#cb5-3" aria-hidden="true" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> cruise <span class="sc">%&gt;%</span> <span class="co">#add sampling information </span></span>
-<span id="cb5-4"><a href="format_emof.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">measurementType =</span> <span class="st">&quot;Sampling platform name&quot;</span>,</span>
-<span id="cb5-5"><a href="format_emof.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">measurementValue =</span> <span class="st">&quot;R/V Cruise Id = SR1812&quot;</span>,</span>
-<span id="cb5-6"><a href="format_emof.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">measurementValueID =</span> <span class="st">&quot;https://doi.org/10.7284/908021&quot;</span>,</span>
-<span id="cb5-7"><a href="format_emof.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">measurementUnit =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb5-8"><a href="format_emof.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">measurementTypeID =</span> <span class="st">&quot;http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/&quot;</span>,</span>
-<span id="cb5-9"><a href="format_emof.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">measurementUnitID =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb5-10"><a href="format_emof.html#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="at">occurrenceID =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="format_emof.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-2"><a href="format_emof.html#cb4-2" aria-hidden="true" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> <span class="fu">unique</span>(eventCore[<span class="fu">c</span>(<span class="st">&quot;eventID&quot;</span>)]) <span class="co">#create a list of all unique eventIDs from your event table</span></span>
+<span id="cb4-3"><a href="format_emof.html#cb4-3" aria-hidden="true" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> cruise <span class="sc">%&gt;%</span> <span class="co">#add sampling information </span></span>
+<span id="cb4-4"><a href="format_emof.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">measurementType =</span> <span class="st">&quot;Sampling platform name&quot;</span>,</span>
+<span id="cb4-5"><a href="format_emof.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">measurementValue =</span> <span class="st">&quot;R/V Cruise Id = SR1812&quot;</span>,</span>
+<span id="cb4-6"><a href="format_emof.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">measurementValueID =</span> <span class="st">&quot;https://doi.org/10.7284/908021&quot;</span>,</span>
+<span id="cb4-7"><a href="format_emof.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">measurementUnit =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb4-8"><a href="format_emof.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">measurementTypeID =</span> <span class="st">&quot;http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/&quot;</span>,</span>
+<span id="cb4-9"><a href="format_emof.html#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="at">measurementUnitID =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb4-10"><a href="format_emof.html#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">occurrenceID =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>
