@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Data access | The OBIS manual</title>
   <meta name="description" content="7 Data access | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Data access | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -392,9 +392,9 @@ allowfullscreen></iframe></p>
 </ul>
 <p>The robis R package has been developed to facilitate connecting to the OBIS API from R. The package can be installed <a href="https://cran.r-project.org/web/packages/robis/index.html">from CRAN</a> or <a href="https://github.com/iobis/robis">from GitHub</a> (latest development version). The package documentation includes a function reference as well as a <a href="https://iobis.github.io/robis/articles/getting-started.html">getting started vignette</a>. As a quick example of what the package can do, you can obtain raw occurrence data by feeding a taxon name or AphiaID to the <code>occurrence</code> function.</p>
 <p>If you’d like to then download this data, you can simply export R objects with the <code>write.csv</code> function. For example, if we wanted to obtain Mollusc data from OBIS:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="access.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
-<span id="cb11-2"><a href="access.html#cb11-2" aria-hidden="true" tabindex="-1"></a>moll<span class="ot">&lt;-</span><span class="fu">occurrence</span>(“Mollusca”)</span>
-<span id="cb11-3"><a href="access.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(moll, “mollusca<span class="sc">-</span>obis.csv”)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="access.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
+<span id="cb14-2"><a href="access.html#cb14-2" aria-hidden="true" tabindex="-1"></a>moll<span class="ot">&lt;-</span><span class="fu">occurrence</span>(“Mollusca”)</span>
+<span id="cb14-3"><a href="access.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(moll, “mollusca<span class="sc">-</span>obis.csv”)</span></code></pre></div>
 <p>This file will be saved to your working directory (if you are not familiar with working directories, read <a href="https://bookdown.org/ndphillips/YaRrr/the-working-directory.html">here</a>). After opening the file, you will notice that the fields in the download do not include every possible field, but instead only those where information has been recorded by data providers, plus the <a href="access.html#interpreting-downloaded-files-from-obis">fields added by OBIS’s quality control pipeline</a>.</p>
 <p>To use <code>robis</code> for visualizing and mapping occurrences, see the <a href="dataviz.html">Visualization</a> section of the manual.</p>
 <p>Watch the video below for a walkthrough of how to use the robis package to obtain OBIS data.</p>

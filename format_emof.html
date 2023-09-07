@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.5 How to format extendedMeasurementOrFact tables | The OBIS manual</title>
   <meta name="description" content="4.5 How to format extendedMeasurementOrFact tables | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.5 How to format extendedMeasurementOrFact tables | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -407,16 +407,16 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe></p>
 <p>If you would like to export Event data to the eMoF, see some example R code below. This example was provided by <a href="https://orcid.org/0000-0002-4391-107X">Abby Benson</a> from the <a href="https://www.usgs.gov/ocean-biodiversity-information-system-usa">OBIS-USA node</a>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="format_emof.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb4-2"><a href="format_emof.html#cb4-2" aria-hidden="true" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> <span class="fu">unique</span>(eventCore[<span class="fu">c</span>(<span class="st">&quot;eventID&quot;</span>)]) <span class="co">#create a list of all unique eventIDs from your event table</span></span>
-<span id="cb4-3"><a href="format_emof.html#cb4-3" aria-hidden="true" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> cruise <span class="sc">%&gt;%</span> <span class="co">#add sampling information </span></span>
-<span id="cb4-4"><a href="format_emof.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">measurementType =</span> <span class="st">&quot;Sampling platform name&quot;</span>,</span>
-<span id="cb4-5"><a href="format_emof.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">measurementValue =</span> <span class="st">&quot;R/V Cruise Id = SR1812&quot;</span>,</span>
-<span id="cb4-6"><a href="format_emof.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">measurementValueID =</span> <span class="st">&quot;https://doi.org/10.7284/908021&quot;</span>,</span>
-<span id="cb4-7"><a href="format_emof.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">measurementUnit =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb4-8"><a href="format_emof.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">measurementTypeID =</span> <span class="st">&quot;http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/&quot;</span>,</span>
-<span id="cb4-9"><a href="format_emof.html#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="at">measurementUnitID =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb4-10"><a href="format_emof.html#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">occurrenceID =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="format_emof.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-2"><a href="format_emof.html#cb7-2" aria-hidden="true" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> <span class="fu">unique</span>(eventCore[<span class="fu">c</span>(<span class="st">&quot;eventID&quot;</span>)]) <span class="co">#create a list of all unique eventIDs from your event table</span></span>
+<span id="cb7-3"><a href="format_emof.html#cb7-3" aria-hidden="true" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> cruise <span class="sc">%&gt;%</span> <span class="co">#add sampling information </span></span>
+<span id="cb7-4"><a href="format_emof.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">measurementType =</span> <span class="st">&quot;Sampling platform name&quot;</span>,</span>
+<span id="cb7-5"><a href="format_emof.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">measurementValue =</span> <span class="st">&quot;R/V Cruise Id = SR1812&quot;</span>,</span>
+<span id="cb7-6"><a href="format_emof.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">measurementValueID =</span> <span class="st">&quot;https://doi.org/10.7284/908021&quot;</span>,</span>
+<span id="cb7-7"><a href="format_emof.html#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">measurementUnit =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb7-8"><a href="format_emof.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">measurementTypeID =</span> <span class="st">&quot;http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/&quot;</span>,</span>
+<span id="cb7-9"><a href="format_emof.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">measurementUnitID =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb7-10"><a href="format_emof.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">occurrenceID =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>
