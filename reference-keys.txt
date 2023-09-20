@@ -10,6 +10,7 @@ getting-help-in-obis
 frequently-asked-questions
 general
 formatting-data
+vocabulary
 tools
 quality-control
 publishing
