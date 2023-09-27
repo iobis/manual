@@ -54,8 +54,9 @@ Because occurrenceStatus is a binary field, “presence” or “absence”, thi
 
 For records pertaining to an observation in the wild, you should use:
 
-`HumanObservation` (e.g., observation in the wild)
-`MachineObservation` (e.g., photograph, DNA sequences)
+- `HumanObservation` (e.g., observation in the wild)
+- `MachineObservation` (e.g., photograph, acoustic detection, etc.)
+- `MaterialSample` (e.g. DNA sequences, DNA detection).
 
 For records pertaining to literature data, `basisOfRecord` should always reflect the evidence upon which the Occurrence record was based. For example, a researcher's record based on photographs should specify `MachineObservation`, otherwise specifications should be `HumanObservation` (see [relevant GitHub discussion](https://github.com/tdwg/dwc-qa/issues/134#issuecomment-491827863)).
 
