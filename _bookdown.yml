@@ -20,10 +20,10 @@ rmd_files:
   - format_occurrence.md
   - format_event.md
   - format_emof.md
+  - dna_data.md
   - vocabulary.md
   - common_formatissues.md
   - examples.md
-  - dna_data.md
   - other_data_types.md
   - data_qc.md
   - dataquality.md
