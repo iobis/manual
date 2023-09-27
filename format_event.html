@@ -390,7 +390,7 @@ src="https://www.youtube.com/embed/jyy6QO_p7v8"
 frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe></p>
-<p>After completing the formatting of your Event Core table, you can next format your extendedMeasurementOrFact table. To format the Occurrence extension table, see the <a href="format_occurrence.html">Occurrence table</a> section of this manual.</p>
+<p>After completing the formatting of your Event Core table, you can next format your extendedMeasurementOrFact table. To format the Occurrence extension table, see the <a href="format_occurrence.html">Occurrence table</a> section of this manual. Note that there is a difference between how OBIS and GBIF populate fields in parent and child events. In OBIS, child events inherit parent event information. However, if parentEvent contains latitude/longitude coordinates, and child events do not, occurrences associated with the child events will have blank latitude/longitude coordinates because these fields are not currently inherited by parent events by GBIF. If you intend for your dataset to be published to GBIF you may consider populating both parent and child events. A discussion of this and the implications can be found <a href="https://github.com/gbif/pipelines/issues/878">here</a>.</p>
 
 </div>
 </div>
