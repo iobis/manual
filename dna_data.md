@@ -1,4 +1,4 @@
-### DNA dervived data
+## DNA dervived data
 
 **Contents:**
 
@@ -10,7 +10,7 @@
 - [Unknown sequences](#unknown-sequences)
 - [Guidelines for qPCR data](#guidelines-for-compiling-genetic-data-qpcr)
 
-#### Introduction
+### Introduction
 
 DNA derived data are increasingly being used to document taxon occurrences. This genetic data may come from a sampling event, an individual organism, may be linked to physical material (or not), or may result from DNA detection methods e.g., metabarcoding or qPCR. Thus genetic data may reflect a single organism, or may include information from bulk samples with many individuals. Still, DNA-derived occurrence data of species should be documented as standardized and as reproducible as possible.
 
@@ -34,7 +34,7 @@ Although this data is in multiple files, each unique sequence by sample combinat
 
 Doing this will help you when following the guidelines below.
 
-#### How to find genetic data in OBIS
+### How to find genetic data in OBIS
 
 **Sequence Search tool**
 
@@ -57,7 +57,7 @@ If you wish to find records that have the DNADerivedData extension you can add t
 4. Click save to create the layer
 5. [Download the data from the layer](access.html)
 
-#### Guidelines for compiling genetic data: eDNA and metabarcoding datasets
+### Guidelines for compiling genetic data: eDNA and metabarcoding datasets
 
 As mentioned above, you will need to have information on the taxonomy and sequences for each occurrence record associated with a DNA sample. You should first fill in the [Occurrence core table](format_occurrence.html), and then complete the DNA Derived Data extension (as well as the eMoF extension, if applicable, for any measurements taken).
 
@@ -122,11 +122,11 @@ Environmental systems are described in the two fields `env_broad_scale` and `env
 
 When data tables are formatted and you are ready to publish it on the IPT, it will follow the same process for [publishing on an IPT](data_publication.html). You will upload your source files, and add the Occurrence core Darwin Core mappings, and then the DNA Derived Data Darwin Core mappings. However the extension must first be [installed by the IPT administrator](data_publication.html#ipt-administration) (often the node manager). Once the extension is installed, you can add the Darwin Core DNA Derived Data mapping for that file.
 
-##### eDNA and DNA derived data example
+#### eDNA and DNA derived data example
 
 The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional Occurrence core terms, refer to [Occurrence](darwin_core.html#occurrence).
 
-###### eDNA data from Monterey Bay, California
+##### eDNA data from Monterey Bay, California
 
 The data for this example is from the use case ["18S Monterey Bay Time Series: an eDNA data set from Monterey Bay, California, including years 2006, 2013 - 2016'](https://ipt-obis.gbif.us/resource?r=18s_monterey_bay_time_series_edna). The data from this study originate from marine filtered seawater samples that have undergone metabarcoding of the 18S V9 region.
 
@@ -256,13 +256,13 @@ The DNA Derived Data extension for metabarcoding data contains the DNA sequences
 | SBDI-ASV-3:16S_1:salinity    | SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730 | salinity        | 7.25             | psu             |
 | SBDI-ASV-3:16S_1:temperature | SBDI-ASV-3:16S_1:1ead98754d34073a4606f7ff1e94126e | temperature     | 16.9             | °C              |
 
-#### Unknown sequences
+### Unknown sequences
 
 It is important to understand the significance of unknown and uncharacterized sequences in genetic studies. Sequences are given taxonomic names based on comparisons to a reference database. The reference databases contain sequences that have been submitted with a name. Ideally, the reference database is a collection of sequences that are derived from vouchered, morphologically identified specimens. Notably, this is frequently often not the case and sequences can also have erratic annotations. Furthermore, only a small portion of species have sequences in reference databases. Due to this reason, typically many sequences in any given study will remain uncharacterized. This is especially the case for tropical regions with high biodiversity. By also recording all sequences, including uncharacterized sequences, we make sure that the information is not lost, even if the annotation is currently incorrect or missing. These uncharacterized sequences can then still be compared to other studies, and can be given a taxonomic name as more specimens are sequenced and added to the reference databases.
 
 For unknown sequences it is required to populate the `scientificName` field with “Incertae sedis”, or the lowest taxonomic information if available. For example, if it is only known which Class a sequence belongs to, populate `scientificName` with the associated Class name. Similarly, `scientificNameID` should be populated with the WoRMS LSID for the name given to `scientificName`. For records recorded as Incertae sedis, `scientificNameID` should be populated with urn:lsid:marinespecies.org:taxname:12. We recommend also populating `verbatimIdentification` with the name that was originally documented (e.g. phototrophic eukaryote).
 
-#### Guidelines for compiling genetic data: qPCR
+### Guidelines for compiling genetic data: qPCR
 
 Compiling qPCR data is a little bit different than compiling eDNA or metabarcoding data. One of the main differences is that there are no sequences recorded in the `DNA_sequence` field of the DNA derived data extension. Instead, occurrences are based on detections made using species-specific primers and either qPCR (Quantitative Polymerase Chain Reaction) or ddPCR (Droplet-Digital Polymerase Chain Reaction), no sequencing is done.
 
@@ -339,7 +339,7 @@ As with the metabarcoding dataset, the details of the PCR conditions and primers
 
 The main terms that are important for the quantification information and are different from the metabarcoding dataset are `baselineValue`, `thresholdQuantificationCycle` and `quantificationCycle`. The terms `pcr_primer_lod`, `pcr_primer_loq`, `probeQuencher`, `probeReporter` are additional terms specific for qPCR assays. The `baselineValue` indicates the number of cycles below which the signal is considered only background noise. The `quantificationCycle` is the most important and indicates at which cycle the particular sample crossed the detection threshold, this will be different for each sample. It is recommended to record this information, but not all of this may be easily available.
 
-#### OBIS Bioinformatics Pipline
+### OBIS Bioinformatics Pipline
 
 OBIS recognizes the vast amount of data generated from marine DNA sampling, especially from eDNA sequencing. Thus we have been developing a bioinformatics pipeline to facilitate publication of this data into OBIS. The pipeline was initially developed for the [PacMAN project (Pacific Islands Marine Bioinvasions Alert Network)](https://pacman.obis.org/).
 
