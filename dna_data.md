@@ -5,8 +5,8 @@
 - [Introduction](#introduction)
 - [How to find genetic data in OBIS](#how-to-find-genetic-data-in-obis)
 - [Guidelines for eDNA and metabarcoding data](#guidelines-for-compiling-genetic-data-edna-and-metabarcoding-datasets)
-    - [eDNA & DNA Derived use cases](#edna-and-dna-derived-data-example)
-    - [16S rRNA metabarcoding example](#16s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton)
+   - [eDNA & DNA Derived use cases](#edna-and-dna-derived-data-example)
+   - [16S rRNA metabarcoding example](#16s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton)
 - [Unknown sequences](#unknown-sequences)
 - [Guidelines for qPCR data](#guidelines-for-compiling-genetic-data-qpcr)
 
@@ -30,7 +30,7 @@ To format datasets, you will need to have information on the sequence and possib
 
 Although this data is in multiple files, each unique sequence by sample combination is considered **one** occurrence. Therefore the data from these tables will need to be formatted to the “long format”, including a row for each sequence in each sample. See the figure below for a demonstration of how this can be done.
 
-![Combining multiple DNA data tables into one "long format" table](/images/DNA_4tables-to-one.jpg)
+![Combining multiple DNA data tables into one "long format" table](images/DNA_4tables-to-one.jpg)
 
 Doing this will help you when following the guidelines below.
 
