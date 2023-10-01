@@ -338,8 +338,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="darwin-core" class="section level3 hasAnchor" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> Darwin Core<a href="darwin_core.html#darwin-core" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="darwin-core-1" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Darwin Core<a href="darwin_core.html#darwin-core-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Contents</strong></p>
 <ul>
 <li><a href="darwin_core.html#introduction-to-darwin-core">Introduction to Darwin Core</a></li>
@@ -755,7 +755,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>LivingSpecimen</code> an intentionally kept/cultivated living specimen e.g. in an aquarium or culture collection.</li>
 </ul>
 <p>In case no specimen is deposited, the basis of record is either <code>HumanObservation</code> (e.g bird sighting, benthic sample but specimens were discarded after counting), or <code>MachineObservation</code> (e.g. for occurrences based on automated sensors such as image recognition, etc). For records pertaining to genetic samples, basisOfRecord can be <code>MaterialSample</code> (e.g. in the DNA-derived data extension).</p>
-<p>When the basisOfRecord is either a <em>preservedSpecimen</em>, <em>LivingSpecimen</em> or <em>FossilSpecimen</em> please also add the <code>institutionCode</code>, <code>collectionCode</code> and <code>catalogNumber</code>, which will enable people to visit the collection and re-examine the material. Sometimes, for example in case of living specimens, a dataset can contain records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection. In this case please add the event type information in <code>type</code> (see <a href="darwin_core.html#event">OBIS manual: event</a>).</p>
+<p>When the basisOfRecord is either a <em>preservedSpecimen</em>, <em>LivingSpecimen</em> or <em>FossilSpecimen</em> please also add the <code>institutionCode</code>, <code>collectionCode</code> and <code>catalogNumber</code>, which will enable people to visit the collection and re-examine the material. Sometimes, for example in case of living specimens, a dataset can contain records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection. In this case please add the event type information in <code>eventRemarks</code> (see <a href="darwin_core.html#event">OBIS manual: event</a>).</p>
 <p><code>institutionCode</code> identifies the custodian institute (often by acronym), <code>collectionCode</code> identifies the collection or dataset within that institute. Collections cannot belong to multiple institutes, so all records within a collection should have the same <code>institutionCode</code>. The <code>collectionID</code> is an identifier for the record within the dataset or collection.</p>
 <p><code>bibliographicCitation</code> allows for providing different citations on record level, while a single citation for the entire dataset can and should be provided in the metadata (see <a href="eml.html">EML</a>). The citation at record level can have the format of a chapter in a book, where the book is the dataset citation. The record citation will have preference over the dataset citation. We do not, however, recommend to create different citations for every record, as this will explode the number of citations and will hamper the re-use of data.</p>
 <p><code>modified</code> is the most recent date-time on which the resource was changed. It is required to use the ISO 8601:2004(E) standard, for instructions see <a href="darwin_core.html#time">Time</a>.</p>

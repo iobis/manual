@@ -346,19 +346,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="contribute.html">I have data and want to publish to OBIS - what do I do?</a></li>
 <li><a href="contribute.html#why-publish-data-to-obis">Why is it important to share and format data?</a></li>
 <li><a href="contribute.html#how-to-handle-sensitive-data">How do I handle sensitive data?</a></li>
-<li><a href="relational_db.html">I am having trouble understanding how Core and Extension tables relate to each other</a></li>
-<li><a href="relational_db.html#how-to-avoid-redundancy">How does the OBIS format avoid redundancy in data</a></li>
-<li><a href="darwin_core.html">Where can I learn about “Darwin Core”?</a></li>
-<li><a href="formatting.html#extensions-in-obis">How are extension tables (e.g. eMOF, occurrence) linked with the core table?</a></li>
-<li><a href="formatting.html#dataset-structure">What is the difference between Occurence Core and Event Core?</a></li>
-<li><a href="nodes.html">What are the responsibilities of node managers?</a></li>
-<li><a href="https://github.com/iobis/obis-network-datasets/">Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?</a></li>
 <li><a href="https://github.com/iobis/manual">Where can I make suggestions for improvements on this Manual?</a></li>
 <li><a href="https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF">Where can I find OBIS related training videos?</a></li>
+<li><a href="nodes.html">What are the responsibilities of node managers?</a></li>
+<li><a href="https://github.com/iobis/obis-network-datasets/">Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?</a></li>
 </ul>
 </div>
-<div id="formatting-data" class="section level4 hasAnchor" number="1.5.0.2">
-<h4><span class="header-section-number">1.5.0.2</span> Formatting Data<a href="FAQ.html#formatting-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="darwin-core" class="section level4 hasAnchor" number="1.5.0.2">
+<h4><span class="header-section-number">1.5.0.2</span> Darwin Core<a href="FAQ.html#darwin-core" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><a href="darwin_core.html">Where can I learn about “Darwin Core”?</a></li>
+<li><a href="relational_db.html">I am having trouble understanding how Core and Extension tables relate to each other</a></li>
+<li><a href="relational_db.html#how-to-avoid-redundancy">How does the OBIS format avoid redundancy in data</a></li>
+<li><a href="formatting.html#extensions-in-obis">How are extension tables (e.g. eMOF, occurrence) linked with the core table?</a></li>
+<li><a href="formatting.html#dataset-structure">What is the difference between Occurence Core and Event Core?</a></li>
+</ul>
+</div>
+<div id="formatting-data" class="section level4 hasAnchor" number="1.5.0.3">
+<h4><span class="header-section-number">1.5.0.3</span> Formatting Data<a href="FAQ.html#formatting-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>
 <a href="checklist.html">Is there a checklist of all required Darwin Core fields for OBIS?</a>
@@ -416,10 +421,19 @@ The answer may depend on your dataset structure, but generally, no. If you have 
 <li>
 <a href="dna_data.html">How do I compile DNA and genetic data for OBIS?</a>
 </li>
+<li>
+<details>
+<summary>
+How do I document occurrences from unknown species, those new to science, or those with temporary names? e.g. Eurythenes sp. DISCOLL.PAP.JC165.674
+</summary>
+<p>Occurrences unknown or new to science should be documented according to recommendations by <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Horton et al. 2021</a>. You should populate the <code>scientificName</code> field with the genus, and in <code>identificationQualifer</code> provide the ON sign ‘sp.’. However you must also indicate the reason why species-level identification is unavailable. To do this, supplement ‘sp.’ with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after ‘sp.’ to <code>identificationQualifer</code>. For example Eurythenes sp. DISCOLL.PAP.JC165.674.</p>
+Please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Similar to creating <code>eventIDs</code> or <code>occurrenceIDs</code>, you should strive to provide more complex and globally unique identifier. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within a larger repositories like OBIS. It is also recommended to include these temporary names on specimen labels for physical specimens.
+</details>
+</li>
 </ul>
 </div>
-<div id="vocabulary" class="section level4 hasAnchor" number="1.5.0.3">
-<h4><span class="header-section-number">1.5.0.3</span> Vocabulary<a href="FAQ.html#vocabulary" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="vocabulary" class="section level4 hasAnchor" number="1.5.0.4">
+<h4><span class="header-section-number">1.5.0.4</span> Vocabulary<a href="FAQ.html#vocabulary" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>
 <a href="vocabulary.html#measurementorfact-vocabularies">How do I map Measurement or Fact terms in OBIS with preferred BODC vocabulary?</a>
@@ -440,8 +454,8 @@ No. You should never use taxon-specific P01 codes. This is because the taxa are
 </li>
 </ul>
 </div>
-<div id="tools" class="section level4 hasAnchor" number="1.5.0.4">
-<h4><span class="header-section-number">1.5.0.4</span> Tools<a href="FAQ.html#tools" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="tools" class="section level4 hasAnchor" number="1.5.0.5">
+<h4><span class="header-section-number">1.5.0.5</span> Tools<a href="FAQ.html#tools" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>
 <a href="name_matching.html">How do I use the WoRMS taxon match tool?</a>
@@ -469,8 +483,8 @@ Is there a template generator I can use to help create my Event, Occurrence, and
 </li>
 </ul>
 </div>
-<div id="quality-control" class="section level4 hasAnchor" number="1.5.0.5">
-<h4><span class="header-section-number">1.5.0.5</span> Quality Control<a href="FAQ.html#quality-control" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="quality-control" class="section level4 hasAnchor" number="1.5.0.6">
+<h4><span class="header-section-number">1.5.0.6</span> Quality Control<a href="FAQ.html#quality-control" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><a href="data_qc.html#how-to-conduct-quality-control">How do I do data quality control?</a></li>
 <li><a href="dataquality.html">What are the OBIS quality control flags?</a></li>
@@ -485,8 +499,8 @@ Is there a template generator I can use to help create my Event, Occurrence, and
 <li><a href="common_qc.html#non-marine-species">What do I do with freshwater species that are part of my marine dataset?</a></li>
 </ul>
 </div>
-<div id="publishing" class="section level4 hasAnchor" number="1.5.0.6">
-<h4><span class="header-section-number">1.5.0.6</span> Publishing<a href="FAQ.html#publishing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="publishing" class="section level4 hasAnchor" number="1.5.0.7">
+<h4><span class="header-section-number">1.5.0.7</span> Publishing<a href="FAQ.html#publishing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><a href="data_publication.html">How do I add my data to the OBIS database?</a></li>
 <li><a href="eml.html#metadata-sections">What metadata do I have to provide? Where? How?</a></li>
@@ -499,8 +513,8 @@ Is there a template generator I can use to help create my Event, Occurrence, and
 <li><a href="data_sharing.html#update-your-data-in-obis">How do I update my already published dataset?</a></li>
 </ul>
 </div>
-<div id="accessing-data" class="section level4 hasAnchor" number="1.5.0.7">
-<h4><span class="header-section-number">1.5.0.7</span> Accessing data<a href="FAQ.html#accessing-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="accessing-data-in-obis" class="section level4 hasAnchor" number="1.5.0.8">
+<h4><span class="header-section-number">1.5.0.8</span> Accessing data in OBIS<a href="FAQ.html#accessing-data-in-obis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>
 <a href="access.html#obis-homepage-and-dataset-pages">How do I download data from OBIS?</a>
@@ -560,12 +574,13 @@ How do I obtain a taxon checklist for an area?
 <li>
 <details>
 <summary>
-How do I convert or obtain separate elements from dates in the data download file (e.g. <code>date_start</code> field)?
+The dates look unusual in the download file. What are these, how do I convert them, and/or how do I obtain separate elements from them (e.g. month)?
 </summary>
 <p>The values in <code>date_start</code>, <code>date_mid</code>, and <code>date_end</code> are unix timestamps which have been calculated from the ISO date in the <code>eventDate</code> column. We can convert these numerical values to dates using the formula below.</p>
 <pre class="excel"><code>=(E2/86400000)+DATE(1970,1,1)</code></pre>
 <p>If, when you apply this formula, you still see numbers, you will need to set the cell formatting to Date. Once you have dates, you can obtain, e.g. months for seasonal analyses using:</p>
 <pre class="excel"><code>=MONTH(H2)</code></pre>
+<p>You can also use <a href="https://www.unixtimestamp.com/">this tool</a> to convert timestamps.</p>
 </details>
 </li>
 <li>
