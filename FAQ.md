@@ -5,15 +5,18 @@
 * [I have data and want to publish to OBIS - what do I do?](contribute.html)
 * [Why is it important to share and format data?](contribute.html#why-publish-data-to-obis)
 * [How do I handle sensitive data?](contribute.html#how-to-handle-sensitive-data)
-* [I am having trouble understanding how Core and Extension tables relate to each other](relational_db.html)
-* [How does the OBIS format avoid redundancy in data](relational_db.html#how-to-avoid-redundancy)
-* [Where can I learn about "Darwin Core"?](darwin_core.html)
-* [How are extension tables (e.g. eMOF, occurrence) linked with the core table?](formatting.html#extensions-in-obis)
-* [What is the difference between Occurence Core and Event Core?](formatting.html#dataset-structure)
-* [What are the responsibilities of node managers?](nodes.html)
-* [Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?](https://github.com/iobis/obis-network-datasets/)
 * [Where can I make suggestions for improvements on this Manual?](https://github.com/iobis/manual)
 * [Where can I find OBIS related training videos?](https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF)
+* [What are the responsibilities of node managers?](nodes.html)
+* [Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?](https://github.com/iobis/obis-network-datasets/)
+
+#### Darwin Core
+
+* [Where can I learn about "Darwin Core"?](darwin_core.html)
+* [I am having trouble understanding how Core and Extension tables relate to each other](relational_db.html)
+* [How does the OBIS format avoid redundancy in data](relational_db.html#how-to-avoid-redundancy)
+* [How are extension tables (e.g. eMOF, occurrence) linked with the core table?](formatting.html#extensions-in-obis)
+* [What is the difference between Occurence Core and Event Core?](formatting.html#dataset-structure)
 
 #### Formatting Data
 
@@ -39,6 +42,13 @@
   <li><a href="other_data_types.html#habitat-data">How do I compile habitat data for OBIS?</a></li>
   <li><a href="other_data_types.html#tracking-data">How do I compile tracking data for OBIS?</a></li>
   <li><a href="dna_data.html">How do I compile DNA and genetic data for OBIS?</a></li>
+  <li><details>
+  <summary>How do I document occurrences from unknown species, those new to science, or those with temporary names? e.g. Eurythenes sp. DISCOLL.PAP.JC165.674</summary>
+
+  Occurrences unknown or new to science should be documented according to recommendations by [Horton et al. 2021](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full). You should populate the `scientificName` field with the genus, and in `identificationQualifer` provide the ON sign 'sp.'. However you must also indicate the reason why species-level identification is unavailable. To do this, supplement 'sp.' with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after 'sp.' to `identificationQualifer`. For example Eurythenes sp. DISCOLL.PAP.JC165.674.
+  
+  Please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Similar to creating `eventIDs` or `occurrenceIDs`, you should strive to provide more complex and globally unique identifier. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within a larger repositories like OBIS. It is also recommended to include these temporary names on specimen labels for physical specimens.
+  </details></li>
 </ul>
 
 #### Vocabulary
@@ -96,7 +106,7 @@
 * [How do I publish to both GBIF and OBIS?](data_sharing.html#simultaneous-publishing-to-gbif)
 * [How do I update my already published dataset?](data_sharing.html#update-your-data-in-obis)
 
-#### Accessing data
+#### Accessing data in OBIS
 
 <ul>
   <li><a href="access.html#obis-homepage-and-dataset-pages">How do I download data from OBIS?</a></li>
@@ -141,7 +151,7 @@
   ```
 
   </details></li>
-  <li><details><summary>How do I convert or obtain separate elements from dates in the data download file (e.g. <code>date_start</code> field)?</summary>
+  <li><details><summary>The dates look unusual in the download file. What are these, how do I convert them, and/or how do I obtain separate elements from them (e.g. month)?</summary>
   
   The values in `date_start`, `date_mid`, and `date_end` are unix timestamps which have been calculated from the ISO date in the `eventDate` column. We can convert these numerical values to dates using the formula below.
 
@@ -154,6 +164,8 @@
   ```Excel
   =MONTH(H2)
   ```
+
+  You can also use [this tool](https://www.unixtimestamp.com/) to convert timestamps.
 
   </details></li>
   
