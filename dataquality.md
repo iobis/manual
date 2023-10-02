@@ -1,12 +1,27 @@
 ## Data quality flags
 
-OBIS performs a number of quality checks on the data it receives. Records may be rejected if the quality does not meet certain expectations. In other cases quality flags are attached to the occurrence records. The checks we perform as well as the associated flags are documented [here](https://github.com/iobis/obis-qc).
+As you are following the guidelines in this manual to [format data](data_format.html), it is important to consider the potential quality flags that could be produced when your dataset is published to OBIS. OBIS performs a number of automatic quality checks on the data it receives. This informs data users of any potential issues with a dataset they may be interested in. A complete list of flags can be found [here](https://github.com/iobis/obis-qc/blob/master/obisqc/util/flags.py) but broadly speaking potential flags relate to issues with:
+
+* Location - coordinates
+* Event time - start, end dates
+* Depth values out of range
+* Taxonomic
+* WoRMS name matching
+* Non-marine or terrestrial
+
+When you are filling these fields it is important to double check that correct coordinates are entered, eventDates are accurate and in the correct format, and depth values are in meters. Records may be [rejected](data_qc.html#why-are-records-dropped) and not published with your dataset if the quality does not meet certain expectations. In other cases quality flags are attached to individual occurrence records.
+
+We acknowledge that sometimes you may encounter a QC flag for data that is accurate. For example, you may document a depth value that gets flagged as `DEPTH_OUT_OF_RANGE`. Sometimes this occurs because your measured depth value is more accurate than the GEBCO bathymetry data which OBIS bases its depth data on. In these cases, you can ignore the flag, but we recommend adding a note in `eventRemarks`, `measurementRemarks`,or `occurrenceRemarks`.
+
+The checks we perform as well as the associated flags are documented [here](https://github.com/iobis/obis-qc).
+
+### QC Flags in downloaded data
 
 There are several ways to inspect the quality flags associated with a specific dataset or any other subset of data. Data downloaded through the mapper and the R package will include a column named `flags` which contains a comma separated list of flags for each record. In addition, the data quality panel on the dataset and node pages has a flag icon which can be clicked to get an overview of all flags and the number of records affected.
 
 <img src="images/qc_flag_icon.png" class="img-responsive-50"/>
 
-This table includes quality flags, but also annotations from the WoRMS annotated names list. When OBIS receives a scientific name which cannot be matched with WoRMS automatically, it is sent to the WoRMS team. The WoRMS team will then annotate the name to indicate if and how the name can be fixed. Documentations about these annotations will be added here soon. 
+This table includes quality flags, but also annotations from the WoRMS annotated names list. When OBIS receives a scientific name which cannot be matched with WoRMS automatically, it is sent to the WoRMS team. The WoRMS team will then annotate the name to indicate if and how the name can be fixed. Documentations about these annotations will be added here soon.
 
 <img src="images/qc_flag_table.png" class="img-responsive"/>
 
@@ -17,6 +32,8 @@ Clicking any of these flags will take you to a table showing the affected record
 At the top of the page there's a button to open the occurrence records in the mapper where they can be downloaded as CSV. The occurrence table also has the `flags` column, so when inspecting non matching names for example it's easy to check if the names at hand have any WoRMS annotations:
 
 <img src="images/qc_flag_flags.png" class="img-responsive-50"/>
+
+### Inspecting QC flags with R
 
 Inspecting flags using R is also very easy. The example below fetches the data from a single dataset, and lists the flags and the number of records affected. Notice that the `occurrence()` call has `dropped = TRUE` to make sure that any dropped records are included in the results:
 
