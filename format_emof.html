@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.5 How to format extendedMeasurementOrFact tables | The OBIS manual</title>
+  <meta name="description" content="4.5 How to format extendedMeasurementOrFact tables | The OBIS manual" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.5 How to format extendedMeasurementOrFact tables | The OBIS manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.5 How to format extendedMeasurementOrFact tables | The OBIS manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="format_event.html"/>
+<link rel="next" href="dna_data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBW0JFMNBJ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JBW0JFMNBJ');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="/">The OBIS manual</a></li>
+<li><a href="https://obis.org/">Return to OBIS.org</a></li>
+
+<li class="divider"></li>
+<li class="part"><span><b>Overview</b></span></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#guidelines-on-the-sharing-and-use-of-data-in-obis"><i class="fa fa-check"></i><b>1.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i><b>1.2</b> Acknowledgements</a></li>
+<li class="chapter" data-level="1.3" data-path="policy.html"><a href="policy.html"><i class="fa fa-check"></i><b>1.3</b> Data Policy</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="policy.html"><a href="policy.html#guidelines-on-the-sharing-and-use-of-data-in-obis-1"><i class="fa fa-check"></i><b>1.3.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="gethelp.html"><a href="gethelp.html"><i class="fa fa-check"></i><b>1.4</b> Getting Help in OBIS</a></li>
+<li class="chapter" data-level="1.5" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>1.5</b> Frequently Asked Questions</a></li>
+</ul></li>
+<li class="part"><span><b>Contributing data to OBIS</b></span></li>
+<li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS</a></li>
+<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data</a></li>
+<li class="chapter" data-level="2.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.3</b> OBIS Data Life Cycle</a></li>
+<li class="chapter" data-level="2.4" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>2.4</b> Biodiversity data standards</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>2.4.1</b> Darwin Core</a></li>
+<li class="chapter" data-level="2.4.2" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>2.4.2</b> Darwin Core Archive</a></li>
+<li class="chapter" data-level="2.4.3" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>2.4.3</b> Relational databases: the underlying framework of OBIS</a></li>
+<li class="chapter" data-level="2.4.4" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.4.4</b> Ecological Metadata Language</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>2.5</b> OBIS nodes</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>2.5.1</b> Terms of Reference of OBIS nodes</a></li>
+<li class="chapter" data-level="2.5.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>2.5.2</b> How to become an OBIS node</a></li>
+<li class="chapter" data-level="2.5.3" data-path="nodes.html"><a href="nodes.html#obis-node-health-status-check-and-transition-strategy"><i class="fa fa-check"></i><b>2.5.3</b> OBIS Node Health Status Check and Transition Strategy</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Data Formatting</b></span></li>
+<li class="chapter" data-level="3" data-path="formatting.html"><a href="formatting.html"><i class="fa fa-check"></i><b>3</b> Dataset structure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="formatting.html"><a href="formatting.html#when-to-use-event-core"><i class="fa fa-check"></i><b>3.1</b> When to use Event Core</a></li>
+<li class="chapter" data-level="3.2" data-path="formatting.html"><a href="formatting.html#when-to-use-occurrence-core"><i class="fa fa-check"></i><b>3.2</b> When to use Occurrence Core</a></li>
+<li class="chapter" data-level="3.3" data-path="formatting.html"><a href="formatting.html#extensions-in-obis"><i class="fa fa-check"></i><b>3.3</b> Extensions in OBIS</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="formatting.html"><a href="formatting.html#how-are-extensions-linked-to-core-tables-in-obis"><i class="fa fa-check"></i><b>3.3.1</b> How are extensions linked to core tables in OBIS?</a></li>
+<li class="chapter" data-level="3.3.2" data-path="formatting.html"><a href="formatting.html#differences-between-identifiers"><i class="fa fa-check"></i><b>3.3.2</b> Differences between identifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
+<li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#eventid"><i class="fa fa-check"></i><b>3.5.1</b> eventID</a></li>
+<li class="chapter" data-level="3.5.2" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.2</b> occurrenceID</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>4</b> Formatting data tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="checklist.html"><a href="checklist.html#darwin-core-term-checklist-for-obis"><i class="fa fa-check"></i><b>4.1</b> Darwin Core Term Checklist for OBIS</a></li>
+<li class="chapter" data-level="4.2" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>4.2</b> Name Matching Strategy for taxonomic quality control</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="name_matching.html"><a href="name_matching.html#taxon-matching-workflow"><i class="fa fa-check"></i><b>4.2.1</b> Taxon Matching Workflow</a></li>
+<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#r-packages-for-taxon-matching"><i class="fa fa-check"></i><b>4.2.2</b> R packages for taxon matching</a></li>
+<li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
+<li class="chapter" data-level="4.6" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>4.6</b> DNA dervived data</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="dna_data.html"><a href="dna_data.html#introduction-1"><i class="fa fa-check"></i><b>4.6.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.6.2" data-path="dna_data.html"><a href="dna_data.html#how-to-find-genetic-data-in-obis"><i class="fa fa-check"></i><b>4.6.2</b> How to find genetic data in OBIS</a></li>
+<li class="chapter" data-level="4.6.3" data-path="dna_data.html"><a href="dna_data.html#guidelines-for-compiling-genetic-data-edna-and-metabarcoding-datasets"><i class="fa fa-check"></i><b>4.6.3</b> Guidelines for compiling genetic data: eDNA and metabarcoding datasets</a></li>
+<li class="chapter" data-level="4.6.4" data-path="dna_data.html"><a href="dna_data.html#unknown-sequences"><i class="fa fa-check"></i><b>4.6.4</b> Unknown sequences</a></li>
+<li class="chapter" data-level="4.6.5" data-path="dna_data.html"><a href="dna_data.html#guidelines-for-compiling-genetic-data-qpcr"><i class="fa fa-check"></i><b>4.6.5</b> Guidelines for compiling genetic data: qPCR</a></li>
+<li class="chapter" data-level="4.6.6" data-path="dna_data.html"><a href="dna_data.html#obis-bioinformatics-pipline"><i class="fa fa-check"></i><b>4.6.6</b> OBIS Bioinformatics Pipline</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.7</b> Choosing Vocabularies for your dataset</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="vocabulary.html"><a href="vocabulary.html#map-your-data-with-dwc-vocabulary"><i class="fa fa-check"></i><b>4.7.1</b> Map your data with DwC vocabulary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="vocabulary.html"><a href="vocabulary.html#how-to-map-emof-terms-to-preferred-bodc-vocabulary"><i class="fa fa-check"></i><b>4.8</b> How to map eMoF terms to preferred BODC vocabulary</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="vocabulary.html"><a href="vocabulary.html#measurementorfact-vocabularies"><i class="fa fa-check"></i><b>4.8.1</b> MeasurementOrFact vocabularies</a></li>
+<li class="chapter" data-level="4.8.2" data-path="vocabulary.html"><a href="vocabulary.html#requesting-new-vocabulary-terms"><i class="fa fa-check"></i><b>4.8.2</b> Requesting new vocabulary terms</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="common_formatissues.html"><a href="common_formatissues.html"><i class="fa fa-check"></i><b>4.9</b> Common Data formatting issues</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="common_formatissues.html"><a href="common_formatissues.html#missing-required-fields"><i class="fa fa-check"></i><b>4.9.1</b> Missing required fields</a></li>
+<li class="chapter" data-level="4.9.2" data-path="common_formatissues.html"><a href="common_formatissues.html#temporal-dates-and-times"><i class="fa fa-check"></i><b>4.9.2</b> Temporal: Dates and times</a></li>
+<li class="chapter" data-level="4.9.3" data-path="common_formatissues.html"><a href="common_formatissues.html#historical-data"><i class="fa fa-check"></i><b>4.9.3</b> Historical data</a></li>
+<li class="chapter" data-level="4.9.4" data-path="common_formatissues.html"><a href="common_formatissues.html#spatial"><i class="fa fa-check"></i><b>4.9.4</b> Spatial</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4.10</b> Examples: ENV-DATA and DNA derived data</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.10.1</b> Other data types</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Ensuring Data Quality</b></span></li>
+<li class="chapter" data-level="5" data-path="data_qc.html"><a href="data_qc.html"><i class="fa fa-check"></i><b>5</b> Data quality control</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data_qc.html"><a href="data_qc.html#why-are-records-dropped"><i class="fa fa-check"></i><b>5.1</b> Why are records dropped?</a></li>
+<li class="chapter" data-level="5.2" data-path="data_qc.html"><a href="data_qc.html#how-to-conduct-quality-control"><i class="fa fa-check"></i><b>5.2</b> How to conduct Quality Control</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="data_qc.html"><a href="data_qc.html#conducting-qc-with-obistools"><i class="fa fa-check"></i><b>5.2.1</b> Conducting QC with obistools</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data_qc.html"><a href="data_qc.html#qc-with-r-package-hmisc"><i class="fa fa-check"></i><b>5.2.2</b> QC with R package Hmisc</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>5.3</b> Data quality flags</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="dataquality.html"><a href="dataquality.html#qc-flags-in-downloaded-data"><i class="fa fa-check"></i><b>5.3.1</b> QC Flags in downloaded data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="dataquality.html"><a href="dataquality.html#inspecting-qc-flags-with-r"><i class="fa fa-check"></i><b>5.3.2</b> Inspecting QC flags with R</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>5.4</b> How To Use MoF Report and Tool</a></li>
+<li class="chapter" data-level="5.5" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>5.5</b> Geographic and data format quality control</a></li>
+<li class="chapter" data-level="5.6" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>5.6</b> Common Quality Control issues</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.6.1</b> Uncertain temporal range</a></li>
+<li class="chapter" data-level="5.6.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.6.2</b> Uncertain geolocation</a></li>
+<li class="chapter" data-level="5.6.3" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.6.3</b> How to use OBIS Map Tool</a></li>
+<li class="chapter" data-level="5.6.4" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.6.4</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
+<li class="chapter" data-level="5.6.5" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.6.5</b> How to use Marine Regions Gazetteer tool</a></li>
+<li class="chapter" data-level="5.6.6" data-path="common_qc.html"><a href="common_qc.html#low-confidence-taxonomic-identification"><i class="fa fa-check"></i><b>5.6.6</b> Low confidence taxonomic identification</a></li>
+<li class="chapter" data-level="5.6.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.6.7</b> Uncertain measurements</a></li>
+<li class="chapter" data-level="5.6.8" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.6.8</b> Non-marine species</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Publishing Data</b></span></li>
+<li class="chapter" data-level="6" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>6</b> Data publication and sharing</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.1</b> Licenses</a></li>
+<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> IPT: Integrated Publishing Toolkit</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="ipt.html"><a href="ipt.html#introduction-to-the-ipt"><i class="fa fa-check"></i><b>6.2.1</b> Introduction to the IPT</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ipt.html"><a href="ipt.html#how-to-access-the-ipt"><i class="fa fa-check"></i><b>6.2.2</b> How to access the IPT</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ipt.html"><a href="ipt.html#create-your-resource-on-the-ipt"><i class="fa fa-check"></i><b>6.2.3</b> Create your resource on the IPT</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ipt.html"><a href="ipt.html#map-your-data-to-darwin-core"><i class="fa fa-check"></i><b>6.2.4</b> Map your data to Darwin Core</a></li>
+<li class="chapter" data-level="6.2.5" data-path="ipt.html"><a href="ipt.html#add-metadata"><i class="fa fa-check"></i><b>6.2.5</b> Add metadata</a></li>
+<li class="chapter" data-level="6.2.6" data-path="ipt.html"><a href="ipt.html#publish-on-the-ipt"><i class="fa fa-check"></i><b>6.2.6</b> Publish on the IPT</a></li>
+<li class="chapter" data-level="6.2.7" data-path="ipt.html"><a href="ipt.html#downloading-datasets-from-an-ipt"><i class="fa fa-check"></i><b>6.2.7</b> Downloading datasets from an IPT</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ipt_admin.html"><a href="ipt_admin.html"><i class="fa fa-check"></i><b>6.3</b> IPT Administration Responsibilities</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="ipt_admin.html"><a href="ipt_admin.html#creating-and-installing-ipts"><i class="fa fa-check"></i><b>6.3.1</b> Creating and Installing IPTs</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ipt_admin.html"><a href="ipt_admin.html#registration"><i class="fa fa-check"></i><b>6.3.2</b> Registration</a></li>
+<li class="chapter" data-level="6.3.3" data-path="ipt_admin.html"><a href="ipt_admin.html#maintaining-the-ipt"><i class="fa fa-check"></i><b>6.3.3</b> Maintaining the IPT</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data_sharing.html"><a href="data_sharing.html"><i class="fa fa-check"></i><b>6.4</b> Maintaining and sharing published data</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="data_sharing.html"><a href="data_sharing.html#adding-a-doi-to-datasets"><i class="fa fa-check"></i><b>6.4.1</b> Adding a DOI to datasets</a></li>
+<li class="chapter" data-level="6.4.2" data-path="data_sharing.html"><a href="data_sharing.html#user-tracking"><i class="fa fa-check"></i><b>6.4.2</b> User tracking</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="data_sharing.html"><a href="data_sharing.html#update-your-data-in-obis"><i class="fa fa-check"></i><b>6.5</b> Update your data in OBIS</a></li>
+<li class="chapter" data-level="6.6" data-path="data_sharing.html"><a href="data_sharing.html#simultaneous-publishing-to-gbif"><i class="fa fa-check"></i><b>6.6</b> Simultaneous publishing to GBIF</a></li>
+</ul></li>
+<li class="part"><span><b>Access Data from OBIS</b></span></li>
+<li class="chapter" data-level="7" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>7</b> Data access</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.1</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.2</b> Mapper</a></li>
+<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.3</b> R package</a></li>
+<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.4</b> API</a></li>
+<li class="chapter" data-level="7.5" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>7.5</b> Full exports</a></li>
+<li class="chapter" data-level="7.6" data-path="access.html"><a href="access.html#finding-your-own-data-in-obis"><i class="fa fa-check"></i><b>7.6</b> Finding your own data in OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="access.html"><a href="access.html#how-to-contact-data-provider"><i class="fa fa-check"></i><b>7.7</b> How to contact data provider</a></li>
+<li class="chapter" data-level="7.8" data-path="access.html"><a href="access.html#interpreting-downloaded-files-from-obis"><i class="fa fa-check"></i><b>7.8</b> Interpreting downloaded files from OBIS</a></li>
+<li class="chapter" data-level="7.9" data-path="citing.html"><a href="citing.html"><i class="fa fa-check"></i><b>7.9</b> Citing Data from OBIS</a></li>
+</ul></li>
+<li class="part"><span><b>Data Visualization and Analysis</b></span></li>
+<li class="chapter" data-level="8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="dataviz.html"><a href="dataviz.html#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>8.1</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="8.2" data-path="dataviz.html"><a href="dataviz.html#obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis"><i class="fa fa-check"></i><b>8.2</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
+</ul></li>
+<li class="part"><span><b>Additional Resources</b></span></li>
+<li class="chapter" data-level="9" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>9</b> Other Resources</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="other_resources.html"><a href="other_resources.html#mbon-pole-to-pole-tutorial"><i class="fa fa-check"></i><b>9.1</b> MBON Pole to Pole Tutorial</a></li>
+<li class="chapter" data-level="9.2" data-path="other_resources.html"><a href="other_resources.html#ioos-darwin-core-guide"><i class="fa fa-check"></i><b>9.2</b> IOOS Darwin Core Guide</a></li>
+<li class="chapter" data-level="9.3" data-path="other_resources.html"><a href="other_resources.html#emodnet-biology"><i class="fa fa-check"></i><b>9.3</b> EMODnet Biology</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The OBIS manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="how-to-format-extendedmeasurementorfact-tables" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> How to format extendedMeasurementOrFact tables<a href="format_emof.html#how-to-format-extendedmeasurementorfact-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="what-data-goes-into-emof" class="section level4 hasAnchor" number="4.5.0.1">
+<h4><span class="header-section-number">4.5.0.1</span> What data goes into eMoF<a href="format_emof.html#what-data-goes-into-emof" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Any data related to abiotic or biotic measurements, including sampling information and protocols should be included in the eMoF table. Measurement data can also go into the <a href="https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml">MeasurementOrFact</a> extension, however OBIS recommends using the <a href="https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml">extendedMeasurementOrFact</a> instead, particularly if your data is based on an Event core table.</p>
+<p>Required terms for eMoF include:</p>
+<ul>
+<li><code>eventID</code> (this links the record to the Event Core table)</li>
+<li><code>occurrenceID</code> (this links the record to the Occurrence Core or Occurrence Extension table)</li>
+</ul>
+<p>Other potential fields are shown in the table below (also listed in the <a href="checklist.html">checklist</a>):</p>
+<ul>
+<li>Class Event | DwC:habitat</li>
+<li>Class Event | DwC:sampleSizeUnit</li>
+<li>Class Event | DwC:sampleSizeValue</li>
+<li>Class Event | DwC:samplingEffort</li>
+<li>Class Event | DwC:samplingProtocol</li>
+<li>Class Occurrence | DwC:behavior</li>
+<li>Class Occurrence | DwC:individualCount</li>
+<li>Class Occurrence | DwC:lifeStage</li>
+<li>Class Occurrence | DwC:organismQuantity</li>
+<li>Class Occurrence | DwC:organismQuantityType</li>
+<li>Class Occurrence | DwC:sex</li>
+<li>Class Occurrence | DwC:type</li>
+<li>Class Measurement | DwC:measurementAccuracy</li>
+<li>Class Measurement | DwC:measurementDeterminedBy</li>
+<li>Class Measurement | DwC:measurementDeterminedDate</li>
+<li>Class Measurement | DwC:measurementID</li>
+<li>Class Measurement | DwC:measurementMethod</li>
+<li>Class Measurement | DwC:measurementRemarks</li>
+<li>Class Measurement | DwC:measurementType*</li>
+<li>Class Measurement | DwC:measurementTypeID*</li>
+<li>Class Measurement | DwC:measurementUnit*</li>
+<li>Class Measurement | DwC:measurementUnitID*</li>
+<li>Class Measurement | DwC:measurementValue</li>
+<li>Class Measurement | DwC:measurementValueID</li>
+</ul>
+<p>*For <code>measurementTypeID</code>, <code>measurementUnitID</code>, and <code>measurementValueID</code> you must use controlled vocabulary terms. We know choosing the correct vocabulary term can be challenging, so we have provided some guidance on how to <a href="vocabulary.html">select the correct vocabulary</a>. It is strongly recommended to ensure these fields are filled as correctly as possible. Missing or incorrect terms will be documented in the <a href="https://r.obis.org/mof/">measurementOrFact reports</a>.</p>
+</div>
+<div id="how-to-structure-emof" class="section level4 hasAnchor" number="4.5.0.2">
+<h4><span class="header-section-number">4.5.0.2</span> How to structure eMoF<a href="format_emof.html#how-to-structure-emof" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Structuring data for the eMoF extension may be one of the more confusing extensions in the data formatting process. It may help to think of this extension as the table that contains all information related to any kind of measurement.</p>
+<p>Rather than documenting each of your measurements in separate columns (e.g., columns for biomass, abundance, length, gear size, percent cover, etc.), these measurements will be condensed into one column: <code>measurementValue</code>. <code>measurementType</code> describes what the measurement actually is, for example whether it is an abundance value, length, percent cover, or any other biotic/abiotic measurement. <code>measurementUnit</code> is used to indicate the unit of the measurement.</p>
+<p>By linking <code>measurementType</code> and <code>measurementValue</code> with the identifiers <code>eventID</code> and/or <code>occurrenceID</code>, you can have measurements linked to <em>one</em> event (e.g. temperature), measurements link to occurrence records (e.g. length), as well as sampling facts that are linked to events (size, gear, etc.). Information specifically related to how samples were taken will have the measurementTypes: <code>sampleSizeValue</code>, <code>sampleSizeUnit</code>, <code>samplingEffort</code>, and <code>samplingProtocol</code>.</p>
+</div>
+<div id="stepwise-guidance-to-format-emof-table-in-excel" class="section level4 hasAnchor" number="4.5.0.3">
+<h4><span class="header-section-number">4.5.0.3</span> Stepwise Guidance to Format eMoF Table (in Excel)<a href="format_emof.html#stepwise-guidance-to-format-emof-table-in-excel" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Create a blank sheet and name it eMoF</li>
+<li>Add 9 column headers for:
+<ul>
+<li><code>eventID</code>, <code>occurrenceID</code>, <code>measurementType</code>, <code>measurementValue</code>, <code>measurementUnit</code>, <code>measurementTypeID</code>, <code>measurementValueID</code>, <code>measurementUnitID</code>, <code>measurementRemarks</code></li>
+</ul></li>
+<li>Copy <code>eventID</code> values from your Occurrence table and paste into the <code>eventID</code> field in your new, blank eMoF table
+<ul>
+<li>Repeat for <code>occurrenceID</code> from the Occurrence table</li>
+</ul></li>
+<li>Copy the first column of measurement values, paste into the <code>measurementValue</code> field
+<ul>
+<li>Fill <code>measurementType</code> with the name of the variable (e.g., count, length, etc.)</li>
+</ul></li>
+<li>Add unit of measurements where applicable to the <code>measurementUnit</code> field</li>
+<li>For any other measurements related to occurrences, repeat steps 3-5, pasting additional measurements below the preceding ones
+<ul>
+<li>Be sure to copy and paste the associated occurrenceIDs and/or eventIDs for the additional measurements</li>
+</ul></li>
+<li>Fill the fields <code>measurementTypeID</code>, <code>measurementUnitID</code>, and <code>measurementValueID</code> with controlled vocabularies that suit your data (see <a href="vocabulary.html">vocabulary guidelines</a>)</li>
+<li>Repeat steps 3-7 for any measurements in the Event table</li>
+</ol>
+<p>Note the fields <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeValue">sampleSizeValue</a>, <a href="https://dwc.tdwg.org/terms/#dwc:samplingEffort">samplingEffort</a>, and <a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol">samplingProtocol</a> from the Occurrence table can be documented as separate measurements on different rows in the eMoF table. E.g., <code>measurementType</code> = samplingProtocol, <code>measurementValue</code> = description of protocol. Any values in <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit">sampleSizeUnit</a> fields should be placed in the <code>measurementUnit</code> field when transferred to the eMoF.</p>
+<p>Watch the video tutorial for how to format the eMoF table below.</p>
+<p><iframe width="560" height="315"
+src="https://www.youtube.com/embed/EjM0HRrF1B4"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe></p>
+<p>If you would like to export Event data to the eMoF, see some example R code below. This example was provided by <a href="https://orcid.org/0000-0002-4391-107X">Abby Benson</a> from the <a href="https://www.usgs.gov/ocean-biodiversity-information-system-usa">OBIS-USA node</a>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="format_emof.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-2"><a href="format_emof.html#cb7-2" aria-hidden="true" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> <span class="fu">unique</span>(eventCore[<span class="fu">c</span>(<span class="st">&quot;eventID&quot;</span>)]) <span class="co">#create a list of all unique eventIDs from your event table</span></span>
+<span id="cb7-3"><a href="format_emof.html#cb7-3" aria-hidden="true" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> cruise <span class="sc">%&gt;%</span> <span class="co">#add sampling information </span></span>
+<span id="cb7-4"><a href="format_emof.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">measurementType =</span> <span class="st">&quot;Sampling platform name&quot;</span>,</span>
+<span id="cb7-5"><a href="format_emof.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">measurementValue =</span> <span class="st">&quot;R/V Cruise Id = SR1812&quot;</span>,</span>
+<span id="cb7-6"><a href="format_emof.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">measurementValueID =</span> <span class="st">&quot;https://doi.org/10.7284/908021&quot;</span>,</span>
+<span id="cb7-7"><a href="format_emof.html#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">measurementUnit =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb7-8"><a href="format_emof.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">measurementTypeID =</span> <span class="st">&quot;http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/&quot;</span>,</span>
+<span id="cb7-9"><a href="format_emof.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">measurementUnitID =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb7-10"><a href="format_emof.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">occurrenceID =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="format_event.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dna_data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manual.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

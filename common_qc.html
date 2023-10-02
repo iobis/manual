@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5.6 Common Quality Control issues | The OBIS manual</title>
+  <meta name="description" content="5.6 Common Quality Control issues | The OBIS manual" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5.6 Common Quality Control issues | The OBIS manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5.6 Common Quality Control issues | The OBIS manual" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lifewatch_qc.html"/>
+<link rel="next" href="data_publication.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBW0JFMNBJ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JBW0JFMNBJ');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="/">The OBIS manual</a></li>
+<li><a href="https://obis.org/">Return to OBIS.org</a></li>
+
+<li class="divider"></li>
+<li class="part"><span><b>Overview</b></span></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#guidelines-on-the-sharing-and-use-of-data-in-obis"><i class="fa fa-check"></i><b>1.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i><b>1.2</b> Acknowledgements</a></li>
+<li class="chapter" data-level="1.3" data-path="policy.html"><a href="policy.html"><i class="fa fa-check"></i><b>1.3</b> Data Policy</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="policy.html"><a href="policy.html#guidelines-on-the-sharing-and-use-of-data-in-obis-1"><i class="fa fa-check"></i><b>1.3.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="gethelp.html"><a href="gethelp.html"><i class="fa fa-check"></i><b>1.4</b> Getting Help in OBIS</a></li>
+<li class="chapter" data-level="1.5" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>1.5</b> Frequently Asked Questions</a></li>
+</ul></li>
+<li class="part"><span><b>Contributing data to OBIS</b></span></li>
+<li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS</a></li>
+<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data</a></li>
+<li class="chapter" data-level="2.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.3</b> OBIS Data Life Cycle</a></li>
+<li class="chapter" data-level="2.4" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>2.4</b> Biodiversity data standards</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>2.4.1</b> Darwin Core</a></li>
+<li class="chapter" data-level="2.4.2" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>2.4.2</b> Darwin Core Archive</a></li>
+<li class="chapter" data-level="2.4.3" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>2.4.3</b> Relational databases: the underlying framework of OBIS</a></li>
+<li class="chapter" data-level="2.4.4" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.4.4</b> Ecological Metadata Language</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>2.5</b> OBIS nodes</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>2.5.1</b> Terms of Reference of OBIS nodes</a></li>
+<li class="chapter" data-level="2.5.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>2.5.2</b> How to become an OBIS node</a></li>
+<li class="chapter" data-level="2.5.3" data-path="nodes.html"><a href="nodes.html#obis-node-health-status-check-and-transition-strategy"><i class="fa fa-check"></i><b>2.5.3</b> OBIS Node Health Status Check and Transition Strategy</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Data Formatting</b></span></li>
+<li class="chapter" data-level="3" data-path="formatting.html"><a href="formatting.html"><i class="fa fa-check"></i><b>3</b> Dataset structure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="formatting.html"><a href="formatting.html#when-to-use-event-core"><i class="fa fa-check"></i><b>3.1</b> When to use Event Core</a></li>
+<li class="chapter" data-level="3.2" data-path="formatting.html"><a href="formatting.html#when-to-use-occurrence-core"><i class="fa fa-check"></i><b>3.2</b> When to use Occurrence Core</a></li>
+<li class="chapter" data-level="3.3" data-path="formatting.html"><a href="formatting.html#extensions-in-obis"><i class="fa fa-check"></i><b>3.3</b> Extensions in OBIS</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="formatting.html"><a href="formatting.html#how-are-extensions-linked-to-core-tables-in-obis"><i class="fa fa-check"></i><b>3.3.1</b> How are extensions linked to core tables in OBIS?</a></li>
+<li class="chapter" data-level="3.3.2" data-path="formatting.html"><a href="formatting.html#differences-between-identifiers"><i class="fa fa-check"></i><b>3.3.2</b> Differences between identifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
+<li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#eventid"><i class="fa fa-check"></i><b>3.5.1</b> eventID</a></li>
+<li class="chapter" data-level="3.5.2" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.2</b> occurrenceID</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>4</b> Formatting data tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="checklist.html"><a href="checklist.html#darwin-core-term-checklist-for-obis"><i class="fa fa-check"></i><b>4.1</b> Darwin Core Term Checklist for OBIS</a></li>
+<li class="chapter" data-level="4.2" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>4.2</b> Name Matching Strategy for taxonomic quality control</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="name_matching.html"><a href="name_matching.html#taxon-matching-workflow"><i class="fa fa-check"></i><b>4.2.1</b> Taxon Matching Workflow</a></li>
+<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#r-packages-for-taxon-matching"><i class="fa fa-check"></i><b>4.2.2</b> R packages for taxon matching</a></li>
+<li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
+<li class="chapter" data-level="4.6" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>4.6</b> DNA dervived data</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="dna_data.html"><a href="dna_data.html#introduction-1"><i class="fa fa-check"></i><b>4.6.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.6.2" data-path="dna_data.html"><a href="dna_data.html#how-to-find-genetic-data-in-obis"><i class="fa fa-check"></i><b>4.6.2</b> How to find genetic data in OBIS</a></li>
+<li class="chapter" data-level="4.6.3" data-path="dna_data.html"><a href="dna_data.html#guidelines-for-compiling-genetic-data-edna-and-metabarcoding-datasets"><i class="fa fa-check"></i><b>4.6.3</b> Guidelines for compiling genetic data: eDNA and metabarcoding datasets</a></li>
+<li class="chapter" data-level="4.6.4" data-path="dna_data.html"><a href="dna_data.html#unknown-sequences"><i class="fa fa-check"></i><b>4.6.4</b> Unknown sequences</a></li>
+<li class="chapter" data-level="4.6.5" data-path="dna_data.html"><a href="dna_data.html#guidelines-for-compiling-genetic-data-qpcr"><i class="fa fa-check"></i><b>4.6.5</b> Guidelines for compiling genetic data: qPCR</a></li>
+<li class="chapter" data-level="4.6.6" data-path="dna_data.html"><a href="dna_data.html#obis-bioinformatics-pipline"><i class="fa fa-check"></i><b>4.6.6</b> OBIS Bioinformatics Pipline</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.7</b> Choosing Vocabularies for your dataset</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="vocabulary.html"><a href="vocabulary.html#map-your-data-with-dwc-vocabulary"><i class="fa fa-check"></i><b>4.7.1</b> Map your data with DwC vocabulary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="vocabulary.html"><a href="vocabulary.html#how-to-map-emof-terms-to-preferred-bodc-vocabulary"><i class="fa fa-check"></i><b>4.8</b> How to map eMoF terms to preferred BODC vocabulary</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="vocabulary.html"><a href="vocabulary.html#measurementorfact-vocabularies"><i class="fa fa-check"></i><b>4.8.1</b> MeasurementOrFact vocabularies</a></li>
+<li class="chapter" data-level="4.8.2" data-path="vocabulary.html"><a href="vocabulary.html#requesting-new-vocabulary-terms"><i class="fa fa-check"></i><b>4.8.2</b> Requesting new vocabulary terms</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="common_formatissues.html"><a href="common_formatissues.html"><i class="fa fa-check"></i><b>4.9</b> Common Data formatting issues</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="common_formatissues.html"><a href="common_formatissues.html#missing-required-fields"><i class="fa fa-check"></i><b>4.9.1</b> Missing required fields</a></li>
+<li class="chapter" data-level="4.9.2" data-path="common_formatissues.html"><a href="common_formatissues.html#temporal-dates-and-times"><i class="fa fa-check"></i><b>4.9.2</b> Temporal: Dates and times</a></li>
+<li class="chapter" data-level="4.9.3" data-path="common_formatissues.html"><a href="common_formatissues.html#historical-data"><i class="fa fa-check"></i><b>4.9.3</b> Historical data</a></li>
+<li class="chapter" data-level="4.9.4" data-path="common_formatissues.html"><a href="common_formatissues.html#spatial"><i class="fa fa-check"></i><b>4.9.4</b> Spatial</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4.10</b> Examples: ENV-DATA and DNA derived data</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="other_data_types.html"><a href="other_data_types.html"><i class="fa fa-check"></i><b>4.10.1</b> Other data types</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Ensuring Data Quality</b></span></li>
+<li class="chapter" data-level="5" data-path="data_qc.html"><a href="data_qc.html"><i class="fa fa-check"></i><b>5</b> Data quality control</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data_qc.html"><a href="data_qc.html#why-are-records-dropped"><i class="fa fa-check"></i><b>5.1</b> Why are records dropped?</a></li>
+<li class="chapter" data-level="5.2" data-path="data_qc.html"><a href="data_qc.html#how-to-conduct-quality-control"><i class="fa fa-check"></i><b>5.2</b> How to conduct Quality Control</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="data_qc.html"><a href="data_qc.html#conducting-qc-with-obistools"><i class="fa fa-check"></i><b>5.2.1</b> Conducting QC with obistools</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data_qc.html"><a href="data_qc.html#qc-with-r-package-hmisc"><i class="fa fa-check"></i><b>5.2.2</b> QC with R package Hmisc</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>5.3</b> Data quality flags</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="dataquality.html"><a href="dataquality.html#qc-flags-in-downloaded-data"><i class="fa fa-check"></i><b>5.3.1</b> QC Flags in downloaded data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="dataquality.html"><a href="dataquality.html#inspecting-qc-flags-with-r"><i class="fa fa-check"></i><b>5.3.2</b> Inspecting QC flags with R</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>5.4</b> How To Use MoF Report and Tool</a></li>
+<li class="chapter" data-level="5.5" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>5.5</b> Geographic and data format quality control</a></li>
+<li class="chapter" data-level="5.6" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>5.6</b> Common Quality Control issues</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.6.1</b> Uncertain temporal range</a></li>
+<li class="chapter" data-level="5.6.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.6.2</b> Uncertain geolocation</a></li>
+<li class="chapter" data-level="5.6.3" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.6.3</b> How to use OBIS Map Tool</a></li>
+<li class="chapter" data-level="5.6.4" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.6.4</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
+<li class="chapter" data-level="5.6.5" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.6.5</b> How to use Marine Regions Gazetteer tool</a></li>
+<li class="chapter" data-level="5.6.6" data-path="common_qc.html"><a href="common_qc.html#low-confidence-taxonomic-identification"><i class="fa fa-check"></i><b>5.6.6</b> Low confidence taxonomic identification</a></li>
+<li class="chapter" data-level="5.6.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.6.7</b> Uncertain measurements</a></li>
+<li class="chapter" data-level="5.6.8" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.6.8</b> Non-marine species</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Publishing Data</b></span></li>
+<li class="chapter" data-level="6" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>6</b> Data publication and sharing</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.1</b> Licenses</a></li>
+<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> IPT: Integrated Publishing Toolkit</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="ipt.html"><a href="ipt.html#introduction-to-the-ipt"><i class="fa fa-check"></i><b>6.2.1</b> Introduction to the IPT</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ipt.html"><a href="ipt.html#how-to-access-the-ipt"><i class="fa fa-check"></i><b>6.2.2</b> How to access the IPT</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ipt.html"><a href="ipt.html#create-your-resource-on-the-ipt"><i class="fa fa-check"></i><b>6.2.3</b> Create your resource on the IPT</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ipt.html"><a href="ipt.html#map-your-data-to-darwin-core"><i class="fa fa-check"></i><b>6.2.4</b> Map your data to Darwin Core</a></li>
+<li class="chapter" data-level="6.2.5" data-path="ipt.html"><a href="ipt.html#add-metadata"><i class="fa fa-check"></i><b>6.2.5</b> Add metadata</a></li>
+<li class="chapter" data-level="6.2.6" data-path="ipt.html"><a href="ipt.html#publish-on-the-ipt"><i class="fa fa-check"></i><b>6.2.6</b> Publish on the IPT</a></li>
+<li class="chapter" data-level="6.2.7" data-path="ipt.html"><a href="ipt.html#downloading-datasets-from-an-ipt"><i class="fa fa-check"></i><b>6.2.7</b> Downloading datasets from an IPT</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ipt_admin.html"><a href="ipt_admin.html"><i class="fa fa-check"></i><b>6.3</b> IPT Administration Responsibilities</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="ipt_admin.html"><a href="ipt_admin.html#creating-and-installing-ipts"><i class="fa fa-check"></i><b>6.3.1</b> Creating and Installing IPTs</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ipt_admin.html"><a href="ipt_admin.html#registration"><i class="fa fa-check"></i><b>6.3.2</b> Registration</a></li>
+<li class="chapter" data-level="6.3.3" data-path="ipt_admin.html"><a href="ipt_admin.html#maintaining-the-ipt"><i class="fa fa-check"></i><b>6.3.3</b> Maintaining the IPT</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data_sharing.html"><a href="data_sharing.html"><i class="fa fa-check"></i><b>6.4</b> Maintaining and sharing published data</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="data_sharing.html"><a href="data_sharing.html#adding-a-doi-to-datasets"><i class="fa fa-check"></i><b>6.4.1</b> Adding a DOI to datasets</a></li>
+<li class="chapter" data-level="6.4.2" data-path="data_sharing.html"><a href="data_sharing.html#user-tracking"><i class="fa fa-check"></i><b>6.4.2</b> User tracking</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="data_sharing.html"><a href="data_sharing.html#update-your-data-in-obis"><i class="fa fa-check"></i><b>6.5</b> Update your data in OBIS</a></li>
+<li class="chapter" data-level="6.6" data-path="data_sharing.html"><a href="data_sharing.html#simultaneous-publishing-to-gbif"><i class="fa fa-check"></i><b>6.6</b> Simultaneous publishing to GBIF</a></li>
+</ul></li>
+<li class="part"><span><b>Access Data from OBIS</b></span></li>
+<li class="chapter" data-level="7" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>7</b> Data access</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.1</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.2</b> Mapper</a></li>
+<li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.3</b> R package</a></li>
+<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.4</b> API</a></li>
+<li class="chapter" data-level="7.5" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>7.5</b> Full exports</a></li>
+<li class="chapter" data-level="7.6" data-path="access.html"><a href="access.html#finding-your-own-data-in-obis"><i class="fa fa-check"></i><b>7.6</b> Finding your own data in OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="access.html"><a href="access.html#how-to-contact-data-provider"><i class="fa fa-check"></i><b>7.7</b> How to contact data provider</a></li>
+<li class="chapter" data-level="7.8" data-path="access.html"><a href="access.html#interpreting-downloaded-files-from-obis"><i class="fa fa-check"></i><b>7.8</b> Interpreting downloaded files from OBIS</a></li>
+<li class="chapter" data-level="7.9" data-path="citing.html"><a href="citing.html"><i class="fa fa-check"></i><b>7.9</b> Citing Data from OBIS</a></li>
+</ul></li>
+<li class="part"><span><b>Data Visualization and Analysis</b></span></li>
+<li class="chapter" data-level="8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="dataviz.html"><a href="dataviz.html#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>8.1</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="8.2" data-path="dataviz.html"><a href="dataviz.html#obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis"><i class="fa fa-check"></i><b>8.2</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
+</ul></li>
+<li class="part"><span><b>Additional Resources</b></span></li>
+<li class="chapter" data-level="9" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>9</b> Other Resources</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="other_resources.html"><a href="other_resources.html#mbon-pole-to-pole-tutorial"><i class="fa fa-check"></i><b>9.1</b> MBON Pole to Pole Tutorial</a></li>
+<li class="chapter" data-level="9.2" data-path="other_resources.html"><a href="other_resources.html#ioos-darwin-core-guide"><i class="fa fa-check"></i><b>9.2</b> IOOS Darwin Core Guide</a></li>
+<li class="chapter" data-level="9.3" data-path="other_resources.html"><a href="other_resources.html#emodnet-biology"><i class="fa fa-check"></i><b>9.3</b> EMODnet Biology</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The OBIS manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="common-quality-control-issues" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Common Quality Control issues<a href="common_qc.html#common-quality-control-issues" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Content:</strong></p>
+<ul>
+<li><a href="common_qc.html#uncertain-temporal-range">Uncertain temporal range</a></li>
+<li><a href="common_qc.html#uncertain-geolocation">Uncertain geolocation</a>
+<ul>
+<li><a href="common_qc.html#how-to-use-obis-map-tool">How to use OBIS Maptool</a></li>
+<li><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool">How to use Gazetteers to obtain geolocation information</a></li>
+</ul></li>
+<li><a href="common_qc.html#low-confidence-taxonomic-identification">Low confidence taxonomic information</a></li>
+<li><a href="common_qc.html#uncertain-measurements">Uncertain measurements</a></li>
+</ul>
+<div id="uncertain-temporal-range" class="section level3 hasAnchor" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> Uncertain temporal range<a href="common_qc.html#uncertain-temporal-range" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When the eventDate or temporal scope of your dataset is in question or provided in an invalid format (e.g., textual description), there are a number of options to ensure the most accurate date is provided.</p>
+<ol style="list-style-type: decimal">
+<li>You may provide a range of dates in the ISO 8601 format if the range of dates is certain. Do not include a date range if you are making assumptions. Notes about any assumptions or interpretations on date ranges can be documented in the <code>eventRemarks</code> field.
+<ul>
+<li>Be careful when entering date ranges. For example, entering 1870/1875-08-04 is equivalent to any date between 1870 and 1875-08-04. Date ranges can be used in this way to capture some level of uncertainty in when an event occurred.</li>
+</ul></li>
+<li>If only parts of the date are known (e.g., year but not month and day), you may provide the date in ISO 8601 format while excluding the unknown elements. <strong>Do not use zero</strong> to populate incomplete dates, simply end the date with the known information (e.g., 2011-03 instead of 2011-03-00). Additionally, if the year is unknown, you should only populate the <code>month</code> and <code>day</code> fields because <code>eventDate</code> cannot be formatted to exclude year. In these cases, <code>eventDate</code> is not necessary to fill.</li>
+<li>If date was provided as a textual description that is accurately interpretable, include the text description in the <code>verbatimEventDate</code> field. Then provide the interpreted date in ISO 8601 format in the <code>eventDate</code> field. Be sure to document any other important information in ‘eventRemarks’.</li>
+<li>For historical dates that do not conform to the ISO 8601 format, <a href="common_formatissues.html#historical-data">guidelines</a> are still under development. But the dwc:class:GeologicalContext can be used to capture some information for records pertaining to fossilized specimens.</li>
+</ol>
+</div>
+<div id="uncertain-geolocation" class="section level3 hasAnchor" number="5.6.2">
+<h3><span class="header-section-number">5.6.2</span> Uncertain geolocation<a href="common_qc.html#uncertain-geolocation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes locality information can be difficult to interpret, especially if records originate from historical data with vague descriptions, or descriptions/names of areas that no longer exist. If your dataset is missing <code>decimalLongitude</code> and <code>decimalLatitude</code>, but the locality name is given, there are a number of approaches you can take. You can:</p>
+<ul>
+<li>Use the OBIS <a href="https://obis.org/maptool/">Map Tool</a> to <a href="access.html#mapper">obtain a WKT</a> string for point, line, or polygon features to put in the <code>footprintWKT</code> field. The corresponding projection should be placed in the <code>footprintSRS</code> field. Note the accepted spatial reference system for OBIS is EPSG:4326 (WGS84). The <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions Gazetteer</a> is available for use within the Map tool to help find locations.</li>
+<li>Search for locations with the <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions Gazetteer</a> to obtain coordinates and a <code>locationID</code>. For information on how to use this tool, <a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool">see below</a>.
+<ul>
+<li>You can also use the <a href="http://www.getty.edu/research/tools/vocabularies/tgn/">Getty Thesaurus of Geographic Names</a> or Google Maps. <a href="common_qc.html#how-to-use-obis-map-tool">See below</a></li>
+<li><strong>Note:</strong> Always be sure to fill in the <code>georeferenceSources</code> field to indicate the sources you used to obtain locality information when appropriate</li>
+</ul></li>
+<li>If you have a set of points, a line, or a polygon (perhaps from the Map tool), you can find the centroid of the features using either <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> or <a href="https://postgis.net/docs/ST_PointOnSurface.html">PostGIS</a>, and then enter this coordinate into the <code>decimalLatitude</code> and <code>decimalLongitude</code> fields. This PostGIS guideline will help you select a centroid that is guaranteed to fall within your designated area.</li>
+<li>Estimate <code>coordinateUncertaintyinMeters</code> that is wide enough to cover the area
+<ul>
+<li>If the location is provided as an array or WKT format, you can use R package <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> to obtain coordinate uncertainty.</li>
+<li>Use the <a href="https://obis.org/maptool/">OBIS maptool</a> to obtain from the “radius” column. This is only applicable for lines or polygons, not point features.</li>
+</ul></li>
+</ul>
+<p>For data that only has <strong>textual descriptions</strong>:</p>
+<ul>
+<li>Try GBIF’s <a href="https://geo-locate.org/web/default.html">GEOLocate Web Application</a>. You can use this tool for one location at a time with the <a href="https://geo-locate.org/web/WebGeoref.aspx">Standard Client</a>, or upload a CSV file for <a href="https://geo-locate.org/web/WebFileGeoref.aspx">batch processing</a>. This tool lets you enter text descriptions in the “Locality String” field, and other relevant locality information (e.g. country, state, county) to obtain geographic coordinates.</li>
+<li>Use this <a href="https://localityservice.uc.r.appspot.com/">Biodiversity Enhanced Location Services</a> tool developed by VertNet. It can translate textual descriptions and provide decimalLatitude, decimalLongitude, geodeticDatum, and coordinateUncertaintyInMeters as a csv sent to an email address. For more information on this service, see the associated <a href="https://github.com/VertNet/bels">GitHub</a>.</li>
+</ul>
+<p>GBIF also provides some guidelines for <a href="https://docs.gbif.org/georeferencing-best-practices/1.0/en/#difficult-localities">difficult localities</a> as well as other <a href="https://docs.gbif.org/georeferencing-quick-reference-guide/1.0/en/#georeferencing-methods-by-locality-type">georeferencing tips</a> for different geographic features, such as when only a distance or heading is provided (e.g., 10 km off Sao Paulo’s coast, north of Fiji).</p>
+<blockquote>
+<p>Important note:
+If you are making any inferences and/or decisions about locality coordinates, please record this in the <code>georeferenceRemarks</code> field. Additional information about the locality can also be stored in DwC terms such as <code>waterBody</code>, <code>islandGroup</code>, <code>island</code> and <code>country</code>. <code>locationAccordingTo</code> should provide the name of the gazetteer that was used to obtain the coordinates for the locality.</p>
+</blockquote>
+</div>
+<div id="how-to-use-obis-map-tool" class="section level3 hasAnchor" number="5.6.3">
+<h3><span class="header-section-number">5.6.3</span> How to use OBIS Map Tool<a href="common_qc.html#how-to-use-obis-map-tool" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A video tutorial on how to use our Map tool is available below. This video covers the following topics:</p>
+<ol style="list-style-type: decimal">
+<li>Estimating coordinates</li>
+<li>Using the line and polygon tool</li>
+<li>Obtaining and exporting WKT strings</li>
+</ol>
+<p><a href="https://en.wikipedia.org/wiki/Well-known_text">Well-Known Text (WKT)</a> strings are representations of the shape of the location and can be provided in the <code>footprintWKT</code> field. This is particularly useful for tracks, transects, tows, trawls, habitat extent, or when an exact location is not known. WKT strings can be created using the Map tool’s WKT function. The Map tool also calculates a midpoint and a radius for line or polygon features, which can then be added to <code>decimalLongitude</code>, <code>decimalLatitude</code>, and <code>coordinateUncertaintyInMeters</code>, respectively. As mentioned above, the <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries"><code>obistools::calculate_centroid</code></a> function can be used to calculate the centroid and radius for WKT polygons. This <a href="https://wktmap.com/">wktmap</a> tool can also be used to visualize and share WKT strings.</p>
+<p><iframe width="560" height="315"
+src="https://www.youtube.com/embed/XM23WEvE364"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe></p>
+</div>
+<div id="using-getty-thesaurus-google-maps-to-obtain-locality-coordinates" class="section level3 hasAnchor" number="5.6.4">
+<h3><span class="header-section-number">5.6.4</span> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates<a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For both the <a href="https://www.getty.edu/research/tools/vocabularies/tgn/">Getty thesaurus</a> and <a href="https://www.google.com/maps/">Google Maps</a> you can simply search the name of a locality, for example the Cook Strait in New Zealand. The search result on the Getty thesaurus will bring you to a page where you can obtain <code>decimalLatitude</code> and <code>decimalLongitdue</code>.</p>
+<div class="figure">
+<img src="images/getty-thesaurus-NZexample.png" style="width:80.0%" alt="" />
+<p class="caption"><em>Screenshot of Cook Strait page on the Getty Thersaurus</em></p>
+</div>
+<p>For Google Maps, the coordinates can be found in the url after searching.</p>
+<div class="figure">
+<img src="images/google-maps-coordinates.png" style="width:80.0%" alt="" />
+<p class="caption"><em>Screenshot of Google Maps showing where coordinates can be found in the URL</em></p>
+</div>
+</div>
+<div id="how-to-use-marine-regions-gazetteer-tool" class="section level3 hasAnchor" number="5.6.5">
+<h3><span class="header-section-number">5.6.5</span> How to use Marine Regions Gazetteer tool<a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Marine Regions offers a marine gazetteer search engine to obtain geographic information and unique identifiers for marine regions. Once you have navigated to the <a href="https://www.marineregions.org/gazetteer.php?p=search">gazetteer search engine</a>, you have two options to search by: enter the name of the desired locality, or enter an MRGID code. Most likely you will have a locality name but not an MRGID. You may also select a <a href="https://www.marineregions.org/gazetteer.php?p=popup&amp;name=placetype">placetype</a> to search instead for types of regions that may be physical (e.g., seamount, bay, fjord, etc.) or administrative (e.g., exclusive economic zones, countries, etc). You can specify specific sources if known (e.g., published paper, organization, etc.). Finally, you can give a latitude/longitude coordinate with a radius around it to obtain a list of regions near that point.</p>
+<p>For this example we will search by geographic name for the Bay of Fundy.</p>
+<p><img src="images/marinegazeeteer-search.png" style="width:80.0%" />
+<img src="images/marinegazeeteer-bayfundy.png" style="width:80.0%" alt="Marine regions gazetteer search" /></p>
+<p>Our search returned 5 results from different sources (indicated in brackets). So how do we select the correct one? We can notice right away that the second result, from SeaVox SeaArea, has a preferred alternative, which when you click on the link brings you to the IHO Sea Area description for Bay of Fundy. So already we can likely drop SeaVox as a potential candidate. A good next step may be to compare the geographical extent for each to ensure it covers the desired area. If you are uncertain about exactly where your locality is, it may be better to be safe and choose a wider geographic region. Let’s compare the maps for all 5 results:</p>
+<p><img src="images/marinegazeeteer-bayfundy-1-IHO.png" style="width:50.0%" alt="Bay of Fundy source IHO" />
+<img src="images/marinegazeeteer-bayfundy-2-SeaVoX.png" style="width:50.0%" alt="Bay of Fundy source SeaVoX" />
+<img src="images/marinegazeeteer-bayfundy-3-MarRegion.png" style="width:50.0%" alt="Canadian part of Bay of Fundy source Marine Region" />
+<img src="images/marinegazeeteer-bayfundy-4-MEOW.png" style="width:50.0%" alt="Bay of Fundy source MEOW" />
+<img src="images/marinegazeeteer-bayfundy-5-MarRegion.png" style="width:50.0%" alt="United States part of Bay of Fundy source Marine Region" /></p>
+<p>Notice that no region has the exact same geographic extent. Let’s select the IHO Bay of Fundy locality (the first search result) to ensure we are covering the entire area of the Bay of Fundy, but not the Gulf. Inspecting the rest of the page, there is a lot of other useful information we can use. We can populate the following OBIS fields for our dataset, copying the information outlined in the red boxes:</p>
+<ol style="list-style-type: decimal">
+<li><code>locationID</code> from MRGID: <a href="http://marineregions.org/mrgid/4289" class="uri">http://marineregions.org/mrgid/4289</a></li>
+<li><code>decimalLatitude</code> and <code>decimalLongitude</code> latitude and longitude coordinates of the location’s midpoint in decimal degrees: 44.97985204, -65.80601556</li>
+<li><code>coordinateUncertaintyInMeters</code> precision: 196726 meters</li>
+</ol>
+<div class="figure">
+<img src="images/MarineRegions-Gazetteer_placedetails.png" style="width:80.0%" alt="" />
+<p class="caption"><em>Screenshot of Marine Region placedetails, highlighting important information for OBIS</em></p>
+</div>
+<p>Since we are obtaining all this locality data from Marine Regions, we must also populate the <code>locationAccordingTo</code> field. Here, we will provide the name of the gazetteer we used to obtain the coordinates for the locality - in this case you would write “Marine Regions”. In <code>georeferenceRemarks</code> we must document that the coordinates are the region’s midpoint, that locality information was inferred by geographic name, and, where applicable, place the original locality name in the field <code>verbatimLocality</code>. Finally, the location portion of our dataset would look something like this:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>locality</th>
+<th>locationID</th>
+<th>decimalLatitude</th>
+<th>decimalLongitude</th>
+<th>coordinateUncertaintyInMeters</th>
+<th>locationAccordingTo</th>
+<th>georeferenceRemarks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bay of Fundy</td>
+<td><a href="http://marineregions.org/mrgid/4289" class="uri">http://marineregions.org/mrgid/4289</a></td>
+<td>44.97985204</td>
+<td>-65.80601556</td>
+<td>196726</td>
+<td>Marine Regions</td>
+<td>Coordinates are a midpoint inferred from location name</td>
+</tr>
+</tbody>
+</table>
+<p>The OBIS Mapper has built-in access to the Marine Regions Gazetteer. The video below demonstrates how to use this built-in tool, as well as how to navigate the Marine Regions Gazetter to obtain important georeferencing information to include in your data.</p>
+<p><iframe width="560" height="315"
+src="https://www.youtube.com/embed/XM23WEvE364"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe></p>
+<div id="dwc-terms-obtained-from-maptool-and-gazetteers" class="section level4 hasAnchor" number="5.6.5.1">
+<h4><span class="header-section-number">5.6.5.1</span> DwC Terms obtained from Maptool and Gazetteers<a href="common_qc.html#dwc-terms-obtained-from-maptool-and-gazetteers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Below is a table summarizing the different DwC terms you can obtain from the OBIS Maptool or from the Gazeteers discussed above.</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>DarwinCore Term</th>
+<th>Maptool Term</th>
+<th>Marine Regions Term</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>decimalLatitude</td>
+<td>Latitude</td>
+<td>Latitude</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>decimalLongitude</td>
+<td>Longitude</td>
+<td>Longitude</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>locationID</td>
+<td></td>
+<td>MRGID</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>coordinateUncertaintyInMeters</td>
+<td>radius</td>
+<td>precision (not always available)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>footprintWKT</td>
+<td>WKT</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="low-confidence-taxonomic-identification" class="section level3 hasAnchor" number="5.6.6">
+<h3><span class="header-section-number">5.6.6</span> Low confidence taxonomic identification<a href="common_qc.html#low-confidence-taxonomic-identification" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In case of low confidence taxonomic identifications, and/or the scientific name contains qualifiers such as cf., ?, or aff., then you should:</p>
+<ul>
+<li>Put the name of the lowest possible taxon rank that can be determined with high-confidence in <code>scientificName</code> (e.g. the genus)</li>
+<li>Put any text regarding identification with low confidence and/or qualifiers in <a href="https://dwc.tdwg.org/terms/#dwciri:identificationQualifier"><code>identificationQualifier</code></a> (e.g., cf., aff.)</li>
+<li>Put the species name in <a href="https://dwc.tdwg.org/terms/#dwc:specificEpithet"><code>specificEpithet</code></a></li>
+<li>Place the rank of the taxon documented in scientificName (e.g., genus) in <a href="https://dwc.tdwg.org/terms/#dwc:taxonRank"><code>taxonRank</code></a></li>
+<li>Document any relevant comments in <a href="https://dwc.tdwg.org/terms/#dwc:taxonRemarks"><code>taxonRemarks</code></a> or <a href="https://dwc.tdwg.org/terms/#dwc:identificationRemarks"><code>identificationRemarks</code></a> (e.g. reasoning for identification)</li>
+</ul>
+<p>Take an example specimen named Pterois cf. volitans. The associated occurrence record would have the following taxonomic information:</p>
+<ul>
+<li><code>scientificName</code> = Pterois</li>
+<li><code>identificationQualifier</code> = cf. volitans</li>
+<li><code>specificEpithet</code> = <em>leave blank</em></li>
+<li><code>scientificNameID</code> = the one for Pterois</li>
+<li><code>taxonRank</code> = genus</li>
+</ul>
+<p>If the provided name is unaccepted in WoRMS, it is okay to use the unaccepted name in this field. <code>scientificNameID</code> should contain the <a href="name_matching.html">WoRMS LSID</a> for the genus.</p>
+<p>There is a new Darwin Core term <a href="https://dwc.tdwg.org/terms/#dwc:verbatimIdentification"><code>verbatimIdentification</code></a> meant for containing the originally documented name, however this term is not yet implemented in OBIS so if you populate this field it will not be indexed alongside your data. However you can use <code>identificationRemarks</code> to add extra information.</p>
+<p>The use and definitions for additional Open Nomenclature (ON) signs (<code>identificationQualifier</code>) can be found in <a href="https://doi.org/10.1111/2041-210X.12594">Open Nomenclature in the biodiversity era</a>, which provides examples for using the main Open Nomenclature qualifiers associated with physical specimens (Figure 1). Whereas the publication <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations</a> provides examples and definitions for identificationQualifiers for image-based non-physical specimens (Figure 2).</p>
+<div class="figure">
+<img src="images/fig1-openNomenclature.png" style="width:80.0%" alt="" />
+<p class="caption"><em>Figure 1. Flow diagram with the main Open Nomenclature qualifiers associated with physical specimens. The degree of confidence in the correct identifier increases from the top down. More info and figure copied from <a href="https://doi.org/10.1111/2041-210X.12594">Open Nomenclature in the biodiversity era</a>.</em></p>
+</div>
+<div class="figure">
+<img src="images/fig2-flowDiagram.jpg" style="width:80.0%" alt="" />
+<p class="caption"><em>Figure 2: Flow diagram with the main Open Nomenclature qualifiers for the identification of specimens from images (non-physical, image-based) . More information and figure copied from <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations</a></em></p>
+</div>
+<div id="changes-in-taxonomic-classification" class="section level4 hasAnchor" number="5.6.6.1">
+<h4><span class="header-section-number">5.6.6.1</span> Changes in taxonomic classification<a href="common_qc.html#changes-in-taxonomic-classification" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Taxonomic classification can change over time - so what does that mean for your datasets when records change classification?</p>
+<p>Because OBIS relies on WoRMS as the taxonomic backbone, changes in taxonomic classification will be updated between a day to a few weeks from the date of change, unless triggered manually. This means that the WoRMS LSID associated with a species in question will be used to automatically populate the taxonomic classification with the updated information.</p>
+<p>However we recognize that there may be issues when larger changes occur (e.g. Family level splits). Then, records that are only identified to the Family level may not get updated properly. For example, there was a shift in coral taxonomy where the family Nephtheidae was split into Capnellidae and Alyconiidae for species occurring in the Northern Atlantic. While species that were identified as belonging to Nephtheidae have now been updated to belong to one of those two families, records that were only identified down to family (i.e., Nephtheidae) are still documented as Nephtheidae. Unfortunately there is currently no solution for dealing with splits like this, aside from contacting data providers and asking them to change the taxonomy.</p>
+<p>A future solution may be an annotation registry that includes statements like “identifications of taxon x in geographic area y are misidentified and should be linked to taxon z”.</p>
+</div>
+</div>
+<div id="uncertain-measurements" class="section level3 hasAnchor" number="5.6.7">
+<h3><span class="header-section-number">5.6.7</span> Uncertain measurements<a href="common_qc.html#uncertain-measurements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="individualcount" class="section level4 hasAnchor" number="5.6.7.1">
+<h4><span class="header-section-number">5.6.7.1</span> individualCount<a href="common_qc.html#individualcount" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In some cases <code>individualCount</code> may be uncertain due to only fragments of organisms being found, or only a range of individuals is known. The <code>occurrenceRemarks</code> can be used to document information about decisions made during data formatting.</p>
+<p>In cases where only certain body parts (e.g., head, tail, arm) are recorded, you can incorporate this information in <code>measurementTypeID</code> by finding a P01 code that contains elements from the <a href="https://vocab.nerc.ac.uk/search_nvs/S12/">S12 collection</a>, which documents sub-components of biological entities. If a P01 code for your sub-component does not exist, you can request the <a href="https://github.com/nvs-vocabs/OBISVocabs/issues">creation of a P01 code</a>. If you are uncertain whether fragments are from the same individual, a range can be provided and the uncertainty can be recorded in <code>occurrenceRemarks</code>.</p>
+<p>When providing a range to estimate the count, there are two <a href="https://github.com/tdwg/dwc/issues/338#issuecomment-828002051">suggested</a> approaches:</p>
+<ul>
+<li>Use MOF/eMoF: place the data in the (extended)MeasurementOrFact extension. This requires an additional two rows per Occurrence. One with the equivalent of a minimumIndividualCount and one with the equivalent of maximumIndividualCount.</li>
+<li>Place data into <code>dynamicProperties</code>: Include the information in the Occurrence record itself, with no extension, and instead document it in <code>dynamicProperties</code>, with a value such as {“minimumIndividualCount”:0, “maximumIndividualCount”:5}
+<ul>
+<li>We note that documenting the data in ‘dynamicProperties’ means the information will not be machine readable and may be more difficult for users to extract.</li>
+</ul></li>
+</ul>
+<p><strong>Abundance vs Count data:</strong>
+A brief clarification on abundance and count data: abundance is the number of individuals within an area or volume. This type of data is recorded in <code>organismQuantity</code>, where <a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType"><code>organismQuantityType</code></a> should be used to specify the type of quantity (e.g., individuals, percent biomass, Braun Blanquet Scale, etc.).</p>
+<p>However, if the value is just the number of individuals without reference to a space, this information is recorded in <code>individualCount</code>.</p>
+</div>
+</div>
+<div id="non-marine-species" class="section level3 hasAnchor" number="5.6.8">
+<h3><span class="header-section-number">5.6.8</span> Non-marine species<a href="common_qc.html#non-marine-species" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you are given an error that your taxon is not marine, please confirm first whether the species is actually freshwater by cross referencing with WoRMS or <a href="https://www.irmng.org/">IRMNG</a>. If the species is not marine (i.e. belongs to a non-marine genus), check with the data provider as necessary for possible misidentification. Finally you can contact WoRMS at <a href="mailto:info@marinespecies.org" class="email">info@marinespecies.org</a> to discuss adding the taxon to the WoRMS register. You will be required to provide documentation in this case to confirm marine status of the taxon.</p>
+<p>Otherwise, records marked as non-marine will be dropped from the published dataset, and this will be flagged in the data quality associated with your dataset.</p>
+<p>Let’s consider an example within <a href="https://obis.org/dataset/9fbaeb21-a0dc-4a29-8237-1cd7ada266e0">this dataset</a> on benthic macroalgae. Inspecting the data quality report we can see there are three dropped records due to species not being marine.</p>
+<div class="figure">
+<img src="images/dropped-records1.png" style="width:80.0%" alt="" />
+<p class="caption"><em>Dropped records from a benthic macroalgae dataset</em></p>
+</div>
+<p>Clicking on the dropped records we can see which three species were dropped. By scrolling to the right of the table, we can see these records have two quality flags: NO_DEPTH and NOT_MARINE.</p>
+<div class="figure">
+<img src="images/dropped-records2.png" style="width:80.0%" alt="" />
+<p class="caption"><em>Flags specifying why certain records were dropped</em></p>
+</div>
+<p>Let’s take a look at the first species, Pseudochantransia venezuelensis. When we search for this species on <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=836900">WoRMS</a> we can see that the species is marked as freshwater.</p>
+<p><img src="images/nonmarine-spp-worms.png" style="width:80.0%" /></p>
+<p>Cross-referencing with IRMNG, if we search for the genus-species, the species is not even found, an indication that it is not in the database (and also why it can be good to check multiple sources). Searching for just the genus, we can see that marine and brackish are stricken out, indicating the species is not marine.</p>
+<p><img src="images/nonmarine-spp-irmng.png" style="width:80.0%" /></p>
+<p>If you have species that are marked as non-marine in these registers but are either supposed to be marine, or were found in a marine environment, then you should contact WoRMS to discuss adding it to the register. For additions and/or edits to environmental or distribution records of a species, contact the WoRMS Data Management Team at <a href="mailto:info@marinespecies.org" class="email">info@marinespecies.org</a> with your request along with your record or publication substantiating the addition/change.</p>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lifewatch_qc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data_publication.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manual.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
