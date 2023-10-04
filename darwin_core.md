@@ -91,6 +91,8 @@ The following DwC terms are related to the Class _Location_:
 - footprintWKT
 - minimumDepthInMeters
 - maximumDepthInMeters
+- minimumDistanceAboveSurfaceInMeters
+- maximumDistanceAboveSurfaceInMeters
 - locality
 - waterBody
 - islandGroup
@@ -251,19 +253,31 @@ MULTILINESTRING ((10 10, 20 20, 10 40),(40 40, 30 30, 40 20, 30 10))
 MULTIPOLYGON (((30 20, 45 40, 10 40, 30 20)),((15 5, 40 10, 10 20, 5 10, 15 5)))
 ```
 
-Keep in mind while filling in `minimumDepthInMeters` and `maximumDepthInMeters` that this should be the depth at which the sample was taken and not the water column depth at that location.
-
 Example:
 
-```
 | decimalLatitude | decimalLongitude | geodeticDatum | coordinateUncertaintyInMeters | footprintWKT                          | footprintSRS |
 |-----------------|------------------|---------------|-------------------------------|---------------------------------------|--------------|
 | 38.698          | 20.95            | EPSG:4326     | 75033.17                      | LINESTRING (20.31 39.15, 21.58 38.24) | EPSG:4326    |
 | 42.72           | 15.228           | EPSG:4326     | 154338.87                     | LINESTRING (16.64 41.80, 13.82 43.64) | EPSG:4326    |
 | 39.292          | 20.364           | EPSG:4326     | 162083.27                     | LINESTRING (19.05 40.34, 21.68 38.25) | EPSG:4326    |
-```
 
 _Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018](http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018)._
+
+Keep in mind while filling in [`minimumDepthInMeters`](http://rs.tdwg.org/dwc/terms/maximumDepthInMeters) and [`maximumDepthInMeters`](http://rs.tdwg.org/dwc/terms/minimumDepthInMeters) that this should be the depth at which the **sample was taken** and not the water column depth at that location. When fillling in any depth fields (`minimumDepthInMeters`, `maximumDepthInMeters`, [`minimumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters), and [`maximumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters)), you should also consider which information is needed to fully understand the data. In most cases (e.g. scenario 1 and 4 in the figure below), providing `minimumDepthInMeters` and `maximumDepthInMeters` is sufficient for observations of organisms at particular depths. However, in cases where an occurrence is above the sea surface, e.g. flying birds (scenario 2 and 5),  you should populate `minimumDistanceAboveSurfaceInMeters`, `maximumDistanceAboveSurfaceInMeters`, and, where relevant, you should also include [`minimumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_minimumElevationInMeters) and [`maximumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_maximumElevationInMeters).
+
+The `minimumDistanceAboveSurfaceInMeters` and `maximumDistanceAboveSurfaceInMeters` is the distance, in meters, above or below a reference surface or reference point. The reference surface is determined by the depth or elevation. If the depth and elevation are 0, then the reference surface is the sea surface. If a depth is given, the reference surface is the location of the depth. This can be especially useful for sediment cores taken from the sea bottom (scenario 3 in figure below). If no depth is given, then the elevation is the reference surface (scenario 5).
+
+![](images/Depth-figure-updated.png)
+
+Depth scenario examples:
+
+| Scenario | minimumDepthInMeters | maximumDepthInMeters | minimumDistanceAboveSurfaceInMeters | maximumDistanceAboveSurfaceInMeters | minimumElevationInMeters | maximumElevationInMeters|
+|----------|----------------------|----------------------|-------------------------------------|-------------------------------------|------------------|------------------|
+| 1 | 40, 90 | 50, 100 | - | -| 0 | 0 |
+| 2 | 0 | 0 | 10 | 15| 0 | 0 |
+| 3 | 100 | 100 | 0 | -1.5 | 0 | 0 |
+| 4 | 20 | 22 | - | - | 0 | 0 |
+| 5 | 0 | 0 | 10 | 15 | 10 | 10 |
 
 ##### Event
 
