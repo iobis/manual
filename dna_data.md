@@ -36,11 +36,31 @@ Doing this will help you when following the guidelines below.
 
 ### How to find genetic data in OBIS
 
-**Sequence Search tool**
+To find genetic data in OBIS we recommend using the R package robis, using the `occurrence` function. You must set `extensions` and/or `hasextensions` to "DNADerivedData" to ensure extension records are included in the results. `hasextensions` will exclude any occurrence that does not have the specified extension, in our case, DNADerivedData. The `extensions` parameter specifies which extensions to include. To obtain the DNA data, you have to extract the information from the extension using the `unnest_extension()` function. You can specify as many fields from the Occurrence table to be included, and pass them to the `fields` parameter. See the code below for an example. See also this [vignette] for a more detailed example, including how you can work further with these sequences in R.
 
-If you want to search for sequences or related sequences in OBIS, you can do so with the [OBIS Sequence Search](https://sequence.obis.org/).
+```R
+dna_occ<-occurrence("Dinophyceae",hasextensions="DNADerivedData", extensions="DNADerivedData")
+dnaseqs <-unnest_extension(dna_datasets, "DNADerivedData", fields = c("id", "phylum", "class", "family", "genus", "species"))
+dnaseqs["DNA_sequence"]
+# A tibble: 706 × 1
+   DNA_sequence                                                                                              
+   <chr>                                                                                                     
+ 1 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 2 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 3 GCTCCTACCGATTGAATGATCCGGTGAGGCCCCCGGACTGCGGCGCCGCAGCTGGTTCTCCAGCCGCGACGCCGCGGGAAGCTGTCCGAACCTTATCATTTAGAG…
+ 4 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 5 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 6 GCTCCTACCGATTGAATGATCCGGTGAGGCCCCCGGACTGCGGCGCCGCAGCTGGTTCTCCAGCCGCGACGCCGCGGGAAGCTGTCCGAACCTTATCATTTAGAG…
+ 7 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 8 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 9 GCTCCTACCGATTGAATGATCCGGTGAGGCCCCCGGACTGCGGCGCCGCAGCTGGTTCTCCAGCCGCGACGCCGCGGGAAGCTGTCCGAACCTTATCATTTAGAG…
+10 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+# … with 696 more rows
+```
 
-1. Copy your sequence in the provided box (an example sequence is provided for testing as well)
+Additionally, a prototype [Sequence Search tool](https://sequence.obis.org/) is in development that allows you to search for sequences or related sequences in OBIS. Note that the tool is not always up to date so use caution until the prototype is fully developed. To use the tool:
+
+1. Copy your sequence in the provided box (an example sequence is provided for testing)
 2. Press the Search button
 3. View results below
 4. You can also change the Minimum Alignment Score slider in the map view to see location of sequences
@@ -49,13 +69,14 @@ The search result will show you taxonomic information for species sequences that
 
 **OBIS Mapper**
 
-If you wish to find records that have the DNADerivedData extension you can add this filter when using the [Mapper](https://mapper.obis.org/).
+You can use the [OBIS Mapper](https://mapper.obis.org/) to obtain records that include the DNADerivedData extension by addding a filter for the extension when using the tool. To do this:
 
-1. Navigate to the Criteria tab
-2. Open the Extensions section
+1. From the OBIS Mapper, navigate to the Criteria tab (the plus (+) sign)
+2. Open the Extensions dropdown section
 3. Check the box for DNADerivedData
-4. Click save to create the layer
-5. [Download the data from the layer](access.html)
+4. Add any other filters you want, e.g. taxonomic, then click save to create the layer
+5. Switch to the Layers tab
+6. Download the data from the layer by clicking the green button (see [Data Access](access#mapper.html) for more on using the OBIS Mapper)
 
 ### Guidelines for compiling genetic data: eDNA and metabarcoding datasets
 
