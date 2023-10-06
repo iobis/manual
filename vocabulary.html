@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.7 Choosing Vocabularies for your dataset | The OBIS manual</title>
-  <meta name="description" content="4.7 Choosing Vocabularies for your dataset | The OBIS manual" />
+  <title>4.7 Choosing vocabularies for your dataset | The OBIS manual</title>
+  <meta name="description" content="4.7 Choosing vocabularies for your dataset | The OBIS manual" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.7 Choosing Vocabularies for your dataset | The OBIS manual" />
+  <meta property="og:title" content="4.7 Choosing vocabularies for your dataset | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.7 Choosing Vocabularies for your dataset | The OBIS manual" />
+  <meta name="twitter:title" content="4.7 Choosing vocabularies for your dataset | The OBIS manual" />
   
   
   
@@ -218,13 +218,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.5" data-path="dna_data.html"><a href="dna_data.html#guidelines-for-compiling-genetic-data-qpcr"><i class="fa fa-check"></i><b>4.6.5</b> Guidelines for compiling genetic data: qPCR</a></li>
 <li class="chapter" data-level="4.6.6" data-path="dna_data.html"><a href="dna_data.html#obis-bioinformatics-pipline"><i class="fa fa-check"></i><b>4.6.6</b> OBIS Bioinformatics Pipline</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.7</b> Choosing Vocabularies for your dataset</a>
+<li class="chapter" data-level="4.7" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.7</b> Choosing vocabularies for your dataset</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="vocabulary.html"><a href="vocabulary.html#map-your-data-with-dwc-vocabulary"><i class="fa fa-check"></i><b>4.7.1</b> Map your data with DwC vocabulary</a></li>
+<li class="chapter" data-level="4.7.1" data-path="vocabulary.html"><a href="vocabulary.html#map-data-fields-to-darwin-core"><i class="fa fa-check"></i><b>4.7.1</b> Map data fields to Darwin Core</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="vocabulary.html"><a href="vocabulary.html#how-to-map-emof-terms-to-preferred-bodc-vocabulary"><i class="fa fa-check"></i><b>4.8</b> How to map eMoF terms to preferred BODC vocabulary</a>
+<li class="chapter" data-level="4.8" data-path="vocabulary.html"><a href="vocabulary.html#map-emof-measurement-identifiers-to-preferred-bodc-vocabulary"><i class="fa fa-check"></i><b>4.8</b> Map eMoF measurement identifiers to preferred BODC vocabulary</a>
 <ul>
-<li class="chapter" data-level="4.8.1" data-path="vocabulary.html"><a href="vocabulary.html#measurementorfact-vocabularies"><i class="fa fa-check"></i><b>4.8.1</b> MeasurementOrFact vocabularies</a></li>
+<li class="chapter" data-level="4.8.1" data-path="vocabulary.html"><a href="vocabulary.html#measurementorfact-vocabulary-background"><i class="fa fa-check"></i><b>4.8.1</b> MeasurementOrFact vocabulary background</a></li>
 <li class="chapter" data-level="4.8.2" data-path="vocabulary.html"><a href="vocabulary.html#requesting-new-vocabulary-terms"><i class="fa fa-check"></i><b>4.8.2</b> Requesting new vocabulary terms</a></li>
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="common_formatissues.html"><a href="common_formatissues.html"><i class="fa fa-check"></i><b>4.9</b> Common Data formatting issues</a>
@@ -339,9 +339,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="choosing-vocabularies-for-your-dataset" class="section level2 hasAnchor" number="4.7">
-<h2><span class="header-section-number">4.7</span> Choosing Vocabularies for your dataset<a href="vocabulary.html#choosing-vocabularies-for-your-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="map-your-data-with-dwc-vocabulary" class="section level3 hasAnchor" number="4.7.1">
-<h3><span class="header-section-number">4.7.1</span> Map your data with DwC vocabulary<a href="vocabulary.html#map-your-data-with-dwc-vocabulary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h2><span class="header-section-number">4.7</span> Choosing vocabularies for your dataset<a href="vocabulary.html#choosing-vocabularies-for-your-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Content</strong></p>
+<ul>
+<li><a href="vocabulary.html#map-data-fields-to-darwin-core">Map data fields toDarwin Core</a></li>
+<li><a href="vocabulary.html#map-data-fields-to-darwin-core">Map eMoF measurement identifierss</a>
+<ul>
+<li><a href="vocabulary.html#measurementorfact-vocabulary-background">MeasurementOrFact vocabulary background</a></li>
+<li><a href="vocabulary.html#guidelines-to-populate-measurementunitid">Guidelines to populate measurementUnitID</a></li>
+<li><a href="vocabulary.html#guidelines-to-populate-measurementvalueid">Guidelines to populate measurementValueID</a></li>
+<li><a href="vocabulary.html#guidelines-to-populate-measurementtypeid">Guidelines to populate measurementTypeID</a></li>
+</ul></li>
+</ul>
+<div id="map-data-fields-to-darwin-core" class="section level3 hasAnchor" number="4.7.1">
+<h3><span class="header-section-number">4.7.1</span> Map data fields to Darwin Core<a href="vocabulary.html#map-data-fields-to-darwin-core" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are many possible ways of setting up your datasheets, and if you are new to OBIS you likely did not use controlled Darwin Core (DwC) or BODC vocabulary before samples were collected. In mapping your data fields to DwC we recommend documenting your choices so you have a reference to go back to should the need arise. In such a document you should take notes on the choices you made, as well as any actions you had to take (e.g. separate one column into many, convert dates or coordinates, etc.).</p>
 <p>For example, a DwC mapping reference table could look like the following:</p>
 <table style="width:100%;">
@@ -480,91 +491,150 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The obistools R package also has the <a href="https://github.com/iobis/obistools#map-column-names-to-darwin-core-terms">map_fields function</a> that you can use to map your dataset fields to a DwC term.</p>
 </div>
 </div>
-<div id="how-to-map-emof-terms-to-preferred-bodc-vocabulary" class="section level2 hasAnchor" number="4.8">
-<h2><span class="header-section-number">4.8</span> How to map eMoF terms to preferred BODC vocabulary<a href="vocabulary.html#how-to-map-emof-terms-to-preferred-bodc-vocabulary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="measurementorfact-vocabularies" class="section level3 hasAnchor" number="4.8.1">
-<h3><span class="header-section-number">4.8.1</span> MeasurementOrFact vocabularies<a href="vocabulary.html#measurementorfact-vocabularies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The MeasurementOrFact terms <code>measurementType</code>, <code>measurementValue</code>, and <code>measurementUnit</code> are completely unconstrained and can be populated with free text. While free text offers the advantage of capturing complex and as yet unclassified information, the inevitable semantic heterogeneity (e.g., of spelling or wording) becomes a major challenge for effective data integration and analysis. For example, if you were interested in finding all records related to length measurements, you would have to try to account for all the different ways “length” was recorded by data providers (length, Length, len, fork length, etc.).</p>
-<p>Hence, OBIS added 3 new terms: <code>measurementTypeID</code>, <code>measurementValueID</code> and <code>measurementUnitID</code> to standardize the measurement types, values and units. Note however <code>measurementValueID</code> is <strong>not</strong> used for standardizing numeric measurements.</p>
-<p>These three new terms should be populated using controlled vocabularies referenced using Unique Resource Identifiers (URIs). OBIS recommends using the internationally recognized <a href="http://www.bodc.ac.uk/resources/products/web_services/vocab/">NERC Vocabulary Server</a>, developed by the British Oceanographic Data Centre (BODC), which can be searched through <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/</a>. It also compiles vocabulary and terms from different institutions and authorities (e.g., ISO, SeaDataNet), and you can relate your data to them. Such controlled vocabulary is incredibly important to ensure datasets in OBIS will be interoperable - readable by both humans and machines. In this way, you could search for a single <code>measurementTypeID</code> and obtain all related records, regardless of differences in wording.</p>
-<p>We provide some specific guidance for these URI fields below.</p>
-<div id="measurementtypeid" class="section level4 hasAnchor" number="4.8.1.1">
-<h4><span class="header-section-number">4.8.1.1</span> measurementTypeID<a href="vocabulary.html#measurementtypeid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="map-emof-measurement-identifiers-to-preferred-bodc-vocabulary" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Map eMoF measurement identifiers to preferred BODC vocabulary<a href="vocabulary.html#map-emof-measurement-identifiers-to-preferred-bodc-vocabulary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="measurementorfact-vocabulary-background" class="section level3 hasAnchor" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> MeasurementOrFact vocabulary background<a href="vocabulary.html#measurementorfact-vocabulary-background" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The MeasurementOrFact terms <code>measurementType</code>, <code>measurementValue</code>, and <code>measurementUnit</code> are completely unconstrained and can be populated with free text. While free text offers the advantage of capturing complex and as yet unclassified information, there is inevitable semantic heterogeneity (e.g., of spelling, wording, or language) that becomes a challenge for effective data interoperability and analysis. For example, if you were interested in finding all records related to length measurements, you would have to try to account for all the different ways “length” was recorded by data providers (length, Length, len, fork length, etc.).</p>
+<blockquote>
+<p>Use the <a href="https://mof.obis.org/">OBIS Measurement Type search tool</a> to see the diversity of <code>measurementTypes</code> that exist across published datasets in OBIS. Note that any <code>measurementTypeIDs</code> listed in this tool are <strong>solely</strong> for consultation purposes. In some cases codes may have been incorrectly chosen for the associated <code>measurementType</code>. You should always choose <code>measurementTypeIDs</code> based on your own data and the guidelines in this manual.</p>
+</blockquote>
+<p>The 3 identifier terms <code>measurementTypeID</code>, <code>measurementValueID</code> and <code>measurementUnitID</code> are used to standardize the measurement types, values and units.</p>
+<p>These three terms should be populated using controlled vocabularies referenced using Unique Resource Identifiers (URIs). For OBIS, we recommend using the internationally recognized <a href="http://www.bodc.ac.uk/resources/products/web_services/vocab/">NERC Vocabulary Server</a>, developed by the British Oceanographic Data Centre (BODC). This server can be accessed through:</p>
+<ul>
+<li>NERC Vocabulary Server (NVS) search <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/" class="uri">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/</a></li>
+<li>Semantic Model Vocabulary Builder <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/" class="uri">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/</a></li>
+<li>SeaDataNet facet search <a href="https://vocab.seadatanet.org/p01-facet-search" class="uri">https://vocab.seadatanet.org/p01-facet-search</a></li>
+</ul>
+<p>Controlled vocabularies are incredibly important to ensure data are interoperable - readable by both humans and machines and that the information is presented in an unambiguous manner. Vocabulary collections like NERC NVS2 compile vocabularies from different institutions and authorities (e.g., ISO, ICES, EUNIS), allowing you to map your data to them. In this way, you could search for a single <code>measurementTypeID</code> and obtain all related records, regardless of differences in wording or language used in the data.</p>
+<p>Each vocabulary “term” in NVS is a concept that describes a specific idea or meaning. For consistency, we refer to individual vocabularies in NVS as <strong>concepts</strong>. Concepts within NVS are organized into <em>collections</em> that group concepts with commonalities (e.g. all concepts pertaining to units). Sometimes collections contain concepts that are deprecated. Terms can be deprecated due to duplication of concepts, or when a term becomes obsolete. You should not use any deprecated concepts for any measurement ID. Deprecated concepts can be identified from lists on NVS because their identifier will have a red warning symbol, and the page for the term itself will indicate the concept is deprecated in red lettering. Unfortunately, there is currently no notification system in place to automatically warn you if a previously used concept has become deprecated. We recommend occasionally confirming that the concepts you or your institution use are still available for use.</p>
+<p>Guidelines for populating each mesaurement ID are described below.</p>
+<div id="guidelines-to-populate-measurementunitid" class="section level4 hasAnchor" number="4.8.1.1">
+<h4><span class="header-section-number">4.8.1.1</span> Guidelines to populate measurementUnitID<a href="vocabulary.html#guidelines-to-populate-measurementunitid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The <code>measurementUnitID</code> field is the easiest measurement ID field to populate. It is used to provide a URI for the unit associated with the value provided to measurementValue (e.g. cm, kg, kg/m2). This field should be populated with concepts from the <strong>P06 collection</strong>, BODC-approved data storage units. Documentation for this collection can be found <a href="https://github.com/nvs-vocabs/P06">here</a>.</p>
+<p>The entire vocabulary list, including deprecated terms can be found at <a href="http://vocab.nerc.ac.uk/collection/P06/current" class="uri">http://vocab.nerc.ac.uk/collection/P06/current</a>. However, we strongly recommend using <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/" class="uri">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/</a> to avoid potentially selecting deprecated terms.</p>
+<p>Some examples of <code>measurementUnits</code> and the associated <code>measurementUnitID</code> include:</p>
+<ul>
+<li>Metres: <a href="http://vocab.nerc.ac.uk/collection/P06/current/ULAA/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/ULAA/</a></li>
+<li>Days: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UTAA/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UTAA/</a></li>
+<li>Metres per second: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UVAA/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UVAA/</a></li>
+<li>Percent: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UPCT/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPCT/</a></li>
+<li>Milligrams per litre: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UMGL/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UMGL/</a></li>
+</ul>
+</div>
+<div id="guidelines-to-populate-measurementvalueid" class="section level4 hasAnchor" number="4.8.1.2">
+<h4><span class="header-section-number">4.8.1.2</span> Guidelines to populate measurementValueID<a href="vocabulary.html#guidelines-to-populate-measurementvalueid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The <code>measurementValueID</code> field is used to provide an identifying code for <code>measurementValues</code> that are <strong>non-numerical</strong> (e.g. sampling related, sex or life stage designation, etc.).
+<strong>Note: it is not used for standardizing numeric measurements!</strong></p>
+<p>Unlike <code>measurementUnitID</code>, there is more than one collection which may be used to search for and use concepts from. The collection is dependent on which type of <code>measurementValue</code> you have. See the table below for some common, non-exhaustive examples.</p>
+<table>
+<colgroup>
+<col width="29%" />
+<col width="13%" />
+<col width="28%" />
+<col width="28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type of measurementValue</th>
+<th>Collection</th>
+<th>Collection Documentation</th>
+<th>Complete Vocabulary List</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sex (gender)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/">S10</a></td>
+<td><a href="https://github.com/nvs-vocabs/S10" class="uri">https://github.com/nvs-vocabs/S10</a></td>
+<td>&lt;<a href="http://vocab.nerc.ac.uk/collection/S10/current/" class="uri">http://vocab.nerc.ac.uk/collection/S10/current/</a></td>
+</tr>
+<tr class="even">
+<td>Lifestage</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/">S11</a></td>
+<td><a href="https://github.com/nvs-vocabs/S11" class="uri">https://github.com/nvs-vocabs/S11</a></td>
+<td><a href="http://vocab.nerc.ac.uk/collection/S11/current/" class="uri">http://vocab.nerc.ac.uk/collection/S11/current/</a></td>
+</tr>
+<tr class="odd">
+<td>Sampling instruments and sensors (SeaVoX Device Catalogue)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/">L22</a></td>
+<td><a href="https://github.com/nvs-vocabs/L22" class="uri">https://github.com/nvs-vocabs/L22</a></td>
+<td><a href="http://vocab.nerc.ac.uk/collection/L22/current" class="uri">http://vocab.nerc.ac.uk/collection/L22/current</a></td>
+</tr>
+<tr class="even">
+<td>Sampling instrument categories (SeaDataNet device categories)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/">L05</a></td>
+<td><a href="https://github.com/nvs-vocabs/L05" class="uri">https://github.com/nvs-vocabs/L05</a></td>
+<td>&lt;<a href="http://vocab.nerc.ac.uk/collection/L05/current" class="uri">http://vocab.nerc.ac.uk/collection/L05/current</a></td>
+</tr>
+<tr class="odd">
+<td>Vessels (ICES Platform Codes)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/">C17</a></td>
+<td>-</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/C17/current" class="uri">http://vocab.nerc.ac.uk/collection/C17/current</a></td>
+</tr>
+<tr class="even">
+<td>European Nature Information System Level 3 Habitats</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C35/">C35</a></td>
+<td>-</td>
+<td><a href="https://vocab.nerc.ac.uk/collection/C35/current/" class="uri">https://vocab.nerc.ac.uk/collection/C35/current/</a></td>
+</tr>
+</tbody>
+</table>
+<p>You can also populate <code>measurementValueID</code> with references to papers or manuals that document the sampling protocol used to obtain the measurement. To do this you should use either:</p>
+<ul>
+<li>The DOI of the paper/manual</li>
+<li>Handle for publications on IOC’s <a href="http://www.oceanbestpractices.net/">Ocean Best Practices repository</a>, e.g. <a href="http://hdl.handle.net/11329/304">http://hdl.handle.net/11329/304</a></li>
+</ul>
+</div>
+<div id="guidelines-to-populate-measurementtypeid" class="section level4 hasAnchor" number="4.8.1.3">
+<h4><span class="header-section-number">4.8.1.3</span> Guidelines to populate measurementTypeID<a href="vocabulary.html#guidelines-to-populate-measurementtypeid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="the-p01-collection" class="section level5 hasAnchor" number="4.8.1.3.1">
+<h5><span class="header-section-number">4.8.1.3.1</span> The P01 Collection<a href="vocabulary.html#the-p01-collection" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>One of the more important collections for OBIS is the <a href="http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">P01 collection</a>.</p>
 <blockquote>
 <p>Important note!
 <strong>P01 codes are required for the <code>measurementTypeID</code> field</strong>.</p>
 </blockquote>
+<p>The P01 is a large collection with &gt;45,000 concepts. Each concept within this collection is composed of different elements that, together, construct a label you can use for a measurement type. Frequently, concepts from the P01 collection are referred to as a “P01 code”. P01 codes are used to populate the <code>measurementTypeID</code> field.</p>
+<p>It is important to know that a semantic model, shown below, underlies each P01 code and the elements that compose them. There are 5 potential elements in this semantic model that, together, unambiguously describe a measurement type. See the <a href="https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf">P01 wheel</a> for example of how these elements relate and combine to make one P01 code.</p>
+<div class="figure">
+<img src="images/P01semantic-model.png" alt="" />
+<p class="caption"><em>Elements of the semantic model for P01 codes</em></p>
+</div>
+<ul>
+<li><strong>Property/attribute</strong>: the measurement or observation of either an object of interest or a matrix, or both</li>
+<li><strong>Object of interest</strong>: a chemical object, a biological object, a physical phenomenon, or a material object</li>
+<li><strong>In relation to</strong>: how the measurement is related to the environment</li>
+<li><strong>Environmental matrix</strong>: what environment the measurement is in (e.g. water body, seabed); needed for most environmental measurements, but may not be necessary for e.g. biological measurements</li>
+<li><strong>Method</strong>: any specific methods used that are important to interpret the measurement</li>
+</ul>
+<p>Note: Not every element is required, but it is important to think about each piece of the model and how it may or may not apply to your measurement. More details about this are described below in the mesaurementTypeID section.</p>
 <p>You can use codes from other collections (e.g. P06, Q01) for <code>measurementValueID</code> and <code>measurementUnitID</code> fields, but for <code>measurementTypeID</code> you must always use a code from the P01 collection (limited exceptions, see below).</p>
-<div id="selecting-p01-codes-for-measurementtypeid-work-in-progress" class="section level5 hasAnchor" number="4.8.1.1.1">
-<h5><span class="header-section-number">4.8.1.1.1</span> Selecting P01 codes for measurementTypeID (WORK IN PROGRESS)<a href="vocabulary.html#selecting-p01-codes-for-measurementtypeid-work-in-progress" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>P01 codes are concepts that are constructed from several associated elements (see <a href="https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf">P01 wheel</a>) in order to describe a measurement type. It is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object being measured, where was the measurement taken, in what environment, by what kind of methods? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. To further understand the P01 code and the semantic model it is based on, you can read documentation <a href="https://github.com/nvs-vocabs/P01">here</a>.</p>
+</div>
+<div id="selecting-p01-codes-for-measurementtypeid" class="section level5 hasAnchor" number="4.8.1.3.2">
+<h5><span class="header-section-number">4.8.1.3.2</span> Selecting P01 codes for measurementTypeID<a href="vocabulary.html#selecting-p01-codes-for-measurementtypeid" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>When selection P01 codes, it is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object or entity being measured, in what environment was the measurement taken, by what kind of methods, etc.? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. More documentation about the P01 code and the semantic model it is based on can be found <a href="https://github.com/nvs-vocabs/P01">here</a>.</p>
 <p>The P01 collection is found <a href="http://vocab.nerc.ac.uk/collection/P01/current/">here</a> and can be <a href="https://vocab.nerc.ac.uk/search_nvs/P01/">searched through the NERC vocabulary server</a>.</p>
 <p>You may notice when searching for measurement types related to an occurrence that specific taxonomic codes are available to you, e.g., abundance of Notommata. For OBIS, <strong>all P01 codes should be generalized</strong> - i.e. <strong>do not</strong> select species-specific codes. Instead only choose codes for “biological entities specified elsewhere” when the measurement is related to an occurrence record.</p>
-<p>To assist you in selecting the correct P01 code, we are working with <a href="https://www.bodc.ac.uk/">BODC</a> to develop decision trees. These decision trees will help you understand the uniqueness of your data measurement (e.g. to differentiate abundance per unit area of the bed vs per unit volume of the water body). An individual element of a P01 code may be found within different vocabulary collections (e.g. S02, L22, S22, etc.), but combining concepts together points you to a P01 code that most accurately represents your measurement type.</p>
-<p>General guidelines for understanding the different elements that make up a measurementType are in development and will be added to this page soon. In the meantime we recommend using either the the <a href="https://vocab.seadatanet.org/p01-facet-search">SeaDataNet P01 vocabulary search</a> or the <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/">NERC vocabulary builder</a> to assist in finding P01 codes.</p>
+<p>There are several ways of searching for a P01 code, but we highly recommend using the <a href="https://vocab.seadatanet.org/p01-facet-search">SeaDataNet P01 Facet Search</a>. You may notice when searching for measurement types related to an occurrence that specific taxonomic options are available to you, e.g., abundance of Notommata. For OBIS, <strong>all P01 codes should be generalized</strong> - i.e. do not select species-specific codes. Instead, only choose codes for “biological entities specified elsewhere”! This is due to the Darwin Core Archive structure - taxonomic identification is already specified in the Occurrence table, but measurements are recorded in the ExtendedMeasurementOrFact table.</p>
+<p>When you are comfortable and understand P01 codes, you can also use the <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/">BODC Vocabulary Builder</a> or simply search for terms directly on the <a href="http://vocab.nerc.ac.uk/search_nvs/">NERC Vocabulary Server</a>.</p>
 <p>For measurementTypes related to sampling instruments and/or methods attributes, see the Q01 collection:</p>
 <ul>
 <li>Vocabulary: <a href="http://vocab.nerc.ac.uk/collection/Q01/current/">http://vocab.nerc.ac.uk/collection/Q01/current/</a></li>
 <li>Search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/</a></li>
 </ul>
+<p>Use the follow decision tree to help you select P01 codes for biological, chemical, and/or physical measurements.</p>
+<div class="figure">
+<img src="images/P01-decisionTree.png" alt="" />
+<p class="caption"><em>Decision tree for measurement identifiers. Subject to updates for the measurementValue branch.</em></p>
 </div>
 </div>
-<div id="measurementvalueid" class="section level4 hasAnchor" number="4.8.1.2">
-<h4><span class="header-section-number">4.8.1.2</span> measurementValueID<a href="vocabulary.html#measurementvalueid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The <code>measurementValueID</code> field provides an identifying code for measurementValues that are non-numerical (e.g., sampling related, sex or life stage designation, etc.). It is not used for standardizing numeric measurements.</p>
-<p>See examples:</p>
-<ul>
-<li>Sampling instruments and sensors (SeaVoX Device Catalogue)
-<ul>
-<li>documentation: <a href="https://github.com/nvs-vocabs/L22">https://github.com/nvs-vocabs/L22</a></li>
-<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/L22/current">http://vocab.nerc.ac.uk/collection/L22/current</a></li>
-<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/</a></li>
-</ul></li>
-<li>Sampling instrument categories (SeaDataNet device categories)
-<ul>
-<li>documentation: <a href="https://github.com/nvs-vocabs/L05">https://github.com/nvs-vocabs/L05</a></li>
-<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/L05/current">http://vocab.nerc.ac.uk/collection/L05/current</a></li>
-<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/</a></li>
-</ul></li>
-<li>Vessels (ICES Platform Codes)
-<ul>
-<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/C17/current">http://vocab.nerc.ac.uk/collection/C17/current</a></li>
-<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/</a></li>
-</ul></li>
-<li>Sex (Gender)
-<ul>
-<li>documentation: <a href="https://github.com/nvs-vocabs/S10">https://github.com/nvs-vocabs/S10</a></li>
-<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/S10/current/">http://vocab.nerc.ac.uk/collection/S10/current/</a></li>
-<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/</a><br />
-</li>
-</ul></li>
-<li>Lifestage
-<ul>
-<li>documentation: <a href="https://github.com/nvs-vocabs/S11">https://github.com/nvs-vocabs/S11</a></li>
-<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/S11/current/">http://vocab.nerc.ac.uk/collection/S11/current/</a></li>
-<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/</a></li>
-</ul></li>
-<li>Papers or manuals on the sampling protocol used
-<ul>
-<li>DOI</li>
-<li>Handle for publications on IOC’s <a href="http://www.oceanbestpractices.net/">Ocean Best Practices repository</a>, for example: <a href="http://hdl.handle.net/11329/304">http://hdl.handle.net/11329/304</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="measurementunitid" class="section level4 hasAnchor" number="4.8.1.3">
-<h4><span class="header-section-number">4.8.1.3</span> MeasurementUnitID<a href="vocabulary.html#measurementunitid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The <code>measurementUnitID</code> field is used to provide a URI for specific units. You should populate this field with codes from the <a href="https://vocab.nerc.ac.uk/search_nvs/P06/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">P06</a> collection.</p>
-<p>Some relevant links for this field include:</p>
-<ul>
-<li>Documentation: <a href="https://github.com/nvs-vocabs/P06">https://github.com/nvs-vocabs/P06</a></li>
-<li>Vocabulary list: <a href="http://vocab.nerc.ac.uk/collection/P06/current">http://vocab.nerc.ac.uk/collection/P06/current</a></li>
-<li>Search list: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/</a></li>
-</ul>
 </div>
 </div>
 <div id="requesting-new-vocabulary-terms" class="section level3 hasAnchor" number="4.8.2">
 <h3><span class="header-section-number">4.8.2</span> Requesting new vocabulary terms<a href="vocabulary.html#requesting-new-vocabulary-terms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you have already tried looking for a P01 code and were unable to identify a suitable code for your <code>measurementType</code> you must then request a code to be created. To do this, your request must be submitted via:</p>
+<p>If you have already tried looking for a P01 code and were unable to identify a suitable code for your <code>measurementType</code> you must then request a code to be created. Before doing so, make sure you have not over filtered the search results. Then, to request a new term, your request must be submitted via:</p>
 <ul>
 <li>Submit request through the OBIS Vocabulary GitHub repository (<a href="https://github.com/nvs-vocabs/OBISVocabs/issues" class="uri">https://github.com/nvs-vocabs/OBISVocabs/issues</a>)
 <ul>
@@ -575,6 +645,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Note: these requests should be based on combinations of existing concepts</li>
 </ul></li>
 </ul>
+<p>We strongly recommend you use GitHub if you can, as it allows longer-term documentation, and can be relevant for other users who may be interested in the same type of code creation.</p>
+<p>Finally, if you are unsure about whether a code fits your specific case, please feel free to ask questions to the Vocab channel on the <a href="https://join.slack.com/t/obishq/shared_invite/zt-1yiucrrrq-RZRPU7c4rm7OungiBseWVA">OBIS Slack</a>.</p>
 <div id="how-to-submit-a-github-vocabulary-request" class="section level4 hasAnchor" number="4.8.2.1">
 <h4><span class="header-section-number">4.8.2.1</span> How to Submit a GitHub Vocabulary Request<a href="vocabulary.html#how-to-submit-a-github-vocabulary-request" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
