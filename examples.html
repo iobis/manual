@@ -2044,12 +2044,16 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </table>
 <p><strong>extendedMeasurementOrFact (eMoF) extension:</strong></p>
 <p>The eMoF table contains the measurement information and data of each occurrence. This extension is also linked to the Event core using the <code>eventID</code>, and linked to the Occurrence table using the <code>occurrenceID</code>. The various measurements are populated with <code>measurementType</code>, <code>measurementTypeID</code>, <code>measurementUnit</code>, <code>measurementUnitID</code>, <code>measurementValue</code>, <code>measurementValueID</code>, <code>measurementAccuracy</code>, <code>measurementMethod</code>, <code>measurementDeterminedBy</code> and <code>measurementDeterminedDate</code>. The example dataset of <a href="http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia">Seagrass Monitoring at Chengue Bay, Colombia</a> recorded a number of measurements and can be used as an example of how to populate the respective fields:</p>
-<table>
+<table style="width:100%;">
 <colgroup>
+<col width="8%" />
+<col width="9%" />
+<col width="15%" />
+<col width="13%" />
+<col width="19%" />
+<col width="6%" />
+<col width="8%" />
 <col width="18%" />
-<col width="20%" />
-<col width="32%" />
-<col width="28%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -2057,92 +2061,6 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 <th>occurrenceID</th>
 <th>measurementID</th>
 <th>measurementType</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-PhyQ01</td>
-<td>WaterTemp</td>
-</tr>
-<tr class="even">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-PhyQ02</td>
-<td>Salinity</td>
-</tr>
-<tr class="odd">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-PhyQ03</td>
-<td>Dissolved oxygen</td>
-</tr>
-<tr class="even">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-T1C1-shoot-01</td>
-<td>Shoot Density</td>
-</tr>
-<tr class="odd">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-T1C1-leafLenght-01</td>
-<td>Leaf Length</td>
-</tr>
-<tr class="even">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-T1N1-DryBiomass</td>
-<td>Total Dry Biomass</td>
-</tr>
-<tr class="odd">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-T1N1-biomassGL</td>
-<td>Dry biomass of green leaves</td>
-</tr>
-<tr class="even">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-T1N1-biomassNGL</td>
-<td>Dry biomass of non green leaves</td>
-</tr>
-<tr class="odd">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-T1N1-biomassSH</td>
-<td>Dry biomass of the shoots</td>
-</tr>
-<tr class="even">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-T1N2-biomassR</td>
-<td>Dry biomass of the roots</td>
-</tr>
-<tr class="odd">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-T1N2-biomassRIZ</td>
-<td>Dry biomass of the rizome</td>
-</tr>
-<tr class="even">
-<td>USBsg-chengue-pastocoral</td>
-<td>USBsg-chengue-pastocoral-tt</td>
-<td>USBsg-chengue-pastocoral-T1N2-biomassOTH</td>
-<td>Dry biomass of other seagrass species</td>
-</tr>
-</tbody>
-</table>
-<table>
-<colgroup>
-<col width="37%" />
-<col width="11%" />
-<col width="16%" />
-<col width="34%" />
-</colgroup>
-<thead>
-<tr class="header">
 <th>measurementTypeID</th>
 <th>measurementValue</th>
 <th>measurementUnit</th>
@@ -2151,72 +2069,120 @@ Figure: A representation of the observation events of <a href="http://ipt.vliz.b
 </thead>
 <tbody>
 <tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-PhyQ01</td>
+<td>WaterTemp</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P01/current/TEMPPP01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/TEMPPP01/</a></td>
 <td>29.23</td>
 <td>Degrees Celsius</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPAA/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPAA/</a></td>
 </tr>
 <tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-PhyQ02</td>
+<td>Salinity</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P01/current/SSALSL01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/SSALSL01/</a></td>
 <td>36</td>
 <td>Parts per thousand</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPPT/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPPT/</a></td>
 </tr>
 <tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-PhyQ03</td>
+<td>Dissolved oxygen</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P01/current/DOXYSE02/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/DOXYSE02/</a></td>
 <td>6.58</td>
 <td>Milligrams per litre</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UMGL/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UMGL/</a></td>
 </tr>
 <tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1C1-shoot-01</td>
+<td>Shoot Density</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/</a></td>
 <td>128</td>
 <td>Number per square metre</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPMS/</a></td>
 </tr>
 <tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1C1-leafLenght-01</td>
+<td>Leaf Length</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P01/current/OBSMAXLX/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/OBSMAXLX/</a></td>
 <td>18</td>
 <td>Centimetres</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/ULCM/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/ULCM/</a></td>
 </tr>
 <tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N1-DryBiomass</td>
+<td>Total Dry Biomass</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
 <td>0.32055</td>
 <td>Grams per square metre</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
 </tr>
 <tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N1-biomassGL</td>
+<td>Dry biomass of green leaves</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
 <td>0.05575</td>
 <td>Grams per square metre</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
 </tr>
 <tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N1-biomassNGL</td>
+<td>Dry biomass of non green leaves</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
 <td>0.1469</td>
 <td>Grams per square metre</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
 </tr>
 <tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N1-biomassSH</td>
+<td>Dry biomass of the shoots</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
 <td>0.07625</td>
 <td>Grams per square metre</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
 </tr>
 <tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N2-biomassR</td>
+<td>Dry biomass of the roots</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
 <td>0.0385</td>
 <td>Grams per square metre</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
 </tr>
 <tr class="odd">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N2-biomassRIZ</td>
+<td>Dry biomass of the rizome</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
 <td>0.02725</td>
 <td>Grams per square metre</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/P06/current/UGMS/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UGMS/</a></td>
 </tr>
 <tr class="even">
+<td>USBsg-chengue-pastocoral</td>
+<td>USBsg-chengue-pastocoral-tt</td>
+<td>USBsg-chengue-pastocoral-T1N2-biomassOTH</td>
+<td>Dry biomass of other seagrass species</td>
 <td><a href="http://vocab.nerc.ac.uk/collection/S06/current/S0600087/" class="uri">http://vocab.nerc.ac.uk/collection/S06/current/S0600087/</a></td>
 <td>0</td>
 <td>Grams per square metre</td>
