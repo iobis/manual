@@ -313,35 +313,20 @@ The Occurrence extension table contain data for each occurrence with an `occurre
 
 The eMoF table contains the measurement information and data of each occurrence. This extension is also linked to the Event core using the `eventID`, and linked to the Occurrence table using the `occurrenceID`. The various measurements are populated with `measurementType`, `measurementTypeID`, `measurementUnit`, `measurementUnitID`, `measurementValue`, `measurementValueID`, `measurementAccuracy`, `measurementMethod`, `measurementDeterminedBy` and `measurementDeterminedDate`. The example dataset of [Seagrass Monitoring at Chengue Bay, Colombia](http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia) recorded a number of measurements and can be used as an example of how to populate the respective fields:
 
-| eventID                  | occurrenceID                | measurementID                               | measurementType                       |
-|--------------------------|-----------------------------|---------------------------------------------|---------------------------------------|
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-PhyQ01             | WaterTemp                             |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-PhyQ02             | Salinity                              |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-PhyQ03             | Dissolved oxygen                      |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1C1-shoot-01      | Shoot Density                         |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1C1-leafLenght-01 | Leaf Length                           |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-DryBiomass    | Total Dry Biomass                     |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-biomassGL     | Dry biomass of green leaves           |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-biomassNGL    | Dry biomass of non green leaves       |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-biomassSH     | Dry biomass of the shoots             |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassR      | Dry biomass of the roots              |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassRIZ    | Dry biomass of the rizome             |
-| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassOTH    | Dry biomass of other seagrass species |
-
-| measurementTypeID                                        | measurementValue | measurementUnit         | measurementUnitID                                    |
-|----------------------------------------------------------|------------------|-------------------------|------------------------------------------------------|
-| <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPP01/> | 29.23            | Degrees Celsius         | <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> |
-| <http://vocab.nerc.ac.uk/collection/P01/current/SSALSL01/> | 36               | Parts per thousand      | <http://vocab.nerc.ac.uk/collection/P06/current/UPPT/> |
-| <http://vocab.nerc.ac.uk/collection/P01/current/DOXYSE02/> | 6.58             | Milligrams per litre    | <http://vocab.nerc.ac.uk/collection/P06/current/UMGL/> |
-| <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/> | 128              | Number per square metre | <http://vocab.nerc.ac.uk/collection/P06/current/UPMS/> |
-| <http://vocab.nerc.ac.uk/collection/P01/current/OBSMAXLX/> | 18               | Centimetres             | <http://vocab.nerc.ac.uk/collection/P06/current/ULCM/> |
-| <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.32055          | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
-| <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.05575          | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
-| <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.1469           | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
-| <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.07625          | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
-| <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.0385           | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
-| <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.02725          | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
-| <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0                | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
+| eventID                  | occurrenceID                | measurementID                               | measurementType                       | measurementTypeID                                        | measurementValue | measurementUnit         | measurementUnitID                                    |
+|--------------------------|-----------------------------|---------------------------------------------|---------------------------------------|----------------------------------------------------------|------------------|-------------------------|------------------------------------------------------|
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-PhyQ01             | WaterTemp                             | <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPP01/> | 29.23            | Degrees Celsius         | <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-PhyQ02             | Salinity                              | <http://vocab.nerc.ac.uk/collection/P01/current/SSALSL01/> | 36               | Parts per thousand      | <http://vocab.nerc.ac.uk/collection/P06/current/UPPT/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-PhyQ03             | Dissolved oxygen                      | <http://vocab.nerc.ac.uk/collection/P01/current/DOXYSE02/> | 6.58             | Milligrams per litre    | <http://vocab.nerc.ac.uk/collection/P06/current/UMGL/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1C1-shoot-01      | Shoot Density                         | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/> | 128              | Number per square metre | <http://vocab.nerc.ac.uk/collection/P06/current/UPMS/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1C1-leafLenght-01 | Leaf Length                           | <http://vocab.nerc.ac.uk/collection/P01/current/OBSMAXLX/> | 18               | Centimetres             | <http://vocab.nerc.ac.uk/collection/P06/current/ULCM/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-DryBiomass    | Total Dry Biomass                     | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.32055          | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-biomassGL     | Dry biomass of green leaves           | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.05575          | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-biomassNGL    | Dry biomass of non green leaves       | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.1469           | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N1-biomassSH     | Dry biomass of the shoots             | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.07625          | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassR      | Dry biomass of the roots              | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.0385           | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassRIZ    | Dry biomass of the rizome             | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.02725          | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
+| USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassOTH    | Dry biomass of other seagrass species | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0                | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
 
 #### Zooplankton biomass and diversity
 
