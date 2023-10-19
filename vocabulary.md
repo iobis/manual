@@ -2,8 +2,8 @@
 
 **Content**
 
-* [Map data fields toDarwin Core](#map-data-fields-to-darwin-core)
-* [Map eMoF measurement identifierss](#map-data-fields-to-darwin-core)
+* [Map data fields to Darwin Core](#map-data-fields-to-darwin-core)
+* [Map eMoF measurement identifiers](#map-data-fields-to-darwin-core)
   * [MeasurementOrFact vocabulary background](#measurementorfact-vocabulary-background)
   * [Guidelines to populate measurementUnitID](#guidelines-to-populate-measurementunitid)
   * [Guidelines to populate measurementValueID](#guidelines-to-populate-measurementvalueid)

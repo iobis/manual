@@ -1,4 +1,4 @@
-## DNA dervived data
+## DNA derived data
 
 **Contents:**
 
