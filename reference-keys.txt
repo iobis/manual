@@ -94,7 +94,7 @@ how-to-format-extendedmeasurementorfact-tables
 what-data-goes-into-emof
 how-to-structure-emof
 stepwise-guidance-to-format-emof-table-in-excel
-dna-dervived-data
+dna-derived-data
 introduction-1
 how-to-find-genetic-data-in-obis
 guidelines-for-compiling-genetic-data-edna-and-metabarcoding-datasets
