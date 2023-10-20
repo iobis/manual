@@ -208,3 +208,4 @@ other-resources
 mbon-pole-to-pole-tutorial
 ioos-darwin-core-guide
 emodnet-biology
+template-generators
