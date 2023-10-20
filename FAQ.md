@@ -74,9 +74,9 @@
   <li><details>
   <summary>Is there a template generator I can use to help create my Event, Occurrence, and eMoF tables?</summary>
 
-  Yes. There is an [Excel template generator](https://sios-svalbard.org/aen/template-generator/) developed by Luke Marsden & Olaf Schneider as part of the Nansen Legacy project. Note this template generator is aimed at GBIF users, so make to account for required OBIS terms.
+  Yes. There is an [Excel template generator](https://www.nordatanet.no/aen/template-generator/config%3DDarwin%20Core) developed by Luke Marsden & Olaf Schneider as part of the Nansen Legacy project. Note this template generator is aimed at GBIF users, so make to account for and include required OBIS terms.
 
-  There is also this [Excel to Darwin Core macro tool](https://zenodo.org/record/6453921#.Y9KsQkHMKmU) you can use to help generate templates.
+  There is also this [Excel to Darwin Core macro tool](https://zenodo.org/record/6453921#.Y9KsQkHMKmU) developed by GBIF Norway you can use to help generate templates.
 
   </details></li>
   <li><a href="common_qc.html#uncertain-geolocation">How do I georeference locations, including text-based descriptions?</a></li>

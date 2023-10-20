@@ -2,7 +2,7 @@
 
 # Other Resources
 
-In this section we highlight resources created by collaborators.
+In this section we highlight useful resources created by collaborators and other community members.
 
 ## MBON Pole to Pole Tutorial
 
@@ -21,3 +21,9 @@ This book contains a collection of examples and resources related to mobilizing 
 - <https://classroom.oceanteacher.org/course/view.php?id=430>
 
 Contributing Datasets to EMODnet Biology is a course hosted on [Ocean Teacher Global Academy (OTGA)](https://classroom.oceanteacher.org/), developed by members of the [European Marine Observation and Data Network](https://emodnet.ec.europa.eu/en). The course prepares users to format, publish, and perform quality control checks on datasets according to Darwin Core standards. While targeted at EMODnet Biology users, this course has significant overlap in how to prepare datasets for OBIS and is useful for those unfamiliar with OBIS standards. Note, an account with OTGA is required to access the course.
+
+## Template Generators
+
+There is an [Excel template generator](https://www.nordatanet.no/aen/template-generator/config%3DDarwin%20Core) developed by Luke Marsden & Olaf Schneider as part of the Nansen Legacy project. It allows the creation of Event or Occurrence core templates, with an optional eMoF extension. Note this template generator is aimed at GBIF users, so make sure to account for and include required OBIS terms.
+
+There is also an [Excel to Darwin Core macro tool](https://zenodo.org/record/6453921#.Y9KsQkHMKmU) developed by GBIF Norway that you can download for use in Microsoft Excel. This macro can help you set up Event, Occurrence, and eMoF tables by selecting all relevant DwC fields from a list, or by importing data from another spreadsheet. It allows for auto-generation of identifiers (e.g. eventID, occurrenceID) if macros are enabled, and can also auto-populate the eMoF when measurement fields in the Occurrence table are populated.
