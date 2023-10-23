@@ -2,7 +2,7 @@
 
 **Contents:**
 
-- [Introduction](#introduction)
+- [Introduction](#introduction-to-dna-data)
 - [How to find genetic data in OBIS](#how-to-find-genetic-data-in-obis)
 - [Guidelines for eDNA and metabarcoding data](#guidelines-for-compiling-genetic-data-edna-and-metabarcoding-datasets)
   - [eDNA & DNA Derived use cases](#edna-and-dna-derived-data-example)
@@ -10,7 +10,7 @@
 - [Unknown sequences](#unknown-sequences)
 - [Guidelines for qPCR data](#guidelines-for-compiling-genetic-data-qpcr)
 
-### Introduction
+### Introduction to DNA data
 
 DNA derived data are increasingly being used to document taxon occurrences. This genetic data may come from a sampling event, an individual organism, may be linked to physical material (or not), or may result from DNA detection methods e.g., metabarcoding or qPCR. Thus genetic data may reflect a single organism, or may include information from bulk samples with many individuals. Still, DNA-derived occurrence data of species should be documented as standardized and as reproducible as possible.
 

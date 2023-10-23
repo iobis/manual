@@ -8,20 +8,30 @@
 
 #### Multimedia data (Acoustic, Imaging)
 
-If you have multimedia data (e.g. images, acoustic, video) that you want to publish alongside your dataset, you can do so by documenting information in the `associatedMedia` field in your Occurrence table. The usage of this field requires the media in question to be hosted somewhere, e.g., a publication, museum database, etc. Then you simply copy this link to the  `associatedMedia` field for a given occurrence. You may also include a concatenated list if you need to list multiple sources.
+If you have multimedia data (e.g. images, acoustic, video) that you want to publish alongside your dataset, you can do so by documenting information in the `associatedMedia` field in your Occurrence table. The usage of this field requires the media in question to be hosted somewhere with a persistent URL of the annotated image(s), e.g., a publication, museum database, etc. Then you simply copy this link to the  `associatedMedia` field for a given occurrence. You may also include a concatenated list if you need to list multiple sources.
 
 While there are Core types and extensions (e.g., [Audubon Core](https://rs.gbif.org/extension/ac/audubon_2020_10_06.xml) and [Simple Multimedia extension](https://rs.gbif.org/extension/gbif/1.0/multimedia.xml)) designed for image, video, and audio files, these data file types are not currently processed by OBIS. Thus for now we recommended to include links in the `associatedMedia` field. Stay tuned however, as OBIS is looking to incorporate the Simple Multimedia extension.
 
-For datasets with imaging or acoustic data, we strongly recommend including the following terms in your Occurrence table:
+[Martin-Cabrera et al., 2022](http://dx.doi.org/10.25607/OBP-1742) have produced a best practices for datasets with plankton imaging data that can also apply to acoustic and other imaging data types. Following their guidelines, we strongly recommend including the following terms in your Occurrence table for either of these data types:
 
+* [`basisOfRecord`](https://dwc.tdwg.org/terms/#dwc:basisOfRecord) - recommended best practice is to always use the term of `MachineObservation`, especially for imaging datasets derived from imaging instruments
 * [`identifiedBy`](https://dwc.tdwg.org/list/#dwc_identifiedBy) - name(s) of persons involved in verifying taxon identification, particularly if automatic identification was made by a software and then validated by a human
 * [`identificationVerificationStatus`](https://dwc.tdwg.org/list/#dwc_identificationVerificationStatus) - categorical indicator for the extent of taxonomic identification verification. Recommended to use PredictedByMachine or ValidatedByHuman
-* [`identificationReferences`](http://rs.tdwg.org/dwc/terms/identificationReferences) - references used in identification (e.g. citation and version of software that identified taxa)
+* [`identificationReferences`](http://rs.tdwg.org/dwc/terms/identificationReferences) - references used in identification (e.g. citation and version of software or algorithm that identified taxa)
+
+The fields `identifiedBy` and `identificationVerificationStatus` are crucial to indicate whether an observation has been validated, and by whom. These fields allow users to filter data when `basisOfRecord` = MachineObservation, so that they can be confident in the taxonomic identification when `identificationVerificationStatus` = ValidatedByHuman (Martin-Cabrera et al., 2022).
+
+The `identificationVerificationStatus` also has implications for documenting grouped occurrences, particularly for planktonic organisms. For example, if all identifications for a specific taxon in a sample has the same `identificationVerificationStatus`, you ony need **one** occurrence record with one associated unique occurrenceID. Then, the summed count or concentration for that taxon can be reported in the eMoF as, e.g. “Abundance of biological entity specified elsewhere per unit volume of the water body”. However, if individuals of a taxon have more than one `identificationVerificationStatus` (e.g. ValidatedByHuman and PredictedByMachine), you will need **two** occurrence records with associated unique occurrenceIDs. The two records will document the same taxon with different `identificationVericationStatus`, and with different summed concentrations of abundance reported in the eMoF.
 
 **Example Resources:**
-Martin-Cabrera et al. (2022) have created a best practices document for [plankton imaging data](https://repository.oceanbestpractices.org/handle/11329/1917) that you can also reference. To see an example imaging dataset implementing these best practices, see the supplementary material of [Establishing Plankton Imagery Dataflows Towards International Biodiversity Data Aggregators](https://biss.pensoft.net/article/94196/instance/7973477/).
+Martin-Cabrera et al. (2022) have created a best practices document for [plankton imaging data](https://repository.oceanbestpractices.org/handle/11329/1917) that you can reference. To see an example imaging dataset implementing these best practices, see the supplementary material of [Establishing Plankton Imagery Dataflows Towards International Biodiversity Data Aggregators](https://biss.pensoft.net/article/94196/instance/7973477/).
 
-Data originating from ROV (Remote Operating Vehicle) observations may require additional processing. Ocean Networks Canada (ONC) is developing a [pipeline for publishing ROV data to OBIS](https://doi.org/10.1109/OCEANS47191.2022.9977379). ROV datasets should have an Event core that documents the hierarchical nature of ROV dives (e.g., ROV dives nested within a cruise), with Occurrence and eMoF extensions to record taxonomic and other measurement data e.g., from sensors. ONC’s pipeline outlines the importance of including `identifiedBy` in order to vet taxon identifications by experts.
+Data originating from ROV (Remote Operating Vehicle) observations may require additional processing. Ocean Networks Canada (ONC) is developing a [pipeline for publishing ROV data to OBIS](https://doi.org/10.1109/OCEANS47191.2022.9977379). ROV datasets should have:
+
+* An Event core that documents the hierarchical nature of ROV dives (e.g., ROV dives nested within a cruise)
+* Occurrence and eMoF extensions to record taxonomic and other measurement data e.g., from sensors.
+
+ONC’s pipeline outlines the importance of including `identifiedBy` in order to vet taxon identifications by experts.
 
 #### Habitat data
 
