@@ -95,7 +95,7 @@ what-data-goes-into-emof
 how-to-structure-emof
 stepwise-guidance-to-format-emof-table-in-excel
 dna-derived-data
-introduction-1
+introduction-to-dna-data
 how-to-find-genetic-data-in-obis
 guidelines-for-compiling-genetic-data-edna-and-metabarcoding-datasets
 edna-and-dna-derived-data-example
