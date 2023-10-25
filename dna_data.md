@@ -95,6 +95,7 @@ In addition to the [usual required terms for Occurrence datasets](format_occurre
 - Class Identification | DwC: identificationReferences
 - Class Identification | DwC: verbatimIdentification
 - Class Taxon | DwC: taxonConceptID
+- Class Material Sample | DwC:materialSampleID
 
 For `organismQuantity` and `sampleSizeValue` in eDNA datasets, the quantities recorded with sequencing studies always represent relative abundance to the total reads in the sample, and cannot be directly compared across samples. This is due to the nature of the sample processing protocol and the amplification of DNA with PCR, which biases the original quantities. In `organismQuantity`, record the amount of a unique sequence in a specific sample (i.e. 33 reads). In `sampleSizeValue`, record the total number of all reads in that specific sample (i.e. 15310 reads). This information will allow people accessing the data to calculate the relative abundance of that sequence in the sample. The fields `organismQuantityType`, and `sampleSizeUnit`, should be populated with “DNA sequence reads”, as it is of high importance that sequence abundances are not confused with organism abundances recorded by traditional methods. The abundance information can usually be found in the “OTU-table”.
 
