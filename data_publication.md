@@ -22,7 +22,7 @@ Details for each of these steps are outlined on the subsequent pages. We will st
 
 OBIS nodes must make the necessary agreements with the original data providers so that data can be made available to OBIS under one of the following Creative Commons licenses (in order of preference):
 
-* [CC0](https://creativecommons.org/publicdomain/zero/1.0/) -  data may be used without restrictions
+* [CC-0](https://creativecommons.org/publicdomain/zero/1.0/) -  data may be used without restrictions
 * [CC-BY](https://creativecommons.org/licenses/by/4.0/) - data are available for any use if proper attribution and credit is given
 * [CC-BY-NC](https://creativecommons.org/licenses/by-nc/4.0/) - data may be used for any non-commercial use as long as proper attribution/credit is given
 

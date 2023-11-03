@@ -15,7 +15,11 @@ Unless data are collected through activities funded by IOC/IODE, neither UNESCO,
 
 #### Data sharing agreement
 
-The data providers retain all rights and responsibilities associated with the data they make available to OBIS via the OBIS nodes. The OBIS nodes warrant that they have made the necessary agreements with the original data providers that it can make the data available to OBIS data under the [Creative Commons licenses](data_publication.html#licenses).
+The data providers retain all rights and responsibilities associated with the data they make available to OBIS via the OBIS nodes. The OBIS nodes warrant that they have made the necessary agreements with the original data providers that it can make the data available to OBIS data under the following [Creative Commons licenses](data_publication.html#licenses):
+
+* [CC-0](https://creativecommons.org/publicdomain/zero/1.0/) (most preferred)
+* [CC-BY](https://creativecommons.org/licenses/by/4.0/)
+* [CC-BY-NC](https://creativecommons.org/licenses/by-nc/4.0/) (least preferred)
 
 The data providers are responsible for the completeness of the data and metadata profiles. When data is made available to OBIS, OBIS is granted permission to:
 
@@ -33,6 +37,8 @@ The data in OBIS are freely available to everyone, following the principles of e
 * Respect the data providers, and provide helpful feedback on data quality.
 * In the case you are a custodian of biogeographic data yourself you should take action to also publish these data through OBIS.
 * Consider sponsoring or partnering with OBIS and its OBIS nodes in grant proposal writing. Creating a global database like OBIS cannot happen without the, often voluntary, contribution of many scientists and data managers all over the world. Several activities, such as the coordination, data aggregation, quality control, database and website maintenance require resources including manpower at national and international level. A list of sponsors can be found [here](https://obis.org/about/sponsor/)
+
+For guidelines on how to cite data obtained from OBIS, see the [Citing section](citing.html) of the Manual.
 
 #### Disclaimer
 
