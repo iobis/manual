@@ -1,3 +1,6 @@
+---
+tbl-cap-location: bottom
+---
 ### Darwin Core
 
 **Contents**
@@ -145,13 +148,15 @@ Examples:
 | urn:lsid:marinespecies.org:taxname:140584 | Ennucula tenuis       | Animalia | Mollusca | Bivalvia   |
 | urn:lsid:marinespecies.org:taxname:131573 | Terebellides stroemii | Animalia | Annelida | Polychaeta |
 
+: {.responsive .striped .hover}
+
 | order       | family           | genus        | specificEpithet | scientificNameAuthorship |
 |-------------|------------------|--------------|-----------------|--------------------------|
 | Nuculanoida | Yoldiidae        | Yoldiella    | nana            | (Sars M., 1865)          |
 | Nuculoida   | Nuculidae        | Ennucula     | tenuis          | (Montagu, 1808)          |
 | Terebellida | Trichobranchidae | Terebellides | stroemii        | Sars, 1835               |
 
-_Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/resource?r=largenet_k2)._
+: _Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/resource?r=largenet_k2)._ {.responsive .striped .hover}
 
 If the record represents a nomenclatural type specimen, the term `typeStatus` can be used, e.g. for holotype, syntype, etc.
 
@@ -177,6 +182,8 @@ Examples:
 |Nematocarcinus       | Milne-Edwards, 1881                     | urn:lsid:marinespecies.org:taxname:107015 | genus     | sp.indet.                |Nematocarcinus sp.indet.             |
 |Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                 |Brisinga gen.inc.                    |
 |Brisinga costata     | Verrill, 1884                           | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                  |Brisinga costata sp.inc.             |
+: {.responsive .striped .hover}
+
 
 ##### Occurrence
 
@@ -206,7 +213,7 @@ Example:
 | SluiceDock_benthic_1976/1981 | SluiceDock_benthic_1976_2            | SluiceDock_benthic_1976_2            | present          |
 | SluiceDock_benthic_1976/1981 | SluiceDock_benthic_1979-07/1980-06_1 | SluiceDock_benthic_1979-07/1980-06_1 | present          |
 
-_Data from [A summary of benthic studies in the sluice dock of Ostend during 1976-1981](http://ipt.vliz.be/eurobis/resource?r=summary_of_benthic_studies_in_the_sluice_dock_ostend_during_1976-1981)._
+: _Data from [A summary of benthic studies in the sluice dock of Ostend during 1976-1981](http://ipt.vliz.be/eurobis/resource?r=summary_of_benthic_studies_in_the_sluice_dock_ostend_during_1976-1981)._ {.responsive .striped .hover}
 
 ##### Record level terms
 
@@ -242,7 +249,8 @@ The name of the place or location can be provided in `locality`, and if possible
 
 A [Well-Known Text](https://en.wikipedia.org/wiki/Well-known_text) (WKT) representation of the shape of the location can be provided in `footprintWKT`. This is particularly useful for tracks, transects, tows, trawls, habitat extent or when an exact location is not known. WKT strings can be created using our [WKT tool](https://obis.org/maptool). This tool also calculates a midpoint and a radius, which can then be added to `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively. There is also an [R tool](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) to calculate the centroid and radius for WKT polygons. [wktmap.com](https://wktmap.com) can be used to visualize and share WKT strings.
 
-<img src="images/wkttool2.png" class="img-responsive"/>
+<!--<img src="images/wkttool2.png" class="img-responsive"/>-->
+![](images/wkttool2.png)
 
 Some examples of WKT strings:
 
@@ -261,7 +269,7 @@ Example:
 | 42.72           | 15.228           | EPSG:4326     | 154338.87                     | LINESTRING (16.64 41.80, 13.82 43.64) | EPSG:4326    |
 | 39.292          | 20.364           | EPSG:4326     | 162083.27                     | LINESTRING (19.05 40.34, 21.68 38.25) | EPSG:4326    |
 
-_Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018](http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018)._
+: _Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018](http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018)._ {.responsive .striped .hover}
 
 Keep in mind while filling in [`minimumDepthInMeters`](http://rs.tdwg.org/dwc/terms/maximumDepthInMeters) and [`maximumDepthInMeters`](http://rs.tdwg.org/dwc/terms/minimumDepthInMeters) that this should be the depth at which the **sample was taken** and not the water column depth at that location. When fillling in any depth fields (`minimumDepthInMeters`, `maximumDepthInMeters`, [`minimumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters), and [`maximumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters)), you should also consider which information is needed to fully understand the data. In most cases (e.g. scenario 1 and 4 in the figure below), providing `minimumDepthInMeters` and `maximumDepthInMeters` is sufficient for observations of organisms at particular depths. However, in cases where an occurrence is above the sea surface, e.g. flying birds (scenario 2 and 5),  you should populate `minimumDistanceAboveSurfaceInMeters`, `maximumDistanceAboveSurfaceInMeters`, and, where relevant, you should also include [`minimumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_minimumElevationInMeters) and [`maximumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_maximumElevationInMeters).
 
@@ -278,6 +286,7 @@ Depth scenario examples:
 | 3 | 100 | 100 | 0 | -1.5 | 0 | 0 |
 | 4 | 20 | 22 | - | - | 0 | 0 |
 | 5 | 0 | 0 | 10 | 15 | 10 | 10 |
+: {.responsive .striped .hover}
 
 ##### Event
 
@@ -289,7 +298,8 @@ Depth scenario examples:
 
 The date and time at which an occurrence was recorded goes in `eventDate`. This term uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601) and OBIS recommends using the extended ISO 8601 format with hyphens.
 
-<img src="https://imgs.xkcd.com/comics/iso_8601.png" class="img-responsive"/>
+<!--<img src="https://imgs.xkcd.com/comics/iso_8601.png" class="img-responsive"/>-->
+![](https://imgs.xkcd.com/comics/iso_8601.png){fig-align="center"}
 
 More specific guidelines on formatting dates and times can be found in the [Common Data formatting issues page](common_formatissues.html#temporal-dates-and-times)
 
