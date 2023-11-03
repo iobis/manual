@@ -1,0 +1,14 @@
+---
+title: "R packages"
+description: "Enable the download of data from OBIS"
+date: 2023-08-01
+categories: 
+  - R
+---
+
+# robis
+
+`robis`, our flagship R package, is a client for the OBIS API. It includes functions for data access, as well as a few helper functions for visualizing occurrence data and extracting nested MeasurementOrFact or DNADerivedData records.
+
+Available through CRAN (use install.packages("robis"))
+GitHub: https://github.com/iobis/robis

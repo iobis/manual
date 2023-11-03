@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: ../docs/tutorial
+  post-render: post-render-tutorial.R
+
+website:
+  title: "OBIS Manual" #Don't change this
+  navbar: 
+    background: light
+    logo: logo.png
+    logo-alt: "OBIS"
+    search: true
+    left: 
+    # Don't change those lines ####
+      - text: "Manual"
+        file: index.html
+      - text: "Tutorials"
+        file: tutorials.qmd
+      - text: "Packages"
+        file: packages.qmd
+      - text: "Find your DwC"
+        file: find-dwc.qmd
+        #########
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

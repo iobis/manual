@@ -1,0 +1,11 @@
+---
+title: "Tutorials"
+listing:
+  contents: tutorials
+  categories: true
+  type: default
+  sort: "date"
+  fields: [image, description, date, title, author, reading-time]
+  sort-ui: [title, date]
+  filter-ui: [title, date]
+---

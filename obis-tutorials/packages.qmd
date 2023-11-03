@@ -1,0 +1,8 @@
+---
+title: "Packages"
+listing:
+  contents: packages
+  type: grid
+  sort: "date"
+  fields: [image, description, title]
+---

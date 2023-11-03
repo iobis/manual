@@ -1,0 +1,62 @@
+project:
+  type: book
+  output-dir: ../docs
+
+book:
+  title: "OBIS Manual"
+  navbar: 
+    background: light
+    logo: logo.png
+    logo-alt: "OBIS"
+    search: true
+    left: 
+      - text: "Manual"
+        file: index.qmd
+        # Don't change those lines ####
+      - text: "Tutorials"
+        file: tutorials.html
+      - text: "Packages"
+        file: packages.html
+      - text: "Find your DwC"
+        file: find-dwc.html
+        #########
+  chapters:
+    - index.qmd
+    - part: "Overview"
+      chapters: 
+        - intro.qmd
+    - part: "Contributing data to OBIS"
+      chapters: 
+        - contribute.qmd
+    - part: "Data Formatting"
+      chapters: 
+        - formatting.qmd
+        - checklist.qmd
+    - part: "Ensuring Data Quality"
+      chapters: 
+        - data_qc.qmd
+    - part: "Publishing Data"
+      chapters: 
+        - data_publication.qmd
+    - part: "Access Data from OBIS"
+      chapters: 
+        - access.qmd
+    - part: "Data Visualization and Analysis"
+      chapters: 
+        - dataviz.qmd
+    - part: "Additional Resources"
+      chapters: 
+        - other_resources.qmd
+        
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+  # pdf:
+  #   documentclass: scrreprt
+
+
+

@@ -1,0 +1,15 @@
+[
+  {
+    "listing": "/packages.html",
+    "items": [
+      "/packages/python/index.html",
+      "/packages/r/index.html"
+    ]
+  },
+  {
+    "listing": "/tutorials.html",
+    "items": [
+      "/tutorials/arrow-obis-2023-09-08/index.html"
+    ]
+  }
+]
