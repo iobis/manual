@@ -44,15 +44,23 @@ OBIS currently accepts two core data table types: Occurrence core and Event core
 
 Some of the other main differences in how OBIS and GBIF structure and publish datasets that you should be aware of include:
 
-* OBIS uses [WoRMS](https://www.marinespecies.org/index.php) as the exclusive taxonomic backbone, whereas GBIF uses [Catalog of Life](https://www.catalogueoflife.org/)
+* OBIS uses [WoRMS](https://www.marinespecies.org/index.php) as the exclusive taxonomic backbone (and WoRMS identifiers to populate `scientificNameID`), whereas GBIF uses [Catalog of Life](https://www.catalogueoflife.org/) and does not currently require the use of taxonomic identifiers
 * The OBIS-ENV-DATA structure, the eMoF extension, and the DNA Derived data extensions are not included in GBIF downloads (e.g., [this dataset description](https://www.gbif.org/dataset/be77e203-486c-4651-91b9-8347968b728c#description)). This data can still be published alongside your dataset, and is available when it is downloaded from the Source archive, but it will not be included in a GBIF Annotated Archive download.
 * OBIS conducts some QC procedures that GBIF does not, including:
   * Checking validity of depth measurements
-  * Checking validity of of WoRMS LSID
+  * Checking validity of WoRMS LSID
   * Identifying if taxa are exclusively freshwater or terrestrial
 * GBIF includes most of the same [data standards](https://www.gbif.org/standards) as OBIS (Darwin Core, EML), however GBIF also follows the [Biological Collection Access Service (BioCASE/ABCD)](https://www.tdwg.org/standards/abcd/#parts%20of%20the%20standard)
 
-See below for a quick reference on which terms are required or recommended in OBIS and GBIF for Occurrence and Event tables.
+Watch the video below for details on how to publish OBIS datasets to GBIF (starting at 1:07), or how to publish GBIF datasets to OBIS (starting at 6:42).
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/HciufRG9hiI"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+
+See the tables below for a quick comparative reference on which terms are required or recommended in OBIS and GBIF for Occurrence and Event tables.
 
 **Event Table:**
 
