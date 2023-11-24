@@ -166,11 +166,11 @@ You can see that the eventDate for the parent events does not need to be provide
 
 ### Historical data
 
-OBIS recognizes the difficulties in formatting historical, archaeological and paleontological data series. Time-series are often misinterpreted, difficult to formulate, or confined to humanities disciplines rather than the “science” community. This kind of data is sometimes seen as “specialist” or “niche” when it comes to sharing in globally accepted databases that are accessible and recognised in academic, research and scientific forums.
+OBIS recognizes the difficulties in formatting historical, archaeological and paleontological data. This kind of data is sometimes seen as “specialist” or “niche” when it comes to sharing in globally accepted databases that are accessible and recognised in academic, research and scientific forums.
 
 Some of the nuances associated with historical data have to do with the change in calendar systems, from the [Julian calendar](https://en.wikipedia.org/wiki/Julian_calendar) to the currently used (by most countries) [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar) metric system. This change was implemented in 1582, so any datasets with data representing periods that predate this year **must** be checked and converted to the standard Gregorian calendar system. Additionally, there is [no year zero](https://en.wikipedia.org/wiki/Year_zero), only -1 and 1, where -1 is BCE (Before Common Era) and 1 is CE (Common Era). This can make interpretation of historical dates more challenging as such dates will need to be converted to align with ISO 8601 standards.
 
-To accommodate such challenges the OBIS Historical Data Project Team recommends the following: 
+To accommodate such challenges the OBIS Historical Data Project Team recommends the following:
 
 * Always populate `verbatimEventDate` with the originally documented date so that it can be preserved. Place converted dates that align to ISO 8601 in the `eventDate` field, and document the changes you made to the original in `eventRemarks`.
 * When the exact date is unknown, provide a date range, e.g. the period 21 November 1521 to 29 August 1612 records as 1521-11-21/1612-08-29.
