@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="huvjwfH_LWe6LAb27CaQ" name="Page-1">
-        <mxGraphModel dx="6205" dy="3195" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="5787" dy="3473" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -107,13 +107,13 @@
                     <mxGeometry x="285" y="613" width="139" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="30" value="Optional" style="text;html=1;strokeColor=none;fillColor=#FFFFCC;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="-155" y="-759.39" width="80" height="36.48" as="geometry"/>
+                    <mxGeometry x="-460" y="-820.28" width="80" height="40.28" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" value="Strongly recommended" style="text;html=1;strokeColor=none;fillColor=#FFCCCC;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="-245" y="-759.3900000000001" width="80" height="35.87" as="geometry"/>
+                    <mxGeometry x="-550" y="-819.98" width="80" height="39.98" as="geometry"/>
                 </mxCell>
                 <mxCell id="32" value="Pre-determined" style="text;html=1;strokeColor=none;fillColor=#CCFFCC;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="-61.99000000000001" y="-760" width="80" height="36.48" as="geometry"/>
+                    <mxGeometry x="-370" y="-820.59" width="80" height="40.59" as="geometry"/>
                 </mxCell>
                 <mxCell id="33" value="Terms in S07 if interested" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFCC;fontSize=12;" parent="1" vertex="1">
                     <mxGeometry x="543.74" y="597.4" width="69.01" height="60" as="geometry"/>
@@ -233,11 +233,11 @@
                 <mxCell id="70" value="S11" style="ellipse;whiteSpace=wrap;html=1;fillColor=#CCE5FF;" parent="1" vertex="1">
                     <mxGeometry x="-1780" y="-345.02" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="71" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;How to use these decision trees:&amp;nbsp;&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;These trees are meant to help you identify the important elements within your measurement so that you find the best suited vocabulary code. The trees should be &lt;u&gt;used in conjunction&lt;/u&gt; with&amp;nbsp;&lt;a href=&quot;https://vocab.seadatanet.org/p01-facet-search&quot;&gt;SeaDataNet facet search&lt;/a&gt;&lt;br&gt;&lt;br&gt;You will notice other collections (e.g. S07) indicated as you follow along the branches. You do not need to go to these collections to identify sub-elements, these are simply indicated to indicate where that &lt;i&gt;type&lt;/i&gt;&amp;nbsp;of information is found. &lt;br&gt;Ultimately you should select a code that best captures your measurementType, measurementUnit, or measurementValue.&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="-953.88" y="-1080" width="1250" height="300" as="geometry"/>
+                <mxCell id="71" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;How to use these decision trees:&amp;nbsp;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); font-weight: normal;&quot;&gt;These trees are meant to help you identify the important elements within your measurement so that you find the best suited vocabulary code.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;border-color: var(--border-color); font-weight: 400;&quot;&gt;For all branches related to measurementType, the tree should be&amp;nbsp;&lt;/span&gt;&lt;u style=&quot;border-color: var(--border-color); font-weight: 400;&quot;&gt;used in conjunction&lt;/u&gt;&lt;span style=&quot;border-color: var(--border-color); font-weight: 400;&quot;&gt;&amp;nbsp;with the&amp;nbsp;&lt;/span&gt;&lt;a style=&quot;border-color: var(--border-color); font-weight: 400;&quot; href=&quot;https://vocab.seadatanet.org/p01-facet-search&quot;&gt;SeaDataNet facet search&lt;/a&gt;&lt;span style=&quot;border-color: var(--border-color); font-weight: 400;&quot;&gt;&amp;nbsp;to obtain P01 codes.&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/span&gt;&lt;span style=&quot;border-color: var(--border-color); font-weight: normal;&quot;&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;You will notice other collections (e.g. S07) indicated as you follow along the branches. You do not need to go to these collections to identify sub-elements, these are simply indicated to indicate where that&amp;nbsp;&lt;i style=&quot;border-color: var(--border-color);&quot;&gt;type&lt;/i&gt;&amp;nbsp;of information is found. Ultimately you should select a code that best captures your measurementType, measurementUnit, or measurementValue.&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="-951" y="-1116.48" width="1250" height="300" as="geometry"/>
                 </mxCell>
                 <mxCell id="72" value="Suggested collection" style="text;html=1;strokeColor=none;fillColor=#CCE5FF;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="-155" y="-709.98" width="80" height="39.92" as="geometry"/>
+                    <mxGeometry x="-190" y="-819.98" width="80" height="40.53" as="geometry"/>
                 </mxCell>
                 <mxCell id="73" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=#006EAF;strokeWidth=2;fontFamily=Helvetica;fontSize=14;fontColor=default;endArrow=classic;fillColor=#1ba1e2;dashed=1;" parent="1" source="75" target="124" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -640,7 +640,7 @@
                         <mxPoint x="-325" y="-150" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="191" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;ACTION: click on link for conceptID and copy whole URI into measurementTypeID field&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#66FFFF;" parent="1" vertex="1">
+                <mxCell id="191" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;ACTION: click on link for conceptID and copy &lt;b&gt;whole URI &lt;/b&gt;into measurementTypeID field&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#66FFFF;" parent="1" vertex="1">
                     <mxGeometry x="-539.99" y="1575" width="440" height="82" as="geometry"/>
                 </mxCell>
                 <mxCell id="192" value="C35" style="ellipse;whiteSpace=wrap;html=1;fillColor=#CCE5FF;" parent="1" vertex="1">
@@ -653,7 +653,7 @@
                     <mxGeometry x="-1598.25" y="-739.26" width="123.5" height="78.72" as="geometry"/>
                 </mxCell>
                 <mxCell id="195" value="Suggested action to take" style="text;html=1;strokeColor=none;fillColor=#33FFFF;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="-245" y="-709.98" width="80" height="39.98" as="geometry"/>
+                    <mxGeometry x="-280.49" y="-820.28" width="80" height="40.28" as="geometry"/>
                 </mxCell>
                 <mxCell id="196" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=#006EAF;strokeWidth=2;fontFamily=Helvetica;fontSize=14;fontColor=default;endArrow=classic;fillColor=#1ba1e2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="187" target="191" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -672,6 +672,9 @@
                         <mxPoint x="-1100" y="879" as="sourcePoint"/>
                         <mxPoint x="-1100" y="912" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="199" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;(Note this branch is under construction&lt;br&gt;&amp;nbsp;and may change in the future)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=2" vertex="1" parent="1">
+                    <mxGeometry x="-678" y="-423.74" width="190" height="40" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
