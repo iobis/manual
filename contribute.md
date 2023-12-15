@@ -11,8 +11,8 @@ Since 2000, OBIS has accepted, curated and published marine biodiversity data ob
 * Biotic measurements
 * Sampling methods
 * Sample processing methods
-* Genetic data including sequences
-* Data originating from [historical records](common_formatissues.html)
+* Genetic data including DNA sequences
+* Data originating from [historical records](common_formatissues.html#historical-data)
 * Tracking data
 * Habitat data
 * Acoustic data

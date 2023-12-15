@@ -1,5 +1,16 @@
 ## Frequently Asked Questions
 
+**Content**
+
+* [General](#general)
+* [Darwin Core](#darwin-core)
+* [Formatting data](#formatting-data)
+* [Vocabulary](#vocabulary)
+* [Tools](#tools)
+* [Quality Control](#quality-control)
+* [Publishing](#publishing)
+* [Data Access](#accessing-data-in-obis)
+
 #### General
 
 * [I have data and want to publish to OBIS - what do I do?](contribute.html)
@@ -7,7 +18,7 @@
 * [How do I handle sensitive data?](contribute.html#how-to-handle-sensitive-data)
 * [Where can I make suggestions for improvements on this Manual?](https://github.com/iobis/manual)
 * [Where can I find OBIS related training videos?](https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF)
-* [What are the responsibilities of node managers?](nodes.html)
+* [What are the responsibilities of OBIS node managers?](nodes.html)
 * [Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?](https://github.com/iobis/obis-network-datasets/)
 
 #### Darwin Core
@@ -109,6 +120,11 @@
 #### Accessing data in OBIS
 
 <ul>
+  <li><details>
+  <summary>Can I get (or publish) other types of information from OBIS, besides occurences (e.g. bio-eco variables, DNA data, abiotic measurements, etc.)? </summary>
+
+  Yes! OBIS allows access to not only taxa occurrences, but also all kinds of measurement data including DNA data (see [Contribute](contribute.html) for a list of data accepted by OBIS). This data is recorded in the (Extended) Measurement Or Fact and DNA-Derived Data extension tables, respectively. To access this data when downloading, be sure to select MoF or DNA from the dropdown Dataset Type menu on the [advanced dataset serach page](https://obis.org/datasets). If you are obtaining data from the OBIS Mapper, make sure to check the box for MeasurementOrFact and/or DNADerivedData from the Extensions toggle section. When using the R package robis, use the `mof=TRUE` and/or `dna=TRUE` arguments. More data filter options will be added in the future.
+  </details></li>
   <li><a href="access.html#obis-homepage-and-dataset-pages">How do I download data from OBIS?</a></li>
   <li><details>
   <summary>How do I load the full (.csv) export of OBIS data?</summary>
