@@ -341,6 +341,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="frequently-asked-questions" class="section level2 hasAnchor" number="1.5">
 <h2><span class="header-section-number">1.5</span> Frequently Asked Questions<a href="FAQ.html#frequently-asked-questions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Content</strong></p>
+<ul>
+<li><a href="FAQ.html#general">General</a></li>
+<li><a href="FAQ.html#darwin-core">Darwin Core</a></li>
+<li><a href="FAQ.html#formatting-data">Formatting data</a></li>
+<li><a href="FAQ.html#vocabulary">Vocabulary</a></li>
+<li><a href="FAQ.html#tools">Tools</a></li>
+<li><a href="FAQ.html#quality-control">Quality Control</a></li>
+<li><a href="FAQ.html#publishing">Publishing</a></li>
+<li><a href="FAQ.html#accessing-data-in-obis">Data Access</a></li>
+</ul>
 <div id="general" class="section level4 hasAnchor" number="1.5.0.1">
 <h4><span class="header-section-number">1.5.0.1</span> General<a href="FAQ.html#general" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
@@ -349,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="contribute.html#how-to-handle-sensitive-data">How do I handle sensitive data?</a></li>
 <li><a href="https://github.com/iobis/manual">Where can I make suggestions for improvements on this Manual?</a></li>
 <li><a href="https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF">Where can I find OBIS related training videos?</a></li>
-<li><a href="nodes.html">What are the responsibilities of node managers?</a></li>
+<li><a href="nodes.html">What are the responsibilities of OBIS node managers?</a></li>
 <li><a href="https://github.com/iobis/obis-network-datasets/">Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?</a></li>
 </ul>
 </div>
@@ -517,6 +528,14 @@ Is there a template generator I can use to help create my Event, Occurrence, and
 <div id="accessing-data-in-obis" class="section level4 hasAnchor" number="1.5.0.8">
 <h4><span class="header-section-number">1.5.0.8</span> Accessing data in OBIS<a href="FAQ.html#accessing-data-in-obis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
+<li>
+<details>
+<summary>
+Can I get (or publish) other types of information from OBIS, besides occurences (e.g. bio-eco variables, DNA data, abiotic measurements, etc.)?
+</summary>
+Yes! OBIS allows access to not only taxa occurrences, but also all kinds of measurement data including DNA data (see <a href="contribute.html">Contribute</a> for a list of data accepted by OBIS). This data is recorded in the (Extended) Measurement Or Fact and DNA-Derived Data extension tables, respectively. To access this data when downloading, be sure to select MoF or DNA from the dropdown Dataset Type menu on the <a href="https://obis.org/datasets">advanced dataset serach page</a>. If you are obtaining data from the OBIS Mapper, make sure to check the box for MeasurementOrFact and/or DNADerivedData from the Extensions toggle section. When using the R package robis, use the <code>mof=TRUE</code> and/or <code>dna=TRUE</code> arguments. More data filter options will be added in the future.
+</details>
+</li>
 <li>
 <a href="access.html#obis-homepage-and-dataset-pages">How do I download data from OBIS?</a>
 </li>
