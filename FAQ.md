@@ -60,6 +60,11 @@
   
   Please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Similar to creating `eventIDs` or `occurrenceIDs`, you should strive to provide more complex and globally unique identifier. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within a larger repositories like OBIS. It is also recommended to include these temporary names on specimen labels for physical specimens.
   </details></li>
+  <li><details>
+  <summary>What is the difference between <code>individualCount</code>, and <code>organismQuantity</code>, and which one should I use?
+
+  The DwC term `individualCount` is used simply for documenting the *number of individuals* present at the time the occurrence happened. Conversely, `organismQuantity` is used to record *any type* of quantity related to an organism or occurrence. `organismQuantityType` may include the number of individuals, the % cover, biomass, the cover-abundance on the Braun-Blanquet Scale, etc. While both DwC terms can be placed in the Occurrence table, OBIS recommends also populating them in the eMoF table because of the standardization of terms and because you can link to sampling events and factual sampling information.
+  </details></li>
 </ul>
 
 #### Vocabulary
@@ -121,7 +126,7 @@
 
 <ul>
   <li><details>
-  <summary>Can I get (or publish) other types of information from OBIS, besides occurences (e.g. bio-eco variables, DNA data, abiotic measurements, etc.)? </summary>
+  <summary>Can I get (or publish) other types of information from OBIS, besides occurences (e.g. bio-eco variables, DNA data, abiotic measurements, etc.)?</summary>
 
   Yes! OBIS allows access to not only taxa occurrences, but also all kinds of measurement data including DNA data (see [Contribute](contribute.html) for a list of data accepted by OBIS). This data is recorded in the (Extended) Measurement Or Fact and DNA-Derived Data extension tables, respectively. To access this data when downloading, be sure to select MoF or DNA from the dropdown Dataset Type menu on the [advanced dataset serach page](https://obis.org/datasets). If you are obtaining data from the OBIS Mapper, make sure to check the box for MeasurementOrFact and/or DNADerivedData from the Extensions toggle section. When using the R package robis, use the `mof=TRUE` and/or `dna=TRUE` arguments. More data filter options will be added in the future.
   </details></li>
