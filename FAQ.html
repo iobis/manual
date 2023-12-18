@@ -442,6 +442,13 @@ How do I document occurrences from unknown species, those new to science, or tho
 Please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Similar to creating <code>eventIDs</code> or <code>occurrenceIDs</code>, you should strive to provide more complex and globally unique identifier. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within a larger repositories like OBIS. It is also recommended to include these temporary names on specimen labels for physical specimens.
 </details>
 </li>
+<li>
+<details>
+<summary>
+<p>What is the difference between <code>individualCount</code>, and <code>organismQuantity</code>, and which one should I use?</p>
+The DwC term <code>individualCount</code> is used simply for documenting the <em>number of individuals</em> present at the time the occurrence happened. Conversely, <code>organismQuantity</code> is used to record <em>any type</em> of quantity related to an organism or occurrence. <code>organismQuantityType</code> may include the number of individuals, the % cover, biomass, the cover-abundance on the Braun-Blanquet Scale, etc. While both DwC terms can be placed in the Occurrence table, OBIS recommends also populating them in the eMoF table because of the standardization of terms and because you can link to sampling events and factual sampling information.
+</details>
+</li>
 </ul>
 </div>
 <div id="vocabulary" class="section level4 hasAnchor" number="1.5.0.4">
