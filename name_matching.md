@@ -97,13 +97,15 @@ If your scientificName does not find an exact match to the WoRMS database, you m
 
 See <https://www.marinespecies.org/tutorial_taxonmatch.php> for definitions of each of these terms.
 
-In each of these cases, WoRMS will try to suggest a species to match your uncertain taxon. Take care to ensure the correct species name is selected. This is especially true for near_2 or near_3 matches. When checking a potential matched name, we recommend referencing the authority and higher taxonomic levels of a given suggestion. For example, if you know the ambiguous species is a sponge, but one of the suggestions is for a mammal, you know that is not the correct name.
+In each of these cases, WoRMS will try to suggest a species to match your uncertain taxon. Take care to ensure the correct species name is selected given the information in the original documentation. This is especially true for near_2 or near_3 matches. When checking a potential matched name, we recommend referencing the authority and higher taxonomic levels of a given suggestion when possible. For example, if you know the ambiguous species is a sponge, but one of the suggestions is for a mammal, you know that is not the correct name.
+
+Sometimes the species name as is it was originally documented is a name that is no longer accepted in WoRMS (i.e. Status = <span style="color: red;">unaccepted</span>). In these cases `scientificNameID` should reflect the name in the `scientificName` field, even if this name is not accepted. If you or the data provider can confirm with certainty that the name in `scientificName` can be changed to an accepted name, then `verbatimIdentification` *must* be populated with the scientific name as it was originally documented. In general, it is good practice to populate `verbatimIdentification` with the original taxon identification.
 
 ![Example of choices from an abiguous match](images/WoRMS-resolve-ambiguousMatches.png){width=70%}
 
 In cases where no match can be found, WoRMS will indicate none. For these cases you should follow these steps:
 
-* Ensure the name was entered correctly and any other information (e.g., authority, year, identification qualifiers) are included in separate columns, not the same cell as the name.
+* Ensure the name was entered correctly and any other information (e.g., authority, year, identification qualifiers) are included in separate columns, not the same cell as the name, as this can sometimes prevent matching
 * Match with [LifeWatch](https://www.lifewatch.be/data-services/) or another register (see Step 2 below)
 * Check that the species [is marine](common_qc.html#non-marine-species)
 

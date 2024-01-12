@@ -64,6 +64,7 @@
   <summary>What is the difference between <code>individualCount</code>, and <code>organismQuantity</code>, and which one should I use?
 
   The DwC term `individualCount` is used simply for documenting the *number of individuals* present at the time the occurrence happened. Conversely, `organismQuantity` is used to record *any type* of quantity related to an organism or occurrence. `organismQuantityType` may include the number of individuals, the % cover, biomass, the cover-abundance on the Braun-Blanquet Scale, etc. While both DwC terms can be placed in the Occurrence table, OBIS recommends also populating them in the eMoF table because of the standardization of terms and because you can link to sampling events and factual sampling information.
+
   </details></li>
 </ul>
 
@@ -84,8 +85,14 @@
 
 <ul>
   <li><a href="name_matching.html">How do I use the WoRMS taxon match tool?</a></li>
-    <li><a href="name_matching.html#how-to-fetch-a-full-classification-for-a-list-of-species-from-worms">Can I fetch a full classification for a list of species from WoRMS?</a></li>
-    <li><a href="name_matching.html#what-to-do-with-non-matching-names">What do I do if my scientificName does not return a match from WoRMS?</a></li>
+  <li><a href="name_matching.html#how-to-fetch-a-full-classification-for-a-list-of-species-from-worms">Can I fetch a full classification for a list of species from WoRMS?</a></li>
+  <li><a href="name_matching.html#what-to-do-with-non-matching-names">What do I do if my scientificName does not return a match from WoRMS?</a></li>
+  <li><details>
+  <summary>Can scientificNameID be populated with an identifier (e.g. WoRMS LSID) representing an unaccepted taxon name?</summary>
+
+  Yes. The identifier in `scientificNameID` should always correspond with the name that is in the `scientificName` field, even if the name is an unaccepted name in WoRMS. For example, the species name "Holothuria mammiculata" was provided, but this name is unaccepted in WoRMS. The accepted name is "Holothuria (Stauropora) pervicax Selenka, 1867". In this case `scientificNameID` should correspond to the original name with LSID urn:lsid:marinespecies.org:taxname:529968 because the ID must correlate with the name as recorded in `scientificName`.
+
+  </details></li>
   <li><a href="https://sequence.obis.org/">Where can I find DNA sequences published in OBIS?</a></li>
   <li><details>
   <summary>Is there a template generator I can use to help create my Event, Occurrence, and eMoF tables?</summary>
