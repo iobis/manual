@@ -23,11 +23,20 @@
 
 #### Darwin Core
 
-* [Where can I learn about "Darwin Core"?](darwin_core.html)
-* [I am having trouble understanding how Core and Extension tables relate to each other](relational_db.html)
-* [How does the OBIS format avoid redundancy in data](relational_db.html#how-to-avoid-redundancy)
-* [How are extension tables (e.g. eMOF, occurrence) linked with the core table?](formatting.html#extensions-in-obis)
-* [What is the difference between Occurence Core and Event Core?](formatting.html#dataset-structure)
+<ul>
+  <li><a href="darwin_core.html">Where can I learn about "Darwin Core"?</a></li>
+  <li><a href="relational_db.html">I am having trouble understanding how Core and Extension tables relate to each other</a></li>
+  <li><a href="relational_db.html#how-to-avoid-redundancy">How does the OBIS format avoid redundancy in data</a></li>
+  <li><a href="formatting.html#extensions-in-obis">How are extension tables (e.g. eMOF, occurrence) linked with the core table?</a></li>
+  <li><a href="formatting.html#dataset-structure">What is the difference between Occurence Core and Event Core?</a></li>
+  <li><a href="identifiers.html#introduction-to-identifiers">What is the difference between eventID, occurrenceID, organismID, taxonID, scientificNameID, recordNumber, materialEntityID, materialSampleID, and catalogNumber?</a></li>
+  <li><details>
+  <summary>What is the difference between <code>individualCount</code>, and <code>organismQuantity</code>, and which one should I use?
+
+  The DwC term `individualCount` is used simply for documenting the *number of individuals* present at the time the occurrence happened. Conversely, `organismQuantity` is used to record *any type* of quantity related to an organism or occurrence. `organismQuantityType` may include the number of individuals, the % cover, biomass, the cover-abundance on the Braun-Blanquet Scale, etc. While both DwC terms can be placed in the Occurrence table, OBIS recommends also populating them in the eMoF table because of the standardization of terms and because you can link to sampling events and factual sampling information.
+
+  </details></li>
+</ul>
 
 #### Formatting Data
 
@@ -44,7 +53,12 @@
   
   The answer may depend on your dataset structure, but generally, no. If you have Event core, then you do not need to repeat location information in the Occurrence table (but you can if you'd like). If you are using Occurrence core, then location information must be provided in the Occurrence table.
   </details></li>
-  <li><a href="format_emof.html">What data goes into extendedMeasurementOrFact and how do I set it up?</a></li>
+  <li><a href="format_emof.html">What data goes into extendedMeasurementOrFact (eMoF) and how do I set it up?</a></li>
+  <li><details>
+  <summary>Can I have multiple eMoF tables, one for Event and one for Occurrence measurements?</summary>
+  
+  Yes, you can create multiple eMoF tables if it is simpler for you to separate Event and Occurrence measurement data. However, you must ensure all tables include the correct identifiers, i.e. eventID for measurements related to events, and occurrenceID *and* eventID for measurements associated with occurrences. When you add multiple tables of the same type in the IPT, they will be treated as if they were a single table, so there is no issue if you would like to do this.
+  </details></li>
   <li><a href="common_formatissues.html#temporal-dates-and-times">How do I format dates?</a></li>
   <li><a href="common_formatissues.html#historical-data"> How do I handle historical data?</a></li>
   <li><a href="common_formatissues.html#converting-coordinates">How do I convert coordinates to decimal degrees?</a></li>
@@ -59,12 +73,6 @@
   Occurrences unknown or new to science should be documented according to recommendations by [Horton et al. 2021](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full). You should populate the `scientificName` field with the genus, and in `identificationQualifer` provide the ON sign 'sp.'. However you must also indicate the reason why species-level identification is unavailable. To do this, supplement 'sp.' with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after 'sp.' to `identificationQualifer`. For example Eurythenes sp. DISCOLL.PAP.JC165.674.
   
   Please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Similar to creating `eventIDs` or `occurrenceIDs`, you should strive to provide more complex and globally unique identifier. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within a larger repositories like OBIS. It is also recommended to include these temporary names on specimen labels for physical specimens.
-  </details></li>
-  <li><details>
-  <summary>What is the difference between <code>individualCount</code>, and <code>organismQuantity</code>, and which one should I use?
-
-  The DwC term `individualCount` is used simply for documenting the *number of individuals* present at the time the occurrence happened. Conversely, `organismQuantity` is used to record *any type* of quantity related to an organism or occurrence. `organismQuantityType` may include the number of individuals, the % cover, biomass, the cover-abundance on the Braun-Blanquet Scale, etc. While both DwC terms can be placed in the Occurrence table, OBIS recommends also populating them in the eMoF table because of the standardization of terms and because you can link to sampling events and factual sampling information.
-
   </details></li>
 </ul>
 

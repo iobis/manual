@@ -122,9 +122,9 @@ The following DwC terms are related to the Class _MaterialSample_:
 
 ##### Taxonomy and identification
 
-`scientificName` (required term) should always contain the originally recorded full scientific name, even if the name is currently a synonym. This is necessary to be able to track back records to the original dataset. The name should include authorship and date information if known and should be the lowest possible taxonomic rank that can be determined, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc. are also acceptable. You may still populate `scientificNameAuthorship` for authorship, but it is preferred to include authorship in `scientificName` as well. Additionally, `scientificName` should only contain the name and not identification qualifications (such as ?, confer, or affinity), which should instead be supplied in the `IdentificationQualifier` term, see examples below. `taxonRemarks` can capture comments or notes about the taxon or name.
+`scientificName` (required term) should always contain the originally recorded full scientific name, even if the name is currently a synonym. This is necessary to be able to track back records to the original dataset. The name should include authorship and date information if known and should be the lowest possible taxonomic rank that can be determined, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc. are also acceptable. You may still populate `scientificNameAuthorship` for authorship, but it is preferred to include authorship in `scientificName` as well. Additionally, `scientificName` should only contain the name and not identification qualifications (such as ?, confer, or affinity), which should instead be supplied in the `IdentificationQualifier` term, see examples below. `taxonRemarks` can capture comments or notes about the taxon or name. `verbatimIdentification` should be used to record the taxon identification as it appeared in the original record, unaltered, with hybrid formulas, informal descriptions, misspellings, etc.
 
-A [WoRMS](http://www.marinespecies.org/) LSID should be added in `scientificNameID` (strongly recommended term), OBIS will use this identifier to pull the taxonomic information from the World Register of Marine Species (WoRMS) into OBIS and attach it to your dataset. This information includes:
+A [WoRMS](http://www.marinespecies.org/) LSID should be added in `scientificNameID` (strongly recommended term). The LSID used for `scientificNameID` should correspond to the name provided to the `scientificName` field, even if it is _not_ the currently accepted scientific name. OBIS will use this identifier to pull the taxonomic information from the World Register of Marine Species (WoRMS) into OBIS and attach it to your dataset. This information includes:
 
 - Taxonomic classification (kingdom through species)
 - The accepted name in case of invalid names or synonyms
@@ -133,23 +133,17 @@ A [WoRMS](http://www.marinespecies.org/) LSID should be added in `scientificName
 
 LSIDs are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources. More information on LSIDs can be found at [www.lsid.info](http://www.lsid.info/). For example, the WoRMS LSID for _Solea solea_ is: urn:lsid:marinespecies.org:taxname:127160, and can be found at the bottom of each WoRMS taxon page, e.g. [_Solea solea_](http://marinespecies.org/aphia.php?p=taxdetails&id=127160).
 
-`kingdom` and `taxonRank` can help us in identifying the provided `scientificName` in case the name is not available in WoRMS.  `kingdom` in particular can help us find alternative genus-species combinations and avoids linking the name to homonyms. Please contact the WoRMS data management team (info@marinespecies.org) in case the scientificName is missing in WoRMS. `kingdom` and `taxonRank` are not necessary when a correct `scientificNameID` is provided.
+`kingdom` and `taxonRank` can help us in identifying the provided `scientificName` in case the name is not available in WoRMS. `kingdom` in particular can help us find alternative genus-species combinations and avoids linking the name to homonyms. Please contact the WoRMS data management team (info@marinespecies.org) in case the `scientificName` is missing in WoRMS. `kingdom` and `taxonRank` are not necessary when a correct `scientificNameID` is provided.
 
-OBIS recommends providing information about how an identification was made, for example by which ID key, species guide or expert; and by which method (e.g morphology vs. genomics), etc. The person's name who made the taxonomic identification can go in `identifiedBy` and _when_ in `dateIdentified`. Use the ISO 8601:2004(E) standard for date and time, for instructions see [Time](#time). A list of references, such as field guides used for the identification can be listed in `identificationReferences`. Any other information, such as identification methods, can be added to `identificationRemarks`.
+OBIS recommends providing information about how an identification was made, for example by which ID key, species guide or expert; and by which method (e.g morphology vs. genomics), etc. The person's name who made the taxonomic identification can go in `identifiedBy` and _when_ in `dateIdentified`. Use the ISO 8601:2004(E) standard for date and time, for instructions see [Time](#time). A list of references, such as field guides used for the identification, can be listed in `identificationReferences`. Any other information, such as identification methods, can be added to `identificationRemarks`.
 
 Examples:
 
-| scientificNameID                          | scientificName        | kingdom  | phylum   | class      |
-|-------------------------------------------|-----------------------|----------|----------|------------|
-| urn:lsid:marinespecies.org:taxname:142004 | Yoldiella nana        | Animalia | Mollusca | Bivalvia   |
-| urn:lsid:marinespecies.org:taxname:140584 | Ennucula tenuis       | Animalia | Mollusca | Bivalvia   |
-| urn:lsid:marinespecies.org:taxname:131573 | Terebellides stroemii | Animalia | Annelida | Polychaeta |
-
-| order       | family           | genus        | specificEpithet | scientificNameAuthorship |
-|-------------|------------------|--------------|-----------------|--------------------------|
-| Nuculanoida | Yoldiidae        | Yoldiella    | nana            | (Sars M., 1865)          |
-| Nuculoida   | Nuculidae        | Ennucula     | tenuis          | (Montagu, 1808)          |
-| Terebellida | Trichobranchidae | Terebellides | stroemii        | Sars, 1835               |
+| scientificNameID                          | scientificName        | kingdom  | phylum   | class      | order       | family           | genus        | specificEpithet | scientificNameAuthorship |
+|-------------------------------------------|-----------------------|----------|----------|------------|-------------|------------------|--------------|-----------------|--------------------------|
+| urn:lsid:marinespecies.org:taxname:142004 | Yoldiella nana        | Animalia | Mollusca | Bivalvia   | Nuculanoida | Yoldiidae        | Yoldiella    | nana            | (Sars M., 1865)          |
+| urn:lsid:marinespecies.org:taxname:140584 | Ennucula tenuis       | Animalia | Mollusca | Bivalvia   | Nuculoida   | Nuculidae        | Ennucula     | tenuis          | (Montagu, 1808)          |
+| urn:lsid:marinespecies.org:taxname:131573 | Terebellides stroemii | Animalia | Annelida | Polychaeta | Terebellida | Trichobranchidae | Terebellides | stroemii        | Sars, 1835               |
 
 _Data from [Benthic fauna around Franz Josef Land](http://ipt.vliz.be/eurobis/resource?r=largenet_k2)._
 
