@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.5 Constructing and using indentifier codes | The OBIS manual</title>
   <meta name="description" content="3.5 Constructing and using indentifier codes | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.5 Constructing and using indentifier codes | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -193,8 +193,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
 <li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#eventid"><i class="fa fa-check"></i><b>3.5.1</b> eventID</a></li>
-<li class="chapter" data-level="3.5.2" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.2</b> occurrenceID</a></li>
+<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#introduction-to-identifiers"><i class="fa fa-check"></i><b>3.5.1</b> Introduction to identifiers</a></li>
+<li class="chapter" data-level="3.5.2" data-path="identifiers.html"><a href="identifiers.html#eventid"><i class="fa fa-check"></i><b>3.5.2</b> eventID</a></li>
+<li class="chapter" data-level="3.5.3" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.3</b> occurrenceID</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>4</b> Formatting data tables</a>
@@ -342,12 +343,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.5</span> Constructing and using indentifier codes<a href="identifiers.html#constructing-and-using-indentifier-codes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Content</strong></p>
 <ul>
+<li><a href="identifiers.html#introduction-to-identifiers">Introduction to identifiers</a></li>
 <li><a href="identifiers.html#eventid">eventID</a></li>
 <li><a href="identifiers.html#occurrenceid">occurrenceID</a></li>
 </ul>
-<div id="eventid" class="section level3 hasAnchor" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> eventID<a href="identifiers.html#eventid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance. <code>eventID</code> is an identifier for an individual sampling or observation event, whereas <code>parentEventID</code> is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (<code>eventIDs</code>).</p>
+<div id="introduction-to-identifiers" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Introduction to identifiers<a href="identifiers.html#introduction-to-identifiers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using a unique identifier for each event, physical sample, or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance. For OBIS, the two main identifiers of concern are <code>occurrenceID</code> and <code>eventID</code>. However if you look at <a href="https://dwc.tdwg.org/terms/">TDWG’s Darwin Core reference guide</a>, you may see that there are several other terms for identifiers. When creating identifiers for your data, or mapping an existing identifier field to Darwin Core vocabulary, you may hesitate between choosing between <code>eventID</code>, <code>occurrenceID</code>, <code>organismID</code>, <code>taxonID</code>, <code>scientificNameID</code>, <code>recordNumber</code>, <code>materialEntityID</code>, <code>materialSampleID</code>, and <code>catalogNumber</code>. Knowing the difference between these and when to use each may seem confusing at first. Review the table below for a quick comparison of definitions and when to use each DwC identifier term. Note this table is not exhaustive of all possible DwC identifer terms, but includes many that are relevant for occurrence records.</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Identifier Name</th>
+<th>Definition</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>eventID</code></td>
+<td>An identifier for the set of information associated with a dwc:Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set.</td>
+<td>Used to distinguish between events in your data, <em>not</em> associated with an occurrence, e.g. a quadrat sample, an ROV deployment, a trolling event within a cruise</td>
+</tr>
+<tr class="even">
+<td><code>occurrenceID</code></td>
+<td>An identifier for the dwc:Occurrence (as opposed to a particular digital record of the dwc:Occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:occurrenceID globally unique.</td>
+<td>Used to distinguish between occurrence records, i.e. when the presence of a taxon is detected (or not for absence records). If the same individual is detected multiple times, each detection will have unique a <code>occurrenceID</code></td>
+</tr>
+<tr class="odd">
+<td><code>organismID</code></td>
+<td>An identifier for the dwc:Organism instance (as opposed to a particular digital record of the dwc:Organism). May be a globally unique identifier or an identifier specific to the data set.</td>
+<td>Use to identify a <em>specific</em> organism, an individual, or a specific group of organisms (e.g. a specific pod of cetaceans, a specific shark)</td>
+</tr>
+<tr class="even">
+<td><code>taxonID</code></td>
+<td>An identifier for the set of dwc:Taxon information. May be a global unique identifier or an identifier specific to the data set.</td>
+<td>Used to identify a specific taxonomic rank, not commonly used in OBIS because <code>scientificNameID</code> is prioritized</td>
+</tr>
+<tr class="odd">
+<td><code>scientificNameID</code></td>
+<td>An identifier for the nomenclatural (not taxonomic) details of a scientific name.</td>
+<td>Used to provide an identifier for the name provided to <code>scientificName</code>. For OBIS, WoRMS LSIDs are recommended for this field</td>
+</tr>
+<tr class="even">
+<td><code>recordNumber</code></td>
+<td>An identifier given to the dwc:Occurrence at the time it was recorded. Often serves as a link between field notes and a dwc:Occurrence record, such as a specimen collector’s number.</td>
+<td>Typically used when the occurrence is associated with a collected specimen. Different from <code>occurrenceID</code> because it may not be globally unique, whereas <code>occurrenceID</code> must be unique</td>
+</tr>
+<tr class="odd">
+<td><code>materialEntityID</code></td>
+<td>An identifier for a particular instance of a dwc:MaterialEntity. Intended to uniquely and persistently identify a particular dwc:MaterialEntity within some context.</td>
+<td>Used to identfy a physical object (i.e. the MaterialEntity: any kind of physical sample, preserved specimen, fossil, specific DNA molecule, etc.), instead of a digital representation of the object. E.g. an identifer for a specific tissue sample within an organization or institution</td>
+</tr>
+<tr class="even">
+<td><code>materialSampleID</code></td>
+<td>An identifier for the dwc:MaterialSample (as opposed to a particular digital record of the dwc:MaterialSample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:materialSampleID globally unique.</td>
+<td>Used to identify a physical sample, can be whole or part of an entity, e.g. sediment sample, a tissue sample, a whole preserved organism in a collection. Different from <code>catalogNumber</code> and <code>recordNumber</code> because it must be globally unique.</td>
+</tr>
+<tr class="odd">
+<td><code>catalogNumber</code></td>
+<td>An identifier (preferably unique) for the record within the data set or collection.</td>
+<td>Usually used as an identifier given for a specimen within a musuem collection</td>
+</tr>
+</tbody>
+</table>
+<p>Not every one of these identifiers will be relevant for your dataset, but remember that <code>eventID</code>, <code>occurenceID</code>, and <code>scientificNameID</code> are always required for datasets published to OBIS. See the below recommendations for populating <code>eventID</code> and <code>occurenceID</code>. <code>scientificNameID</code> guidelines can be found <a href="darwin_core.html#taxonomy-and-identification">here</a>.</p>
+</div>
+<div id="eventid" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> eventID<a href="identifiers.html#eventid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>eventID</code> is an identifier for an individual sampling or observation event, whereas <code>parentEventID</code> is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (<code>eventIDs</code>).</p>
 <p><code>eventID</code> can be used for replicated samples or sub-samples. It is important to make sure each replicate sample receives a unique <code>eventID</code>, which could be based on the unique sample ID in your dataset. Sample ID can also be recorded in <code>materialSampleID</code>, as OBIS does not need to have separate <code>eventID</code>s and <code>materialSampleIDs</code>. Rather OBIS can treat these two terms as equivalent. Be sure to still fill in the <code>eventID</code> field if you want to use <code>materialSampleID</code>, as OBIS only uses <code>eventID</code> and <code>parentEventID</code> for structuring datasets, not sample ID. This does not prevent you from using the field if you would like to.</p>
 <p>If you do not already have a <code>materialSampleID</code>, creating a unique <code>eventID</code> for your data records can be as straightforward as combining different fields from your data.</p>
 <blockquote>
@@ -489,8 +557,8 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe></p>
 </div>
-<div id="occurrenceid" class="section level3 hasAnchor" number="3.5.2">
-<h3><span class="header-section-number">3.5.2</span> occurrenceID<a href="identifiers.html#occurrenceid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="occurrenceid" class="section level3 hasAnchor" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> occurrenceID<a href="identifiers.html#occurrenceid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>occurrenceID</code> is an identifier for occurrence records. Each occurrence record should have a globally unique identifier. Because <code>occurrenceID</code> is a required term, you may have to construct a persistent and globally unique identifier for each of your data records if none already exists (e.g., if records were not labeled with unique identifiers before, such as during sample processing or image/sensor detection).</p>
 <p>There are no standardized guidelines yet on designing the persistence of this ID, the level of uniqueness (from within a dataset to globally in OBIS), and the precise algorithm and format for generating the ID. But in the absence of a persistent globally unique identifier, one can be constructed by combining the <code>institutionCode</code>, the <code>collectionCode</code> and the <code>catalogNumber</code> (or autonumber in the absence of a catalogNumber). This is similar to how <a href="identifiers.html#eventid"><code>eventID</code></a> is constructed. You may also follow <a href="https://www.labkey.org/Documentation/wiki-page.view?name=lsidOverview">Life Science Identifiers</a> guidelines. Note that the inclusion of <code>occurrenceID</code> is also necessary for datasets in the <a href="data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach">OBIS-ENV-DATA</a> format.</p>
 <p>An important consideration for museum specimens: there is the possibility that the institution a specimen is housed at may change. Therefore you may consider omitting institution identifiers within an <code>occurrenceID</code>, because <code>occurrenceID</code> should <strong>not</strong> change over time.</p>
