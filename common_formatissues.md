@@ -28,7 +28,7 @@ For any eventDate that is inferred from literature, you should document the orig
 
 - **`decimalLongitude`** and **`decimalLatitude`**
 
-First, if you have coordinate data, make sure they are [converted into decimal degrees](common_formatissues.html#converting-coordinates). If you do not have specific coordinate data then you must approximate the coordinates based on locality name. You can use the [Marine Regions gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to search for your region of interest and obtain midpoint coordinates. Guidelines for using this tool and for dealing with uncertain geolocations can be found [here](common_formatissues.html#geographical-formats). You will have to make some comments in the `georeferenceRemarks` field if you are estimating coordinates.
+First, if you have coordinate data, make sure they are [converted into decimal degrees](common_formatissues.html#converting-coordinates). If you do not have specific coordinate data then you must approximate the coordinates based on locality name. You can use the [Marine Regions gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to search for your region of interest and obtain midpoint coordinates. Guidelines for using this tool and for dealing with uncertain geolocations can be found [here](common_qc.html#uncertain-geolocation). You will have to make some comments in the `georeferenceRemarks` field if you are estimating coordinates.
 
 - **`scientificName`**
 
