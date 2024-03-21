@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Dataset structure | The OBIS manual</title>
   <meta name="description" content="3 Dataset structure | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Dataset structure | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -63,7 +63,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -811,9 +811,9 @@ DNA<br style="font-size: 15px;" />derived data<br />extension
 <div id="differences-between-identifiers" class="section level3 hasAnchor" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Differences between identifiers<a href="formatting.html#differences-between-identifiers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If your core file is based on occurrences (e.g., a record of one or more taxa specimens), then any extensions are linked with <code>occurrenceID</code>. If your core file is based on events (e.g., a sampling event, cruise, observation, etc.), then the linking identifier is <code>eventID</code>. In the Core tables, identifiers are always unique, which means, they do not repeat and each line has a different identifier. On the other hand, multiple records in an extension file can have the same identifier which will link them to the same event or occurrence record (depending on which is the Core). The different linking identifiers are shown in the figure below.</p>
-<div class="figure">
-<img src="images/coretable-identifiers.jpg" style="width:50.0%" alt="" />
-<p class="caption">Diagram of how the different core tables are linked to their extensions by different identifiers.</p>
+<div class="float">
+<img src="images/coretable-identifiers.jpg" style="width:50.0%" alt="Diagram of how the different core tables are linked to their extensions by different identifiers." />
+<div class="figcaption">Diagram of how the different core tables are linked to their extensions by different identifiers.</div>
 </div>
 <p>Let us consider a fictional plankton trawl sampling event to demonstrate how identifiers link Core and Extension tables in OBIS. This trawl used two types of nets, occurred in March 2013, and has an eventID <code>plankton-northsea-2013-03</code>. Suppose we have information about the types of trawl used and the species abundance from this trawling event. The information (e.g., date) of the sampling event itself would be found in the Event Core, whereas the abundance data and sampling methods would be in the eMoF table. How do we ensure the abundance and sampling method data is properly linked to the correct event? By using the same eventID for each record in the eMoF table, <code>plankton-northsea-2013-03</code>, the information is properly linked between the Event Core and the eMoF extension.</p>
 </div>

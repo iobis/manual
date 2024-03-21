@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.4.3 Relational databases: the underlying framework of OBIS | The OBIS manual</title>
   <meta name="description" content="2.4.3 Relational databases: the underlying framework of OBIS | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.4.3 Relational databases: the underlying framework of OBIS | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -63,7 +63,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -350,9 +350,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Let’s review an example to fully understand how relational databases work. We will look at a simple relational database used by a fictional country that tracks student performance in three different courses between three schools. Rather than trying to contain information about each school, course, and student performance in one place, this information is split into three separate tables. We see that the pink table gives us information about each school - its name, and the district it belongs to. Each school also has a schoolID, an identifier linking to the blue table where we can see student performance (course mean) in each course, the class size, and year. You will notice that the course mean and class size are bundled under columns called measurementType and measurementValue. These are similar to the eMoF vocabularies and are integral to reducing repeated data, especially when one dataset has reoccurring information. Finally we see that the courseID in the blue table links to the yellow one with the courseID identifier, giving us information about each course.</p>
 <p>A fourth table could easily be created to track total school population size through time. In contrast, if this information was only presented in the pink Schools in Country table, the school information would be duplicated as you add rows for each year. In this way, you can easily see how useful relational databases are. Of course, this is a simplified example but it demonstrates how related tables can be linked by identifiers to reduce table complexity and data replication.</p>
 <p>We elaborate on how this structure is applied within OBIS <a href="formatting.html#dataset-structure">here</a>.</p>
-<div class="figure">
-<img src="images/relationalDB-updated.png" style="width:80.0%" alt="" />
-<p class="caption"><em>An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows</em></p>
+<div class="float">
+<img src="images/relationalDB-updated.png" style="width:80.0%" alt="An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows" />
+<div class="figcaption"><em>An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows</em></div>
 </div>
 <p>Note that when OBIS harvests data, datasets are flattened - i.e., all separate data tables are combined into one. This is the kind of file you will receive when you <a href="access.html">download data from OBIS</a>. The reason for this is that querying relational databases significantly reduces computational time, as opposed to querying a flat database. Relational databases also facilitate requests for subsets that meet particular criteria - e.g., all data from Norway for one species above a certain depth.</p>
 <div id="how-to-avoid-redundancy" class="section level4 hasAnchor" number="2.4.3.1">
@@ -360,9 +360,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Avoiding redundancy and data duplication within your dataset is built into the OBIS data structure. Utilizing the ENV-DATA approach, which delineates relationships between the core table and extension tables, we can limit the repetition of data.</p>
 <p>For example, let us consider the dates of a ship cruise where a series of bottom trawls were taken. The sampling information (e.g., date range, equipment used, etc.) for each species collected in these trawls is the same. Because of this, we know we are dealing with unique sampling events and thus we will use <a href="format_event.html">Event core</a>. So, our Event core table will contain all information related to the sampling events (e.g., date, location). Then, information pertaining to each collected species (e.g., abundance, biomass, sampling methods, etc.) will be placed in an extension, the (Extended)MeasurementOrFact table. Here, each measurement for each species and sample will occur on a separate record. These records will be linked to the correct sampling event in the Event core by an identifier - the eventID. If we were to put this data in one file, the fields related to date and location (e.g., eventDate, decimalLongitude, decimalLatitude, etc.) would be repeated for each species.</p>
 <p>Let’s consider another example. If you took one temperature measurement from the water column where you took your sample, each species found in that sample would have the <strong>same</strong> temperature measurement. By linking such measurements to the <em>event</em> instead of each <em>occurrence</em>, we are able to reduce the amount of data being repeated.</p>
-<div class="figure">
-<img src="images/OBIS-sampling-schema-example-update.png" style="width:80.0%" alt="" />
-<p class="caption"><em>Example of how the sample data is distributed to Core and Extension tables, and how these tables are connected in OBIS</em></p>
+<div class="float">
+<img src="images/OBIS-sampling-schema-example-update.png" style="width:80.0%" alt="Example of how the sample data is distributed to Core and Extension tables, and how these tables are connected in OBIS" />
+<div class="figcaption"><em>Example of how the sample data is distributed to Core and Extension tables, and how these tables are connected in OBIS</em></div>
 </div>
 <p>An advantage of structuring data this way is that if any mistakes are made, you only need to correct it once! So you can see that using relational event structures (when applicable) in combination with extension files can really simplify and reduce the number of times data are repeated.</p>
 <p><strong>Caveat:</strong> However we would like to note that in some cases, data duplication may occur due to the star schema structure. For example, when publishing DNA-derived data, <a href="https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping">Occurrence core will have to be used</a>, which necessitates the repetition of event data for each occurrence record.</p>

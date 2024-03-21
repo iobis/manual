@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.4.4 Ecological Metadata Language | The OBIS manual</title>
   <meta name="description" content="2.4.4 Ecological Metadata Language | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.4.4 Ecological Metadata Language | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -63,7 +63,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -621,9 +621,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The IPT allows you to enter the geographic coverage by dragging the markers on the given map or by filling in the coordinates of the bounding box. In the description field, a more elaborate text can be provided to describe the spatial coverage indicating the larger geographical area where the samples were collected. For the latter, the sampling locations can be plotted on a map and – by making use of a Gazetteer – the wider geographical area can be derived: e.g. the relevant Exclusive Economic Zone (EEZ), IHO, FAO fishing area, Large Marine Ecosystem (LME), Marine Ecoregions of the World (MEOW), etc. The <a href="http://www.marineregions.org/">Marine Regions’ Gazetteer</a> might prove to be a useful online tool to define the most relevant sea area(s). There are also <a href="http://www.lifewatch.be/data-services/">LifeWatch Geographical Services</a> that translate geographical positions to these wider geographical areas.</p>
 <p>The information given in this section can also help the OBIS node manager in geographic quality control. If the geographic coverage in the EML e.g. is “North Sea”, but a number of data points are outside of this scope, then this may indicate errors, and should be checked with the data provider.</p>
 <p>If the dataset covers multiple areas (e.g. samples from the North Sea and the Mediterranean Sea), then this should clearly be mentioned in the <code>geographicDescription</code> field. Note that the IPT only allows one bounding box, and you have to uncheck the “Set global coverage” box to change box bounds.</p>
-<div class="figure">
-<img src="images/ipt-ss13-meta-geo.png" style="width:60.0%" alt="" />
-<p class="caption">Screenshot of the Geographical Coverage section of the metadata, emphasizing how to change the bounds of the coverage box in the map.</p>
+<div class="float">
+<img src="images/ipt-ss13-meta-geo.png" style="width:60.0%" alt="Screenshot of the Geographical Coverage section of the metadata, emphasizing how to change the bounds of the coverage box in the map." />
+<div class="figcaption">Screenshot of the Geographical Coverage section of the metadata, emphasizing how to change the bounds of the coverage box in the map.</div>
 </div>
 </div>
 <div id="taxonomic-coverage" class="section level6 hasAnchor" number="2.4.4.1.5.2">
@@ -636,18 +636,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p><em>Note:</em> OBIS also recommends to add information on the (higher) taxonomic groups in the (descriptive) dataset title and abstract.</p>
 </blockquote>
-<div class="figure">
-<img src="images/ipt-ss14-meta-taxa.png" style="width:70.0%" alt="" />
-<p class="caption">Example of the Taxonomic Coverage section of the metadata</p>
+<div class="float">
+<img src="images/ipt-ss14-meta-taxa.png" style="width:70.0%" alt="Example of the Taxonomic Coverage section of the metadata" />
+<div class="figcaption">Example of the Taxonomic Coverage section of the metadata</div>
 </div>
 </div>
 <div id="temporal-coverage" class="section level6 hasAnchor" number="2.4.4.1.5.3">
 <h6><span class="header-section-number">2.4.4.1.5.3</span> Temporal Coverage<a href="eml.html#temporal-coverage" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <p>The temporal coverage will be a date range, which can easily be documented. If it is a single date, the start and end date will be the same. The information added here can be used as a quality check for the actual dates in the datasets.</p>
 <p>You can also document the Formation Period or the Living Time Period in this section for specimens that may not have been alive during the collection period, or to indicate the time during which the collection occurred.</p>
-<div class="figure">
-<img src="images/ipt-ss15-meta-time.png" style="width:70.0%" alt="" />
-<p class="caption">Example of the Temporal Coverage section of the metadata</p>
+<div class="float">
+<img src="images/ipt-ss15-meta-time.png" style="width:70.0%" alt="Example of the Temporal Coverage section of the metadata" />
+<div class="figcaption">Example of the Temporal Coverage section of the metadata</div>
 </div>
 </div>
 </div>
@@ -655,9 +655,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h5><span class="header-section-number">2.4.4.1.6</span> Keywords<a href="eml.html#keywords" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Relevant keywords facilitate the discovery of a dataset. An indication of the represented functional groups can help in a general search (e.g. plankton, benthos, zooplankton, phytoplankton, macrobenthos, meiobenthos …). Assigned keywords can be related to taxonomy, habitat, geography or relevant keywords extracted from thesauri such as the <a href="https://vocabularyserver.com/asfa/">ASFA thesaurus</a>, the <a href="http://www.cabi.org/cabthesaurus/">CAB thesaurus</a> or <a href="https://www.earthdata.nasa.gov/learn/find-data/idn/gcmd-keywords">GCMD keywords</a>.</p>
 <p>As taxonomy and geography are already covered in previous sections, there is no need to repeat related keywords here. Please consult your data provider which (relevant) keywords can be assigned.</p>
-<div class="figure">
-<img src="images/ipt-ss16-meta-keyword.png" style="width:70.0%" alt="" />
-<p class="caption">Example of the Keywords section of the metadata, showing input for a marine fishes dataset</p>
+<div class="float">
+<img src="images/ipt-ss16-meta-keyword.png" style="width:70.0%" alt="Example of the Keywords section of the metadata, showing input for a marine fishes dataset" />
+<div class="figcaption">Example of the Keywords section of the metadata, showing input for a marine fishes dataset</div>
 </div>
 </div>
 <div id="project" class="section level5 hasAnchor" number="2.4.4.1.7">
@@ -687,9 +687,9 @@ Part of the information entered here, can partly overlap with information given 
 <h5><span class="header-section-number">2.4.4.1.11</span> Collection Data<a href="eml.html#collection-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>This IPT section should only be filled out if there are specimens held in a museum.
 If relevant, it is strongly recommended that this information is supplied by the data provider or left blank. The collection name, specimen preservation method, and curatorial units should be provided, as applicable.</p>
-<div class="figure">
-<img src="images/ipt-ss17-meta-collection.png" style="width:70.0%" alt="" />
-<p class="caption">Screenshot of the Collection Data page showing what information can be provided for museum specimens</p>
+<div class="float">
+<img src="images/ipt-ss17-meta-collection.png" style="width:70.0%" alt="Screenshot of the Collection Data page showing what information can be provided for museum specimens" />
+<div class="figcaption">Screenshot of the Collection Data page showing what information can be provided for museum specimens</div>
 </div>
 </div>
 <div id="external-links" class="section level5 hasAnchor" number="2.4.4.1.12">
