@@ -79,14 +79,14 @@
 #### Vocabulary
 
 <ul>
-  <li><a href="vocabulary.html#measurementorfact-vocabularies">How do I map Measurement or Fact terms in OBIS with preferred BODC vocabulary?</a></li>
+  <li><a href="vocabulary.html#map-emof-measurement-identifiers-to-preferred-bodc-vocabulary">How do I map Measurement or Fact terms in OBIS with preferred BODC vocabulary?</a></li>
   <li><a href="vocabulary.html#requesting-new-vocabulary-terms">I can't find a suitable vocabulary, what do I do? How do I request a new vocabulary term?</a></li>
   <li><details>
   <summary>Should I use taxon-specific P01 codes to populate for measurementTypeID? e.g. <link>http://vocab.nerc.ac.uk/collection/P01/current/A15985A1</link> </summary>
 
   No. You should never use taxon-specific P01 codes. This is because the taxa are already identified in the Occurrence table, in the fields `scientificName` and `scientificNameID`.
   </details></li>
-  <li><a href="vocabulary.html#map-your-data-with-dwc-vocabulary">How should I match raw data fields with Darwin Core terminology?</a></li>
+  <li><a href="vocabulary.html#map-data-fields-to-darwin-core">How should I match raw data fields with Darwin Core terminology?</a></li>
 </ul>
 
 #### Tools
