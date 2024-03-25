@@ -41,7 +41,7 @@
 #### Formatting Data
 
 <ul>
-  <li><a href="checklist.html">Is there a checklist of all required Darwin Core fields for OBIS?</a></li>
+  <li><a href="checklist.html">Is there a checklist of all required DwC fields for OBIS?</a></li>
   <li><a href="data_standards.html">How does data flow in OBIS?</a></li>
   <li><a href="common_formatissues.html#missing-required-fields">What should I do if I do not have the data for required fields by OBIS?</a></li>
   <li><a href="identifiers.html#eventid">How do I construct an eventID?</a></li>
