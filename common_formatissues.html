@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.9 Common Data formatting issues | The OBIS manual</title>
-  <meta name="description" content="4.9 Common Data formatting issues | The OBIS manual" />
+  <title>4.9 Other Important Data Formatting Steps | The OBIS manual</title>
+  <meta name="description" content="4.9 Other Important Data Formatting Steps | The OBIS manual" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.9 Common Data formatting issues | The OBIS manual" />
+  <meta property="og:title" content="4.9 Other Important Data Formatting Steps | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.9 Common Data formatting issues | The OBIS manual" />
+  <meta name="twitter:title" content="4.9 Other Important Data Formatting Steps | The OBIS manual" />
   
   
   
@@ -207,7 +207,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
-<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#populating-parent-and-child-events"><i class="fa fa-check"></i><b>4.4.1</b> Populating parent and child events</a></li>
+</ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
 <li class="chapter" data-level="4.6" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>4.6</b> DNA derived data</a>
 <ul>
@@ -227,12 +230,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8.1" data-path="vocabulary.html"><a href="vocabulary.html#measurementorfact-vocabulary-background"><i class="fa fa-check"></i><b>4.8.1</b> MeasurementOrFact vocabulary background</a></li>
 <li class="chapter" data-level="4.8.2" data-path="vocabulary.html"><a href="vocabulary.html#requesting-new-vocabulary-terms"><i class="fa fa-check"></i><b>4.8.2</b> Requesting new vocabulary terms</a></li>
 </ul></li>
-<li class="chapter" data-level="4.9" data-path="common_formatissues.html"><a href="common_formatissues.html"><i class="fa fa-check"></i><b>4.9</b> Common Data formatting issues</a>
+<li class="chapter" data-level="4.9" data-path="common_formatissues.html"><a href="common_formatissues.html"><i class="fa fa-check"></i><b>4.9</b> Other Important Data Formatting Steps</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="common_formatissues.html"><a href="common_formatissues.html#missing-required-fields"><i class="fa fa-check"></i><b>4.9.1</b> Missing required fields</a></li>
-<li class="chapter" data-level="4.9.2" data-path="common_formatissues.html"><a href="common_formatissues.html#temporal-dates-and-times"><i class="fa fa-check"></i><b>4.9.2</b> Temporal: Dates and times</a></li>
-<li class="chapter" data-level="4.9.3" data-path="common_formatissues.html"><a href="common_formatissues.html#historical-data"><i class="fa fa-check"></i><b>4.9.3</b> Historical data</a></li>
-<li class="chapter" data-level="4.9.4" data-path="common_formatissues.html"><a href="common_formatissues.html#spatial"><i class="fa fa-check"></i><b>4.9.4</b> Spatial</a></li>
+<li class="chapter" data-level="4.9.1" data-path="common_formatissues.html"><a href="common_formatissues.html#temporal-dates-and-times"><i class="fa fa-check"></i><b>4.9.1</b> Temporal: Dates and times</a></li>
+<li class="chapter" data-level="4.9.2" data-path="common_formatissues.html"><a href="common_formatissues.html#historical-data"><i class="fa fa-check"></i><b>4.9.2</b> Historical data</a></li>
+<li class="chapter" data-level="4.9.3" data-path="common_formatissues.html"><a href="common_formatissues.html#spatial"><i class="fa fa-check"></i><b>4.9.3</b> Spatial</a></li>
+<li class="chapter" data-level="4.9.4" data-path="common_formatissues.html"><a href="common_formatissues.html#missing-required-fields"><i class="fa fa-check"></i><b>4.9.4</b> Missing required fields</a></li>
 </ul></li>
 <li class="chapter" data-level="4.10" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4.10</b> Examples: ENV-DATA and DNA derived data</a>
 <ul>
@@ -339,69 +342,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="common-data-formatting-issues" class="section level2 hasAnchor" number="4.9">
-<h2><span class="header-section-number">4.9</span> Common Data formatting issues<a href="common_formatissues.html#common-data-formatting-issues" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="other-important-data-formatting-steps" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Other Important Data Formatting Steps<a href="common_formatissues.html#other-important-data-formatting-steps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Below you will find other important data formatting steps and guidelines that datasets being published to OBIS should adhere to.</p>
 <p><strong>Contents:</strong></p>
 <ul>
-<li><a href="common_formatissues.html#missing-required-fields">Missing required fields</a></li>
 <li><a href="common_formatissues.html#temporal-dates-and-times">Temporal issues: dates/times</a></li>
 <li><a href="common_formatissues.html#historical-data">Historical data</a></li>
 <li><a href="common_formatissues.html#spatial">Spatial issues: coordinate conversion</a>
 <ul>
 <li><a href="common_formatissues.html#geographical-format-conversion">Convert geographical formats</a></li>
 </ul></li>
+<li><a href="common_formatissues.html#missing-required-fields">Missing required fields</a></li>
 </ul>
-<div id="missing-required-fields" class="section level3 hasAnchor" number="4.9.1">
-<h3><span class="header-section-number">4.9.1</span> Missing required fields<a href="common_formatissues.html#missing-required-fields" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you are a <em>node manager</em> and one of the datasets in your IPT is missing data, you should prepare a brief report to contact the data provider and outline what is missing. <a href="citing.html">Get in contact with original data provider</a> if possible. If it is not possible to contact the original data provider (frequently the case for historical datasets), do your best to follow the guidelines below to fill in data. However, <strong>do not guess or make assumptions</strong> if you are unsure. For all fields inferred, please record notes in the <code>eventRemarks</code>, <code>occurrenceRemarks</code>, or ’identificationRemarks` field, as applicable.</p>
-<p>If you are a <em>data provider</em> and notice or been notified that you are missing one (or more) of the eight required terms for OBIS, please proceed accordingly for each term.</p>
-<p>To resolve missing fields <a href="checklist.html">marked as required</a> by OBIS, there are several things you can do, depending on which required field is missing. Follow the guidelines below for each term.</p>
-<ul>
-<li><strong><code>occurrenceID</code></strong> or <strong><code>eventID</code></strong></li>
-</ul>
-<p><a href="identifiers.html">Create a unique occurrenceID</a> for each of your observations. These IDs can be generated by combining dates, location names, and sampling methods.</p>
-<ul>
-<li><strong><code>eventDate</code></strong></li>
-</ul>
-<p>Ensure your eventDate is specified for each event, formatted according to <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 standards</a> (e.g., YYYY-MM-DD). We have developed <a href="common_formatissues.html#temporal-dates-and-times">step by step guidelines</a> to help you format contemporary dates and durations into ISO formatting. If your date falls outside the range of acceptable dates - i.e., historical or geological data occurring before 1583 - please follow recommendations for <a href="common_formatissues.html#historical-data">historical data</a>.</p>
-<p>For any eventDate that is inferred from literature, you should document the original date in the <code>verbatimEventDate</code> field.</p>
-<ul>
-<li><strong><code>decimalLongitude</code></strong> and <strong><code>decimalLatitude</code></strong></li>
-</ul>
-<p>First, if you have coordinate data, make sure they are <a href="common_formatissues.html#converting-coordinates">converted into decimal degrees</a>. If you do not have specific coordinate data then you must approximate the coordinates based on locality name. You can use the <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions gazetteer</a> to search for your region of interest and obtain midpoint coordinates. Guidelines for using this tool and for dealing with uncertain geolocations can be found <a href="common_qc.html#uncertain-geolocation">here</a>. You will have to make some comments in the <code>georeferenceRemarks</code> field if you are estimating coordinates.</p>
-<ul>
-<li><strong><code>scientificName</code></strong></li>
-</ul>
-<p>This field should contain only the <strong>originally documented</strong> scientific name down to the lowest possible taxon rank, even if there are misspellings or if it is a current synonym. Class or even Kingdom levels are accepted if more specific taxonomic levels are unknown. Comments about misspellings, etc. can be documented in the <code>taxonRemarks</code> field. Note that there may be special cases for eDNA and DNA derived data, see <a href="dna_data.html">specific guidelines</a> for these cases.</p>
-<p>You may encounter challenges filling this field if the species name is based on description or if its taxonomy was uncertain at the time of sampling. For such uncertain taxonomy situations, see our guidelines <a href="common_qc.html#uncertain-taxaonomic-information">here</a>.</p>
-<ul>
-<li><strong><code>scientificNameID</code></strong> (strongly recommended)</li>
-</ul>
-<p>If you cannot obtain the required Life Science Identifier (LSID) from <a href="name_matching.html">taxon matching with WoRMS</a> then you must contact World Register Marine Species to have an LSID created for your taxon. You will need to confirm that the species is marine. OBIS does not parse LSIDs from other sources (e.g., <a href="https://www.itis.gov">Integrated Taxonomic Information System</a>, <a href="https://www.catalogueoflife.org">Catalog of Life</a>), but if you want to include other LSIDs alongside the WoRMS LSID, they must be specified in a predictable format.</p>
-<ul>
-<li><strong><code>occurrenceStatus</code></strong></li>
-</ul>
-<p>Because occurrenceStatus is a binary field, “presence” or “absence”, this field can usually be easily inferred by data. If there are associated measurements or a record of an observation, the taxon in question would be present. If a particular species/taxa is present in one sample, but missing from another, then you could identify that species as absent from the second sample.</p>
-<ul>
-<li><strong><code>basisOfRecord</code></strong></li>
-</ul>
-<p><code>basisOfRecord</code> distinguishes what type of record is in your data. For records pertaining to a collected or stored specimen, you must choose one of the following terms:</p>
-<ul>
-<li><code>PreservedSpecimen</code></li>
-<li><code>FossilSpecimen</code></li>
-<li><code>LivingSpecimen</code></li>
-</ul>
-<p>For records pertaining to an observation in the wild, you should use:</p>
-<ul>
-<li><code>HumanObservation</code> (e.g., observation in the wild)</li>
-<li><code>MachineObservation</code> (e.g., photograph, acoustic detection, etc.)</li>
-<li><code>MaterialSample</code> (e.g. DNA sequences, DNA detection)</li>
-</ul>
-<p>For records pertaining to literature data, <code>basisOfRecord</code> should always reflect the evidence upon which the Occurrence record was based. For example, a researcher’s record based on photographs should specify <code>MachineObservation</code>, otherwise specifications should be <code>HumanObservation</code> (see <a href="https://github.com/tdwg/dwc-qa/issues/134#issuecomment-491827863">relevant GitHub discussion</a>).</p>
-<p>For specifics on when to use each of these and which other fields should be populated along with them, see the guidelines on <a href="darwin_core.html#record-level-terms">record-level terms</a>.</p>
-</div>
-<div id="temporal-dates-and-times" class="section level3 hasAnchor" number="4.9.2">
-<h3><span class="header-section-number">4.9.2</span> Temporal: Dates and times<a href="common_formatissues.html#temporal-dates-and-times" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="temporal-dates-and-times" class="section level3 hasAnchor" number="4.9.1">
+<h3><span class="header-section-number">4.9.1</span> Temporal: Dates and times<a href="common_formatissues.html#temporal-dates-and-times" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The date and time at which an event took place or an occurrence was recorded goes in <code>eventDate</code>. This field uses the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 standard</a>. OBIS recommends using the extended ISO 8601 format with hyphens. Note that all dates in OBIS become translated to UTC during the <a href="https://github.com/iobis/obis-qc">quality control process implemented by OBIS</a>. Formatting your dates correctly ensures there will be no errors during this process.</p>
 <p>ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use / as a separator. Date and times are separated by <code>T</code>. Timezones can be indicated at the end by using + or - the number of hours offset from UTC. If no timezone is indicated, then the time is assumed to be local time. When a date/time is recorded in UTC, a Z should be added at the end. Times must be written in the 24-hour clock system. If you do not know the time, you do not have to provide it. Please do not indicate unknown times as “00:00” as this indicates midnight.</p>
 <p>Not every piece of time information is necessary, but a generalization of how to format dates and times looks like:</p>
@@ -435,8 +390,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact date and time, you should specify that information. This also helps for continuous samplings and time-series integrated datasets.</p>
 <p>If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See <a href="common_formatissues.html#how-to-handle-mixed-date-information">example</a>.</p>
 <p>For uncertainty regarding the date of the event, see <a href="common_qc.html">guidelines</a>.</p>
-<div id="tips" class="section level4 hasAnchor" number="4.9.2.1">
-<h4><span class="header-section-number">4.9.2.1</span> Tips<a href="common_formatissues.html#tips" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="tips" class="section level4 hasAnchor" number="4.9.1.1">
+<h4><span class="header-section-number">4.9.1.1</span> Tips<a href="common_formatissues.html#tips" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To ensure your date is formatted correctly, it may be easiest to begin by populating the <code>year</code>, <code>month</code>, and <code>day</code> fields first. If the specific time of sampling is known, populate that into <code>eventTime</code> as well. When you fill these fields, we recommend ensuring the numbers are encoded as Text, not as General or numeric as Excel often tries to interpret what it thinks the content “should” be. Otherwise you may run into problems with Excel auto formatting your numbers in ways you don’t want. You can do this by highlighting the cells of interest, navigating to the Number Format on the Home ribbon and selecting “Text”. Be careful when you do this change of format, as some columns (e.g. time) may become formatted into a decimal or other unexpected format.</p>
 <div class="float">
 <img src="images/excel-text-format.png" style="width:70.0%" alt="Screenshot of how to change data type in Excel" />
@@ -463,8 +418,8 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe></p>
 </div>
-<div id="how-to-handle-mixed-date-information" class="section level4 hasAnchor" number="4.9.2.2">
-<h4><span class="header-section-number">4.9.2.2</span> How to handle mixed date information<a href="common_formatissues.html#how-to-handle-mixed-date-information" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="how-to-handle-mixed-date-information" class="section level4 hasAnchor" number="4.9.1.2">
+<h4><span class="header-section-number">4.9.1.2</span> How to handle mixed date information<a href="common_formatissues.html#how-to-handle-mixed-date-information" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When the sampling date is unclear due to a mix of date types and durations, you can use the hierarchical event structure in the Event core to help format and associate dates (and other information) with the correct sampling event. Often times it is useful to break up each type of event into separate records according to the event hierarchy.</p>
 <p>Let’s look at a fictional dataset to demonstrate this. In this example, there is a project called Maple. This project has a cruise that takes place in May and June which takes samples at three different sites. The project has data for three years, beginning in 1993. How do we capture all this information in our dataset? And how do we format <code>eventDate</code> to reflect these different times and durations?</p>
 <p>We can embed this information using a different <code>eventID</code> and <code>parentEventID</code> for each level within the project - the reoccurring cruise, the station sites, and then the samples themselves. We have added a column here for “Event Type” for the sake of example. At this time, there is no Darwin Core event type term, however there is <a href="https://github.com/tdwg/dwc/issues/408">discussion</a> for its creation.</p>
@@ -576,8 +531,8 @@ allowfullscreen></iframe></p>
 <p>You can see that the eventDate for the parent events does not need to be provided - only the dates for the actual samples are required.</p>
 </div>
 </div>
-<div id="historical-data" class="section level3 hasAnchor" number="4.9.3">
-<h3><span class="header-section-number">4.9.3</span> Historical data<a href="common_formatissues.html#historical-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="historical-data" class="section level3 hasAnchor" number="4.9.2">
+<h3><span class="header-section-number">4.9.2</span> Historical data<a href="common_formatissues.html#historical-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>OBIS recognizes the difficulties in formatting historical, archaeological and paleontological data. This kind of data is sometimes seen as “specialist” or “niche” when it comes to sharing in globally accepted databases that are accessible and recognised in academic, research and scientific forums.</p>
 <p>Some of the nuances associated with historical data have to do with the change in calendar systems, from the <a href="https://en.wikipedia.org/wiki/Julian_calendar">Julian calendar</a> to the currently used (by most countries) <a href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a> metric system. This change was implemented in 1582, so any datasets with data representing periods that predate this year <strong>must</strong> be checked and converted to the standard Gregorian calendar system. Additionally, there is <a href="https://en.wikipedia.org/wiki/Year_zero">no year zero</a>, only -1 and 1, where -1 is BCE (Before Common Era) and 1 is CE (Common Era). This can make interpretation of historical dates more challenging as such dates will need to be converted to align with ISO 8601 standards.</p>
 <p>To accommodate such challenges the OBIS Historical Data Project Team recommends the following:</p>
@@ -589,10 +544,10 @@ allowfullscreen></iframe></p>
 </ul>
 <p>For historical data originating from old records, such as ship logs or other archival records, we understand there can be a variety of issues in interpreting and formatting data according to DwC standards. If you need further help with historical data formatting, we recommend <a href="https://github.com/iobis/obis-issues/issues">submitting a Github issue</a>, or contacting the OBIS-OPI node who focuses on <a href="https://oceanspast.org/">Oceans Past</a> historical, archaeological, and paleontological data series.</p>
 </div>
-<div id="spatial" class="section level3 hasAnchor" number="4.9.4">
-<h3><span class="header-section-number">4.9.4</span> Spatial<a href="common_formatissues.html#spatial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="converting-coordinates" class="section level4 hasAnchor" number="4.9.4.1">
-<h4><span class="header-section-number">4.9.4.1</span> Converting Coordinates<a href="common_formatissues.html#converting-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="spatial" class="section level3 hasAnchor" number="4.9.3">
+<h3><span class="header-section-number">4.9.3</span> Spatial<a href="common_formatissues.html#spatial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="converting-coordinates" class="section level4 hasAnchor" number="4.9.3.1">
+<h4><span class="header-section-number">4.9.3.1</span> Converting Coordinates<a href="common_formatissues.html#converting-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>All coordinates provided in the <code>decimalLatitude</code> or <code>decimalLongitude</code> fields in OBIS must be in decimal degrees. To convert coordinates from degrees-minutes-seconds into decimal degrees, you can use <a href="https://obis.shinyapps.io/coordinates/">this Coordinate Conversion tool</a> that OBIS has developed. This tool will convert any coordinate (or list of coordinates on a separate line) in a degrees-minutes-seconds format into decimal degrees, even partial coordinates. To use it, simply copy and paste your coordinates into the box provided and click Convert. For example:</p>
 <div class="float">
 <img src="images/coordinate_conversion.png" style="width:70.0%" alt="Screenshot of how to use the OBIS coordinate converter" />
@@ -606,11 +561,11 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe></p>
 <p>If your coordinates are in UTMs, then coordinate conversion can be a bit trickier. We suggest using the following <a href="http://rcn.montana.edu/resources/Converter.aspx">conversion tool</a> to convert from UTM to decimal degrees. Note it is very important to ensure you have the correct UTM zone, otherwise the coordinate conversion will be incorrect. You can use this <a href="https://www.arcgis.com/apps/View/index.html?appid=7fa64a25efd0420896c3336dc2238475">ArcGIS map tool</a> to visually confirm UTM zones.</p>
 </div>
-<div id="geographical-format-conversion" class="section level4 hasAnchor" number="4.9.4.2">
-<h4><span class="header-section-number">4.9.4.2</span> Geographical format conversion<a href="common_formatissues.html#geographical-format-conversion" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="geographical-format-conversion" class="section level4 hasAnchor" number="4.9.3.2">
+<h4><span class="header-section-number">4.9.3.2</span> Geographical format conversion<a href="common_formatissues.html#geographical-format-conversion" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In OBIS, the spatial reference system to be documented in <code>geodeticDatum</code> is <a href="https://epsg.io/4326">EPSG:4326 (WGS84)</a>. If your spatial data are not already in this format, you may have to convert it. To do this there are a few approaches: QGIS (or ArcGIS), R, or Python. We provide some short guidance for each, however if you are struggling to convert your data to WGS84 please contact <a href="mailto:helpdesk@obis.org" class="email">helpdesk@obis.org</a> or send a message on the <a href="https://join.slack.com/t/obishq/shared_invite/zt-1nrokd987-aSah0CfXb5MoY10t1olnhQ">OBIS Slack</a>.</p>
-<div id="qgis" class="section level5 hasAnchor" number="4.9.4.2.1">
-<h5><span class="header-section-number">4.9.4.2.1</span> QGIS<a href="common_formatissues.html#qgis" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="qgis" class="section level5 hasAnchor" number="4.9.3.2.1">
+<h5><span class="header-section-number">4.9.3.2.1</span> QGIS<a href="common_formatissues.html#qgis" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>You can load a .csv file containing your coordinates to be reprojected into <a href="https://qgis.org/en/site/forusers/download.html">QGIS</a>. Opening a new project, first set the global projection to WGS84 EPSG:4326. In the bottom right corner, click the Project Properties to change the Project Coordinate Reference System (CRS). A pop up window will allow you to search for and select WGS84 EPSG:4326. Click OK.</p>
 <div class="float">
 <img src="images/qgis_screenshot1.png" style="width:70.0%" alt="Screenshot of QGIS interface" />
@@ -638,16 +593,65 @@ allowfullscreen></iframe></p>
 </div>
 <p>For more details see this <a href="https://docs.qgis.org/3.22/en/docs/training_manual/processing/crs.html?highlight=reproject">QGIS guide on reprojection</a>.</p>
 </div>
-<div id="r" class="section level5 hasAnchor" number="4.9.4.2.2">
-<h5><span class="header-section-number">4.9.4.2.2</span> R<a href="common_formatissues.html#r" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="r" class="section level5 hasAnchor" number="4.9.3.2.2">
+<h5><span class="header-section-number">4.9.3.2.2</span> R<a href="common_formatissues.html#r" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>To reproject coordinates in R, you can use functions in the <code>sf</code> package. A thorough tutorial using this package can be found <a href="https://geocompr.robinlovelace.net/reproj-geo-data.html#reproj-geo-data">here</a>.</p>
 </div>
-<div id="python" class="section level5 hasAnchor" number="4.9.4.2.3">
-<h5><span class="header-section-number">4.9.4.2.3</span> Python<a href="common_formatissues.html#python" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="python" class="section level5 hasAnchor" number="4.9.3.2.3">
+<h5><span class="header-section-number">4.9.3.2.3</span> Python<a href="common_formatissues.html#python" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>You also have the option to reproject data using the Python library <a href="https://geopandas.org/en/stable/getting_started.html">Geopandas</a>. In this package there is a utility called <code>to_crs</code> that will reproject data. A tutorial to do this can be found <a href="https://geopandas.org/en/stable/docs/user_guide/projections.html#re-projecting">here</a>.</p>
+</div>
+</div>
+</div>
+<div id="missing-required-fields" class="section level3 hasAnchor" number="4.9.4">
+<h3><span class="header-section-number">4.9.4</span> Missing required fields<a href="common_formatissues.html#missing-required-fields" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you are a <em>node manager</em> and one of the datasets in your IPT is missing data, you should prepare a brief report to contact the data provider and outline what is missing. <a href="citing.html">Get in contact with original data provider</a> if possible. If it is not possible to contact the original data provider (frequently the case for historical datasets), do your best to follow the guidelines below to fill in data. However, <strong>do not guess or make assumptions</strong> if you are unsure. For all fields inferred, please record notes in the <code>eventRemarks</code>, <code>occurrenceRemarks</code>, or ’identificationRemarks` field, as applicable.</p>
+<p>If you are a <em>data provider</em> and notice or been notified that you are missing one (or more) of the eight required terms for OBIS, please proceed accordingly for each term.</p>
+<p>To resolve missing fields <a href="checklist.html">marked as required</a> by OBIS, there are several things you can do, depending on which required field is missing. Follow the guidelines below for each term.</p>
+<ul>
+<li><strong><code>occurrenceID</code></strong> or <strong><code>eventID</code></strong></li>
+</ul>
+<p><a href="identifiers.html">Create a unique occurrenceID</a> for each of your observations. These IDs can be generated by combining dates, location names, and sampling methods.</p>
+<ul>
+<li><strong><code>eventDate</code></strong></li>
+</ul>
+<p>Ensure your eventDate is specified for each event, formatted according to <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 standards</a> (e.g., YYYY-MM-DD). We have developed <a href="common_formatissues.html#temporal-dates-and-times">step by step guidelines</a> to help you format contemporary dates and durations into ISO formatting. If your date falls outside the range of acceptable dates - i.e., historical or geological data occurring before 1583 - please follow recommendations for <a href="common_formatissues.html#historical-data">historical data</a>.</p>
+<p>For any eventDate that is inferred from literature, you should document the original date in the <code>verbatimEventDate</code> field.</p>
+<ul>
+<li><strong><code>decimalLongitude</code></strong> and <strong><code>decimalLatitude</code></strong></li>
+</ul>
+<p>First, if you have coordinate data, make sure they are <a href="common_formatissues.html#converting-coordinates">converted into decimal degrees</a>. If you do not have specific coordinate data then you must approximate the coordinates based on locality name. You can use the <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions gazetteer</a> to search for your region of interest and obtain midpoint coordinates. Guidelines for using this tool and for dealing with uncertain geolocations can be found <a href="common_qc.html#uncertain-geolocation">here</a>. You will have to make some comments in the <code>georeferenceRemarks</code> field if you are estimating coordinates.</p>
+<ul>
+<li><strong><code>scientificName</code></strong></li>
+</ul>
+<p>This field should contain only the <strong>originally documented</strong> scientific name down to the lowest possible taxon rank, even if there are misspellings or if it is a current synonym. Class or even Kingdom levels are accepted if more specific taxonomic levels are unknown. Comments about misspellings, etc. can be documented in the <code>taxonRemarks</code> field. Note that there may be special cases for eDNA and DNA derived data, see <a href="dna_data.html">specific guidelines</a> for these cases.</p>
+<p>You may encounter challenges filling this field if the species name is based on description or if its taxonomy was uncertain at the time of sampling. For such uncertain taxonomy situations, see our guidelines <a href="common_qc.html#uncertain-taxaonomic-information">here</a>.</p>
+<ul>
+<li><strong><code>scientificNameID</code></strong> (strongly recommended)</li>
+</ul>
+<p>If you cannot obtain the required Life Science Identifier (LSID) from <a href="name_matching.html">taxon matching with WoRMS</a> then you must contact World Register Marine Species to have an LSID created for your taxon. You will need to confirm that the species is marine. OBIS does not parse LSIDs from other sources (e.g., <a href="https://www.itis.gov">Integrated Taxonomic Information System</a>, <a href="https://www.catalogueoflife.org">Catalog of Life</a>), but if you want to include other LSIDs alongside the WoRMS LSID, they must be specified in a predictable format.</p>
+<ul>
+<li><strong><code>occurrenceStatus</code></strong></li>
+</ul>
+<p>Because occurrenceStatus is a binary field, “presence” or “absence”, this field can usually be easily inferred by data. If there are associated measurements or a record of an observation, the taxon in question would be present. If a particular species/taxa is present in one sample, but missing from another, then you could identify that species as absent from the second sample.</p>
+<ul>
+<li><strong><code>basisOfRecord</code></strong></li>
+</ul>
+<p><code>basisOfRecord</code> distinguishes what type of record is in your data. For records pertaining to a collected or stored specimen, you must choose one of the following terms:</p>
+<ul>
+<li><code>PreservedSpecimen</code></li>
+<li><code>FossilSpecimen</code></li>
+<li><code>LivingSpecimen</code></li>
+</ul>
+<p>For records pertaining to an observation in the wild, you should use:</p>
+<ul>
+<li><code>HumanObservation</code> (e.g., observation in the wild)</li>
+<li><code>MachineObservation</code> (e.g., photograph, acoustic detection, etc.)</li>
+<li><code>MaterialSample</code> (e.g. DNA sequences, DNA detection)</li>
+</ul>
+<p>For records pertaining to literature data, <code>basisOfRecord</code> should always reflect the evidence upon which the Occurrence record was based. For example, a researcher’s record based on photographs should specify <code>MachineObservation</code>, otherwise specifications should be <code>HumanObservation</code> (see <a href="https://github.com/tdwg/dwc-qa/issues/134#issuecomment-491827863">relevant GitHub discussion</a>).</p>
+<p>For specifics on when to use each of these and which other fields should be populated along with them, see the guidelines on <a href="darwin_core.html#record-level-terms">record-level terms</a>.</p>
 
-</div>
-</div>
 </div>
 </div>
             </section>

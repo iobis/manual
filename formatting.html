@@ -207,7 +207,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
-<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#populating-parent-and-child-events"><i class="fa fa-check"></i><b>4.4.1</b> Populating parent and child events</a></li>
+</ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
 <li class="chapter" data-level="4.6" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>4.6</b> DNA derived data</a>
 <ul>
@@ -227,12 +230,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8.1" data-path="vocabulary.html"><a href="vocabulary.html#measurementorfact-vocabulary-background"><i class="fa fa-check"></i><b>4.8.1</b> MeasurementOrFact vocabulary background</a></li>
 <li class="chapter" data-level="4.8.2" data-path="vocabulary.html"><a href="vocabulary.html#requesting-new-vocabulary-terms"><i class="fa fa-check"></i><b>4.8.2</b> Requesting new vocabulary terms</a></li>
 </ul></li>
-<li class="chapter" data-level="4.9" data-path="common_formatissues.html"><a href="common_formatissues.html"><i class="fa fa-check"></i><b>4.9</b> Common Data formatting issues</a>
+<li class="chapter" data-level="4.9" data-path="common_formatissues.html"><a href="common_formatissues.html"><i class="fa fa-check"></i><b>4.9</b> Other Important Data Formatting Steps</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="common_formatissues.html"><a href="common_formatissues.html#missing-required-fields"><i class="fa fa-check"></i><b>4.9.1</b> Missing required fields</a></li>
-<li class="chapter" data-level="4.9.2" data-path="common_formatissues.html"><a href="common_formatissues.html#temporal-dates-and-times"><i class="fa fa-check"></i><b>4.9.2</b> Temporal: Dates and times</a></li>
-<li class="chapter" data-level="4.9.3" data-path="common_formatissues.html"><a href="common_formatissues.html#historical-data"><i class="fa fa-check"></i><b>4.9.3</b> Historical data</a></li>
-<li class="chapter" data-level="4.9.4" data-path="common_formatissues.html"><a href="common_formatissues.html#spatial"><i class="fa fa-check"></i><b>4.9.4</b> Spatial</a></li>
+<li class="chapter" data-level="4.9.1" data-path="common_formatissues.html"><a href="common_formatissues.html#temporal-dates-and-times"><i class="fa fa-check"></i><b>4.9.1</b> Temporal: Dates and times</a></li>
+<li class="chapter" data-level="4.9.2" data-path="common_formatissues.html"><a href="common_formatissues.html#historical-data"><i class="fa fa-check"></i><b>4.9.2</b> Historical data</a></li>
+<li class="chapter" data-level="4.9.3" data-path="common_formatissues.html"><a href="common_formatissues.html#spatial"><i class="fa fa-check"></i><b>4.9.3</b> Spatial</a></li>
+<li class="chapter" data-level="4.9.4" data-path="common_formatissues.html"><a href="common_formatissues.html#missing-required-fields"><i class="fa fa-check"></i><b>4.9.4</b> Missing required fields</a></li>
 </ul></li>
 <li class="chapter" data-level="4.10" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4.10</b> Examples: ENV-DATA and DNA derived data</a>
 <ul>
@@ -798,15 +801,14 @@ DNA<br style="font-size: 15px;" />derived data<br />extension
 <p>Currently OBIS accepts the following extensions:</p>
 <ul>
 <li>Occurrence</li>
-<li>Event</li>
 <li>MeasurementOrFact</li>
 <li>extendedMeasurementOrFact</li>
 <li>DNADerivedData</li>
 </ul>
 <div id="how-are-extensions-linked-to-core-tables-in-obis" class="section level3 hasAnchor" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> How are extensions linked to core tables in OBIS?<a href="formatting.html#how-are-extensions-linked-to-core-tables-in-obis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>As established in the <a href="relational_db.html">relational database section</a>, OBIS relies on datasets being formatted according to a relational database structure. The <a href="data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach">ENV-DATA approach</a> that OBIS implements means your dataset will have a Core table and (optionally) Extension tables. As a review, a core file contains information relevant and applicable to each record in the extension(s). An extension file then contains records that link back to a record in the core file with more specific information (e.g., methods, measurements, facts, DNA sequences, etc.).</p>
-<p>The extension file(s) accepted by OBIS (eMoF, Occurrence, DNA) are linked to your core tables by the use of identifying ID codes. These codes could be either <code>eventID</code> or <code>occurrenceID</code>. For details on how to construct these IDs, click <a href="identifiers.html">here</a>.</p>
+<p>As established in the <a href="relational_db.html">relational database section</a>, OBIS relies on datasets being formatted according to a relational database structure. The <a href="data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach">ENV-DATA approach</a> that OBIS implements means your dataset will have a Core table and (optional) Extension tables. As a review, a core file contains information relevant and applicable to each record in the extension(s). An extension file then contains records that link back to a record in the core file with more specific information (e.g., methods, measurements, facts, DNA sequences, etc.).</p>
+<p>The extension file(s) accepted by OBIS ((e)MoF, Occurrence, DNA) are linked to your core tables by the use of identifying ID codes. These codes could be either <code>eventID</code> or <code>occurrenceID</code>. For details on how to construct these IDs, click <a href="identifiers.html">here</a>.</p>
 </div>
 <div id="differences-between-identifiers" class="section level3 hasAnchor" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Differences between identifiers<a href="formatting.html#differences-between-identifiers" class="anchor-section" aria-label="Anchor link to header"></a></h3>

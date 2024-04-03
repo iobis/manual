@@ -90,6 +90,7 @@ how-to-format-occurrence-tables
 stepwise-guidance-to-format-an-occurrence-table-with-spreadsheets
 how-to-format-event-tables
 stepwise-guidance-to-format-event-table-with-spreadsheets
+populating-parent-and-child-events
 how-to-format-extendedmeasurementorfact-tables
 what-data-goes-into-emof
 how-to-structure-emof
@@ -115,8 +116,7 @@ the-p01-collection
 selecting-p01-codes-for-measurementtypeid
 requesting-new-vocabulary-terms
 how-to-submit-a-github-vocabulary-request
-common-data-formatting-issues
-missing-required-fields
+other-important-data-formatting-steps
 temporal-dates-and-times
 tips
 how-to-handle-mixed-date-information
@@ -127,6 +127,7 @@ geographical-format-conversion
 qgis
 r
 python
+missing-required-fields
 examples-env-data-and-dna-derived-data
 fish-abundance-and-distribution
 hard-coral-cover-and-composition
