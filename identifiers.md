@@ -1,4 +1,4 @@
-## Constructing and using indentifier codes
+## Constructing and using identifier codes
 
 **Content**
 

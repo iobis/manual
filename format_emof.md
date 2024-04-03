@@ -2,7 +2,7 @@
 
 #### What data goes into eMoF
 
-Any data related to abiotic or biotic measurements, including sampling information and protocols should be included in the eMoF table. Measurement data can also go into the  [MeasurementOrFact](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml) extension, however OBIS recommends using the [extendedMeasurementOrFact](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) instead, particularly if your data is based on an Event core table.
+Any data related to abiotic or biotic measurements, including sampling information and protocols can be included in the eMoF table. Measurement data can also go into the [MeasurementOrFact](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml) extension, however OBIS recommends using the [extendedMeasurementOrFact](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) instead, particularly if your data is based on an Event core table.
 
 Required terms for eMoF include:
 

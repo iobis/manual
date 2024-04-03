@@ -44,7 +44,7 @@ Once you have formatted your data for OBIS, or have received a formatted dataset
   * Excel > Home > Conditional Formating > Highlight cells Rules > Duplicate values...
 * [GBIF data validator](https://www.gbif.org/tools/data-validator)
 * [Python library for OBIS QC](https://github.com/cioos-siooc/pyobistools) developed by Canadian Integrated Ocean Observing System
-* R package and function Hmisc:: describe
+* R package and function [Hmisc](https://hbiostat.org/r/hmisc/):: describe
   * Can give important summary statistics and identify numbers that don’t match
 
 ### Conducting QC with obistools
@@ -68,7 +68,7 @@ To use `obistools` to conduct quality control, you can follow this general order
 
 ### QC with R package Hmisc
 
-The R package [Hmisc](https://cran.r-project.org/web/packages/Hmisc/index.html) has the function [`describe`](https://rdrr.io/cran/Hmisc/man/describe.html) which can help you identify any discrepancies in your dataset.
+The R package [Hmisc](https://hbiostat.org/r/hmisc/) has the function [`describe`](https://rdrr.io/cran/Hmisc/man/describe.html) which can help you identify any discrepancies in your dataset.
 
 It will summarize each of your variables for a given data field. This can help you quickly identify any missing data and ensure the number of unique IDs is correct. For example, in an Occurrence table with 1000 records, there should be 1000 unique occurrenceIDs.
 
