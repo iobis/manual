@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.2" data-path="formatting.html"><a href="formatting.html#differences-between-identifiers"><i class="fa fa-check"></i><b>3.3.2</b> Differences between identifiers</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
-<li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
+<li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using identifier codes</a>
 <ul>
 <li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#eventid"><i class="fa fa-check"></i><b>3.5.1</b> eventID</a></li>
 <li class="chapter" data-level="3.5.2" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.2</b> occurrenceID</a></li>
@@ -390,7 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="https://www.gbif.org/tools/data-validator">GBIF data validator</a></li>
 <li><a href="https://github.com/cioos-siooc/pyobistools">Python library for OBIS QC</a> developed by Canadian Integrated Ocean Observing System</li>
-<li>R package and function Hmisc:: describe
+<li>R package and function <a href="https://hbiostat.org/r/hmisc/">Hmisc</a>:: describe
 <ul>
 <li>Can give important summary statistics and identify numbers that don’t match</li>
 </ul></li>
@@ -427,7 +427,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="qc-with-r-package-hmisc" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> QC with R package Hmisc<a href="data_qc.html#qc-with-r-package-hmisc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The R package <a href="https://cran.r-project.org/web/packages/Hmisc/index.html">Hmisc</a> has the function <a href="https://rdrr.io/cran/Hmisc/man/describe.html"><code>describe</code></a> which can help you identify any discrepancies in your dataset.</p>
+<p>The R package <a href="https://hbiostat.org/r/hmisc/">Hmisc</a> has the function <a href="https://rdrr.io/cran/Hmisc/man/describe.html"><code>describe</code></a> which can help you identify any discrepancies in your dataset.</p>
 <p>It will summarize each of your variables for a given data field. This can help you quickly identify any missing data and ensure the number of unique IDs is correct. For example, in an Occurrence table with 1000 records, there should be 1000 unique occurrenceIDs.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data_qc.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
 <span id="cb9-2"><a href="data_qc.html#cb9-2" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>

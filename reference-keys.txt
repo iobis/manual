@@ -72,7 +72,7 @@ extensions-in-obis
 how-are-extensions-linked-to-core-tables-in-obis
 differences-between-identifiers
 data-formatting-tools
-constructing-and-using-indentifier-codes
+constructing-and-using-identifier-codes
 eventid
 occurrenceid
 formatting-data-tables

@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.2" data-path="formatting.html"><a href="formatting.html#differences-between-identifiers"><i class="fa fa-check"></i><b>3.3.2</b> Differences between identifiers</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
-<li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
+<li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using identifier codes</a>
 <ul>
 <li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#eventid"><i class="fa fa-check"></i><b>3.5.1</b> eventID</a></li>
 <li class="chapter" data-level="3.5.2" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.2</b> occurrenceID</a></li>
@@ -375,7 +375,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Class Taxon | DwC: taxonRank</li>
 <li>Class Taxon | DwC: taxonRemarks</li>
 </ul>
-<p>Note that any terms related to measurements, either biotic (e.g., sex, lifestage, biomass) or abiotic will be included in extendedMeasurementOrFact table not the Occurrence table.</p>
+<p>Note that any terms related to measurements, either biotic (e.g., sex, lifestage, biomass) or abiotic will also be included in the extendedMeasurementOrFact table. Measurements can remain in the Occurrence table as long as they can be mapped to the appropriate DwC term (e.g. DwC:Occurrence:sex). Nnot every data aggregator outside of OBIS indexes the eMoF table, so otherwise this information may be lost.</p>
 <div id="stepwise-guidance-to-format-an-occurrence-table-with-spreadsheets" class="section level4 hasAnchor" number="4.3.0.1">
 <h4><span class="header-section-number">4.3.0.1</span> Stepwise Guidance to Format an Occurrence Table (with spreadsheets)<a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-with-spreadsheets" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Before proceeding with formatting the Occurrence table, be sure you have <a href="name_matching.html">completed taxon matching</a> to obtain WoRMS LSIDs for the scientificNameID field.</p>

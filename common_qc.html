@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.2" data-path="formatting.html"><a href="formatting.html#differences-between-identifiers"><i class="fa fa-check"></i><b>3.3.2</b> Differences between identifiers</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
-<li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
+<li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using identifier codes</a>
 <ul>
 <li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#eventid"><i class="fa fa-check"></i><b>3.5.1</b> eventID</a></li>
 <li class="chapter" data-level="3.5.2" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.2</b> occurrenceID</a></li>
@@ -362,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li>If only parts of the date are known (e.g., year but not month and day), you may provide the date in ISO 8601 format while excluding the unknown elements. <strong>Do not use zero</strong> to populate incomplete dates, simply end the date with the known information (e.g., 2011-03 instead of 2011-03-00). Additionally, if the year is unknown, you should only populate the <code>month</code> and <code>day</code> fields because <code>eventDate</code> cannot be formatted to exclude year. In these cases, <code>eventDate</code> is not necessary to fill.</li>
 <li>If date was provided as a textual description that is accurately interpretable, include the text description in the <code>verbatimEventDate</code> field. Then provide the interpreted date in ISO 8601 format in the <code>eventDate</code> field. Be sure to document any other important information in ‘eventRemarks’.</li>
-<li>For historical dates that do not conform to the ISO 8601 format, <a href="common_formatissues.html#historical-data">guidelines</a> are still under development. But the dwc:class:GeologicalContext can be used to capture some information for records pertaining to fossilized specimens.</li>
+<li>For historical dates that do not conform to the ISO 8601 format, <a href="common_formatissues.html#historical-data">guidelines</a> have been developed by the OBIS Historical Data Project team. The <a href="https://dwc.tdwg.org/terms/#geologicalcontext">dwc:class:GeologicalContext</a> can be used to capture some information for records pertaining to fossilized specimens, and the <a href="https://chrono.tdwg.org/">Chronometric Age Extension</a> can also be used. Note that currently when publishing, the Chronometric Age extension will not be aggregated with OBIS data, but this extension will be available when an individual dataset is downloaded. This applies to any other extensions not currently implemented.</li>
 </ol>
 </div>
 <div id="uncertain-geolocation" class="section level3 hasAnchor" number="5.6.2">
