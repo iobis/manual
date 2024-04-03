@@ -48,6 +48,7 @@
   <li><a href="identifiers.html#occurrenceid">How do I construct occurrenceID?</a></li>
   <li><a href="format_occurrence.html">What data goes into Occurrence core (or extension) and how do I set up this file?</a></li>
   <li><a href="format_event.html">How do I set up an Event core table?</a></li>
+  <li><a href="format_event.html#populating-parent-and-child-events">How should I populate parent and child event information? Do I have to populate information for child events if the parent event already contains that information?</a></li>
   <li><details>
   <summary>Do I have to provide decimalLatitude and decimalLongitude for the Event <i>and</i> Occurrence tables?</summary>
   
@@ -67,6 +68,12 @@
   <li><a href="other_data_types.html#habitat-data">How do I compile habitat data for OBIS?</a></li>
   <li><a href="other_data_types.html#tracking-data">How do I compile tracking data for OBIS?</a></li>
   <li><a href="dna_data.html">How do I compile DNA and genetic data for OBIS?</a></li>
+  <li><details>
+  <summary>What does sampleSize and organismQuantity refer to for genetic data?</summary>
+  
+  For genetic data, `sampleSizeValue` and `organismQuantity` do **not** refer to the amount sampled nor the number of organisms. Instead these fields are related to either 1) the number of sequence reads for eDNA data or 2) the number of droplets/partitions for qPCR data. See [DNA data guidelines](dna_data#.html) for more details.
+
+  </details></li>
   <li><details>
   <summary>How do I document occurrences from unknown species, those new to science, or those with temporary names? e.g. Eurythenes sp. DISCOLL.PAP.JC165.674</summary>
 

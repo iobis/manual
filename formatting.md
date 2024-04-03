@@ -40,16 +40,15 @@ Datasets formatted in Occurrence Core can use the eMoF Extension for when you ha
 Currently OBIS accepts the following extensions:
 
 * Occurrence
-* Event
 * MeasurementOrFact
 * extendedMeasurementOrFact
 * DNADerivedData
 
 ### How are extensions linked to core tables in OBIS?
 
-As established in the [relational database section](relational_db.html), OBIS relies on datasets being formatted according to a relational database structure. The [ENV-DATA approach](data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach) that OBIS implements means your dataset will have a Core table and (optionally) Extension tables. As a review, a core file contains information relevant and applicable to each record in the extension(s). An extension file then contains records that link back to a record in the core file with more specific information (e.g., methods, measurements, facts, DNA sequences, etc.).
+As established in the [relational database section](relational_db.html), OBIS relies on datasets being formatted according to a relational database structure. The [ENV-DATA approach](data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach) that OBIS implements means your dataset will have a Core table and (optional) Extension tables. As a review, a core file contains information relevant and applicable to each record in the extension(s). An extension file then contains records that link back to a record in the core file with more specific information (e.g., methods, measurements, facts, DNA sequences, etc.).
 
-The extension file(s) accepted by OBIS (eMoF, Occurrence, DNA) are linked to your core tables by the use of identifying ID codes. These codes could be either `eventID` or `occurrenceID`. For details on how to construct these IDs, click [here](identifiers.html).
+The extension file(s) accepted by OBIS ((e)MoF, Occurrence, DNA) are linked to your core tables by the use of identifying ID codes. These codes could be either `eventID` or `occurrenceID`. For details on how to construct these IDs, click [here](identifiers.html).
 
 ### Differences between identifiers
 

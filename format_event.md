@@ -42,7 +42,7 @@ Terms related to measurements, either biotic (e.g., sex, lifestage) or abiotic w
 Before proceeding with the below, make sure each record already has an [`eventID`](identifiers.html).
 
 1. Add and fill the `parentEventID` and `eventRemarks` fields as applicable
-2. Identify the hierarchical event structure in your data, if present and create new records for parent Events, filling in any relevant fields
+2. Identify the hierarchical event structure in your data, if present, and create new records for parent Events, filling in any relevant fields
 3. Identify all columns in your data that will match with Darwin Core Event fields
     * Include any relevant abiotic measurements (ENV-DATA) related to sampling events (e.g. sampling protocols). We will add these to the eMoF table later
 4. Copy these columns to a new sheet and name it Event
@@ -60,3 +60,21 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 
 After completing the formatting of your Event Core table, you can next format your extendedMeasurementOrFact table. To format the Occurrence extension table, see the [Occurrence table](format_occurrence.html) section of this manual. Note that there is a difference between how OBIS and GBIF populate fields in parent and child events. In OBIS, child events inherit parent event information. However, if `parentEvent` contains latitude/longitude coordinates, and child events do not, occurrences associated with the child events will have blank latitude/longitude coordinates because these fields are not currently inherited by parent events by GBIF. If you intend for your dataset to be published to GBIF you may consider populating both parent and child events. A discussion of this and the implications can be found [here](https://github.com/gbif/pipelines/issues/878).
+
+### Populating parent and child events
+
+In OBIS, child events will inherit information from the parent event when the field is left *empty*. For example, if you provided the information "1x1m quadrat intertidal sampling" to `samplingProtocol` for a parent event but nothing was provided to the child event, as below:
+
+| eventID | parentEventID | samplingProtocol|
+|----|----|----|
+| site123 | | 1x1m quadrat intertidal sampling |
+| site123_quad1| site123 | |
+
+the child event will automatically be populated with the same text "1x1m quadrat intertidal sampling" once published to OBIS.
+
+| eventID | parentEventID | samplingProtocol|
+|----|----|----|
+| site123 | | 1x1m quadrat intertidal sampling |
+| site123_quad1| site123 | 1x1m quadrat intertidal sampling  |
+
+This can be convenient so that you do not have to fill in the same information repeatedly. **However, it is important to know that GBIF does *not* currently implement inheritance!** Thus we recommend populating important information (e.g. decimalLongitude, decimalLatitude) to the child event to ensure all data will be useful for both OBIS and GBIF.
