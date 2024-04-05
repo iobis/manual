@@ -16,6 +16,14 @@ tools
 quality-control
 publishing
 accessing-data-in-obis
+quick-links-to-resources
+general-links-and-guides
+data-access-mappinggeoreferencing-tools
+controlled-vocabulary
+tools-for-taxonomy-dates
+data-qc-tools-links
+template-tools
+publishing-tools-links
 what-can-you-contribute-and-how
 why-publish-data-to-obis
 how-to-handle-sensitive-data
