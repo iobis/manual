@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.2 Name Matching Strategy for taxonomic quality control | The OBIS manual</title>
   <meta name="description" content="4.2 Name Matching Strategy for taxonomic quality control | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.2 Name Matching Strategy for taxonomic quality control | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -407,16 +407,16 @@ The WoRMS LSID is used for <code>DwC:scientificNameID</code>.</p>
 <p>A complete online manual is available at <a href="http://www.marinespecies.org/tutorial/taxonmatch.php">http://www.marinespecies.org/tutorial/taxonmatch.php</a>. You can attach IDs obtained from WoRMS back to your own data using <a href="https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1">Excel’s vlookup function</a>. R script to do this is shown below.</p>
 <p><strong>R script for attaching Taxon Lists to ID Lists:</strong></p>
 <p>If you are familiar enough with R, you can use the <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/merge"><code>merge</code></a> function to attach the two lists to your data. We provide a short example of how to use this function below.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="name_matching.html#cb5-1" tabindex="-1"></a><span class="co">#Generate example data table with species occurences, for this example we will only have one column with the scientificName</span></span>
-<span id="cb5-2"><a href="name_matching.html#cb5-2" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>, <span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Ginglymostoma cirratum&quot;</span>))</span>
-<span id="cb5-3"><a href="name_matching.html#cb5-3" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="name_matching.html#cb5-4" tabindex="-1"></a><span class="co"># this would be your matched file from WoRMS, but for example we are generating a simple list with the species names and LSIDs</span></span>
-<span id="cb5-5"><a href="name_matching.html#cb5-5" tabindex="-1"></a>lsids<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Ginglymostoma cirratum&quot;</span>,<span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>),</span>
-<span id="cb5-6"><a href="name_matching.html#cb5-6" tabindex="-1"></a> <span class="at">LSID =</span> <span class="fu">c</span>(<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105846&quot;</span>, <span class="st">&quot;urn:lsid:marinespecies.org:taxname:213112&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:127029&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105847&quot;</span>))</span>
-<span id="cb5-7"><a href="name_matching.html#cb5-7" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="name_matching.html#cb5-8" tabindex="-1"></a><span class="co">#merge data frames together</span></span>
-<span id="cb5-9"><a href="name_matching.html#cb5-9" tabindex="-1"></a>matched_data<span class="ot">&lt;-</span><span class="fu">merge</span>(data, lsids, <span class="at">by =</span> <span class="st">&quot;scientificName&quot;</span>)</span>
-<span id="cb5-10"><a href="name_matching.html#cb5-10" tabindex="-1"></a>matched_data</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="name_matching.html#cb10-1" tabindex="-1"></a><span class="co">#Generate example data table with species occurences, for this example we will only have one column with the scientificName</span></span>
+<span id="cb10-2"><a href="name_matching.html#cb10-2" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>, <span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Ginglymostoma cirratum&quot;</span>))</span>
+<span id="cb10-3"><a href="name_matching.html#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="name_matching.html#cb10-4" tabindex="-1"></a><span class="co"># this would be your matched file from WoRMS, but for example we are generating a simple list with the species names and LSIDs</span></span>
+<span id="cb10-5"><a href="name_matching.html#cb10-5" tabindex="-1"></a>lsids<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Ginglymostoma cirratum&quot;</span>,<span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>),</span>
+<span id="cb10-6"><a href="name_matching.html#cb10-6" tabindex="-1"></a> <span class="at">LSID =</span> <span class="fu">c</span>(<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105846&quot;</span>, <span class="st">&quot;urn:lsid:marinespecies.org:taxname:213112&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:127029&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105847&quot;</span>))</span>
+<span id="cb10-7"><a href="name_matching.html#cb10-7" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="name_matching.html#cb10-8" tabindex="-1"></a><span class="co">#merge data frames together</span></span>
+<span id="cb10-9"><a href="name_matching.html#cb10-9" tabindex="-1"></a>matched_data<span class="ot">&lt;-</span><span class="fu">merge</span>(data, lsids, <span class="at">by =</span> <span class="st">&quot;scientificName&quot;</span>)</span>
+<span id="cb10-10"><a href="name_matching.html#cb10-10" tabindex="-1"></a>matched_data</span></code></pre></div>
 </div>
 <div id="how-to-fetch-a-full-classification-for-a-list-of-species-from-worms" class="section level4 hasAnchor" number="4.2.1.2">
 <h4><span class="header-section-number">4.2.1.2</span> How to fetch a full classification for a list of species from WoRMS?<a href="name_matching.html#how-to-fetch-a-full-classification-for-a-list-of-species-from-worms" class="anchor-section" aria-label="Anchor link to header"></a></h4>

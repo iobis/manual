@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1.5 Frequently Asked Questions | The OBIS manual</title>
   <meta name="description" content="1.5 Frequently Asked Questions | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1.5 Frequently Asked Questions | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -620,26 +620,26 @@ Otherwise, we recommend you use the parquet download which is available <a href=
 How do I obtain a taxon checklist for an area?
 </summary>
 <p>There are a few possible ways to obtain a taxon checklist for a given area. We will obtain a checklist of species in the Albain EEZ as an example. To do this we will create a bounding box around our area of interest, and then apply filters to simplify the geometry.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="FAQ.html#cb1-1" tabindex="-1"></a>  <span class="fu">library</span>(mregions)</span>
-<span id="cb1-2"><a href="FAQ.html#cb1-2" tabindex="-1"></a>  <span class="fu">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="FAQ.html#cb1-3" tabindex="-1"></a>  <span class="fu">library</span>(robis)</span>
-<span id="cb1-4"><a href="FAQ.html#cb1-4" tabindex="-1"></a>  <span class="fu">library</span>(sf)</span>
-<span id="cb1-5"><a href="FAQ.html#cb1-5" tabindex="-1"></a>  <span class="co">#obtain Albanian EEZ as sf</span></span>
-<span id="cb1-6"><a href="FAQ.html#cb1-6" tabindex="-1"></a>  geom <span class="ot">&lt;-</span> <span class="fu">mr_shp</span>(<span class="at">key =</span> <span class="st">&quot;MarineRegions:eez&quot;</span>, <span class="at">filter =</span> <span class="st">&quot;Albanian Exclusive Economic Zone&quot;</span>, <span class="at">maxFeatures =</span> <span class="cn">NULL</span>)</span>
-<span id="cb1-7"><a href="FAQ.html#cb1-7" tabindex="-1"></a>  <span class="co">#get WKT for the bounding box</span></span>
-<span id="cb1-8"><a href="FAQ.html#cb1-8" tabindex="-1"></a>  wkt <span class="ot">&lt;-</span> <span class="fu">st_as_text</span>(<span class="fu">st_as_sfc</span>(<span class="fu">st_bbox</span>(geom)), <span class="at">digits =</span> <span class="dv">6</span>)</span>
-<span id="cb1-9"><a href="FAQ.html#cb1-9" tabindex="-1"></a>  <span class="co">#fetch occurrences for bounding box</span></span>
-<span id="cb1-10"><a href="FAQ.html#cb1-10" tabindex="-1"></a>  occ <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">geometry =</span> wkt) <span class="sc">%&gt;%</span></span>
-<span id="cb1-11"><a href="FAQ.html#cb1-11" tabindex="-1"></a>    <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;decimalLongitude&quot;</span>, <span class="st">&quot;decimalLatitude&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb1-12"><a href="FAQ.html#cb1-12" tabindex="-1"></a>  <span class="co">#filter using geometry</span></span>
-<span id="cb1-13"><a href="FAQ.html#cb1-13" tabindex="-1"></a>  occ_filtered <span class="ot">&lt;-</span> occ <span class="sc">%&gt;%</span></span>
-<span id="cb1-14"><a href="FAQ.html#cb1-14" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">st_intersects</span>(geometry, geom, <span class="at">sparse =</span> <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-15"><a href="FAQ.html#cb1-15" tabindex="-1"></a>    <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-16"><a href="FAQ.html#cb1-16" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>geometry)</span>
-<span id="cb1-17"><a href="FAQ.html#cb1-17" tabindex="-1"></a>  <span class="co">#get taxa</span></span>
-<span id="cb1-18"><a href="FAQ.html#cb1-18" tabindex="-1"></a>  alb_taxa <span class="ot">&lt;-</span> occ_filtered <span class="sc">%&gt;%</span></span>
-<span id="cb1-19"><a href="FAQ.html#cb1-19" tabindex="-1"></a>    <span class="fu">group_by</span>(phylum, class, order, family, genus, species, scientificName) <span class="sc">%&gt;%</span></span>
-<span id="cb1-20"><a href="FAQ.html#cb1-20" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="FAQ.html#cb6-1" tabindex="-1"></a>  <span class="fu">library</span>(mregions)</span>
+<span id="cb6-2"><a href="FAQ.html#cb6-2" tabindex="-1"></a>  <span class="fu">library</span>(dplyr)</span>
+<span id="cb6-3"><a href="FAQ.html#cb6-3" tabindex="-1"></a>  <span class="fu">library</span>(robis)</span>
+<span id="cb6-4"><a href="FAQ.html#cb6-4" tabindex="-1"></a>  <span class="fu">library</span>(sf)</span>
+<span id="cb6-5"><a href="FAQ.html#cb6-5" tabindex="-1"></a>  <span class="co">#obtain Albanian EEZ as sf</span></span>
+<span id="cb6-6"><a href="FAQ.html#cb6-6" tabindex="-1"></a>  geom <span class="ot">&lt;-</span> <span class="fu">mr_shp</span>(<span class="at">key =</span> <span class="st">&quot;MarineRegions:eez&quot;</span>, <span class="at">filter =</span> <span class="st">&quot;Albanian Exclusive Economic Zone&quot;</span>, <span class="at">maxFeatures =</span> <span class="cn">NULL</span>)</span>
+<span id="cb6-7"><a href="FAQ.html#cb6-7" tabindex="-1"></a>  <span class="co">#get WKT for the bounding box</span></span>
+<span id="cb6-8"><a href="FAQ.html#cb6-8" tabindex="-1"></a>  wkt <span class="ot">&lt;-</span> <span class="fu">st_as_text</span>(<span class="fu">st_as_sfc</span>(<span class="fu">st_bbox</span>(geom)), <span class="at">digits =</span> <span class="dv">6</span>)</span>
+<span id="cb6-9"><a href="FAQ.html#cb6-9" tabindex="-1"></a>  <span class="co">#fetch occurrences for bounding box</span></span>
+<span id="cb6-10"><a href="FAQ.html#cb6-10" tabindex="-1"></a>  occ <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">geometry =</span> wkt) <span class="sc">%&gt;%</span></span>
+<span id="cb6-11"><a href="FAQ.html#cb6-11" tabindex="-1"></a>    <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;decimalLongitude&quot;</span>, <span class="st">&quot;decimalLatitude&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb6-12"><a href="FAQ.html#cb6-12" tabindex="-1"></a>  <span class="co">#filter using geometry</span></span>
+<span id="cb6-13"><a href="FAQ.html#cb6-13" tabindex="-1"></a>  occ_filtered <span class="ot">&lt;-</span> occ <span class="sc">%&gt;%</span></span>
+<span id="cb6-14"><a href="FAQ.html#cb6-14" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">st_intersects</span>(geometry, geom, <span class="at">sparse =</span> <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-15"><a href="FAQ.html#cb6-15" tabindex="-1"></a>    <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-16"><a href="FAQ.html#cb6-16" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>geometry)</span>
+<span id="cb6-17"><a href="FAQ.html#cb6-17" tabindex="-1"></a>  <span class="co">#get taxa</span></span>
+<span id="cb6-18"><a href="FAQ.html#cb6-18" tabindex="-1"></a>  alb_taxa <span class="ot">&lt;-</span> occ_filtered <span class="sc">%&gt;%</span></span>
+<span id="cb6-19"><a href="FAQ.html#cb6-19" tabindex="-1"></a>    <span class="fu">group_by</span>(phylum, class, order, family, genus, species, scientificName) <span class="sc">%&gt;%</span></span>
+<span id="cb6-20"><a href="FAQ.html#cb6-20" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div>
 </details>
 </li>
 <li>
