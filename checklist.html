@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.3</b> OBIS Data Life Cycle</a></li>
 <li class="chapter" data-level="2.4" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>2.4</b> Biodiversity data standards</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>2.4.1</b> Darwin Core</a></li>
+<li class="chapter" data-level="2.4.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>2.4.1</b> Darwin Core Terms &amp; Guidelines</a></li>
 <li class="chapter" data-level="2.4.2" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>2.4.2</b> Darwin Core Archive</a></li>
 <li class="chapter" data-level="2.4.3" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>2.4.3</b> Relational databases: the underlying framework of OBIS</a></li>
 <li class="chapter" data-level="2.4.4" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.4.4</b> Ecological Metadata Language</a></li>
@@ -348,7 +348,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="darwin-core-term-checklist-for-obis" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Darwin Core Term Checklist for OBIS<a href="checklist.html#darwin-core-term-checklist-for-obis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There are many Darwin Core terms listed in the <a href="https://dwc.tdwg.org/terms/">TDWG quick reference guide</a>. However, not all these terms are necessary for publishing data to OBIS.</p>
-<p>For your convenience, we have created a checklist of all the Darwin Core terms relevant for OBIS data providers. You can reference this list to quickly see which terms are required by OBIS, which file (Event, Occurrence, eMoF, DNA) they can be found in, and which Darwin Core class it relates to. These terms correlate with the <a href="ipt.html#map-your-data-to-darwin-core">IPT vocabulary mapping</a> you will do when it comes time to publish your dataset. You may notice some terms are accepted in multiple data tables (e.g., Event and Occurrence) - this is because it depends on your dataset structure. If you have an Event Core, you will include some terms that would not be included if you had Occurrence Core. For guidance on specific class terms (e.g., location, taxonomy, etc.), see the <a href="darwin_core.html#darwin-core-guidelines">Darwin Core</a> section of the manual.</p>
+<p>For your convenience, we have created a checklist of all the Darwin Core terms relevant for OBIS data providers. You can reference this list to quickly see which terms are required by OBIS, which data table (Event, Occurrence, eMoF, DNA) they can be found in, and which Darwin Core class each term belongs to. These terms correlate with the <a href="ipt.html#map-your-data-to-darwin-core">IPT vocabulary mapping</a> you will do when it comes time to publish your dataset. You may notice some terms are accepted in multiple data tables (e.g., Event and Occurrence) - this is because it depends on your dataset structure. If you have an Event Core, you will include some terms that would not be included if you had Occurrence Core. For guidance on specific class terms (e.g., location, taxonomy, etc.), see the <a href="darwin_core.html#darwin-core-guidelines">Darwin Core</a> section of the manual.</p>
 <p>Note that when you publish your dataset on the IPT, if you use a term not listed below it will be an unmapped field and will <strong>not</strong> be published alongside your data. You may still wish to include such fields in your dataset if you are publishing to other repositories, just know that they will not be included in your OBIS dataset. You may include this information either by putting it in the <code>dynamicProperties</code> field in JSON format, or putting the information into the <a href="format_emof.html">eMoF</a>. Alternatively, you may have fields that you do not wish to be published and that do not correspond to one of these terms (e.g. personal notes). This is okay - if they are not mapped to one of the terms, that column in your dataset will not be published.</p>
 <table style="width:100%;">
 <colgroup>
@@ -364,11 +364,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tr class="header">
 <th>Term</th>
 <th>OBIS Required</th>
-<th>DarwinCore Class</th>
-<th>Event</th>
-<th>Occurrence</th>
-<th>eMoF</th>
-<th>DNA</th>
+<th>Term’s DarwinCore Class</th>
+<th>Event Table</th>
+<th>Occurrence Table</th>
+<th>eMoF Table</th>
+<th>DNA Table</th>
 </tr>
 </thead>
 <tbody>

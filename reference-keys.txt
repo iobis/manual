@@ -38,7 +38,7 @@ how-to-handle-sensitive-data
 obis-data-life-cycle
 who-is-responsible-for-each-phase
 biodiversity-data-standards
-darwin-core-1
+darwin-core-terms-guidelines
 introduction-to-darwin-core
 history-of-darwin-core-and-obis
 darwin-core-dwc-terms
