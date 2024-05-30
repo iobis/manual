@@ -155,7 +155,7 @@ The use and definitions for additional ON signs (`identificationQualifier`) can 
 
 Examples:
 
-| scientificName      | scientificNameAuthorship                | scientificNameID                          | taxonRank | identificationQualifier  | taxonConceptID                      |
+| scientificName      | scientificNameAuthorship                | scientificNameID                          | taxonRank | identificationQualifier  | verbatimIdentification                      |
 |---------------------|-----------------------------------------|-------------------------------------------|-----------|--------------------------|-------------------------------------|
 |Pelagia              | Péron & Lesueur, 1810                   | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.                |Pelagia gen. nov.                    |
 |Pelagia benovici     | Piraino, Aglieri, Scorrano & Boero, 2014| urn:lsid:marinespecies.org:taxname:851656 | species   | sp. nov                  |Pelagia benovici sp. nov             |
@@ -188,7 +188,9 @@ Both `associatedMedia`, `associatedReferences` and `associatedSequences` are glo
 
 `associatedTaxa` include a list (concatenated and separated) of identifiers or names of taxa and their associations with the Occurrence, e.g. the species occurrence was associated to the presence of kelp such as _Laminaria digitata_.
 
-The recommended vocabulary for `sex` see [BODC vocab : S10](http://vocab.nerc.ac.uk/collection/S10/current/), for `lifeStage` see [BODC vocab: S11](http://vocab.nerc.ac.uk/collection/S11/current/), `behavior` (no vocab available), and `occurrenceRemarks` can hold any comments or notes about the Occurrence.
+Data columns recording an organism's sex, life stage, and/or behaviour should be populated with controlled vocabulary. It is recommended to include the columns in preferably both the Occurrence table and the extendedMeasurementOrFact table. The recommended vocabulary for sex can be found in [BODC vocabulary collection S10](http://vocab.nerc.ac.uk/collection/S10/current/), for lifeStage in [BODC vocabulary collection S11](http://vocab.nerc.ac.uk/collection/S11/current/), and for behavior in [ICES Behaviour collection](https://vocab.ices.dk/services/api/Code/d0268a96-afc9-436e-a4db-4f61c2b9f6ba).
+
+`occurrenceRemarks` can hold any comments or notes about the Occurrence.
 
 `recordedBy` can hold a list (concatenated and separated) of names of people, groups, or organizations responsible for recording the original Occurrence. The primary collector or observer, especially one who applies a personal identifier (recordNumber), should be listed first.
 
@@ -204,13 +206,13 @@ _Data from [A summary of benthic studies in the sluice dock of Ostend during 197
 
 ##### Record level terms
 
-`basisOfRecord` (required term) specifies the nature of the record, i.e. whether the occurrence record is based on a stored specimen or an observation. In case the specimen is collected and stored in a collection (e.g. at a museum, university, research institute), the options are:
+`basisOfRecord` (required term) specifies the nature of the record, i.e. whether the occurrence record is based on a stored specimen or an observation. A full list of vocabularies with definitions for this term can be found [here](https://rs.gbif.org/vocabulary/dwc/basis_of_record_2022-02-02.xml). In case the specimen is collected and stored in a collection (e.g. at a museum, university, research institute), the options are:
 
 - `PreservedSpecimen` e.g. preserved in ethanol, tissue etc.
 - `FossilSpecimen` a fossil, which allows OBIS to make the distinction between the date of collection and the time period the specimen was assumed alive
 - `LivingSpecimen` an intentionally kept/cultivated living specimen e.g. in an aquarium or culture collection.
 
-In case no specimen is deposited, the basis of record is either `HumanObservation` (e.g bird sighting, benthic sample but specimens were discarded after counting), or `MachineObservation` (e.g. for occurrences based on automated sensors such as image recognition, etc). For records pertaining to genetic samples, basisOfRecord can be `MaterialSample` (e.g. in the DNA-derived data extension).
+In case no specimen is deposited, the basis of record is either `HumanObservation` (e.g bird sighting, benthic sample but specimens were discarded after counting), `MachineObservation` (e.g. for occurrences based on automated sensors such as image recognition, etc), or `MaterialSample` (e.g. physical sample was taken, and may have been preserved or destroyed). For records pertaining to genetic samples, basisOfRecord can be `MaterialSample` (e.g. in the DNA-derived data extension).
 
 When the basisOfRecord is either a _preservedSpecimen_, _LivingSpecimen_ or _FossilSpecimen_ please also add the `institutionCode`, `collectionCode` and `catalogNumber`, which will enable people to visit the collection and re-examine the material. Sometimes, for example in case of living specimens, a dataset can contain records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection. In this case please add the event type information in `eventRemarks` (see [OBIS manual: event](darwin_core.html#event)).
 
@@ -257,7 +259,7 @@ Example:
 
 _Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018](http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018)._
 
-Keep in mind while filling in [`minimumDepthInMeters`](http://rs.tdwg.org/dwc/terms/maximumDepthInMeters) and [`maximumDepthInMeters`](http://rs.tdwg.org/dwc/terms/minimumDepthInMeters) that this should be the depth at which the **sample was taken** and not the water column depth at that location. When fillling in any depth fields (`minimumDepthInMeters`, `maximumDepthInMeters`, [`minimumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters), and [`maximumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters)), you should also consider which information is needed to fully understand the data. In most cases (e.g. scenario 1 and 4 in the figure below), providing `minimumDepthInMeters` and `maximumDepthInMeters` is sufficient for observations of organisms at particular depths. However, in cases where an occurrence is above the sea surface, e.g. flying birds (scenario 2 and 5),  you should populate `minimumDistanceAboveSurfaceInMeters`, `maximumDistanceAboveSurfaceInMeters`, and, where relevant, you should also include [`minimumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_minimumElevationInMeters) and [`maximumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_maximumElevationInMeters).
+Keep in mind while filling in [`minimumDepthInMeters`](http://rs.tdwg.org/dwc/terms/maximumDepthInMeters) and [`maximumDepthInMeters`](http://rs.tdwg.org/dwc/terms/minimumDepthInMeters) that this should be the depth at which the **sample was taken** and not the water column depth at that location. When filling in any depth fields (`minimumDepthInMeters`, `maximumDepthInMeters`, [`minimumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters), and [`maximumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters)), you should also consider which information is needed to fully understand the data. In most cases (e.g. scenario 1 and 4 in the figure below), providing `minimumDepthInMeters` and `maximumDepthInMeters` is sufficient for observations of organisms at particular depths. However, in cases where an occurrence is above the sea surface, e.g. flying birds (scenario 2 and 5),  you should populate `minimumDistanceAboveSurfaceInMeters`, `maximumDistanceAboveSurfaceInMeters`, and, where relevant, you should also include [`minimumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_minimumElevationInMeters) and [`maximumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_maximumElevationInMeters).
 
 The `minimumDistanceAboveSurfaceInMeters` and `maximumDistanceAboveSurfaceInMeters` is the distance, in meters, above or below a reference surface or reference point. The reference surface is determined by the depth or elevation. If the depth and elevation are 0, then the reference surface is the sea surface. If a depth is given, the reference surface is the location of the depth. This can be especially useful for sediment cores taken from the sea bottom (scenario 3 in figure below). If no depth is given, then the elevation is the reference surface (scenario 5).
 
