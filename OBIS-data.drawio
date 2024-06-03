@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="OBIS-datastructure" id="WIOOF-Vvk7kjg27J6qeT">
-        <mxGraphModel dx="3528" dy="1525" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+        <mxGraphModel dx="2807" dy="1225" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
             <root>
                 <mxCell id="hc1PMB7uW3_f1QSLA8F5-0"/>
                 <mxCell id="hc1PMB7uW3_f1QSLA8F5-1" parent="hc1PMB7uW3_f1QSLA8F5-0"/>
@@ -68,7 +68,7 @@
                 <mxCell id="hc1PMB7uW3_f1QSLA8F5-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" source="hc1PMB7uW3_f1QSLA8F5-22" target="hc1PMB7uW3_f1QSLA8F5-28" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="hc1PMB7uW3_f1QSLA8F5-22" value="&lt;span class=&quot;notion-enable-hover&quot; data-token-index=&quot;0&quot;&gt;Is there a 1:1 relationship between event/sampling information (e.g. location, sample, etc.) and occurrence data?&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;fontStyle=1;fillColor=#CCE5FF;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
+                <mxCell id="hc1PMB7uW3_f1QSLA8F5-22" value="&lt;span class=&quot;notion-enable-hover&quot; data-token-index=&quot;0&quot;&gt;Is there more than one occurrence associated with a single sampling event (e.g. tow, core, etc)?&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;fontStyle=1;fillColor=#CCE5FF;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
                     <mxGeometry x="-640" y="-400" width="240" height="97" as="geometry"/>
                 </mxCell>
                 <mxCell id="hc1PMB7uW3_f1QSLA8F5-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" source="hc1PMB7uW3_f1QSLA8F5-10" target="hc1PMB7uW3_f1QSLA8F5-22" edge="1">
@@ -80,19 +80,19 @@
                 <mxCell id="hc1PMB7uW3_f1QSLA8F5-24" value="abundance, percent cover" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#E6E6E6;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
                     <mxGeometry x="-630" y="-550" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="hc1PMB7uW3_f1QSLA8F5-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="hc1PMB7uW3_f1QSLA8F5-1" source="hc1PMB7uW3_f1QSLA8F5-28" target="hc1PMB7uW3_f1QSLA8F5-34" edge="1">
+                <mxCell id="hc1PMB7uW3_f1QSLA8F5-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="hc1PMB7uW3_f1QSLA8F5-1" source="hc1PMB7uW3_f1QSLA8F5-26" target="hc1PMB7uW3_f1QSLA8F5-34" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="hc1PMB7uW3_f1QSLA8F5-26" value="Yes" style="ellipse;whiteSpace=wrap;html=1;fillColor=#CCFFCC;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
-                    <mxGeometry x="-476" y="-250" width="60" height="60" as="geometry"/>
+                    <mxGeometry x="-649" y="-250" width="60" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="hc1PMB7uW3_f1QSLA8F5-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="hc1PMB7uW3_f1QSLA8F5-1" source="hc1PMB7uW3_f1QSLA8F5-26" target="hc1PMB7uW3_f1QSLA8F5-36" edge="1">
+                <mxCell id="hc1PMB7uW3_f1QSLA8F5-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="hc1PMB7uW3_f1QSLA8F5-1" source="hc1PMB7uW3_f1QSLA8F5-28" target="hc1PMB7uW3_f1QSLA8F5-36" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-340" y="-180" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="hc1PMB7uW3_f1QSLA8F5-28" value="No" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFCCCC;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
-                    <mxGeometry x="-649" y="-250" width="60" height="60" as="geometry"/>
+                    <mxGeometry x="-476" y="-250" width="60" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="hc1PMB7uW3_f1QSLA8F5-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" source="hc1PMB7uW3_f1QSLA8F5-31" target="hc1PMB7uW3_f1QSLA8F5-38" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -242,19 +242,19 @@
                 <mxCell id="hc1PMB7uW3_f1QSLA8F5-77" value="DNA&lt;br style=&quot;font-size: 15px;&quot;&gt;derived data&lt;br&gt;extension" style="rhombus;whiteSpace=wrap;html=1;rounded=0;fillColor=#FFB570;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
                     <mxGeometry x="295" y="249.5" width="109" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="0" value="Occurrence&lt;br style=&quot;font-size: 15px;&quot;&gt;extension" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFCC;fontSize=15;" vertex="1" parent="hc1PMB7uW3_f1QSLA8F5-1">
+                <mxCell id="0" value="Occurrence&lt;br style=&quot;font-size: 15px;&quot;&gt;extension" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFCC;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
                     <mxGeometry x="-825" y="249.5" width="109" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="" style="shape=cross;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="hc1PMB7uW3_f1QSLA8F5-1">
+                <mxCell id="2" value="" style="shape=cross;whiteSpace=wrap;html=1;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
                     <mxGeometry x="-859.5" y="289.5" width="30" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Occurrence&lt;br style=&quot;font-size: 15px;&quot;&gt;extension" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFCC;fontSize=15;" vertex="1" parent="hc1PMB7uW3_f1QSLA8F5-1">
+                <mxCell id="3" value="Occurrence&lt;br style=&quot;font-size: 15px;&quot;&gt;extension" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFCC;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
                     <mxGeometry x="-1248" y="249.5" width="109" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;rotation=90;fontSize=15;" vertex="1" parent="hc1PMB7uW3_f1QSLA8F5-1">
+                <mxCell id="6" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;rotation=90;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
                     <mxGeometry x="-1207.5" y="80" width="20" height="310" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="" style="shape=cross;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="hc1PMB7uW3_f1QSLA8F5-1">
+                <mxCell id="7" value="" style="shape=cross;whiteSpace=wrap;html=1;fontSize=15;" parent="hc1PMB7uW3_f1QSLA8F5-1" vertex="1">
                     <mxGeometry x="-1136.5" y="289.5" width="30" height="30" as="geometry"/>
                 </mxCell>
             </root>
