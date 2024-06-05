@@ -371,72 +371,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="inspecting-qc-flags-with-r" class="section level3 hasAnchor" number="5.3.2">
 <h3><span class="header-section-number">5.3.2</span> Inspecting QC flags with R<a href="dataquality.html#inspecting-qc-flags-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Inspecting flags using R is also very easy. The example below fetches the data from a single dataset, and lists the flags and the number of records affected. Notice that the <code>occurrence()</code> call has <code>dropped = TRUE</code> to make sure that any dropped records are included in the results:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="dataquality.html#cb15-1" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
-<span id="cb15-2"><a href="dataquality.html#cb15-2" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb15-3"><a href="dataquality.html#cb15-3" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb15-4"><a href="dataquality.html#cb15-4" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="dataquality.html#cb15-5" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
-<span id="cb15-6"><a href="dataquality.html#cb15-6" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="dataquality.html#cb15-7" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb15-8"><a href="dataquality.html#cb15-8" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="dataquality.html#cb15-9" tabindex="-1"></a><span class="co"># unnest flags</span></span>
-<span id="cb15-10"><a href="dataquality.html#cb15-10" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="dataquality.html#cb15-11" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb15-12"><a href="dataquality.html#cb15-12" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-13"><a href="dataquality.html#cb15-13" tabindex="-1"></a>  <span class="fu">unnest</span>(flags)</span>
-<span id="cb15-14"><a href="dataquality.html#cb15-14" tabindex="-1"></a></span>
-<span id="cb15-15"><a href="dataquality.html#cb15-15" tabindex="-1"></a><span class="co"># get frequency per flag</span></span>
-<span id="cb15-16"><a href="dataquality.html#cb15-16" tabindex="-1"></a></span>
-<span id="cb15-17"><a href="dataquality.html#cb15-17" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="fu">table</span>(df_long<span class="sc">$</span>flags))</span></code></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="dataquality.html#cb16-1" tabindex="-1"></a>                                Var1 Freq</span>
-<span id="cb16-2"><a href="dataquality.html#cb16-2" tabindex="-1"></a><span class="dv">1</span>                 depth_exceeds_bath   <span class="dv">78</span></span>
-<span id="cb16-3"><a href="dataquality.html#cb16-3" tabindex="-1"></a><span class="dv">2</span>                   no_accepted_name   <span class="dv">17</span></span>
-<span id="cb16-4"><a href="dataquality.html#cb16-4" tabindex="-1"></a><span class="dv">3</span>                           no_depth    <span class="dv">5</span></span>
-<span id="cb16-5"><a href="dataquality.html#cb16-5" tabindex="-1"></a><span class="dv">4</span>                           no_match  <span class="dv">138</span></span>
-<span id="cb16-6"><a href="dataquality.html#cb16-6" tabindex="-1"></a><span class="dv">5</span>                         not_marine    <span class="dv">2</span></span>
-<span id="cb16-7"><a href="dataquality.html#cb16-7" tabindex="-1"></a><span class="dv">6</span>                            on_land    <span class="dv">1</span></span>
-<span id="cb16-8"><a href="dataquality.html#cb16-8" tabindex="-1"></a><span class="dv">7</span>      worms_annotation_await_editor    <span class="dv">5</span></span>
-<span id="cb16-9"><a href="dataquality.html#cb16-9" tabindex="-1"></a><span class="dv">8</span>  worms_annotation_reject_ambiguous    <span class="dv">2</span></span>
-<span id="cb16-10"><a href="dataquality.html#cb16-10" tabindex="-1"></a><span class="dv">9</span>    worms_annotation_reject_habitat    <span class="dv">2</span></span>
-<span id="cb16-11"><a href="dataquality.html#cb16-11" tabindex="-1"></a><span class="dv">10</span>             worms_annotation_todo    <span class="dv">9</span></span>
-<span id="cb16-12"><a href="dataquality.html#cb16-12" tabindex="-1"></a><span class="dv">11</span>     worms_annotation_unresolvable    <span class="dv">7</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="dataquality.html#cb16-1" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
+<span id="cb16-2"><a href="dataquality.html#cb16-2" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb16-3"><a href="dataquality.html#cb16-3" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb16-4"><a href="dataquality.html#cb16-4" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="dataquality.html#cb16-5" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
+<span id="cb16-6"><a href="dataquality.html#cb16-6" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="dataquality.html#cb16-7" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-8"><a href="dataquality.html#cb16-8" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="dataquality.html#cb16-9" tabindex="-1"></a><span class="co"># unnest flags</span></span>
+<span id="cb16-10"><a href="dataquality.html#cb16-10" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="dataquality.html#cb16-11" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb16-12"><a href="dataquality.html#cb16-12" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-13"><a href="dataquality.html#cb16-13" tabindex="-1"></a>  <span class="fu">unnest</span>(flags)</span>
+<span id="cb16-14"><a href="dataquality.html#cb16-14" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="dataquality.html#cb16-15" tabindex="-1"></a><span class="co"># get frequency per flag</span></span>
+<span id="cb16-16"><a href="dataquality.html#cb16-16" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="dataquality.html#cb16-17" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="fu">table</span>(df_long<span class="sc">$</span>flags))</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="dataquality.html#cb17-1" tabindex="-1"></a>                                Var1 Freq</span>
+<span id="cb17-2"><a href="dataquality.html#cb17-2" tabindex="-1"></a><span class="dv">1</span>                 depth_exceeds_bath   <span class="dv">78</span></span>
+<span id="cb17-3"><a href="dataquality.html#cb17-3" tabindex="-1"></a><span class="dv">2</span>                   no_accepted_name   <span class="dv">17</span></span>
+<span id="cb17-4"><a href="dataquality.html#cb17-4" tabindex="-1"></a><span class="dv">3</span>                           no_depth    <span class="dv">5</span></span>
+<span id="cb17-5"><a href="dataquality.html#cb17-5" tabindex="-1"></a><span class="dv">4</span>                           no_match  <span class="dv">138</span></span>
+<span id="cb17-6"><a href="dataquality.html#cb17-6" tabindex="-1"></a><span class="dv">5</span>                         not_marine    <span class="dv">2</span></span>
+<span id="cb17-7"><a href="dataquality.html#cb17-7" tabindex="-1"></a><span class="dv">6</span>                            on_land    <span class="dv">1</span></span>
+<span id="cb17-8"><a href="dataquality.html#cb17-8" tabindex="-1"></a><span class="dv">7</span>      worms_annotation_await_editor    <span class="dv">5</span></span>
+<span id="cb17-9"><a href="dataquality.html#cb17-9" tabindex="-1"></a><span class="dv">8</span>  worms_annotation_reject_ambiguous    <span class="dv">2</span></span>
+<span id="cb17-10"><a href="dataquality.html#cb17-10" tabindex="-1"></a><span class="dv">9</span>    worms_annotation_reject_habitat    <span class="dv">2</span></span>
+<span id="cb17-11"><a href="dataquality.html#cb17-11" tabindex="-1"></a><span class="dv">10</span>             worms_annotation_todo    <span class="dv">9</span></span>
+<span id="cb17-12"><a href="dataquality.html#cb17-12" tabindex="-1"></a><span class="dv">11</span>     worms_annotation_unresolvable    <span class="dv">7</span></span></code></pre></div>
 <p>This second example creates a list of annotated names for a dataset:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="dataquality.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
-<span id="cb17-2"><a href="dataquality.html#cb17-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb17-3"><a href="dataquality.html#cb17-3" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb17-4"><a href="dataquality.html#cb17-4" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="dataquality.html#cb17-5" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
-<span id="cb17-6"><a href="dataquality.html#cb17-6" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="dataquality.html#cb17-7" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb17-8"><a href="dataquality.html#cb17-8" tabindex="-1"></a></span>
-<span id="cb17-9"><a href="dataquality.html#cb17-9" tabindex="-1"></a><span class="co"># only keep WoRMS annotations and summarize</span></span>
-<span id="cb17-10"><a href="dataquality.html#cb17-10" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="dataquality.html#cb17-11" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb17-12"><a href="dataquality.html#cb17-12" tabindex="-1"></a>  <span class="fu">select</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
-<span id="cb17-13"><a href="dataquality.html#cb17-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-14"><a href="dataquality.html#cb17-14" tabindex="-1"></a>  <span class="fu">unnest</span>(flags) <span class="sc">%&gt;%</span></span>
-<span id="cb17-15"><a href="dataquality.html#cb17-15" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(flags, <span class="st">&quot;worms&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb17-16"><a href="dataquality.html#cb17-16" tabindex="-1"></a>  <span class="fu">group_by</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
-<span id="cb17-17"><a href="dataquality.html#cb17-17" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="dataquality.html#cb18-1" tabindex="-1"></a>   originalScientificName            flags                             records</span>
-<span id="cb18-2"><a href="dataquality.html#cb18-2" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>                             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                               <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
-<span id="cb18-3"><a href="dataquality.html#cb18-3" tabindex="-1"></a> <span class="dv">1</span> Alcyonidium fruticosa             worms_annotation_reject_habitat         <span class="dv">1</span></span>
-<span id="cb18-4"><a href="dataquality.html#cb18-4" tabindex="-1"></a> <span class="dv">2</span> <span class="fu">Apicularia</span> (Thapsiella) rudis sp. worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb18-5"><a href="dataquality.html#cb18-5" tabindex="-1"></a> <span class="dv">3</span> Arcoscalpellum vegae              worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb18-6"><a href="dataquality.html#cb18-6" tabindex="-1"></a> <span class="dv">4</span> Balanus evermanni                 worms_annotation_await_editor           <span class="dv">1</span></span>
-<span id="cb18-7"><a href="dataquality.html#cb18-7" tabindex="-1"></a> <span class="dv">5</span> Chloramidae                       worms_annotation_reject_ambiguous       <span class="dv">2</span></span>
-<span id="cb18-8"><a href="dataquality.html#cb18-8" tabindex="-1"></a> <span class="dv">6</span> Cleippides quadridentatus         worms_annotation_todo                   <span class="dv">1</span></span>
-<span id="cb18-9"><a href="dataquality.html#cb18-9" tabindex="-1"></a> <span class="dv">7</span> Enhydrosoma hoplacantha           worms_annotation_reject_habitat         <span class="dv">1</span></span>
-<span id="cb18-10"><a href="dataquality.html#cb18-10" tabindex="-1"></a> <span class="dv">8</span> Hippomedon setosa                 worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb18-11"><a href="dataquality.html#cb18-11" tabindex="-1"></a> <span class="dv">9</span> Leionucula tenuis                 worms_annotation_await_editor           <span class="dv">1</span></span>
-<span id="cb18-12"><a href="dataquality.html#cb18-12" tabindex="-1"></a><span class="dv">10</span> Ophiocten borealis                worms_annotation_todo                   <span class="dv">1</span></span>
-<span id="cb18-13"><a href="dataquality.html#cb18-13" tabindex="-1"></a><span class="dv">11</span> Ophiopholis gracilis              worms_annotation_todo                   <span class="dv">1</span></span>
-<span id="cb18-14"><a href="dataquality.html#cb18-14" tabindex="-1"></a><span class="dv">12</span> Priapulus australis               worms_annotation_await_editor           <span class="dv">1</span></span>
-<span id="cb18-15"><a href="dataquality.html#cb18-15" tabindex="-1"></a><span class="dv">13</span> Primnoella residaeformis          worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb18-16"><a href="dataquality.html#cb18-16" tabindex="-1"></a><span class="dv">14</span> Robulus orbigny                   worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb18-17"><a href="dataquality.html#cb18-17" tabindex="-1"></a><span class="dv">15</span> Tetraxonia                        worms_annotation_unresolvable           <span class="dv">2</span></span>
-<span id="cb18-18"><a href="dataquality.html#cb18-18" tabindex="-1"></a><span class="dv">16</span> Tmetonyx barentsi                 worms_annotation_await_editor           <span class="dv">2</span></span>
-<span id="cb18-19"><a href="dataquality.html#cb18-19" tabindex="-1"></a><span class="dv">17</span> Triaxonida                        worms_annotation_todo                   <span class="dv">6</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="dataquality.html#cb18-1" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
+<span id="cb18-2"><a href="dataquality.html#cb18-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb18-3"><a href="dataquality.html#cb18-3" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb18-4"><a href="dataquality.html#cb18-4" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="dataquality.html#cb18-5" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
+<span id="cb18-6"><a href="dataquality.html#cb18-6" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="dataquality.html#cb18-7" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-8"><a href="dataquality.html#cb18-8" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="dataquality.html#cb18-9" tabindex="-1"></a><span class="co"># only keep WoRMS annotations and summarize</span></span>
+<span id="cb18-10"><a href="dataquality.html#cb18-10" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="dataquality.html#cb18-11" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb18-12"><a href="dataquality.html#cb18-12" tabindex="-1"></a>  <span class="fu">select</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
+<span id="cb18-13"><a href="dataquality.html#cb18-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-14"><a href="dataquality.html#cb18-14" tabindex="-1"></a>  <span class="fu">unnest</span>(flags) <span class="sc">%&gt;%</span></span>
+<span id="cb18-15"><a href="dataquality.html#cb18-15" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(flags, <span class="st">&quot;worms&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-16"><a href="dataquality.html#cb18-16" tabindex="-1"></a>  <span class="fu">group_by</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
+<span id="cb18-17"><a href="dataquality.html#cb18-17" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="dataquality.html#cb19-1" tabindex="-1"></a>   originalScientificName            flags                             records</span>
+<span id="cb19-2"><a href="dataquality.html#cb19-2" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>                             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                               <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb19-3"><a href="dataquality.html#cb19-3" tabindex="-1"></a> <span class="dv">1</span> Alcyonidium fruticosa             worms_annotation_reject_habitat         <span class="dv">1</span></span>
+<span id="cb19-4"><a href="dataquality.html#cb19-4" tabindex="-1"></a> <span class="dv">2</span> <span class="fu">Apicularia</span> (Thapsiella) rudis sp. worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb19-5"><a href="dataquality.html#cb19-5" tabindex="-1"></a> <span class="dv">3</span> Arcoscalpellum vegae              worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb19-6"><a href="dataquality.html#cb19-6" tabindex="-1"></a> <span class="dv">4</span> Balanus evermanni                 worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb19-7"><a href="dataquality.html#cb19-7" tabindex="-1"></a> <span class="dv">5</span> Chloramidae                       worms_annotation_reject_ambiguous       <span class="dv">2</span></span>
+<span id="cb19-8"><a href="dataquality.html#cb19-8" tabindex="-1"></a> <span class="dv">6</span> Cleippides quadridentatus         worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb19-9"><a href="dataquality.html#cb19-9" tabindex="-1"></a> <span class="dv">7</span> Enhydrosoma hoplacantha           worms_annotation_reject_habitat         <span class="dv">1</span></span>
+<span id="cb19-10"><a href="dataquality.html#cb19-10" tabindex="-1"></a> <span class="dv">8</span> Hippomedon setosa                 worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb19-11"><a href="dataquality.html#cb19-11" tabindex="-1"></a> <span class="dv">9</span> Leionucula tenuis                 worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb19-12"><a href="dataquality.html#cb19-12" tabindex="-1"></a><span class="dv">10</span> Ophiocten borealis                worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb19-13"><a href="dataquality.html#cb19-13" tabindex="-1"></a><span class="dv">11</span> Ophiopholis gracilis              worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb19-14"><a href="dataquality.html#cb19-14" tabindex="-1"></a><span class="dv">12</span> Priapulus australis               worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb19-15"><a href="dataquality.html#cb19-15" tabindex="-1"></a><span class="dv">13</span> Primnoella residaeformis          worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb19-16"><a href="dataquality.html#cb19-16" tabindex="-1"></a><span class="dv">14</span> Robulus orbigny                   worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb19-17"><a href="dataquality.html#cb19-17" tabindex="-1"></a><span class="dv">15</span> Tetraxonia                        worms_annotation_unresolvable           <span class="dv">2</span></span>
+<span id="cb19-18"><a href="dataquality.html#cb19-18" tabindex="-1"></a><span class="dv">16</span> Tmetonyx barentsi                 worms_annotation_await_editor           <span class="dv">2</span></span>
+<span id="cb19-19"><a href="dataquality.html#cb19-19" tabindex="-1"></a><span class="dv">17</span> Triaxonida                        worms_annotation_todo                   <span class="dv">6</span></span></code></pre></div>
 
 </div>
 </div>
