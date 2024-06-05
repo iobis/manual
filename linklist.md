@@ -13,7 +13,7 @@ Below you will find a convenient list of important or relevant websites and reso
 * [Darwin Core term Quick Reference Guide](https://dwc.tdwg.org/terms/)
 * [Darwin Core text guide](https://dwc.tdwg.org/text/)
 * [Publishing DNA-derived data guide](https://docs.gbif.org/publishing-dna-derived-data/en/)
-* Data formatting tutorial YouTube video series: <https://www.youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF>
+* [OBIS Data formatting tutorial YouTube series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF): this series covers topics including creating identifiers (eventID, occurrenceID), creating data tables (event, Occurrence, eMoF), accessing OBIS data, taxon matching, running QC checks, etc.
 * De Pooter et al. 2017. Toward a new data standard for combined marine biological and environmental datasets - expanding OBIS beyond species occurrences. Biodiversity Data Journal 5: e10989. hdl.handle.net/10.3897/BDJ.5.e10989
 * Duncan et al. (2021). A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension. EMODnet report.  <https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5> (note you must refine search to Technical Reports from 2021 to identify this report as it does not have an individual link)
 
@@ -31,8 +31,9 @@ Below you will find a convenient list of important or relevant websites and reso
 
 #### Controlled vocabulary
 
+* [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul): this series demonstrates how to use the [vocabulary decision tree](vocabulary#selecting-p01-codes-for-measurementtypeid) in conjunction with the SeaDataNet P01 facet search in order to find/select vocabularies for eMoF measurements
 * [SeaDataNet P01 facet search](https://vocab.seadatanet.org/p01-facet-search): recommended interface to search for P01 codes used to populate measurementTypeID field. Note that the free text search is best used by supplying one search term at a time (it does not search the same way we use Google)
-* [OBIS GitHub repository for vocabulary](https://github.com/nvs-vocabs/OBISVocabs/issues): use this repository to request new terms for OBIS data
+* [OBIS GitHub repository for vocabulary](https://github.com/nvs-vocabs/OBISVocabs/issues): use this repository to request new terms for measurements related to OBIS data
 * [Darwin Core Basis of Record Vocabulary](https://rs.gbif.org/vocabulary/dwc/basis_of_record_2022-02-02.xml): definitions for terms used to populate basisOfRecord
 * [OBIS MoF viewer](https://mof.obis.org/): this tool allows you to search for all measurements or facts published in OBIS
 * [MeasurementOrFact statistics summary by Node](https://r.obis.org/mof/): this page provides a summary for each dataset by OBIS node, summarizing the % of missing measurementTypeID, measurementValueID, and measurementUnitIDs

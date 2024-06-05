@@ -3,6 +3,7 @@
 If your dataset structure is [based on Occurrence core](formatting.html), or has an Occurrence extension (remember that all OBIS data have at least one occurrence record associated, regardless of what organization structure you have chosen), there are several terms that are [required](checklist.html) in your dataset by OBIS. These required data fields include the following eight terms:
 
 * `occurrenceID`
+* `eventID` (required for Occurrence extension, not required for Occurrence Core)
 * `occurrenceStatus`
 * `basisOfRecord`
 * `scientificName`
