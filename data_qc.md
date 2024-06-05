@@ -49,26 +49,33 @@ Once you have formatted your data for OBIS, or have received a formatted dataset
 
 ### Conducting QC with obistools
 
-To use `obistools` to conduct quality control, you can follow this general order:
+Installing `obistools`  requires the devtools package. Use the following code to install both packages:
+
+```R
+install.packages("devtools")
+devtools::install_github("iobis/obistools")
+```
+
+If you have difficulty installing `obistools`, please try updating your R packages, in particular the `vctrs` package. This can be done in RStudio in the Packages tab ("update" button) or by using the `update.packages()` command (you can choose which packages to update). If you cannot install `obistools` please reach out to helpdesk@obis.org and we will help you.
+
+To use `obistools` to conduct quality control, you can follow the general order below. Please see the [`obistools` GitHub](https://github.com/iobis/obistools) for examples of how to use the functions.
 
 1. Check that the taxa match with WoRMS
     * [`obistools::match_taxa`](https://github.com/iobis/obistools#taxon-matching)
 2. Check that all required fields are present in the occurrence table
     * [`obistools::check_fields`](https://github.com/iobis/obistools#check-required-fields)
 3. Check coordinates
-    * Plot them on a map to identify any points that appear outside the scope of the dataset [`obistools::plot_map`](https://github.com/iobis/obistools#plot-points-on-a-map)
-    * Identify points with obistools::identify_map
+    * Plot them on a map to identify any points that appear outside the scope of the dataset [`obistools::plot_map`](https://github.com/iobis/obistools#plot-points-on-a-map). Using `obistools:plot_map_leaflet()` will additionally allow you to identify the row number for a particular data point.
     * Check that points are not on land [`obistools::check_onland`](https://github.com/iobis/obistools#check-points-on-land)
     * Ensure depth ranges are valid [`obistools::check_depth`](https://github.com/iobis/obistools#check-depth)
-4. Check for [statistical outliers](https://github.com/iobis/obistools#check-outliers) which may have had data entry errors
-    * obistools::check_outliers_species and obistools::check_outliers_dataset
-5. Check that the eventID and parentEventID are structured correctly [`obistools::check_eventids`](https://github.com/iobis/obistools#check-outliers)
-    * Ensure all eventIDs in extensions have matching eventIDs in the core table [`obistools::check_extension_eventids`](https://github.com/iobis/obistools#check-eventid-in-an-extension)
-6. Check that eventDate is formatted properly [`obistools::check_eventdate`](https://github.com/iobis/obistools#check-eventdate)
+4. Check that the identifiers are present, unique, and appropriately correspond with each other [`obistools::check_eventids`](https://github.com/iobis/obistools#check-outliers). You should also check the uniqueness of the `occurrenceID` field (e.g. using `Hmisc::describe` or simple code like `length(occur$occurrenceID) == length(unique(occur$occurrenceID))`)
+    * Ensure all `eventIDs` in extensions have matching `eventIDs` in the core table [`obistools::check_extension_eventids`](https://github.com/iobis/obistools#check-eventid-in-an-extension)
+5. Check that `eventDate` is formatted properly [`obistools::check_eventdate`](https://github.com/iobis/obistools#check-eventdate)
+6. Check for statistical outliers or other anomalies with Hmisc (below)
 
 ### QC with R package Hmisc
 
-The R package [Hmisc](https://hbiostat.org/r/hmisc/) has the function [`describe`](https://rdrr.io/cran/Hmisc/man/describe.html) which can help you identify any discrepancies in your dataset.
+The R package [Hmisc](https://hbiostat.org/r/hmisc/) has the function [`describe`](https://rdrr.io/cran/Hmisc/man/describe.html) which can help you identify any discrepancies or outliers in your dataset.
 
 It will summarize each of your variables for a given data field. This can help you quickly identify any missing data and ensure the number of unique IDs is correct. For example, in an Occurrence table with 1000 records, there should be 1000 unique occurrenceIDs.
 
