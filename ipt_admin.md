@@ -44,4 +44,4 @@ For extensions already installed, you may notice yellow flags indicating a core 
 
 ![*Screenshot demonstrating when core or extensions need to be updated*](images/iptadmin-core.png)
 
-For a detailed breakdown of administrator options, see the [IPT guide](https://github.com/gbif/ipt/wiki/IPT2ManualAdministration.wiki#administration-menu).
+For a detailed breakdown of administrator options, see the [IPT guide](https://ipt.gbif.org/manual/en/ipt/latest/administration).
