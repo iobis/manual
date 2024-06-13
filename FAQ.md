@@ -13,13 +13,21 @@
 
 #### General
 
-* [I have data and want to publish to OBIS - what do I do?](contribute.html)
-* [Why is it important to share and format data?](contribute.html#why-publish-data-to-obis)
-* [How do I handle sensitive data?](contribute.html#how-to-handle-sensitive-data)
-* [Where can I make suggestions for improvements on this Manual?](https://github.com/iobis/manual)
-* [Where can I find OBIS related training videos?](https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF)
-* [What are the responsibilities of OBIS node managers?](nodes.html)
-* [Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?](https://github.com/iobis/obis-network-datasets/)
+<ul>
+  <li><a href="contribute.html">I have data and want to publish to OBIS - what do I do?</a></li>
+  <li><a href="contribute.html#why-publish-data-to-obis">Why is it important to share and format data?</a></li>
+  <li><a href="contribute.html#how-to-handle-sensitive-data">How do I handle sensitive data?</a></li>
+  <li><a href="https://github.com/iobis/manual">Where can I make suggestions for improvements on this Manual?</a></li>
+  <li><a href="https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF">Where can I find OBIS related training videos?</a></li>
+  <li><a href="nodes.html">What are the responsibilities of OBIS node managers?</a></li>
+  <li><a href="https://github.com/iobis/obis-network-datasets/">Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?</a></li>
+  <li><details>
+  <summary>I am an OBIS node and need to update the contact information listed for my node on the OBIS website, how do I do that?</summary>
+
+  To update OBIS Node contact information listed at <https://obis.org/contact/>, you can edit the information here https://metadata.obis.org/ and signing in with your OceanExpert credentials.
+
+  </details></li>
+</ul>
 
 #### Darwin Core
 
@@ -31,7 +39,7 @@
   <li><a href="formatting.html#dataset-structure">What is the difference between Occurence Core and Event Core?</a></li>
   <li><a href="identifiers.html#introduction-to-identifiers">What is the difference between eventID, occurrenceID, organismID, taxonID, scientificNameID, recordNumber, materialEntityID, materialSampleID, and catalogNumber?</a></li>
   <li><details>
-  <summary>What is the difference between <code>individualCount</code>, and <code>organismQuantity</code>, and which one should I use?
+  <summary>What is the difference between <code>individualCount</code>, and <code>organismQuantity</code>, and which one should I use?</summary>
 
   The DwC term `individualCount` is used simply for documenting the *number of individuals* present at the time the occurrence happened. Conversely, `organismQuantity` is used to record *any type* of quantity related to an organism or occurrence. `organismQuantityType` may include the number of individuals, the % cover, biomass, the cover-abundance on the Braun-Blanquet Scale, etc. While both DwC terms can be placed in the Occurrence table, OBIS recommends also populating them in the eMoF table because of the standardization of terms and because you can link to sampling events and factual sampling information.
 
