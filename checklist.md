@@ -8,6 +8,8 @@ For your convenience, we have created a checklist of all the Darwin Core terms r
 
 Note that when you publish your dataset on the IPT, if you use a term not listed below it will be an unmapped field and will **not** be published alongside your data. You may still wish to include such fields in your dataset if you are publishing to other repositories, just know that they will not be included in your OBIS dataset. You may include this information either by putting it in the `dynamicProperties` field in JSON format, or putting the information into the [eMoF](format_emof.html). Alternatively, you may have fields that you do not wish to be published and that do not correspond to one of these terms (e.g. personal notes). This is okay - if they are not mapped to one of the terms, that column in your dataset will not be published.
 
+Terms marked with * indicate that the specified term is accepted in the Event or Occurrence table, but preference is that they be recorded in the eMoF table to link with controlled vocabulary.
+
 | Term | OBIS Required | Term's DarwinCore Class | Event Table | Occurrence Table | eMoF Table | DNA Table  |
 |---------|-----------|---------|----------|--------|----------|----------|
 | eventDate | required |  event |  x | x |  |  |
@@ -42,6 +44,7 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 | target_subfragment | strongly recommended | dna |  |  |  | x |
 | day | recommended | event | x | x |  |  |
 | endDayOfYear | recommended | event | x | x |  |  |
+| eventType | strongly recommended | event | x |  |  |  |
 | eventRemarks | optional | event | x | x |  |  |
 | eventTime | recommended | event | x | x |  |  |
 | fieldNotes | optional | event | x |  |  |  |
@@ -49,10 +52,10 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 | habitat | recommended | event | x |  | x |  |
 | month | strongly recommended | event | x | x |  |  |
 | parentEventID | required (if exists) | event | x |  |  |  |
-| sampleSizeUnit | strongly recommended | event | x | x | x |  |
-| sampleSizeValue | strongly recommended | event | x | x | x |  |
-| samplingEffort | strongly recommended | event | x | x | x |  |
-| samplingProtocol | strongly recommended | event | x | x | x |  |
+| sampleSizeUnit | strongly recommended | event | x* | x* | x |  |
+| sampleSizeValue | strongly recommended | event | x* | x* | x |  |
+| samplingEffort | strongly recommended | event | x* | x* | x |  |
+| samplingProtocol | strongly recommended | event | x* | x* | x |  |
 | startDayOfYear | recommended | event | x |  |  |  |
 | verbatimEventDate | recommended | event | x |  |  |  |
 | year | strongly recommended | event | x | x |  |  |
@@ -139,23 +142,23 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 | associatedReferences | optional | occurrence |  | x |  |  |
 | associatedSequences | recommended | occurrence |  | x |  |  |
 | associatedTaxa | optional | occurrence |  | x |  |  |
-| behavior | recommended | occurrence |  | x | x |  |
+| behavior | recommended | occurrence |  | x* | x |  |
 | catalogNumber | recommended | occurrence |  | x |  |  |
 | disposition | optional | occurrence |  | x |  |  |
 | establishmentMeans | optional | occurrence |  | x |  |  |
 | georeferenceVerificationStatus | recommended | occurrence |  | x |  |  |
-| individualCount | strongly recommended | occurrence |  | x | x |  |
-| lifeStage | recommended | occurrence |  | x | x |  |
+| individualCount | strongly recommended | occurrence |  | x* | x |  |
+| lifeStage | recommended | occurrence |  | x* | x |  |
 | occurrenceRemarks | recommended | occurrence |  | x |  |  |
-| organismQuantity | strongly recommended | occurrence |  | x | x |  |
-| organismQuantityType | strongly recommended | occurrence |  | x | x |  |
+| organismQuantity | strongly recommended | occurrence |  | x* | x |  |
+| organismQuantityType | strongly recommended | occurrence |  | x* | x |  |
 | otherCatalogNumbers | optional | occurrence |  | x |  |  |
 | preparations | optional | occurrence |  | x |  |  |
 | recordedBy | recommended | occurrence |  | x |  |  |
 | recordedByID | recommended | occurrence |  | x |  |  |
 | recordNumber | recommended | occurrence |  | x |  |  |
 | reproductiveCondition | recommended | occurrence |  | x |  |  |
-| sex | recommended | occurrence |  | x | x |  |
+| sex | recommended | occurrence |  | x* | x |  |
 | associatedOccurrences | optional | organsim |  | x |  |  |
 | associatedOrganisms | optional | organsim |  | x |  |  |
 | organismID | recommended | organsim |  | x |  |  |
@@ -190,6 +193,7 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 | namePublishedInYear | optional | taxon |  | x |  |  |
 | nomenclaturalCode | optional | taxon |  | x |  |  |
 | nomenclaturalStatus | optional | taxon |  | x |  |  |
+| verbatimIdentification | optional | identification | | x | | |
 | originalNameUsage | recommended | taxon |  | x |  |  |
 | originalNameUsageID | recommended | taxon |  | x |  |  |
 | parentNameUsage | recommended | taxon |  | x |  |  |
@@ -205,7 +209,6 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 | taxonRemarks | recommended | taxon |  | x |  |  |
 | verbatimTaxonRank | recommended | taxon |  | x |  |  |
 | vernacularName | recommended | taxon |  | x |  |  |
-| type or eventType | strongly recommended | event | x |  |  |  |
 | class | recommended | taxon |  | x |  |  |
 | family | recommended | taxon |  | x |  |  |
 | genus | strongly recommended | taxon |  | x |  |  |
