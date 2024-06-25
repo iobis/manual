@@ -49,10 +49,10 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 | habitat | recommended | event | x |  | x |  |
 | month | strongly recommended | event | x | x |  |  |
 | parentEventID | required (if exists) | event | x |  |  |  |
-| sampleSizeUnit | strongly recommended | event |  | x | x |  |
-| sampleSizeValue | strongly recommended | event |  | x | x |  |
-| samplingEffort | strongly recommended | event |  | x | x |  |
-| samplingProtocol | strongly recommended | event |  | x | x |  |
+| sampleSizeUnit | strongly recommended | event | x | x | x |  |
+| sampleSizeValue | strongly recommended | event | x | x | x |  |
+| samplingEffort | strongly recommended | event | x | x | x |  |
+| samplingProtocol | strongly recommended | event | x | x | x |  |
 | startDayOfYear | recommended | event | x |  |  |  |
 | verbatimEventDate | recommended | event | x |  |  |  |
 | year | strongly recommended | event | x | x |  |  |
