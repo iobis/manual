@@ -2,11 +2,11 @@
 
 A MEASUREMENT TYPES dataset report has been added regarding currently used measurementType and associated measurementTypeID(s), located near the bottom of the individual dataset pages (if measurementType in use for the dataset).
 
-This new dataset report was derived from this MoF statistics report <https://r.obis.org/mof/> and this active filtering MoF tool <https://mof.obis.org/>.
+This new dataset report was derived from this MoF statistics report <https://r.obis.org/mof/> and this active filtering MoF tool <https://mof.obis.org/>. **Important note:** the [mof filtering tool](https://mof.obis.org/) should **NOT** be used as a resource for mapping vocabularies to measurements and parameters! It is a tool designed to assist node managers in finding any incorrect mappings within their datasets. For assistance with mapping vocabularies, see the [vocabulary section](vocabulary#map-emof-measurement-identifiers-to-preferred-bodc-vocabulary.html) of this Manual.
 
-To more easily locate the datasets within your node that may have possible measurementType ID issues, use the MoF Statistics page: <https://r.obis.org/mof/>.  This contains the list of Nodes currently using measurementType/measurementValue/measurementUnit with counts and percentage missing for the associated ID(s).
+To more easily locate the datasets within your node that may have possible `measurementTypeID` issues, use the MoF Statistics page: <https://r.obis.org/mof/>.  This contains the list of Nodes currently using measurementType/measurementValue/measurementUnit with counts and percentage missing for the associated ID(s).
 
-If there is a node in that list that you are interested in locating, searching for and possibly fixing MoF issues, select the Node from the list, then select a dataset (displaying a high percentage of missing ID(s)), and scroll down to the MEASUREMENT TYPE report
+If there is a node in that list that you are interested in locating, searching for, and possibly fixing MoF issues, select the Node from the list, then select a dataset (displaying a high percentage of missing ID(s)), and scroll down to the MEASUREMENT TYPE report
 
 Example, selected OBIS USA,
 
