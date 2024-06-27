@@ -2,7 +2,7 @@
 
 ### Guidelines on the sharing and use of data in OBIS
 
-The IOC Assembly adopted a new [IOC Data Policy and Terms of Use](https://iode.org/data-policy/) (IOC Decision A-32/4.4, 2023) and requested that IOC programmes (like OBIS), projects, as well as other communities of practice should develop and/or apply, where applicable, detailed metadata, data and products sharing guidelines that are consistent with this new policy.  
+The IOC Assembly adopted a new [IOC Data Policy and Terms of Use](https://iode.org/resources/ioc-data-policy-and-terms-of-use-2023/) (IOC Decision A-32/4.4, 2023) and requested that IOC programmes (like OBIS), projects, as well as other communities of practice should develop and/or apply, where applicable, detailed metadata, data and products sharing guidelines that are consistent with this new policy.  
 
 The OBIS guidelines on the sharing and use of data in OBIS was agreed at SG-OBIS-IV (Feb 2015) and adopted at IODE-XXIII (March 2015) and was based on the principles of the previous IOC data exchange policy. The SG-OBIS-11 (May 2023) set up an IWG Data Policy to fulfil this task and then the SG-OBIS-12 agreed upon an updated policy.
 
