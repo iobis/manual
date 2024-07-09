@@ -128,7 +128,7 @@ edna-data-from-monterey-bay-california
 s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton
 unknown-sequences
 guidelines-for-compiling-genetic-data-qpcr
-obis-bioinformatics-pipline
+obis-bioinformatics-pipeline
 choosing-vocabularies-for-your-dataset
 map-data-fields-to-darwin-core
 map-emof-measurement-identifiers-to-preferred-bodc-vocabulary
