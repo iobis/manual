@@ -369,8 +369,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Other terms you should consider adding are grouped by their associated Darwin Core class in the table below. See the <a href="checklist.html">term checklist</a> for a more complete list of DwC terms for the Event table.</p>
 <ul>
 <li>Class Event | DwC:parentEventID</li>
-<li>Class Event | DwC:eventRemarks</li>
 <li>Class Event | DwC:eventType</li>
+<li>Class Event | DwC:eventRemarks</li>
 <li>Class Event | DwC:year</li>
 <li>Class Event | DwC:month</li>
 <li>Class Event | DwC:day</li>
@@ -397,8 +397,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">5.4.0.1</span> Stepwise Guidance to Format Event Table (with spreadsheets)<a href="format_event.html#stepwise-guidance-to-format-event-table-with-spreadsheets" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Before proceeding with the below, make sure each record already has an <a href="identifiers.html"><code>eventID</code></a>.</p>
 <ol style="list-style-type: decimal">
-<li>Add and fill the <code>parentEventID</code> and <code>eventRemarks</code> fields as applicable</li>
-<li>Identify the hierarchical event structure in your data, if present, and create new records for parent Events, filling in any relevant fields</li>
+<li>Add and fill the <code>parentEventID</code>, <code>eventType</code>, and <code>eventRemarks</code> fields as applicable</li>
+<li>Identify the hierarchical event structure in your data, if present, and create new records for parent events, filling in any relevant fields</li>
 <li>Identify all columns in your data that will match with Darwin Core Event fields
 <ul>
 <li>Include any relevant abiotic measurements (ENV-DATA) related to sampling events (e.g. sampling protocols). We will add these to the eMoF table later</li>
