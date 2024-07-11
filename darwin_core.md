@@ -263,15 +263,16 @@ _Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as pla
 
 Keep in mind while filling in [`minimumDepthInMeters`](http://rs.tdwg.org/dwc/terms/maximumDepthInMeters) and [`maximumDepthInMeters`](http://rs.tdwg.org/dwc/terms/minimumDepthInMeters) that this should be the depth at which the **sample was taken** and not the water column depth at that location. When filling in any depth fields (`minimumDepthInMeters`, `maximumDepthInMeters`, [`minimumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters), and [`maximumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters)), you should also consider which information is needed to fully understand the data. In most cases (e.g. scenario 1 and 4 in the figure below), providing `minimumDepthInMeters` and `maximumDepthInMeters` is sufficient for observations of organisms at particular depths. However, in cases where an occurrence is above the sea surface, e.g. flying birds (scenario 2 and 5),  you should populate `minimumDistanceAboveSurfaceInMeters`, `maximumDistanceAboveSurfaceInMeters`, and, where relevant, you should also include [`minimumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_minimumElevationInMeters) and [`maximumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_maximumElevationInMeters).
 
-The `minimumDistanceAboveSurfaceInMeters` and `maximumDistanceAboveSurfaceInMeters` is the distance, in meters, above or below a reference surface or reference point. The reference surface is determined by the depth or elevation. If the depth and elevation are 0, then the reference surface is the sea surface. If a depth is given, the reference surface is the location of the depth. This can be especially useful for sediment cores taken from the sea bottom (scenario 3 in figure below). If no depth is given, then the elevation is the reference surface (scenario 5).
+The `minimumDistanceAboveSurfaceInMeters` and `maximumDistanceAboveSurfaceInMeters` is the distance, in meters, above or below a reference surface or reference point. The reference surface is determined by the depth or elevation. If the depth and elevation are 0, then the reference surface is the sea surface. If a depth is given (i.e. value >0), the reference surface is the location of the depth. This can be especially useful for sediment cores taken from the sea bottom (scenario 3 in figure and table below). In these cases the `minimumDistanceAboveSurfaceInMeters`/`maximumDistanceAboveSurfaceInMeters` would be a negative value. If no depth is given, then the elevation is the reference surface (scenario 5).
 
-![](images/Depth-figure-updated.png)
+![](images/Depth-figure-updated-scen4.png)
 
-Depth scenario examples:
+Example values for each depth, distance above surface, and elevation field for the scenarios in the figure above are provided in the table below:
 
 | Scenario | minimumDepthInMeters | maximumDepthInMeters | minimumDistanceAboveSurfaceInMeters | maximumDistanceAboveSurfaceInMeters | minimumElevationInMeters | maximumElevationInMeters|
 |----------|----------------------|----------------------|-------------------------------------|-------------------------------------|------------------|------------------|
-| 1 | 40, 90 | 50, 100 | - | -| 0 | 0 |
+| 1 fish| 40 | 40 | - | -| 0 | 0 |
+| 1 crab| 90 | 90 | - | -| 0 | 0 |
 | 2 | 0 | 0 | 10 | 15| 0 | 0 |
 | 3 | 100 | 100 | 0 | -1.5 | 0 | 0 |
 | 4 | 20 | 22 | - | - | 0 | 0 |
