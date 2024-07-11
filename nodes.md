@@ -9,7 +9,7 @@
 * [Terms of Reference for OBIS Coordination Groups](#terms-of-reference-of-obis-coordination-groups)
 * [OBIS Executive Committee Terms of Reference](#terms-of-reference-of-obis-executive-committee)
 
-## Terms of Reference of OBIS nodes
+## TOR of OBIS nodes
 
 OBIS Nodes are either national projects, programmes, institutes, or organizations, National Ocean Data Centers or regional or international projects, programmes and institutions or organizations that carry out data management functions. OBIS nodes Terms of Reference are detailed below.
 
@@ -74,7 +74,7 @@ The IODE Committee is requested to consider the recommendation from the OBIS Ste
 
 When the inactive OBIS node is removed from the IODE network, the SG-OBIS will ask whether another OBIS node is interested in taking over the responsibilities of the removed OBIS node, until a new OBIS node in the country/region is established.
 
-## Terms of Reference of OBIS Steering Group
+## TOR of OBIS Steering Group
 
 **Required**
 
@@ -97,7 +97,7 @@ When the inactive OBIS node is removed from the IODE network, the SG-OBIS will a
 * OBIS nodes (up to 16 seats): OBIS node managers (or one alternate) who are not already represented as co-chairs or CG co-chairs. Each OBIS node should inform the OBIS secretariat of any changes to their representative(s) as soon as possible. OBIS nodes need reconfirmation after two 2-year terms
 * OBIS secretariat (2 seats) OBIS Programme manager as SG-OBIS technical secretary, and OBIS technical coordinator
 
-## Terms of Reference of OBIS Co-Chairs
+## TOR of OBIS Co-Chairs
 
 The role of (Co-)Chair(s) is:
 
@@ -124,7 +124,7 @@ The role of (Co-)Chair(s) is:
 * The Co-Chairs are not involved in the day-to-day implementation of OBIS which is the remit of the OBIS Programme Manager.
 * Nominations for Co-Chairs shall be accepted from members of the SG-OBIS as either nomination on behalf of another or self-nominations.
 
-## Terms of Reference of OBIS Secretariat
+## TOR of OBIS Secretariat
 
 The OBIS secretariat, hosted at the UNESCO/IOC project office for IODE in Oostende (Belgium), provides training and technical assistance to its network of partners including OBIS nodes and data providers, guides and advices on the development of new data standards and technical developments, and encourages international cooperation and implement the OBIS work plan and oversees the budget, to foster the group benefits of the network.
 
@@ -152,7 +152,7 @@ The **OBIS technical coordinator** will:
   * Networking and Outreach: Participate in meetings of technical groups as well as the OBIS steering group and other relevant events; Assist with the promotion and communication of the OBIS programme component.
   * Provide assistance with technical support of IODE databases and other IT services of, or hosted by, the IOC Project Office for IODE, Oostende, Belgium.
 
-## Terms of Reference of OBIS Coordination Groups
+## TOR of OBIS Coordination Groups
 
 Each of the coordination groups will have one or two Co-Chair(s) who will:
 
@@ -166,7 +166,7 @@ Each group should also maintain a secretary position to promote consistent notet
 
 All coordination groups should use the same collaborative tools, proposed by the Secretariat and available in all countries, to maintain a clear record of group activities and progress accessible to the Secretariat and members of the OBIS Coordination Groups. The Coordination Group reports will be made public.
 
-### OBIS Nodes Coordination group
+### OBIS Nodes Coordination group {.unlisted .unnumbered}
 
 The Nodes Coordination group (NCG) provides a forum for all OBIS nodes to discuss ongoing activities, priorities, and barriers they may be facing. 
 
@@ -185,7 +185,7 @@ Group activities will include:
 * Identify and resolve training needs within the community
 * Coordinate and implement any inter-Node related activities agreed-upon by the SG to achieve the OBIS mission
 
-### OBIS Data Coordination group
+### OBIS Data Coordination group {.unlisted .unnumbered}
 
 The OBIS Data Coordination Group (DCG) will focus on topics/issues related to OBIS Priority Area 1: Data mobilisation and input.
 
@@ -204,7 +204,7 @@ The OBIS data coordination group will:
 * Maintain the OBIS Manual; especially regarding  standards or methods
 * Engage with activities of other relevant bodies (e.g. TDWG, GBIF, GOOS, SCOR) by identifying representatives who will report back to the group
 
-### OBIS Products Coordination group
+### OBIS Products Coordination group {.unlisted .unnumbered}
 
 The OBIS Products Coordination group (PCG) is a collaborative and interdisciplinary group that is driven by the importance of creating data and information products (i.e. indicators) that are scientifically sound, practical, and relevant to decision-makers in government, industry, and civil society. PCG focuses on OBIS Priority Area 2: Data application and output.
 
@@ -222,7 +222,7 @@ The OBIS Products Coordination Group will:
 * Propose a process for frequent expert validation of data and information products by consulting with local scientific experts and end-users (including local communities and indigenous people)
 * Engage with activities of other relevant bodies by identifying representatives and report back to the group
 
-## Terms of Reference of OBIS Executive Committee
+## TOR of OBIS Executive Committee
 
 The OBIS Executive Committee will:
 
