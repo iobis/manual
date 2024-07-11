@@ -1,4 +1,4 @@
-## Name Matching Strategy for taxonomic quality control 
+## Name matching for taxonomic quality control 
 
 OBIS requires all your specimens to be classified and matched against an authoritative taxonomic register. This effectively attaches unique stable identifiers (and digitally traceable) to each of your species. Meaning, if a taxonomic ranking or a species name changes in the future, there will be no question as to which species your dataset is actually referring to. Matching to registers also helps to avoid misspelled or unused terms.
 
@@ -15,7 +15,7 @@ The identifiers (LSID, TSN, ID) from these registers will be used to populate th
 
 You can also use the [Interim Register of Marine and Nonmarine Genera (IRMNG)](https://www.irmng.org/aphia.php?p=search) to [distinguish marine genera from freshwater genera](common_qc.html#non-marine-species).
 
-### Taxon Matching Workflow
+### Taxon Matching Workflow {.unlisted .unnumbered}
 
 The OBIS node managers have agreed to match all the scientific names in their datasets according to the following Name Matching workflow:
 
@@ -132,13 +132,13 @@ Currently, this web service matches the scientific names with the following taxo
 
 The Interim Register of Marine and Non-marine Genera (IRMNG) matching services are available through [http://www.irmng.org/](http://www.irmng.org/), as well as through the [LifeWatch taxon match](http://www.lifewatch.be/data-services/). This service allows you to search for a genus (or other taxonomic rank when you uncheck the “genera” box) to check if it is known to be marine, brackish, freshwater, or terrestrial. You can find this information in the row labeled “Environment”. If the taxa is marine, you may have to contact the WoRMS data management team (<info@marinespecies.org>) to have the taxon added to the WoRMS register (note you may have to provide supporting information confirming taxonomic and marine status).
 
-### R packages for taxon matching
+### R packages for taxon matching {.unlisted .unnumbered}
 
 If you are familiar with R, you may use the [obistools](https://github.com/iobis/obistools#taxon-matching) function `match_taxa` to conduct taxon matching for your dataset. There is also a WoRMS package called [worrms](https://cran.r-project.org/web/packages/worrms/index.html) that has a function called `wm_records_taxamatch` you can use to conduct taxon matching.
 
 The output will be the same as that from the WoRMS tool, so you should check ambiguous matches as described above, confirming with other registers as necessary.
 
-### Taxon Match Tools Overview
+### Taxon Match Tools Overview {.unlisted .unnumbered}
 
 See the table below for a summary of the different tools available.
 

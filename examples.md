@@ -1,4 +1,4 @@
-## Examples: ENV-DATA and DNA derived data
+# Dataset Examples: ENV-DATA and DNA derived data
 
 **Contents**
 
@@ -18,7 +18,7 @@
 
 **Special data types:**
 
-- [eDNA & DNA derived data](dna_data.html#edna-dna-derived-data)
+- [DNA derived data](dna_data.html)
   - [eDNA data from Monterey Bay, California](dna_data.html#edna-data-from-monterey-bay-california)
   - [16S rRNA gene metabarcoding data of Pico- to Mesoplankton](dna_data#s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton)
 - [Acoustic, imaging, or other multimedia data](other_data_types.html#multimedia-data)

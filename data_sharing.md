@@ -5,7 +5,7 @@
 * [Add a DOI](#adding-a-doi-to-datasets)
 * [User tracking](#user-tracking)
 * [Update your own data](#update-your-data-in-obis)
-* [Publish to OBIS and GBIF](#simultaneous-publishing-to-gbif)
+* [Publish to OBIS and GBIF](#publish-obis-data-to-gbif)
 
 ### Adding a DOI to datasets
 
@@ -36,7 +36,7 @@ The new version will be automatically updated. A new DOI will be generated only 
 
 ![*Example of IPT version control*](images/ipt-pubVersion.png){width=80%}
 
-## Simultaneous publishing to GBIF
+## Publish OBIS data to GBIF
 
 There are a few differences between OBIS and GBIF. Perhaps the most obvious difference is that OBIS focuses on marine data, whereas GBIF includes broader biodiversity data. However, OBIS implements more strict quality control requirements for published datasets. A complete list of GBIF’s quality control checks can be found [here](https://data-blog.gbif.org/post/issues-and-flags/), and a guide on GBIF’s publishing process is [here](https://www.gbif.org/publishing-data).
 

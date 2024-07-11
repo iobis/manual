@@ -21,6 +21,6 @@ Here are others that may be of interest:
 
 ## obisindicators: calculating & visualizing spatial biodiversity using data from OBIS
 
-[obisindicators](https://marinebon.org/obisindicators/index.html) is an R library developed during the [2022 IOOS Code Sprint](https://ioos.github.io/ioos-code-sprint/). The purpose was to create an ES50 diversity index within hexagonal grids following the [diversity indicators notebook](https://iobis.github.io/notebook-diversity-indicators/) by Pieter Provoost linked above. The package includes several examples, limited to 1M occurrences, that demonstrate uses of the package.
+[obisindicators](https://marinebon.github.io/obisindicators/index.html) is an R library developed during the [2022 IOOS Code Sprint](https://ioos.github.io/ioos-code-sprint/). The purpose was to create an ES50 diversity index within hexagonal grids following the [diversity indicators notebook](https://iobis.github.io/notebook-diversity-indicators/) by Pieter Provoost linked above. The package includes several examples, limited to 1M occurrences, that demonstrate uses of the package.
 
-![screenshot](./images/all_data.png)
+![Screenshot of diversity map derived from OBIS data](./images/all_data.png)

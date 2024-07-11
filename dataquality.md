@@ -15,7 +15,7 @@ We acknowledge that sometimes you may encounter a QC flag for data that is accur
 
 The checks we perform as well as the associated flags are documented [here](https://github.com/iobis/obis-qc).
 
-### QC Flags in downloaded data
+### QC Flags in downloaded data {.unlisted .unnumbered}
 
 There are several ways to inspect the quality flags associated with a specific dataset or any other subset of data. Data downloaded through the mapper and the R package will include a column named `flags` which contains a comma separated list of flags for each record. In addition, the data quality panel on the dataset and node pages has a flag icon which can be clicked to get an overview of all flags and the number of records affected.
 
@@ -33,7 +33,7 @@ At the top of the page there's a button to open the occurrence records in the ma
 
 <img src="images/qc_flag_flags.png" class="img-responsive-50"/>
 
-### Inspecting QC flags with R
+### Inspecting QC flags with R {.unlisted .unnumbered}
 
 Inspecting flags using R is also very easy. The example below fetches the data from a single dataset, and lists the flags and the number of records affected. Notice that the `occurrence()` call has `dropped = TRUE` to make sure that any dropped records are included in the results:
 

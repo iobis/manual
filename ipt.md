@@ -2,16 +2,17 @@
 
 **Contents:**
 
-- [Introduction](#introduction-to-the-ipt)
-- [How to access the IPT](#how-to-access-the-ipt)
+- [Introduction](#introduction-to-the-ipt-unlisted-unnumbered)
+- [How to access the IPT](#how-to-access-the-ipt-unlisted-unnumbered)
 - [Who populates IPTs?](#who-populates-the-ipt-with-datasets)  
-- [Upload data](#create-your-resource-on-the-ipt)  
-- [Map to Darwin Core](#map-your-data-to-darwin-core)  
-- [Add metadata](#add-metadata)  
-- [Publish on the IPT](#publish-on-the-ipt)  
+- [Upload data](#create-your-resource-on-the-ipt-unlisted-unnumbered)  
+- [Map to Darwin Core](#map-your-data-to-darwin-core-unlisted-unnumbered)  
+- [Add metadata](#add-metadata-unlisted-unnumbered)  
+- [Publish on the IPT](#publish-on-the-ipt-unlisted-unnumbered)  
 - [Publish your data as a dataset paper](#publish-your-metadata-as-a-data-paper)
+- [Download data from the IPT](#downloading-datasets-from-an-ipt-unlisted-unnumbered)
 
-### Introduction to the IPT
+### Introduction to the IPT {.unlisted .unnumbered}
 
 Before we get into the details for accessing and using the IPT, let’s understand what it is. Biodiversity datasets and their metadata are published in OBIS using the Integrated Publishing Toolkit (IPT), developed by GBIF. The IPT is an open source web application that can be customized by the OBIS node manager (see [IPT admin page](ipt_admin.html) for details). An IPT-instance is used to publish and register all datasets. To be able to create and manage your own dataset (called a “resource” by GBIF), you will need a user account. In general, the IPT software assists users in mapping data to valid Darwin Core terms, as well as archiving and compressing the Darwin Core content with:
 
@@ -22,7 +23,7 @@ All these components (i.e., core file, extension files, descriptor file, and met
 
 ![*Example showing how Occurrence core, EML, and meta.xml files make up a Darwin Core-Archive file*](images/dwca_1.png){width=70%}
 
-### How to access the IPT
+### How to access the IPT {.unlisted .unnumbered}
 
 Once you have determined which [OBIS node IPT](https://ipt.iobis.org/) is suited for your dataset, you can contact your node manager to create an associated account for you. There will be a link on the sign in page that will direct you to the IPT’s administrator to contact them. If your node’s IPT is not listed here, you will have to [contact the node manager](https://obis.org/contact/) to get the link to their IPT.
 
@@ -44,7 +45,7 @@ Desmet, P. & C. Sinou. 2012. 7-step guide to data publication. Canadensys. <http
 
 > Caution: Make sure you have obtained the rights from the data owners to publish their data!
 
-### Create your resource on the IPT
+### Create your resource on the IPT {.unlisted .unnumbered}
 
 Once you have your account, login at the top of the IPT page. Click on the tab Manage resources: it will display all the datasets you are managing and will be empty at first. You can create a new resource at the bottom of the page. Follow the [GBIF IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#create-a-new-resource) for more detailed instructions.
 
@@ -105,7 +106,7 @@ You can also provide information about how the data table is encoded, how many h
 
 ![*Example screenshot of the different files, core and extensions, you can upload to an IPT*](images/ipt-ss3.png){width=90%}
 
-### Map your data to Darwin Core
+### Map your data to Darwin Core {.unlisted .unnumbered}
 
 Because biodiversity data are published in the [Darwin Core](https://manual.obis.org/darwincore) standard, the next step is to map your data fields to Darwin Core. As we have mentioned earlier in this manual, the DwC standard includes a list of defined terms and allows your data to be understood and used by others. It also allows an aggregator like OBIS or GBIF to integrate your data with other datasets.
 
@@ -146,7 +147,7 @@ allowfullscreen></iframe>
 
 The next step is to fill in or upload metadata.
 
-### Add metadata
+### Add metadata {.unlisted .unnumbered}
 
 Metadata enables users to discover, assess, understand and attribute your dataset for their particular needs, so it pays off to invest some time providing them.
 
@@ -162,7 +163,7 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 
-### Publish on the IPT
+### Publish on the IPT {.unlisted .unnumbered}
 
 With your dataset uploaded, properly mapped to DwC, and all the metadata filled, you can publish your dataset. On your resource overview page, go to the Publication section, click the vertical dots and select Publish.
 
@@ -200,12 +201,12 @@ allowfullscreen></iframe>
 
 The Metadata expressed in the EML Profile standard can also be downloaded as a Rich Text Format (RTF) file. The latter can serve as a draft manuscript for a data paper ([First database-derived 'data paper' published in journal](http://www.eurekalert.org/pub_releases/2011-11/gbif-fd112711.php)), which can be submitted for peer-review to e.g. a [Pensoft journal](http://journals.pensoft.net/).
 
-### Downloading datasets from an IPT
+### Downloading datasets from an IPT {.unlisted .unnumbered}
 
-To download a dataset from an IPT, simply login, and from the home page (not the Manage Resources tab) search for the dataset in question. You can search for keywords in the Filter box on the right side of the page.
+To download a dataset from an IPT, simply navigate to the IPT home page (not the Manage Resources tab) and search for the dataset in question. You can search for keywords in the Filter box on the right side of the page. Generally you do not need to log in to an IPT to download a dataset.
 
 ![*Overview of home page of an IPT*](images/ipt-ss10-download1.png){width=90%}
 
-Once you navigate to the page of a dataset, at the top of the page you will have options to download the whole Darwin Core Archive file, or just the metadata as an EML or RTF file.
+Once you navigate to the page of a dataset, at the top of the page you will have options to download the whole Darwin Core Archive file, or just the metadata as an EML or RTF file. Be sure to note the license associated with the dataset.
 
 ![*Overview of a dataset page on an IPT, emphasizing where to download the resource*](images/ipt-ss11-download2.png){width=90%}

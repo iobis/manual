@@ -48,7 +48,7 @@ The procedure to become an OBIS node is as follows:
 * If you are not an existing NODC:
   * Email your [application form](http://iode.org/index.php?option=com_oe&task=viewDocumentRecord&docID=11793) to become an IODE Associate Data Unit (ADU), with a specific role as OBIS node. Applications for ADU membership in OBIS shall be reviewed by the IODE Officers in consultation with the IODE Steering Group for OBIS.
 
-### OBIS Node Health Status Check and Transition Strategy
+### OBIS Node Health Status Check and Transition Strategy {.unlisted .unnumbered}
 
 OBIS nodes should operate under IODE as either IODE/ADU or IODE/NODC. As such OBIS nodes are a member of the IODE network.
 

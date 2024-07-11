@@ -1,14 +1,14 @@
-## Other Important Data Formatting Steps
+# Other Important Data Formatting Steps
 
 After creating data tables and mapping terms to DwC, additional data formatting steps may be needed and/or some common issues may arise. On this page, you will find guidelines for specific data formatting cases, including:
 
 - [Temporal issues: dates/times](#temporal-dates-and-times)
 - [Historical data](#historical-data)
 - [Spatial issues: coordinate conversion](#spatial)
-  - [Convert geographical formats](#geographical-format-conversion)
+  - [Convert geographical formats](#geographical-format-conversion-unlisted-unnumbered)
 - [Missing required fields](#missing-required-fields)
 
-### Temporal: Dates and times
+## Temporal: Dates and times
 
 The date and time at which an event took place or an occurrence was recorded goes in `eventDate`. This field uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601). OBIS recommends using the extended ISO 8601 format with hyphens. Note that all dates in OBIS become translated to UTC during the [quality control process implemented by OBIS](https://github.com/iobis/obis-qc). Formatting your dates correctly ensures there will be no errors during this process.
 
@@ -51,7 +51,7 @@ If you have a mix of dates and times for different aspects of a sampling event, 
 
 For uncertainty regarding the date of the event, see [guidelines](common_qc.html).
 
-#### Tips
+### Tips {.unlisted .unnumbered}
 
 To ensure your date is formatted correctly, it may be easiest to begin by populating the `year`, `month`, and `day` fields first. If the specific time of sampling is known, populate that into `eventTime` as well. When you fill these fields, we recommend ensuring the numbers are encoded as Text, not as General or numeric as Excel often tries to interpret what it thinks the content “should” be. Otherwise you may run into problems with Excel auto formatting your numbers in ways you don’t want. You can do this by highlighting the cells of interest, navigating to the Number Format on the Home ribbon and selecting “Text”. Be careful when you do this change of format, as some columns (e.g. time) may become formatted into a decimal or other unexpected format.
 
@@ -84,7 +84,7 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 
-#### How to handle mixed date information
+### How to handle mixed date information {.unlisted .unnumbered}
 
 When the sampling date is unclear due to a mix of date types and durations, you can use the hierarchical event structure in the Event core to help format and associate dates (and other information) with the correct sampling event. Often times it is useful to break up each type of event into separate records according to the event hierarchy.
 
@@ -111,7 +111,7 @@ Our example dataset would then look like the following:
 
 You can see that the eventDate for the parent events does not need to be provided - only the dates for the actual samples are required.
 
-### Historical data
+## Historical data
 
 OBIS recognizes the difficulties in formatting historical, archaeological and paleontological data. This kind of data is sometimes seen as “specialist” or “niche” when it comes to sharing in globally accepted databases that are accessible and recognised in academic, research and scientific forums.
 
@@ -126,9 +126,9 @@ To accommodate such challenges the OBIS Historical Data Project Team recommends 
 
 For historical data originating from old records, such as ship logs or other archival records, we understand there can be a variety of issues in interpreting and formatting data according to DwC standards. If you need further help with historical data formatting, we recommend [submitting a Github issue](https://github.com/iobis/obis-issues/issues), or contacting the OBIS-OPI node who focuses on [Oceans Past](https://oceanspast.org/) historical, archaeological, and paleontological data series.
 
-### Spatial
+## Spatial
 
-#### Converting Coordinates
+### Converting Coordinates {.unlisted .unnumbered}
 
 All coordinates provided in the `decimalLatitude` or `decimalLongitude` fields in OBIS must be in decimal degrees. To convert coordinates from degrees-minutes-seconds into decimal degrees, you can use [this Coordinate Conversion tool](https://obis.shinyapps.io/coordinates/) that OBIS has developed. This tool will convert any coordinate (or list of coordinates on a separate line) in a degrees-minutes-seconds format into decimal degrees, even partial coordinates. To use it, simply copy and paste your coordinates into the box provided and click Convert. For example:
 
@@ -144,11 +144,11 @@ allowfullscreen></iframe>
 
 If your coordinates are in UTMs, then coordinate conversion can be a bit trickier. We suggest using the following [conversion tool](http://rcn.montana.edu/resources/Converter.aspx) to convert from UTM to decimal degrees. Note it is very important to ensure you have the correct UTM zone, otherwise the coordinate conversion will be incorrect. You can use this [ArcGIS map tool](https://www.arcgis.com/apps/View/index.html?appid=7fa64a25efd0420896c3336dc2238475) to visually confirm UTM zones.
 
-#### Geographical format conversion
+### Geographical format conversion {.unlisted .unnumbered}
 
 In OBIS, the spatial reference system to be documented in `geodeticDatum` is [EPSG:4326 (WGS84)](https://epsg.io/4326). If your spatial data are not already in this format, you may have to convert it. To do this there are a few approaches: QGIS (or ArcGIS), R, or Python. We provide some short guidance for each, however if you are struggling to convert your data to WGS84 please contact helpdesk@obis.org or send a message on the [OBIS Slack](https://join.slack.com/t/obishq/shared_invite/zt-1nrokd987-aSah0CfXb5MoY10t1olnhQ).
 
-##### QGIS
+#### QGIS {.unlisted .unnumbered}
 
 You can load a .csv file containing your coordinates to be reprojected into [QGIS](https://qgis.org/en/site/forusers/download.html). Opening a new project, first set the global projection to WGS84 EPSG:4326. In the bottom right corner, click the Project Properties to change the Project Coordinate Reference System (CRS). A pop up window will allow you to search for and select WGS84 EPSG:4326. Click OK.
 
@@ -172,16 +172,15 @@ Make sure the input layer is your coordinate file. Under the `Calculate using`, 
 
 For more details see this [QGIS guide on reprojection](https://docs.qgis.org/3.22/en/docs/training_manual/processing/crs.html?highlight=reproject).
 
-##### R
+#### R {.unlisted .unnumbered}
 
 To reproject coordinates in R, you can use functions in the `sf` package. A thorough tutorial using this package can be found [here](https://geocompr.robinlovelace.net/reproj-geo-data.html#reproj-geo-data).
 
-##### Python
+#### Python {.unlisted .unnumbered}
 
 You also have the option to reproject data using the Python library [Geopandas](https://geopandas.org/en/stable/getting_started.html). In this package there is a utility called `to_crs` that will reproject data. A tutorial to do this can be found [here](https://geopandas.org/en/stable/docs/user_guide/projections.html#re-projecting).
 
-
-### Missing required fields
+## Missing required fields
 
 If you are a _node manager_ and one of the datasets in your IPT is missing data, you should prepare a brief report to contact the data provider and outline what is missing. [Get in contact with original data provider](citing.html) if possible. If it is not possible to contact the original data provider (frequently the case for historical datasets), do your best to follow the guidelines below to fill in data. However, **do not guess or make assumptions** if you are unsure. For all fields inferred, please record notes in the `eventRemarks`, `occurrenceRemarks`, or ‘identificationRemarks` field, as applicable.
 

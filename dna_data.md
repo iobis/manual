@@ -2,15 +2,15 @@
 
 **Contents:**
 
-- [Introduction](#introduction-to-dna-data)
-- [How to find genetic data in OBIS](#how-to-find-genetic-data-in-obis)
-- [Guidelines for eDNA and metabarcoding data](#guidelines-for-compiling-genetic-data-edna-and-metabarcoding-datasets)
+- [Introduction](#introduction-to-dna-data-unlisted-unnumbered)
+- [How to find genetic data in OBIS](#how-to-find-genetic-data-in-obis-unlisted-unnumbered)
+- [Guidelines for eDNA and metabarcoding data](#compiling-edna-and-metabarcoding-datasets)
   - [eDNA & DNA Derived use cases](#edna-and-dna-derived-data-example)
   - [16S rRNA metabarcoding example](#16s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton)
 - [Unknown sequences](#unknown-sequences)
-- [Guidelines for qPCR data](#guidelines-for-compiling-genetic-data-qpcr)
+- [Guidelines for qPCR data](#compiling-qpcr-datasets)
 
-### Introduction to DNA data
+### Introduction to DNA data {.unlisted .unnumbered}
 
 DNA derived data are increasingly being used to document taxon occurrences. This genetic data may come from a sampling event, an individual organism, may be linked to physical material (or not), or may result from DNA detection methods e.g., metabarcoding or qPCR. Thus genetic data may reflect a single organism, or may include information from bulk samples with many individuals. Still, DNA-derived occurrence data of species should be documented as standardized and as reproducible as possible.
 
@@ -34,7 +34,7 @@ Although this data is in multiple files, each unique sequence by sample combinat
 
 Doing this will help you when following the guidelines below.
 
-### How to find genetic data in OBIS
+### How to find genetic data in OBIS {.unlisted .unnumbered}
 
 To find genetic data in OBIS we recommend using the R package robis, using the `occurrence` function. You must set `extensions` and/or `hasextensions` to "DNADerivedData" to ensure extension records are included in the results. `hasextensions` will exclude any occurrence that does not have the specified extension, in our case, DNADerivedData. The `extensions` parameter specifies which extensions to include. To obtain the DNA data, you have to extract the information from the extension using the `unnest_extension()` function. You can specify as many fields from the Occurrence table to be included, and pass them to the `fields` parameter. See the code below for an example. See also this [vignette](https://iobis.github.io/notebook-dnaderiveddata/) for a more detailed example, including how you can work further with these sequences in R.
 
@@ -78,7 +78,7 @@ You can use the [OBIS Mapper](https://mapper.obis.org/) to obtain records that i
 5. Switch to the Layers tab
 6. Download the data from the layer by clicking the green button (see [Data Access](access#mapper.html) for more on using the OBIS Mapper)
 
-### Guidelines for compiling genetic data: eDNA and metabarcoding datasets
+### Compiling eDNA and metabarcoding datasets
 
 As mentioned above, you will need to have information on the taxonomy and sequences for each occurrence record associated with a DNA sample. You should first fill in the [Occurrence core table](format_occurrence.html), and then complete the DNA Derived Data extension (as well as the eMoF extension, if applicable, for any measurements taken).
 
@@ -110,7 +110,7 @@ For `organismQuantity` and `sampleSizeValue` in eDNA datasets, the quantities re
 `samplingProtocol` can contain free-text that briefly describes the methods used to obtain the sample, or a link to a protocol that is recorded elsewhere.
 
 **DNA Derived Data extension**
-The DNADerivedData extension is meant to capture information related to the sampled DNA, including sampling, processing, and other bioinformatic methods. The following (free-text) terms are required or highly recommended for eDNA and metabarcoding datasets. Note that some terms will be different for qPCR data (see [below](#guidelines-for-compiling-genetic-data-qpcr))
+The DNADerivedData extension is meant to capture information related to the sampled DNA, including sampling, processing, and other bioinformatic methods. The following (free-text) terms are required or highly recommended for eDNA and metabarcoding datasets. Note that some terms will be different for qPCR data (see [below](#compiling-qpcr-datasets))
 
 - DNA Derived | DwC: DNA_sequence
 - DNA Derived | DwC: sop
@@ -284,7 +284,7 @@ It is important to understand the significance of unknown and uncharacterized se
 
 For unknown sequences it is required to populate the `scientificName` field with “Incertae sedis”, or the lowest taxonomic information if available. For example, if it is only known which Class a sequence belongs to, populate `scientificName` with the associated Class name. Similarly, `scientificNameID` should be populated with the WoRMS LSID for the name given to `scientificName`. For records recorded as Incertae sedis, `scientificNameID` should be populated with urn:lsid:marinespecies.org:taxname:12. We recommend also populating `verbatimIdentification` with the name that was originally documented (e.g. phototrophic eukaryote).
 
-### Guidelines for compiling genetic data: qPCR
+### Compiling qPCR datasets
 
 Compiling qPCR data is a little bit different than compiling eDNA or metabarcoding data. One of the main differences is that there are no sequences recorded in the `DNA_sequence` field of the DNA derived data extension. Instead, occurrences are based on detections made using species-specific primers and either qPCR (Quantitative Polymerase Chain Reaction) or ddPCR (Droplet-Digital Polymerase Chain Reaction), no sequencing is done.
 

@@ -1,4 +1,4 @@
-## IPT Administration Responsibilities
+## IPT Admin Responsibilities
 
 If you are an IPT administrator, you are responsible for:
 
@@ -10,13 +10,13 @@ If you are an IPT administrator, you are responsible for:
 6. Make sure all relevant information and data for OBIS is available
 7. Perform necessary quality checks before the data are released to OBIS
 
-### Creating and Installing IPTs
+### Creating and Installing IPTs {.unlisted .unnumbered}
 
 OBIS nodes can decide to install and manage their IPT on their own institutional servers or use (at no charge!) the OBIS servers in Oostende, Belgium, provided as in-kind by the Flanders Marine Institute (VLIZ), which also runs the European OBIS node (EurOBIS). VLIZ also ensures the IPT instances run on the latest version (important for security updates). Here is an overview of the IPT instances hosted in Oostende: [http://ipt.iobis.org/](http://ipt.iobis.org/). Please contact the secretariat at info@iobis.org if you would like OBIS to host your IPT.
 
 To install your own IPT, please follow the instructions in the [GBIF IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#getting-started-guide).
 
-### Registration
+### Registration {.unlisted .unnumbered}
 
 When you have installed your IPT, please provide the IPT instance URL to the OBIS secretariat (helpdesk@obis.org), so your IPT is included in the data harvesting process.
 
@@ -32,7 +32,7 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 
-### Maintaining the IPT
+### Maintaining the IPT {.unlisted .unnumbered}
 
 As the IPT administrator, you must make sure the IPT is kept up to date, datasets (resources) are published in a timely manner, add, edit, or delete IPT users as required, register with GBIF as applicable, and configure the types of cores and extensions accepted by the IPT.
 
