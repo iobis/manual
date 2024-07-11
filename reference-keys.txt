@@ -59,7 +59,7 @@ recommended-reading
 relational-databases-the-underlying-framework-of-obis
 how-to-avoid-redundancy
 ecological-metadata-language
-introduction-1
+introduction-to-eml
 metadata-sections
 title
 abstract
@@ -133,7 +133,7 @@ temporal-dates-and-times
 historical-data
 spatial
 missing-required-fields
-dataset-examples-env-data-and-dna-derived-data
+dataset-examples-env-data
 fish-abundance-and-distribution
 hard-coral-cover-and-composition
 invertebrates-abundance-and-distribution
@@ -147,7 +147,6 @@ microbes-biomass-and-diversity
 phytoplankton-biomass-and-diversity
 seagrass-cover-and-composition
 zooplankton-biomass-and-diversity
-other-data-types
 multimedia-data-acoustic-imaging
 habitat-data
 tracking-data
