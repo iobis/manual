@@ -31,7 +31,7 @@ In December 2013, the [3rd session of the IODE Steering Group for OBIS](https://
 
 DwC terms correspond to the column names of your dataset and can be grouped according to class type for convenience, e.g., Taxa, Occurrence, Record, Location, etc. It is important to use DwC field names because only columns using Darwin Core terms as headers will be recognized.
 
-A list of all possible Darwin Core terms can be found on [TDWG](https://dwc.tdwg.org/terms/). However, OBIS does not parse all terms (note this doesn't mean you cannot include them, they just will not be parsed when you publish to OBIS). Below is an overview of the most relevant Darwin Core terms to consider when contributing to OBIS, with guidelines regarding their use. We have also compiled a convenient [checklist](checklist.html) of OBIS-accepted terms, their DwC class type, and which OBIS file (Event Core, Occurrence, eMoF, etc.) it is likely to be found in.
+A list with definitions of all possible Darwin Core terms can be found on [TDWG](https://dwc.tdwg.org/terms/). However, OBIS does not parse all terms (note this doesn't mean you cannot include them, they just will not be parsed when you publish to OBIS). Below is an overview of the most relevant Darwin Core terms to consider when contributing to OBIS, with guidelines regarding their use. We have also compiled a convenient [checklist](checklist.html) of OBIS-accepted terms, their DwC class type, and which OBIS file (Event Core, Occurrence, eMoF, etc.) it is likely to be found in.
 
 Note that OBIS currently has seven required and one strongly recommended DwC term: `occurrenceID`, `eventDate`, `decimalLongitude`, `decimalLatitude`, `scientificName`, `occurrenceStatus`, `basisOfRecord`, `scientificNameID` (strongly recommended).
 
@@ -81,6 +81,7 @@ The following DwC terms are related to the Class _Record level_:
 - bibliographicCitation
 - modified
 - dataGeneralizations
+- type
 
 The following DwC terms are related to the Class _Location_:
 
@@ -107,7 +108,8 @@ The following DwC terms are related to the Class _Event_:
 - parentEventID
 - eventID
 - eventDate
-- type
+- eventType
+- eventRemarks
 - habitat
 - samplingProtocol (OBIS recommends to add sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
 - sampleSizeValue (OBIS recommends to add sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof))
@@ -214,7 +216,7 @@ _Data from [A summary of benthic studies in the sluice dock of Ostend during 197
 
 In case no specimen is deposited, the basis of record is either `HumanObservation` (e.g bird sighting, benthic sample but specimens were discarded after counting), `MachineObservation` (e.g. for occurrences based on automated sensors such as image recognition, etc), or `MaterialSample` (e.g. physical sample was taken, and may have been preserved or destroyed). For records pertaining to genetic samples, basisOfRecord can be `MaterialSample` (e.g. in the DNA-derived data extension).
 
-When the basisOfRecord is either a _preservedSpecimen_, _LivingSpecimen_ or _FossilSpecimen_ please also add the `institutionCode`, `collectionCode` and `catalogNumber`, which will enable people to visit the collection and re-examine the material. Sometimes, for example in case of living specimens, a dataset can contain records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection. In this case please add the event type information in `eventRemarks` (see [OBIS manual: event](darwin_core.html#event)).
+When the basisOfRecord is either a _preservedSpecimen_, _LivingSpecimen_ or _FossilSpecimen_ please also add the `institutionCode`, `collectionCode` and `catalogNumber`, which will enable people to visit the collection and re-examine the material. Sometimes, for example in case of living specimens, a dataset can contain records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection. In this case please add the event type information in [`eventType`](https://dwc.tdwg.org/list/#dwc_eventType) (see [OBIS manual: event](darwin_core.html#event)).
 
 `institutionCode` identifies the custodian institute (often by acronym), `collectionCode` identifies the collection or dataset within that institute. Collections cannot belong to multiple institutes, so all records within a collection should have the same `institutionCode`. The `collectionID` is an identifier for the record within the dataset or collection.
 
@@ -279,7 +281,11 @@ Depth scenario examples:
 
 `eventID` is an identifier for the sampling or observation event. `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs). See [identifiers](identifiers.html#eventid) for details on how these terms can be constructed.
 
+[`eventType`](http://rs.tdwg.org/dwc/terms/eventType) should be used to describe the type of event and best practice is to use controlled vocabulary (e.g. Sample, Observation, Site Visit, Survey, Project, etc.). This can help distinguish event hierarchy, e.g. Sample nested within Site Visit, Site Visited nested within Survey, Survey nested within Expedition. Note that previous recommendation was to use `type` or `eventRemarks` to hold this information. With the ratification of the `eventType` term in 2023, we now recommend using `eventType`. [`type`](http://purl.org/dc/elements/1.1/type) should only be used to describe the record or resource type (e.g. Sound, MovingImage, etc.).
+
 `habitat` is a category or description of the habitat in which the Event occurred (e.g. benthos, seamount, hydrothermal vent, seagrass, rocky shore, intertidal, ship wreck etc.)
+
+`samplingProtocol`, `sampleSizeValue`, `sampleSizeUnit`, and `samplingEffort` can be included in the Event table, but OBIS also recommends to add these sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof). Terms are used to respectively describe: the names/descriptions/references to sampling methods or protocols used in the event; a numeric value associated with the sample size in an event (e.g. describing the time duration, length, area, or volume); the unit associated with the `sampleSizeValue`; the effort expended during an event (e.g. 5 observer hours).
 
 ##### Time
 

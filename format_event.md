@@ -16,7 +16,6 @@ Other terms you should consider adding are grouped by their associated Darwin Co
 * Class Event | DwC:year
 * Class Event | DwC:month
 * Class Event | DwC:day
-* Class Event | DwC:type
 * Class Location | DwC:country
 * Class Location | DwC:island
 * Class Location | DwC:coordinateUncertaintyInMeters

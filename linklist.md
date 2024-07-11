@@ -57,11 +57,15 @@ Below you will find a convenient list of important or relevant websites and reso
 
 #### Template Tools
 
+* GBIF Excel templates: [Event table](https://ipt.gbif.org/manual/en/ipt/latest/sampling-event-data#templates) and [Occurrence table](https://ipt.gbif.org/manual/en/ipt/latest/occurrence-data#templates)
 * [Excel to Darwin Core Standard (DwC) Tool](https://zenodo.org/record/6453921#.Y9KsQkHMKmU): a macro Excel spreadsheet for setup, data entry, data validation and file export to DwC (Darwin Core Standard) files. Creates templates for Event, Occurrence, MeasurementsOrFacts, Extended MeasurementsOrFacts (EMoF), and Simple Multimedia tables.
-* [Darwin Core Template Generator for Event and Occurrence tables](https://sios-svalbard.org/aen/template-generator/): allows selection of DwC terms to generate template for Event and Occurrence tables, developed by
+* [Darwin Core Template Generator for Event and Occurrence tables](https://sios-svalbard.org/aen/template-generator/): allows selection of DwC terms to generate template for Event and Occurrence tables, developed by Luke Marsden, & Olaf Schneider
 
 #### Publishing Tools & Links
 
-* [Integrated Publishing Toolkit (IPT) User Manual](https://ipt.gbif.org/manual/en/ipt/latest/)
+* [Integrated Publishing Toolkit (IPT) User Manual](https://ipt.gbif.org/manual/en/ipt/latest/): manual with more details on how to use the IPT for publishing datasets
 * [Ecological Metadata Language (EML) guide](https://eml.ecoinformatics.org/)
+  * [EML R package](https://docs.ropensci.org/EML/): assists with creating EML files in R, assumes some existing familiarity with EML
+  * [ezEML](https://ezeml.edirepository.org/eml/auth/login): form-like interface for generating EML files. Offers dataset attachment but this is not required to generate the EML. Note that this is also an repository which offers data
+  * [Jinja EML template generator](https://jinja.palletsprojects.com/en/3.1.x/): can be used to create tailored EML templates that you can reuse for your datasets. A template may be a good  option for you if there are several EML elements which will not need to be changed each time. Code used is similar to Python
 * [Become a  GBIF publisher](https://www.gbif.org/become-a-publisher): crucial step for publishing your dataset to GBIF as well as OBIS
