@@ -2,12 +2,12 @@
 
 **Content**
 
-* [OBIS Node Terms of Reference](#terms-of-reference-of-obis-nodes)
-* [OBIS Steering Group Terms of Reference](#terms-of-reference-of-steering-group)
-* [OBIS Co-Chair Terms of Reference](#terms-of-reference-of-obis-co-chairs)
-* [OBIS Secretariat Terms of Reference](#terms-of-reference-of-obis-secretariat)
-* [Terms of Reference for OBIS Coordination Groups](#terms-of-reference-of-obis-coordination-groups)
-* [OBIS Executive Committee Terms of Reference](#terms-of-reference-of-obis-executive-committee)
+* [OBIS Node Terms of Reference](#tor-of-obis-nodes)
+* [OBIS Steering Group Terms of Reference](#tor-of-obis-steering-group)
+* [OBIS Co-Chair Terms of Reference](#tor-of-obis-co-chairs)
+* [OBIS Secretariat Terms of Reference](#tor-of-obis-secretariat)
+* [Terms of Reference for OBIS Coordination Groups](#tor-of-obis-coordination-groups)
+* [OBIS Executive Committee Terms of Reference](#tor-of-obis-executive-committee)
 
 ## TOR of OBIS nodes
 

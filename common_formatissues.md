@@ -5,7 +5,7 @@ After creating data tables and mapping terms to DwC, additional data formatting 
 - [Temporal issues: dates/times](#temporal-dates-and-times)
 - [Historical data](#historical-data)
 - [Spatial issues: coordinate conversion](#spatial)
-  - [Convert geographical formats](#geographical-format-conversion-unlisted-unnumbered)
+  - [Convert geographical formats](#geographical-format-conversion)
 - [Missing required fields](#missing-required-fields)
 
 ## Temporal: Dates and times

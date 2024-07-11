@@ -4,7 +4,7 @@
 
 * [Map data fields to Darwin Core](#map-data-fields-to-darwin-core)
 * [Map eMoF measurement identifiers](#map-emof-measurement-identifiers-to-preferred-vocabulary)
-  * [MeasurementOrFact vocabulary background](#measurementorfact-vocabulary-background-unlisted-unnumbered)
+  * [MeasurementOrFact vocabulary background](#measurementorfact-vocabulary-background)
   * [Guidelines to populate measurementUnitID](#populate-measurementunitid)
   * [Guidelines to populate measurementValueID](#populate-measurementvalueid)
   * [Guidelines to populate measurementTypeID](#populate-measurementtypeid)

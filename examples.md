@@ -1,4 +1,4 @@
-# Dataset Examples: ENV-DATA and DNA derived data
+# Dataset Examples: ENV-DATA
 
 **Contents**
 

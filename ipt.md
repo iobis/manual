@@ -2,15 +2,15 @@
 
 **Contents:**
 
-- [Introduction](#introduction-to-the-ipt-unlisted-unnumbered)
-- [How to access the IPT](#how-to-access-the-ipt-unlisted-unnumbered)
-- [Who populates IPTs?](#who-populates-the-ipt-with-datasets)  
-- [Upload data](#create-your-resource-on-the-ipt-unlisted-unnumbered)  
-- [Map to Darwin Core](#map-your-data-to-darwin-core-unlisted-unnumbered)  
-- [Add metadata](#add-metadata-unlisted-unnumbered)  
-- [Publish on the IPT](#publish-on-the-ipt-unlisted-unnumbered)  
+- [Introduction](#introduction-to-the-ipt)
+- [How to access the IPT](#how-to-access-the-ipt)
+- [Who populates IPTs?](#who-populates-the-ipt-with-datasets)
+- [Upload data](#create-your-resource-on-the-ipt)
+- [Map to Darwin Core](#map-your-data-to-darwin-core)
+- [Add metadata](#add-metadata)
+- [Publish on the IPT](#publish-on-the-ipt)
 - [Publish your data as a dataset paper](#publish-your-metadata-as-a-data-paper)
-- [Download data from the IPT](#downloading-datasets-from-an-ipt-unlisted-unnumbered)
+- [Download data from the IPT](#downloading-datasets-from-an-ipt)
 
 ### Introduction to the IPT {.unlisted .unnumbered}
 

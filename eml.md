@@ -2,7 +2,7 @@
 
 **Content**
 
-- [Introduction](#introduction)
+- [Introduction](#introduction-to-eml)
 - [Gudiance on specific metadata sections](#metadata-sections)
   - [Title](#title)
   - [Abstract](#abstract)
@@ -17,7 +17,7 @@
   - [Collection Data](#collection-data)
   - [External Links](#external-links)
 
-#### Introduction
+#### Introduction to EML
 
 OBIS (and GBIF) uses the Ecological Metadata Language (EML) as its metadata standard, which is specifically developed for the earth, environmental and ecological sciences. It is based on prior work done by the Ecological Society of America and associated efforts. EML is implemented as XML. See more information on [EML](https://eml.ecoinformatics.org/). When publishing on the [Integrated Publishing Toolkit (IPT)](ipt.html), you can either upload XML files with your metadata or it will be generated for you after [filling in metadata sections](ipt.html#add-metadata) directly on the IPT. There are a few resources available to help you generate XML EML files, including: [EML R package](https://docs.ropensci.org/EML/), [ezEML](https://ezeml.edirepository.org/eml/auth/login), and [Jinja EML template generator](https://jinja.palletsprojects.com/en/3.1.x/).
 
