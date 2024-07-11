@@ -365,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Note that when you publish your dataset on the IPT, if you use a term not listed below it will be an unmapped field and will <strong>not</strong> be published alongside your data. You may still wish to include such fields in your dataset if you are publishing to other repositories, just know that they will not be included in your OBIS dataset. You may include this information either by putting it in the <code>dynamicProperties</code> field in JSON format, or putting the information into the <a href="format_emof.html">eMoF</a>. Alternatively, you may have fields that you do not wish to be published and that do not correspond to one of these terms (e.g. personal notes). This is okay - if they are not mapped to one of the terms, that column in your dataset will not be published.</p>
 <p><strong>Table Legend</strong>:</p>
 <ul>
-<li>Terms marked with * indicate that the specified term is accepted in the Event or Occurrence table, but preference is that they be recorded in the eMoF table to link with controlled vocabulary</li>
+<li>Terms marked with ^ indicate that the specified term is accepted in the Event or Occurrence table, but preference is that they be recorded in the eMoF table to link with controlled vocabulary</li>
 <li>For the Occurrence table, distinction is made if the term could be used in the core or the extension table
 <ul>
 <li>x/x = term can be used in either Occurrence core or extension</li>
@@ -759,8 +759,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>sampleSizeUnit</td>
 <td>strongly recommended</td>
 <td>event</td>
-<td>x*</td>
-<td>x*/-</td>
+<td>x^</td>
+<td>x^/-</td>
 <td>x</td>
 <td></td>
 </tr>
@@ -768,8 +768,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>sampleSizeValue</td>
 <td>strongly recommended</td>
 <td>event</td>
-<td>x*</td>
-<td>x*/-</td>
+<td>x^</td>
+<td>x^/-</td>
 <td>x</td>
 <td></td>
 </tr>
@@ -777,8 +777,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>samplingEffort</td>
 <td>strongly recommended</td>
 <td>event</td>
-<td>x*</td>
-<td>x*/-</td>
+<td>x^</td>
+<td>x^/-</td>
 <td>x</td>
 <td></td>
 </tr>
@@ -786,8 +786,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>samplingProtocol</td>
 <td>strongly recommended</td>
 <td>event</td>
-<td>x*</td>
-<td>x*/-</td>
+<td>x^</td>
+<td>x^/-</td>
 <td>x</td>
 <td></td>
 </tr>
@@ -1570,7 +1570,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>optional</td>
 <td>occurrence</td>
 <td></td>
-<td>x<em>/x</em></td>
+<td>x<sup>/x</sup></td>
 <td>x</td>
 <td></td>
 </tr>
@@ -1611,11 +1611,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td></td>
 </tr>
 <tr class="even">
-<td>individualCount</td>
+<td>organismQuantity (preferred over individualCount)</td>
 <td>strongly recommended</td>
 <td>occurrence</td>
 <td></td>
-<td>x<em>/x</em></td>
+<td>x<sup>/x</sup></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>organismQuantityType (preferred over individualCount)</td>
+<td>strongly recommended</td>
+<td>occurrence</td>
+<td></td>
+<td>x<sup>/x</sup></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>individualCount</td>
+<td>recommended</td>
+<td>occurrence</td>
+<td></td>
+<td>x<sup>/x</sup></td>
 <td>x</td>
 <td></td>
 </tr>
@@ -1624,7 +1642,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>optional</td>
 <td>occurrence</td>
 <td></td>
-<td>x<em>/x</em></td>
+<td>x<sup>/x</sup></td>
 <td>x</td>
 <td></td>
 </tr>
@@ -1635,24 +1653,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td></td>
 <td>x/x</td>
 <td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>organismQuantity</td>
-<td>strongly recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x<em>/x</em></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>organismQuantityType</td>
-<td>strongly recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x<em>/x</em></td>
-<td>x</td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -1705,7 +1705,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>optional</td>
 <td>occurrence</td>
 <td></td>
-<td>x<em>/x</em></td>
+<td>x<sup>/x</sup></td>
 <td>x</td>
 <td></td>
 </tr>
@@ -1714,7 +1714,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>optional</td>
 <td>occurrence</td>
 <td></td>
-<td>x<em>/x</em></td>
+<td>x<sup>/x</sup></td>
 <td>x</td>
 <td></td>
 </tr>
