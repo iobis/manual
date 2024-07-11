@@ -58,7 +58,7 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 
-After completing the formatting of your Event Core table, you can next format your extendedMeasurementOrFact table. To format the Occurrence extension table, see the [Occurrence table](format_occurrence.html) section of this manual. Note that there is a difference between how OBIS and GBIF populate fields in parent and child events. In OBIS, child events inherit parent event information. However, if `parentEvent` contains latitude/longitude coordinates, and child events do not, occurrences associated with the child events will have blank latitude/longitude coordinates because these fields are not currently inherited by parent events by GBIF. If you intend for your dataset to be published to GBIF you may consider populating both parent and child events. A discussion of this and the implications can be found [here](https://github.com/gbif/pipelines/issues/878).
+After completing the formatting of your Event Core table, you can next format your Occurrence and extendedMeasurementOrFact tables. To format the Occurrence extension table, see the [Occurrence table](format_occurrence.html) section of this manual.
 
 ### Populating parent and child events
 
@@ -76,4 +76,6 @@ the child event will automatically be populated with the same text "1x1m quadrat
 | site123 | | 1x1m quadrat intertidal sampling |
 | site123_quad1| site123 | 1x1m quadrat intertidal sampling  |
 
-This can be convenient so that you do not have to fill in the same information repeatedly. **However, it is important to know that GBIF does *not* currently implement inheritance!** Thus we recommend populating important information (e.g. decimalLongitude, decimalLatitude) to the child event to ensure all data will be useful for both OBIS and GBIF.
+This can be convenient so that you do not have to fill in the same information repeatedly. **However, it is important to understand that GBIF does _not_ currently implement inheritance!** In OBIS, child events inherit information from parent events as described above. However, if the `parentEvent` contains data such as latitude/longitude coordinates, and child events do not, occurrences associated with the child events will have **blank** latitude/longitude coordinates when data is accessed from GBIF. This is again because child event fields are _not_ currently inherited from parent events in GBIF. If you plan for your dataset to be additionally accessed through GBIF, it is recommended to populate information in both parent and child events. A discussion of this and the implications can be found [here](https://github.com/gbif/pipelines/issues/878).
+
+Therefore, in cases where the data will be accessible by both OBIS and GBIF, we recommend populating important information (e.g. decimalLongitude, decimalLatitude) in the child events to ensure the data will be useful for both user bases.
