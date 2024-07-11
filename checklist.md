@@ -10,7 +10,7 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 
 **Table Legend**:
 
-- Terms marked with * indicate that the specified term is accepted in the Event or Occurrence table, but preference is that they be recorded in the eMoF table to link with controlled vocabulary
+- Terms marked with ^ indicate that the specified term is accepted in the Event or Occurrence table, but preference is that they be recorded in the eMoF table to link with controlled vocabulary
 - For the Occurrence table, distinction is made if the term could be used in the core or the extension table
   - x/x = term can be used in either Occurrence core or extension
   - x/- term is recommended only for the Occurrence core
@@ -58,10 +58,10 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 | habitat | recommended | event | x |  | x |  |
 | month | strongly recommended | event | x | x/- |  |  |
 | parentEventID | required (if exists) | event | x | -/x |  |  |
-| sampleSizeUnit | strongly recommended | event | x* | x*/- | x |  |
-| sampleSizeValue | strongly recommended | event | x* | x*/- | x |  |
-| samplingEffort | strongly recommended | event | x* | x*/- | x |  |
-| samplingProtocol | strongly recommended | event | x* | x*/- | x |  |
+| sampleSizeUnit | strongly recommended | event | x^ | x^/- | x |  |
+| sampleSizeValue | strongly recommended | event | x^ | x^/- | x |  |
+| samplingEffort | strongly recommended | event | x^ | x^/- | x |  |
+| samplingProtocol | strongly recommended | event | x^ | x^/- | x |  |
 | startDayOfYear | recommended | event | x |  |  |  |
 | verbatimEventDate | recommended | event | x |  |  |  |
 | year | strongly recommended | event | x | x/- |  |  |
@@ -148,23 +148,23 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 | associatedReferences | optional | occurrence |  | x/x |  |  |
 | associatedSequences | recommended | occurrence |  | x/x |  |  |
 | associatedTaxa | optional | occurrence |  | x/x |  |  |
-| behavior | optional | occurrence |  | x*/x* | x |  |
+| behavior | optional | occurrence |  | x^/x^ | x |  |
 | catalogNumber | recommended | occurrence |  | x/x |  |  |
 | disposition | optional | occurrence |  | x/x |  |  |
 | establishmentMeans | optional | occurrence |  | x/x |  |  |
 | georeferenceVerificationStatus | recommended | occurrence | x | x/- |  |  |
-| individualCount | strongly recommended | occurrence |  | x*/x* | x |  |
-| lifeStage | optional | occurrence |  | x*/x* | x |  |
+| organismQuantity (preferred over individualCount) | strongly recommended | occurrence |  | x^/x^ | x |  |
+| organismQuantityType (preferred over individualCount) | strongly recommended | occurrence |  | x^/x^ | x |  |
+| individualCount | recommended | occurrence |  | x^/x^ | x |  |
+| lifeStage | optional | occurrence |  | x^/x^ | x |  |
 | occurrenceRemarks | recommended | occurrence |  | x/x |  |  |
-| organismQuantity | strongly recommended | occurrence |  | x*/x* | x |  |
-| organismQuantityType | strongly recommended | occurrence |  | x*/x* | x |  |
 | otherCatalogNumbers | optional | occurrence |  | x/x |  |  |
 | preparations | optional | occurrence |  | x/x |  |  |
 | recordedBy | recommended | occurrence |  | x/x |  |  |
 | recordedByID | recommended | occurrence |  | x/x |  |  |
 | recordNumber | recommended | occurrence |  | x/x |  |  |
-| reproductiveCondition | optional | occurrence |  | x*/x* | x |  |
-| sex | optional | occurrence |  | x*/x* | x |  |
+| reproductiveCondition | optional | occurrence |  | x^/x^ | x |  |
+| sex | optional | occurrence |  | x^/x^ | x |  |
 | associatedOccurrences | optional | organsim |  | x/x |  |  |
 | associatedOrganisms | optional | organsim |  | x/x |  |  |
 | organismID | recommended | organsim |  | x/x |  |  |
