@@ -111,7 +111,7 @@ In cases where no match can be found, WoRMS will indicate none. For these cases 
 
 If a scientific name does not appear in any register, you should contact the original data provider, where possible, to confirm taxonomic spelling, authority, and obtain any original description documents, then attempt to match again. If even after this there are no matches, please contact the WoRMS data management team at <info@marinespecies.org> to see if the taxon should be added to the WoRMS register.
 
-#### Step 2: Match with other registers
+#### Step 2: Check name in other registers
 
 If you do not find a match with WoRMS, you should next check other registers. The [LifeWatch taxon match](http://www.lifewatch.be/data-services/) compares your taxon list to multiple taxonomic standards. Matching with multiple registers gives an indication of the correct spelling of a name, regardless of its environment. If a name would not appear in any of the registers, this could indicate a mistake in the scientific name and the name should go back to the provider for additional checking/verification.
 
@@ -146,4 +146,4 @@ See the table below for a summary of the different tools available.
 |-----------|---------------------|-----------------|
 |WoRMS taxon match | Accessible online, Does not require coding knowledge | Requires rematch information back to your data |
 |obistools::match_taxa | Produces same output as WoRMS taxon match, Already in R so easier to merge back with data | Requires knowledge of R or python |
-|worrms::wm_records_taxamatch | Outputs all WoRMS matching information | Outputs a tibble for each taxa name specified, Requires knowledge of R or python |
+|worrms::wm_records_taxamatch | Outputs all WoRMS matching information | Outputs a tibble for each taxa name specified; Requires knowledge of R or python |

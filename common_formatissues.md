@@ -1,8 +1,6 @@
 ## Other Important Data Formatting Steps
 
-Below you will find other important data formatting steps and guidelines that datasets being published to OBIS should adhere to.
-
-**Contents:**
+After creating data tables and mapping terms to DwC, additional data formatting steps may be needed and/or some common issues may arise. On this page, you will find guidelines for specific data formatting cases, including:
 
 - [Temporal issues: dates/times](#temporal-dates-and-times)
 - [Historical data](#historical-data)
@@ -45,8 +43,9 @@ Some specific examples of acceptable ISO 8601 dates are:
 
 It is important to note that although ISO 8601 also supports ordinal dates (YYYY-DDD) and week dates (YYYY-Www-D), these formats are not supported by OBIS. Additionally, ISO 8601 guidelines for [durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) should not be used. Durations for an event (e.g., length of observation) can instead be indicated with the DwC terms [startDayOfYear](https://dwc.tdwg.org/list/#dwc_startDayOfYear) and [endDayOfYear](https://dwc.tdwg.org/list/#dwc_endDayOfYear). Durations refer to the actual length of time an event (e.g., occurrence) occurred, whereas intervals indicate the time period during which an event was recorded.
 
-**A note about intervals…**
-Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact date and time, you should specify that information. This also helps for continuous samplings and time-series integrated datasets.
+**A note about intervals:**
+
+> Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact date and time, you should specify that information. This also helps for continuous samplings and time-series integrated datasets.
 
 If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See [example](#how-to-handle-mixed-date-information).
 

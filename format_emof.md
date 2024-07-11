@@ -36,7 +36,7 @@ Other potential fields are shown in the table below (also listed in the [checkli
 * Class Measurement | DwC:measurementValue
 * Class Measurement | DwC:measurementValueID
 
-*For `measurementTypeID`, `measurementUnitID`, and `measurementValueID` you must use controlled vocabulary terms. We know choosing the correct vocabulary term can be challenging, so we have provided some guidance on how to [select the correct vocabulary](vocabulary.html). It is strongly recommended to ensure these fields are filled as correctly as possible. Missing or incorrect terms will be documented in the [measurementOrFact reports](https://r.obis.org/mof/).
+> *For `measurementTypeID`, `measurementUnitID`, and `measurementValueID` you must use controlled vocabulary terms. We know choosing the correct vocabulary term can be challenging, so we have provided some guidance on how to [select the correct vocabulary](vocabulary.html) and are continuously working to improve guidelines. It is strongly recommended to ensure these fields are filled as correctly as possible. Missing or incorrect terms will be documented in the [measurementOrFact reports](https://r.obis.org/mof/).
 
 #### How to structure eMoF
 
