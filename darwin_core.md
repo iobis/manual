@@ -186,7 +186,7 @@ Please take note that OBIS recommends all quantitative measurements and sampling
 
 In the case specimens were collected and stored (e.g. museum collections), the `catalogNumber` and `preparations` terms can be used to provide the identifier for the record in the collection and to document the preparation and preservation methods. The term `typeStatus` see above (under identification) can be used in this context too.
 
-Both `associatedMedia`, `associatedReferences` and `associatedSequences` are global unique identifiers or URIs pointing to respectively associated media (e.g. online image or video), associated literature (e.g. DOIs) or genetic sequence information (e.g. GenBANK ID).
+Both `associatedMedia`, `associatedReferences` and `associatedSequences` are global unique identifiers, URLs, or URIs pointing to respectively associated media (e.g. online image or video), associated literature (e.g. DOIs) or genetic sequence information (e.g. GenBANK ID). It is recommended to ensure URLs include the domain name (e.g. NCBI) when possible.
 
 `associatedTaxa` include a list (concatenated and separated) of identifiers or names of taxa and their associations with the Occurrence, e.g. the species occurrence was associated to the presence of kelp such as _Laminaria digitata_.
 
