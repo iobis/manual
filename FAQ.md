@@ -24,7 +24,7 @@
   <li><details>
   <summary>I am an OBIS node and need to update the contact information listed for my node on the OBIS website, how do I do that?</summary>
 
-  To update OBIS Node contact information listed at <https://obis.org/contact/>, you can edit the information here https://metadata.obis.org/ and signing in with your OceanExpert credentials.
+  To update OBIS Node contact information listed at <https://obis.org/contact/>, you can edit the information here https://metadata.obis.org/ by signing in with your OceanExpert credentials.
 
   </details></li>
 </ul>
