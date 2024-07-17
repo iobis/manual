@@ -3,7 +3,7 @@
 **Contents:**
 
 - [Introduction](#introduction-to-dna-data)
-- [How to find genetic data in OBIS](#how-to-find-genetic-data)
+- [How to find genetic data in OBIS](#how-to-find-genetic-data-in-obis)
 - [Guidelines for compiling eDNA and metabarcoding data](#compiling-edna-and-metabarcoding-datasets)
   - [eDNA & DNA Derived use cases](#edna-and-dna-derived-data-example)
   - [16S rRNA metabarcoding example](#16s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton)

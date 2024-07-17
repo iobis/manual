@@ -35,7 +35,7 @@ Below you will find a convenient list of important or relevant websites and reso
 * [SeaDataNet P01 facet search](https://vocab.seadatanet.org/p01-facet-search): recommended interface to search for P01 codes used to populate measurementTypeID field. Note that the free text search is best used by supplying one search term at a time (it does not search the same way we use Google)
 * [OBIS GitHub repository for vocabulary](https://github.com/nvs-vocabs/OBISVocabs/issues): use this repository to request new terms for measurements related to OBIS data
 * [Darwin Core Basis of Record Vocabulary](https://rs.gbif.org/vocabulary/dwc/basis_of_record_2022-02-02.xml): definitions for terms used to populate basisOfRecord
-* [OBIS MoF viewer](https://mof.obis.org/): this tool allows you to search for all measurements or facts published in OBIS
+* [OBIS MoF viewer](https://mof.obis.org/): this tool allows you to search for all measurements or facts published in OBIS, but it **should NOT** be used as reference to select vocabularies. See the [vocabulary](vocabulary.html#map-emof-measurement-identifiers-to-preferred-vocabulary) section of the Manual for additional help
 * [MeasurementOrFact statistics summary by Node](https://r.obis.org/mof/): this page provides a summary for each dataset by OBIS node, summarizing the % of missing measurementTypeID, measurementValueID, and measurementUnitIDs
 * [NERC Vocabulary Server](https://vocab.nerc.ac.uk/search_nvs/): interface to search through the entire NERC Vocabulary Server to find vocabulary terms. As with the SeaDataNet facet search, the search does not function the same way Google does and you may have to adjust how you search for terms.
 

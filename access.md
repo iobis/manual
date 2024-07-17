@@ -134,7 +134,7 @@ To find your own dataset in OBIS, you can use the same tools as finding any data
 * From the [OBIS homepage](https://obis.org/) or the [Mapper](https://mapper.obis.org/), you can search by dataset name, species of interest, the OBIS node that you uploaded to, or by institute
   * Note: When using the Mapper you can combine multiple search criteria to help narrow down your search
     * E.g., if we wanted to find [this dataset](https://obis.org/dataset/80479e14-2730-436d-acaa-b63bdc7dd06f) in the Mapper, we could search for OBIS USA under Nodes, National Oceanic and Atmospheric Administration, Washington under Institutes, and/or Radiozoa under Scientific Name. Then when we view the data and scroll down to datasets, the only one listed is the one we were interested in
-* If you have used the (extended)measurementOrFact extension and have measurementType data, you can [search by the name of your measurementType](https://mof.obis.org/), click on the hyperlink for records. This will populate a list of datasets that you can scroll through.
+* If you have used the (extended)measurementOrFact extension and have `measurementType` data, you can [search by the name of your `measurementType`](https://mof.obis.org/), and click on the hyperlink for records. This will populate a list of datasets that you can scroll through which have used a particular `measurementType`. _Note this tool is only for consultatation purposes and should never be used to help you [select vocabulary](vocabulary.html#map-emof-measurement-identifiers-to-preferred-vocabulary) for your data_
 
 ## How to contact data provider
 

@@ -5,7 +5,7 @@
 - [Uncertain temporal range](#uncertain-temporal-range)
 - [Uncertain geolocation](#uncertain-geolocation)
   - [How to use OBIS Maptool](#how-to-use-obis-map-tool)
-  - [How to use Gazetteers to obtain geolocation information](#using-getty-thesaurus--google-maps-to-obtain-locality-coordinates)
+  - [How to use Gazetteers to obtain geolocation information](#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates)
 - [Low confidence taxonomic information](#low-confidence-taxonomic-identification)
 - [Uncertain measurements](#uncertain-measurements)
 
