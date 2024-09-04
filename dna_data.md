@@ -1,12 +1,18 @@
 ## DNA derived data
 
+<div class="callbox-blue">
+
+*Note: OBIS guidelines have not yet been updated to reflect changes that allow DNA Derived data to be linked to Event core tables. We will update this page soon.*
+
+</div>
+
 **Contents:**
 
 - [Introduction](#introduction-to-dna-data)
 - [How to find genetic data in OBIS](#how-to-find-genetic-data-in-obis)
 - [Guidelines for compiling eDNA and metabarcoding data](#compiling-edna-and-metabarcoding-datasets)
   - [eDNA & DNA Derived use cases](#edna-and-dna-derived-data-example)
-  - [16S rRNA metabarcoding example](#16s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton)
+  - [16S rRNA metabarcoding example](#16s-rrna-gene-metabarcoding-data-of-pico-to-mesoplankton)
 - [Unknown sequences](#unknown-sequences)
 - [Guidelines for compiling qPCR data](#compiling-qpcr-datasets)
 
@@ -206,7 +212,7 @@ For a detailed description of the steps taken to process the data, including alg
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 
-##### 16S rRNA gene metabarcoding data of Pico- to Mesoplankton
+##### 16S rRNA gene metabarcoding data of Pico to Mesoplankton
 
 DNA derived datasets can also include an extendedMeasurementsOrFact (eMoF) extension file, in addition to the Occurrence and DNA derived extensions. In this example, environmental measurements were provided in an eMoF file, in addition to the DNA derived data and occurrence data. Here we show how to incorporate such measurements in the extensions.
 

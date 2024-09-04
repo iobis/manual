@@ -16,6 +16,8 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
   - x/- term is recommended only for the Occurrence core
   - -/x term is recommended only for the Occurrence extension
 
+<a href="/docs/OBIS-termchecklist.csv" download>**Click here to download the checklist.**</a>
+
 | Term | OBIS Required | Term's DarwinCore Class | Event Table | Occurrence Table (Core/Extension) | eMoF Table | DNA Table  |
 |---------|-----------|---------|----------|--------|----------|----------|
 | eventDate | required |  event |  x | x/- |  |  |

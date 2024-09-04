@@ -61,6 +61,12 @@ This manual provides a comprehensive walk-through on how to contribute data to O
 
 The manual is designed to provide guidelines for OBIS nodes and data providers, ensuring that data published via OBIS are of high quality and adhere to internationally recognized standards. It also serves as a resource for data users on how to access, process, and visualize data from OBIS. See the [quick links](linklist.html) page for a quick reference to various guides, tools, and resources.
 
+<div class="callbox-blue">
+
+`r fontawesome::fa(name="youtube", fill="red")` See the [OBIS YouTube](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF) playlist for many helpful How-to videos!
+
+</div>
+
 The OBIS manual is a dynamic document and is revised on a regular basis. We welcome suggestions for additions and changes, which can be sent to [helpdesk@obis.org](mailto:helpdesk@obis.org), the OBIS Capacity Development Task Team at [training@obis.org](mailto:training@iobis.org), and/or submitted as issues at <https://github.com/iobis/manual/issues>. 
 
 ## Guidelines on the sharing and use of data in OBIS
