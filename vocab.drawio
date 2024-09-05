@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="huvjwfH_LWe6LAb27CaQ" name="Page-1">
-        <mxGraphModel dx="3400" dy="2726" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="4630" dy="3456" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -762,36 +762,37 @@
                 <mxCell id="667" value="&lt;div&gt;Sampling device information&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;fillColor=#FFF2CC;" parent="1" vertex="1">
                     <mxGeometry x="-1745.13" y="-949.46" width="190" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="676" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=#FF9933;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="677" target="681">
+                <mxCell id="676" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=#FF9933;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" parent="1" source="677" target="681" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="677" value="&lt;b&gt;Sampling measurements&lt;/b&gt;&lt;br&gt;(e.g. device, protocol)" style="whiteSpace=wrap;html=1;fillColor=#FFB366;" vertex="1" parent="1">
+                <mxCell id="677" value="&lt;b&gt;Sampling measurements&lt;/b&gt;&lt;br&gt;(e.g. device, protocol)" style="whiteSpace=wrap;html=1;fillColor=#FFB366;" parent="1" vertex="1">
                     <mxGeometry x="-1400.14" y="-152.14" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="678" value="ACTION: search for &quot;sampling parameter&quot;" style="whiteSpace=wrap;html=1;fillColor=#33FFFF;" vertex="1" parent="1">
+                <mxCell id="678" value="ACTION: search for &quot;sampling parameter&quot;" style="whiteSpace=wrap;html=1;fillColor=#33FFFF;" parent="1" vertex="1">
                     <mxGeometry x="-1408.9999999999995" y="69.68000000000002" width="137.74" height="64" as="geometry"/>
                 </mxCell>
-                <mxCell id="684" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=#FF9933;strokeWidth=2;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="679" target="631">
+                <mxCell id="684" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=#FF9933;strokeWidth=2;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" parent="1" source="679" target="631" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="-1470" y="304"/>
+                            <mxPoint x="-1340" y="390"/>
+                            <mxPoint x="-1470" y="390"/>
                             <mxPoint x="-1470" y="1550"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="679" value="ACTION: Browse or search by keyword to find sampling measurement&lt;div&gt;Keep in mind codes names are generic&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#33FFFF;" vertex="1" parent="1">
+                <mxCell id="679" value="ACTION: Browse or search by keyword to find sampling measurement&lt;div&gt;Keep in mind codes names are generic&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#33FFFF;" parent="1" vertex="1">
                     <mxGeometry x="-1425" y="258.11" width="170" height="91.89" as="geometry"/>
                 </mxCell>
-                <mxCell id="680" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=#FF9933;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="681" target="678">
+                <mxCell id="680" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=#FF9933;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" parent="1" source="681" target="678" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="681" value="ACTION: navigate to&amp;nbsp;&lt;a href=&quot;https://vocab.seadatanet.org/p01-facet-search&quot;&gt;SeaDataNet facet search&lt;/a&gt;" style="whiteSpace=wrap;html=1;fillColor=#33FFFF;" vertex="1" parent="1">
+                <mxCell id="681" value="ACTION: navigate to&amp;nbsp;&lt;a href=&quot;https://vocab.seadatanet.org/p01-facet-search&quot;&gt;SeaDataNet facet search&lt;/a&gt;" style="whiteSpace=wrap;html=1;fillColor=#33FFFF;" parent="1" vertex="1">
                     <mxGeometry x="-1409" y="-32.32000000000002" width="137.74" height="64" as="geometry"/>
                 </mxCell>
-                <mxCell id="682" value="What is the measurement property?" style="whiteSpace=wrap;html=1;fillColor=#FFF2CC;" vertex="1" parent="1">
+                <mxCell id="682" value="What is the measurement property?" style="whiteSpace=wrap;html=1;fillColor=#FFF2CC;" parent="1" vertex="1">
                     <mxGeometry x="-1400.13" y="156.68000000000004" width="120" height="62" as="geometry"/>
                 </mxCell>
-                <mxCell id="683" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=#FF9933;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="682" target="679">
+                <mxCell id="683" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=#FF9933;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="682" target="679" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-1180" y="190" as="sourcePoint"/>
                         <mxPoint x="-1220" y="220" as="targetPoint"/>
