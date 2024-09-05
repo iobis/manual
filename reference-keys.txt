@@ -114,7 +114,7 @@ dna-derived-data
 compiling-edna-and-metabarcoding-datasets
 edna-and-dna-derived-data-example
 edna-data-from-monterey-bay-california
-s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton
+s-rrna-gene-metabarcoding-data-of-pico-to-mesoplankton
 unknown-sequences
 compiling-qpcr-datasets
 obis-bioinformatics-pipeline

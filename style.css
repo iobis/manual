@@ -5,3 +5,32 @@ table {
 .book .book-body .page-wrapper .page-inner {
   max-width: 80% !important;
 }
+.book .book-summary ul.summary li span {
+  opacity: 1 !important;
+  color: #1e74ac;
+  font-size: 16px !important;
+}
+.callbox-blue {
+  background: lightcyan;
+  border-style: none none none solid;
+  border-width: 5px;
+  border-color: #0c3f61;
+  padding-left: 10px;
+  margin-left: 10px;
+  font-weight: bold;  
+}
+.callbox-caution {
+  background: lightyellow;
+  border-style: none none none solid;
+  border-width: 5px;
+  border-color: #efaf36;
+  padding-left: 70px;
+  box-shadow: 5px 5px #777960;
+}
+.caution{
+  background-image: url("images/icons/triangle-exclamation-solid-yellow.png");
+  background-size: 50px 50px;
+  background-position-y: 45px;
+  background-position-x: 5px;
+  background-repeat: no-repeat;
+}
