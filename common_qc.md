@@ -26,7 +26,11 @@ Sometimes locality information can be difficult to interpret, especially if reco
 - Use the OBIS [Map Tool](https://obis.org/maptool/) to [obtain a WKT](access.html#mapper) string for point, line, or polygon features to put in the `footprintWKT` field. The corresponding projection should be placed in the `footprintSRS` field. Note the accepted spatial reference system for OBIS is EPSG:4326 (WGS84). The [Marine Regions Gazetteer](https://www.marineregions.org/gazetteer.php?p=search) is available for use within the Map tool to help find locations.
 - Search for locations with the [Marine Regions Gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to obtain coordinates and a `locationID`. For information on how to use this tool, [see below](#how-to-use-marine-regions-gazetteer-tool).
   - You can also use the [Getty Thesaurus of Geographic Names](http://www.getty.edu/research/tools/vocabularies/tgn/) or Google Maps. [See below](#how-to-use-obis-map-tool)
-  - **Note:** Always be sure to fill in the `georeferenceSources` field to indicate the sources you used to obtain locality information when appropriate
+
+<div class="callbox-blue">
+  `r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` Always be sure to fill in the `georeferenceSources` field to indicate the source(s) you used to obtain locality information when appropriate
+</div>
+
 - If you have a set of points, a line, or a polygon (perhaps from the Map tool), you can find the centroid of the features using either [obistools::calculate_centroid](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) or [PostGIS](https://postgis.net/docs/ST_PointOnSurface.html), and then enter this coordinate into the `decimalLatitude` and `decimalLongitude` fields. This PostGIS guideline will help you select a centroid that is guaranteed to fall within your designated area.
 - Estimate `coordinateUncertaintyinMeters` that is wide enough to cover the area
   - If the location is provided as an array or WKT format, you can use R package [obistools::calculate_centroid](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) to obtain coordinate uncertainty.
@@ -39,12 +43,14 @@ For data that only has **textual descriptions**:
 
 GBIF also provides some guidelines for [difficult localities](https://docs.gbif.org/georeferencing-best-practices/1.0/en/#difficult-localities) as well as other [georeferencing tips](https://docs.gbif.org/georeferencing-quick-reference-guide/1.0/en/#georeferencing-methods-by-locality-type) for different geographic features, such as when only a distance or heading is provided (e.g., 10 km off Sao Paulo’s coast, north of Fiji).
 
-> Important note:
-> If you are making any inferences and/or decisions about locality coordinates, please record this in the `georeferenceRemarks` field. Additional information about the locality can also be stored in DwC terms such as `waterBody`, `islandGroup`, `island` and `country`. `locationAccordingTo` should provide the name of the gazetteer that was used to obtain the coordinates for the locality.
+<div class="callbox-caution caution">
+Important note:
+If you are making any inferences and/or decisions about locality coordinates, please record this in the `georeferenceRemarks` field. Additional information about the locality can also be stored in DwC terms such as `waterBody`, `islandGroup`, `island` and `country`. `locationAccordingTo` should provide the name of the gazetteer that was used to obtain the coordinates for the locality.
+</div>
 
 ### How to use OBIS Map Tool
 
-A video tutorial on how to use our Map tool is available below. This video covers the following topics:
+A video tutorial `r fontawesome::fa(name="youtube", fill="red")` on how to use our Map tool is available below. This video covers the following topics:
 
 1. Estimating coordinates
 2. Using the line and polygon tool
@@ -99,7 +105,7 @@ Since we are obtaining all this locality data from Marine Regions, we must also 
 |---|---|---|---|---|---|---|
 |Bay of Fundy | <http://marineregions.org/mrgid/4289> | 44.97985204 | -65.80601556 | 196726 | Marine Regions | Coordinates are a midpoint inferred from location name|
 
-The OBIS Mapper has built-in access to the Marine Regions Gazetteer. The video below demonstrates how to use this built-in tool, as well as how to navigate the Marine Regions Gazetter to obtain important georeferencing information to include in your data.
+The OBIS Mapper has built-in access to the Marine Regions Gazetteer. The video `r fontawesome::fa(name="youtube", fill="red")` below demonstrates how to use this built-in tool, as well as how to navigate the Marine Regions Gazetter to obtain important georeferencing information to include in your data.
   
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/XM23WEvE364"

@@ -16,33 +16,36 @@ There are many possible ways of setting up your datasheets, and if you are new t
 For example, a DwC mapping reference table could look like the following:
 
 | Verbatim field name | Mapped DwC term | Actions taken | Notes |
-|-------|-------|------------|--------------|
+|:-------|:-------|:------------|:--------------|
 | date | eventDate | convert dates to ISO |  |
 | coordinates| decimalLongitude, decimalLatitude | convert ddmmss to decimal degrees, separated one column into 2 for longitude and latitude | put original coordinates into verbatimCoordinates |
 
 In order to help you map your data to DwC terms, we have provided the table below which outlines some common data fields, their associated Darwin Core vocabulary, and which data table the field is likely to go in:
 
 | Common Raw Terms | DwC Field | Data table |
------------------ | ----------------------------- | ---------
-Date, Time | eventDate | Event, Occurrence
-Species, g_s, taxa | scientificName | Occurrence
-Any biotic/abiotic measurements* | measurementType, measurementValue, measurementUnit* | eMoF
-Depth | maximumDepthInMeters or minimumDepthInMeters | Event, Occurrence
-Lat/Latitude, Lon/Long/Longitude, dd | decimalLatitude, decimalLongitude | Event, Occurrence
-Sampling method | samplingProtocol | eMoF
-Sample size, N, #, No. | sampleSizeValue | eMoF
-Location | locality | Event
-Presence, absence | occurrenceStatus | Occurrence
-Type of record/ specimen | basisofRecord | Occurrence
-Person/ people that recorded the original Occurrence | recordedBy | Occurrence
-OrcID of person/ people that recorded the original Occurrence | recordedByID | Occurrence
-Person/ people that identified the organism | identifiedBy | Occurrence
-OrcID of person/ people that identified the organism | identifiedByID | Occurrence
-Data collector, data creator | recordedBy | Event, Occurrence
-Taxonomist, identifier | identifiedBy | Occurrence
-Record number, sample number, observation number | occurrenceID (either ID or incorporated into ID) | Occurrence
+|:----------------- |:----------------------------- |:---------|
+| Date, Time | eventDate | Event, Occurrence |
+| Species, g_s, taxa | scientificName | Occurrence |
+| Any biotic/abiotic measurements* | measurementType, measurementValue, measurementUnit* | eMoF |
+| Depth | maximumDepthInMeters or minimumDepthInMeters | Event, Occurrence |
+| Lat/Latitude, Lon/Long/Longitude, dd | decimalLatitude, decimalLongitude | Event, Occurrence |
+| Sampling method | samplingProtocol | Event, eMoF |
+| Sample size, N, #, No. | sampleSizeValue | Event, eMoF |
+| Location | locality | Event |
+| Presence, absence | occurrenceStatus | Occurrence |
+| Type of record/ specimen | basisofRecord | Occurrence |
+| Person/ people that recorded the original Occurrence | recordedBy | Occurrence |
+| OrcID of person/ people that recorded the original Occurrence | recordedByID | Occurrence |
+| Person/ people that identified the organism | identifiedBy | Occurrence |
+| OrcID of person/ people that identified the organism | identifiedByID | Occurrence |
+| Data collector, data creator | recordedBy | Event, Occurrence |
+| Taxonomist, identifier | identifiedBy | Occurrence |
+| Record number, sample number, observation number | occurrenceID (either ID or incorporated into ID) | Occurrence |
 
-*Note that mapping abiotic/biotic measurement fields (sex, temperature, abundance, lengths, etc.) will occur within the [extendedMeasurementOrFact extension](format_emof.html). Here this data will go from being a separate column to being condensed into the `measurementType` and `measurementValue` fields.*
+<div class=callbox-blue>
+
+`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` Note that mapping abiotic/biotic measurement fields (sex, temperature, abundance, lengths, etc.) will occur within the [extendedMeasurementOrFact extension](format_emof.html). Here this data will go from being a separate column to being condensed into the `measurementType` and `measurementValue` fields.
+</div>
 
 The obistools R package also has the [map_fields function](https://github.com/iobis/obistools#map-column-names-to-darwin-core-terms) that you can use to map your dataset fields to a DwC term.
 
@@ -91,9 +94,12 @@ Some examples of `measurementUnits` and the associated `measurementUnitID` inclu
 
 The `measurementValueID` field is used to provide an identifying code for `measurementValues` that are **non-numerical** (e.g. sampling related, sex or life stage designation, etc.).
 
-**Note: it is NOT used for standardizing numeric measurements!**
+<div class="callbox-blue">
 
-Unlike `measurementUnitID`, there is more than one collection which may be used to search for and use concepts from. The collection is dependent on which type of `measurementValue` you have. See the table below for some common, non-exhaustive examples. Note that behaviour is an exception in that we recommend to use codes from the ICES vocabulary server, instead of NERC. A video is available on the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul) that demonstrates how to find and select vocabularies for `measurementValueID` from both NREC and ICES.
+`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` measurementValueID is NOT used for standardizing numeric measurements!
+</div>
+
+Unlike `measurementUnitID`, there is more than one collection which may be used to search for and use concepts from. The collection is dependent on which type of `measurementValue` you have. See the table below for some common, non-exhaustive examples. Note that behaviour is an exception in that we recommend to use codes from the ICES vocabulary server, instead of NERC. The video below, from the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul) `r fontawesome::fa(name="youtube", fill="red")`, demonstrates how to find and select vocabularies for `measurementValueID` from both NERC and ICES.
 
 | Type of measurementValue | Collection | Collection Documentation| Complete Vocabulary List|
 |--------------------------|------------|-------------------------|-------------------------|
@@ -109,6 +115,12 @@ You can also populate `measurementValueID` with references to papers or manuals 
 
 * The DOI of the paper/manual
 * Handle for publications on IOC's [Ocean Best Practices repository](http://www.oceanbestpractices.net/), e.g. [http://hdl.handle.net/11329/304](http://hdl.handle.net/11329/304)
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/_I235UwoH-o?si=Cu8-oxq9qqgUlYmU"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Populate measurementTypeID
 
@@ -155,9 +167,9 @@ Vocabulary for measurements related to sampling instruments and/or sampling meth
 * Name of sampling instrument <https://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/>
 * Sample duration <https://vocab.nerc.ac.uk/collection/P01/current/AZDRZZ01/>
 
-Use the following decision tree to help you select P01 codes for biological, chemical, physical, and/or sampling measurements. See the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul) for guidance on how to use this tree and examples for different types of `measurementTypeIDs`. Note that the `measurementTypeID`:sampling measurements branch is newly developed, and we are happy to receive feedback if the suggestions are not working for you.
+Use the following decision tree to help you select P01 codes for biological, chemical, physical, and/or sampling measurements. See the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul) `r fontawesome::fa(name="youtube", fill="red")` for guidance on how to use this tree and examples for different types of `measurementTypeIDs`. Note that the `measurementTypeID`:sampling measurements branch is newly developed, and we are happy to receive feedback if the suggestions are not working for you.
 
-![_Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. For those unfamiliar with the tree see the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul)._](images/vocab-decision-tree.png)
+![_Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. For those unfamiliar with the tree see the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul).](images/vocab-decision-tree.png)
 
 ### Request new vocabulary terms
 

@@ -50,7 +50,7 @@ Before proceeding with the below, make sure each record already has an [`eventID
 7. Add any other relevant fields as indicated above
 8. Map fields to Darwin Core
 
-Watch the video tutorial of this process below.
+Watch the video tutorial `r fontawesome::fa(name="youtube", fill="red")` of this process below.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/jyy6QO_p7v8"

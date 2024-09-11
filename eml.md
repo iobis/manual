@@ -251,7 +251,10 @@ This section can capture two things:
 1. A description of the range of taxa that are addressed in the data set. OBIS recommends to only add the higher classification (Kingdom, Class or Order) of the involved groups (e.g. Bivalvia, Cetacea, Aves, Ophiuroidea…). You can easily draw a list of higher taxonomic ranks from the WoRMS taxon match service (or ask the data provider). The taxonomic coverage is not a mandatory field, but the information stored here can be very useful as background information. The description can also contain common names, such as e.g. benthic foraminifera or mussels.
 2. An overview of all the involved taxa (not recommended, as all the taxa are already listed in the dataset).
 
-> _Note:_ OBIS also recommends to add information on the (higher) taxonomic groups in the (descriptive) dataset title and abstract.
+<div class="callbox-blue">
+
+`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` OBIS also recommends to add information on the (higher) taxonomic groups in the (descriptive) dataset title and abstract.
+</div>
 
 ![Example of the Taxonomic Coverage section of the metadata](images/ipt-ss14-meta-taxa.png){width=70%}
 
@@ -280,7 +283,10 @@ Part of the information entered here, can partly overlap with information given 
 
 The EML can contain descriptions of the sampling and data processing methods. Study extent can be documented here as well to report a more specific geographic area as well as the sampling frequency. Descriptions of sampling procedures, quality control, and steps (sample or data processing) can be given in the same way as the methods section of a scientific paper.
 
-Note that OBIS best practice is to add sampling facts to the extended MeasurementorFact extension, linked to the sampling events in the Event core via eventID.
+<div class="callbox-blue">
+
+`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` OBIS best practice is to add sampling facts to the extended MeasurementorFact extension, linked to the sampling events in the Event core via eventID.
+</div>
 
 ##### Citations
 

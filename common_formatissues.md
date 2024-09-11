@@ -10,7 +10,11 @@ After creating data tables and mapping terms to DwC, additional data formatting 
 
 ## Temporal: Dates and times
 
-The date and time at which an event took place or an occurrence was recorded goes in `eventDate`. This field uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601). OBIS recommends using the extended ISO 8601 format with hyphens. Note that all dates in OBIS become translated to UTC during the [quality control process implemented by OBIS](https://github.com/iobis/obis-qc). Formatting your dates correctly ensures there will be no errors during this process.
+The date and time at which an event took place or an occurrence was recorded goes in `eventDate`. This field uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601). OBIS recommends using the extended ISO 8601 format with hyphens. 
+
+<div class="callbox-blue">
+`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` All dates in OBIS become translated to UTC during the [quality control process implemented by OBIS](https://github.com/iobis/obis-qc). Formatting your dates correctly ensures there will be no errors during this process.
+</div>
 
 ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use / as a separator. Date and times are separated by `T`. Timezones can be indicated at the end by using + or - the number of hours offset from UTC. If no timezone is indicated, then the time is assumed to be local time. When a date/time is recorded in UTC, a Z should be added at the end. Times must be written in the 24-hour clock system. If you do not know the time, you do not have to provide it. Please do not indicate unknown times as “00:00” as this indicates midnight.
 
@@ -43,9 +47,9 @@ Some specific examples of acceptable ISO 8601 dates are:
 
 It is important to note that although ISO 8601 also supports ordinal dates (YYYY-DDD) and week dates (YYYY-Www-D), these formats are not supported by OBIS. Additionally, ISO 8601 guidelines for [durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) should not be used. Durations for an event (e.g., length of observation) can instead be indicated with the DwC terms [startDayOfYear](https://dwc.tdwg.org/list/#dwc_startDayOfYear) and [endDayOfYear](https://dwc.tdwg.org/list/#dwc_endDayOfYear). Durations refer to the actual length of time an event (e.g., occurrence) occurred, whereas intervals indicate the time period during which an event was recorded.
 
-**A note about intervals:**
-
-> Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact date and time, you should specify that information. This also helps for continuous samplings and time-series integrated datasets.
+<div class="callbox-caution caution">
+**A note about intervals:** Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact date and time, you should specify that information. This also helps for continuous samplings and time-series integrated datasets.
+</div>
 
 If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See [example](#how-to-handle-mixed-date-information).
 
@@ -53,7 +57,13 @@ For uncertainty regarding the date of the event, see [guidelines](common_qc.html
 
 ### Tips {.unlisted .unnumbered}
 
-To ensure your date is formatted correctly, it may be easiest to begin by populating the `year`, `month`, and `day` fields first. If the specific time of sampling is known, populate that into `eventTime` as well. When you fill these fields, we recommend ensuring the numbers are encoded as Text, not as General or numeric as Excel often tries to interpret what it thinks the content “should” be. Otherwise you may run into problems with Excel auto formatting your numbers in ways you don’t want. You can do this by highlighting the cells of interest, navigating to the Number Format on the Home ribbon and selecting “Text”. Be careful when you do this change of format, as some columns (e.g. time) may become formatted into a decimal or other unexpected format.
+To ensure your date is formatted correctly, it may be easiest to begin by populating the `year`, `month`, and `day` fields first. If the specific time of sampling is known, populate that into `eventTime` as well. When you fill these fields, we recommend ensuring the numbers are encoded as Text, not as General or numeric as Excel often tries to interpret what it thinks the content “should” be. Otherwise you may run into problems with Excel auto formatting your numbers in ways you don’t want.
+
+<div class="callbox-caution caution">
+**A caution about dates and Excel**: Excel is unfortunately notorious for causing issues in saving dates. The Data Carpentries have produced [this exercise](https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data.html) which demonstrates how Excel interprets dates and numbers, sometimes converting numbers into dates and vice versa. The exercise is simply a demonstration of Excel - it does not provide advice on formatting dates for OBIS.
+</div>
+
+You can encode fields as text in Excel by highlighting the cells of interest, navigating to the Number Format on the Home ribbon and selecting “Text”, see screenshot below. Be careful when you do this change of format, as some columns (e.g. time) may become formatted into a decimal or other unexpected format!
 
 ![*Screenshot of how to change data type in Excel*](images/excel-text-format.png){width=70%}
 
@@ -65,10 +75,9 @@ Then you can use Excel to concatenate each field together, adding the time zone 
 
 ![*Example of how to concatenate dates in Excel*](images/excel-concatexample.png){width=70%}
 
-> Note
-> You can also use the Canadensys [date parsing](https://data.canadensys.net/tools/dates) tool to help you convert dates or parse them into component parts.
-
-**A caution about dates and Excel**: Excel is unfortunately notorious for causing issues in saving dates. The Data Carpentries have produced [this exercise](https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data.html) which demonstrates how Excel interprets dates and numbers, sometimes converting numbers into dates and vice versa. This exercise is simply a demonstration of Excel - it does not provide advice on formatting dates for OBIS.
+<div class="callbox-blue">
+`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` Note: You can also use the Canadensys [date parsing](https://data.canadensys.net/tools/dates) tool to help you convert dates or parse them into component parts.
+</div>
 
 Date formats in Excel can be very dependent on your computer system region custom and not all of them have the ISO 8601 format included. Therefore you can type the date in the requested format but it will automatically revert the format according to your Windows system region settings. You can change your system region by: navigating to Control Panel > All Control Panel Items > Region and then select "English (United States)" or "English (United Kingdom)". The YYYY-MM-DD format will appear among the choices within the Format cells - Date options.
 
@@ -76,7 +85,7 @@ If your computer language is not set to English, you may encounter additional is
 
 It is good practice to place the verbatim event date/time description into the `verbatimEventDate` field. Any modifications you make during data formatting should be recorded in the `eventRemarks` field, and we recommend taking good notes in a personal reference file.
 
-This video provides a demonstration of how you can format dates to ISO 8601, including how to resolve difficulties you might run into (some which are also discussed below).
+This video `r fontawesome::fa(name="youtube", fill="red")` provides a demonstration of how you can format dates to ISO 8601, including how to resolve difficulties you might run into (some which are also discussed below).
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/0xIJWdIeTxo"
@@ -134,7 +143,7 @@ All coordinates provided in the `decimalLatitude` or `decimalLongitude` fields i
 
 ![*Screenshot of how to use the OBIS coordinate converter*](images/coordinate_conversion.png){width=70%}
 
-Watch this video for a demonstration on use of this tool.
+Watch this video `r fontawesome::fa(name="youtube", fill="red")` for a demonstration on use of this tool.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/E_TkWIUcoJw"

@@ -10,8 +10,10 @@ OBIS currently accepts identifiers from **three** authoritative lists:
 
 The identifiers (LSID, TSN, ID) from these registers will be used to populate the `scientificNameID` field. OBIS can accept other LSIDS besides WoRMS, as long as they are mapped in WoRMS. If you would like to include multiple identifiers, please use a concatenated list where each register is clearly identified (e.g. urn:lsid:itis.gov:itis_tsn:12345, NCBI:12345, BOLD:12345).
 
-> **Note**
-> You should prioritize using LSIDs because they are unique identifiers that indicate the authority the ID comes from.WoRMS LSIDs are also the taxonomic backbone that OBIS relies on, as it is built on marine systems and is linked to the other taxonomic authoritative lists.
+<div class="callbox-blue">
+
+`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` You should prioritize using LSIDs because they are unique identifiers that indicate the authority the ID comes from. WoRMS LSIDs are also the taxonomic backbone that OBIS relies on, as it is built on marine systems and is linked to the other taxonomic authoritative lists.
+</div>
 
 You can also use the [Interim Register of Marine and Nonmarine Genera (IRMNG)](https://www.irmng.org/aphia.php?p=search) to [distinguish marine genera from freshwater genera](common_qc.html#non-marine-species).
 
@@ -36,7 +38,7 @@ The procedure for matching to WoRMS and then attaching successful matches back t
   * R (merge)
   * Excel (vlookup)
 
-The taxon match tool of the World Register of Marine Species (WoRMS) is an automatic way to download the taxonomic information about your occurrence records, without having to look for each name in the site. It is available at [http://www.marinespecies.org/aphia.php?p=match](http://www.marinespecies.org/aphia.php?p=match). The WoRMS taxon match will compare your taxon list to the taxa available in WoRMS. The following video demonstrates the basic steps for using the WoRMS Taxon match.
+The taxon match tool of the World Register of Marine Species (WoRMS) is an automatic way to download the taxonomic information about your occurrence records, without having to look for each name in the site. It is available at [http://www.marinespecies.org/aphia.php?p=match](http://www.marinespecies.org/aphia.php?p=match). The WoRMS taxon match will compare your taxon list to the taxa available in WoRMS. The following video `r fontawesome::fa(name="youtube", fill="red")` demonstrates the basic steps for using the WoRMS Taxon match.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/yZKwtr14JVM"
@@ -44,7 +46,7 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 
-The taxon match takes into account exact matches and fuzzy matches. Fuzzy matches include possible spelling variations of a name available in WoRMS. WoRMS also identifies ambiguous matches, indicating that several potential matching options are available (e.g. homonyms). You can check these ambiguous matches and select the correct one, based on e.g., the general group information (a sponge dataset) or the authority. If this would be impossible with the available information (e.g., missing authority or very diverse dataset), then you need to contact the data provider for clarification. Watch the video below for a demonstration on how to resolve ambiguous or fuzzy matches.
+The taxon match takes into account exact matches and fuzzy matches. Fuzzy matches include possible spelling variations of a name available in WoRMS. WoRMS also identifies ambiguous matches, indicating that several potential matching options are available (e.g. homonyms). You can check these ambiguous matches and select the correct one, based on e.g., the general group information (a sponge dataset) or the authority. If this would be impossible with the available information (e.g., missing authority or very diverse dataset), then you need to contact the data provider for clarification. Watch the video below `r fontawesome::fa(name="youtube", fill="red")` for a demonstration on how to resolve ambiguous or fuzzy matches.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/yZKwtr14JVM"
@@ -56,8 +58,10 @@ For performance reasons, the limit is set to 1,500 rows for the taxon match tool
 
 After matching, the tool will return you a file with the AphiaIDs, LSIDs, valid names, authorities, classification, and any other output you have selected.
 
-> **Note**
-> The WoRMS LSID is used for `DwC:scientificNameID`.
+<div class="callbox-blue">
+
+`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` The WoRMS LSID is used for `DwC:scientificNameID`.
+</div>
 
 A complete online manual is available at [http://www.marinespecies.org/tutorial/taxonmatch.php](http://www.marinespecies.org/tutorial/taxonmatch.php). You can attach IDs obtained from WoRMS back to your own data using [Excel’s vlookup function](https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1). R script to do this is shown below.
 

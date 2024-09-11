@@ -52,7 +52,7 @@ Some of the other main differences in how OBIS and GBIF structure and publish da
   * Identifying if taxa are exclusively freshwater or terrestrial
 * GBIF includes most of the same [data standards](https://www.gbif.org/standards) as OBIS (Darwin Core, EML), however GBIF also follows the [Biological Collection Access Service (BioCASE/ABCD)](https://www.tdwg.org/standards/abcd/#parts%20of%20the%20standard)
 
-Watch the video below for details on how to publish OBIS datasets to GBIF (starting at 1:07), or how to publish GBIF datasets to OBIS (starting at 6:42).
+Watch the video `r fontawesome::fa(name="youtube", fill="red")` below for details on how to publish OBIS datasets to GBIF (starting at 1:07), or how to publish GBIF datasets to OBIS (starting at 6:42).
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/HciufRG9hiI"

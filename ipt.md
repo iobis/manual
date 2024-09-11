@@ -137,7 +137,7 @@ The IPT may identify Redundant terms if certain terms appear in the e.g., Event 
 
 ![*Screenshot showing other DwC extensions you can map to*](images/ipt-ss6-othermaps.png){width=70%}
 
-Watch the video below for an overview of all of the above procedures, from uploading data to mapping terms to DwC.
+Watch the video below `r fontawesome::fa(name="youtube", fill="red")` for an overview of all of the above procedures, from uploading data to mapping terms to DwC.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/i2P8mjo128o"
@@ -155,7 +155,7 @@ Go to your resource overview page > Metadata and click Edit to open the metadata
 
 ![*Screenshot showing where to add or upload metadata*](images/ipt-ss12-metadata.png){width=80%}
 
-Follow the guidelines on the [OBIS metadata standards and best practices](eml.html) page, or check the [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#metadata) for detailed instructions about the metadata editor. You can also upload a file with metadata information. The video below also demonstrates how to fill metadata on the IPT.
+Follow the guidelines on the [OBIS metadata standards and best practices](eml.html) page, or check the [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/manage-resources#metadata) for detailed instructions about the metadata editor. You can also upload a file with metadata information. The video below `r fontawesome::fa(name="youtube", fill="red")` also demonstrates how to fill metadata on the IPT.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/oAoQsDkZpS8"
@@ -171,7 +171,10 @@ With your dataset uploaded, properly mapped to DwC, and all the metadata filled,
 
 The IPT will now generate your data as Darwin Core, and combine the data with the metadata to package it as a standardized zip-file called a “Darwin Core Archive”. See the IPT manual for more details.
 
-> **Note:** Hitting the "publish" button does not mean that your dataset is available to everyone, it is still private, with access limited to the resource managers. It will only be publicly available when you have changed Visibility to Public. You can choose to do this immediately or at a set date.
+<div class="callbox-caution caution">
+
+**Note:** Hitting the "publish" button does not mean that your dataset is available to everyone, it is still private, with access limited to the resource managers. It will only be publicly available when you have changed Visibility to Public. You can choose to do this immediately or at a set date.
+</div>
 
 ![*Screenshot showing how to change the visibility of your dataset*](images/ipt-ss9-vis.png){width=80%}
 
@@ -189,7 +192,7 @@ Your published dataset is a static snapshot of your data and will not change unt
 
 To view an older version of the metadata about the resource, just add the trailing parameter `&v=n` to the URL where `v` stands for "version", and `n` gets replaced by the version number, e.g., `http://ipt.vliz.be/ilvo/resource.do?r=zoopl_bpns&v=1`. In this way, specific versions of a resource's EML, RTF, and DwC-A files can be retrieved. Please note, the IPT's Archival Mode must be turned on in order for old versions of DwC-A to be stored (see [Configure IPT settings](https://ipt.gbif.org/manual/en/ipt/latest/administration) section of the IPT manual).
 
-The first minute of the video below provides an overview of how to publish on the IPT.
+The first minute of the video below `r fontawesome::fa(name="youtube", fill="red")` provides an overview of how to publish on the IPT.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/HciufRG9hiI"

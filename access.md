@@ -11,7 +11,11 @@ OBIS has over 100 million records of marine data accessible for downloading. To 
 * [Full data exports](#full-exports)
 * [IPT](ipt.html)
 
-**NOTE** When you download data from the Mapper or full export, the data you will receive is flattened into one table with occurrence plus event data. eMoF data tables are separate upon request. However when you download a dataset from the OBIS homepage or dataset page, all tables (Event, Occurrence, eMoF) are separate files.
+<div class="callbox-blue">
+
+`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` When you download data from the Mapper or full export, the data you will receive is flattened into one table with occurrence plus event data. eMoF data tables are separate upon request. However when you download a dataset from the OBIS homepage or dataset page, all tables (Event, Occurrence, eMoF) are separate files.
+
+</div>
 
 ## OBIS Homepage and dataset pages
 
@@ -35,7 +39,7 @@ If you searched for aggregate datasets (e.g., all Crustacea records, all records
 
 * <https://mapper.obis.org>
 
-Watch this video demonstration of how to use the Mapper as well as the OBIS homepage search.
+Watch this video demonstration `r fontawesome::fa(name="youtube", fill="red")` of how to use the Mapper as well as the OBIS homepage search.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/9PSPEtqgjUI"
@@ -71,7 +75,7 @@ This file will be saved to your working directory (if you are not familiar with 
 
 To use `robis` for visualizing and mapping occurrences, see the [Visualization](dataviz.html) section of the manual.
 
-Watch the video below for a walkthrough of how to use the robis package to obtain OBIS data.
+Watch the video `r fontawesome::fa(name="youtube", fill="red")` below for a walkthrough of how to use the robis package to obtain OBIS data.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/8Ep4fGICQWU"
@@ -107,7 +111,7 @@ When searching with the API, you may need to know certain identifiers, including
 * Institute ID - this should be the Ocean Expert ID (e.g., the ID for [NOAA Fisheries Service, Southeast Regional Office St. Petersburg](https://oceanexpert.org/institution/7532) is 7532)
 * OBIS node UUID
 
-A short video demonstrating use of the API is shown below.
+A short video `r fontawesome::fa(name="youtube", fill="red")` demonstrating use of the API is shown below.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/Hocr3N6zpH0"

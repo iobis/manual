@@ -111,7 +111,7 @@ highest: CSIC_BIOFUN1_95  CSIC_BIOFUN1_96  CSIC_BIOFUN1_97  CSIC_BIOFUN1_98  CSI
 
 ```
 
-This video shows how to use both `obistools` and `Hmisc` to conduct QC checks in R.
+This video `r fontawesome::fa(name="youtube", fill="red")` shows how to use both `obistools` and `Hmisc` to conduct QC checks in R.
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/sNzipC6-r90"

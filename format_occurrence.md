@@ -49,7 +49,7 @@ Before proceeding with formatting the Occurrence table, be sure you have [comple
 5. Ensure your column names [map to Darwin Core terms](vocabulary.html)
     * scientificName + scientificNameID
 
-Watch our video tutorial for a demonstration of this procedure:
+Watch our video tutorial `r fontawesome::fa(name="youtube", fill="red")` for a demonstration of this procedure:
 
   <iframe width="560" height="315"
 src="https://www.youtube.com/embed/G_AmAmS7ILc"

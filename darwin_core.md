@@ -33,7 +33,10 @@ DwC terms correspond to the column names of your dataset and can be grouped acco
 
 A list with definitions of all possible Darwin Core terms can be found on [TDWG](https://dwc.tdwg.org/terms/). However, OBIS does not parse all terms (note this doesn't mean you cannot include them, they just will not be parsed when you publish to OBIS). Below is an overview of the most relevant Darwin Core terms to consider when contributing to OBIS, with guidelines regarding their use. We have also compiled a convenient [checklist](checklist.html) of OBIS-accepted terms, their DwC class type, and which OBIS file (Event Core, Occurrence, eMoF, etc.) it is likely to be found in.
 
-Note that OBIS currently has seven required and one strongly recommended DwC term: `occurrenceID`, `eventDate`, `decimalLongitude`, `decimalLatitude`, `scientificName`, `occurrenceStatus`, `basisOfRecord`, `scientificNameID` (strongly recommended).
+<div class="callbox-blue">
+
+`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` OBIS currently has seven required and one strongly recommended DwC term: `occurrenceID`, `eventDate`, `decimalLongitude`, `decimalLatitude`, `scientificName`, `occurrenceStatus`, `basisOfRecord`, `scientificNameID` (strongly recommended).
+</div>
 
 The following DwC terms are related to the Class _Taxon_:
 

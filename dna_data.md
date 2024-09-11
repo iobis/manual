@@ -64,7 +64,7 @@ dnaseqs["DNA_sequence"]
 # … with 696 more rows
 ```
 
-Additionally, a prototype [Sequence Search tool](https://sequence.obis.org/) is in development that allows you to search for sequences or related sequences in OBIS. Note that the tool is not always up to date so use caution until the prototype is fully developed. To use the tool:
+Additionally, a prototype [Sequence Search tool](https://sequence.obis.org/) is in development that allows you to search for sequences or related sequences in OBIS. Note that the tool is not always up to date so please use caution until the prototype is fully developed. To use the tool:
 
 1. Copy your sequence in the provided box (an example sequence is provided for testing)
 2. Press the Search button

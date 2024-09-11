@@ -18,7 +18,7 @@
   <li><a href="contribute.html#why-publish-data-to-obis">Why is it important to share and format data?</a></li>
   <li><a href="contribute.html#how-to-handle-sensitive-data">How do I handle sensitive data?</a></li>
   <li><a href="https://github.com/iobis/manual">Where can I make suggestions for improvements on this Manual?</a></li>
-  <li><a href="https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF">Where can I find OBIS related training videos?</a></li>
+  <li><a href="https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF">Where can I find OBIS related training videos? `r fontawesome::fa(name="youtube", fill="red")`</a></li>
   <li><a href="nodes.html">What are the responsibilities of OBIS node managers?</a></li>
   <li><a href="https://github.com/iobis/obis-network-datasets/">Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?</a></li>
   <li><details>
@@ -51,6 +51,13 @@
 <ul>
   <li><a href="checklist.html">Is there a checklist of all required Darwin Core fields for OBIS?</a></li>
   <li><a href="data_standards.html">How does data flow in OBIS?</a></li>
+  <li><details>
+  <summary>Can I add polygon data to OBIS?</summary>
+
+  Yes, polygons, lines, or combinations of polygon, line, and/or point data can be added to OBIS by using the `footprintWKT` field. This is can be used to record tracks, transects, tows, trawls, habitat extent, or when an exact location is not known. Midpoints of polygons can be added to the required fields `decimalLongitude` and `decimalLatitude`.
+  
+  WKT strings can be generated using the [OBIS Map Tool](https://obis.org/maptool). The tool can also calculate a midpoint and a radius, which is added to `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively. There is also an [`obistools` R function](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) to calculate the centroid and radius for WKT polygons.
+  </details></li>
   <li><a href="common_formatissues.html#missing-required-fields">What should I do if I do not have the data for required fields by OBIS?</a></li>
   <li><a href="identifiers.html#eventid">How do I construct an eventID?</a></li>
   <li><a href="identifiers.html#occurrenceid">How do I construct occurrenceID?</a></li>
@@ -82,13 +89,6 @@
   For genetic data, `sampleSizeValue` and `organismQuantity` do **not** refer to the amount sampled nor the number of organisms. Instead these fields are related to either 1) the number of sequence reads for eDNA data or 2) the number of droplets/partitions for qPCR data. See [DNA data guidelines](dna_data#.html) for more details.
 
   </details></li>
-  <li><details>
-  <summary>How do I document occurrences from unknown species, those new to science, or those with temporary names? e.g. Eurythenes sp. DISCOLL.PAP.JC165.674</summary>
-
-  Occurrences unknown or new to science should be documented according to recommendations by [Horton et al. 2021](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full). You should populate the `scientificName` field with the genus, and in `identificationQualifer` provide the ON sign 'sp.'. However you must also indicate the reason why species-level identification is unavailable. To do this, supplement 'sp.' with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after 'sp.' to `identificationQualifer`. For example Eurythenes sp. DISCOLL.PAP.JC165.674.
-  
-  Please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Similar to creating `eventIDs` or `occurrenceIDs`, you should strive to provide more complex and globally unique identifier. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within a larger repositories like OBIS. It is also recommended to include these temporary names on specimen labels for physical specimens.
-  </details></li>
 </ul>
 
 #### Vocabulary
@@ -104,23 +104,45 @@
   <li><a href="vocabulary.html#map-data-fields-to-darwin-core">How should I match raw data fields with Darwin Core terminology?</a></li>
 </ul>
 
-#### Tools
+#### Taxonomy  {.unnumbered}
 
 <ul>
-  <li><a href="name_matching.html">How do I use the WoRMS taxon match tool?</a></li>
-  <li><a href="name_matching.html#how-to-fetch-a-full-classification-for-a-list-of-species-from-worms">Can I fetch a full classification for a list of species from WoRMS?</a></li>
-  <li><a href="name_matching.html#what-to-do-with-non-matching-names">What do I do if my scientificName does not return a match from WoRMS?</a></li>
+  <li><details>
+  <summary>How do I document occurrences from unknown species, those new to science, or those with temporary names? e.g. Eurythenes sp. DISCOLL.PAP.JC165.674</summary>
+
+  Occurrences unknown or new to science should be documented according to recommendations by [Horton et al. 2021](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full). You should populate the `scientificName` field with the genus, and in `identificationQualifer` provide the ON sign 'sp.'. However you must also indicate the reason why species-level identification is unavailable. To do this, supplement 'sp.' with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after 'sp.' to `identificationQualifer`. For example Eurythenes sp. DISCOLL.PAP.JC165.674.
+  
+  Please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Similar to creating `eventIDs` or `occurrenceIDs`, you should strive to provide more complex and globally unique identifier. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within a larger repositories like OBIS. It is also recommended to include these temporary names on specimen labels for physical specimens.
+  </details></li>
   <li><details>
   <summary>Can scientificNameID be populated with an identifier (e.g. WoRMS LSID) representing an unaccepted taxon name?</summary>
 
   Yes. The identifier in `scientificNameID` should always correspond with the name that is in the `scientificName` field, even if the name is an unaccepted name in WoRMS. For example, the species name "Holothuria mammiculata" was provided, but this name is unaccepted in WoRMS. The accepted name is "Holothuria (Stauropora) pervicax Selenka, 1867". In this case `scientificNameID` should correspond to the original name with LSID urn:lsid:marinespecies.org:taxname:529968 because the ID must correlate with the name as recorded in `scientificName`.
 
   </details></li>
+  <li><details>
+  <summary>What happens when a WoRMS taxonomy is changed? e.g. a species is reclassified</summary>
+  
+  When species are reclassied in WoRMS, the original `scientificName` and `scientificNameID` provided in a dataset remains unchanged. However WoRMS will list the old ID as "Unaccepted", and link to the accepted taxon entry, and this will be reflected in the taxonomic information attached to a dataset download.
+
+  For example, if we search for Manta birostris in OBIS (<https://obis.org/taxon/105857>), we see that the taxon's status in WoRMS is unaccepted. At the bottom of the page it links to the currently accepted name: <https://obis.org/taxon/1026118>. We can find an occurrence which shows the **source** `scientificName` as "Manta" while the **interpreted** `scientificName` is "Mobula": <https://obis.org/occurrence/0020c873-02f1-4bd7-b396-ad36600bc8b2>. We can also see that `originalScientificName` is populated with the source name in the intepreted output.
+  
+  As a user, you don't have to trace species names. *However* if the datasets's DwC-A is downloaded from the dataset page instead of obtained through R or the Mapper, **all fields will contain the original value**. It remains good practice to also check identifiers against WoRMS to see if any have been updated when you download data.
+  
+  </details></li>
+</ul>
+
+#### Tools
+
+<ul>
+  <li><a href="name_matching.html">How do I use the WoRMS taxon match tool?</a></li>
+  <li><a href="name_matching.html#how-to-fetch-a-full-classification-for-a-list-of-species-from-worms">Can I fetch a full classification for a list of species from WoRMS?</a></li>
+  <li><a href="name_matching.html#what-to-do-with-non-matching-names">What do I do if my scientificName does not return a match from WoRMS?</a></li>
   <li><a href="https://sequence.obis.org/">Where can I find DNA sequences published in OBIS?</a></li>
   <li><details>
   <summary>Is there a template generator I can use to help create my Event, Occurrence, and eMoF tables?</summary>
 
-  Yes. There is an [Excel template generator](https://www.nordatanet.no/aen/template-generator/config%3DDarwin%20Core) developed by Luke Marsden & Olaf Schneider as part of the Nansen Legacy project. Note this template generator is aimed at GBIF users, so make to account for and include required OBIS terms.
+  Yes. There is an [Excel template generator](https://www.nordatanet.no/aen/template-generator/config%3DDarwin%20Core) developed by Luke Marsden & Olaf Schneider as part of the Nansen Legacy project. Note this template generator is aimed at GBIF users, so make sure to account for and include required OBIS terms.
 
   There is also this [Excel to Darwin Core macro tool](https://zenodo.org/record/6453921#.Y9KsQkHMKmU) developed by GBIF Norway you can use to help generate templates.
 
@@ -219,11 +241,62 @@
   You can also use [this tool](https://www.unixtimestamp.com/) to convert timestamps.
 
   </details></li>
-  
   <li><details>
   <summary>How do I filter by or obtain trait information for OBIS data (e.g. all benthic organisms)?</summary>
   
   Currently, it is not possible to filter OBIS data by trait. To do this, we recommend using the traits database of the [World Register of Marine Species](https://www.marinespecies.org/traits/aphia.php?p=attributes). For example, searching by “functional group”, you can specify benthos, plankton, nekton, etc.
   
   </details></li>
+  <li><details>
+  <summary>How do I get data from multiple regions from OBIS?</summary>
+
+  If the areas OBIS currently uses does not work for your use case, then it is best to first define all the boundaries for the desired regions. OBIS can be queried using WKT polygons by providing a WKT string to the `geometry` parameter in the `robis::occurrence` function. **HOWEVER** there are some limitations with respect to polygon complexity, and if it is too complex you will likely receive the error *"The OBIS API was not able to process your request"*.
+  
+  For more complex spatial queries we recommend indexing OBIS and GBIF data against polygons and using (finely) gridded versions of these datasets to make the process faster. We note we have not yet properly documented this process, but see the example script produced by Pieter Provoost below. The script first indexes a polygon to the H3 spatial index, then queries a gridded version of OBIS+GBIF data on AWS to get the species list, and finally fetches taxonomy from WoRMS for every species, which may take some time.
+
+  ```r
+library(readr)
+library(h3jsr)
+library(sf)
+library(duckdb)
+library(DBI)
+library(dplyr)
+
+sf_use_s2(FALSE)
+
+# Read WKT from text file, convert to sf, and index to H3 resolution 7
+# https://wktmap.com/?e6b28728
+
+wkt <- read_file("wkt_21773.txt")
+geom <- st_as_sfc(wkt, crs = 4326)
+cells <- data.frame(cell = polygon_to_cells(geom, 7)[[1]])
+
+# Set up duckdb connection and register cells table
+
+con <- dbConnect(duckdb())
+dbSendQuery(con, "install httpfs; load httpfs;")
+duckdb_register(con, "cells", cells)
+
+# Join cells list and gridded species dataset
+
+species <- dbGetQuery(con, "
+  select species, AphiaID
+  from cells
+  inner join read_parquet('s3://obis-products/speciesgrids/h3_7/*') h3 on cells.cell = h3.h3_07
+  group by species, AphiaID
+")
+
+# Add WoRMS taxonomy
+
+id_batches <- split(species$AphiaID, ceiling(seq_along(species$AphiaID) / 50))
+taxa_batches <- purrr::map(id_batches, worrms::wm_record)
+taxa <- bind_rows(taxa_batches) %>% 
+  select(AphiaID, scientificname, phylum, class, order, family, genus, scientificName = scientificname)
+
+# Get Mollusca species
+
+mollusca <- taxa %>%
+  filter(phylum == "Mollusca")
+  ```
+</details></li>
 </ul>
