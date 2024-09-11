@@ -6,12 +6,13 @@
 * [Darwin Core](#darwin-core)
 * [Formatting data](#formatting-data)
 * [Vocabulary](#vocabulary)
+* [Taxonomy](#taxonomy)
 * [Tools](#tools)
 * [Quality Control](#quality-control)
 * [Publishing](#publishing)
 * [Data Access](#accessing-data-in-obis)
 
-#### General
+#### General {.unnumbered}
 
 <ul>
   <li><a href="contribute.html">I have data and want to publish to OBIS - what do I do?</a></li>
@@ -29,7 +30,7 @@
   </details></li>
 </ul>
 
-#### Darwin Core
+#### Darwin Core {.unnumbered}
 
 <ul>
   <li><a href="darwin_core.html">Where can I learn about "Darwin Core"?</a></li>
@@ -46,7 +47,7 @@
   </details></li>
 </ul>
 
-#### Formatting Data
+#### Formatting Data {.unnumbered}
 
 <ul>
   <li><a href="checklist.html">Is there a checklist of all required Darwin Core fields for OBIS?</a></li>
@@ -91,7 +92,7 @@
   </details></li>
 </ul>
 
-#### Vocabulary
+#### Vocabulary {.unnumbered}
 
 <ul>
   <li><a href="vocabulary.html#map-emof-measurement-identifiers-to-preferred-bodc-vocabulary">How do I map Measurement or Fact terms in OBIS with preferred BODC vocabulary?</a></li>
@@ -104,7 +105,7 @@
   <li><a href="vocabulary.html#map-data-fields-to-darwin-core">How should I match raw data fields with Darwin Core terminology?</a></li>
 </ul>
 
-#### Taxonomy  {.unnumbered}
+#### Taxonomy {.unnumbered}
 
 <ul>
   <li><details>
@@ -132,7 +133,7 @@
   </details></li>
 </ul>
 
-#### Tools
+#### Tools {.unnumbered}
 
 <ul>
   <li><a href="name_matching.html">How do I use the WoRMS taxon match tool?</a></li>
@@ -150,7 +151,7 @@
   <li><a href="common_qc.html#uncertain-geolocation">How do I georeference locations, including text-based descriptions?</a></li>
 </ul>
 
-#### Quality Control
+#### Quality Control {.unnumbered}
 
 * [How do I do data quality control?](data_qc.html#how-to-conduct-quality-control)
 * [What are the OBIS quality control flags?](dataquality.html)
@@ -162,7 +163,7 @@
   * [Individual count](common_qc.html#individualcount)
 * [What do I do with freshwater species that are part of my marine dataset?](common_qc.html#non-marine-species)
 
-#### Publishing
+#### Publishing {.unnumbered}
 
 * [How do I add my data to the OBIS database?](data_publication.html)
 * [What metadata do I have to provide? Where? How?](eml.html#metadata-sections)
@@ -174,7 +175,7 @@
 * [How do I publish to both GBIF and OBIS?](data_sharing.html#simultaneous-publishing-to-gbif)
 * [How do I update my already published dataset?](data_sharing.html#update-your-data-in-obis)
 
-#### Accessing data in OBIS
+#### Accessing data in OBIS {.unnumbered}
 
 <ul>
   <li><details>
