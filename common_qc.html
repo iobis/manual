@@ -352,8 +352,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Search for locations with the <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions Gazetteer</a> to obtain coordinates and a <code>locationID</code>. For information on how to use this tool, <a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool">see below</a>.
 <ul>
 <li>You can also use the <a href="http://www.getty.edu/research/tools/vocabularies/tgn/">Getty Thesaurus of Geographic Names</a> or Google Maps. <a href="common_qc.html#how-to-use-obis-map-tool">See below</a></li>
-<li><strong>Note:</strong> Always be sure to fill in the <code>georeferenceSources</code> field to indicate the sources you used to obtain locality information when appropriate</li>
 </ul></li>
+</ul>
+<div class="callbox-blue">
+<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:darkblue;overflow:visible;position:relative;"><path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/></svg> Always be sure to fill in the <code>georeferenceSources</code> field to indicate the source(s) you used to obtain locality information when appropriate</p>
+</div>
+<ul>
 <li>If you have a set of points, a line, or a polygon (perhaps from the Map tool), you can find the centroid of the features using either <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> or <a href="https://postgis.net/docs/ST_PointOnSurface.html">PostGIS</a>, and then enter this coordinate into the <code>decimalLatitude</code> and <code>decimalLongitude</code> fields. This PostGIS guideline will help you select a centroid that is guaranteed to fall within your designated area.</li>
 <li>Estimate <code>coordinateUncertaintyinMeters</code> that is wide enough to cover the area
 <ul>
@@ -367,14 +371,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use this <a href="https://localityservice.uc.r.appspot.com/">Biodiversity Enhanced Location Services</a> tool developed by VertNet. It can translate textual descriptions and provide decimalLatitude, decimalLongitude, geodeticDatum, and coordinateUncertaintyInMeters as a csv sent to an email address. For more information on this service, see the associated <a href="https://github.com/VertNet/bels">GitHub</a>.</li>
 </ul>
 <p>GBIF also provides some guidelines for <a href="https://docs.gbif.org/georeferencing-best-practices/1.0/en/#difficult-localities">difficult localities</a> as well as other <a href="https://docs.gbif.org/georeferencing-quick-reference-guide/1.0/en/#georeferencing-methods-by-locality-type">georeferencing tips</a> for different geographic features, such as when only a distance or heading is provided (e.g., 10 km off Sao Paulo’s coast, north of Fiji).</p>
-<blockquote>
+<div class="callbox-caution caution">
 <p>Important note:
 If you are making any inferences and/or decisions about locality coordinates, please record this in the <code>georeferenceRemarks</code> field. Additional information about the locality can also be stored in DwC terms such as <code>waterBody</code>, <code>islandGroup</code>, <code>island</code> and <code>country</code>. <code>locationAccordingTo</code> should provide the name of the gazetteer that was used to obtain the coordinates for the locality.</p>
-</blockquote>
+</div>
 </div>
 <div id="how-to-use-obis-map-tool" class="section level3 hasAnchor" number="9.6.3">
 <h3><span class="header-section-number">9.6.3</span> How to use OBIS Map Tool<a href="common_qc.html#how-to-use-obis-map-tool" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A video tutorial on how to use our Map tool is available below. This video covers the following topics:</p>
+<p>A video tutorial <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg> on how to use our Map tool is available below. This video covers the following topics:</p>
 <ol style="list-style-type: decimal">
 <li>Estimating coordinates</li>
 <li>Using the line and polygon tool</li>
@@ -456,7 +460,7 @@ allowfullscreen></iframe></p>
 </tr>
 </tbody>
 </table>
-<p>The OBIS Mapper has built-in access to the Marine Regions Gazetteer. The video below demonstrates how to use this built-in tool, as well as how to navigate the Marine Regions Gazetter to obtain important georeferencing information to include in your data.</p>
+<p>The OBIS Mapper has built-in access to the Marine Regions Gazetteer. The video <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg> below demonstrates how to use this built-in tool, as well as how to navigate the Marine Regions Gazetter to obtain important georeferencing information to include in your data.</p>
 <p><iframe width="560" height="315"
 src="https://www.youtube.com/embed/XM23WEvE364"
 frameborder="0"

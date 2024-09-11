@@ -347,7 +347,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a href="https://github.com/iobis/manual">Where can I make suggestions for improvements on this Manual?</a>
 </li>
 <li>
-<a href="https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF">Where can I find OBIS related training videos?</a>
+<a href="https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF">Where can I find OBIS related training videos? <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a>
 </li>
 <li>
 <a href="nodes.html">What are the responsibilities of OBIS node managers?</a>
@@ -404,6 +404,15 @@ What is the difference between <code>individualCount</code>, and <code>organismQ
 </li>
 <li>
 <a href="data_standards.html">How does data flow in OBIS?</a>
+</li>
+<li>
+<details>
+<summary>
+Can I add polygon data to OBIS?
+</summary>
+<p>Yes, polygons, lines, or combinations of polygon, line, and/or point data can be added to OBIS by using the <code>footprintWKT</code> field. This is can be used to record tracks, transects, tows, trawls, habitat extent, or when an exact location is not known. Midpoints of polygons can be added to the required fields <code>decimalLongitude</code> and <code>decimalLatitude</code>.</p>
+WKT strings can be generated using the <a href="https://obis.org/maptool">OBIS Map Tool</a>. The tool can also calculate a midpoint and a radius, which is added to <code>decimalLongitude</code>, <code>decimalLatitude</code>, and <code>coordinateUncertaintyInMeters</code> respectively. There is also an <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries"><code>obistools</code> R function</a> to calculate the centroid and radius for WKT polygons.
+</details>
 </li>
 <li>
 <a href="common_formatissues.html#missing-required-fields">What should I do if I do not have the data for required fields by OBIS?</a>
@@ -474,15 +483,6 @@ What does sampleSize and organismQuantity refer to for genetic data?
 <p>For genetic data, <code>sampleSizeValue</code> and <code>organismQuantity</code> do <strong>not</strong> refer to the amount sampled nor the number of organisms. Instead these fields are related to either 1) the number of sequence reads for eDNA data or 2) the number of droplets/partitions for qPCR data. See <a href="dna_data#.html">DNA data guidelines</a> for more details.</p>
 </details>
 </li>
-<li>
-<details>
-<summary>
-How do I document occurrences from unknown species, those new to science, or those with temporary names? e.g. Eurythenes sp. DISCOLL.PAP.JC165.674
-</summary>
-<p>Occurrences unknown or new to science should be documented according to recommendations by <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Horton et al. 2021</a>. You should populate the <code>scientificName</code> field with the genus, and in <code>identificationQualifer</code> provide the ON sign ‘sp.’. However you must also indicate the reason why species-level identification is unavailable. To do this, supplement ‘sp.’ with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after ‘sp.’ to <code>identificationQualifer</code>. For example Eurythenes sp. DISCOLL.PAP.JC165.674.</p>
-Please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Similar to creating <code>eventIDs</code> or <code>occurrenceIDs</code>, you should strive to provide more complex and globally unique identifier. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within a larger repositories like OBIS. It is also recommended to include these temporary names on specimen labels for physical specimens.
-</details>
-</li>
 </ul>
 </div>
 <div id="vocabulary" class="section level4 hasAnchor" number="1.5.0.4">
@@ -507,6 +507,38 @@ No. You should never use taxon-specific P01 codes. This is because the taxa are
 </li>
 </ul>
 </div>
+<div id="taxonomy" class="section level4 unnumbered hasAnchor">
+<h4>Taxonomy<a href="FAQ.html#taxonomy" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>
+<details>
+<summary>
+How do I document occurrences from unknown species, those new to science, or those with temporary names? e.g. Eurythenes sp. DISCOLL.PAP.JC165.674
+</summary>
+<p>Occurrences unknown or new to science should be documented according to recommendations by <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Horton et al. 2021</a>. You should populate the <code>scientificName</code> field with the genus, and in <code>identificationQualifer</code> provide the ON sign ‘sp.’. However you must also indicate the reason why species-level identification is unavailable. To do this, supplement ‘sp.’ with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after ‘sp.’ to <code>identificationQualifer</code>. For example Eurythenes sp. DISCOLL.PAP.JC165.674.</p>
+Please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Similar to creating <code>eventIDs</code> or <code>occurrenceIDs</code>, you should strive to provide more complex and globally unique identifier. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within a larger repositories like OBIS. It is also recommended to include these temporary names on specimen labels for physical specimens.
+</details>
+</li>
+<li>
+<details>
+<summary>
+Can scientificNameID be populated with an identifier (e.g. WoRMS LSID) representing an unaccepted taxon name?
+</summary>
+<p>Yes. The identifier in <code>scientificNameID</code> should always correspond with the name that is in the <code>scientificName</code> field, even if the name is an unaccepted name in WoRMS. For example, the species name “Holothuria mammiculata” was provided, but this name is unaccepted in WoRMS. The accepted name is “Holothuria (Stauropora) pervicax Selenka, 1867”. In this case <code>scientificNameID</code> should correspond to the original name with LSID <a href="urn:lsid:marinespecies.org:taxname:529968" class="uri">urn:lsid:marinespecies.org:taxname:529968</a> because the ID must correlate with the name as recorded in <code>scientificName</code>.</p>
+</details>
+</li>
+<li>
+<details>
+<summary>
+What happens when a WoRMS taxonomy is changed? e.g. a species is reclassified
+</summary>
+<p>When species are reclassied in WoRMS, the original <code>scientificName</code> and <code>scientificNameID</code> provided in a dataset remains unchanged. However WoRMS will list the old ID as “Unaccepted”, and link to the accepted taxon entry, and this will be reflected in the taxonomic information attached to a dataset download.</p>
+<p>For example, if we search for Manta birostris in OBIS (<a href="https://obis.org/taxon/105857" class="uri">https://obis.org/taxon/105857</a>), we see that the taxon’s status in WoRMS is unaccepted. At the bottom of the page it links to the currently accepted name: <a href="https://obis.org/taxon/1026118" class="uri">https://obis.org/taxon/1026118</a>. We can find an occurrence which shows the <strong>source</strong> <code>scientificName</code> as “Manta” while the <strong>interpreted</strong> <code>scientificName</code> is “Mobula”: <a href="https://obis.org/occurrence/0020c873-02f1-4bd7-b396-ad36600bc8b2" class="uri">https://obis.org/occurrence/0020c873-02f1-4bd7-b396-ad36600bc8b2</a>. We can also see that <code>originalScientificName</code> is populated with the source name in the intepreted output.</p>
+<p>As a user, you don’t have to trace species names. <em>However</em> if the datasets’s DwC-A is downloaded from the dataset page instead of obtained through R or the Mapper, <strong>all fields will contain the original value</strong>. It remains good practice to also check identifiers against WoRMS to see if any have been updated when you download data.</p>
+</details>
+</li>
+</ul>
+</div>
 <div id="tools" class="section level4 hasAnchor" number="1.5.0.5">
 <h4><span class="header-section-number">1.5.0.5</span> Tools<a href="FAQ.html#tools" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
@@ -520,14 +552,6 @@ No. You should never use taxon-specific P01 codes. This is because the taxa are
 <a href="name_matching.html#what-to-do-with-non-matching-names">What do I do if my scientificName does not return a match from WoRMS?</a>
 </li>
 <li>
-<details>
-<summary>
-Can scientificNameID be populated with an identifier (e.g. WoRMS LSID) representing an unaccepted taxon name?
-</summary>
-<p>Yes. The identifier in <code>scientificNameID</code> should always correspond with the name that is in the <code>scientificName</code> field, even if the name is an unaccepted name in WoRMS. For example, the species name “Holothuria mammiculata” was provided, but this name is unaccepted in WoRMS. The accepted name is “Holothuria (Stauropora) pervicax Selenka, 1867”. In this case <code>scientificNameID</code> should correspond to the original name with LSID <a href="urn:lsid:marinespecies.org:taxname:529968" class="uri">urn:lsid:marinespecies.org:taxname:529968</a> because the ID must correlate with the name as recorded in <code>scientificName</code>.</p>
-</details>
-</li>
-<li>
 <a href="https://sequence.obis.org/">Where can I find DNA sequences published in OBIS?</a>
 </li>
 <li>
@@ -535,7 +559,7 @@ Can scientificNameID be populated with an identifier (e.g. WoRMS LSID) represen
 <summary>
 Is there a template generator I can use to help create my Event, Occurrence, and eMoF tables?
 </summary>
-<p>Yes. There is an <a href="https://www.nordatanet.no/aen/template-generator/config%3DDarwin%20Core">Excel template generator</a> developed by Luke Marsden &amp; Olaf Schneider as part of the Nansen Legacy project. Note this template generator is aimed at GBIF users, so make to account for and include required OBIS terms.</p>
+<p>Yes. There is an <a href="https://www.nordatanet.no/aen/template-generator/config%3DDarwin%20Core">Excel template generator</a> developed by Luke Marsden &amp; Olaf Schneider as part of the Nansen Legacy project. Note this template generator is aimed at GBIF users, so make sure to account for and include required OBIS terms.</p>
 <p>There is also this <a href="https://zenodo.org/record/6453921#.Y9KsQkHMKmU">Excel to Darwin Core macro tool</a> developed by GBIF Norway you can use to help generate templates.</p>
 </details>
 </li>
@@ -658,6 +682,57 @@ The dates look unusual in the download file. What are these, how do I convert th
 How do I filter by or obtain trait information for OBIS data (e.g. all benthic organisms)?
 </summary>
 <p>Currently, it is not possible to filter OBIS data by trait. To do this, we recommend using the traits database of the <a href="https://www.marinespecies.org/traits/aphia.php?p=attributes">World Register of Marine Species</a>. For example, searching by “functional group”, you can specify benthos, plankton, nekton, etc.</p>
+</details>
+</li>
+<li>
+<details>
+<summary>
+How do I get data from multiple regions from OBIS?
+</summary>
+<p>If the areas OBIS currently uses does not work for your use case, then it is best to first define all the boundaries for the desired regions. OBIS can be queried using WKT polygons by providing a WKT string to the <code>geometry</code> parameter in the <code>robis::occurrence</code> function. <strong>HOWEVER</strong> there are some limitations with respect to polygon complexity, and if it is too complex you will likely receive the error <em>“The OBIS API was not able to process your request”</em>.</p>
+<p>For more complex spatial queries we recommend indexing OBIS and GBIF data against polygons and using (finely) gridded versions of these datasets to make the process faster. We note we have not yet properly documented this process, but see the example script produced by Pieter Provoost below. The script first indexes a polygon to the H3 spatial index, then queries a gridded version of OBIS+GBIF data on AWS to get the species list, and finally fetches taxonomy from WoRMS for every species, which may take some time.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="FAQ.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb9-2"><a href="FAQ.html#cb9-2" tabindex="-1"></a><span class="fu">library</span>(h3jsr)</span>
+<span id="cb9-3"><a href="FAQ.html#cb9-3" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb9-4"><a href="FAQ.html#cb9-4" tabindex="-1"></a><span class="fu">library</span>(duckdb)</span>
+<span id="cb9-5"><a href="FAQ.html#cb9-5" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb9-6"><a href="FAQ.html#cb9-6" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb9-7"><a href="FAQ.html#cb9-7" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="FAQ.html#cb9-8" tabindex="-1"></a><span class="fu">sf_use_s2</span>(<span class="cn">FALSE</span>)</span>
+<span id="cb9-9"><a href="FAQ.html#cb9-9" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="FAQ.html#cb9-10" tabindex="-1"></a><span class="co"># Read WKT from text file, convert to sf, and index to H3 resolution 7</span></span>
+<span id="cb9-11"><a href="FAQ.html#cb9-11" tabindex="-1"></a><span class="co"># https://wktmap.com/?e6b28728</span></span>
+<span id="cb9-12"><a href="FAQ.html#cb9-12" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="FAQ.html#cb9-13" tabindex="-1"></a>wkt <span class="ot">&lt;-</span> <span class="fu">read_file</span>(<span class="st">&quot;wkt_21773.txt&quot;</span>)</span>
+<span id="cb9-14"><a href="FAQ.html#cb9-14" tabindex="-1"></a>geom <span class="ot">&lt;-</span> <span class="fu">st_as_sfc</span>(wkt, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb9-15"><a href="FAQ.html#cb9-15" tabindex="-1"></a>cells <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cell =</span> <span class="fu">polygon_to_cells</span>(geom, <span class="dv">7</span>)[[<span class="dv">1</span>]])</span>
+<span id="cb9-16"><a href="FAQ.html#cb9-16" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="FAQ.html#cb9-17" tabindex="-1"></a><span class="co"># Set up duckdb connection and register cells table</span></span>
+<span id="cb9-18"><a href="FAQ.html#cb9-18" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="FAQ.html#cb9-19" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">duckdb</span>())</span>
+<span id="cb9-20"><a href="FAQ.html#cb9-20" tabindex="-1"></a><span class="fu">dbSendQuery</span>(con, <span class="st">&quot;install httpfs; load httpfs;&quot;</span>)</span>
+<span id="cb9-21"><a href="FAQ.html#cb9-21" tabindex="-1"></a><span class="fu">duckdb_register</span>(con, <span class="st">&quot;cells&quot;</span>, cells)</span>
+<span id="cb9-22"><a href="FAQ.html#cb9-22" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="FAQ.html#cb9-23" tabindex="-1"></a><span class="co"># Join cells list and gridded species dataset</span></span>
+<span id="cb9-24"><a href="FAQ.html#cb9-24" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="FAQ.html#cb9-25" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con, <span class="st">&quot;</span></span>
+<span id="cb9-26"><a href="FAQ.html#cb9-26" tabindex="-1"></a><span class="st">  select species, AphiaID</span></span>
+<span id="cb9-27"><a href="FAQ.html#cb9-27" tabindex="-1"></a><span class="st">  from cells</span></span>
+<span id="cb9-28"><a href="FAQ.html#cb9-28" tabindex="-1"></a><span class="st">  inner join read_parquet(&#39;s3://obis-products/speciesgrids/h3_7/*&#39;) h3 on cells.cell = h3.h3_07</span></span>
+<span id="cb9-29"><a href="FAQ.html#cb9-29" tabindex="-1"></a><span class="st">  group by species, AphiaID</span></span>
+<span id="cb9-30"><a href="FAQ.html#cb9-30" tabindex="-1"></a><span class="st">&quot;</span>)</span>
+<span id="cb9-31"><a href="FAQ.html#cb9-31" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="FAQ.html#cb9-32" tabindex="-1"></a><span class="co"># Add WoRMS taxonomy</span></span>
+<span id="cb9-33"><a href="FAQ.html#cb9-33" tabindex="-1"></a></span>
+<span id="cb9-34"><a href="FAQ.html#cb9-34" tabindex="-1"></a>id_batches <span class="ot">&lt;-</span> <span class="fu">split</span>(species<span class="sc">$</span>AphiaID, <span class="fu">ceiling</span>(<span class="fu">seq_along</span>(species<span class="sc">$</span>AphiaID) <span class="sc">/</span> <span class="dv">50</span>))</span>
+<span id="cb9-35"><a href="FAQ.html#cb9-35" tabindex="-1"></a>taxa_batches <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(id_batches, worrms<span class="sc">::</span>wm_record)</span>
+<span id="cb9-36"><a href="FAQ.html#cb9-36" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(taxa_batches) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-37"><a href="FAQ.html#cb9-37" tabindex="-1"></a>  <span class="fu">select</span>(AphiaID, scientificname, phylum, class, order, family, genus, <span class="at">scientificName =</span> scientificname)</span>
+<span id="cb9-38"><a href="FAQ.html#cb9-38" tabindex="-1"></a></span>
+<span id="cb9-39"><a href="FAQ.html#cb9-39" tabindex="-1"></a><span class="co"># Get Mollusca species</span></span>
+<span id="cb9-40"><a href="FAQ.html#cb9-40" tabindex="-1"></a></span>
+<span id="cb9-41"><a href="FAQ.html#cb9-41" tabindex="-1"></a>mollusca <span class="ot">&lt;-</span> taxa <span class="sc">%&gt;%</span></span>
+<span id="cb9-42"><a href="FAQ.html#cb9-42" tabindex="-1"></a>  <span class="fu">filter</span>(phylum <span class="sc">==</span> <span class="st">&quot;Mollusca&quot;</span>)</span></code></pre></div>
 </details>
 </li>
 </ul>

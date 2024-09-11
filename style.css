@@ -30,7 +30,7 @@ table {
 .caution{
   background-image: url("images/icons/triangle-exclamation-solid-yellow.png");
   background-size: 50px 50px;
-  background-position-y: 45px;
+  background-position-y: center;
   background-position-x: 5px;
   background-repeat: no-repeat;
 }

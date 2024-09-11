@@ -390,23 +390,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Repeat steps 3-7 for any measurements in the Event table</li>
 </ol>
 <p>Note the fields <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeValue">sampleSizeValue</a>, <a href="https://dwc.tdwg.org/terms/#dwc:samplingEffort">samplingEffort</a>, and <a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol">samplingProtocol</a> from the Occurrence table can be documented as separate measurements on different rows in the eMoF table. E.g., <code>measurementType</code> = samplingProtocol, <code>measurementValue</code> = description of protocol. Any values in <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit">sampleSizeUnit</a> fields should be placed in the <code>measurementUnit</code> field when transferred to the eMoF.</p>
-<p>Watch the video tutorial for how to format the eMoF table below.</p>
+<p>Watch the video tutorial <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg> for how to format the eMoF table below.</p>
 <p><iframe width="560" height="315"
 src="https://www.youtube.com/embed/EjM0HRrF1B4"
 frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe></p>
 <p>If you would like to export Event data to the eMoF, see some example R code below. This example was provided by <a href="https://orcid.org/0000-0002-4391-107X">Abby Benson</a> from the <a href="https://www.usgs.gov/ocean-biodiversity-information-system-usa">OBIS-USA node</a>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="format_emof.html#cb11-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb11-2"><a href="format_emof.html#cb11-2" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> <span class="fu">unique</span>(eventCore[<span class="fu">c</span>(<span class="st">&quot;eventID&quot;</span>)]) <span class="co">#create a list of all unique eventIDs from your event table</span></span>
-<span id="cb11-3"><a href="format_emof.html#cb11-3" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> cruise <span class="sc">%&gt;%</span> <span class="co">#add sampling information </span></span>
-<span id="cb11-4"><a href="format_emof.html#cb11-4" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">measurementType =</span> <span class="st">&quot;Sampling platform name&quot;</span>,</span>
-<span id="cb11-5"><a href="format_emof.html#cb11-5" tabindex="-1"></a><span class="at">measurementValue =</span> <span class="st">&quot;R/V Cruise Id = SR1812&quot;</span>,</span>
-<span id="cb11-6"><a href="format_emof.html#cb11-6" tabindex="-1"></a><span class="at">measurementValueID =</span> <span class="st">&quot;https://doi.org/10.7284/908021&quot;</span>,</span>
-<span id="cb11-7"><a href="format_emof.html#cb11-7" tabindex="-1"></a><span class="at">measurementUnit =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb11-8"><a href="format_emof.html#cb11-8" tabindex="-1"></a><span class="at">measurementTypeID =</span> <span class="st">&quot;http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/&quot;</span>,</span>
-<span id="cb11-9"><a href="format_emof.html#cb11-9" tabindex="-1"></a><span class="at">measurementUnitID =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb11-10"><a href="format_emof.html#cb11-10" tabindex="-1"></a><span class="at">occurrenceID =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="format_emof.html#cb12-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-2"><a href="format_emof.html#cb12-2" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> <span class="fu">unique</span>(eventCore[<span class="fu">c</span>(<span class="st">&quot;eventID&quot;</span>)]) <span class="co">#create a list of all unique eventIDs from your event table</span></span>
+<span id="cb12-3"><a href="format_emof.html#cb12-3" tabindex="-1"></a>cruise <span class="ot">&lt;-</span> cruise <span class="sc">%&gt;%</span> <span class="co">#add sampling information </span></span>
+<span id="cb12-4"><a href="format_emof.html#cb12-4" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">measurementType =</span> <span class="st">&quot;Sampling platform name&quot;</span>,</span>
+<span id="cb12-5"><a href="format_emof.html#cb12-5" tabindex="-1"></a><span class="at">measurementValue =</span> <span class="st">&quot;R/V Cruise Id = SR1812&quot;</span>,</span>
+<span id="cb12-6"><a href="format_emof.html#cb12-6" tabindex="-1"></a><span class="at">measurementValueID =</span> <span class="st">&quot;https://doi.org/10.7284/908021&quot;</span>,</span>
+<span id="cb12-7"><a href="format_emof.html#cb12-7" tabindex="-1"></a><span class="at">measurementUnit =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb12-8"><a href="format_emof.html#cb12-8" tabindex="-1"></a><span class="at">measurementTypeID =</span> <span class="st">&quot;http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/&quot;</span>,</span>
+<span id="cb12-9"><a href="format_emof.html#cb12-9" tabindex="-1"></a><span class="at">measurementUnitID =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb12-10"><a href="format_emof.html#cb12-10" tabindex="-1"></a><span class="at">occurrenceID =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>

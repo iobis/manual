@@ -377,8 +377,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="conducting-qc-with-obistools" class="section level3 unlisted unnumbered hasAnchor">
 <h3>Conducting QC with obistools<a href="data_qc.html#conducting-qc-with-obistools" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Installing <code>obistools</code> requires the devtools package. Use the following code to install both packages:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data_qc.html#cb14-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb14-2"><a href="data_qc.html#cb14-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;iobis/obistools&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data_qc.html#cb15-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb15-2"><a href="data_qc.html#cb15-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;iobis/obistools&quot;</span>)</span></code></pre></div>
 <p>If you have difficulty installing <code>obistools</code>, please try updating your R packages, in particular the <code>vctrs</code> package. This can be done in RStudio in the Packages tab (“update” button) or by using the <code>update.packages()</code> command (you can choose which packages to update). If you cannot install <code>obistools</code> please reach out to <a href="mailto:helpdesk@obis.org" class="email">helpdesk@obis.org</a> and we will help you.</p>
 <p>To use <code>obistools</code> to conduct quality control, you can follow the general order below. Please see the <a href="https://github.com/iobis/obistools"><code>obistools</code> GitHub</a> for examples of how to use the functions.</p>
 <ol style="list-style-type: decimal">
@@ -408,35 +408,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>QC with R package Hmisc<a href="data_qc.html#qc-with-r-package-hmisc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The R package <a href="https://hbiostat.org/r/hmisc/">Hmisc</a> has the function <a href="https://rdrr.io/cran/Hmisc/man/describe.html"><code>describe</code></a> which can help you identify any discrepancies or outliers in your dataset.</p>
 <p>It will summarize each of your variables for a given data field. This can help you quickly identify any missing data and ensure the number of unique IDs is correct. For example, in an Occurrence table with 1000 records, there should be 1000 unique occurrenceIDs.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data_qc.html#cb15-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb15-2"><a href="data_qc.html#cb15-2" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb15-3"><a href="data_qc.html#cb15-3" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;example_data_occur.csv&quot;</span>)</span>
-<span id="cb15-4"><a href="data_qc.html#cb15-4" tabindex="-1"></a><span class="fu">describe</span>(data)</span>
-<span id="cb15-5"><a href="data_qc.html#cb15-5" tabindex="-1"></a> </span>
-<span id="cb15-6"><a href="data_qc.html#cb15-6" tabindex="-1"></a> <span class="dv">12</span>  Variables      <span class="dv">407</span>  Observations</span>
-<span id="cb15-7"><a href="data_qc.html#cb15-7" tabindex="-1"></a><span class="sc">------------------------------------------------------------------------------------------------------------------</span></span>
-<span id="cb15-8"><a href="data_qc.html#cb15-8" tabindex="-1"></a>CollectionCode </span>
-<span id="cb15-9"><a href="data_qc.html#cb15-9" tabindex="-1"></a>       n  missing distinct    value </span>
-<span id="cb15-10"><a href="data_qc.html#cb15-10" tabindex="-1"></a>     <span class="dv">407</span>        <span class="dv">0</span>        <span class="dv">1</span>  BIOFUN1 </span>
-<span id="cb15-11"><a href="data_qc.html#cb15-11" tabindex="-1"></a>                  </span>
-<span id="cb15-12"><a href="data_qc.html#cb15-12" tabindex="-1"></a>Value      BIOFUN1</span>
-<span id="cb15-13"><a href="data_qc.html#cb15-13" tabindex="-1"></a>Frequency      <span class="dv">407</span></span>
-<span id="cb15-14"><a href="data_qc.html#cb15-14" tabindex="-1"></a>Proportion       <span class="dv">1</span></span>
-<span id="cb15-15"><a href="data_qc.html#cb15-15" tabindex="-1"></a><span class="sc">------------------------------------------------------------------------------------------------------------------</span></span>
-<span id="cb15-16"><a href="data_qc.html#cb15-16" tabindex="-1"></a>eventID </span>
-<span id="cb15-17"><a href="data_qc.html#cb15-17" tabindex="-1"></a>       n  missing distinct </span>
-<span id="cb15-18"><a href="data_qc.html#cb15-18" tabindex="-1"></a>     <span class="dv">407</span>        <span class="dv">0</span>       <span class="dv">27</span> </span>
-<span id="cb15-19"><a href="data_qc.html#cb15-19" tabindex="-1"></a></span>
-<span id="cb15-20"><a href="data_qc.html#cb15-20" tabindex="-1"></a>lowest <span class="sc">:</span> BIOFUN1_BF1A01 BIOFUN1_BF1A02 BIOFUN1_BF1A03 BIOFUN1_BF1A04 BIOFUN1_BF1A05</span>
-<span id="cb15-21"><a href="data_qc.html#cb15-21" tabindex="-1"></a>highest<span class="sc">:</span> BIOFUN1_BF1M3  BIOFUN1_BF1M4  BIOFUN1_BF1M6  BIOFUN1_BF1M8  BIOFUN1_BF1M9 </span>
-<span id="cb15-22"><a href="data_qc.html#cb15-22" tabindex="-1"></a><span class="sc">------------------------------------------------------------------------------------------------------------------</span></span>
-<span id="cb15-23"><a href="data_qc.html#cb15-23" tabindex="-1"></a>occurrenceID </span>
-<span id="cb15-24"><a href="data_qc.html#cb15-24" tabindex="-1"></a>       n  missing distinct </span>
-<span id="cb15-25"><a href="data_qc.html#cb15-25" tabindex="-1"></a>     <span class="dv">407</span>        <span class="dv">0</span>      <span class="dv">407</span> </span>
-<span id="cb15-26"><a href="data_qc.html#cb15-26" tabindex="-1"></a></span>
-<span id="cb15-27"><a href="data_qc.html#cb15-27" tabindex="-1"></a>lowest <span class="sc">:</span> CSIC_BIOFUN1_1   CSIC_BIOFUN1_10  CSIC_BIOFUN1_100 CSIC_BIOFUN1_101 CSIC_BIOFUN1_102</span>
-<span id="cb15-28"><a href="data_qc.html#cb15-28" tabindex="-1"></a>highest<span class="sc">:</span> CSIC_BIOFUN1_95  CSIC_BIOFUN1_96  CSIC_BIOFUN1_97  CSIC_BIOFUN1_98  CSIC_BIOFUN1_99 </span></code></pre></div>
-<p>This video shows how to use both <code>obistools</code> and <code>Hmisc</code> to conduct QC checks in R.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data_qc.html#cb16-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb16-2"><a href="data_qc.html#cb16-2" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb16-3"><a href="data_qc.html#cb16-3" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;example_data_occur.csv&quot;</span>)</span>
+<span id="cb16-4"><a href="data_qc.html#cb16-4" tabindex="-1"></a><span class="fu">describe</span>(data)</span>
+<span id="cb16-5"><a href="data_qc.html#cb16-5" tabindex="-1"></a> </span>
+<span id="cb16-6"><a href="data_qc.html#cb16-6" tabindex="-1"></a> <span class="dv">12</span>  Variables      <span class="dv">407</span>  Observations</span>
+<span id="cb16-7"><a href="data_qc.html#cb16-7" tabindex="-1"></a><span class="sc">------------------------------------------------------------------------------------------------------------------</span></span>
+<span id="cb16-8"><a href="data_qc.html#cb16-8" tabindex="-1"></a>CollectionCode </span>
+<span id="cb16-9"><a href="data_qc.html#cb16-9" tabindex="-1"></a>       n  missing distinct    value </span>
+<span id="cb16-10"><a href="data_qc.html#cb16-10" tabindex="-1"></a>     <span class="dv">407</span>        <span class="dv">0</span>        <span class="dv">1</span>  BIOFUN1 </span>
+<span id="cb16-11"><a href="data_qc.html#cb16-11" tabindex="-1"></a>                  </span>
+<span id="cb16-12"><a href="data_qc.html#cb16-12" tabindex="-1"></a>Value      BIOFUN1</span>
+<span id="cb16-13"><a href="data_qc.html#cb16-13" tabindex="-1"></a>Frequency      <span class="dv">407</span></span>
+<span id="cb16-14"><a href="data_qc.html#cb16-14" tabindex="-1"></a>Proportion       <span class="dv">1</span></span>
+<span id="cb16-15"><a href="data_qc.html#cb16-15" tabindex="-1"></a><span class="sc">------------------------------------------------------------------------------------------------------------------</span></span>
+<span id="cb16-16"><a href="data_qc.html#cb16-16" tabindex="-1"></a>eventID </span>
+<span id="cb16-17"><a href="data_qc.html#cb16-17" tabindex="-1"></a>       n  missing distinct </span>
+<span id="cb16-18"><a href="data_qc.html#cb16-18" tabindex="-1"></a>     <span class="dv">407</span>        <span class="dv">0</span>       <span class="dv">27</span> </span>
+<span id="cb16-19"><a href="data_qc.html#cb16-19" tabindex="-1"></a></span>
+<span id="cb16-20"><a href="data_qc.html#cb16-20" tabindex="-1"></a>lowest <span class="sc">:</span> BIOFUN1_BF1A01 BIOFUN1_BF1A02 BIOFUN1_BF1A03 BIOFUN1_BF1A04 BIOFUN1_BF1A05</span>
+<span id="cb16-21"><a href="data_qc.html#cb16-21" tabindex="-1"></a>highest<span class="sc">:</span> BIOFUN1_BF1M3  BIOFUN1_BF1M4  BIOFUN1_BF1M6  BIOFUN1_BF1M8  BIOFUN1_BF1M9 </span>
+<span id="cb16-22"><a href="data_qc.html#cb16-22" tabindex="-1"></a><span class="sc">------------------------------------------------------------------------------------------------------------------</span></span>
+<span id="cb16-23"><a href="data_qc.html#cb16-23" tabindex="-1"></a>occurrenceID </span>
+<span id="cb16-24"><a href="data_qc.html#cb16-24" tabindex="-1"></a>       n  missing distinct </span>
+<span id="cb16-25"><a href="data_qc.html#cb16-25" tabindex="-1"></a>     <span class="dv">407</span>        <span class="dv">0</span>      <span class="dv">407</span> </span>
+<span id="cb16-26"><a href="data_qc.html#cb16-26" tabindex="-1"></a></span>
+<span id="cb16-27"><a href="data_qc.html#cb16-27" tabindex="-1"></a>lowest <span class="sc">:</span> CSIC_BIOFUN1_1   CSIC_BIOFUN1_10  CSIC_BIOFUN1_100 CSIC_BIOFUN1_101 CSIC_BIOFUN1_102</span>
+<span id="cb16-28"><a href="data_qc.html#cb16-28" tabindex="-1"></a>highest<span class="sc">:</span> CSIC_BIOFUN1_95  CSIC_BIOFUN1_96  CSIC_BIOFUN1_97  CSIC_BIOFUN1_98  CSIC_BIOFUN1_99 </span></code></pre></div>
+<p>This video <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg> shows how to use both <code>obistools</code> and <code>Hmisc</code> to conduct QC checks in R.</p>
 <p><iframe width="560" height="315"
 src="https://www.youtube.com/embed/sNzipC6-r90"
 frameborder="0"

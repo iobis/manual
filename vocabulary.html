@@ -335,139 +335,141 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.1</span> Map data fields to Darwin Core<a href="vocabulary.html#map-data-fields-to-darwin-core" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There are many possible ways of setting up your datasheets, and if you are new to OBIS you likely did not use controlled Darwin Core (DwC) or BODC vocabulary before samples were collected. In mapping your data fields to DwC we recommend documenting your choices so you have a reference to go back to should the need arise. In such a document you should take notes on the choices you made, as well as any actions you had to take (e.g. separate one column into many, convert dates or coordinates, etc.).</p>
 <p>For example, a DwC mapping reference table could look like the following:</p>
-<table style="width:100%;">
+<table>
 <colgroup>
-<col width="17%" />
-<col width="17%" />
-<col width="30%" />
-<col width="35%" />
+<col width="18%" />
+<col width="18%" />
+<col width="29%" />
+<col width="34%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Verbatim field name</th>
-<th>Mapped DwC term</th>
-<th>Actions taken</th>
-<th>Notes</th>
+<th align="left">Verbatim field name</th>
+<th align="left">Mapped DwC term</th>
+<th align="left">Actions taken</th>
+<th align="left">Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>date</td>
-<td>eventDate</td>
-<td>convert dates to ISO</td>
-<td></td>
+<td align="left">date</td>
+<td align="left">eventDate</td>
+<td align="left">convert dates to ISO</td>
+<td align="left"></td>
 </tr>
 <tr class="even">
-<td>coordinates</td>
-<td>decimalLongitude, decimalLatitude</td>
-<td>convert ddmmss to decimal degrees, separated one column into 2 for longitude and latitude</td>
-<td>put original coordinates into verbatimCoordinates</td>
+<td align="left">coordinates</td>
+<td align="left">decimalLongitude, decimalLatitude</td>
+<td align="left">convert ddmmss to decimal degrees, separated one column into 2 for longitude and latitude</td>
+<td align="left">put original coordinates into verbatimCoordinates</td>
 </tr>
 </tbody>
 </table>
 <p>In order to help you map your data to DwC terms, we have provided the table below which outlines some common data fields, their associated Darwin Core vocabulary, and which data table the field is likely to go in:</p>
 <table>
 <colgroup>
-<col width="30%" />
-<col width="52%" />
-<col width="16%" />
+<col width="31%" />
+<col width="51%" />
+<col width="17%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Common Raw Terms</th>
-<th>DwC Field</th>
-<th>Data table</th>
+<th align="left">Common Raw Terms</th>
+<th align="left">DwC Field</th>
+<th align="left">Data table</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Date, Time</td>
-<td>eventDate</td>
-<td>Event, Occurrence</td>
+<td align="left">Date, Time</td>
+<td align="left">eventDate</td>
+<td align="left">Event, Occurrence</td>
 </tr>
 <tr class="even">
-<td>Species, g_s, taxa</td>
-<td>scientificName</td>
-<td>Occurrence</td>
+<td align="left">Species, g_s, taxa</td>
+<td align="left">scientificName</td>
+<td align="left">Occurrence</td>
 </tr>
 <tr class="odd">
-<td>Any biotic/abiotic measurements*</td>
-<td>measurementType, measurementValue, measurementUnit*</td>
-<td>eMoF</td>
+<td align="left">Any biotic/abiotic measurements*</td>
+<td align="left">measurementType, measurementValue, measurementUnit*</td>
+<td align="left">eMoF</td>
 </tr>
 <tr class="even">
-<td>Depth</td>
-<td>maximumDepthInMeters or minimumDepthInMeters</td>
-<td>Event, Occurrence</td>
+<td align="left">Depth</td>
+<td align="left">maximumDepthInMeters or minimumDepthInMeters</td>
+<td align="left">Event, Occurrence</td>
 </tr>
 <tr class="odd">
-<td>Lat/Latitude, Lon/Long/Longitude, dd</td>
-<td>decimalLatitude, decimalLongitude</td>
-<td>Event, Occurrence</td>
+<td align="left">Lat/Latitude, Lon/Long/Longitude, dd</td>
+<td align="left">decimalLatitude, decimalLongitude</td>
+<td align="left">Event, Occurrence</td>
 </tr>
 <tr class="even">
-<td>Sampling method</td>
-<td>samplingProtocol</td>
-<td>eMoF</td>
+<td align="left">Sampling method</td>
+<td align="left">samplingProtocol</td>
+<td align="left">Event, eMoF</td>
 </tr>
 <tr class="odd">
-<td>Sample size, N, #, No.</td>
-<td>sampleSizeValue</td>
-<td>eMoF</td>
+<td align="left">Sample size, N, #, No.</td>
+<td align="left">sampleSizeValue</td>
+<td align="left">Event, eMoF</td>
 </tr>
 <tr class="even">
-<td>Location</td>
-<td>locality</td>
-<td>Event</td>
+<td align="left">Location</td>
+<td align="left">locality</td>
+<td align="left">Event</td>
 </tr>
 <tr class="odd">
-<td>Presence, absence</td>
-<td>occurrenceStatus</td>
-<td>Occurrence</td>
+<td align="left">Presence, absence</td>
+<td align="left">occurrenceStatus</td>
+<td align="left">Occurrence</td>
 </tr>
 <tr class="even">
-<td>Type of record/ specimen</td>
-<td>basisofRecord</td>
-<td>Occurrence</td>
+<td align="left">Type of record/ specimen</td>
+<td align="left">basisofRecord</td>
+<td align="left">Occurrence</td>
 </tr>
 <tr class="odd">
-<td>Person/ people that recorded the original Occurrence</td>
-<td>recordedBy</td>
-<td>Occurrence</td>
+<td align="left">Person/ people that recorded the original Occurrence</td>
+<td align="left">recordedBy</td>
+<td align="left">Occurrence</td>
 </tr>
 <tr class="even">
-<td>OrcID of person/ people that recorded the original Occurrence</td>
-<td>recordedByID</td>
-<td>Occurrence</td>
+<td align="left">OrcID of person/ people that recorded the original Occurrence</td>
+<td align="left">recordedByID</td>
+<td align="left">Occurrence</td>
 </tr>
 <tr class="odd">
-<td>Person/ people that identified the organism</td>
-<td>identifiedBy</td>
-<td>Occurrence</td>
+<td align="left">Person/ people that identified the organism</td>
+<td align="left">identifiedBy</td>
+<td align="left">Occurrence</td>
 </tr>
 <tr class="even">
-<td>OrcID of person/ people that identified the organism</td>
-<td>identifiedByID</td>
-<td>Occurrence</td>
+<td align="left">OrcID of person/ people that identified the organism</td>
+<td align="left">identifiedByID</td>
+<td align="left">Occurrence</td>
 </tr>
 <tr class="odd">
-<td>Data collector, data creator</td>
-<td>recordedBy</td>
-<td>Event, Occurrence</td>
+<td align="left">Data collector, data creator</td>
+<td align="left">recordedBy</td>
+<td align="left">Event, Occurrence</td>
 </tr>
 <tr class="even">
-<td>Taxonomist, identifier</td>
-<td>identifiedBy</td>
-<td>Occurrence</td>
+<td align="left">Taxonomist, identifier</td>
+<td align="left">identifiedBy</td>
+<td align="left">Occurrence</td>
 </tr>
 <tr class="odd">
-<td>Record number, sample number, observation number</td>
-<td>occurrenceID (either ID or incorporated into ID)</td>
-<td>Occurrence</td>
+<td align="left">Record number, sample number, observation number</td>
+<td align="left">occurrenceID (either ID or incorporated into ID)</td>
+<td align="left">Occurrence</td>
 </tr>
 </tbody>
 </table>
-<p><em>Note that mapping abiotic/biotic measurement fields (sex, temperature, abundance, lengths, etc.) will occur within the <a href="format_emof.html">extendedMeasurementOrFact extension</a>. Here this data will go from being a separate column to being condensed into the <code>measurementType</code> and <code>measurementValue</code> fields.</em></p>
+<div class="callbox-blue">
+<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:darkblue;overflow:visible;position:relative;"><path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/></svg> Note that mapping abiotic/biotic measurement fields (sex, temperature, abundance, lengths, etc.) will occur within the <a href="format_emof.html">extendedMeasurementOrFact extension</a>. Here this data will go from being a separate column to being condensed into the <code>measurementType</code> and <code>measurementValue</code> fields.</p>
+</div>
 <p>The obistools R package also has the <a href="https://github.com/iobis/obistools#map-column-names-to-darwin-core-terms">map_fields function</a> that you can use to map your dataset fields to a DwC term.</p>
 </div>
 <div id="map-emof-measurement-identifiers-to-preferred-vocabulary" class="section level2 hasAnchor" number="6.2">
@@ -506,8 +508,10 @@ You can use the <a href="https://mof.obis.org/">OBIS Measurement Type search too
 <div id="populate-measurementvalueid" class="section level3 hasAnchor" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> Populate measurementValueID<a href="vocabulary.html#populate-measurementvalueid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <code>measurementValueID</code> field is used to provide an identifying code for <code>measurementValues</code> that are <strong>non-numerical</strong> (e.g. sampling related, sex or life stage designation, etc.).</p>
-<p><strong>Note: it is NOT used for standardizing numeric measurements!</strong></p>
-<p>Unlike <code>measurementUnitID</code>, there is more than one collection which may be used to search for and use concepts from. The collection is dependent on which type of <code>measurementValue</code> you have. See the table below for some common, non-exhaustive examples. Note that behaviour is an exception in that we recommend to use codes from the ICES vocabulary server, instead of NERC. A video is available on the <a href="https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul">OBIS YouTube Vocabulary series</a> that demonstrates how to find and select vocabularies for <code>measurementValueID</code> from both NREC and ICES.</p>
+<div class="callbox-blue">
+<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:darkblue;overflow:visible;position:relative;"><path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/></svg> measurementValueID is NOT used for standardizing numeric measurements!</p>
+</div>
+<p>Unlike <code>measurementUnitID</code>, there is more than one collection which may be used to search for and use concepts from. The collection is dependent on which type of <code>measurementValue</code> you have. See the table below for some common, non-exhaustive examples. Note that behaviour is an exception in that we recommend to use codes from the ICES vocabulary server, instead of NERC. The video below, from the <a href="https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul">OBIS YouTube Vocabulary series</a> <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>, demonstrates how to find and select vocabularies for <code>measurementValueID</code> from both NERC and ICES.</p>
 <table>
 <colgroup>
 <col width="29%" />
@@ -573,6 +577,8 @@ You can use the <a href="https://mof.obis.org/">OBIS Measurement Type search too
 <li>The DOI of the paper/manual</li>
 <li>Handle for publications on IOC’s <a href="http://www.oceanbestpractices.net/">Ocean Best Practices repository</a>, e.g. <a href="http://hdl.handle.net/11329/304">http://hdl.handle.net/11329/304</a></li>
 </ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_I235UwoH-o?si=Cu8-oxq9qqgUlYmU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
 </div>
 <div id="populate-measurementtypeid" class="section level3 hasAnchor" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Populate measurementTypeID<a href="vocabulary.html#populate-measurementtypeid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -613,10 +619,10 @@ You can use the <a href="https://mof.obis.org/">OBIS Measurement Type search too
 <li>Name of sampling instrument <a href="https://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/" class="uri">https://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/</a></li>
 <li>Sample duration <a href="https://vocab.nerc.ac.uk/collection/P01/current/AZDRZZ01/" class="uri">https://vocab.nerc.ac.uk/collection/P01/current/AZDRZZ01/</a></li>
 </ul>
-<p>Use the following decision tree to help you select P01 codes for biological, chemical, physical, and/or sampling measurements. See the <a href="https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul">OBIS YouTube Vocabulary series</a> for guidance on how to use this tree and examples for different types of <code>measurementTypeIDs</code>. Note that the <code>measurementTypeID</code>:sampling measurements branch is newly developed, and we are happy to receive feedback if the suggestions are not working for you.</p>
+<p>Use the following decision tree to help you select P01 codes for biological, chemical, physical, and/or sampling measurements. See the <a href="https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul">OBIS YouTube Vocabulary series</a> <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg> for guidance on how to use this tree and examples for different types of <code>measurementTypeIDs</code>. Note that the <code>measurementTypeID</code>:sampling measurements branch is newly developed, and we are happy to receive feedback if the suggestions are not working for you.</p>
 <div class="float">
-<img src="images/vocab-decision-tree.png" alt="Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. For those unfamiliar with the tree see the OBIS YouTube Vocabulary series." />
-<div class="figcaption"><em>Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. For those unfamiliar with the tree see the <a href="https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul">OBIS YouTube Vocabulary series</a>.</em></div>
+<img src="images/vocab-decision-tree.png" alt="_Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. For those unfamiliar with the tree see the OBIS YouTube Vocabulary series." />
+<div class="figcaption">_Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. For those unfamiliar with the tree see the <a href="https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul">OBIS YouTube Vocabulary series</a>.</div>
 </div>
 </div>
 </div>
