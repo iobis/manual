@@ -15,14 +15,6 @@ section-10.-definitions
 disclaimer
 getting-help-in-obis
 frequently-asked-questions
-general
-darwin-core
-formatting-data
-vocabulary
-tools
-quality-control
-publishing
-accessing-data-in-obis
 quick-links-to-resources
 general-links-and-guides
 data-access-mappinggeoreferencing-tools
