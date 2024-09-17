@@ -23,7 +23,7 @@ Below you will find a convenient list of important or relevant websites and reso
 * [Darwin Core text guide](https://dwc.tdwg.org/text/)
 * [Publishing DNA-derived data guide](https://docs.gbif.org/publishing-dna-derived-data/en/)
 * De Pooter et al. 2017. Toward a new data standard for combined marine biological and environmental datasets - expanding OBIS beyond species occurrences. Biodiversity Data Journal 5: e10989. hdl.handle.net/10.3897/BDJ.5.e10989
-* Duncan et al. (2021). A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension. EMODnet report.  <https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5> (note you must refine search to Technical Reports from 2021 to identify this report as it does not have an individual link)
+* Duncan et al. (2021). A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension. EMODnet report.  <https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core>
 
 #### Data Access & Mapping/Georeferencing Tools {.unnumbered}
 

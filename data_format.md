@@ -54,10 +54,9 @@ DNA derived data are increasingly being used to document taxon occurrences. To e
 
 ##### A special case: habitat types
 
-Including information on habitats (biological community, biotope, or habitat type) is possible and encouraged with the use of Event Core. However, beware the unconstrained nature of the terms `measurementTypeID`, `measurementValueID`, and `measurementUnitID` which can lead to inconsistently documented habitat measurements within the Darwin Core Archive standard. To ensure this data is more easily discoverable, understood or usable, refer to [Examples: habitat data](other_data_types.html#habitat-data) and/or [Duncan et al. (2021)](https://emodnet.ec.europa.eu/en/reports?field_emodnet_lot_value[]=seabed_habitats#h3298bcd0a15741a8a0ac1c8b4576f7c5) for use case examples and more details.
+Including information on habitats (biological community, biotope, or habitat type) is possible and encouraged with the use of Event Core. However, beware the unconstrained nature of the terms `measurementTypeID`, `measurementValueID`, and `measurementUnitID` which can lead to inconsistently documented habitat measurements within the Darwin Core Archive standard. To ensure this data is more easily discoverable, understood or usable, refer to [Examples: habitat data](other_data_types.html#habitat-data) and/or [Duncan et al. (2021)](https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core) for use case examples and more details.
 
 ##### Recommended reading
 
 * [De Pooter et al. 2017](https://bdj.pensoft.net/articles.php?id=10989). Toward a new data standard for combined marine biological and environmental datasets - expanding OBIS beyond species occurrences. Biodiversity Data Journal 5: e10989. hdl.handle.net/10.3897/BDJ.5.e10989
-* [Duncan et al. (2021)](https://emodnet.ec.europa.eu/en/reports?field_emodnet_lot_value[]=seabed_habitats#h3298bcd0a15741a8a0ac1c8b4576f7c5). A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension. EMODnet report.
-  *(Note you must refine search to Technical Reports from 2021 to identify Duncan et al.'s report)*
+* [Duncan et al. (2021)](https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core). A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension. EMODnet report.
