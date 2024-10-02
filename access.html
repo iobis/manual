@@ -330,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="ipt.html">IPT</a></li>
 </ul>
 <div class="callbox-blue">
-<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:darkblue;overflow:visible;position:relative;"><path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/></svg> When you download data from the Mapper or full export, the data you will receive is flattened into one table with occurrence plus event data. eMoF data tables are separate upon request. However when you download a dataset from the OBIS homepage or dataset page, all tables (Event, Occurrence, eMoF) are separate files.</p>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:darkblue;overflow:visible;position:relative;"><path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/></svg> When you download data from the Mapper or full export, the data you will receive is flattened into one table with occurrence plus event data. eMoF data tables are separate upon request. However when you download a dataset from the OBIS homepage or dataset page, all tables (Event, Occurrence, eMoF) are separate files. By default absence records are not included in downloads and can be obtained through the API or the robis package.</p>
 </div>
 <div id="obis-homepage-and-dataset-pages" class="section level2 hasAnchor" number="11.1">
 <h2><span class="header-section-number">11.1</span> OBIS Homepage and dataset pages<a href="access.html#obis-homepage-and-dataset-pages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -368,7 +368,7 @@ allowfullscreen></iframe></p>
 <img src="images/mapper-DL.png" style="width:60.0%" alt="Screenshot demonstrating where how to download a particular layer" />
 <div class="figcaption"><em>Screenshot demonstrating where how to download a particular layer</em></div>
 </div>
-<p>When you download data from the mapper, you will be given the option to include eMoF and/or DNA Derived Data extensions alongside the Event and Occurrence data. You must check the boxes of extensions you want to include in your download.</p>
+<p>When you download data from the mapper, you will be given the option to include eMoF and/or DNA Derived Data extensions alongside the Event and Occurrence data. You must check the boxes of extensions you want to include in your download. Note that absence records are not included in downloads from the Mapper.</p>
 <div class="float">
 <img src="images/mapper-extensions.png" style="width:70.0%" alt="Screenshot showing the popup confirmation for which extensions you want to include in your download from the OBIS Mapper" />
 <div class="figcaption"><em>Screenshot showing the popup confirmation for which extensions you want to include in your download from the OBIS Mapper</em></div>
@@ -380,11 +380,20 @@ allowfullscreen></iframe></p>
 <ul>
 <li><a href="https://github.com/iobis/robis" class="uri">https://github.com/iobis/robis</a></li>
 </ul>
-<p>The robis R package has been developed to facilitate connecting to the OBIS API from R. The package can be installed <a href="https://cran.r-project.org/web/packages/robis/index.html">from CRAN</a> or <a href="https://github.com/iobis/robis">from GitHub</a> (latest development version). The package documentation includes a function reference as well as a <a href="https://iobis.github.io/robis/articles/getting-started.html">getting started vignette</a>. As a quick example of what the package can do, you can obtain raw occurrence data by feeding a taxon name or AphiaID to the <code>occurrence</code> function.</p>
-<p>If you’d like to then download this data, you can simply export R objects with the <code>write.csv</code> function. For example, if we wanted to obtain Mollusc data from OBIS:</p>
+<p>The robis R package has been developed to facilitate connecting to the OBIS API from R. The package can be installed <a href="https://cran.r-project.org/web/packages/robis/index.html">from CRAN</a> or <a href="https://github.com/iobis/robis">from GitHub</a> (latest development version). The package documentation includes a <a href="https://iobis.github.io/robis/reference/index.html">Reference</a> page outlining all functions, as well as a <a href="https://iobis.github.io/robis/articles/getting-started.html">getting started vignette</a>. For example, you can use the package to obtain a list of datasets, a taxon checklist, or raw occurrence data by supplying e.g. a taxon name or AphiaID. You can also specify whether to include absence records when obtaining occurrence data.</p>
+<p>If you’d like to then download this data, you can simply export R objects with the <code>write.csv</code> function. If we wanted to obtain Mollusc data from OBIS, some options would be:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="access.html#cb21-1" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
-<span id="cb21-2"><a href="access.html#cb21-2" tabindex="-1"></a>moll<span class="ot">&lt;-</span><span class="fu">occurrence</span>(“Mollusca”)</span>
-<span id="cb21-3"><a href="access.html#cb21-3" tabindex="-1"></a><span class="fu">write.csv</span>(moll, “mollusca<span class="sc">-</span>obis.csv”)</span></code></pre></div>
+<span id="cb21-2"><a href="access.html#cb21-2" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="access.html#cb21-3" tabindex="-1"></a><span class="co">#obtain occurrence data</span></span>
+<span id="cb21-4"><a href="access.html#cb21-4" tabindex="-1"></a>moll<span class="ot">&lt;-</span><span class="fu">occurrence</span>(<span class="st">&quot;Mollusca&quot;</span>)</span>
+<span id="cb21-5"><a href="access.html#cb21-5" tabindex="-1"></a>moll_abs<span class="ot">&lt;-</span><span class="fu">occurrence</span>(“Mollusca”, <span class="at">absence=</span><span class="st">&quot;include&quot;</span>) <span class="co">#include absence records</span></span>
+<span id="cb21-6"><a href="access.html#cb21-6" tabindex="-1"></a><span class="fu">write.csv</span>(moll, “mollusca<span class="sc">-</span>obis.csv”)</span>
+<span id="cb21-7"><a href="access.html#cb21-7" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="access.html#cb21-8" tabindex="-1"></a><span class="co">#obtain a list of datasets</span></span>
+<span id="cb21-9"><a href="access.html#cb21-9" tabindex="-1"></a>molldata<span class="ot">&lt;-</span><span class="fu">dataset</span>(<span class="at">scientificname=</span><span class="st">&quot;Mollusca&quot;</span>)</span>
+<span id="cb21-10"><a href="access.html#cb21-10" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="access.html#cb21-11" tabindex="-1"></a><span class="co">#obtain a checklist of Mollusc species in a certain area</span></span>
+<span id="cb21-12"><a href="access.html#cb21-12" tabindex="-1"></a>mollcheck<span class="ot">&lt;-</span><span class="fu">checklist</span>(<span class="at">scientificname=</span><span class="st">&quot;Mollusca&quot;</span>, <span class="at">geometry =</span> <span class="st">&quot;POLYGON ((2.3 51.8, 2.3 51.6, 2.6 51.6, 2.6 51.8, 2.3 51.8))&quot;</span>)</span></code></pre></div>
 <p>This file will be saved to your working directory (if you are not familiar with working directories, read <a href="https://bookdown.org/ndphillips/YaRrr/the-working-directory.html">here</a>). After opening the file, you will notice that the fields in the download do not include every possible field, but instead only those where information has been recorded by data providers, plus the <a href="access.html#interpreting-downloaded-files-from-obis">fields added by OBIS’s quality control pipeline</a>.</p>
 <p>To use <code>robis</code> for visualizing and mapping occurrences, see the <a href="dataviz.html">Visualization</a> section of the manual.</p>
 <p>Watch the video <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg> below for a walkthrough of how to use the robis package to obtain OBIS data.</p>
@@ -399,7 +408,7 @@ allowfullscreen></iframe></p>
 <ul>
 <li><a href="https://api.obis.org/" class="uri">https://api.obis.org/</a></li>
 </ul>
-<p>Both the mapper and the R package are based on the <a href="https://api.obis.org/">OBIS API</a>, which can also be used to find and download data. When using the API directly, you can filter by the following options:</p>
+<p>Both the Mapper and the R package are based on the <a href="https://api.obis.org/">OBIS API</a>, which can also be used to find data. When using the API directly, you can filter by the following options:</p>
 <ul>
 <li>Occurrence</li>
 <li>Taxon</li>
@@ -412,7 +421,7 @@ allowfullscreen></iframe></p>
 <li>Facet</li>
 <li>Statistics</li>
 </ul>
-<p>When you have entered all the information you are interested in filtering by, scroll down and click the “Execute” button. This will produce a response detailing how many records match your criteria, as well as information for some of the headers from the data (e.g., basisOfRecord, Order, genus, etc.). A download button will be available for you to download the data as well.</p>
+<p>When you have entered all the information you are interested in filtering by, scroll down and click the “Execute” button. This will produce a response detailing how many records match your criteria, as well as information for some of the headers from the data (e.g., basisOfRecord, Order, genus, etc.). A download button will be available for you, although we don’t recommend using the API to download data as it only provides the first 10 results. The API interface may be best used for quick data summaries. Do note that the API allows you to specify whether to include absence records in some filters.</p>
 <p>When searching with the API, you may need to know certain identifiers, including:</p>
 <ul>
 <li>AphiaID - obtainable from the WoRMS page of a taxa of interest (e.g. the AphiaID for <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=51">Mollusca</a> would be 51)</li>
@@ -441,7 +450,7 @@ allowfullscreen></iframe></p>
 <img src="images/full-export1.png" alt="OBIS homepage showing where to navigate to access full database exports" />
 <div class="figcaption"><em>OBIS homepage showing where to navigate to access full database exports</em></div>
 </div>
-<p>Here you will be able to download all occurrence records as a CSV or Parquet file. Note the disclaimer that such exports will not include measurement data, dropped records, or absence records. As with downloads from the Mapper, the exported file is a single Occurrence table. This table includes all provided Event and Occurrence data, as well as 68 fields added by the OBIS Quality Control Pipeline, including taxonomic information obtained from WoRMS.</p>
+<p>Here you will be able to download all occurrence records as a CSV or Parquet file. Note the disclaimer that such exports will not include measurement data, dropped records, or absence records. As with downloads from the Mapper, the exported file will be a single, flattened Occurrence table. This flattened table includes all provided Event and Occurrence data, as well as 68 fields added by the OBIS Quality Control Pipeline, including taxonomic information obtained from WoRMS.</p>
 <div class="float">
 <img src="images/full-export2.png" alt="OBIS Data Access page" />
 <div class="figcaption"><em>OBIS Data Access page</em></div>
