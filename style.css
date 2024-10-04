@@ -2,6 +2,22 @@ table {
   display: inline-block !important;
   overflow-x: scroll !important;
 }
+/* change scroll bar on tables */
+table::-webkit-scrollbar {
+  height: 8px;  /* Height for the horizontal scrollbar */
+}
+table::-webkit-scrollbar-track {
+  background: #ffffff;  /* Background of scrollbar track */
+}
+table::-webkit-scrollbar-thumb {
+  background-color: #1e74ac;  /* Scrollbar color */
+  border-radius: 10px;
+  border: 1px solid #196292;  /* Add a border to the scrollbar */
+}
+table {
+  scrollbar-width: thin;       /* Thin scrollbar for Firefox */
+  scrollbar-color: #1e74ac #f1f1f1;  /* Scrollbar color */
+}
 .book .book-body .page-wrapper .page-inner {
   max-width: 80% !important;
 }
