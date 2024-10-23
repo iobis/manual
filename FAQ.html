@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1.5 Frequently Asked Questions | The OBIS manual</title>
   <meta name="description" content="1.5 Frequently Asked Questions | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1.5 Frequently Asked Questions | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -534,7 +534,7 @@ Can scientificNameID be populated with an identifier (e.g. WoRMS LSID) represen
 What happens when a WoRMS taxonomy is changed? e.g. a species is reclassified
 </summary>
 <p>When species are reclassied in WoRMS, the original <code>scientificName</code> and <code>scientificNameID</code> provided in a dataset remains unchanged. However WoRMS will list the old ID as “Unaccepted”, and link to the accepted taxon entry, and this will be reflected in the taxonomic information attached to a dataset download.</p>
-<p>For example, if we search for Manta birostris in OBIS (<a href="https://obis.org/taxon/105857" class="uri">https://obis.org/taxon/105857</a>), we see that the taxon’s status in WoRMS is unaccepted. At the bottom of the page it links to the currently accepted name: <a href="https://obis.org/taxon/1026118" class="uri">https://obis.org/taxon/1026118</a>. We can find an occurrence which shows the <strong>source</strong> <code>scientificName</code> as “Manta” while the <strong>interpreted</strong> <code>scientificName</code> is “Mobula”: <a href="https://obis.org/occurrence/0020c873-02f1-4bd7-b396-ad36600bc8b2" class="uri">https://obis.org/occurrence/0020c873-02f1-4bd7-b396-ad36600bc8b2</a>. We can also see that <code>originalScientificName</code> is populated with the source name in the intepreted output.</p>
+<p>For example, if we search for Manta birostris in OBIS (<a href="https://obis.org/taxon/105857" class="uri">https://obis.org/taxon/105857</a>), we see that the taxon’s status in WoRMS is unaccepted. At the bottom of the page it links to the currently accepted name: <a href="https://obis.org/taxon/1026118" class="uri">https://obis.org/taxon/1026118</a>. We can find an occurrence which shows the <strong>source</strong> <code>scientificName</code> as “Manta” while the <strong>interpreted</strong> <code>scientificName</code> is “Mobula”: <a href="https://obis.org/occurrence/00032775-252c-44b3-9c95-be1c9adb2fe4" class="uri">https://obis.org/occurrence/00032775-252c-44b3-9c95-be1c9adb2fe4</a>. We can also see that <code>originalScientificName</code> is populated with the source name in the intepreted output.</p>
 <p>As a user, you don’t have to trace species names. <em>However</em> if the datasets’s DwC-A is downloaded from the dataset page instead of obtained through R or the Mapper, <strong>all fields will contain the original value</strong>. It remains good practice to also check identifiers against WoRMS to see if any have been updated when you download data.</p>
 </details>
 </li>
