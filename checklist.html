@@ -327,1854 +327,2053 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Note that when you publish your dataset on the IPT, if you use a term not listed below it will be an unmapped field and will <strong>not</strong> be published alongside your data. You may still wish to include such fields in your dataset if you are publishing to other repositories, just know that they will not be included in your OBIS dataset. You may include this information either by putting it in the <code>dynamicProperties</code> field in JSON format, or putting the information into the <a href="format_emof.html">eMoF</a>. Alternatively, you may have fields that you do not wish to be published and that do not correspond to one of these terms (e.g. personal notes). This is okay - if they are not mapped to one of the terms, that column in your dataset will not be published.</p>
 <p><strong>Table Legend</strong>:</p>
 <ul>
-<li>Terms marked with ^ indicate that the specified term is accepted in the Event or Occurrence table, but preference is that they be recorded in the eMoF table to link with controlled vocabulary</li>
-<li>For the Occurrence table, distinction is made if the term could be used in the core or the extension table
-<ul>
-<li>x/x = term can be used in either Occurrence core or extension</li>
-<li>x/- term is recommended only for the Occurrence core</li>
-<li>-/x term is recommended only for the Occurrence extension</li>
-</ul></li>
+<li>Terms marked with 1 indicate that the specified term is accepted in the Event or Occurrence table, but preference is that they be recorded in the eMoF table in the measurementType column so they can be linked with controlled vocabulary</li>
+<li>For the Occurrence table, distinction is made if the term could be used in the core or the extension table</li>
 </ul>
-<p><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:2em;width:2em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg> <a href="/docs/OBIS-termchecklist.csv" download><strong>Click here to download the checklist.</strong></a></p>
-<table style="width:100%;">
+<p><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:2em;width:2em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg> <a href="docs/OBIS-termchecklist.csv" download><strong>Click here to download the checklist.</strong></a></p>
+<table>
 <colgroup>
+<col width="12%" />
+<col width="14%" />
+<col width="12%" />
 <col width="13%" />
-<col width="16%" />
+<col width="10%" />
 <col width="13%" />
-<col width="14%" />
-<col width="11%" />
-<col width="14%" />
-<col width="14%" />
+<col width="13%" />
+<col width="10%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Term</th>
-<th>OBIS Required</th>
-<th>Term’s DarwinCore Class</th>
-<th>Event Table</th>
-<th>Occurrence Table (Core/Extension)</th>
-<th>eMoF Table</th>
-<th>DNA Table</th>
+<th align="left">Term</th>
+<th align="left">OBIS Required</th>
+<th align="left">Term’s DarwinCore Class</th>
+<th align="left">Event core</th>
+<th align="left">Occurrence core</th>
+<th align="left">Occurrence extension</th>
+<th align="left">eMoF Table</th>
+<th align="left">DNA Table</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>eventDate</td>
-<td>required</td>
-<td>event</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>eventID</td>
-<td>required</td>
-<td>event</td>
-<td>x</td>
-<td>-/x</td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>decimalLatitude</td>
-<td>required</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>decimalLongitude</td>
-<td>required</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>occurrenceID</td>
-<td>required</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td>x</td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>occurrenceStatus</td>
-<td>required</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>basisOfRecord</td>
-<td>required</td>
-<td>record</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>scientificName</td>
-<td>required</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>scientificNameID</td>
-<td>strongly recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>DNA_sequence</td>
-<td>strongly recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>env_broad_scale</td>
-<td>strongly recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>env_local scale</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>env_medium</td>
-<td>strongly recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>lib_layout</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>nucl_acid_amp</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>nucl_acid_ext</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>otu_class_appr</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>otu_db</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>otu_seq_comp_appr</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>pcr_primer_forward</td>
-<td>strongly recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>pcr_primer_name_forward</td>
-<td>strongly recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>pcr_primer_name_reverse</td>
-<td>strongly recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>pcr_primer_reference</td>
-<td>strongly recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>pcr_primer_reverse</td>
-<td>strongly recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>samp_name</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>samp_vol_we_dna_ext</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>seq_meth</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>sop</td>
-<td>recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>target_gene</td>
-<td>strongly recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="even">
-<td>target_subfragment</td>
-<td>strongly recommended</td>
-<td>dna</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-</tr>
-<tr class="odd">
-<td>day</td>
-<td>recommended</td>
-<td>event</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>endDayOfYear</td>
-<td>recommended</td>
-<td>event</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>eventType</td>
-<td>strongly recommended</td>
-<td>event</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>eventRemarks</td>
-<td>optional</td>
-<td>event</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>eventTime</td>
-<td>recommended</td>
-<td>event</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>fieldNotes</td>
-<td>optional</td>
-<td>event</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>fieldNumber</td>
-<td>optional</td>
-<td>event</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>habitat</td>
-<td>recommended</td>
-<td>event</td>
-<td>x</td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>month</td>
-<td>strongly recommended</td>
-<td>event</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>parentEventID</td>
-<td>required (if exists)</td>
-<td>event</td>
-<td>x</td>
-<td>-/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sampleSizeUnit</td>
-<td>strongly recommended</td>
-<td>event</td>
-<td>x^</td>
-<td>x^/-</td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sampleSizeValue</td>
-<td>strongly recommended</td>
-<td>event</td>
-<td>x^</td>
-<td>x^/-</td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>samplingEffort</td>
-<td>strongly recommended</td>
-<td>event</td>
-<td>x^</td>
-<td>x^/-</td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>samplingProtocol</td>
-<td>strongly recommended</td>
-<td>event</td>
-<td>x^</td>
-<td>x^/-</td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>startDayOfYear</td>
-<td>recommended</td>
-<td>event</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>verbatimEventDate</td>
-<td>recommended</td>
-<td>event</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>year</td>
-<td>strongly recommended</td>
-<td>event</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>bed</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>earliestAgeOrLowestStage</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>earliestEonOrLowestEonothem</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>earliestEpochOrLowestSeries</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>earliestEraOrLowestErathem</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>earliestPeriodOrLowestSystem</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>formation</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>group</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>highestBiostratigraphicZone</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>latestAgeOrHighestStage</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>latestEonOrHighestEonothem</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>latestEpochOrHighestSeries</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>latestEraOrHighestErathem</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>latestPeriodOrHighestSystem</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>lithostratigraphicTerms</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>lowestBiostratigraphicZone</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>member</td>
-<td>optional</td>
-<td>geologicalContext</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>dateIdentified</td>
-<td>optional</td>
-<td>identification</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>identificationID</td>
-<td>optional</td>
-<td>identification</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>identificationQualifier</td>
-<td>recommended</td>
-<td>identification</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>identificationReferences</td>
-<td>optional (required for imaging data)</td>
-<td>identification</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>identificationRemarks</td>
-<td>recommended</td>
-<td>identification</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>identificationVerificationStatus</td>
-<td>optional (required for imaging data)</td>
-<td>identification</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>identifiedBy</td>
-<td>optional (required for imaging data)</td>
-<td>identification</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>identifiedByID</td>
-<td>optional</td>
-<td>identification</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>typeStatus</td>
-<td>optional</td>
-<td>identification</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>continent</td>
-<td>strongly recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>coordinatePrecision</td>
-<td>strongly recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>coordinateUncertaintyInMeters</td>
-<td>strongly recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>country</td>
-<td>recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>countryCode</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>county</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>footprintSpatialFit</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>footprintSRS</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>footprintWKT</td>
-<td>recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>geodeticDatum</td>
-<td>recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>georeferencedBy</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>georeferencedDate</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>georeferenceProtocol</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>georeferenceSources</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>higherGeography</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>higherGeographyID</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>island</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>islandGroup</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>locality</td>
-<td>recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>locationAccordingTo</td>
-<td>recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>locationID</td>
-<td>strongly recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>locationRemarks</td>
-<td>recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>maximumDepthInMeters</td>
-<td>strongly recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>maximumDistanceAboveSurfaceInMeters</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>maximumElevationInMeters</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>minimumDepthInMeters</td>
-<td>strongly recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>minimumDistanceAboveSurfaceInMeters</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>minimumElevationInMeters</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>municipality</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>pointRadiusSpatialFit</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>stateProvince</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>verbatimCoordinates</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>verbatimCoordinateSystem</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>verbatimDepth</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>verbatimElevation</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>verbatimLatitude</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>verbatimLocality</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>verbatimLongitude</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>verbatimSRS</td>
-<td>optional</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>waterBody</td>
-<td>recommended</td>
-<td>location</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>materialSampleID</td>
-<td>recommended</td>
-<td>materialSample</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>measurementAccuracy</td>
-<td>recommended</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>measurementDeterminedBy</td>
-<td>optional</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>measurementDeterminedDate</td>
-<td>optional</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>measurementID</td>
-<td>recommended</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>measurementMethod</td>
-<td>recommended</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>measurementRemarks</td>
-<td>recommended</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>measurementType</td>
-<td>strongly recommended</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>measurementTypeID</td>
-<td>strongly recommended</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>measurementUnit</td>
-<td>strongly recommended</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>measurementUnitID</td>
-<td>strongly recommended</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>measurementValue</td>
-<td>strongly recommended</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>measurementValueID</td>
-<td>strongly recommended</td>
-<td>measurementOrFact</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>associatedMedia</td>
-<td>recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>associatedReferences</td>
-<td>optional</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>associatedSequences</td>
-<td>recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>associatedTaxa</td>
-<td>optional</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>behavior</td>
-<td>optional</td>
-<td>occurrence</td>
-<td></td>
-<td>x<sup>/x</sup></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>catalogNumber</td>
-<td>recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>disposition</td>
-<td>optional</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>establishmentMeans</td>
-<td>optional</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>georeferenceVerificationStatus</td>
-<td>recommended</td>
-<td>occurrence</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>organismQuantity (preferred over individualCount)</td>
-<td>strongly recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x<sup>/x</sup></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>organismQuantityType (preferred over individualCount)</td>
-<td>strongly recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x<sup>/x</sup></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>individualCount</td>
-<td>recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x<sup>/x</sup></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>lifeStage</td>
-<td>optional</td>
-<td>occurrence</td>
-<td></td>
-<td>x<sup>/x</sup></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>occurrenceRemarks</td>
-<td>recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>otherCatalogNumbers</td>
-<td>optional</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>preparations</td>
-<td>optional</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>recordedBy</td>
-<td>recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>recordedByID</td>
-<td>recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>recordNumber</td>
-<td>recommended</td>
-<td>occurrence</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>reproductiveCondition</td>
-<td>optional</td>
-<td>occurrence</td>
-<td></td>
-<td>x<sup>/x</sup></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sex</td>
-<td>optional</td>
-<td>occurrence</td>
-<td></td>
-<td>x<sup>/x</sup></td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>associatedOccurrences</td>
-<td>optional</td>
-<td>organsim</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>associatedOrganisms</td>
-<td>optional</td>
-<td>organsim</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>organismID</td>
-<td>recommended</td>
-<td>organsim</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>organismName</td>
-<td>optional</td>
-<td>organsim</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>organismRemarks</td>
-<td>optional</td>
-<td>organsim</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>organismScope</td>
-<td>optional</td>
-<td>organsim</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>previousIdentifications</td>
-<td>recommended</td>
-<td>organsim</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>accessRights</td>
-<td>recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>bibliographicCitation</td>
-<td>recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>collectionCode</td>
-<td>optional</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>collectionID</td>
-<td>optional</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>dataGeneralizations</td>
-<td>optional</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>datasetID</td>
-<td>recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>datasetName</td>
-<td>recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>dynamicProperties</td>
-<td>recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>informationWithheld</td>
-<td>optional</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>institutionCode</td>
-<td>optional</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>institutionID</td>
-<td>optional</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>language</td>
-<td>recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>license</td>
-<td>strongly recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>modified</td>
-<td>recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>ownerInstitutionCode</td>
-<td>optional</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>references</td>
-<td>recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>rightsHolder</td>
-<td>recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>strongly recommended</td>
-<td>record</td>
-<td>x</td>
-<td>x/x</td>
-<td>x</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>acceptedNameUsage</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>acceptedNameUsageID</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>higherClassification</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>infraspecificEpithet</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>nameAccordingToID</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>namePublishedInID</td>
-<td>optional</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>namePublishedInYear</td>
-<td>optional</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>nomenclaturalCode</td>
-<td>optional</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>nomenclaturalStatus</td>
-<td>optional</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>verbatimIdentification</td>
-<td>recommended</td>
-<td>identification</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>originalNameUsage</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>originalNameUsageID</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>parentNameUsage</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>parentNameUsageID</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>phylum</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>scientificNameAuthorship</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>specificEpithet</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>subgenus</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>taxonConceptID</td>
-<td>optional</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>taxonID</td>
-<td>optional</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>taxonomicStatus</td>
-<td>optional</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>taxonRank</td>
-<td>strongly recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>taxonRemarks</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>verbatimTaxonRank</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>vernacularName</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>class</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>family</td>
-<td>recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>genus</td>
-<td>strongly recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>kingdom</td>
-<td>strongly recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>order</td>
-<td>strongly recommended</td>
-<td>taxon</td>
-<td></td>
-<td>x/x</td>
-<td></td>
-<td></td>
+<td align="left">eventDate</td>
+<td align="left">required</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">eventID</td>
+<td align="left">required</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">decimalLatitude</td>
+<td align="left">required</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">decimalLongitude</td>
+<td align="left">required</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">occurrenceID</td>
+<td align="left">required</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">occurrenceStatus</td>
+<td align="left">required</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">basisOfRecord</td>
+<td align="left">required</td>
+<td align="left">record</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">scientificName</td>
+<td align="left">required</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">scientificNameID</td>
+<td align="left">strongly recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">DNA_sequence</td>
+<td align="left">strongly recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">env_broad_scale</td>
+<td align="left">strongly recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">env_local scale</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">env_medium</td>
+<td align="left">strongly recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">lib_layout</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">nucl_acid_amp</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">nucl_acid_ext</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">otu_class_appr</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">otu_db</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">otu_seq_comp_appr</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">pcr_primer_forward</td>
+<td align="left">strongly recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">pcr_primer_name_forward</td>
+<td align="left">strongly recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">pcr_primer_name_reverse</td>
+<td align="left">strongly recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">pcr_primer_reference</td>
+<td align="left">strongly recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">pcr_primer_reverse</td>
+<td align="left">strongly recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">samp_name</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">samp_vol_we_dna_ext</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">seq_meth</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">sop</td>
+<td align="left">recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">target_gene</td>
+<td align="left">strongly recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">target_subfragment</td>
+<td align="left">strongly recommended</td>
+<td align="left">dna</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">day</td>
+<td align="left">recommended</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">endDayOfYear</td>
+<td align="left">recommended</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">eventType</td>
+<td align="left">strongly recommended</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">eventRemarks</td>
+<td align="left">optional</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">eventTime</td>
+<td align="left">recommended</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">fieldNotes</td>
+<td align="left">optional</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">fieldNumber</td>
+<td align="left">optional</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">habitat</td>
+<td align="left">recommended</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">month</td>
+<td align="left">strongly recommended</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">parentEventID</td>
+<td align="left">required (if exists)</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">sampleSizeUnit</td>
+<td align="left">strongly recommended</td>
+<td align="left">event</td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">sampleSizeValue</td>
+<td align="left">strongly recommended</td>
+<td align="left">event</td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">samplingEffort</td>
+<td align="left">strongly recommended</td>
+<td align="left">event</td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">samplingProtocol</td>
+<td align="left">strongly recommended</td>
+<td align="left">event</td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">startDayOfYear</td>
+<td align="left">recommended</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">verbatimEventDate</td>
+<td align="left">recommended</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">year</td>
+<td align="left">strongly recommended</td>
+<td align="left">event</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">bed</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">earliestAgeOrLowestStage</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">earliestEonOrLowestEonothem</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">earliestEpochOrLowestSeries</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">earliestEraOrLowestErathem</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">earliestPeriodOrLowestSystem</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">formation</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">group</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">highestBiostratigraphicZone</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">latestAgeOrHighestStage</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">latestEonOrHighestEonothem</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">latestEpochOrHighestSeries</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">latestEraOrHighestErathem</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">latestPeriodOrHighestSystem</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">lithostratigraphicTerms</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">lowestBiostratigraphicZone</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">member</td>
+<td align="left">optional</td>
+<td align="left">geologicalContext</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">dateIdentified</td>
+<td align="left">optional</td>
+<td align="left">identification</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">identificationID</td>
+<td align="left">optional</td>
+<td align="left">identification</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">identificationQualifier</td>
+<td align="left">recommended</td>
+<td align="left">identification</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">identificationReferences</td>
+<td align="left">optional (required for imaging data)</td>
+<td align="left">identification</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">identificationRemarks</td>
+<td align="left">recommended</td>
+<td align="left">identification</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">identificationVerificationStatus</td>
+<td align="left">optional (required for imaging data)</td>
+<td align="left">identification</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">identifiedBy</td>
+<td align="left">optional (required for imaging data)</td>
+<td align="left">identification</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">identifiedByID</td>
+<td align="left">optional</td>
+<td align="left">identification</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">typeStatus</td>
+<td align="left">optional</td>
+<td align="left">identification</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">continent</td>
+<td align="left">strongly recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">coordinatePrecision</td>
+<td align="left">strongly recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">coordinateUncertaintyInMeters</td>
+<td align="left">strongly recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">country</td>
+<td align="left">recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">countryCode</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">county</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">footprintSpatialFit</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">footprintSRS</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">footprintWKT</td>
+<td align="left">recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">geodeticDatum</td>
+<td align="left">recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">georeferencedBy</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">georeferencedDate</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">georeferenceProtocol</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">georeferenceSources</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">higherGeography</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">higherGeographyID</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">island</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">islandGroup</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">locality</td>
+<td align="left">recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">locationAccordingTo</td>
+<td align="left">recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">locationID</td>
+<td align="left">strongly recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">locationRemarks</td>
+<td align="left">recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">maximumDepthInMeters</td>
+<td align="left">strongly recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">maximumDistanceAboveSurfaceInMeters</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">maximumElevationInMeters</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">minimumDepthInMeters</td>
+<td align="left">strongly recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">minimumDistanceAboveSurfaceInMeters</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">minimumElevationInMeters</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">municipality</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">pointRadiusSpatialFit</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">stateProvince</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">verbatimCoordinates</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">verbatimCoordinateSystem</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">verbatimDepth</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">verbatimElevation</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">verbatimLatitude</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">verbatimLocality</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">verbatimLongitude</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">verbatimSRS</td>
+<td align="left">optional</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">waterBody</td>
+<td align="left">recommended</td>
+<td align="left">location</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">materialSampleID</td>
+<td align="left">recommended</td>
+<td align="left">materialSample</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">measurementAccuracy</td>
+<td align="left">recommended</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">measurementDeterminedBy</td>
+<td align="left">optional</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">measurementDeterminedDate</td>
+<td align="left">optional</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">measurementID</td>
+<td align="left">recommended</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">measurementMethod</td>
+<td align="left">recommended</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">measurementRemarks</td>
+<td align="left">recommended</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">measurementType</td>
+<td align="left">strongly recommended</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">measurementTypeID</td>
+<td align="left">strongly recommended</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">measurementUnit</td>
+<td align="left">strongly recommended</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">measurementUnitID</td>
+<td align="left">strongly recommended</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">measurementValue</td>
+<td align="left">strongly recommended</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">measurementValueID</td>
+<td align="left">strongly recommended</td>
+<td align="left">measurementOrFact</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">associatedMedia</td>
+<td align="left">recommended</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">associatedReferences</td>
+<td align="left">optional</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">associatedSequences</td>
+<td align="left">recommended</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">associatedTaxa</td>
+<td align="left">optional</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">behavior</td>
+<td align="left">optional</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">catalogNumber</td>
+<td align="left">recommended</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">disposition</td>
+<td align="left">optional</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">establishmentMeans</td>
+<td align="left">optional</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">georeferenceVerificationStatus</td>
+<td align="left">recommended</td>
+<td align="left">occurrence</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">organismQuantity (preferred over individualCount)</td>
+<td align="left">strongly recommended</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">organismQuantityType (preferred over individualCount)</td>
+<td align="left">strongly recommended</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">individualCount</td>
+<td align="left">recommended</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">lifeStage</td>
+<td align="left">optional</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">occurrenceRemarks</td>
+<td align="left">recommended</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">otherCatalogNumbers</td>
+<td align="left">optional</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">preparations</td>
+<td align="left">optional</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">recordedBy</td>
+<td align="left">recommended</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">recordedByID</td>
+<td align="left">recommended</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">recordNumber</td>
+<td align="left">recommended</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">reproductiveCondition</td>
+<td align="left">optional</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">sex</td>
+<td align="left">optional</td>
+<td align="left">occurrence</td>
+<td align="left"></td>
+<td align="left">x1</td>
+<td align="left">x1</td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">associatedOccurrences</td>
+<td align="left">optional</td>
+<td align="left">organsim</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">associatedOrganisms</td>
+<td align="left">optional</td>
+<td align="left">organsim</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">organismID</td>
+<td align="left">recommended</td>
+<td align="left">organsim</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">organismName</td>
+<td align="left">optional</td>
+<td align="left">organsim</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">organismRemarks</td>
+<td align="left">optional</td>
+<td align="left">organsim</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">organismScope</td>
+<td align="left">optional</td>
+<td align="left">organsim</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">previousIdentifications</td>
+<td align="left">recommended</td>
+<td align="left">organsim</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">accessRights</td>
+<td align="left">recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">bibliographicCitation</td>
+<td align="left">recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">collectionCode</td>
+<td align="left">optional</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">collectionID</td>
+<td align="left">optional</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">dataGeneralizations</td>
+<td align="left">optional</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">datasetID</td>
+<td align="left">recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">datasetName</td>
+<td align="left">recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">dynamicProperties</td>
+<td align="left">recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">informationWithheld</td>
+<td align="left">optional</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">institutionCode</td>
+<td align="left">optional</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">institutionID</td>
+<td align="left">optional</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">language</td>
+<td align="left">recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">license</td>
+<td align="left">strongly recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">modified</td>
+<td align="left">recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">ownerInstitutionCode</td>
+<td align="left">optional</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">references</td>
+<td align="left">recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">rightsHolder</td>
+<td align="left">recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">type</td>
+<td align="left">strongly recommended</td>
+<td align="left">record</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">acceptedNameUsage</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">acceptedNameUsageID</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">higherClassification</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">infraspecificEpithet</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">nameAccordingToID</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">namePublishedInID</td>
+<td align="left">optional</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">namePublishedInYear</td>
+<td align="left">optional</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">nomenclaturalCode</td>
+<td align="left">optional</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">nomenclaturalStatus</td>
+<td align="left">optional</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">verbatimIdentification</td>
+<td align="left">recommended</td>
+<td align="left">identification</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">originalNameUsage</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">originalNameUsageID</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">parentNameUsage</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">parentNameUsageID</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">phylum</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">scientificNameAuthorship</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">specificEpithet</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">subgenus</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">taxonConceptID</td>
+<td align="left">optional</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">taxonID</td>
+<td align="left">optional</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">taxonomicStatus</td>
+<td align="left">optional</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">taxonRank</td>
+<td align="left">strongly recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">taxonRemarks</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">verbatimTaxonRank</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">vernacularName</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">class</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">family</td>
+<td align="left">recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">genus</td>
+<td align="left">strongly recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">kingdom</td>
+<td align="left">strongly recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">order</td>
+<td align="left">strongly recommended</td>
+<td align="left">taxon</td>
+<td align="left"></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
