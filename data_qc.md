@@ -60,7 +60,7 @@ If you have difficulty installing `obistools`, please try updating your R packag
 
 To use `obistools` to conduct quality control, you can follow the general order below. Please see the [`obistools` GitHub](https://github.com/iobis/obistools) for examples of how to use the functions.
 
-1. Check that the taxa match with WoRMS
+1. Check that the taxa names [match with WoRMS](name_matching.html)
     * [`obistools::match_taxa`](https://github.com/iobis/obistools#taxon-matching)
 2. Check that all required fields are present in the occurrence table
     * [`obistools::check_fields`](https://github.com/iobis/obistools#check-required-fields)

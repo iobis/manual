@@ -1,4 +1,4 @@
-## Name matching for taxonomic quality control 
+# Match Taxonomic Names
 
 OBIS requires all your specimens to be classified and matched against an authoritative taxonomic register. This effectively attaches unique stable identifiers (and digitally traceable) to each of your species. Meaning, if a taxonomic ranking or a species name changes in the future, there will be no question as to which species your dataset is actually referring to. Matching to registers also helps to avoid misspelled or unused terms.
 
@@ -67,7 +67,7 @@ A complete online manual is available at [http://www.marinespecies.org/tutorial/
 
 **R script for attaching Taxon Lists to ID Lists:**
 
-If you are familiar enough with R, you can use the [`merge`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/merge) function to attach the two lists to your data. We provide a short example of how to use this function below.
+If you are familiar enough with R, you can use the [`merge`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/merge) function to attach the two lists to your data. See a short example of how to use this function below.
 
 ```R
 #Generate example data table with species occurences, for this example we will only have one column with the scientificName
@@ -78,13 +78,39 @@ lsids<- data.frame(scientificName=c("Ginglymostoma cirratum","Luidia maculata","
  LSID = c("urn:lsid:marinespecies.org:taxname:105846", "urn:lsid:marinespecies.org:taxname:213112","urn:lsid:marinespecies.org:taxname:127029","urn:lsid:marinespecies.org:taxname:105847"))
 
 #merge data frames together
-matched_data<-merge(data, lsids, by = "scientificName")
+matched_data<-merge(data, lsids, by = "scientificName", all=TRUE)
 matched_data
 ```
 
+Including `"all=T"` in the merge function ensures that all rows from both data frames are retained in the resulting merged object (`matched_data`), even if the `scientificName` values in `data` and `lsids` do not match perfectly. This approach is particularly helpful in cases where there may be typos in `scientificName`. For example, a mismatch like "Thunus" instead of "Thunnus" would prevent proper linking of data to the corresponding LSID. By including `all = TRUE`, unmatched rows will still appear in the output, making it easier to identify and review any discrepancies or extra rows that may need correction.
+
+### R packages for taxon matching {.unlisted .unnumbered}
+
+There are several R packages available to assist you with taxon matching:
+
+1. [obistools](https://github.com/iobis/obistools#taxon-matching): use the `match_taxa` function to conduct taxon matching for a dataset in R
+2. [worrms](https://cran.r-project.org/web/packages/worrms/index.html): use the `wm_records_taxamatch` function to access the WoRMS API for taxon matching
+
+Both packages provide tools for resolving taxonomic names and ensuring your dataset aligns with accepted nomenclature. However, always verify ambiguous matches using other registers or manual checks to confirm accuracy.
+
+See below for example R code.
+
+```r
+library(obistools)
+
+# Read in occurrence table
+occur<-read.csv("occurence_table.csv")
+# Conduct taxon matching on only the unique instances of each taxa's name
+worms<-match_taxa(unique(occur$scientificName), ask=T)
+# Merge the matched names back with occurrence data
+occur_match<-merge(occur, worms, by="scientificName", all= T)
+```
+
+Note we have incldued the `ask` parameter in `match_taxa`. This parameter triggers interactive prompts during the taxon matching process, which is useful when multiple matches are found and allows you to manually select the correct taxon.
+
 #### How to fetch a full classification for a list of species from WoRMS?
 
-When setting up your WoRMS taxon match, to obtain the full classification for your list of species, simply check the box labeled “Classification”. This will add classification output in addition to the requested identifiers to your taxon match file, including Kingdom, Phylum, Class, Order, Family, Genus, Subgenus, Species, and Subspecies.
+When setting up your WoRMS taxon match from the web interface, to obtain the full classification for your list of species, simply check the box labeled “Classification”. This will add classification output in addition to the requested identifiers to your taxon match file, including Kingdom, Phylum, Class, Order, Family, Genus, Subgenus, Species, and Subspecies.
 
 ![WoRMS classification box](images/WoRMS_classification.png){width=70%}
 
@@ -135,12 +161,6 @@ Currently, this web service matches the scientific names with the following taxo
 #### Step 3: Is taxon marine?
 
 The Interim Register of Marine and Non-marine Genera (IRMNG) matching services are available through [http://www.irmng.org/](http://www.irmng.org/), as well as through the [LifeWatch taxon match](http://www.lifewatch.be/data-services/). This service allows you to search for a genus (or other taxonomic rank when you uncheck the “genera” box) to check if it is known to be marine, brackish, freshwater, or terrestrial. You can find this information in the row labeled “Environment”. If the taxa is marine, you may have to contact the WoRMS data management team (<info@marinespecies.org>) to have the taxon added to the WoRMS register (note you may have to provide supporting information confirming taxonomic and marine status).
-
-### R packages for taxon matching {.unlisted .unnumbered}
-
-If you are familiar with R, you may use the [obistools](https://github.com/iobis/obistools#taxon-matching) function `match_taxa` to conduct taxon matching for your dataset. There is also a WoRMS package called [worrms](https://cran.r-project.org/web/packages/worrms/index.html) that has a function called `wm_records_taxamatch` you can use to conduct taxon matching.
-
-The output will be the same as that from the WoRMS tool, so you should check ambiguous matches as described above, confirming with other registers as necessary.
 
 ### Taxon Match Tools Overview {.unlisted .unnumbered}
 

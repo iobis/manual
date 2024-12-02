@@ -1,4 +1,4 @@
-## Constructing and using identifier codes
+# Constructing and using identifiers
 
 **Content**
 

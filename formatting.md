@@ -1,5 +1,3 @@
-# (PART\*) Data Formatting {-}
-
 # Dataset structure
 
 <div class="callbox-blue">
@@ -7,8 +5,6 @@
 *Note: OBIS guidelines have not yet been updated to reflect changes that allow DNA Derived data to be linked to Event core tables. We will update this page soon.*
 
 </div>
-
-Formatting data can be challenging. This section of the manual deals with how to format data for OBIS, beginning with an overview of dataset structure.
 
 Determining how your dataset will be structured is one of the first steps towards getting your data ready for publishing. At this first step it is important to determine which structure best suits your dataset before proceeding because it will determine which Darwin Core fields will need to be included in your data. Once you have decided on the dataset structure, you can continue formatting the dataset.
 

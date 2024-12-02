@@ -1,59 +1,18 @@
-# Standardizing terms & vocabularies
+# Controlled vocabulary for eMoF
 
 **Content**
 
-* [Map data fields to Darwin Core](#map-data-fields-to-darwin-core)
 * [Map eMoF measurement identifiers](#map-emof-measurement-identifiers-to-preferred-vocabulary)
   * [MeasurementOrFact vocabulary background](#measurementorfact-vocabulary-background)
   * [Guidelines to populate measurementUnitID](#populate-measurementunitid)
   * [Guidelines to populate measurementValueID](#populate-measurementvalueid)
   * [Guidelines to populate measurementTypeID](#populate-measurementtypeid)
 
-## Map data fields to Darwin Core
-
-There are many possible ways of setting up your datasheets, and if you are new to OBIS you likely did not use controlled Darwin Core (DwC) or BODC vocabulary before samples were collected. In mapping your data fields to DwC we recommend documenting your choices so you have a reference to go back to should the need arise. In such a document you should take notes on the choices you made, as well as any actions you had to take (e.g. separate one column into many, convert dates or coordinates, etc.).
-
-For example, a DwC mapping reference table could look like the following:
-
-| Verbatim field name | Mapped DwC term | Actions taken | Notes |
-|:-------|:-------|:------------|:--------------|
-| date | eventDate | convert dates to ISO |  |
-| coordinates| decimalLongitude, decimalLatitude | convert ddmmss to decimal degrees, separated one column into 2 for longitude and latitude | put original coordinates into verbatimCoordinates |
-
-In order to help you map your data to DwC terms, we have provided the table below which outlines some common data fields, their associated Darwin Core vocabulary, and which data table the field is likely to go in:
-
-| Common Raw Terms | DwC Field | Data table |
-|:----------------- |:----------------------------- |:---------|
-| Date, Time | eventDate | Event, Occurrence |
-| Species, g_s, taxa | scientificName | Occurrence |
-| Any biotic/abiotic measurements* | measurementType, measurementValue, measurementUnit* | eMoF |
-| Depth | maximumDepthInMeters or minimumDepthInMeters | Event, Occurrence |
-| Lat/Latitude, Lon/Long/Longitude, dd | decimalLatitude, decimalLongitude | Event, Occurrence |
-| Sampling method | samplingProtocol | Event, eMoF |
-| Sample size, N, #, No. | sampleSizeValue | Event, eMoF |
-| Location | locality | Event |
-| Presence, absence | occurrenceStatus | Occurrence |
-| Type of record/ specimen | basisofRecord | Occurrence |
-| Person/ people that recorded the original Occurrence | recordedBy | Occurrence |
-| OrcID of person/ people that recorded the original Occurrence | recordedByID | Occurrence |
-| Person/ people that identified the organism | identifiedBy | Occurrence |
-| OrcID of person/ people that identified the organism | identifiedByID | Occurrence |
-| Data collector, data creator | recordedBy | Event, Occurrence |
-| Taxonomist, identifier | identifiedBy | Occurrence |
-| Record number, sample number, observation number | occurrenceID (either ID or incorporated into ID) | Occurrence |
-
-<div class=callbox-blue>
-
-`r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` Note that mapping abiotic/biotic measurement fields (sex, temperature, abundance, lengths, etc.) will occur within the [extendedMeasurementOrFact extension](format_emof.html). Here this data will go from being a separate column to being condensed into the `measurementType` and `measurementValue` fields.
-</div>
-
-The obistools R package also has the [map_fields function](https://github.com/iobis/obistools#map-column-names-to-darwin-core-terms) that you can use to map your dataset fields to a DwC term.
-
 ## Map eMoF measurement identifiers to preferred vocabulary
 
 ### MeasurementOrFact vocabulary background {.unlisted .unnumbered}
 
-The MeasurementOrFact terms `measurementType`, `measurementValue`, and `measurementUnit` are completely unconstrained and can be populated with free text. While free text offers the advantage of capturing complex and as yet unclassified information, there is inevitable semantic heterogeneity (e.g., of spelling, wording, or language) that becomes a challenge for effective data interoperability and analysis. For example, if you were interested in finding all records related to length measurements, you would have to try to account for all the different ways “length” was recorded by data providers (length, Length, len, fork length, etc.).
+Although [Darwin Core guidance](https://dwc.tdwg.org/list/#dwc_measurementType) recommends using controlled vocabulary to populate the MeasurementOrFact terms `measurementType`, `measurementValue`, and `measurementUnit`, in many cases these fields are completely unconstrained and are populated with free text. While free text offers the advantage of capturing complex and as yet unclassified information, there is inevitable semantic heterogeneity (e.g., of spelling, wording, or language) that becomes a challenge for effective data interoperability and analysis. For example, if you were interested in finding all records related to length measurements, you would have to try to account for all the different ways “length” was recorded by data providers (length, Length, len, fork length, etc.).
 
 <div class="callbox-caution caution">
 
@@ -62,15 +21,15 @@ You can use the [OBIS Measurement Type search tool](https://mof.obis.org/) to se
 
 </div>
 
-The 3 identifier terms `measurementTypeID`, `measurementValueID` and `measurementUnitID` are used to standardize the measurement types, values and units.
+Thus the 3 identifier terms `measurementTypeID`, `measurementValueID` and `measurementUnitID` are used to standardize the measurement types, values and units. The identifiers provide clear and unambiguous definitions, ensuring dataset consistency and simplifying grouping and analysis of measurements by their Unique Resource Identifiers (URIs).
 
-These three terms should be populated using controlled vocabularies referenced using Unique Resource Identifiers (URIs). For OBIS, we recommend using the internationally recognized [NERC Vocabulary Server](http://www.bodc.ac.uk/resources/products/web_services/vocab/), developed by the British Oceanographic Data Centre (BODC). This server can be accessed through:
+These three terms should be populated using controlled vocabularies referenced using URIs. For OBIS, we recommend using the internationally recognized [NERC Vocabulary Server](http://www.bodc.ac.uk/resources/products/web_services/vocab/), developed by the British Oceanographic Data Centre (BODC). However, you may use any vocabulary source that has machine-interopable URIs. The NERC Vocabulary Server can be accessed through:
 
 * SeaDataNet facet search <https://vocab.seadatanet.org/p01-facet-search> (recommended for searching the P01 collection, detailed below)
 * NERC Vocabulary Server (NVS) search <https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/>
 * Semantic Model Vocabulary Builder <https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/>
 
-Controlled vocabularies are incredibly important to ensure data are interoperable - readable by both humans and machines and that the information is presented in an unambiguous manner. Vocabulary collections like NERC NVS2 compile vocabularies from different institutions and authorities (e.g., ISO, ICES, EUNIS), allowing you to map your data to them. In this way, you could search for a single `measurementTypeID` and obtain all related records, regardless of differences in wording or language used in the data.
+Controlled vocabularies are incredibly important to ensure data are interoperable - readable by both humans and machines - and that the information is presented in an unambiguous manner. Vocabulary collections like NVS compile vocabularies from different institutions and authorities (e.g., ISO, ICES, EUNIS), allowing you to map your data to them. In this way, you could search for a single `measurementTypeID` and obtain all related records, regardless of differences in wording or language used in the data.
 
 Each vocabulary “term” in NVS is a concept that describes a specific idea or meaning. For consistency, we refer to individual vocabularies in NVS as **concepts**. Concepts within NVS are organized into *collections* that group concepts with commonalities (e.g. all concepts pertaining to units). Sometimes collections contain concepts that are deprecated. Terms can be deprecated due to duplication of concepts, or when a term becomes obsolete. You should not use any deprecated concepts for any measurement ID. Deprecated concepts can be identified from lists on NVS because their identifier will have a red warning symbol, and the page for the term itself will indicate the concept is deprecated in red lettering. Unfortunately, there is currently no notification system in place to automatically warn you if a previously used concept has become deprecated. We recommend occasionally confirming that the concepts you or your institution use are still available for use.
 
@@ -124,12 +83,16 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; 
 
 ### Populate measurementTypeID
 
-#### The P01 Collection
+#### The NERC P01 Collection
 
 One of the more important collections for OBIS is the [P01 collection](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=).
 
-> Important note!
-> **P01 codes are required for the `measurementTypeID` field**.
+<div class="callbox-caution caution">
+
+Important note!
+**P01 codes are required for the `measurementTypeID` field when using NERC vocabulary**.
+
+</div>
 
 The P01 is a large collection with >45,000 concepts. Each concept within this collection is composed of different elements that, together, construct a label you can use for a measurement type. Frequently, concepts from the P01 collection are referred to as a “P01 code”. P01 codes are used to populate the `measurementTypeID` field.
 

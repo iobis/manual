@@ -14,10 +14,12 @@ rmd_files:
   - relational_db.md
   - eml.md
   - nodes.md
+  - formatting_intro.md
   - formatting.md
   - identifiers.md
-  - checklist.md
   - name_matching.md
+  - data_map.md
+  - checklist.md
   - format_occurrence.md
   - format_event.md
   - format_emof.md
