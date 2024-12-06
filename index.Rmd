@@ -52,10 +52,10 @@ This manual provides a comprehensive walk-through on how to contribute data to O
 
 * [Frequently Asked Questions](FAQ.html) 
 * [How to contribute data to OBIS,](contribute.html) including information on data standards and terms of reference for OBIS groups
+* [Accessing data from OBIS](access.html)
 * [Formatting datasets](formatting.html)
 * [Running quality control checks](data_qc.html)
 * [Publishing data](data_publication.html)
-* [Accessing data from OBIS](access.html)
 * [Data visualization tips](dataviz.html)
 * [Links to additional resources](other_resources.html)
 
@@ -71,7 +71,13 @@ The OBIS manual is a dynamic document and is revised on a regular basis. We welc
 
 ## Guidelines on the sharing and use of data in OBIS
 
-It is important that our data providers, as well as all data users, are aware and agree on the [OBIS guidelines on the sharing and use of data in OBIS](policy.html), which was adoped at the [12th OBIS Steering Group](https://oceanexpert.org/event/3965). **NB:** Data users should be aware of the licenses associated with all datasets downloaded from OBIS (e.g. CC0, CC-BY, CC-BY-NC).
+It is important that our data providers, as well as all data users, are aware and agree on the [OBIS guidelines on the sharing and use of data in OBIS](policy.html), which was adoped at the [12th OBIS Steering Group](https://oceanexpert.org/event/3965). 
+
+<div class="callbox-blue">
+
+`r fontawesome::fa(name="circle-exclamation", fill="darkblue")` **NB:** Data users should be aware of the licenses associated with any dataset downloaded from OBIS (e.g. CC0, CC-BY, CC-BY-NC). 
+
+</div>
 
 ## Acknowledgements
 

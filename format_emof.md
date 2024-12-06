@@ -2,12 +2,12 @@
 
 #### What data goes into eMoF
 
-Any data related to abiotic or biotic measurements, including sampling information and protocols can be included in the eMoF table. Measurement data can also go into the [MeasurementOrFact](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml) extension, however OBIS recommends using the [extendedMeasurementOrFact](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) instead, particularly if your data is based on an Event core table.
+**Any data** related to abiotic or biotic measurements, including sampling information and protocols, can be included in the eMoF table. While you can also use the [MeasurementOrFact](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml) extension, OBIS strongly recommends using [extendedMeasurementOrFact](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) instead, particularly if your data is formatted with an Event core. The key difference is that eMoF allows you to link measurements to **either** an event or an occurrence by including `occurrenceID` in the schema. This opens up many more opportunities to link your data with any kind of measurement!
 
 Required terms for eMoF include:
 
 * `eventID` (this links the record to the Event Core table)
-* `occurrenceID` (this links the record to the Occurrence Core or Occurrence Extension table)
+* `occurrenceID` (this links the record to the Occurrence Core or Occurrence Extension table, it may be left blank in cases where a measurement links to an event instead of an occurrence)
 
 Other potential fields are shown in the table below (also listed in the [checklist](checklist.html)):
 

@@ -13,7 +13,21 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 - Terms marked with 1 indicate that the specified term is accepted in the Event or Occurrence table, but preference is that they be recorded in the eMoF table in the measurementType column so they can be linked with controlled vocabulary
 - For the Occurrence table, distinction is made if the term could be used in the core or the extension table
 
-`r fontawesome::fa(name="download", fill="green", height="2em")` <a href="docs/OBIS-termchecklist.csv" download>**Click here to download the checklist.**</a>
+```{r, echo=F}
+library(downloadthis)
+download_file(
+    path = "docs/OBIS-termchecklist.csv",
+    output_name = "OBISchecklist",
+    output_extension = ".csv",
+    button_label = "Download checklist as csv",
+    button_type = "default",
+    has_icon = TRUE,
+    icon = "fa fa-save",
+    class = "hvr-sweep-to-left",
+    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
+            margin-top: 5px; margin-bottom: 20px;"
+  )
+```
 
 | Term | OBIS Required | Term's DarwinCore Class | Event core | Occurrence core | Occurrence extension | eMoF Table | DNA Table |
 |:---------|:-----------|:---------|:----------|:--------|:----------|:----------|:--------|

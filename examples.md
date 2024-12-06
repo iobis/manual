@@ -1,6 +1,6 @@
 # Dataset Examples: ENV-DATA
 
-**Contents**
+## Contents {.unlisted .unnumbered}
 
 - [Fish abundance & distribution](#fish-abundance-and-distribution)
 - [Hard coral cover & composition](#hard-coral-cover-and-composition)
@@ -16,7 +16,7 @@
 - [Seagrass cover & composition](#seagrass-cover-and-composition)
 - [Zooplankton biomass & diversity](#zooplankton-biomass-and-diversity)
 
-**Special data types:**
+### Special data types {.unlisted .unnumbered}
 
 - [DNA derived data](dna_data.html)
   - [eDNA data from Monterey Bay, California](dna_data.html#edna-data-from-monterey-bay-california)
@@ -25,27 +25,25 @@
 - [Tracking data](other_data_types.html#tracking-data.html)
 - [Habitat](other_data_types.html#habitat-data)
 
-#### Fish abundance and distribution
+#### Fish abundance and distribution {.unlisted .unnumbered}
 
 (example coming soon)
-<p>&nbsp;</p>
 
-#### Hard coral cover and composition
-
-(example coming soon)
-<p>&nbsp;</p>
-
-#### Invertebrates abundance and distribution
+#### Hard coral cover and composition {.unlisted .unnumbered}
 
 (example coming soon)
-<p>&nbsp;</p>
 
-#### Macroalgae canopy cover and composition
+#### Invertebrates abundance and distribution {.unlisted .unnumbered}
 
-In this section we will encode a fictional macroalgal survey dataset into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an extendedMeasurementOrFact extension.
+(example coming soon)
 
-<img src="images/dwca_macroalgae_survey.png" class="img-responsive img-responsive-50"/>
-<p class="caption-70">Figure: A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.</p>
+#### Macroalgae canopy cover and composition {.unlisted .unnumbered}
+
+In this section we will encode a fictional macroalgal survey dataset (Figure 9.1) into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an extendedMeasurementOrFact extension.
+
+```{r fig-macroal, fig.cap = "*A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.*.",echo=FALSE, out.width = "95%"}
+knitr::include_graphics("images/dwca_macroalgae_survey.png")
+```
 
 **Event core:**
 
@@ -65,7 +63,7 @@ First we can create the Event core table by extracting all events in a broad sen
 
 Next we can construct the Occurrence extension table. This table has the scientific names and links to the World Register of Marine Species in `scientificNameID`. The first column of the table references the events in the core table (see `quadrat_1` for example highlighted in green).
 
-| id | occurrenceID | scientificName | scientificNameID |
+| eventID | occurrenceID | scientificName | scientificNameID |
 | --- | --- | --- | --- |
 | <span class="marker-green">quadrat_1</span> | <span class="marker-blue">occ_1</span> | Ulva rigida | [urn:lsid:marinespecies.org:taxname:145990](urn:lsid:marinespecies.org:taxname:145990) |
 | <span class="marker-green">quadrat_1</span> | <span class="marker-orange">occ_2</span> | Ulva lactuca | [urn:lsid:marinespecies.org:taxname:145984](urn:lsid:marinespecies.org:taxname:145984) |
@@ -76,40 +74,53 @@ Next we can construct the Occurrence extension table. This table has the scienti
 
 **extendedMeasurementOrFact (eMoF) extension:**
 
-And finally there is the MeasurementOrFact extension table, which has attributes of the zones (shore height), the quadrats (surface area), the transects (surface area and length), and the occurrences (percentage cover and functional group). Attributes of occurrences point to the Occurrence extension table using the `occurrenceID` column (see `occ_1` and `occ_2` highlighted in blue and orange). Note that besides NERC vocabulary terms we are also referencing the CATAMI vocabulary for macroalgal functional groups.
+And finally there is the extendedMeasurementOrFact extension table, which has attributes of the zones (shore height), the quadrats (surface area), the transects (surface area and length), and the occurrences (percentage cover and functional group). Attributes of occurrences point to the Occurrence extension table using the `occurrenceID` column (see `occ_1` and `occ_2` highlighted in blue and orange). Note that besides NERC vocabulary terms we are also referencing the CATAMI vocabulary for macroalgal functional groups. While best practice is to only populate identifier fields with machine-interoperable links, CATAMI does not currently provide URIs for their codes.
 
-| id | occurrenceID | measurementType | measurementTypeID | measurementValue | measurementValueID | measurementUnit | measurementUnitID |
+| eventID | occurrenceID | measurementType | measurementTypeID | measurementValue | measurementValueID | measurementUnit | measurementUnitID |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | zone_1 | | shore height | ? | high | ? | | |
-| <span class="marker-green">quadrat_1</span> | | surface area | [P01/current/AREABEDS](http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS) | 0.25 | | m2 | [P06/current/UMSQ](http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/) |
-| quadrat_1 | <span class="marker-blue">occ_1</span> | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 24 || percent | [P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| quadrat_1 | <span class="marker-orange">occ_2</span> | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 56 || percent | [P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_1 | | surface area | [P01/current/AREABEDS](http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS) | 60 | | m2 | [P06/current/UMSQ](http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/) |
-| transect_1 | | length | [P01/current/LENTRACK](http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK) | 30 | | m | [P06/current/ULAA](http://vocab.nerc.ac.uk/collection/P06/current/ULAA/) |
-| transect_1 | occ_3 | functional group | ? | sheet-like red | CATAMI:80300925 |||||
-| transect_1 | occ_4 | functional group | ? | filamentous brown | CATAMI:80300931 |||||
-| transect_1 | occ_3 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 8 || percent | [P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_1 | occ_4 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 24 || percent | [P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_2 | occ_5 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 4 || percent | [P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
-| transect_2 | occ_6 | cover | [P01/current/SDBIOL10](http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/) | 16 || percent | [P06/current/UPCT](http://vocab.nerc.ac.uk/collection/P06/current/UPCT) |
+| <span class="marker-green">quadrat_1</span> | | surface area | <http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS> | 0.25 | | m2 | <http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/> |
+| quadrat_1 | <span class="marker-blue">occ_1</span> | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 24 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
+| quadrat_1 | <span class="marker-orange">occ_2</span> | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 56 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
+| transect_1 | | surface area | <http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS> | 60 | | m2 | <http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/> |
+| transect_1 | | length | <http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK> | 30 | | m | <http://vocab.nerc.ac.uk/collection/P06/current/ULAA/> |
+| transect_1 | occ_3 | functional group | ? | sheet-like red  | CATAMI:80300925 |||
+| transect_1 | occ_4 | functional group | ? | filamentous brown | CATAMI:80300931 |||
+| transect_1 | occ_3 | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 8 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
+| transect_1 | occ_4 | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 24 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
+| transect_2 | occ_5 | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 4 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
+| transect_2 | occ_6 | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 16 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
 
-#### Mangroves cover and composition
+#### Mangroves cover and composition {.unlisted .unnumbered}
 
 (example coming soon)
-<p>&nbsp;</p>
 
-#### Marine birds abundance and distribution
+#### Marine birds abundance and distribution {.unlisted .unnumbered}
 
 The example for ENV-DATA collected with marine bird sightings/occurrences is based on the dataset ["RV Investigator Voyage IN2017_V02 Seabird Observations, Australia (2017)"](https://www.marine.csiro.au/ipt/resource?r=in2017_v02_wov). In this dataset, seabird sightings were recorded continuously during daylight hours during a voyage to recover and redeploy moorings at the SOTS site, southwest of Tasmania, Australia, in March 2017. Observations were made from c.30 minutes before sunrise to c.30 minutes after sunset, extending to 300m in the forward quadrant with the best viewing conditions. There were 1200 observations from 38 species of birds along with 3 cetacean species and one seal. This example will focus on the ENV-DATA associated with the bird sightings. The most frequently sighted bird species were *Puﬃnus tenuirostris* (Short-tailed Shearwater) and *Pachyptila turtur* (Fairy Prion).
 
 For this dataset, human observation recorded individual bird sightings (thus, each specimen is a single occurrence). The dataset contains abiotic measurements (ENV-DATA) which are related to each individual sighting, instead of an entire sample. Therefore, we can create an Occurrence core with an eMoF extension that contain the abiotic environmental measurements or facts.
 
+```{r echo=FALSE}
+downloadthis::download_link(
+  link = "https://www.marine.csiro.au/ipt/archive.do?r=in2017_v02_wov&v=1.15",
+  button_label = "Download dataset DwC-A .zip",
+  button_type = "default",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE,
+  class = "hvr-sweep-to-left",
+    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
+            margin-top: 5px; margin-bottom: 20px;"
+)
+```
+
 **Occurrence core:**
 
-The Occurrence core is populated with the occurrence records of seabirds sighted during the RV voyages. Occurrence details and scientific names are provided here. All birds were observed above sea level, all `minimumDepthInMeters` and `maximumDepthInMeters` values equal zero.
+The Occurrence core is populated with the occurrence records of seabirds sighted during the RV voyages. Occurrence details and scientific names are provided here. All birds were observed above sea level, thus all `minimumDepthInMeters` and `maximumDepthInMeters` values equal zero. If the distance above the sea level was provided, we could map that information to `minimumDistanceAboveSurfaceInMeters` and `maximumDistanceAboveSurfaceInMeters`.
 
-| occurrenceID | eventDate | institutionCode | collectionCode |  basisOfRecord | recordedBy  | organismQuantity | organismQuantityType | occurrenceStatus | decimalLatitude | decimalLongitude | coordinateUncertaintyInMeters | coordinatePrecision | footprintWKT |
-|------------------|---------------------|-------------------|-----------|--------------|-----------|---------------|-------------------|--------------|-------------|--------------|-------------------|--------------|-------------------|
+| occurrenceID | eventDate | institutionCode | collectionCode |  basisOfRecord | recordedBy  | organismQuantity | organismQuantityType | occurrenceStatus | decimalLatitude | decimalLongitude | coordinateUncertaintyInMeters | coordinatePrecision | footprintWKT |scientificNameID | scientificName | scientificNameAuthorship | vernacularName      |
+|------------------|---------------------|-------------------|-----------|--------------|-----------|---------------|-------------------|--------------|-------------|--------------|-------------------|--------------|---------------|----------------|---------|-----------|------------|
 | in2017_v02_00998 | 2017-03-17 01:07:00 | Australasian Seabird Group, BirdLife Australia | in2017_v02_wov | HumanObservation | EJW+CRC+TAH | 2  | individuals  | present  | -43.40741       | 147.45576        | 200                           | 0.0018              | POINT (147.45576 -43.40741) |  urn:lsid:marinespecies.org:taxname:343991 | Morus serrator                  | (Gray,1843)              | Australasian Gannet |
 | in2017_v02_01380 | 2017-03-19 22:26:00 | Australasian Seabird Group, BirdLife Australia | in2017_v02_wov | HumanObservation | EJW+CRC+TAH | 1  | individuals  | present  | -45.98644       | 142.1445         | 200                           | 0.0018              | POINT (142.14450 -45.98644) | urn:lsid:marinespecies.org:taxname:212648 | Pachyptila turtur               | (Kuhl,1820)              | Fairy Prion         |
 | in2017_v02_01012 | 2017-03-17 02:38:00 | Australasian Seabird Group, BirdLife Australia | in2017_v02_wov | HumanObservation | EJW+CRC+TAH | 1  | individuals  | present  | -43.40728       | 147.45549        | 200                           | 0.0018              | POINT (147.45549 -43.40728) | urn:lsid:marinespecies.org:taxname:707545 | Chroicocephalus novaehollandiae | Stephens,1826            | Silver Gull         |
@@ -119,7 +130,7 @@ The Occurrence core is populated with the occurrence records of seabirds sighted
 As shown in previous examples, the MeasurementOrFact extension table contains abiotic measurements or facts corresponding to an occurrence / sighting. Individual sightings and abiotic measurements are linked with `occurrenceID`. In the example dataset, the ENV-DATA consist of measurements taken during the moorings deployment at the SOTS site, at the time of the marine bird sightings. In addition to NERC vocabulary terms, authors also referenced the Australian Ocean Data Network (AODN) Discovery Parameter Vocabulary for *Sea-floor depth (m)* and *Sea Surface Temperature* as `measurementType`. NERC equivalents to the AODN terms are added as additional MeasurementOrFact (MoF) records.
 
 | occurrenceID     | measurementID                     | measurementType  | measurementTypeID | measurementValue      | measurementValueID | measurementUnit | measurementUnitID |
-|------------------|-----------------------------------|---------------------------------|----------------------------------------------------------------|--------------------|---------------------------------------------------|---------------------------------|-----------------------------------------------------|
+|------------------|-----------------------------------|---------------------------------|----------------------------------------------------------------|--------------------|---------------------------------|---------------------------------|---------------------|
 | in2017_v02_00998 | in2017_v02_00998-depth            | Sea-floor depth (m)             | <http://vocab.aodn.org.au/def/discovery_parameter/entity/574>    |73.0313               | NA                                                | Metres                          | <http://vocab.nerc.ac.uk/collection/P06/current/ULAA> |
 | in2017_v02_00998 | in2017_v02_00998-depth            | Sea-floor depth                 | <http://vocab.nerc.ac.uk/collection/P01/current/MBANZZZZ/>       |73.0313               | NA                                                | Metres                          | <http://vocab.nerc.ac.uk/collection/P06/current/ULAA> |
 | in2017_v02_00998 | in2017_v02_00998-air_pressure     | Air Pressure (hPa)              | <http://vocab.nerc.ac.uk/collection/P01/current/CAPHZZ01>        |1024.91385            | NA                                                | hPa                             | <http://vocab.nerc.ac.uk/collection/P06/current/HPAX> |
@@ -130,29 +141,47 @@ As shown in previous examples, the MeasurementOrFact extension table contains ab
 | in2017_v02_00998 | in2017_v02_00998-wind_direction   | Wind direction (deg)            | <http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01>        | 283                   | NA                                                | degrees                         | <http://vocab.nerc.ac.uk/collection/P06/current/UABB> |
 | in2017_v02_00998 | in2017_v02_00998-wind_speed       | Wind Speed (knt)                | <http://vocab.nerc.ac.uk/collection/P01/current/ESSAZZ01>        | 5.49                  | NA                                                | Knots (nautical miles per hour) | <http://vocab.nerc.ac.uk/collection/P06/current/UKNT> |
 
-#### Marine mammals abundance and distribution
+#### Marine mammals abundance and distribution {.unlisted .unnumbered}
 
-In this section we will explore how to encode a survey data set into Darwin Core using the ENV-DATA approach. As an example, sections of the actual data set of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), is used.
+In this section we will explore how to encode a marine mammal survey dataset into Darwin Core using the ENV-DATA approach. As an example, sections of the actual dataset [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans) are used.
 
-<img src="images/ENV_example_CETUS.png" class="img-responsive img-responsive-50"/>
-Figure: A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions**.</p>
+```{r fig-cetus, fig.cap = "*A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions***.",echo=FALSE, out.width = "95%"}
+knitr::include_graphics("images/ENV_example_CETUS.png")
+```
+
+```{r echo=FALSE}
+downloadthis::download_link(
+  link = "https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0",
+  button_label = "Download dataset DwC-A .zip",
+  button_type = "default",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE,
+  class = "hvr-sweep-to-left",
+    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
+            margin-top: 5px; margin-bottom: 20px;"
+)
+```
 
 **Event core:**
 
-Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using `eventID` and `parentEventID`. As the survey observations were made at locations of cetacean sightings instead of fixed locations, we can populate `footprintWKT` and `footprintSRS` as location information. Not all sampling was done on the same day, therefore `eventDate` is populated at the transect level.
+Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using `eventID` and `parentEventID`. As the survey observations were made at locations of cetacean sightings during a transect instead of fixed locations, we can populate `footprintWKT` and `footprintSRS` as location information. While the authors did not provide `decimalLongitude`, `decimalLatitude`, and `coordinateUncertainty` for the first three events, we have calculate the midpoint and the uncertainty using the WKT string and `obistools::calculate_centroid`. Not all sampling was done on the same day, therefore `eventDate` is populated at the transect level. We have also mapped the author's `eventRemarks` to the `eventType` field.
 
-| eventID            | parentEventID | eventDate       | footprintWKT                                                                                                   | footprintSRS |
-|--------------------|---------------|-----------------|----------------------------------------------------------------------------------------------------------------|--------------|
-| Madeira            |               | 2012-07/2017-09 | POLYGON ((-16.74 31.49, -16.74 41.23, -8.70 41.23, -8.70 31.49, -16.74 31.49)) | EPSG:4326    |
-| <span class="marker-green">Madeira:Cruise-001</span> | Madeira       | 2012-07         | MULTIPOINT ( (-8.7 41.19),  (-9.15 38.7))    | EPSG:4326    |
-| Madeira:Cruise-002 | Madeira       | 2012-07         | MULTIPOINT ( (-9.15 38.7),  (-16.73 32.74))    | EPSG:4326    |
-| Madeira:Cruise-003 | Madeira       | 2012-07         | MULTIPOINT ( (-16.73 32.74),  (-9.15 38.7))    | EPSG:4326    |
+| eventID                  | parentEventID | eventType | eventDate | footprintWKT                                          | footprintSRS | decimalLatitude | decimalLongitude | coordinateUncertaintyInMeters |
+|:-------------------------|:----------------------|:-------------|:----------|:----------------------------------------------------------------------------------------|:-------------|:----------------|:-----------------|-----------------------------|
+| Madeira           |               | route | 2012-07/2017-09 | POLYGON ((-16.74 31.49, -16.74 41.23, -8.70 41.23, -8.70 31.49, -16.74 31.49)) | EPSG:4326    | -12.72 | 36.36 | 655559.4 |
+| <span class="marker-green">Madeira:Cruise-001</span> | Madeira | cruise | 2012-07    | MULTIPOINT ( (-8.7 41.19),  (-9.15 38.7))    | EPSG:4326    | -8.925 | 39.945 | 139576.9 |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-01 | Madeira:Cruise-001 | transect | 2012-07-06 | LINESTRING (-8.71765 41.14013, -8.878333 40.8987) | EPSG:4326 | -8.797992 | 41.01941 | 15015.42 |
+| <span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-blue">Transect-01:Pos-0001</span> | Madeira:Cruise-001:Transect-01 | observation | 2012-07-06 | | EPSG:4326  | 40.90195 | -8.87615 | 50 |
+| <span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-orange">Transect-01:Pos-0002</span> | Madeira:Cruise-001:Transect-01 | observation | 2012-07-06 | | EPSG:4326  | 40.8987 | -8.87833 | 50 |
+| <span class="marker-green">Madeira:Cruise-001</span>:Transect-01:Pos-0003 | Madeira:Cruise-001:Transect-01 | observation | 2012-07-06 | | EPSG:4326  | 41.14013 | -8.71765 | 50 |
+
 
 **Occurrence extension:**
 
 Construct the Occurrence extension table with the scientific names and links to the World Register of Marine Species in `scientificNameID`. The first column of the table references the events in the core table (see `Madeira:Cruise-001` highlighted in green).The `occurrenceID` corresponds to the Position of the observation (see `Transect-01:Pos-0001` and `CIIMAR-CETUS-0001` highlighted in blue, or `Transect-01:Pos-0002` and `CIIMAR-CETUS-0002` highlighted in orange).
 
-| id                                      | occurrenceID      | scientificNameID                        | scientificName |
+| eventID                                      | occurrenceID      | scientificNameID                        | scientificName |
 |-----------------------------------------|-------------------|-----------------------------------------|----------------|
 | <span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-blue">Transect-01:Pos-0001</span> | <span class="marker-blue">CIIMAR-CETUS-0001</span> | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
 | <span class="marker-green">Madeira:Cruise-001</span>:<span class="marker-orange">Transect-01:Pos-0002</span> | <span class="marker-orange">CIIMAR-CETUS-0002</span> | urn:lsid:marinespecies.org:taxname:2688 | Cetacea        |
@@ -166,29 +195,43 @@ Construct the Occurrence extension table with the scientific names and links to 
 
 And finally, the extendedMeasurementOrFact extension table has attributes of the zones (such as Vessel speed and Vessel Heading), the   Transects (such as Wave height and Wind speed), and the Positions (such as Visibility and the Number of smaal/big ships >20m). Attributes of Positions point to the Occurrence extension table using the `occurrenceID` column (see `Transect-01:Pos-0001` and `Transect-01:Pos-0002` highlighted in blue and orange, respectively).
 
-| id  | occurrenceID | measurementType  | measurementTypeID  | measurementValue | measurementUnit | measurementUnitID  |
+| eventID  | occurrenceID | measurementType  | measurementTypeID  | measurementValue | measurementUnit | measurementUnitID  |
 |--------------|----------------|---------------|--------------------------------|------------------|-----------------------|---------------|
-| <span class="marker-green">Madeira:Cruise-001</span>  |    | Vessel name | [Q01/current/Q0100001](http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/) | Monte da Guia    |   |                                                      |
-| Madeira:Cruise-001:Transect-01          |                   | Length of the track          | [P01/current/DSRNCV01](http://vocab.nerc.ac.uk/collection/P01/current/DSRNCV01/) | 39.75 | km  | [P06/current/ULKM](http://vocab.nerc.ac.uk/collection/P06/current/ULKM/) |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Visibility |       | 2000-4000        | Meters | [P06/current/ULAA](http://vocab.nerc.ac.uk/collection/P06/current/ULAA/) |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Wind speed | [P01/current/WMOCWFBF](http://vocab.nerc.ac.uk/collection/P01/current/WMOCWFBF/) | 1 | Beaufort scale  | |
+| <span class="marker-green">Madeira:Cruise-001</span>  |    | Vessel name | <https://vocab.nerc.ac.uk/collection/P01/current/NMSPPF01/> | Monte da Guia    |   |                                                      |
+| Madeira:Cruise-001:Transect-01          |                   | Length of the track          | <http://vocab.nerc.ac.uk/collection/P01/current/DSRNCV01/> | 39.75 | km  | <http://vocab.nerc.ac.uk/collection/P06/current/ULKM/> |
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Visibility |       | 2000-4000        | Meters | <http://vocab.nerc.ac.uk/collection/P06/current/ULAA/>|
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Wind speed | <http://vocab.nerc.ac.uk/collection/P01/current/WMOCWFBF/> | 1 | Beaufort scale  | |
 | Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Wave height |    | 2 | Douglas scale                   |                                                      |
 | Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Number of big ships (>20m) |        | 3  |    |       |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel heading | [P01/current/HDNGGP01](http://vocab.nerc.ac.uk/collection/P01/current/HDNGGP01/) | 206 | Degrees | [P06/current/UAAA](http://vocab.nerc.ac.uk/collection/P06/current/UAAA/) |
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel heading | <http://vocab.nerc.ac.uk/collection/P01/current/HDNGGP01/> | 206 | Degrees | <http://vocab.nerc.ac.uk/collection/P06/current/UAAA/> |
 | Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Number of small ships (<20m) | | 0  |     |     |
-| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel speed | [P01/current/APSAGP01](http://vocab.nerc.ac.uk/collection/P01/current/APSAGP01/) | 16 | Knots (nautical miles per hour) | [P06/current/UKNT](http://vocab.nerc.ac.uk/collection/P06/current/UKNT/) |
+| Madeira:Cruise-001:Transect-01:Pos-0001 | <span class="marker-blue">CIIMAR-CETUS-0001</span> | Vessel speed | <http://vocab.nerc.ac.uk/collection/P01/current/APSAGP01/> | 16 | Knots (nautical miles per hour) | <http://vocab.nerc.ac.uk/collection/P06/current/UKNT/> |
 
-#### Marine turtles abundance and distribution
+#### Marine turtles abundance and distribution {.unlisted .unnumbered}
 
-##### Survey and sighting data
+##### Survey and sighting data {.unlisted .unnumbered}
 
-This section deals with encoding survey and/ or sighting data of sea turtles into Darwin Core using the ENV-DATA approach. Extracts from the actual data set of [Presence of sea turtles collected through Fixed-Line-Transect monitoring across the Western Mediterranean Sea (Civitavecchia-Barcelona route) between 2013 and 2017](https://ipt.vliz.be/eurobis/resource?r=cc_flt_cbar_13-17#anchor-description), are used as an example.
+This section deals with encoding survey and/or sighting data of sea turtles into Darwin Core using the ENV-DATA approach. Extracts from the actual dataset [Presence of sea turtles collected through Fixed-Line-Transect monitoring across the Western Mediterranean Sea (Civitavecchia-Barcelona route) between 2013 and 2017](https://ipt.vliz.be/eurobis/resource?r=cc_flt_cbar_13-17#anchor-description) are used as an example.
+
+```{r echo=FALSE}
+downloadthis::download_link(
+  link = "https://ipt.vliz.be/eurobis/archive.do?r=cc_flt_cbar_13-17&v=1.0",
+  button_label = "Download dataset DwC-A .zip",
+  button_type = "default",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE,
+  class = "hvr-sweep-to-left",
+    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
+            margin-top: 5px; margin-bottom: 20px;"
+)
+```
 
 **Event core:**
 
 The Event core is created by extracting all sighting events and populating the attributes at each event. The events at the different levels are linked together using `eventID` and `parentEventID`. In the example dataset, turtle sightings have been recorded since 2007, along a ferry route between Italy and Spain, as part of the monitoring project FLT Med Net (Fixed Line Transect Mediterranean monitoring Network). Turtle sighting locations can be given by populating the fields `footprintWKT` and `footprintSRS` with location information. Sightings were recorded at different dates, therefore `eventDate` is populated at the transect level.
 
-| id | modified | datasetID | datasetName | eventID | parentEventID    | eventDate |  eventRemarks | minimumDepthInMeters | maximumDepthInMeters | decimalLatitude | decimalLongitude | geodeticDatum | coordinateUncertaintyInMeters | footprintWKT | footprintSRS |
+| eventID | modified | datasetID | datasetName | eventID | parentEventID    | eventDate |  eventRemarks | minimumDepthInMeters | maximumDepthInMeters | decimalLatitude | decimalLongitude | geodeticDatum | coordinateUncertaintyInMeters | footprintWKT | footprintSRS |
 |-----------------------|---------------------|----------------------------------------|-------------------------------------|----------------------|------------------|------------------------------------|------------|----------------------|----------------------|-----------------|------------------|----------|-------------------------------|----------------------------------------------------------------|--------------|
 | TURTLE_CBAR_0043      | 2021-05-05 07:59:08 | <https://marineinfo.org/id/dataset/6403> | Presence of sea turtles collected through Fixed-Line-Transect monitoring across the Western Mediterranean Sea | TURTLE_CBAR_0043      |    | 2013-04-03T05:30:00+02:00/2013-04-03T16:00:00+02:00 | transect     | 0  | 0  | 41.26179967 | 4.933265167  | EPSG:4326 | 222970.2874 | LINESTRING (7.602633333333 41.24378333333, 2.263897 41.279816) | EPSG:4326 |
 | TURTLE_CBAR_0045      | 2021-05-05 07:59:08 | <https://marineinfo.org/id/dataset/6403> | Presence of sea turtles collected through Fixed-Line-Transect monitoring across the Western Mediterranean Sea | TURTLE_CBAR_0045      |    | 2013-04-18T05:22:00+02:00/2013-04-18T15:53:00+02:00 | transect | 0  | 0  | 41.30371367 | 4.936571167 | EPSG:4326     | 225420.0359 | LINESTRING (7.636983333333 41.32418333333, 2.236159 41.283244) | EPSG:4326    |
@@ -210,11 +253,11 @@ The Occurrence extension contain details regarding the sighted animals and inclu
 
 The extendedMeasurementOrFact extension (eMoF) for survey or sighting data contains additional attributes and measurements recorded during the survey, such as those regarding the Research Vessel, environmental conditions, and/ or animal measurements. These attributes are linked to the Occurrence extension using the `occurrenceID`. The example dataset contain measurements regarding the sampling method; speed and height of the Research Vessel as platform; wind force; sighting distance; as well as the count and developmental stage of the biological entity.
 
-| id | occurrenceID         | measurementType | measurementTypeID |  measurementValue | measurementUnit | measurementUnitID |
+| eventID | occurrenceID         | measurementType | measurementTypeID |  measurementValue | measurementUnit | measurementUnitID |
 |-----------------------|----------------------|--------------------------------------------------|---------------------------------------|-----------------------------|---------------------------------|--------------------------|
 | TURTLE_CBAR_0045      | AdL_TURTLE_CBAR_0004 | BEAUFORT WIND FORCE  | <http://vocab.nerc.ac.uk/collection/P01/current/WMOCWFBF> | 0   | Beaufort scale | |
 | TURTLE_CBAR_0045      | AdL_TURTLE_CBAR_0004 | Platform height | <http://vocab.nerc.ac.uk/collection/P01/current/AHSLZZ01> | 29 | Metres | <http://vocab.nerc.ac.uk/collection/P06/current/ULAA/> |
-| TURTLE_CBAR_0045      | AdL_TURTLE_CBAR_0004 | Sampling method | <http://vocab.nerc.ac.uk/collection/Q01/current/Q0100003> | visual observation from ferries |  |  |
+| TURTLE_CBAR_0045      | AdL_TURTLE_CBAR_0004 | Sampling method | <https://vocab.nerc.ac.uk/collection/P01/current/DSSPMT01/> | visual observation from ferries |  |  |
 | TURTLE_CBAR_0045      | AdL_TURTLE_CBAR_0004 | Speed of measurement platform relative to ground surface {speed over ground} by unspecified GPS system | <http://vocab.nerc.ac.uk/collection/P01/current/APSAGP01> | 23.291 | Knots (nautical miles per hour) | <http://vocab.nerc.ac.uk/collection/P06/current/UKNT/> |
 | TURTLE_CBAR_0045_0001 | AdL_TURTLE_CBAR_0005 | Development stage of biological entity specified elsewhere | <http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01> | | |  |
 | TURTLE_CBAR_0045_0001 | AdL_TURTLE_CBAR_0005 | Count (in assayed sample) of biological entity specified elsewhere | <http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01> |  20 | Metres | <http://vocab.nerc.ac.uk/collection/P06/current/ULAA/> |
@@ -225,21 +268,34 @@ In addition to the measurements recorded by the example dataset, other measureme
 
 **extendedMeasurementOrFact (eMoF) extension:**
 
-| id           | measurementID       | occurrenceID | measurementType | measurementTypeID                                       | measurementValue | measurementUnit | measurementUnitID                                   |
+| eventID           | measurementID       | occurrenceID | measurementType | measurementTypeID                                       | measurementValue | measurementUnit | measurementUnitID                                   |
 |--------------|---------------------|--------------|-----------------|---------------------------------------------------------|------------------|-----------------|-----------------------------------------------------|
 | SS199510-001 | SS199510-001-length | SS199510-001 | Length          | <http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX> | 1250   | Millimetres     | <http://vocab.nerc.ac.uk/collection/P06/current/UXMM> |
 | SS199510-001 | SS199510-001-weight | SS199510-001 | Weight          | <http://vocab.nerc.ac.uk/collection/P01/current/SPWGXX01> | 800    | Grams           | <http://vocab.nerc.ac.uk/collection/P06/current/UGRM> |
 | SS199510-002 | SS199510-002-length | SS199510-002 | Length          | <http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX> | 1630   | Millimetres     | <http://vocab.nerc.ac.uk/collection/P06/current/UXMM> |
 | SS199510-002 | SS199510-002-weight | SS199510-002 | Weight          | <http://vocab.nerc.ac.uk/collection/P01/current/SPWGXX01> | 1477.7 | Grams           | <http://vocab.nerc.ac.uk/collection/P06/current/UGRM> |
 
-#### Microbes biomass and diversity
+#### Microbes biomass and diversity {.unlisted .unnumbered}
 
 (example coming soon)
-<p>&nbsp;</p>
 
-#### Phytoplankton biomass and diversity
+#### Phytoplankton biomass and diversity {.unlisted .unnumbered}
 
-This example deals with encoding phytoplankton observation data, including environmental data, into Darwin Core. Extracts from the actual data set [LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea](https://obis.org/dataset/956d618f-91dc-4930-a253-cdf80ddb9371), are used as an example. Phytoplankton data should adhere to guidelines by Martin-Cabrera et al., 2022: [Best practices and recommendations for plankton imaging data management: Ensuring effective data flow towards European data infrastructures. Version 1.](http://dx.doi.org/10.25607/OBP-1742). Specific guidelines for the Occurrence and eMoF tables are documented in this publication, and we emphasize important fields in this example.
+This example deals with encoding phytoplankton observation data, including environmental data, into Darwin Core. Extracts from the actual dataset [LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea](https://obis.org/dataset/956d618f-91dc-4930-a253-cdf80ddb9371), are used as an example. Phytoplankton data should adhere to guidelines by Martin-Cabrera et al., 2022: [Best practices and recommendations for plankton imaging data management: Ensuring effective data flow towards European data infrastructures. Version 1](http://dx.doi.org/10.25607/OBP-1742). Specific guidelines for the Occurrence and eMoF tables are documented in this publication, and we emphasize important fields in this example.
+
+```{r echo=FALSE}
+downloadthis::download_link(
+  link = "https://ipt.vliz.be/eurobis/archive.do?r=fyto&v=1.0",
+  button_label = "Download dataset DwC-A .zip",
+  button_type = "default",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE,
+  class = "hvr-sweep-to-left",
+    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
+            margin-top: 5px; margin-bottom: 20px;"
+)
+```
 
 **Event core:**
 
@@ -267,29 +323,45 @@ The Occurrence extension contains data of each occurrence with an `occurrenceID`
 
 The eMoF extension contains the environmental and measurement information and data of each occurrence. This extension is also linked to the Event core using the `eventID`, and linked to the Occurrence extension table using the `occurrenceID`. The various measurements are populated with `measurementID`, `measurementType`, `measurementTypeID`, `measurementUnit`, `measurementUnitID`, `measurementValue`, `measurementValueID`, `measurementAccuracy`, `measurementMethod`, `measurementDeterminedBy` and `measurementDeterminedDate`. In the example dataset, the LifeWatch observatory data was compiled using imaging flow cytometry (FlowCam) to observe and identify phytoplankton in the Belgian Part of the North Sea and recorded a number of measurements including abundance, lifestages, sampling device information as well as environmental measurements such as water temperature, salinity and conductivity with accompanying vocabulary.
 
-| id   | occurrenceID   | measurementType | measurementTypeID | measurementValue | measurementValueID | measurementUnit | measurementUnitID | measurementDeterminedBy   | measurementMethod |
+| eventID   | occurrenceID   | measurementType | measurementTypeID | measurementValue | measurementValueID | measurementUnit | measurementUnitID | measurementDeterminedBy   | measurementMethod |
 |---------------------|-------------------------------|-------------------------------|----------------|---------------------|----------------------------|--------------------|----------------|------------------------------|-------------------------|
-| TripNR3242 | | Platform Name    | <http://vocab.nerc.ac.uk/collection/Q01/current/Q0100001/> | Simon Stevin | <http://vocab.nerc.ac.uk/collection/C17/current/11SS/>     |  | |  Flanders Marine Institute |  |
+| TripNR3242 | | Platform Name    | <https://vocab.nerc.ac.uk/collection/P01/current/NMSPPF01/> | Simon Stevin | <http://vocab.nerc.ac.uk/collection/C17/current/11SS/>     |  | |  Flanders Marine Institute |  |
 | TripNR3242TripStationNR16781MidasTripActionID105598   | TripNR3242TripStationNR16781MidasTripActionID105598occurenceIDTA_105598_Actinoptychus_5 | Abundance of biological entity specified elsewhere per unit volume of the water body | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL01/> | 2.24 | | specimens/L | <http://vocab.nerc.ac.uk/collection/P06/current/UCPL>  | Flanders Marine Institute | identified and counted by image analysis and normalised to a unit volume of water body, validated by human |
 | TripNR3242TripStationNR16781MidasTripActionID105598 | TripNR3242TripStationNR16781MidasTripActionID105598occurenceIDTA_105598_Actinoptychus senarius_5 | Abundance of biological entity specified elsewhere per unit volume of the water body | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL01/> | 1.12 |  | specimens/L | <http://vocab.nerc.ac.uk/collection/P06/current/UCPL>  | Flanders Marine Institute | identified and counted by image analysis and normalised to a unit volume of water body, validated by human |
 | TripNR3242TripStationNR16781MidasTripActionID105598   | TripNR3242TripStationNR16781MidasTripActionID105598occurenceIDTA_105598_(Pseudo-)pediastrum_5    | Lifestage   | <http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/> | adult | <http://vocab.nerc.ac.uk/collection/S11/current/S1116/> | |   | Flanders Marine Institute | identified and counted by image analysis and normalised to a unit volume of water body, validated by human |
 | TripNR3242TripStationNR16781MidasTripActionID105598   | TripNR3242TripStationNR16781MidasTripActionID105598occurenceIDTA_105598_Actinoptychus senarius_5 | Lifestage | <http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/> | adult | <http://vocab.nerc.ac.uk/collection/S11/current/S1116/> |          |
 | TripNR3242TripStationNR16781MidasTripActionID105598   |   | Sampling device aperture diameter | <http://vocab.nerc.ac.uk/collection/Q01/current/Q0100012/> | 0.4 |     | meter | <http://vocab.nerc.ac.uk/collection/P06/current/ULAA/> | Flanders Marine Institute |
-| TripNR3242TripStationNR16781MidasTripActionID105598   |   | Sampling instrument name | <http://vocab.nerc.ac.uk/collection/Q01/current/Q0100002/> | Planktonnet Apstein | <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0978/> |    |  | Flanders Marine Institute |  
-| TripNR3242TripStationNR16781MidasTripActionID105598   | | Sampling net mesh size | <http://vocab.nerc.ac.uk/collection/Q01/current/Q0100015/> | 55 | | micrometer | <http://vocab.nerc.ac.uk/collection/P06/current/UMIC/> | Flanders Marine Institute |  |
+| TripNR3242TripStationNR16781MidasTripActionID105598   |   | Sampling instrument name | <http://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/> | Planktonnet Apstein | <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0978/> |    |  | Flanders Marine Institute |  
+| TripNR3242TripStationNR16781MidasTripActionID105598   | | Sampling net mesh size | <https://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE1/> | 55 | | micrometer | <http://vocab.nerc.ac.uk/collection/P06/current/UMIC/> | Flanders Marine Institute |  |
 | TripNR3242TripStationNR16781MidasTripActionID105598UW | | Conductivity of the water body | <http://vocab.nerc.ac.uk/collection/P01/current/CNDCZZ01/> | 3.916 | | Siemens per metre | <http://vocab.nerc.ac.uk/collection/P06/current/UECA>  | Flanders Marine Institute | Electrical conductivity of the water body by thermosalinograph, based on the UnderWaySystem of the ship |
 | TripNR3242TripStationNR16781MidasTripActionID105598UW |   | Practical salinity of the water body | <http://vocab.nerc.ac.uk/collection/P01/current/PSALPR01/> | 34.295 |   | Grams per kilogram | <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> | Flanders Marine Institute | Practical salinity of the water body based on water from the UnderWaySystem of the ship |
 | TripNR3242TripStationNR16781MidasTripActionID105598UW | | Temperature of the water body | <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/> | 11.881 | | Degrees Celsius |  <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> | Flanders Marine Institute | Temperature of the water body based on water from the UnderWaySystem of the ship |
 
-#### Seagrass cover and composition
+#### Seagrass cover and composition {.unlisted .unnumbered}
 
 The structure of the Event, Occurrence and extendedMeasurementOrFact extensions for Seagrass Cover & Composition is based on community feedback organised through the the Scientific Committee on Oceanic Research (SCOR): [Coordinated Global Research Assessment of Seagrass System (C-GRASS)](https://scor-int.org/group/158/). We acknowledge the work that the C-grass SCOR work group has done to develop a proposed scheme for completing Seagrass related extension files.
 
-Here encode seagrass survey data into Darwin Core according to the ENV-DATA approach and using sections of the actual data set of [Seagrass Monitoring at Chengue Bay, Colombia](http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia) as an example dataset.
+Here we align seagrass survey data to Darwin Core according to the ENV-DATA approach and using sections of the actual dataset [Seagrass Monitoring at Chengue Bay, Colombia](http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia) as an example.
+
+```{r echo=FALSE}
+downloadthis::download_link(
+  link = "https://ipt.iobis.org/caribbeanobis/archive.do?r=seagrasssurvey_colombia&v=1.6",
+  button_label = "Download dataset DwC-A .zip",
+  button_type = "default",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE,
+  class = "hvr-sweep-to-left",
+    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
+            margin-top: 5px; margin-bottom: 20px;"
+)
+```
 
 **Event core:**
 
-The Event core table is created by extracting all events and attributes. All events are linked together using `eventID` and `parentEventID`. `eventDate` is populated at the transect level with the recommended format that conforms to ISO 8601-1:2019. `habitat` is populated as a category or description of the habitat in which the event occurred. Additional `fieldNotes` can also be provided if applicable. The recommended best practice for `countryCode` is to use an ISO 3166-1-alpha-2 country code. The remaining Event core fields comprise of location data including `maximumDepthInMeters`, `minimumDepthInMeters`, `decimalLongitude`, `decimalLatitude`, `coordinateUncertaintyInMeters`, `footprintWKT` and `footprintSRS`. Addtionally in the Event core, it is recommended to further include information regarding `license`, `rightsHolder`, `bibliographicCitation`, `institutionID`, `datasetID`, `institutionCode` and `datasetName`.
+The Event core table is created by extracting all events and attributes. All events are linked together using `eventID` and `parentEventID`. `eventDate` is populated at the transect level with the recommended format that conforms to ISO 8601-1:2019. `habitat` is populated as a category or description of the habitat in which the event occurred, but it is also recommended to include it in the eMoF so that controlled vocabulary can be linked to it. Additional `fieldNotes` can also be provided if applicable. The recommended best practice for `countryCode` is to use an ISO 3166-1-alpha-2 country code.
+
+The remaining Event core fields comprise of location data including `maximumDepthInMeters`, `minimumDepthInMeters`, `decimalLongitude`, `decimalLatitude`, `coordinateUncertaintyInMeters`, `footprintWKT` and `footprintSRS`. Addtionally in the Event core, it is recommended to further include information regarding `license`, `rightsHolder`, `bibliographicCitation`, `institutionID`, `datasetID`, `institutionCode` and `datasetName`.
 
 | eventID                                    | parentEventID            | eventDate  | habitat  | fieldNotes | countryCode | minimumDepthInMeters | maximumDepthInMeters | decimalLatitude | decimalLongitude | coordinateUncertaintyInMeters | footprintWKT                                                                      | footprintSRS |
 |--------------------------------------------|--------------------------|------------|----------|------------|-------------|------------------|----------------------|-----------------|------------------|-------------------------------|-----------------------------------------------------------------------------------|--------------|
@@ -311,7 +383,7 @@ The Occurrence extension table contain data for each occurrence with an `occurre
 
 **extendedMeasurementOrFact (eMoF) extension:**
 
-The eMoF table contains the measurement information and data of each occurrence. This extension is also linked to the Event core using the `eventID`, and linked to the Occurrence table using the `occurrenceID`. The various measurements are populated with `measurementType`, `measurementTypeID`, `measurementUnit`, `measurementUnitID`, `measurementValue`, `measurementValueID`, `measurementAccuracy`, `measurementMethod`, `measurementDeterminedBy` and `measurementDeterminedDate`. The example dataset of [Seagrass Monitoring at Chengue Bay, Colombia](http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia) recorded a number of measurements and can be used as an example of how to populate the respective fields. Other possible `measurementTypes` not captured in this example may include percent cover, canopy height, and of course any other biotic/abiotic measurements.
+The eMoF table contains the measurement information and data of each occurrence. This extension is linked to the Event core using the `eventID`, and linked to the Occurrence table using the `occurrenceID`. The various measurements are populated with `measurementType`, `measurementTypeID`, `measurementUnit`, `measurementUnitID`, `measurementValue`, `measurementValueID`, `measurementAccuracy`, `measurementMethod`, `measurementDeterminedBy` and `measurementDeterminedDate`. The example dataset [Seagrass Monitoring at Chengue Bay, Colombia](http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia) recorded a number of measurements and can be used as an example of how to populate the respective fields. Other possible `measurementTypes` not captured in this example may include habitat, percent cover, canopy height, and of course any other biotic/abiotic measurements.
 
 | eventID                  | occurrenceID                | measurementID                               | measurementType                       | measurementTypeID                                        | measurementValue | measurementUnit         | measurementUnitID                                    |
 |--------------------------|-----------------------------|---------------------------------------------|---------------------------------------|----------------------------------------------------------|------------------|-------------------------|------------------------------------------------------|
@@ -328,9 +400,23 @@ The eMoF table contains the measurement information and data of each occurrence.
 | USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassRIZ    | Dry biomass of the rizome             | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.02725          | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
 | USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassOTH    | Dry biomass of other seagrass species | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0                | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
 
-#### Zooplankton biomass and diversity
+#### Zooplankton biomass and diversity {.unlisted .unnumbered}
 
 Here we will encode zooplankton observation and environmental data into Darwin Core. Extracts from the actual dataset [LifeWatch observatory data: zooplankton observations by imaging (ZooScan) in the Belgian Part of the North Sea](https://obis.org/dataset/afa5b0e8-826d-4433-b698-beb176ef7880), are used as an example. As with the phytoplankton example, zooplankton data should also adhere to guidelines by Martin-Cabrera et al., 2022: [Best practices and recommendations for plankton imaging data management: Ensuring effective data flow towards European data infrastructures. Version 1.](http://dx.doi.org/10.25607/OBP-1742). These Best Practices indicate that for imaging data like this example, the fields `identificationVerificationStatus` and `identifiedBy` are crucial to know whether the data has been validated, and by whom. `identificationReferences` is used to document the citation or algorithm software used in identification. When possible, `associatedMedia` should also be populated with the persistent URL of annotated images.
+
+```{r echo=FALSE}
+downloadthis::download_link(
+  link = "https://ipt.vliz.be/eurobis/archive.do?r=lifewatch_zooplankton&v=1.0",
+  button_label = "Download dataset DwC-A .zip",
+  button_type = "default",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE,
+  class = "hvr-sweep-to-left",
+    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
+            margin-top: 5px; margin-bottom: 20px;"
+)
+```
 
 **Event core:**
 
@@ -358,10 +444,10 @@ The Occurrence extension contains data of each occurrence with an `occurrenceID`
 
 The eMoF extension table contains the measurement information and data of each occurrence. This extension is also linked to the Event core using the `eventID`, and linked to the Occurrence table using the `occurrenceID`. The various measurements are populated with `measurementType`, `measurementTypeID`, `measurementUnit`, `measurementUnitID`, `measurementValue`, `measurementValueID`, `measurementAccuracy`, `measurementMethod`, `measurementDeterminedBy` and `measurementDeterminedDate`. The example dataset of [LifeWatch observatory data: zooplankton observations by imaging (ZooScan) in the Belgian Part of the North Sea](https://obis.org/dataset/afa5b0e8-826d-4433-b698-beb176ef7880) recorded some ENV-DATA and organism measurements the can be used as an example of how to populate the respective fields, including conductivity of the water body; concentration of chlorophyll-a per unit volume of the water body; sampling instrument name; sampling net mesh size; lifestage of the organism observed; and abundance of the organism observed.
 
-| id    | occurrenceID    | measurementType  | measurementTypeID | measurementValue | measurementValueID  | measurementUnit      | measurementUnitID | measurementDeterminedBy   | measurementMethod   |
+| eventID    | occurrenceID    | measurementType  | measurementTypeID | measurementValue | measurementValueID  | measurementUnit      | measurementUnitID | measurementDeterminedBy   | measurementMethod   |
 |---------------------------|------------------|--------------------|-----------------------|------------------|---------------------------------------|----------------------|-------------------------|---------------------------|------------------|
-| TripNR3256TripStationNR17157MidasTripActionID106326  |     | Sampling instrument name  | <http://vocab.nerc.ac.uk/collection/Q01/current/Q0100002/> | Planktonnet WP2  | <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0979/  | |  |  |  |
-| TripNR3256TripStationNR17157MidasTripActionID106326  |     | Sampling net mesh size    | <http://vocab.nerc.ac.uk/collection/Q01/current/Q0100015/> | 200 |  | micrometer | <http://vocab.nerc.ac.uk/collection/P06/current/UMIC/>  | |  |
+| TripNR3256TripStationNR17157MidasTripActionID106326  |     | Sampling instrument name  | <http://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/> | Planktonnet WP2  | <<http://vocab.nerc.ac.uk/collection/L22/current/TOOL0979/>  | |  |  |  |
+| TripNR3256TripStationNR17157MidasTripActionID106326  |     | Sampling net mesh size    | <https://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE1/> | 200 |  | micrometer | <http://vocab.nerc.ac.uk/collection/P06/current/UMIC/>  | |  |
 | TripNR3529TripStationNR19242MidasTripActionID109631UW|     | Conductivity of the water body  | <http://vocab.nerc.ac.uk/collection/P01/current/CNDCZZ01/> | 4.05 |  | Siemens per metre    | <http://vocab.nerc.ac.uk/collection/P06/current/UECA/> | Flanders Marine Institute | Electrical conductivity of the water body by thermosalinograph, based on the UnderWaySystem of the ship |
 | TripNR3529TripStationNR19243MidasTripActionID109634  |     | Concentration of chlorophyll-a per unit volume of the water body | <http://vocab.nerc.ac.uk/collection/P01/current/CPHLHPP1/> | 1.42 |  | Micrograms per litre | <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> | Flanders Marine Institute | Concentration of chlorophyll-a per unit volume of the water body [particulate >GF/F phase] by filtration, acetone extraction and high performance liquid chromatography (HPLC) |
 | TripNR2547TripStationNR9781MidasTripActionID23024    | TripNR2547TripStationNR9781MidasTripActionID23024occurenceIDTA23024_Annelida_sub2_130 | Lifestage  | <http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/> | unspecified | <http://vocab.nerc.ac.uk/collection/S11/current/S1152/>    |  |  | Flanders Marine Institute | identified and counted by image analysis and normalised to a unit volume of water body, validated by human |
