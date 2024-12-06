@@ -1,3 +1,4 @@
+fig:fig-wkt
 introduction
 guidelines-on-the-sharing-and-use-of-data-in-obis
 acknowledgements
