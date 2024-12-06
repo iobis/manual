@@ -53,11 +53,11 @@
   <li><a href="checklist.html">Is there a checklist of all required Darwin Core fields for OBIS?</a></li>
   <li><a href="data_standards.html">How does data flow in OBIS?</a></li>
   <li><details>
-  <summary>Can I add polygon data to OBIS?</summary>
+  <summary>Can I add polygon or line transect data to OBIS?</summary>
 
-  Yes, polygons, lines, or combinations of polygon, line, and/or point data can be added to OBIS by using the `footprintWKT` field. This is can be used to record tracks, transects, tows, trawls, habitat extent, or when an exact location is not known. Midpoints of polygons can be added to the required fields `decimalLongitude` and `decimalLatitude`.
+  Yes, polygons, lines, or combinations of polygon, line, and point data can be added to OBIS by using the `footprintWKT` field. This is can be used to record tracks, transects, tows, trawls, habitat extent, or when an exact location is not known. Midpoints of polygons can be added to the required fields `decimalLongitude` and `decimalLatitude`.
   
-  WKT strings can be generated using the [OBIS Map Tool](https://obis.org/maptool). The tool can also calculate a midpoint and a radius, which is added to `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively. There is also an [`obistools` R function](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) to calculate the centroid and radius for WKT polygons.
+  WKT strings can be generated using the [OBIS Map Tool](https://obis.org/maptool). The tool can also calculate a midpoint and a radius, which is added to `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively. There is also an [`obistools` R function](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) to calculate the centroid and radius for WKT geometries.
   </details></li>
   <li><a href="common_formatissues.html#missing-required-fields">What should I do if I do not have the data for required fields by OBIS?</a></li>
   <li><a href="identifiers.html#eventid">How do I construct an eventID?</a></li>
