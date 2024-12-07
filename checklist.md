@@ -15,6 +15,7 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 
 ```{r, echo=F}
 library(downloadthis)
+library(webshot)
 download_file(
     path = "docs/OBIS-termchecklist.csv",
     output_name = "OBISchecklist",
