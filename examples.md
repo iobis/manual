@@ -42,6 +42,7 @@
 In this section we will encode a fictional macroalgal survey dataset (Figure 9.1) into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an extendedMeasurementOrFact extension.
 
 ```{r fig-macroal, fig.cap = "*A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.*.",echo=FALSE, out.width = "95%"}
+library(webshot)
 knitr::include_graphics("images/dwca_macroalgae_survey.png")
 ```
 
@@ -148,6 +149,7 @@ As shown in previous examples, the MeasurementOrFact extension table contains ab
 In this section we will explore how to encode a marine mammal survey dataset into Darwin Core using the ENV-DATA approach. As an example, sections of the actual dataset [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans) are used.
 
 ```{r fig-cetus, fig.cap = "*A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions***.",echo=FALSE, out.width = "95%"}
+library(webshot)
 knitr::include_graphics("images/ENV_example_CETUS.png")
 ```
 

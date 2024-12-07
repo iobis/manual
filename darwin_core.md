@@ -249,6 +249,7 @@ The name of the place or location can be provided in `locality`, and if possible
 [Well-Known Text](https://en.wikipedia.org/wiki/Well-known_text) (WKT) provides a representation of the geoemtry of a location and can be provided in `footprintWKT`. This is particularly useful for tracks, transects, tows, trawls, habitat extents, or when an exact location is not known. You can use the [OBIS Maptool](https://obis.org/maptool) (Figure 2.1) to generate WKT, calculate midpoints of lines and polygons, and determine the radius of a polygon or line. Midpoints can used to populate `decimalLongitude` and `decimalLatitude`, while the radius can be used to populate `coordinateUncertaintyInMeters`. Additionally, an [obistools R function](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) can calculate centroids and radii. To visualize and share WKT strings, try [wktmap.com](https://wktmap.com).
 
 ```{r fig-wkt, fig.cap = "*A screenshot demonstrating the OBIS Maptool's WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively*.",echo=FALSE, out.width = "90%"}
+library(webshot)
 knitr::include_graphics("images/wkttool2.png")
 ```
 
@@ -276,6 +277,7 @@ Keep in mind while filling in [`minimumDepthInMeters`](http://rs.tdwg.org/dwc/te
 The `minimumDistanceAboveSurfaceInMeters` and `maximumDistanceAboveSurfaceInMeters` is the distance, in meters, above or below a reference surface or reference point. The reference surface is determined by the depth or elevation. If the depth and elevation are 0, then the reference surface is the sea surface. If a depth is given (i.e. value >0), the reference surface is the location of the depth. This can be especially useful for sediment cores taken from the sea bottom (scenario 3 in Figure 2.2 and table below). In these cases the `minimumDistanceAboveSurfaceInMeters`/`maximumDistanceAboveSurfaceInMeters` would be a negative value. If no depth is given, then the elevation is the reference surface (scenario 5).
 
 ![](images/Depth-figure-updated-scen4.png)```{r fig-depth, fig.cap = "*Illustration of different scenarios for filling depth-related DwC fields. Scenarios include: 1) a biological organism observed at a specific depth below the sea surface, 2) a bird observed above the sea surface, 3) a sediment core taken from the seabed at a given depth, 4) a net of a given length pulled through the water column at a certain depth, 5) a bird observed above land near the sea surface. Reference points (yellow crosses) do not correspond with a DwC term, but are useful to determine which depth fields may be needed to understand the location of an occurrence. Depth values are always positive, while distances above a surface can be either negative or positive, depending on whether the occurrence is above or below the reference point.*",echo=FALSE, out.width = "80%"}
+library(webshot)
 knitr::include_graphics("images/Depth-figure-updated-scen4.png")
 ```
 
