@@ -50,6 +50,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/font-awesome-6.5.2/js/script.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBW0JFMNBJ"></script>
 <script>
@@ -361,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:darkblue;overflow:visible;position:relative;"><path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/></svg> Always be sure to fill in the <code>georeferenceSources</code> field to indicate the source(s) you used to obtain locality information when appropriate</p>
 </div>
 <ul>
-<li>If you have a set of points, a line, or a polygon (perhaps from the Map tool), you can find the centroid of the features using either <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> or <a href="https://postgis.net/docs/ST_PointOnSurface.html">PostGIS</a>, and then enter this coordinate into the <code>decimalLatitude</code> and <code>decimalLongitude</code> fields. This PostGIS guideline will help you select a centroid that is guaranteed to fall within your designated area.</li>
+<li>If you have a set of points, lines, or polygons (perhaps from the Map tool), you can find the centroid of the features using either <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> or <a href="https://postgis.net/docs/ST_PointOnSurface.html">PostGIS</a>, and then enter this coordinate into the <code>decimalLatitude</code> and <code>decimalLongitude</code> fields. This PostGIS guideline will help you select a centroid that is guaranteed to fall within your designated area.</li>
 <li>Estimate <code>coordinateUncertaintyinMeters</code> that is wide enough to cover the area
 <ul>
 <li>If the location is provided as an array or WKT format, you can use R package <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> to obtain coordinate uncertainty.</li>
@@ -653,14 +654,15 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["manual.pdf"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
 },
 "toc": {
 "collapse": "none"
-}
+},
+"always_allow_html": true
 });
 });
 </script>

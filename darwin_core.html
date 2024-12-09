@@ -50,6 +50,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/font-awesome-6.5.2/js/script.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBW0JFMNBJ"></script>
 <script>
@@ -806,7 +807,7 @@ MULTIPOLYGON (((30 20, 45 40, 10 40, 30 20)),((15 5, 40 10, 10 20, 5 10, 15 5)))
 <p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018">Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018</a>.</em></p>
 <p>Keep in mind while filling in <a href="http://rs.tdwg.org/dwc/terms/maximumDepthInMeters"><code>minimumDepthInMeters</code></a> and <a href="http://rs.tdwg.org/dwc/terms/minimumDepthInMeters"><code>maximumDepthInMeters</code></a> that this should be the depth at which the <strong>sample was taken</strong> and not the water column depth at that location. When filling in any depth fields (<code>minimumDepthInMeters</code>, <code>maximumDepthInMeters</code>, <a href="http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters"><code>minimumDistanceAboveSurfaceInMeters</code></a>, and <a href="http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters"><code>maximumDistanceAboveSurfaceInMeters</code></a>), you should also consider which information is needed to fully understand the data (Figure 2.2). In most cases (e.g. scenario 1 and 4), providing <code>minimumDepthInMeters</code> and <code>maximumDepthInMeters</code> is sufficient for observations of organisms at particular depths. However, in cases where an occurrence is above the sea surface, e.g. flying birds (scenario 2 and 5), you should populate <code>minimumDistanceAboveSurfaceInMeters</code>, <code>maximumDistanceAboveSurfaceInMeters</code>, and, where relevant, you should also include <a href="https://dwc.tdwg.org/list/#dwc_minimumElevationInMeters"><code>minimumElevationInMeters</code></a> and <a href="https://dwc.tdwg.org/list/#dwc_maximumElevationInMeters"><code>maximumElevationInMeters</code></a>.</p>
 <p>The <code>minimumDistanceAboveSurfaceInMeters</code> and <code>maximumDistanceAboveSurfaceInMeters</code> is the distance, in meters, above or below a reference surface or reference point. The reference surface is determined by the depth or elevation. If the depth and elevation are 0, then the reference surface is the sea surface. If a depth is given (i.e. value &gt;0), the reference surface is the location of the depth. This can be especially useful for sediment cores taken from the sea bottom (scenario 3 in Figure 2.2 and table below). In these cases the <code>minimumDistanceAboveSurfaceInMeters</code>/<code>maximumDistanceAboveSurfaceInMeters</code> would be a negative value. If no depth is given, then the elevation is the reference surface (scenario 5).</p>
-<p><img src="images/Depth-figure-updated-scen4.png" /><code>{r fig-depth, fig.cap = "*Illustration of different scenarios for filling depth-related DwC fields. Scenarios include: 1) a biological organism observed at a specific depth below the sea surface, 2) a bird observed above the sea surface, 3) a sediment core taken from the seabed at a given depth, 4) a net of a given length pulled through the water column at a certain depth, 5) a bird observed above land near the sea surface. Reference points (yellow crosses) do not correspond with a DwC term, but are useful to determine which depth fields may be needed to understand the location of an occurrence. Depth values are always positive, while distances above a surface can be either negative or positive, depending on whether the occurrence is above or below the reference point.*",echo=FALSE, out.width = "80%"} knitr::include_graphics("images/Depth-figure-updated-scen4.png")</code></p>
+<p><img src="images/Depth-figure-updated-scen4.png" /><code>{r fig-depth, fig.cap = "*Illustration of different scenarios for filling depth-related DwC fields. Scenarios include: 1) a biological organism observed at a specific depth below the sea surface, 2) a bird observed above the sea surface, 3) a sediment core taken from the seabed at a given depth, 4) a net of a given length pulled through the water column at a certain depth, 5) a bird observed above land near the sea surface. Reference points (yellow crosses) do not correspond with a DwC term, but are useful to determine which depth fields may be needed to understand the location of an occurrence. Depth values are always positive, while distances above a surface can be either negative or positive, depending on whether the occurrence is above or below the reference point.*",echo=FALSE, out.width = "80%"} library(webshot) knitr::include_graphics("images/Depth-figure-updated-scen4.png")</code></p>
 <p>Example values for each depth, distance above surface, and elevation field for the scenarios in the figure above are provided in the table below:</p>
 <table>
 <colgroup>
@@ -956,14 +957,15 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["manual.pdf"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
 },
 "toc": {
 "collapse": "none"
-}
+},
+"always_allow_html": true
 });
 });
 </script>

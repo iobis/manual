@@ -1,4 +1,6 @@
 fig:fig-wkt
+fig:fig-macroal
+fig:fig-cetus
 introduction
 guidelines-on-the-sharing-and-use-of-data-in-obis
 acknowledgements
@@ -121,19 +123,6 @@ historical-data
 spatial
 missing-required-fields
 dataset-examples-env-data
-fish-abundance-and-distribution
-hard-coral-cover-and-composition
-invertebrates-abundance-and-distribution
-macroalgae-canopy-cover-and-composition
-mangroves-cover-and-composition
-marine-birds-abundance-and-distribution
-marine-mammals-abundance-and-distribution
-marine-turtles-abundance-and-distribution
-survey-and-sighting-data
-microbes-biomass-and-diversity
-phytoplankton-biomass-and-diversity
-seagrass-cover-and-composition
-zooplankton-biomass-and-diversity
 multimedia-data-acoustic-imaging
 habitat-data
 tracking-data
