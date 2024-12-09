@@ -20,8 +20,8 @@ header-includes:
   - \setlist[itemize,2]{label=--}
   - \setlist[itemize,3]{label=*}
 output:
-  bookdown::pdf_book:
-    template: null
+  #bookdown::pdf_book:
+   # template: null
   bookdown::gitbook:
     toc_depth: 3
     includes:
