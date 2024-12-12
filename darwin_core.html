@@ -747,9 +747,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><code>locationID</code> is an identifier for the set of location information (e.g. station ID, or MRGID from <a href="http://www.marineregion.org">marineregions</a>), for example the <a href="http://www.marineregions.org/gazetteer.php?p=details&amp;id=3956">Balearic Plain</a> has MRGID: <a href="http://marineregions.org/mrgid/3956">http://marineregions.org/mrgid/3956</a>.</p>
 <p><a href="https://en.wikipedia.org/wiki/Well-known_text">Well-Known Text</a> (WKT) provides a representation of the geoemtry of a location and can be provided in <code>footprintWKT</code>. This is particularly useful for tracks, transects, tows, trawls, habitat extents, or when an exact location is not known. You can use the <a href="https://obis.org/maptool">OBIS Maptool</a> (Figure 2.1) to generate WKT, calculate midpoints of lines and polygons, and determine the radius of a polygon or line. Midpoints can used to populate <code>decimalLongitude</code> and <code>decimalLatitude</code>, while the radius can be used to populate <code>coordinateUncertaintyInMeters</code>. Additionally, an <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools R function</a> can calculate centroids and radii. To visualize and share WKT strings, try <a href="https://wktmap.com">wktmap.com</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:fig-wkt"></span>
-<img src="images/wkttool2.png" alt="*A screenshot demonstrating the OBIS Maptool's WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively*." width="90%" />
+<img src="images/wkttool2.png" alt="A screenshot demonstrating the OBIS Maptool's WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively." width="90%" />
 <p class="caption">
-Figure 2.1: <em>A screenshot demonstrating the OBIS Maptool’s WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in <code>decimalLongitude</code>, <code>decimalLatitude</code>, and <code>coordinateUncertaintyInMeters</code> respectively</em>.
+Figure 2.1: A screenshot demonstrating the OBIS Maptool’s WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in <code>decimalLongitude</code>, <code>decimalLatitude</code>, and <code>coordinateUncertaintyInMeters</code> respectively.
 </p>
 </div>
 <p>Some examples of WKT strings:</p>
@@ -957,7 +957,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["manual.pdf"],
 "search": {
 "engine": "fuse",
 "options": null
