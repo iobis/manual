@@ -1,5 +1,5 @@
 --- 
-title: "The OBIS manual"
+title: "The OBIS Manual"
 site: "bookdown::bookdown_site"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 geometry: "left=2.4cm,right=2.4cm,top=2.8cm,bottom=2.8cm"

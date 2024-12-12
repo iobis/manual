@@ -98,3 +98,6 @@ table {
 .marker-orange {
   color: orange;
 }
+.book .book-header h1 {
+  opacity: 1 !important;
+}
