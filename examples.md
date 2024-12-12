@@ -41,7 +41,7 @@
 
 In this section we will encode a fictional macroalgal survey dataset (Figure 9.1) into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an extendedMeasurementOrFact extension.
 
-```{r fig-macroal, fig.cap = "*A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.*.",echo=FALSE, out.width = "95%"}
+```{r fig-macroal, fig.cap = "A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.", echo=FALSE, out.width = "95%"}
 library(webshot)
 knitr::include_graphics("images/dwca_macroalgae_survey.png")
 ```
@@ -102,10 +102,11 @@ The example for ENV-DATA collected with marine bird sightings/occurrences is bas
 
 For this dataset, human observation recorded individual bird sightings (thus, each specimen is a single occurrence). The dataset contains abiotic measurements (ENV-DATA) which are related to each individual sighting, instead of an entire sample. Therefore, we can create an Occurrence core with an eMoF extension that contain the abiotic environmental measurements or facts.
 
-```{r echo=FALSE}
+```{r echo=FALSE, results='asis'}
 library(webshot)
 library(downloadthis)
-downloadthis::download_link(
+if (knitr::is_html_output()) {
+  downloadthis::download_link(
   link = "https://www.marine.csiro.au/ipt/archive.do?r=in2017_v02_wov&v=1.15",
   button_label = "Download dataset DwC-A .zip",
   button_type = "default",
@@ -115,7 +116,9 @@ downloadthis::download_link(
   class = "hvr-sweep-to-left",
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
-)
+)} else {
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+}
 ```
 
 **Occurrence core:**
@@ -148,15 +151,16 @@ As shown in previous examples, the MeasurementOrFact extension table contains ab
 
 In this section we will explore how to encode a marine mammal survey dataset into Darwin Core using the ENV-DATA approach. As an example, sections of the actual dataset [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans) are used.
 
-```{r fig-cetus, fig.cap = "*A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions***.",echo=FALSE, out.width = "95%"}
+```{r fig-cetus, fig.cap = "A representation of cetacean observation events from CETUS: Cetacean monitoring surveys in the Eastern North Atlantic, presenting the route Madeira as a site with three cruises (zones). Each Cruise is divided into different Transects and each transect contains a number of Positions.", echo=FALSE, out.width = "95%"}
 library(webshot)
 knitr::include_graphics("images/ENV_example_CETUS.png")
 ```
 
-```{r echo=FALSE}
+```{r echo=FALSE, results='asis'}
 library(webshot)
 library(downloadthis)
-downloadthis::download_link(
+if (knitr::is_html_output()) {
+  downloadthis::download_link(
   link = "https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0",
   button_label = "Download dataset DwC-A .zip",
   button_type = "default",
@@ -166,7 +170,9 @@ downloadthis::download_link(
   class = "hvr-sweep-to-left",
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
-)
+)} else {
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+}
 ```
 
 **Event core:**
@@ -218,10 +224,10 @@ And finally, the extendedMeasurementOrFact extension table has attributes of the
 
 This section deals with encoding survey and/or sighting data of sea turtles into Darwin Core using the ENV-DATA approach. Extracts from the actual dataset [Presence of sea turtles collected through Fixed-Line-Transect monitoring across the Western Mediterranean Sea (Civitavecchia-Barcelona route) between 2013 and 2017](https://ipt.vliz.be/eurobis/resource?r=cc_flt_cbar_13-17#anchor-description) are used as an example.
 
-```{r echo=FALSE}
+```{r echo=FALSE, results='asis'}
 library(webshot)
 library(downloadthis)
-downloadthis::download_link(
+if (knitr::is_html_output()) {downloadthis::download_link(
   link = "https://ipt.vliz.be/eurobis/archive.do?r=cc_flt_cbar_13-17&v=1.0",
   button_label = "Download dataset DwC-A .zip",
   button_type = "default",
@@ -232,6 +238,9 @@ downloadthis::download_link(
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
 )
+} else {
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+}
 ```
 
 **Event core:**
@@ -289,10 +298,11 @@ In addition to the measurements recorded by the example dataset, other measureme
 
 This example deals with encoding phytoplankton observation data, including environmental data, into Darwin Core. Extracts from the actual dataset [LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea](https://obis.org/dataset/956d618f-91dc-4930-a253-cdf80ddb9371), are used as an example. Phytoplankton data should adhere to guidelines by Martin-Cabrera et al., 2022: [Best practices and recommendations for plankton imaging data management: Ensuring effective data flow towards European data infrastructures. Version 1](http://dx.doi.org/10.25607/OBP-1742). Specific guidelines for the Occurrence and eMoF tables are documented in this publication, and we emphasize important fields in this example.
 
-```{r echo=FALSE}
+```{r echo=FALSE, results='asis'}
 library(webshot)
 library(downloadthis)
-downloadthis::download_link(
+if (knitr::is_html_output()) {
+  downloadthis::download_link(
   link = "https://ipt.vliz.be/eurobis/archive.do?r=fyto&v=1.0",
   button_label = "Download dataset DwC-A .zip",
   button_type = "default",
@@ -302,7 +312,9 @@ downloadthis::download_link(
   class = "hvr-sweep-to-left",
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
-)
+)} else {
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+}
 ```
 
 **Event core:**
@@ -351,10 +363,11 @@ The structure of the Event, Occurrence and extendedMeasurementOrFact extensions 
 
 Here we align seagrass survey data to Darwin Core according to the ENV-DATA approach and using sections of the actual dataset [Seagrass Monitoring at Chengue Bay, Colombia](http://ipt.iobis.org/caribbeanobis/resource?r=seagrasssurvey_colombia) as an example.
 
-```{r echo=FALSE}
+```{r echo=FALSE, results='asis'}
 library(webshot)
 library(downloadthis)
-downloadthis::download_link(
+if (knitr::is_html_output()) {
+  downloadthis::download_link(
   link = "https://ipt.iobis.org/caribbeanobis/archive.do?r=seagrasssurvey_colombia&v=1.6",
   button_label = "Download dataset DwC-A .zip",
   button_type = "default",
@@ -364,7 +377,9 @@ downloadthis::download_link(
   class = "hvr-sweep-to-left",
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
-)
+)} else {
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+}
 ```
 
 **Event core:**
@@ -414,10 +429,11 @@ The eMoF table contains the measurement information and data of each occurrence.
 
 Here we will encode zooplankton observation and environmental data into Darwin Core. Extracts from the actual dataset [LifeWatch observatory data: zooplankton observations by imaging (ZooScan) in the Belgian Part of the North Sea](https://obis.org/dataset/afa5b0e8-826d-4433-b698-beb176ef7880), are used as an example. As with the phytoplankton example, zooplankton data should also adhere to guidelines by Martin-Cabrera et al., 2022: [Best practices and recommendations for plankton imaging data management: Ensuring effective data flow towards European data infrastructures. Version 1.](http://dx.doi.org/10.25607/OBP-1742). These Best Practices indicate that for imaging data like this example, the fields `identificationVerificationStatus` and `identifiedBy` are crucial to know whether the data has been validated, and by whom. `identificationReferences` is used to document the citation or algorithm software used in identification. When possible, `associatedMedia` should also be populated with the persistent URL of annotated images.
 
-```{r echo=FALSE}
+```{r echo=FALSE, results='asis'}
 library(webshot)
 library(downloadthis)
-downloadthis::download_link(
+if (knitr::is_html_output()) {
+  downloadthis::download_link(
   link = "https://ipt.vliz.be/eurobis/archive.do?r=lifewatch_zooplankton&v=1.0",
   button_label = "Download dataset DwC-A .zip",
   button_type = "default",
@@ -427,7 +443,9 @@ downloadthis::download_link(
   class = "hvr-sweep-to-left",
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
-)
+)} else {
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+}
 ```
 
 **Event core:**

@@ -248,7 +248,9 @@ The name of the place or location can be provided in `locality`, and if possible
 
 [Well-Known Text](https://en.wikipedia.org/wiki/Well-known_text) (WKT) provides a representation of the geoemtry of a location and can be provided in `footprintWKT`. This is particularly useful for tracks, transects, tows, trawls, habitat extents, or when an exact location is not known. You can use the [OBIS Maptool](https://obis.org/maptool) (Figure 2.1) to generate WKT, calculate midpoints of lines and polygons, and determine the radius of a polygon or line. Midpoints can used to populate `decimalLongitude` and `decimalLatitude`, while the radius can be used to populate `coordinateUncertaintyInMeters`. Additionally, an [obistools R function](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) can calculate centroids and radii. To visualize and share WKT strings, try [wktmap.com](https://wktmap.com).
 
-```{r fig-wkt, fig.cap = "*A screenshot demonstrating the OBIS Maptool's WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively*.",echo=FALSE, out.width = "90%"}
+```{r fig-wkt, echo=FALSE, out.width = "90%"}
+#| fig.cap = knitr::asis_output("A screenshot demonstrating the OBIS Maptool's WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively.")
+
 library(webshot)
 knitr::include_graphics("images/wkttool2.png")
 ```
