@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Other data types | The OBIS Manual</title>
   <meta name="description" content="Other data types | The OBIS Manual" />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Other data types | The OBIS Manual" />
   <meta property="og:type" content="book" />
@@ -357,7 +357,7 @@ Martin-Cabrera et al. (2022) have created a best practices document for <a href
 <h2><span class="header-section-number">11.2</span> Habitat data<a href="other_data_types.html#habitat-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Event Core is perfect for enriching OBIS with interpreted information such as biological community, biotope or habitat type (collectively referred to as ‘habitats’). However, the unconstrained nature of the terms <code>measurementTypeID</code>, <code>measurementValueID</code>, and <code>measurementUnitID</code> leads to a risk that habitats measurements are structured inconsistently within the Darwin Core Archive standard and as a result, are not easily discoverable, understood or usable.</p>
 <p>As a result, members of the European Marine Observation and Data Network (EMODnet) Seabed Habitats and Biology thematic groups have produced a technical report <a href="https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core">Duncan et al. (2021)</a> that provides guidance on using the Darwin Core eMoF extension to submit habitat data to OBIS, following the ENV-DATA approach and using Seabed Habitats as a use case. Note that the guidelines and structuring approach outlined in this document has not yet been approved or accepted at the global level and is only a recommended approach as agreed upon by EMODnet Seabed Habitats, EMODnet Biology, and OBIS. The implementation at the EurOBIS level may be considered a pilot.</p>
-<p>The overarching principles are summarised here. Note that because of the numerous classification systems and priority habitat lists in existence, it is not possible to point to a single vocabulary for populating each of <code>measurementTypeID</code>, <code>measurementValueID</code> and <code>measurementUnitID</code>, as for other measurement types, so below are the <em>types</em> of information to include, with an example, as recommended by <a href="https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core">Duncan et al. (2021)</a>:</p>
+<p>The overarching principles are summarised here. Note that because of the numerous classification systems and priority habitat lists in existence, it is not possible to point to a single vocabulary for populating each of <code>measurementTypeID</code>, <code>measurementValueID</code> and <code>measurementUnitID</code>, as for other measurement types. Instead, we show examples below for the <em>types</em> of information to include when documenting habitat data, as recommended by <a href="https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core">Duncan et al. (2021)</a>:</p>
 <ul>
 <li><code>measurementTypeID</code>: A machine-readable URI or DOI reference describing the (version of the) classification system itself. For example: <a href="https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/">https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/</a></li>
 <li><code>measurementValueID</code>: If available, a machine-readable URI describing the habitat class in “measurementValue”. For example: <a href="https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36">https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36</a></li>
@@ -369,18 +369,71 @@ Martin-Cabrera et al. (2022) have created a best practices document for <a href
 <li>recommended vocabularies and terms for common habitat classification systems</li>
 <li>example eMoF table</li>
 </ul>
-<p>For filling measurementType with habitat-related data and/or the dwc:habitat column, you should reference the <a href="http://vocab.nerc.ac.uk/search_nvs/sxv/?searchstr=habitat&amp;options=identifier,preflabel,altlabel,definition">NERC vocabulary search</a>. While the <a href="https://repository.library.noaa.gov/view/noaa/27552">Coastal and Marine Ecological Classification Standard (CMECS)</a> and the <a href="https://sites.google.com/site/environmentontology/?pli=1">Environment Ontology (ENVO)</a> also contain habitat vocabularies, OBIS recommends the use of NERC vocabulary. If other vocabularies are used, please provide the NERC vocabulary equivalent as additional records in the eMoF table.</p>
+<p>For populating <code>measurementType</code> and <code>measurementTypeID</code> with habitat-related data or the dwc::Occurrence::<code>habitat</code> column, you can reference:</p>
+<ul>
+<li><a href="http://vocab.nerc.ac.uk/search_nvs/sxv/?searchstr=habitat&amp;options=identifier,preflabel,altlabel,definition">NERC vocabulary habitat collections</a>: EUNIS habitat descriptions (<a href="https://vocab.nerc.ac.uk/collection/C35/current/">C35</a>), HELCOM (<a href="https://vocab.nerc.ac.uk/collection/M23/current/">M23</a>), or Marine Habitat Classification for Britain and Ireland Habitat (<a href="https://vocab.nerc.ac.uk/collection/M24/current/">M24</a>)</li>
+<li><a href="https://repository.library.noaa.gov/view/noaa/27552">Coastal and Marine Ecological Classification Standard</a> (CMECS): note that CMECS URIs are in development, currently available <a href="https://github.com/NOAA-OCM/cmecs/blob/main/CMECS_Catalog_v1.1.0/CMECS_Catalog_v1.1.0-All.csv">here</a></li>
+<li><a href="https://sites.google.com/site/environmentontology/?pli=1">Environment Ontology (ENVO)</a>: search for terms <a href="https://www.ebi.ac.uk/ols4/ontologies/envo">here</a></li>
+</ul>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>measurementType</th>
+<th>measurementTypeID</th>
+<th>measurementValue</th>
+<th>measurementValueID</th>
+<th>measurementMethod</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Description of habitat by classification to a term from EUNIS (version 2007-11)</td>
+<td><a href="https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/" class="uri">https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/</a></td>
+<td>A5.611 (Sabellaria spinulosa on stable circalittoral mixed sediment)</td>
+<td><a href="http://dd.eionet.europa.eu/vocabularyconcept/biodiversity/eunishabitats/A5.611" class="uri">http://dd.eionet.europa.eu/vocabularyconcept/biodiversity/eunishabitats/A5.611</a></td>
+<td>Derived via lookup from UK habitat class (Surv1_meas613) - exact match</td>
+</tr>
+<tr class="even">
+<td>Description of habitat by classification to a term from EU Habitats Directive Annex I</td>
+<td><a href="http://dd.eionet.europa.eu/vocabulary/biodiversity/n2000habitats/" class="uri">http://dd.eionet.europa.eu/vocabulary/biodiversity/n2000habitats/</a></td>
+<td>1170 (Reefs)</td>
+<td><a href="http://dd.eionet.europa.eu/vocabularyconcept/biodiversity/n2000habitats/1170" class="uri">http://dd.eionet.europa.eu/vocabularyconcept/biodiversity/n2000habitats/1170</a></td>
+<td>Derived via lookup from UK habitat class (Surv1_meas613 ) - source class contained within destination class</td>
+</tr>
+<tr class="odd">
+<td>Description of substrate classification to a term from CMECS (v1.1.0)</td>
+<td><a href="https://w3id.org/CMECS/CMECS_00000803" class="uri">https://w3id.org/CMECS/CMECS_00000803</a></td>
+<td>CMECS_00001673 (Very Coarse Gravel)</td>
+<td><a href="https://w3id.org/CMECS/CMECS_00001673" class="uri">https://w3id.org/CMECS/CMECS_00001673</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Description of marine environmentalal zone by classification to a term from ENVO (v2024-07-01)</td>
+<td><a href="http://purl.obolibrary.org/obo/ENVO_01001201" class="uri">http://purl.obolibrary.org/obo/ENVO_01001201</a></td>
+<td>Low tide zone</td>
+<td><a href="http://purl.obolibrary.org/obo/ENVO_00000319" class="uri">http://purl.obolibrary.org/obo/ENVO_00000319</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="tracking-data" class="section level2 hasAnchor" number="11.3">
 <h2><span class="header-section-number">11.3</span> Tracking data<a href="other_data_types.html#tracking-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Encoding Tracking data into Darwin Core follows the same standards as that of survey/sighting data. Tracking data should additionally indicate the accuracy in latitudinal and longitudinal measurements received from the positioning system, grouped by location accuracy classes, recorded in the <code>coordinateUncertaintyInMeters</code> field. The Ocean Tracking Network (OTN) has developed some <a href="https://github.com/tdwg/dwc-for-biologging">guidelines</a> for formatting this type of data in Darwin Core. We summarize the main points below.</p>
+<p>Encoding Tracking data into Darwin Core follows the same standards as that of survey/sighting data. Tracking data should additionally indicate the accuracy in latitudinal and longitudinal measurements received from the positioning system, grouped by location accuracy classes, recorded in the <code>coordinateUncertaintyInMeters</code> field. The <a href="https://oceantrackingnetwork.org/">Ocean Tracking Network (OTN)</a> has developed some <a href="https://github.com/tdwg/dwc-for-biologging">guidelines</a> for formatting this type of data in Darwin Core. We summarize the main points below.</p>
 <p>Using Event core for tracking data is recommended as there can be multiple events involved in tracking an organism. There are capture/tag and release events, receiver deployment events, and detection occurrences. Note that the capture and release of an organism are not considered to be distinct Occurrence records because they are not natural occurrences. Thus, in the Event core table you may record unique events for:</p>
 <ul>
 <li>The capture of an animal</li>
 <li>The release of an animal</li>
 <li>The deployment of a listening (or receiver) station</li>
 </ul>
-<p>Information pertaining to a specific individual is linked by a unique <code>organismID</code>. You can use <code>eventID</code>s associated with a receiver to record detection occurrences in the Occurrence table. One organism may then have multiple occurrences (and thus multiple occurrenceIDs), but the same <code>organismID</code>. Any measurements for an organism taken during capture can be recorded in the extendedMeasurementsOrFact extension, linked to the core by the capture event’s <code>eventID</code> as well as the unique <code>organismID</code>. For more details, see the <a href="https://github.com/tdwg/dwc-for-biologging">DwC guidelines for biologging</a>.</p>
+<p>Information pertaining to a specific individual is linked by a unique <code>organismID</code>. You can use <code>eventID</code>s associated with a receiver to record detection occurrences in the Occurrence table. One organism may then have multiple occurrences (and thus multiple occurrenceIDs), but the same <code>organismID</code>. Any measurements for an organism taken during capture can be recorded in the extendedMeasurementsOrFact extension, linked to the core by the capture event’s <code>eventID</code> as well as the unique <code>organismID</code> and/or <code>occurrenceID</code>. For more details, see the <a href="https://github.com/tdwg/dwc-for-biologging">DwC guidelines for biologging</a>.</p>
 <p>Extracts from the extendedMeasurementOrFact Extension (eMoF) of the actual dataset <a href="https://www.marine.csiro.au/ipt/resource?r=ningaloo_outlook_turtle_tracking">Ningaloo Outlook turtle tracking of Green turtles (Chelonia mydas), Western Australia (2018-present)</a>, are shown as an example tracking dataset, following <a href="http://vocab.nerc.ac.uk/collection/R05/current/">ARGOS Location class codes</a>.</p>
 <p><strong>extendedMeasurementOrFact (eMoF) extension:</strong></p>
 <table style="width:100%;">
