@@ -14,10 +14,10 @@ While there are Core types and extensions (e.g., [Audubon Core](https://rs.gbif.
 
 [Martin-Cabrera et al., 2022](http://dx.doi.org/10.25607/OBP-1742) have produced a best practices for datasets with plankton imaging data that can also apply to acoustic and other imaging data types. Following their guidelines, we strongly recommend including the following terms in your Occurrence table for either of these data types:
 
-* [`basisOfRecord`](https://dwc.tdwg.org/terms/#dwc:basisOfRecord) - recommended best practice is to always use the term of `MachineObservation`, especially for imaging datasets derived from imaging instruments
-* [`identifiedBy`](https://dwc.tdwg.org/list/#dwc_identifiedBy) - name(s) of persons involved in verifying taxon identification, particularly if automatic identification was made by a software and then validated by a human
-* [`identificationVerificationStatus`](https://dwc.tdwg.org/list/#dwc_identificationVerificationStatus) - categorical indicator for the extent of taxonomic identification verification. Recommended to use PredictedByMachine or ValidatedByHuman
-* [`identificationReferences`](http://rs.tdwg.org/dwc/terms/identificationReferences) - references used in identification (e.g. citation and version of software or algorithm that identified taxa)
+- [`basisOfRecord`](https://dwc.tdwg.org/terms/#dwc:basisOfRecord) - recommended best practice is to always use the term of `MachineObservation`, especially for imaging datasets derived from imaging instruments
+- [`identifiedBy`](https://dwc.tdwg.org/list/#dwc_identifiedBy) - name(s) of persons involved in verifying taxon identification, particularly if automatic identification was made by a software and then validated by a human
+- [`identificationVerificationStatus`](https://dwc.tdwg.org/list/#dwc_identificationVerificationStatus) - categorical indicator for the extent of taxonomic identification verification. Recommended to use PredictedByMachine or ValidatedByHuman
+- [`identificationReferences`](http://rs.tdwg.org/dwc/terms/identificationReferences) - references used in identification (e.g. citation and version of software or algorithm that identified taxa)
 
 The fields `identifiedBy` and `identificationVerificationStatus` are crucial to indicate whether an observation has been validated, and by whom. These fields allow users to filter data when `basisOfRecord` = MachineObservation, so that they can be confident in the taxonomic identification when `identificationVerificationStatus` = ValidatedByHuman (Martin-Cabrera et al., 2022).
 
@@ -28,8 +28,8 @@ Martin-Cabrera et al. (2022) have created a best practices document for [plankto
 
 Data originating from ROV (Remote Operating Vehicle) observations may require additional processing. Ocean Networks Canada (ONC) is developing a [pipeline for publishing ROV data to OBIS](https://doi.org/10.1109/OCEANS47191.2022.9977379). ROV datasets should have:
 
-* An Event core that documents the hierarchical nature of ROV dives (e.g., ROV dives nested within a cruise)
-* Occurrence and eMoF extensions to record taxonomic and other measurement data e.g., from sensors.
+- An Event core that documents the hierarchical nature of ROV dives (e.g., ROV dives nested within a cruise)
+- Occurrence and eMoF extensions to record taxonomic and other measurement data e.g., from sensors.
 
 ONC’s pipeline outlines the importance of including `identifiedBy` in order to vet taxon identifications by experts.
 
@@ -39,31 +39,42 @@ Event Core is perfect for enriching OBIS with interpreted information such as bi
 
 As a result, members of the European Marine Observation and Data Network (EMODnet) Seabed Habitats and Biology thematic groups have produced a technical report [Duncan et al. (2021)](https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core) that provides guidance on using the Darwin Core eMoF extension to submit habitat data to OBIS, following the ENV-DATA approach and using Seabed Habitats as a use case. Note that the guidelines and structuring approach outlined in this document has not yet been approved or accepted at the global level and is only a recommended approach as agreed upon by EMODnet Seabed Habitats, EMODnet Biology, and OBIS. The implementation at the EurOBIS level may be considered a pilot.
 
-The overarching principles are summarised here. Note that because of the numerous classification systems and priority habitat lists in existence, it is not possible to point to a single vocabulary for populating each of `measurementTypeID`, `measurementValueID` and `measurementUnitID`, as for other measurement types, so below are the *types* of information to include, with an example, as recommended by [Duncan et al. (2021)](https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core):
+The overarching principles are summarised here. Note that because of the numerous classification systems and priority habitat lists in existence, it is not possible to point to a single vocabulary for populating each of `measurementTypeID`, `measurementValueID` and `measurementUnitID`, as for other measurement types. Instead, we show examples below for the *types* of information to include when documenting habitat data, as recommended by [Duncan et al. (2021)](https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core):
 
-* `measurementTypeID`: A machine-readable URI or DOI reference describing the (version of the) classification system itself. For example: [https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/](https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/)
-* `measurementValueID`: If available, a machine-readable URI describing the habitat class in “measurementValue”. For example: [https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36](https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36)
-* `measurementUnitID`: null because habitat types are unitless.
+- `measurementTypeID`: A machine-readable URI or DOI reference describing the (version of the) classification system itself. For example: [https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/](https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/)
+- `measurementValueID`: If available, a machine-readable URI describing the habitat class in “measurementValue”. For example: [https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36](https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36)
+- `measurementUnitID`: null because habitat types are unitless.
 
 Please consult the [Duncan et al. (2021) technical report](https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core): A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension for more details, including:
 
-* how to handle a single event with multiple habitat measurements
-* recommended vocabularies and terms for common habitat classification systems
-* example eMoF table
+- how to handle a single event with multiple habitat measurements
+- recommended vocabularies and terms for common habitat classification systems
+- example eMoF table
 
-For filling measurementType with habitat-related data and/or the dwc:habitat column, you should reference the [NERC vocabulary search](http://vocab.nerc.ac.uk/search_nvs/sxv/?searchstr=habitat&options=identifier,preflabel,altlabel,definition). While the [Coastal and Marine Ecological Classification Standard (CMECS)](https://repository.library.noaa.gov/view/noaa/27552) and the [Environment Ontology (ENVO)](https://sites.google.com/site/environmentontology/?pli=1) also contain habitat vocabularies, OBIS recommends the use of NERC vocabulary. If other vocabularies are used, please provide the NERC vocabulary equivalent as additional records in the eMoF table.
+For populating `measurementType` and `measurementTypeID` with habitat-related data or the dwc::Occurrence::`habitat` column, you can reference:
+
+- [NERC vocabulary habitat collections](http://vocab.nerc.ac.uk/search_nvs/sxv/?searchstr=habitat&options=identifier,preflabel,altlabel,definition): EUNIS habitat descriptions ([C35](https://vocab.nerc.ac.uk/collection/C35/current/)), HELCOM ([M23](https://vocab.nerc.ac.uk/collection/M23/current/)), or Marine Habitat Classification for Britain and Ireland Habitat ([M24](https://vocab.nerc.ac.uk/collection/M24/current/))
+- [Coastal and Marine Ecological Classification Standard](https://repository.library.noaa.gov/view/noaa/27552) (CMECS): note that CMECS URIs are in development, currently available [here](https://github.com/NOAA-OCM/cmecs/blob/main/CMECS_Catalog_v1.1.0/CMECS_Catalog_v1.1.0-All.csv)
+- [Environment Ontology (ENVO)](https://sites.google.com/site/environmentontology/?pli=1): search for terms [here](https://www.ebi.ac.uk/ols4/ontologies/envo)
+
+| measurementType | measurementTypeID | measurementValue | measurementValueID | measurementMethod |
+|----------------|----------------|----------------|----------------|---------------|
+| Description of habitat by classification to a term from EUNIS (version 2007-11) | <https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/> | A5.611 (Sabellaria spinulosa on stable circalittoral mixed sediment) | <http://dd.eionet.europa.eu/vocabularyconcept/biodiversity/eunishabitats/A5.611> | Derived via lookup from UK habitat class (Surv1_meas613) - exact match |
+| Description of habitat by classification to a term from EU Habitats Directive Annex I | <http://dd.eionet.europa.eu/vocabulary/biodiversity/n2000habitats/>| 1170 (Reefs) | <http://dd.eionet.europa.eu/vocabularyconcept/biodiversity/n2000habitats/1170> | Derived via lookup from UK habitat class (Surv1_meas613 ) - source class contained within destination class |
+| Description of substrate classification to a term from CMECS (v1.1.0) | <https://w3id.org/CMECS/CMECS_00000803> | CMECS_00001673 (Very Coarse Gravel) | <https://w3id.org/CMECS/CMECS_00001673> | |
+| Description of marine environmentalal zone by classification to a term from ENVO (v2024-07-01) | <http://purl.obolibrary.org/obo/ENVO_01001201> | Low tide zone | <http://purl.obolibrary.org/obo/ENVO_00000319> | |
 
 ## Tracking data
 
-Encoding Tracking data into Darwin Core follows the same standards as that of survey/sighting data. Tracking data should additionally indicate the accuracy in latitudinal and longitudinal measurements received from the positioning system, grouped by location accuracy classes, recorded in the `coordinateUncertaintyInMeters` field. The Ocean Tracking Network (OTN) has developed some [guidelines](https://github.com/tdwg/dwc-for-biologging) for formatting this type of data in Darwin Core. We summarize the main points below.
+Encoding Tracking data into Darwin Core follows the same standards as that of survey/sighting data. Tracking data should additionally indicate the accuracy in latitudinal and longitudinal measurements received from the positioning system, grouped by location accuracy classes, recorded in the `coordinateUncertaintyInMeters` field. The [Ocean Tracking Network (OTN)](https://oceantrackingnetwork.org/) has developed some [guidelines](https://github.com/tdwg/dwc-for-biologging) for formatting this type of data in Darwin Core. We summarize the main points below.
 
 Using Event core for tracking data is recommended as there can be multiple events involved in tracking an organism. There are capture/tag and release events, receiver deployment events, and detection occurrences. Note that the capture and release of an organism are not considered to be distinct Occurrence records because they are not natural occurrences. Thus, in the Event core table you may record unique events for:
 
-* The capture of an animal
-* The release of an animal
-* The deployment of a listening (or receiver) station
+- The capture of an animal
+- The release of an animal
+- The deployment of a listening (or receiver) station
 
-Information pertaining to a specific individual is linked by a unique `organismID`. You can use `eventID`s associated with a receiver to record detection occurrences in the Occurrence table. One organism may then have multiple occurrences (and thus multiple occurrenceIDs), but the same `organismID`. Any measurements for an organism taken during capture can be recorded in the extendedMeasurementsOrFact extension, linked to the core by the capture event’s `eventID` as well as the unique `organismID`. For more details, see the [DwC guidelines for biologging](https://github.com/tdwg/dwc-for-biologging).
+Information pertaining to a specific individual is linked by a unique `organismID`. You can use `eventID`s associated with a receiver to record detection occurrences in the Occurrence table. One organism may then have multiple occurrences (and thus multiple occurrenceIDs), but the same `organismID`. Any measurements for an organism taken during capture can be recorded in the extendedMeasurementsOrFact extension, linked to the core by the capture event’s `eventID` as well as the unique `organismID` and/or `occurrenceID`. For more details, see the [DwC guidelines for biologging](https://github.com/tdwg/dwc-for-biologging).
 
 Extracts from the extendedMeasurementOrFact Extension (eMoF) of the actual dataset [Ningaloo Outlook turtle tracking of Green turtles (Chelonia mydas), Western Australia (2018-present)](https://www.marine.csiro.au/ipt/resource?r=ningaloo_outlook_turtle_tracking), are shown as an example tracking dataset, following [ARGOS Location class codes](http://vocab.nerc.ac.uk/collection/R05/current/).
 
