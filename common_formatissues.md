@@ -20,7 +20,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 
 Not every piece of time information is necessary, but a generalization of how to format dates and times looks like:
 
-> `YYYY-MM-DDT[hh]:[mm]:[ss] [+/-XX OR Z]`
+> `YYYY-MM-DDT[hh]:[mm]:[ss] [+/-XXXX OR Z]`
 
 Some specific examples of acceptable ISO 8601 dates are:
 
@@ -38,7 +38,8 @@ Some specific examples of acceptable ISO 8601 dates are:
 
 **Dates with Time Zones:**
 
-- 2005-08-31T12:11+12
+- 2005-08-31T12:11+1200
+- 1963-03-08T14:07-0330
 - 2013-02-16T04:28Z
 
 **Date and Time Intervals:**
