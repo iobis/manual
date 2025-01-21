@@ -343,7 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use / as a separator. Date and times are separated by <code>T</code>. Timezones can be indicated at the end by using + or - the number of hours offset from UTC. If no timezone is indicated, then the time is assumed to be local time. When a date/time is recorded in UTC, a Z should be added at the end. Times must be written in the 24-hour clock system. If you do not know the time, you do not have to provide it. Please do not indicate unknown times as “00:00” as this indicates midnight.</p>
 <p>Not every piece of time information is necessary, but a generalization of how to format dates and times looks like:</p>
 <blockquote>
-<p><code>YYYY-MM-DDT[hh]:[mm]:[ss] [+/-XX OR Z]</code></p>
+<p><code>YYYY-MM-DDT[hh]:[mm]:[ss] [+/-XXXX OR Z]</code></p>
 </blockquote>
 <p>Some specific examples of acceptable ISO 8601 dates are:</p>
 <p><strong>Dates:</strong></p>
@@ -360,7 +360,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><strong>Dates with Time Zones:</strong></p>
 <ul>
-<li>2005-08-31T12:11+12</li>
+<li>2005-08-31T12:11+1200</li>
+<li>1963-03-08T14:07-0330</li>
 <li>2013-02-16T04:28Z</li>
 </ul>
 <p><strong>Date and Time Intervals:</strong></p>
