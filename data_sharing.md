@@ -90,7 +90,7 @@ See the tables below for a quick comparative reference on which terms are requir
 | basisOfRecord | **required**  | **required**  |
 | kingdom | recommended | **required**  |
 | decimalLatitude & decimalLongitude | **required**  | strongly recommended |
-| scientificNameID | **required**  | not required, accepted |
+| scientificNameID | strongly recommended  | not required, accepted |
 | occurrenceStatus | **required**  | not required, accepted |
 | taxonRank | strongly recommended | strongly recommended |
 | coordinateUncertaintyInMeters | strongly recommended | strongly recommended |
