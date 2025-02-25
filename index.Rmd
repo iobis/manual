@@ -60,7 +60,7 @@ This manual provides a comprehensive walk-through on how to contribute data to O
 * [Data visualization tips](dataviz.html)
 * [Links to additional resources](other_resources.html)
 
-The manual is designed to provide guidelines for OBIS nodes and data providers, ensuring that data published via OBIS are of high quality and adhere to internationally recognized standards. It also serves as a resource for data users on how to access, process, and visualize data from OBIS. See the [quick links](linklist.html) page for a quick reference to various guides, tools, and resources.
+The manual is designed to provide guidelines for OBIS nodes and data providers, ensuring that data published via OBIS are of high quality and adhere to internationally recognized standards. It also serves as a resource for data users on how to access, process, and visualize data from OBIS. See the [quick links](linklist.html) page for a quick reference to various guides, tools, and resources. You can also use the free text search feature to quickly find content within the manual.
 
 <div class="callbox-blue">
 

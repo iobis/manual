@@ -9,11 +9,13 @@ rmd_files:
   - linklist.md
   - contribute.md
   - data_standards.md
+  - nodes.md
+  - access.md
+  - citing.md
   - darwin_core.md
   - data_format.md
   - relational_db.md
   - eml.md
-  - nodes.md
   - formatting_intro.md
   - formatting.md
   - identifiers.md
@@ -37,7 +39,5 @@ rmd_files:
   - ipt.md
   - ipt_admin.md
   - data_sharing.md
-  - access.md
-  - citing.md
   - dataviz.md
   - other_resources.md

@@ -57,9 +57,6 @@ For OBIS, the following 4 terms are the bare minimum required: `Title`, `Citatio
   - `keyword` : Note only one keyword per keyword field is allowed.
   - `keywordThesaurus` : e.g. ASFA
   
-- `additionalInfo` : OBIS checks this EML field for harvesting. It should contain _marine, harvested by iOBIS_.
-  - `para`
-  
 - `coverage`
   - `geographicCoverage`
     - `geographicDescription`: a short text description of the area. E.g. the river mounth of the Scheldt Estuary.

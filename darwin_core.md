@@ -1,4 +1,5 @@
-### Darwin Core Terms & Guidelines
+# (PART\*) Data Standards {-}
+# Darwin Core
 
 **Contents**
 
@@ -13,11 +14,11 @@
   - [Time](#time)
   - [Sampling](#sampling)  
 
-#### Introduction to Darwin Core
+## Introduction to Darwin Core
 
 [Darwin Core](https://dwc.tdwg.org/) is a body of standards (i.e., identifiers, labels, definitions) that facilitate sharing biodiversity informatics. It provides stable [terms](https://dwc.tdwg.org/terms/) and vocabularies related to biological objects/data and their collection. Darwin Core is maintained by [TDWG (Biodiversity Information Standards, formerly The International Working Group on Taxonomic Databases)](http://tdwg.org/). Stable terms and vocabularies are important for ensuring the datasets in OBIS have consistently interpretable fields. By following Darwin Core standards, both data providers and users can be certain of the definition and quality of data.
 
-##### History of Darwin Core and OBIS
+### History of Darwin Core and OBIS {.unlisted}
 
 The old [OBIS schema](http://old.iobis.org/node/304) was an [OBIS extension](http://old.iobis.org/obis/obis.xsd) to Darwin Core 1.2., which was based on [Simple Darwin Core](http://rs.tdwg.org/dwc/terms/simple/), a subset of Darwin Core which does not allow any structure beyond rows and columns. This old schema added some terms which were important for OBIS, but were not supported by Darwin Core at the time (e.g., start and end date and start and end latitude and longitude, depth range, lifestage, and terms for abundance, biomass and sample size).
 
@@ -27,7 +28,7 @@ In December 2013, the [3rd session of the IODE Steering Group for OBIS](https://
 
 <a class="anchor" name="terms"></a>
 
-#### Darwin Core (DwC) terms
+## Darwin Core (DwC) terms
 
 DwC terms correspond to the column names of your dataset and can be grouped according to class type for convenience, e.g., Taxa, Occurrence, Record, Location, etc. It is important to use DwC field names because only columns using Darwin Core terms as headers will be recognized.
 
@@ -123,9 +124,11 @@ The following DwC terms are related to the Class _MaterialSample_:
 
 - materialSampleID
 
-#### Darwin Core guidelines
+## DwC guidelines
 
-##### Taxonomy and identification
+The following sections provide OBIS-specific guidelines for populating data across the different classes of DwC terms.
+
+### Taxonomy and identification {.unlisted}
 
 `scientificName` (required) should always contain the originally recorded full scientific name, even if the name is currently a synonym. This is necessary to be able to track back records to the original dataset. The name should include authorship and date information if known and should be the lowest possible taxonomic rank that can be determined, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc. are also acceptable. You may still populate `scientificNameAuthorship` for authorship, but it is preferred to include authorship in `scientificName` as well. Additionally, `scientificName` should only contain the name and not identification qualifications (such as ?, confer, or affinity), which should instead be supplied in the `IdentificationQualifier` term, see examples below. `taxonRemarks` can capture comments or notes about the taxon or name. `verbatimIdentification` should be used to record the taxon identification as it appeared in the original record, unaltered, with hybrid formulas, informal descriptions, misspellings, etc.
 
@@ -177,7 +180,7 @@ Examples:
 |Brisinga             | Asbjørnsen, 1856                        | urn:lsid:marinespecies.org:taxname:123210 | genus     | gen.inc.                 |Brisinga gen.inc.                    |
 |Brisinga costata     | Verrill, 1884                           | urn:lsid:marinespecies.org:taxname:17825  | species   | sp.inc.                  |Brisinga costata sp.inc.             |
 
-##### Occurrence
+### Occurrence {.unlisted}
 
 `occurrenceID` (required term) is an identifier for the occurrence record and should be persistent and globally unique. If the dataset does not yet contain (globally unique) occurrenceIDs, then they should be created. Guideline for ID creation can be found [here](identifiers.html)
 
@@ -209,7 +212,7 @@ Example:
 
 _Data from [A summary of benthic studies in the sluice dock of Ostend during 1976-1981](http://ipt.vliz.be/eurobis/resource?r=summary_of_benthic_studies_in_the_sluice_dock_ostend_during_1976-1981)._
 
-##### Record level terms
+### Record level terms {.unlisted}
 
 `basisOfRecord` (required term) specifies the nature of the record, i.e. whether the occurrence record is based on a stored specimen or an observation. A full list of vocabularies with definitions for this term can be found [here](https://rs.gbif.org/vocabulary/dwc/basis_of_record_2022-02-02.xml). In case the specimen is collected and stored in a collection (e.g. at a museum, university, research institute), the options are:
 
@@ -231,7 +234,7 @@ When the basisOfRecord is either a _preservedSpecimen_, _LivingSpecimen_ or _Fos
 
 <a class="anchor" name="location"></a>
 
-##### Location
+### Location {.unlisted}
 
 <div class="callbox-blue">
 
@@ -278,7 +281,8 @@ Keep in mind while filling in [`minimumDepthInMeters`](http://rs.tdwg.org/dwc/te
 
 The `minimumDistanceAboveSurfaceInMeters` and `maximumDistanceAboveSurfaceInMeters` is the distance, in meters, above or below a reference surface or reference point. The reference surface is determined by the depth or elevation. If the depth and elevation are 0, then the reference surface is the sea surface. If a depth is given (i.e. value >0), the reference surface is the location of the depth. This can be especially useful for sediment cores taken from the sea bottom (scenario 3 in Figure 2.2 and table below). In these cases the `minimumDistanceAboveSurfaceInMeters`/`maximumDistanceAboveSurfaceInMeters` would be a negative value. If no depth is given, then the elevation is the reference surface (scenario 5).
 
-![](images/Depth-figure-updated-scen4.png)```{r fig-depth, fig.cap = "*Illustration of different scenarios for filling depth-related DwC fields. Scenarios include: 1) a biological organism observed at a specific depth below the sea surface, 2) a bird observed above the sea surface, 3) a sediment core taken from the seabed at a given depth, 4) a net of a given length pulled through the water column at a certain depth, 5) a bird observed above land near the sea surface. Reference points (yellow crosses) do not correspond with a DwC term, but are useful to determine which depth fields may be needed to understand the location of an occurrence. Depth values are always positive, while distances above a surface can be either negative or positive, depending on whether the occurrence is above or below the reference point.*",echo=FALSE, out.width = "80%"}
+![](images/Depth-figure-updated-scen4.png)
+```{r fig-depth, fig.cap = "*Illustration of different scenarios for filling depth-related DwC fields. Scenarios include: 1) a biological organism observed at a specific depth below the sea surface, 2) a bird observed above the sea surface, 3) a sediment core taken from the seabed at a given depth, 4) a net of a given length pulled through the water column at a certain depth, 5) a bird observed above land near the sea surface. Reference points (yellow crosses) do not correspond with a DwC term, but are useful to determine which depth fields may be needed to understand the location of an occurrence. Depth values are always positive, while distances above a surface can be either negative or positive, depending on whether the occurrence is above or below the reference point.*",echo=FALSE, out.width = "80%"}
 library(webshot)
 knitr::include_graphics("images/Depth-figure-updated-scen4.png")
 ```
@@ -294,7 +298,7 @@ Example values for each depth, distance above surface, and elevation field for t
 | 4 | 20 | 22 | - | - | 0 | 0 |
 | 5 | 0 | 0 | 10 | 15 | 10 | 10 |
 
-##### Event
+### Event {.unlisted}
 
 `eventID` is an identifier for the sampling or observation event. `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs). See [identifiers](identifiers.html#eventid) for details on how these terms can be constructed.
 
@@ -304,7 +308,7 @@ Example values for each depth, distance above surface, and elevation field for t
 
 `samplingProtocol`, `sampleSizeValue`, `sampleSizeUnit`, and `samplingEffort` can be included in the Event table, but OBIS also recommends to add these sampling facts to [eMoF](data_format.html#extendedmeasurementorfact-extension-emof). Terms are used to respectively describe: the names/descriptions/references to sampling methods or protocols used in the event; a numeric value associated with the sample size in an event (e.g. describing the time duration, length, area, or volume); the unit associated with the `sampleSizeValue`; the effort expended during an event (e.g. 5 observer hours).
 
-##### Time
+### Time {.unlisted}
 
 The date and time at which an occurrence was recorded goes in `eventDate`. This term uses the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601) and OBIS recommends using the extended ISO 8601 format with hyphens.
 
@@ -312,7 +316,7 @@ The date and time at which an occurrence was recorded goes in `eventDate`. This 
 
 More specific guidelines on formatting dates and times can be found in the [Common Data formatting issues page](common_formatissues.html#temporal-dates-and-times)
 
-##### Sampling
+### Sampling {.unlisted}
 
 Information on `sampleSizeValue` and `sampleSizeUnit` is very important when an organism quantity is specified. However, with [OBIS-ENV-DATA](data_format.html) it was felt that the extended MeasurementorFact ([eMoF](http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml)) extension would be better suited than the DwC Event Core to store the sampled area and/or volume because in some cases sampleSize by itself may not be detailed enough to allow interpretation of the sample. For instance, in the case of a plankton tow, the volume of water that passed through the net is relevant. In case of Niskin bottles, the volume of sieved water is more relevant than the actual volume in the bottle. In these examples, as well as generally when recording sampling effort for all protocols, eMoF enables greater flexibility to define parameters, as well as the ability to describe the entire sample and treatment protocol through multiple parameters. eMoF also allows you to standardize your terms to a controlled vocabulary.
 

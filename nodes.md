@@ -1,15 +1,19 @@
-# OBIS Terms of Reference: Nodes, Coordination Groups, Secretariat
+# OBIS Nodes, Coordination Groups, Secretariat
+
+This page provides an overview of the Terms of Reference (ToR) that define the roles and responsibilities of each component within the OBIS network, including Nodes, the Steering Group, Co-Chairs, the Secretariat, Coordination Groups, and the Executive Committee.
 
 **Content**
 
-* [OBIS Node Terms of Reference](#tor-of-obis-nodes)
-* [OBIS Steering Group Terms of Reference](#tor-of-obis-steering-group)
-* [OBIS Co-Chair Terms of Reference](#tor-of-obis-co-chairs)
-* [OBIS Secretariat Terms of Reference](#tor-of-obis-secretariat)
-* [Terms of Reference for OBIS Coordination Groups](#tor-of-obis-coordination-groups)
-* [OBIS Executive Committee Terms of Reference](#tor-of-obis-executive-committee)
+* [OBIS Node Terms of Reference](#obis-nodes)
+* [OBIS Steering Group Terms of Reference](#obis-steering-group)
+* [OBIS Co-Chair Terms of Reference](#obis-co-chairs)
+* [OBIS Secretariat Terms of Reference](#obis-secretariat)
+* [Terms of Reference for OBIS Coordination Groups](#obis-coordination-groups)
+* [OBIS Executive Committee Terms of Reference](#obis-executive-committee)
 
-## TOR of OBIS nodes
+
+
+## OBIS nodes
 
 OBIS Nodes are either national projects, programmes, institutes, or organizations, National Ocean Data Centers or regional or international projects, programmes and institutions or organizations that carry out data management functions. OBIS nodes Terms of Reference are detailed below.
 
@@ -37,7 +41,7 @@ OBIS Nodes are either national projects, programmes, institutes, or organization
 * OBIS nodes are eligible to become a member of the SG and have voting rights. A formal letter expressing their commitment to contribute according to Terms of Reference of the SG must be renewed every 2 years
 * OBIS nodes can become a member of and contribute to the various OBIS coordination groups
 
-### How to become an OBIS node
+### Become an OBIS node
 
 OBIS nodes now operate under the IODE network as either National Oceanographic Data Centres (NODCs) or Associate Data Unites (ADUs). Prospective nodes are required to apply to the IODE for membership.
 
@@ -74,7 +78,7 @@ The IODE Committee is requested to consider the recommendation from the OBIS Ste
 
 When the inactive OBIS node is removed from the IODE network, the SG-OBIS will ask whether another OBIS node is interested in taking over the responsibilities of the removed OBIS node, until a new OBIS node in the country/region is established.
 
-## TOR of OBIS Steering Group
+## OBIS Steering Group
 
 **Required**
 
@@ -97,7 +101,7 @@ When the inactive OBIS node is removed from the IODE network, the SG-OBIS will a
 * OBIS nodes (up to 16 seats): OBIS node managers (or one alternate) who are not already represented as co-chairs or CG co-chairs. Each OBIS node should inform the OBIS secretariat of any changes to their representative(s) as soon as possible. OBIS nodes need reconfirmation after two 2-year terms
 * OBIS secretariat (2 seats) OBIS Programme manager as SG-OBIS technical secretary, and OBIS technical coordinator
 
-## TOR of OBIS Co-Chairs
+## OBIS Co-Chairs
 
 The role of (Co-)Chair(s) is:
 
@@ -124,7 +128,7 @@ The role of (Co-)Chair(s) is:
 * The Co-Chairs are not involved in the day-to-day implementation of OBIS which is the remit of the OBIS Programme Manager.
 * Nominations for Co-Chairs shall be accepted from members of the SG-OBIS as either nomination on behalf of another or self-nominations.
 
-## TOR of OBIS Secretariat
+## OBIS Secretariat
 
 The OBIS secretariat, hosted at the UNESCO/IOC project office for IODE in Oostende (Belgium), provides training and technical assistance to its network of partners including OBIS nodes and data providers, guides and advices on the development of new data standards and technical developments, and encourages international cooperation and implement the OBIS work plan and oversees the budget, to foster the group benefits of the network.
 
@@ -152,7 +156,7 @@ The **OBIS technical coordinator** will:
   * Networking and Outreach: Participate in meetings of technical groups as well as the OBIS steering group and other relevant events; Assist with the promotion and communication of the OBIS programme component.
   * Provide assistance with technical support of IODE databases and other IT services of, or hosted by, the IOC Project Office for IODE, Oostende, Belgium.
 
-## TOR of OBIS Coordination Groups
+## OBIS Coordination Groups
 
 Each of the coordination groups will have one or two Co-Chair(s) who will:
 
@@ -222,7 +226,7 @@ The OBIS Products Coordination Group will:
 * Propose a process for frequent expert validation of data and information products by consulting with local scientific experts and end-users (including local communities and indigenous people)
 * Engage with activities of other relevant bodies by identifying representatives and report back to the group
 
-## TOR of OBIS Executive Committee
+## OBIS Executive Committee
 
 The OBIS Executive Committee will:
 
