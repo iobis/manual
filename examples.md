@@ -107,7 +107,7 @@ knitr::include_graphics("images/dwca_macroalgae_survey.png")
 First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using `eventID` and `parentEventID`. As the survey sites has a fixed location we can populate `decimalLongitude` and `decimalLatitude` at the top level event. The zones have different depths, so `minimumDepthInMeters` and `maximumDepthInMeters` are populated at the zone level. Finally, as not all sampling was done on the same day, `eventDate` is populated at the quadrat and transect level.
 
 | eventID | parentEventID | eventDate | decimalLongitude | decimalLatitude | minimumDepthInMeters | maximumDepthInMeters |
-|: --- |: --- |: --- |: --- |: --- |: --- |: --- |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | site_1 | | | 54.7943 | 16.9425 | | |
 | zone_1 | site_1 | | | | 0 | 0 |
 | zone_2 | site_1 | | | | 0 | 5 |
