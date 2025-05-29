@@ -35,7 +35,67 @@
 
 #### Invertebrates abundance and distribution {.unlisted .unnumbered}
 
-(example coming soon)
+This example is based on a benthic invertebrate dataset that used photoplots to monitor percent cover of barnacles, mussels, and rockweed titled ["MARINe/PISCO: Intertidal: MARINe Coastal Biodiversity Surveys: Point Contact Surveys Summarized"](https://obis.org/dataset/bb638343-bbc9-464d-88d8-18d9ba29ecdd).
+
+```{r echo=FALSE, results='asis'}
+library(webshot)
+library(downloadthis)
+if (knitr::is_html_output()) {
+  downloadthis::download_link(
+  link = "https://ipt-obis.gbif.us/archive.do?r=marine_cbs_point_contact_surveys&v=1.3",
+  button_label = "Download dataset DwC-A .zip",
+  button_type = "default",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE,
+  class = "hvr-sweep-to-left",
+    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
+            margin-top: 5px; margin-bottom: 20px;"
+)} else {
+  cat("[Download the dataset](https://ipt-obis.gbif.us/archive.do?r=marine_cbs_point_contact_surveys&v=1.3)")
+}
+```
+
+**Event core:**
+
+| eventID |	samplingProtocol	|	eventDate	|	countryCode	|	stateProvince	|	county	|	locality	|	minimumDepthInMeters	|	maximumDepthInMeters	|	decimalLatitude	|	decimalLongitude	|	geodeticDatum	|	coordinateUncertaintyInMeters	|
+|------------------|---------------------|-------------------|-----------|--------------|-----------|---------------|-------------------|--------------|-------------|--------------|-------------------|--------------|
+|	8_2001-06-20_2001-06-26	|	cbs point contact	|	2001-06-20/2001-06-26	|	US	|	Oregon	|	Coos	|	Cape Arago	|	0	|	0	|	43.30894089	|	-124.40077	|	WGS84	|	350	|
+|	1001_2003-02-12_2003-02-12	|	cbs point contact	|	2003-02-12/2003-02-12	|	MX	|	Baja California	|		|	La Bufadora	|	0	|	0	|	31.72407913	|	-116.71423	|	WGS84	|	350	|
+|	3004_2003-08-13_2003-08-13	|	cbs point contact	|	2003-08-13/2003-08-13	|	CA	|	British Columbia	|		|	Palmerston	|	0	|	0	|	50.60115051	|	-128.27106	|	WGS84	|	350	|
+|	3003_2003-08-25_2003-08-25	|	cbs point contact	|	2003-08-25/2003-08-25	|	US	|	Alaska	|	Sitka	|	Port Mary	|	0	|	0	|	57.15422821	|	-135.75452	|	WGS84	|	350	|
+
+
+**Occurrence extension:**
+
+|	datasetName	|	eventID	|	basisOfRecord	|	occurrenceID	|	organismQuantity	|	organismQuantityType	|	occurrenceStatus	|	occurrenceRemarks	|	scientificNameID	|	scientificName	|	kingdom	|	taxonRank	|
+|------------------|---------------------|-------------------|-----------|--------------|-----------|---------------|-------------------|--------------|-------------|--------------|-------------------|
+|	MARINe CBS - percent cover from point contact surveys	|	8_2001-06-20_2001-06-26	|	HumanObservation	|	8_2001-06-20_2001-06-26_1	|	0	|	Percent cover	|	absent	|		|	urn:lsid:marinespecies.org:taxname:1358362	|	Amphisbetia greenei	|	Animalia	|	Species	|
+|	MARINe CBS - percent cover from point contact surveys	|	8_2001-06-20_2001-06-26	|	HumanObservation	|	8_2001-06-20_2001-06-26_4	|	0.077220077	|	Percent cover	|	present	|		|	urn:lsid:marinespecies.org:taxname:456582	|	Acmaea mitra	|	Animalia	|	Species	|
+|	MARINe CBS - percent cover from point contact surveys	|	1001_2003-02-12_2003-02-12	|	HumanObservation	|	1001_2003-02-12_2003-02-12_2	|	0	|	Percent cover	|	absent	|		|	urn:lsid:marinespecies.org:taxname:148	|	Muricidae	|	Animalia	|	Family	|
+|	MARINe CBS - percent cover from point contact surveys	|	1001_2003-02-12_2003-02-12	|	HumanObservation	|	1001_2003-02-12_2003-02-12_21	|	1.599247413	|	Percent cover	|	present	|		|	urn:lsid:marinespecies.org:taxname:240753	|	Anthopleura sola	|	Animalia	|	Species	|
+|	MARINe CBS - percent cover from point contact surveys	|	3004_2003-08-13_2003-08-13	|	HumanObservation	|	3004_2003-08-13_2003-08-13_1	|	0	|	Percent cover	|	absent	|		|	urn:lsid:marinespecies.org:taxname:1358362	|	Amphisbetia greenei	|	Animalia	|	Species	|
+|	MARINe CBS - percent cover from point contact surveys	|	3004_2003-08-13_2003-08-13	|	HumanObservation	|	3004_2003-08-13_2003-08-13_5	|	2.428057554	|	Percent cover	|	present	|
+|	MARINe CBS - percent cover from point contact surveys	|	3003_2003-08-25_2003-08-25	|	HumanObservation	|	3003_2003-08-25_2003-08-25_2	|	0	|	Percent cover	|	absent	|		|	urn:lsid:marinespecies.org:taxname:148	|	Muricidae	|	Animalia	|	Family	|
+|	MARINe CBS - percent cover from point contact surveys	|	3003_2003-08-25_2003-08-25	|	HumanObservation	|	3003_2003-08-25_2003-08-25_10	|	6.273062731	|	Percent cover	|	present	|
+
+
+
+**extendedMeasurementOrFact (eMoF) extension:**
+
+Finally, we create the eMoF table. Although the percent cover was recorded in the Occurrence extension, it is good practice to also record it in the eMoF so that controlled vocabulary can be included in the alongside the measurements. In the table below, the percent cover for each occurrence is included.
+
+|	occurrenceID	|	measurementType	|	measurementTypeID	|	measurementValue	|	measurementUnit	|	measurementUnitID	|
+|------------------|---------------------|-------------------|-----------|--------------|-----------|
+|	8_2001-06-20_2001-06-26_1	|	Coverage (in assayed sample) of biological entity specified elsewhere of the bed	|	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/	|	0	|	percent	|	http://vocab.nerc.ac.uk/collection/P06/current/UPCT/	|
+|	8_2001-06-20_2001-06-26_4	|	Coverage (in assayed sample) of biological entity specified elsewhere of the bed	|	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/	|	0.077220077	|	percent	|	http://vocab.nerc.ac.uk/collection/P06/current/UPCT/	|
+|	1001_2003-02-12_2003-02-12_2	|	Coverage (in assayed sample) of biological entity specified elsewhere of the bed	|	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/	|	0	|	percent	|	http://vocab.nerc.ac.uk/collection/P06/current/UPCT/	|
+|	1001_2003-02-12_2003-02-12_21	|	Coverage (in assayed sample) of biological entity specified elsewhere of the bed	|	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/	|	1.599247413	|	percent	|	http://vocab.nerc.ac.uk/collection/P06/current/UPCT/	|
+|	3004_2003-08-13_2003-08-13_1	|	Coverage (in assayed sample) of biological entity specified elsewhere of the bed	|	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/	|	0	|	percent	|	http://vocab.nerc.ac.uk/collection/P06/current/UPCT/	|
+|	3004_2003-08-13_2003-08-13_5	|	Coverage (in assayed sample) of biological entity specified elsewhere of the bed	|	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/	|	2.428057554		|	percent	|	http://vocab.nerc.ac.uk/collection/P06/current/UPCT/	|
+|	3003_2003-08-25_2003-08-25_2	|	Coverage (in assayed sample) of biological entity specified elsewhere of the bed	|	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/	|	0	|	percent	|	http://vocab.nerc.ac.uk/collection/P06/current/UPCT/	|
+|	3003_2003-08-25_2003-08-25_10	|	Coverage (in assayed sample) of biological entity specified elsewhere of the bed	|	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/	|	6.273062731	|	percent	|	http://vocab.nerc.ac.uk/collection/P06/current/UPCT/	|
+
 
 #### Macroalgae canopy cover and composition {.unlisted .unnumbered}
 
@@ -117,7 +177,7 @@ if (knitr::is_html_output()) {
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
 )} else {
-  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+  cat("[Download the dataset](https://www.marine.csiro.au/ipt/archive.do?r=in2017_v02_wov&v=1.15)")
 }
 ```
 
@@ -239,7 +299,7 @@ if (knitr::is_html_output()) {downloadthis::download_link(
             margin-top: 5px; margin-bottom: 20px;"
 )
 } else {
-  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cc_flt_cbar_13-17&v=1.0)")
 }
 ```
 
@@ -313,7 +373,7 @@ if (knitr::is_html_output()) {
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
 )} else {
-  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=fyto&v=1.0)")
 }
 ```
 
@@ -378,7 +438,7 @@ if (knitr::is_html_output()) {
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
 )} else {
-  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+  cat("[Download the dataset](https://ipt.iobis.org/caribbeanobis/archive.do?r=seagrasssurvey_colombia&v=1.6)")
 }
 ```
 
@@ -444,7 +504,7 @@ if (knitr::is_html_output()) {
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
 )} else {
-  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=lifewatch_zooplankton&v=1.0)")
 }
 ```
 

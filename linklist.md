@@ -60,6 +60,7 @@ Below you will find a convenient list of important or relevant websites and reso
 * [List of Quality Checks conducted by OBIS](https://github.com/iobis/obis-qc) on published data
 * [List of QC Flags](https://github.com/iobis/obis-qc/blob/master/obisqc/util/flags.py) implemented by OBIS
 * [obistools](https://github.com/iobis/obistools) R package for conducting QC checks on OBIS data
+* [pyobistools](https://jiasu.xzqcsaa.nyc.mn/cioos-siooc/pyobistools) python package for QC tools
 * [LifeWatch & EMODnet Biology QC tool](https://rshiny.lifewatch.be/BioCheck/)
 * [Hmisc R package](https://hbiostat.org/r/hmisc/) for summarizing data, useful for checking data quality and outliers
 
