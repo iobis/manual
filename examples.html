@@ -719,15 +719,93 @@ Figure 13.1: A fictional macroalgae survey with a single site, multiple zones, q
 </div>
 <p><strong>Event core:</strong></p>
 <p>First we can create the Event core table by extracting all events in a broad sense and populating attributes such as time, location, and depth at the appropriate level. The events at the different levels are linked together using <code>eventID</code> and <code>parentEventID</code>. As the survey sites has a fixed location we can populate <code>decimalLongitude</code> and <code>decimalLatitude</code> at the top level event. The zones have different depths, so <code>minimumDepthInMeters</code> and <code>maximumDepthInMeters</code> are populated at the zone level. Finally, as not all sampling was done on the same day, <code>eventDate</code> is populated at the quadrat and transect level.</p>
-<div class="line-block">eventID | parentEventID | eventDate | decimalLongitude | decimalLatitude | minimumDepthInMeters | maximumDepthInMeters |</div>
-<p>|: — |: — |: — |: — |: — |: — |: — |
-| site_1 | | | 54.7943 | 16.9425 | | |
-| zone_1 | site_1 | | | | 0 | 0 |
-| zone_2 | site_1 | | | | 0 | 5 |
-| zone_3 | site_1 | | | | 5 | 10 |
-| <strong>quadrat_1</strong> | zone_1 | 2019-01-02 | | | | |
-| transect_1 | zone_2 | 2019-01-03 | | | | |
-| transect_2 | zone_3 | 2019-01-04 | | | | |</p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">eventID</th>
+<th align="left">parentEventID</th>
+<th align="left">eventDate</th>
+<th align="left">decimalLongitude</th>
+<th align="left">decimalLatitude</th>
+<th align="left">minimumDepthInMeters</th>
+<th align="left">maximumDepthInMeters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">site_1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">54.7943</td>
+<td align="left">16.9425</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">zone_1</td>
+<td align="left">site_1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr class="odd">
+<td align="left">zone_2</td>
+<td align="left">site_1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left">zone_3</td>
+<td align="left">site_1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">5</td>
+<td align="left">10</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>quadrat_1</strong></td>
+<td align="left">zone_1</td>
+<td align="left">2019-01-02</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">transect_1</td>
+<td align="left">zone_2</td>
+<td align="left">2019-01-03</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">transect_2</td>
+<td align="left">zone_3</td>
+<td align="left">2019-01-04</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Occurrence extension:</strong></p>
 <p>Next we can construct the Occurrence extension table. This table has the scientific names and links to the World Register of Marine Species in <code>scientificNameID</code>. The first column of the table references the events in the core table (see <code>quadrat_1</code> for example in bold).</p>
 <table>
