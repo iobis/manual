@@ -17,15 +17,17 @@ For specific concerns regarding quality control checks or issues, please submit 
  Records can be dropped and therefore not published with your dataset for a number of reasons, including:
 
 * The species is not marine
-* The ‘scientificName’ or `scientificNameID` did not match with WoRMS
+* The `scientificName` or `scientificNameID` did not match with WoRMS
 * Issues with coordinates:
   * No coordinates given
   * `decimalLatitude` or `decimalLongitude` out of range
 * The coordinate is zero
 
+Dropped records are only obtainable when a dataset is downloaded directly from the dataset IPT page, by using the robis `occurrence()` function and specifying `dropped=TRUE`, or directly using the API and again specifying dropped=TRUE.
+
 For each dataset published, a quality report is generated where the number of dropped records and other quality issues will be flagged. Such reports can also be found when searching for data in OBIS. For example, if we searched for ‘Crustacea’ records, the following data quality report is given:
 
-![Number of Crustacean records dropped](images/crustacean-droppedrecords.png)
+![_Number of Crustacean records dropped_](images/crustacean-droppedrecords.png)
 
 We can see that >110,222 Crustacean records have been dropped, mostly due to records missing coordinates or species being flagged as non-marine. Because species are determined as being marine by WoRMS, we acknowledge that sometimes species are marked as `not_marine` erroneously.For specific advice on this topic, see the [common QC issues page](common_qc.html#non-marine-species).
 

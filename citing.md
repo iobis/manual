@@ -1,4 +1,6 @@
-## Citing Data from OBIS
+# Citing OBIS Data OBIS
+
+We deeply value the contributions of all data providers. To ensure proper recognition, it is essential to cite OBIS data whenever it is used. Always review the data license included with downloaded data to confirm that your intended use is compliant. We are also developing an easy way to obtain a DOI that can be used for specific data downloads, making it easier to cite and reference OBIS data accurately.
 
 Depending on how you access data from OBIS, there are different ways you should cite downloaded datasets.
 
