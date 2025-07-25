@@ -1,4 +1,4 @@
-### Ecological Metadata Language
+# Metadata: Ecological Metadata Language
 
 **Content**
 
@@ -17,7 +17,7 @@
   - [Collection Data](#collection-data)
   - [External Links](#external-links)
 
-#### Introduction to EML
+## Introduction to EML {.unlisted .unnumbered}
 
 OBIS (and GBIF) uses the Ecological Metadata Language (EML) as its metadata standard, which is specifically developed for the earth, environmental and ecological sciences. It is based on prior work done by the Ecological Society of America and associated efforts. EML is implemented as XML. See more information on [EML](https://eml.ecoinformatics.org/). When publishing on the [Integrated Publishing Toolkit (IPT)](ipt.html), you can either upload XML files with your metadata or it will be generated for you after [filling in metadata sections](ipt.html#add-metadata) directly on the IPT. There are a few resources available to help you generate XML EML files, including: [EML R package](https://docs.ropensci.org/EML/), [ezEML](https://ezeml.edirepository.org/eml/auth/login), and [Jinja EML template generator](https://jinja.palletsprojects.com/en/3.1.x/).
 
@@ -133,7 +133,7 @@ For OBIS, the following 4 terms are the bare minimum required: `Title`, `Citatio
 
 - `alternateIdentifier`: It is a Universally Unique Identifier (UUID) for the EML document and not for the dataset. This term is optional.
 
-#### Metadata Sections
+## Metadata Sections
 
 There are several categories/pages for metadata you must provide, which includes basic information about the:
 
@@ -149,7 +149,7 @@ There are several categories/pages for metadata you must provide, which includes
 
 We review each of these sections below.
 
-##### Title
+### Title {.unlisted .unnumbered}
 
 The IPT requires you to provide a _Shortname_. Shortnames serve as an identifier for the resource within the IPT installation (so should be unique within your IPT), and will be used as a parameter in the URL to access the resource via the Internet. Please use only alphanumeric characters, hyphens, or underscores. E.g. _largenet_im_ in [http://ipt.vliz.be/eurobis/resource?r=largenet_im](http://ipt.vliz.be/eurobis/resource?r=largenet_im). After creating a new dataset resource, the field title will be filled out with the short name you provided earlier. Please make sure you provide a dataset title following the guidelines below.
 
@@ -166,7 +166,7 @@ The acronym or working title could still be documented in the metadata, so there
 |Kyklades              |        Zoobenthos of the Kyklades (Aegean Sea)|
 |REPHY                |         Réseau de Surveillance phytoplanctonique|
 
-##### Abstract
+### Abstract {.unlisted .unnumbered}
 
 The abstract or description of a dataset provides basic information on the content of the dataset. The information in the abstract should improve understanding and interpretation of the data. It is recommended that the description indicates whether the dataset is a subset of a larger dataset and – if so – provide a link to the parent metadata and/or dataset.
 
@@ -179,7 +179,7 @@ If the data provider or OBIS node require bi- or multilingual entries for the de
 
 _Example:_ The Louis-Marie herbarium grants a priority to the Arctic-alpine, subarctic and boreal species from the province of Quebec and the northern hemisphere. This dataset is mainly populated with specimens from the province of Quebec. /  L'Herbier Louis-Marie accorde une priorité aux espèces arctiques-alpines, subarctiques et boréales du Québec, du Canada et de l'hémisphère nord. Ce jeu présente principalement des spécimens provenant du Québec.
 
-##### People and Organizations
+### People and Organizations {.unlisted .unnumbered}
 
 The EML has several possible roles/functions to describe a contact, creator, metadata provider and associated party.
 
@@ -211,7 +211,7 @@ The owner of a dataset will, in most cases, be an institute, and not an individu
 
 The contact persons in the metadata (contact, creator, metadata creator) are used in the dataset citation (auto-generation) and those added as 'associated parties' are not included as "co-authors".
 
-##### License and IP Rights
+### License and IP Rights {.unlisted .unnumbered}
 
 OBIS has published its guidelines on the sharing and use of data [here](policy.html). The recommended licenses for datasets published in OBIS are the Creative Commons Licenses (CC-0, CC-BY, CC-BY-NC), of which CC-0 is the most preferred and CC-BY-NC is least preferred. A Creative Commons license means:
 
@@ -229,9 +229,9 @@ OBIS has published its guidelines on the sharing and use of data [here](policy.h
 **In case of CC-BY-NC:**
 `non-commercial`: like CC-BY but commercial use is not allowed. This licence can be problematic when the data is re-used in scientific journals.
 
-##### Coverage
+### Coverage {.unlisted .unnumbered}
 
-###### Geographic Coverage
+#### Geographic Coverage {.unlisted .unnumbered}
 
 The IPT allows you to enter the geographic coverage by dragging the markers on the given map or by filling in the coordinates of the bounding box. In the description field, a more elaborate text can be provided to describe the spatial coverage indicating the larger geographical area where the samples were collected. For the latter, the sampling locations can be plotted on a map and – by making use of a Gazetteer – the wider geographical area can be derived: e.g. the relevant Exclusive Economic Zone (EEZ), IHO, FAO fishing area, Large Marine Ecosystem (LME), Marine Ecoregions of the World (MEOW), etc. The [Marine Regions' Gazetteer](http://www.marineregions.org/) might prove to be a useful online tool to define the most relevant sea area(s). There are also [LifeWatch Geographical Services](http://www.lifewatch.be/data-services/) that translate geographical positions to these wider geographical areas.
 
@@ -241,7 +241,7 @@ If the dataset covers multiple areas (e.g. samples from the North Sea and the Me
 
 ![Screenshot of the Geographical Coverage section of the metadata, emphasizing how to change the bounds of the coverage box in the map.](images/ipt-ss13-meta-geo.png){width=60%}
 
-###### Taxonomic Coverage
+#### Taxonomic Coverage {.unlisted .unnumbered}
 
 This section can capture two things:
 
@@ -255,7 +255,7 @@ This section can capture two things:
 
 ![Example of the Taxonomic Coverage section of the metadata](images/ipt-ss14-meta-taxa.png){width=70%}
 
-###### Temporal Coverage
+#### Temporal Coverage {.unlisted .unnumbered}
 
 The temporal coverage will be a date range, which can easily be documented. If it is a single date, the start and end date will be the same. The information added here can be used as a quality check for the actual dates in the datasets.
 
@@ -263,7 +263,7 @@ You can also document the Formation Period or the Living Time Period in this sec
 
 ![Example of the Temporal Coverage section of the metadata](images/ipt-ss15-meta-time.png){width=70%}
 
-##### Keywords
+### Keywords {.unlisted .unnumbered}
 
 Relevant keywords facilitate the discovery of a dataset. An indication of the represented functional groups can help in a general search (e.g. plankton, benthos, zooplankton, phytoplankton, macrobenthos, meiobenthos …). Assigned keywords can be related to taxonomy, habitat, geography or relevant keywords extracted from thesauri such as the [ASFA thesaurus](https://vocabularyserver.com/asfa/), the [CAB thesaurus](http://www.cabi.org/cabthesaurus/) or [GCMD keywords](https://www.earthdata.nasa.gov/learn/find-data/idn/gcmd-keywords).
 
@@ -271,12 +271,12 @@ As taxonomy and geography are already covered in previous sections, there is no 
 
 ![Example of the Keywords section of the metadata, showing input for a marine fishes dataset](images/ipt-ss16-meta-keyword.png){width=70%}
 
-##### Project
+### Project {.unlisted .unnumbered}
 
 If the dataset in this resource is produced under a certain project, the metadata on this project can be documented here.
 Part of the information entered here, can partly overlap with information given in other sections of the metadata (e.g. study area description can have lot of parallel with the geographic coverage section). Personnel involved in the project can be documented or repeated here as well. This is not a problem.
 
-##### Sampling Methods
+### Sampling Methods {.unlisted .unnumbered}
 
 The EML can contain descriptions of the sampling and data processing methods. Study extent can be documented here as well to report a more specific geographic area as well as the sampling frequency. Descriptions of sampling procedures, quality control, and steps (sample or data processing) can be given in the same way as the methods section of a scientific paper.
 
@@ -285,7 +285,7 @@ The EML can contain descriptions of the sampling and data processing methods. St
 `r fontawesome::fa("flag", fill="darkblue", prefer_type="solid")` OBIS best practice is to add sampling facts to the extended MeasurementorFact extension, linked to the sampling events in the Event core via eventID.
 </div>
 
-##### Citations
+### Citations {.unlisted .unnumbered}
 
 The dataset citation allows users to properly cite your dataset in further publications or other uses of the data. When users download datasets from the OBIS download function, a list of the dataset citations packaged with the data in a zipped file is provided.
 
@@ -296,20 +296,20 @@ GBIF's IPT has an auto-generation - Turn On/Off - tool to let the IPT auto-gener
 The OBIS node data managers should try to implement a certain degree of format standardization for the dataset citations. The IPT provides an option to auto-generate a citation based on the EML and is formatted as follows: {dataset.authors} ({dataset.pubDate}) {dataset.title}. [Version {dataset.version}]. {organization.title}.
 {dataset.type} Dataset {dataset.doi}, {dataset.url}
 
-##### Bibliography  
+### Bibliography {.unlisted .unnumbered}
 
 The EML can include the citation of the publications that are related to the described dataset. They can describe the dataset, be based on the dataset or be used in this dataset. Publications can be scientific papers, reports, PhD or master theses. If available, the citation should include the DOI at the end.
 
 This overview will contribute to a better understanding of the data as these publications can hold important additional information on the data and how they were acquired.
 
-##### Collection Data
+### Collection Data {.unlisted .unnumbered}
 
 This IPT section should only be filled out if there are specimens held in a museum.
 If relevant, it is strongly recommended that this information is supplied by the data provider or left blank. The collection name, specimen preservation method, and curatorial units should be provided, as applicable.
 
 ![Screenshot of the Collection Data page showing what information can be provided for museum specimens](images/ipt-ss17-meta-collection.png){width=70%}
 
-##### External Links
+### External Links {.unlisted .unnumbered}
 
 This section can include URLs to the resource homepage, to download or find additional information. You can also provide links to your resource if it is hosted elsewhere in different formats.
 
@@ -322,6 +322,6 @@ For these OBIS links, the required fields should be completed as follows:
 
 If other links are added, then the data format for web-based data is ‘html’. If the link refers to a file, the data format of the file will need to be added (e.g. .xlsx, .pdf …). The character set for all Darwin Core files is UTF-8, whereas for other web pages this can vary, so you may need to confirm.
 
-##### Additional Metadata
+### Additional Metadata
 
 Any remaining information that could not be catalogued under any of the other metadata, can be mentioned here. This may include logos, purpose of the dataset, a description of how the dataset will be maintained, etc.

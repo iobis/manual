@@ -49,7 +49,7 @@ editor_options:
 # (PART\*) Overview {-}
 # Introduction
 
-This manual provides a comprehensive walk-through on how to contribute data to OBIS and how to access data from OBIS.  It is divided into topical sections that provide detailed information on:
+OBIS accepts a variety of data types, including species occurrence, associated environmental and measurement data, and more. This manual provides a comprehensive walk-through on how to contribute data to OBIS and how to access data in OBIS.  It is divided into topical sections that provide detailed information on:
 
 * [Frequently Asked Questions](FAQ.html) 
 * [How to contribute data to OBIS,](contribute.html) including information on data standards and terms of reference for OBIS groups
@@ -68,7 +68,7 @@ The manual is designed to provide guidelines for OBIS nodes and data providers, 
 
 </div>
 
-The OBIS manual is a dynamic document and is revised on a regular basis. We welcome suggestions for additions and changes, which can be sent to [helpdesk@obis.org](mailto:helpdesk@obis.org), the OBIS Capacity Development Task Team at [training@obis.org](mailto:training@iobis.org), and/or submitted as issues at <https://github.com/iobis/manual/issues>. 
+The OBIS manual is a dynamic document and is revised on a regular basis. We welcome suggestions for additions and changes, which can be sent to [helpdesk@obis.org](mailto:helpdesk@obis.org), the OBIS Capacity Development Task Team at [training@obis.org](mailto:training@iobis.org), and/or submitted as issues at <https://github.com/iobis/manual/issues>.
 
 ## Guidelines on the sharing and use of data in OBIS
 
