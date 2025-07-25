@@ -31,7 +31,7 @@ These three terms should be populated using controlled vocabularies referenced u
 
 Controlled vocabularies are incredibly important to ensure data are interoperable - readable by both humans and machines - and that the information is presented in an unambiguous manner. Vocabulary collections like NVS compile vocabularies from different institutions and authorities (e.g., ISO, ICES, EUNIS), allowing you to map your data to them. In this way, you could search for a single `measurementTypeID` and obtain all related records, regardless of differences in wording or language used in the data.
 
-Each vocabulary “term” in NVS is a concept that describes a specific idea or meaning. For consistency, we refer to individual vocabularies in NVS as **concepts**. Concepts within NVS are organized into *collections* that group concepts with commonalities (e.g. all concepts pertaining to units). Sometimes collections contain concepts that are deprecated. Terms can be deprecated due to duplication of concepts, or when a term becomes obsolete. You should not use any deprecated concepts for any measurement ID. Deprecated concepts can be identified from lists on NVS because their identifier will have a red warning symbol, and the page for the term itself will indicate the concept is deprecated in red lettering. Unfortunately, there is currently no notification system in place to automatically warn you if a previously used concept has become deprecated. We recommend occasionally confirming that the concepts you or your institution use are still available for use.
+Each vocabulary “term” in NVS is a concept that describes a specific idea or meaning. For consistency, we refer to individual vocabularies in NVS as **concepts**. Concepts within NVS are organized into _collections_ that group concepts with commonalities (e.g. all concepts pertaining to units). Sometimes collections contain concepts that are deprecated. Terms can be deprecated due to duplication of concepts, or when a term becomes obsolete. You should not use any deprecated concepts for any measurement ID. Deprecated concepts can be identified from lists on NVS because their identifier will have a red warning symbol, and the page for the term itself will indicate the concept is deprecated in red lettering. Unfortunately, there is currently no notification system in place to automatically warn you if a previously used concept has become deprecated. We recommend occasionally confirming that the concepts you or your institution use are still available for use.
 
 Guidelines for populating each mesaurement ID are described below.
 
@@ -94,11 +94,9 @@ Important note!
 
 </div>
 
-The P01 is a large collection with >45,000 concepts. Each concept within this collection is composed of different elements that, together, construct a label you can use for a measurement type. Frequently, concepts from the P01 collection are referred to as a “P01 code”. P01 codes are used to populate the `measurementTypeID` field.
+The P01 is a large [collection](https://vocab.nerc.ac.uk/search_nvs/P01/) with >45,000 concepts. Each concept within this collection is composed of different elements that, together, construct a label used to describe a measurement. Frequently, concepts from the P01 collection are referred to as a “P01 code”. P01 codes are used to populate the `measurementTypeID` field. It is important to know that a **semantic model**, shown below, underlies each P01 code and the elements that compose them. There are 5 potential elements in this semantic model that, together, unambiguously describe a type of measurement.
 
-It is important to know that a semantic model, shown below, underlies each P01 code and the elements that compose them. There are 5 potential elements in this semantic model that, together, unambiguously describe a measurement type. See the [P01 wheel](https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf) for example of how these elements relate and combine to make one P01 code.
-
-![*Elements of the semantic model for P01 codes*](images/P01semantic-model.png)
+![_The elements underlying the P01 semantic model_](images/P01semantic-model.png)
 
 * **Property/attribute**: the measurement or observation of either an object of interest or a matrix, or both
 * **Object of interest**: a chemical object, a biological object, a physical phenomenon, or a material object
@@ -106,13 +104,17 @@ It is important to know that a semantic model, shown below, underlies each P01 c
 * **Environmental matrix**: what environment the measurement is in (e.g. water body, seabed); needed for most environmental measurements, but may not be necessary for e.g. biological measurements
 * **Method**: any specific methods used that are important to interpret the measurement
 
-Note: Not every element is required, but it is important to think about each piece of the model and how it may or may not apply to your measurement. More details about this are described below in the mesaurementTypeID section.
+Note: Not every element is required, but it is important to think about each piece of the model and how it may or may not apply to your measurement. More details about this are described below.
+
+The [P01 wheel](https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf), a diagram created by NERC, is shown below as a simple visualisation of how P01 elements relate to and are populated by other NERC collections.
+
+![_The P01 wheel, demonstrating how P01 elements are represented by other NVS collections_](images/P01_wheel.png)
 
 You can use codes from other collections (e.g. P06, QL22) for `measurementValueID` and `measurementUnitID` fields, but for `measurementTypeID` you must **always** use a code from the P01 collection.
 
-##### Selecting P01 codes for measurementTypeID
+#### Selecting P01 codes for measurementTypeID
 
-When selection P01 codes, it is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object or entity being measured, in what environment was the measurement taken, by what kind of methods, etc.? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. More documentation about the P01 code and the semantic model it is based on can be found [here](https://github.com/nvs-vocabs/P01).
+When selecting P01 codes, remember it is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object or entity being measured, in what environment was the measurement taken, by what kind of methods, etc.? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. More documentation about the P01 code and the semantic model it is based on can be found [here](https://github.com/nvs-vocabs/P01).
 
 The P01 collection is found [here](http://vocab.nerc.ac.uk/collection/P01/current/) and can be [searched through the NERC vocabulary server](https://vocab.nerc.ac.uk/search_nvs/P01/).
 
@@ -151,16 +153,16 @@ Finally, if you are unsure about whether a code fits your specific case, please 
 
 1. Navigate to <https://github.com/nvs-vocabs/OBISVocabs/issues> and click on the New Issue button.
 
-![*Screenshot of how to request a new vocabulary on Github*](images/Vocab_GithubRequest_1-NewIssue.png){width=50%}
+![_Screenshot of how to request a new vocabulary on Github_](images/Vocab_GithubRequest_1-NewIssue.png){width=50%}
 
 2. Click Get started
 
-![*Screenshot of submitting an issue to Github*](images/Vocab_GithubRequest_2-GetStarted.png){width=80%}
+![_Screenshot of submitting an issue to Github_](images/Vocab_GithubRequest_2-GetStarted.png){width=80%}
 
 3. Fill in the title with short details of your request or issue. Then fill in the description. It is recommended to list any existing terms that are similar to your request, or concepts that are sub-components of the request.
 
-![*Screenshot for how to request a new measurementType on Github*](images/Vocab_GithubRequest_3-IssueSubmission.png){width=50%}
+![_Screenshot for how to request a new measurementType on Github_](images/Vocab_GithubRequest_3-IssueSubmission.png){width=50%}
 
-4. *Example*: An issue was created to address difficulties in identifying P01 codes for sex rather than gender. Gender is a concept generally applied to humans, whereas “sex” is more applicable for animals. Thus the request was to either modify the current gender P01 code, or create a P01 code that specifies sex, not gender. At the time the request was issued, when users searched for a P01 term for “sex”, only species-specific terms were available.
+4. _Example_: An issue was created to address difficulties in identifying P01 codes for sex rather than gender. Gender is a concept generally applied to humans, whereas “sex” is more applicable for animals. Thus the request was to either modify the current gender P01 code, or create a P01 code that specifies sex, not gender. At the time the request was issued, when users searched for a P01 term for “sex”, only species-specific terms were available.
 
-![*Example of previously requested new term on Github*](images/Vocab_GithubRequest_4-example.png){width=80%}
+![_Example of previously requested new term on Github_](images/Vocab_GithubRequest_4-example.png){width=80%}
