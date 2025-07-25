@@ -41,9 +41,9 @@ r-package
 api
 full-exports
 finding-your-own-data-in-obis
-how-to-contact-data-provider
+how-to-contact-a-data-provider
 interpreting-downloaded-files-from-obis
-citing-data-from-obis
+citing-obis-data-obis
 darwin-core-1
 introduction-to-darwin-core
 history-of-darwin-core-and-obis
