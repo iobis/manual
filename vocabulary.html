@@ -479,11 +479,10 @@ You can use the <a href="https://mof.obis.org/">OBIS Measurement Type search too
 <p>Important note!
 <strong>P01 codes are required for the <code>measurementTypeID</code> field when using NERC vocabulary</strong>.</p>
 </div>
-<p>The P01 is a large collection with &gt;45,000 concepts. Each concept within this collection is composed of different elements that, together, construct a label you can use for a measurement type. Frequently, concepts from the P01 collection are referred to as a “P01 code”. P01 codes are used to populate the <code>measurementTypeID</code> field.</p>
-<p>It is important to know that a semantic model, shown below, underlies each P01 code and the elements that compose them. There are 5 potential elements in this semantic model that, together, unambiguously describe a measurement type. See the <a href="https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf">P01 wheel</a> for example of how these elements relate and combine to make one P01 code.</p>
+<p>The P01 is a large <a href="https://vocab.nerc.ac.uk/search_nvs/P01/">collection</a> with &gt;45,000 concepts. Each concept within this collection is composed of different elements that, together, construct a label used to describe a measurement. Frequently, concepts from the P01 collection are referred to as a “P01 code”. P01 codes are used to populate the <code>measurementTypeID</code> field. It is important to know that a <strong>semantic model</strong>, shown below, underlies each P01 code and the elements that compose them. There are 5 potential elements in this semantic model that, together, unambiguously describe a type of measurement.</p>
 <div class="float">
-<img src="images/P01semantic-model.png" alt="Elements of the semantic model for P01 codes" />
-<div class="figcaption"><em>Elements of the semantic model for P01 codes</em></div>
+<img src="images/P01semantic-model.png" alt="The elements underlying the P01 semantic model" />
+<div class="figcaption"><em>The elements underlying the P01 semantic model</em></div>
 </div>
 <ul>
 <li><strong>Property/attribute</strong>: the measurement or observation of either an object of interest or a matrix, or both</li>
@@ -492,11 +491,17 @@ You can use the <a href="https://mof.obis.org/">OBIS Measurement Type search too
 <li><strong>Environmental matrix</strong>: what environment the measurement is in (e.g. water body, seabed); needed for most environmental measurements, but may not be necessary for e.g. biological measurements</li>
 <li><strong>Method</strong>: any specific methods used that are important to interpret the measurement</li>
 </ul>
-<p>Note: Not every element is required, but it is important to think about each piece of the model and how it may or may not apply to your measurement. More details about this are described below in the mesaurementTypeID section.</p>
+<p>Note: Not every element is required, but it is important to think about each piece of the model and how it may or may not apply to your measurement. More details about this are described below.</p>
+<p>The <a href="https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf">P01 wheel</a>, a diagram created by NERC, is shown below as a simple visualisation of how P01 elements relate to and are populated by other NERC collections.</p>
+<div class="float">
+<img src="images/P01_wheel.png" alt="The P01 wheel, demonstrating how P01 elements are represented by other NVS collections" />
+<div class="figcaption"><em>The P01 wheel, demonstrating how P01 elements are represented by other NVS collections</em></div>
+</div>
 <p>You can use codes from other collections (e.g. P06, QL22) for <code>measurementValueID</code> and <code>measurementUnitID</code> fields, but for <code>measurementTypeID</code> you must <strong>always</strong> use a code from the P01 collection.</p>
-<div id="selecting-p01-codes-for-measurementtypeid" class="section level5 hasAnchor" number="13.1.3.1.1">
-<h5><span class="header-section-number">13.1.3.1.1</span> Selecting P01 codes for measurementTypeID<a href="vocabulary.html#selecting-p01-codes-for-measurementtypeid" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>When selection P01 codes, it is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object or entity being measured, in what environment was the measurement taken, by what kind of methods, etc.? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. More documentation about the P01 code and the semantic model it is based on can be found <a href="https://github.com/nvs-vocabs/P01">here</a>.</p>
+</div>
+<div id="selecting-p01-codes-for-measurementtypeid" class="section level4 hasAnchor" number="13.1.3.2">
+<h4><span class="header-section-number">13.1.3.2</span> Selecting P01 codes for measurementTypeID<a href="vocabulary.html#selecting-p01-codes-for-measurementtypeid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>When selecting P01 codes, remember it is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object or entity being measured, in what environment was the measurement taken, by what kind of methods, etc.? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. More documentation about the P01 code and the semantic model it is based on can be found <a href="https://github.com/nvs-vocabs/P01">here</a>.</p>
 <p>The P01 collection is found <a href="http://vocab.nerc.ac.uk/collection/P01/current/">here</a> and can be <a href="https://vocab.nerc.ac.uk/search_nvs/P01/">searched through the NERC vocabulary server</a>.</p>
 <p>You may notice when searching for measurement types related to an occurrence that specific taxonomic codes are available to you, e.g., abundance of Notommata. For OBIS, <strong>all P01 codes should be generalized</strong> - i.e. <strong>do not</strong> select species-specific codes. Instead only choose codes for “biological entities specified elsewhere” when the measurement is related to an occurrence record.</p>
 <p>There are several ways of searching for a P01 code, but we highly recommend using the <a href="https://vocab.seadatanet.org/p01-facet-search">SeaDataNet P01 Facet Search</a>. You may notice when searching for measurement types related to an occurrence that specific taxonomic options are available to you, e.g., abundance of Notommata. For OBIS, <strong>all P01 codes should be generalized</strong> - i.e. do not select species-specific codes. Instead, only choose codes for “biological entities specified elsewhere”! This is due to the Darwin Core Archive structure - taxonomic identification is already specified in the Occurrence table, but measurements are recorded in the ExtendedMeasurementOrFact table.</p>
@@ -513,7 +518,6 @@ You can use the <a href="https://mof.obis.org/">OBIS Measurement Type search too
 <div class="float">
 <img src="images/vocab-decision-tree.png" alt="_Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. For those unfamiliar with the tree see the OBIS YouTube Vocabulary series." />
 <div class="figcaption">_Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. For those unfamiliar with the tree see the <a href="https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul">OBIS YouTube Vocabulary series</a>.</div>
-</div>
 </div>
 </div>
 </div>
