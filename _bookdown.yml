@@ -31,9 +31,9 @@ rmd_files:
   - examples.md
   - other_data_types.md
   - data_qc.md
-  - dataquality.md
   - mofreports.md
   - lifewatch_qc.md
+  - dataquality.md
   - common_qc.md
   - data_publication.md
   - ipt.md

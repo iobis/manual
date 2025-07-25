@@ -3,7 +3,7 @@
 **Contents**
 
 - [Darwin Core Archive](#darwin-core-archive)
-- [OBIS holds more than just species occurrences: the ENV-DATA approach](#obis-holds-more-than-just-species-occurrences-the-env-data-approach)
+- [OBIS holds more than just species occurrences: the ENV-DATA approach](#more-than-just-species-occurrences-the-env-data-approach)
   - [ExtendedMeasurementOrFact Extension (eMoF)](#extendedmeasurementorfact-extension-emof)
   - [eDNA & DNA derived data Extension](#edna-dna-derived-data-extension)
   - [A special case: habitat types](#a-special-case-habitat-types)

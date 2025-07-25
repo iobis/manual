@@ -2,8 +2,11 @@
 
 # Data quality control
 
-OBIS ignores records that do not meet a number of standards. For example, all species names need to be matched against an authoritative taxonomic register, such as the World Register of Marine Species. In addition, quality is checked against the OBIS required fields as well as against any impossible values. OBIS checks, rejects and reports the data quality back to the OBIS nodes, but never change records. The OBIS tier 2 nodes are responsible for the data quality and communicate errors back to the data providers. A number of QC tools are developed to help data providers and OBIS nodes:
+OBIS supports maximizing the quality, completeness and fitness for use of marine biodiversity data. As such, records that do not meet a number of standards are dropped from the main OBIS database. For example, all species names need to be matched against an authoritative taxonomic register, such as the World Register of Marine Species (WoRMS). In addition, quality is checked against the OBIS required fields as well as against any impossible values. OBIS checks, rejects and reports the data quality back to the OBIS nodes, but never changes records. Note that some fields are **added** to datasets by the OBIS QC pipeline, including but not limited to [data quality flags](dataquality.html), indication of absence record, bathymetry values, sea surface temperature and sality based on Bio-Oracle (see Data references in <https://github.com/iobis/xylookup>), and taxonomic information obtained from WoRMS. See <https://obis.org/data/access/> for a complete list of fields transformed or added by the OBIS qc pipeline.
 
+OBIS nodes are responsible for ensuring data quality and communicating errors back to data providers. A number of QC tools have been developed to help OBIS nodes and data providers to ensure data quality:
+
+* R package [obistools](https://github.com/iobis/obistools)
 * [QC tool for species names](name_matching.html)
 * [QC tool for geography and data format](lifewatch_qc.html)
 

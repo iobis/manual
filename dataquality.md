@@ -1,21 +1,21 @@
-## Data quality flags
+# Data quality flags
 
-As you are following the guidelines in this manual to [format data](data_format.html), it is important to consider the potential quality flags that could be produced when your dataset is published to OBIS. OBIS performs a number of automatic quality checks on the data it receives. This informs data users of any potential issues with a dataset they may be interested in. A complete list of flags can be found [here](https://github.com/iobis/obis-qc/blob/master/obisqc/util/flags.py) but broadly speaking potential flags relate to issues with:
+As you are following the guidelines in this manual to [format data](data_format.html), it is important to consider the potential quality flags that could be produced when your dataset is published to OBIS. OBIS performs a number of automatic quality checks on the data it receives. This informs data users of any potential issues with a dataset they may be interested in. A **complete list of QC checks and associated flags** can be found [here](https://github.com/iobis/obis-qc). But to summarize, potential flags relate to issues with:
 
-* Location - coordinates
+* Location - coordinates missing or incorrect
 * Event time - start, end dates
-* Depth values out of range
+* Depth - values out of range or outside of bathymetry
 * Taxonomic
-* WoRMS name matching
-* Non-marine or terrestrial
+  * WoRMS name matching - no match or missing in WoRMS
+  * Non-marine or terrestrial
 
 When you are filling these fields it is important to double check that correct coordinates are entered, eventDates are accurate and in the correct format, and depth values are in meters. Records may be [rejected](data_qc.html#why-are-records-dropped) and not published with your dataset if the quality does not meet certain expectations. In other cases quality flags are attached to individual occurrence records.
 
-We acknowledge that sometimes you may encounter a QC flag for data that is accurate. For example, you may document a depth value that gets flagged as `DEPTH_OUT_OF_RANGE`. Sometimes this occurs because your measured depth value is more accurate than the GEBCO bathymetry data which OBIS bases its depth data on. In these cases, you can ignore the flag, but we recommend adding a note in `eventRemarks`, `measurementRemarks`,or `occurrenceRemarks`.
+We acknowledge that sometimes you may encounter a QC flag for data that is accurate. For example, you may document a depth value that gets flagged as `DEPTH_OUT_OF_RANGE` or `DEPTH_EXCEEDS_BATH`. Sometimes this occurs because the measured depth value is more accurate than the GEBCO bathymetry data which OBIS bases its depth data on. In these cases, you can ignore the flag, but we recommend adding a note in `eventRemarks`, `measurementRemarks`, or `occurrenceRemarks`. For more details on how OBIS checks depth and environmental data based on location, see documentation on the [xylookup](https://github.com/iobis/xylookup).
 
 The checks we perform as well as the associated flags are documented [here](https://github.com/iobis/obis-qc).
 
-### QC Flags in downloaded data {.unlisted .unnumbered}
+## QC Flags in downloaded data {.unlisted .unnumbered}
 
 There are several ways to inspect the quality flags associated with a specific dataset or any other subset of data. Data downloaded through the mapper and the R package will include a column named `flags` which contains a comma separated list of flags for each record. In addition, the data quality panel on the dataset and node pages has a flag icon which can be clicked to get an overview of all flags and the number of records affected.
 
@@ -33,7 +33,7 @@ At the top of the page there's a button to open the occurrence records in the ma
 
 <img src="images/qc_flag_flags.png" class="img-responsive-50"/>
 
-### Inspecting QC flags with R {.unlisted .unnumbered}
+## Inspecting QC flags with R {.unlisted .unnumbered}
 
 Inspecting flags using R is also very easy. The example below fetches the data from a single dataset, and lists the flags and the number of records affected. Notice that the `occurrence()` call has `dropped = TRUE` to make sure that any dropped records are included in the results:
 

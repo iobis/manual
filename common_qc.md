@@ -1,4 +1,4 @@
-## Common Quality Control issues
+# Common Quality Control issues
 
 **Content:**
 
@@ -9,7 +9,7 @@
 - [Low confidence taxonomic information](#low-confidence-taxonomic-identification)
 - [Uncertain measurements](#uncertain-measurements)
 
-### Uncertain temporal range
+## Uncertain temporal range
 
 When the eventDate or temporal scope of your dataset is in question or provided in an invalid format (e.g., textual description), there are a number of options to ensure the most accurate date is provided.
 
@@ -19,7 +19,7 @@ When the eventDate or temporal scope of your dataset is in question or provided 
 3. If date was provided as a textual description that is accurately interpretable, include the text description in the `verbatimEventDate` field. Then provide the interpreted date in ISO 8601 format in the `eventDate` field. Be sure to document any other important information in ‘eventRemarks’.
 4. For historical dates that do not conform to the ISO 8601 format, [guidelines](common_formatissues.html#historical-data) have been developed by the OBIS Historical Data Project team. The [dwc:class:GeologicalContext](https://dwc.tdwg.org/terms/#geologicalcontext) can be used to capture some information for records pertaining to fossilized specimens, and the [Chronometric Age Extension](https://chrono.tdwg.org/) can also be used. Note that currently when publishing, the Chronometric Age extension will not be aggregated with OBIS data, but this extension will be available when an individual dataset is downloaded. This applies to any other extensions not currently implemented.
 
-### Uncertain geolocation
+## Uncertain geolocation
 
 Sometimes locality information can be difficult to interpret, especially if records originate from historical data with vague descriptions, or descriptions/names of areas that no longer exist. If your dataset is missing `decimalLongitude` and `decimalLatitude`, but the locality name is given, there are a number of approaches you can take. You can:
 
@@ -125,7 +125,7 @@ Below is a table summarizing the different DwC terms you can obtain from the OBI
 | coordinateUncertaintyInMeters | radius | precision (not always available) |  |
 | footprintWKT | WKT |  |  |
 
-### Low confidence taxonomic identification
+## Low confidence taxonomic identification
 
 In case of low confidence taxonomic identifications, and/or the scientific name contains qualifiers such as cf., ?, or aff., then you should:
 
@@ -155,7 +155,7 @@ The use and definitions for additional Open Nomenclature (ON) signs (`identifica
 
 If the occurrence is instead unknown or new to science, it should be documented according to recommendations by [Horton et al. 2021](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full). Populate the `scientificName` field with the genus, and in `identificationQualifer` provide the ON sign 'sp.'. Be sure to also indicate the reason why species-level identification is unavailable by supplementing 'sp.' with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after 'sp.' to `identificationQualifer`. For example Eurythenes sp. DISCOLL.PAP.JC165.674. When adding a taxon identifier code, please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Like creating `eventIDs` or `occurrenceIDs`, try to provide more complex and globally unique identifiers. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within OBIS. We also recommend including these temporary names on specimen labels for physical specimens.
 
-#### Changes in taxonomic classification
+### Changes in taxonomic classification {.unlisted .unnumbered}
 
 Taxonomic classification can change over time - so what does that mean for your datasets when records change classification?
 
@@ -165,9 +165,9 @@ However we recognize that there may be issues when larger changes occur (e.g. Fa
 
 A future solution may be an annotation registry that includes statements like “identifications of taxon x in geographic area y are misidentified and should be linked to taxon z”.
 
-### Uncertain measurements
+## Uncertain measurements
 
-#### individualCount
+### individualCount {.unlisted .unnumbered}
 
 In some cases `individualCount` may be uncertain due to only fragments of organisms being found, or only a range of individuals is known. The `occurrenceRemarks` can be used to document information about decisions made during data formatting.
 
@@ -184,7 +184,7 @@ A brief clarification on abundance and count data: abundance is the number of in
 
 However, if the value is just the number of individuals without reference to a space, this information is recorded in `individualCount`.
 
-### Non-marine species
+## Non-marine species
 
 If you are given an error that your taxon is not marine, please confirm first whether the species is actually freshwater by cross referencing with WoRMS or [IRMNG](https://www.irmng.org/). If the species is not marine (i.e. belongs to a non-marine genus), check with the data provider as necessary for possible misidentification. Finally you can contact WoRMS at info@marinespecies.org to discuss adding the taxon to the WoRMS register. You will be required to provide documentation in this case to confirm marine status of the taxon.
 

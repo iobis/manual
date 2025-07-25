@@ -322,6 +322,6 @@ For these OBIS links, the required fields should be completed as follows:
 
 If other links are added, then the data format for web-based data is ‘html’. If the link refers to a file, the data format of the file will need to be added (e.g. .xlsx, .pdf …). The character set for all Darwin Core files is UTF-8, whereas for other web pages this can vary, so you may need to confirm.
 
-### Additional Metadata
+### Additional Metadata {.unlisted .unnumbered}
 
 Any remaining information that could not be catalogued under any of the other metadata, can be mentioned here. This may include logos, purpose of the dataset, a description of how the dataset will be maintained, etc.
