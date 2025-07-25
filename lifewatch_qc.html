@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>16.5 Geographic and data format quality control | The OBIS Manual</title>
-  <meta name="description" content="16.5 Geographic and data format quality control | The OBIS Manual" />
+  <title>16.4 Geographic and data format quality control | The OBIS Manual</title>
+  <meta name="description" content="16.4 Geographic and data format quality control | The OBIS Manual" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="16.5 Geographic and data format quality control | The OBIS Manual" />
+  <meta property="og:title" content="16.4 Geographic and data format quality control | The OBIS Manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="16.5 Geographic and data format quality control | The OBIS Manual" />
+  <meta name="twitter:title" content="16.4 Geographic and data format quality control | The OBIS Manual" />
   
   
   
@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="mofreports.html"/>
-<link rel="next" href="common_qc.html"/>
+<link rel="next" href="dataquality.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -221,10 +221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>7</b> Metadata: Ecological Metadata Language</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="eml.html"><a href="eml.html#metadata-sections"><i class="fa fa-check"></i><b>7.1</b> Metadata Sections</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="eml.html"><a href="eml.html#additional-metadata"><i class="fa fa-check"></i><b>7.1.1</b> Additional Metadata</a></li>
-</ul></li>
+<li class="chapter" data-level="7.1" data-path="eml.html"><a href="eml.html#metadata-sections"><i class="fa fa-check"></i><b>7.1</b> Metadata Sections</a></li>
 </ul></li>
 <li class="part"><span><b>Data Formatting</b></span></li>
 <li class="chapter" data-level="8" data-path="formatting_intro.html"><a href="formatting_intro.html"><i class="fa fa-check"></i><b>8</b> Data formatting workflow</a></li>
@@ -289,49 +286,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="16.1" data-path="data_qc.html"><a href="data_qc.html#why-are-records-dropped"><i class="fa fa-check"></i><b>16.1</b> Why are records dropped?</a></li>
 <li class="chapter" data-level="16.2" data-path="data_qc.html"><a href="data_qc.html#how-to-conduct-quality-control"><i class="fa fa-check"></i><b>16.2</b> How to conduct Quality Control</a></li>
-<li class="chapter" data-level="16.3" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>16.3</b> Data quality flags</a></li>
-<li class="chapter" data-level="16.4" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>16.4</b> How To Use MoF Report and Tool</a></li>
-<li class="chapter" data-level="16.5" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>16.5</b> Geographic and data format quality control</a></li>
-<li class="chapter" data-level="16.6" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>16.6</b> Common Quality Control issues</a>
-<ul>
-<li class="chapter" data-level="16.6.1" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>16.6.1</b> Uncertain temporal range</a></li>
-<li class="chapter" data-level="16.6.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>16.6.2</b> Uncertain geolocation</a></li>
-<li class="chapter" data-level="16.6.3" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>16.6.3</b> How to use OBIS Map Tool</a></li>
-<li class="chapter" data-level="16.6.4" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>16.6.4</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
-<li class="chapter" data-level="16.6.5" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>16.6.5</b> How to use Marine Regions Gazetteer tool</a></li>
-<li class="chapter" data-level="16.6.6" data-path="common_qc.html"><a href="common_qc.html#low-confidence-taxonomic-identification"><i class="fa fa-check"></i><b>16.6.6</b> Low confidence taxonomic identification</a></li>
-<li class="chapter" data-level="16.6.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>16.6.7</b> Uncertain measurements</a></li>
-<li class="chapter" data-level="16.6.8" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>16.6.8</b> Non-marine species</a></li>
+<li class="chapter" data-level="16.3" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>16.3</b> Measurement Data QC</a></li>
+<li class="chapter" data-level="16.4" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>16.4</b> Geographic and data format quality control</a></li>
 </ul></li>
+<li class="chapter" data-level="17" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>17</b> Data quality flags</a></li>
+<li class="chapter" data-level="18" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>18</b> Common Quality Control issues</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>18.1</b> Uncertain temporal range</a></li>
+<li class="chapter" data-level="18.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>18.2</b> Uncertain geolocation</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>18.2.1</b> How to use OBIS Map Tool</a></li>
+<li class="chapter" data-level="18.2.2" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>18.2.2</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
+<li class="chapter" data-level="18.2.3" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>18.2.3</b> How to use Marine Regions Gazetteer tool</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="common_qc.html"><a href="common_qc.html#low-confidence-taxonomic-identification"><i class="fa fa-check"></i><b>18.3</b> Low confidence taxonomic identification</a></li>
+<li class="chapter" data-level="18.4" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>18.4</b> Uncertain measurements</a></li>
+<li class="chapter" data-level="18.5" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>18.5</b> Non-marine species</a></li>
 </ul></li>
 <li class="part"><span><b>Publishing Data</b></span></li>
-<li class="chapter" data-level="17" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>17</b> Data publication and sharing</a>
+<li class="chapter" data-level="19" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>19</b> Data publication and sharing</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>17.1</b> Licenses</a></li>
-<li class="chapter" data-level="17.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>17.2</b> IPT: Integrated Publishing Toolkit</a></li>
-<li class="chapter" data-level="17.3" data-path="ipt_admin.html"><a href="ipt_admin.html"><i class="fa fa-check"></i><b>17.3</b> IPT Admin Responsibilities</a></li>
-<li class="chapter" data-level="17.4" data-path="data_sharing.html"><a href="data_sharing.html"><i class="fa fa-check"></i><b>17.4</b> Maintaining and sharing published data</a>
+<li class="chapter" data-level="19.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>19.1</b> Licenses</a></li>
+<li class="chapter" data-level="19.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>19.2</b> IPT: Integrated Publishing Toolkit</a></li>
+<li class="chapter" data-level="19.3" data-path="ipt_admin.html"><a href="ipt_admin.html"><i class="fa fa-check"></i><b>19.3</b> IPT Admin Responsibilities</a></li>
+<li class="chapter" data-level="19.4" data-path="data_sharing.html"><a href="data_sharing.html"><i class="fa fa-check"></i><b>19.4</b> Maintaining and sharing published data</a>
 <ul>
-<li class="chapter" data-level="17.4.1" data-path="data_sharing.html"><a href="data_sharing.html#adding-a-doi-to-datasets"><i class="fa fa-check"></i><b>17.4.1</b> Adding a DOI to datasets</a></li>
-<li class="chapter" data-level="17.4.2" data-path="data_sharing.html"><a href="data_sharing.html#user-tracking"><i class="fa fa-check"></i><b>17.4.2</b> User tracking</a></li>
+<li class="chapter" data-level="19.4.1" data-path="data_sharing.html"><a href="data_sharing.html#adding-a-doi-to-datasets"><i class="fa fa-check"></i><b>19.4.1</b> Adding a DOI to datasets</a></li>
+<li class="chapter" data-level="19.4.2" data-path="data_sharing.html"><a href="data_sharing.html#user-tracking"><i class="fa fa-check"></i><b>19.4.2</b> User tracking</a></li>
 </ul></li>
-<li class="chapter" data-level="17.5" data-path="data_sharing.html"><a href="data_sharing.html#update-your-data-in-obis"><i class="fa fa-check"></i><b>17.5</b> Update your data in OBIS</a></li>
-<li class="chapter" data-level="17.6" data-path="data_sharing.html"><a href="data_sharing.html#publish-obis-data-to-gbif"><i class="fa fa-check"></i><b>17.6</b> Publish OBIS data to GBIF</a></li>
+<li class="chapter" data-level="19.5" data-path="data_sharing.html"><a href="data_sharing.html#update-your-data-in-obis"><i class="fa fa-check"></i><b>19.5</b> Update your data in OBIS</a></li>
+<li class="chapter" data-level="19.6" data-path="data_sharing.html"><a href="data_sharing.html#publish-obis-data-to-gbif"><i class="fa fa-check"></i><b>19.6</b> Publish OBIS data to GBIF</a></li>
 </ul></li>
 <li class="part"><span><b>Data Visualization and Analysis</b></span></li>
-<li class="chapter" data-level="18" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>18</b> Data Visualization</a>
+<li class="chapter" data-level="20" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>20</b> Data Visualization</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="dataviz.html"><a href="dataviz.html#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>18.1</b> Example notebooks using data from OBIS</a></li>
-<li class="chapter" data-level="18.2" data-path="dataviz.html"><a href="dataviz.html#obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis"><i class="fa fa-check"></i><b>18.2</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
+<li class="chapter" data-level="20.1" data-path="dataviz.html"><a href="dataviz.html#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>20.1</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="20.2" data-path="dataviz.html"><a href="dataviz.html#obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis"><i class="fa fa-check"></i><b>20.2</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
 </ul></li>
 <li class="part"><span><b>Additional Resources</b></span></li>
-<li class="chapter" data-level="19" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>19</b> Other Resources</a>
+<li class="chapter" data-level="21" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>21</b> Other Resources</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="other_resources.html"><a href="other_resources.html#mbon-pole-to-pole-tutorial"><i class="fa fa-check"></i><b>19.1</b> MBON Pole to Pole Tutorial</a></li>
-<li class="chapter" data-level="19.2" data-path="other_resources.html"><a href="other_resources.html#ioos-darwin-core-guide"><i class="fa fa-check"></i><b>19.2</b> IOOS Darwin Core Guide</a></li>
-<li class="chapter" data-level="19.3" data-path="other_resources.html"><a href="other_resources.html#emodnet-biology"><i class="fa fa-check"></i><b>19.3</b> EMODnet Biology</a></li>
-<li class="chapter" data-level="19.4" data-path="other_resources.html"><a href="other_resources.html#template-generators"><i class="fa fa-check"></i><b>19.4</b> Template Generators</a></li>
-<li class="chapter" data-level="19.5" data-path="other_resources.html"><a href="other_resources.html#bionomia"><i class="fa fa-check"></i><b>19.5</b> Bionomia</a></li>
+<li class="chapter" data-level="21.1" data-path="other_resources.html"><a href="other_resources.html#mbon-pole-to-pole-tutorial"><i class="fa fa-check"></i><b>21.1</b> MBON Pole to Pole Tutorial</a></li>
+<li class="chapter" data-level="21.2" data-path="other_resources.html"><a href="other_resources.html#ioos-darwin-core-guide"><i class="fa fa-check"></i><b>21.2</b> IOOS Darwin Core Guide</a></li>
+<li class="chapter" data-level="21.3" data-path="other_resources.html"><a href="other_resources.html#emodnet-biology"><i class="fa fa-check"></i><b>21.3</b> EMODnet Biology</a></li>
+<li class="chapter" data-level="21.4" data-path="other_resources.html"><a href="other_resources.html#template-generators"><i class="fa fa-check"></i><b>21.4</b> Template Generators</a></li>
+<li class="chapter" data-level="21.5" data-path="other_resources.html"><a href="other_resources.html#bionomia"><i class="fa fa-check"></i><b>21.5</b> Bionomia</a></li>
 </ul></li>
 </ul>
 
@@ -350,15 +349,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="geographic-and-data-format-quality-control" class="section level2 hasAnchor" number="16.5">
-<h2><span class="header-section-number">16.5</span> Geographic and data format quality control<a href="lifewatch_qc.html#geographic-and-data-format-quality-control" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="geographic-and-data-format-quality-control" class="section level2 hasAnchor" number="16.4">
+<h2><span class="header-section-number">16.4</span> Geographic and data format quality control<a href="lifewatch_qc.html#geographic-and-data-format-quality-control" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>These Data validation and QC services are available on the LifeWatch portal at <a href="http://www.lifewatch.be/data-services">http://www.lifewatch.be/data-services</a>.</p>
-<div id="geographical-service" class="section level4 hasAnchor" number="16.5.0.1">
-<h4><span class="header-section-number">16.5.0.1</span> Geographical service<a href="lifewatch_qc.html#geographical-service" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="geographical-service" class="section level4 hasAnchor" number="16.4.0.1">
+<h4><span class="header-section-number">16.4.0.1</span> Geographical service<a href="lifewatch_qc.html#geographical-service" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>This service allows to upload a file and to plot the listed coordinates on a map. Using this web service does not require knowledge of GIS. This service allows a visual check of the available locations and makes it possible to easily identify points on land or outside the scope or study area. Geographic data are essential for OBIS and the experience is that a lot of these data is incomplete or contains errors. A visual check of the position of the sampling locations is thus a simple way of filtering out obvious errors and improving the data quality. Latitude and longitude need to be in WGS84, decimal degrees. This format is also necessary for the OBIS Schema and for uploading the dataset to IPT (Darwin Core).</p>
 </div>
-<div id="obis-data-format-validation" class="section level4 hasAnchor" number="16.5.0.2">
-<h4><span class="header-section-number">16.5.0.2</span> OBIS data format validation<a href="lifewatch_qc.html#obis-data-format-validation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="obis-data-format-validation" class="section level4 hasAnchor" number="16.4.0.2">
+<h4><span class="header-section-number">16.4.0.2</span> OBIS data format validation<a href="lifewatch_qc.html#obis-data-format-validation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>This is the most extensive check currently available and is available for data that are structured according to the OBIS Schema. This validation service checks the following items:</p>
 <ul>
 <li>Are all mandatory fields completed, what are the missing fields?</li>
@@ -407,13 +406,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="mofreports.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="common_qc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dataquality.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

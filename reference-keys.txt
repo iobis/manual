@@ -64,7 +64,6 @@ a-special-case-habitat-types
 relational-databases-the-underlying-framework-of-obis
 metadata-ecological-metadata-language
 metadata-sections
-additional-metadata
 data-formatting-workflow
 dataset-structure
 when-to-use-event-core
@@ -121,11 +120,11 @@ tracking-data
 data-quality-control
 why-are-records-dropped
 how-to-conduct-quality-control
-data-quality-flags
-how-to-use-mof-report-and-tool
+measurement-data-qc
 geographic-and-data-format-quality-control
 geographical-service
 obis-data-format-validation
+data-quality-flags
 common-quality-control-issues
 uncertain-temporal-range
 uncertain-geolocation
@@ -134,9 +133,7 @@ using-getty-thesaurus-google-maps-to-obtain-locality-coordinates
 how-to-use-marine-regions-gazetteer-tool
 dwc-terms-obtained-from-maptool-and-gazetteers
 low-confidence-taxonomic-identification
-changes-in-taxonomic-classification
 uncertain-measurements
-individualcount
 non-marine-species
 data-publication-and-sharing
 licenses
