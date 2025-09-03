@@ -131,7 +131,7 @@ Next we can construct the Occurrence extension table. This table has the scienti
 
 **extendedMeasurementOrFact (eMoF) extension:**
 
-And finally there is the extendedMeasurementOrFact extension table, which has attributes of the zones (shore height), the quadrats (surface area), the transects (surface area and length), and the occurrences (percentage cover and functional group). Attributes of occurrences point to the Occurrence extension table using the `occurrenceID` column (see `occ_1` and `occ_2` in italic and bold-italic). Note that besides NERC vocabulary terms we are also referencing the CATAMI vocabulary for macroalgal functional groups. While best practice is to only populate identifier fields with machine-interoperable links, CATAMI does not currently provide URIs for their codes.
+And finally there is the extendedMeasurementOrFact extension table, which has attributes of the zones (shore height), the quadrats (surface area), the transects (surface area and length), and the occurrences (percentage cover and functional group). Attributes of occurrences point to the Occurrence extension table using the `occurrenceID` column (see `occ_1` and `occ_2` in italic and bold-italic). Note that besides NERC vocabulary terms we are also referencing the CATAMI vocabulary for macroalgal functional groups. While best practice is to only populate identifier fields with machine-interoperable links, CATAMI codes are available via CSIRO's National Collections and Marine Infrastructure (NCMI) Information and Data Centre (IDC) via the [CATAMI classification tree](https://www.cmar.csiro.au/caab/catami_tree.cfm). To search for codes, see the [CAAB - Codes for Australian Aquatic Biota](https://www.cmar.csiro.au/data/caab/).
 
 | eventID | occurrenceID | measurementType | measurementTypeID | measurementValue | measurementValueID | measurementUnit | measurementUnitID |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -141,8 +141,8 @@ And finally there is the extendedMeasurementOrFact extension table, which has at
 | **quadrat_1** | ***occ_2*** | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 56 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
 | transect_1 | | surface area | <http://vocab.nerc.ac.uk/collection/P01/current/AREABEDS> | 60 | | m2 | <http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/> |
 | transect_1 | | length | <http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK> | 30 | | m | <http://vocab.nerc.ac.uk/collection/P06/current/ULAA/> |
-| transect_1 | occ_3 | functional group | ? | sheet-like red  | CATAMI:80300925 |||
-| transect_1 | occ_4 | functional group | ? | filamentous brown | CATAMI:80300931 |||
+| transect_1 | occ_3 | functional group according to CATAMI classification | <https://doi.org/10.1371/journal.pone.0141039> | sheet-like red CATAMI:80300925 | <https://www.cmar.csiro.au/data/caab/taxon_report.cfm?caab_code=80300925> |||
+| transect_1 | occ_4 | functional group according to CATAMI classification| <https://doi.org/10.1371/journal.pone.0141039> | filamentous brown CATAMI:80300931 | <https://www.cmar.csiro.au/data/caab/taxon_report.cfm?caab_code=80300931> |||
 | transect_1 | occ_3 | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 8 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
 | transect_1 | occ_4 | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 24 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
 | transect_2 | occ_5 | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 4 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
