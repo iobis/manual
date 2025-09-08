@@ -35,24 +35,20 @@
 
 #### Invertebrates abundance and distribution {.unlisted .unnumbered}
 
-This example is based on a benthic invertebrate dataset that used photoplots to monitor percent cover of barnacles, mussels, and rockweed titled ["MARINe/PISCO: Intertidal: MARINe Coastal Biodiversity Surveys: Point Contact Surveys Summarized"](https://obis.org/dataset/bb638343-bbc9-464d-88d8-18d9ba29ecdd).
+This example is based on a biodiversity dataset that uses a sampling grid to estimate percent cover of sessile invertebrates and algae titled ["MARINe/PISCO: Intertidal: MARINe Coastal Biodiversity Surveys: Point Contact Surveys Summarized"](https://obis.org/dataset/bb638343-bbc9-464d-88d8-18d9ba29ecdd).
 
-```{r echo=FALSE, results='asis'}
+```{r echo=FALSE, results='asis'} 
 library(webshot)
 library(downloadthis)
 if (knitr::is_html_output()) {
-  downloadthis::download_link(
-  link = "https://ipt-obis.gbif.us/archive.do?r=marine_cbs_point_contact_surveys&v=1.3",
-  button_label = "Download dataset DwC-A .zip",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE,
-  class = "hvr-sweep-to-left",
-    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
-            margin-top: 5px; margin-bottom: 20px;"
-)} else {
-  cat("[Download the dataset](https://ipt-obis.gbif.us/archive.do?r=marine_cbs_point_contact_surveys&v=1.3)")
+  cat(
+    '<a href="https://ipt-obis.gbif.us/resource?r=marine_cbs_point_contact_surveys" target="_blank" ',
+    'class="hvr-sweep-to-left" ',
+    'style="background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px; text-decoration: none; display: inline-block;">',
+    '<i class="fa fa-save" style="margin-right:8px;"></i>Dataset download page</a>'
+  )
+} else {
+  cat("[Dataset download page](https://ipt-obis.gbif.us/resource?r=marine_cbs_point_contact_surveys)")
 }
 ```
 
