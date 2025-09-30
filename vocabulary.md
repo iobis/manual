@@ -1,12 +1,13 @@
 # Controlled vocabulary for eMoF
 
-**Content**
+## Content {.unlisted .unnumbered}
 
 * [Map eMoF measurement identifiers](#map-emof-measurement-identifiers-to-preferred-vocabulary)
   * [MeasurementOrFact vocabulary background](#measurementorfact-vocabulary-background)
   * [Guidelines to populate measurementUnitID](#populate-measurementunitid)
   * [Guidelines to populate measurementValueID](#populate-measurementvalueid)
   * [Guidelines to populate measurementTypeID](#populate-measurementtypeid)
+  * [Vocabulary decision tree](vocab_tree.html)
 
 ## Map eMoF measurement identifiers to preferred vocabulary
 
@@ -132,9 +133,9 @@ Vocabulary for measurements related to sampling instruments and/or sampling meth
 * Name of sampling instrument <https://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/>
 * Sample duration <https://vocab.nerc.ac.uk/collection/P01/current/AZDRZZ01/>
 
-Use the following decision tree to help you select P01 codes for biological, chemical, physical, and/or sampling measurements. See the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul) `r fontawesome::fa(name="youtube", fill="red")` for guidance on how to use this tree and examples for different types of `measurementTypeIDs`. Note that the `measurementTypeID`:sampling measurements branch is newly developed, and we are happy to receive feedback if the suggestions are not working for you.
+Click the [decision tree](vocab_tree.html) below to help you select P01 codes for biological, chemical, physical, and/or sampling measurements. See the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul) `r fontawesome::fa(name="youtube", fill="red")` for guidance on how to use this tree and examples for different types of `measurementTypeIDs`. The tree also helps identify vocabulary collections for `measurementUnitID` and non-numeric `measurementValueID`.
 
-![_Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. For those unfamiliar with the tree see the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul).](images/vocab-decision-tree.png)
+[![_Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. Click the tree to be directed to a larger page._](images/vocab-decision-tree.png){width=60%}](vocab_tree.html)
 
 ### Request new vocabulary terms
 
@@ -153,16 +154,16 @@ Finally, if you are unsure about whether a code fits your specific case, please 
 
 1. Navigate to <https://github.com/nvs-vocabs/OBISVocabs/issues> and click on the New Issue button.
 
-![_Screenshot of how to request a new vocabulary on Github_](images/Vocab_GithubRequest_1-NewIssue.png){width=50%}
+![_Screenshot of how to request a new vocabulary on Github_](images/Vocab_GithubRequest_1-NewIssue.png)
 
 2. Click Get started
 
-![_Screenshot of submitting an issue to Github_](images/Vocab_GithubRequest_2-GetStarted.png){width=80%}
+![_Screenshot of submitting an issue to Github_](images/Vocab_GithubRequest_2-GetStarted.png)
 
 3. Fill in the title with short details of your request or issue. Then fill in the description. It is recommended to list any existing terms that are similar to your request, or concepts that are sub-components of the request.
 
-![_Screenshot for how to request a new measurementType on Github_](images/Vocab_GithubRequest_3-IssueSubmission.png){width=50%}
+![_Screenshot for how to request a new measurementType on Github_](images/Vocab_GithubRequest_3-IssueSubmission.png)
 
 4. _Example_: An issue was created to address difficulties in identifying P01 codes for sex rather than gender. Gender is a concept generally applied to humans, whereas “sex” is more applicable for animals. Thus the request was to either modify the current gender P01 code, or create a P01 code that specifies sex, not gender. At the time the request was issued, when users searched for a P01 term for “sex”, only species-specific terms were available.
 
-![_Example of previously requested new term on Github_](images/Vocab_GithubRequest_4-example.png){width=80%}
+![_Example of previously requested new term on Github_](images/Vocab_GithubRequest_4-example.png)
