@@ -108,6 +108,7 @@ the-nerc-p01-collection
 selecting-p01-codes-for-measurementtypeid
 request-new-vocabulary-terms
 how-to-submit-a-github-vocabulary-request
+vocabulary-decision-tree
 other-important-data-formatting-steps
 temporal-dates-and-times
 historical-data
