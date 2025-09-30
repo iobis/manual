@@ -8,4 +8,4 @@ An interactive version of this tree is also in development: [https://github.com/
 
 We are happy to receive feedback on any aspect of the decision tree.
 
-![_OBIS decision tree to assist with finding and selecting appropriate controlled vocabulary used in the eMoF table.](images/vocab-decision-tree.png)
+![_OBIS decision tree to assist with finding and selecting appropriate controlled vocabulary used in the eMoF table._](images/vocab-decision-tree.png)
