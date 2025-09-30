@@ -27,6 +27,7 @@ rmd_files:
   - format_emof.md
   - dna_data.md
   - vocabulary.md
+  - vocab_tree.md
   - common_formatissues.md
   - examples.md
   - other_data_types.md

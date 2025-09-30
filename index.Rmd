@@ -44,7 +44,7 @@ editor_options:
 
 \newpage
 
-![](images/obis_logo.png){width=50%}
+![](images/obis_logo.png){width=25%}
 
 # (PART\*) Overview {-}
 # Introduction
