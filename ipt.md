@@ -25,7 +25,7 @@ All these components (i.e., core file, extension files, descriptor file, and met
 
 ### How to access the IPT {.unlisted .unnumbered}
 
-Once you have determined which [OBIS node IPT](https://ipt.iobis.org/) is suited for your dataset, you can contact your node manager to create an associated account for you. There will be a link on the sign in page that will direct you to the IPT’s administrator to contact them. If your node’s IPT is not listed here, you will have to [contact the node manager](https://obis.org/contact/) to get the link to their IPT.
+Once you have determined which [OBIS node IPT](https://obis.org/about/nodes/) is suited for your dataset, you can contact your node manager to create an associated account for you. There will be a link on the sign in page that will direct you to the IPT’s administrator to contact them. If your node’s IPT is not listed here, you will have to [contact the node manager](https://obis.org/contact/) to get the link to their IPT.
 
 ![*Screenshot of IPT login page, highlighting link to IPT admin and the login button*](images/ipt-login.png){width=90%}
 

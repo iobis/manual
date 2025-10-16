@@ -24,7 +24,7 @@ The old [OBIS schema](http://old.iobis.org/node/304) was an [OBIS extension](htt
 
 In 2009, the Executive Committee of TDWG announced their ratification of an updated version of Darwin Core as a [TDWG Standard](https://www.tdwg.org/community/dwc/#history-and-context). Ratified Darwin Core unifies specializations and innovations emerging from diverse communities, and provides guidelines for ongoing enhancement. The [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/) links to TDWG’s term definitions and related practices for Ratified Darwin Core. We will discuss the relevance of terms in this guide further below.
 
-In December 2013, the [3rd session of the IODE Steering Group for OBIS](https://obis.org/about/) agreed to transition OBIS globally to the TDWG-Ratified version of Darwin Core, and the mapping of the (old) OBIS specific terms to Darwin Core can be found [here](http://rs.tdwg.org/dwc/terms/history/versions/index.htm#dwcobis).
+In December 2013, the 3rd session of the IODE Steering Group for OBIS agreed to transition OBIS globally to the TDWG-Ratified version of Darwin Core, and the mapping of the (old) OBIS specific terms to Darwin Core can be found [here](http://rs.tdwg.org/dwc/terms/history/versions/index.htm#dwcobis).
 
 <a class="anchor" name="terms"></a>
 

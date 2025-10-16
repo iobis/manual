@@ -9,7 +9,7 @@ Below you will find a convenient list of important or relevant websites and reso
 * [OBIS FAQ](FAQ.html)
 * [OBIS Slack](https://join.slack.com/t/obishq/shared_invite/zt-1yiucrrrq-RZRPU7c4rm7OungiBseWVA)
 * [OBIS GitHub helpdesk](https://github.com/iobis/helpdesk)
-* [List of OBIS nodes](https://obis.org/contact/)
+* [List of OBIS nodes](https://obis.org/about/nodes/)
 * `r fontawesome::fa(name="youtube", fill="red")` [OBIS How-To Use & Publish Data YouTube series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF): this series covers topics including but not limited to:
   * How to construct [eventIDs](https://www.youtube.com/watch?v=Upt6LPJ0Bn8&list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF&index=2&t=6s),
   * How to create and format the [Event](https://www.youtube.com/watch?v=jyy6QO_p7v8&list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF&index=4), [Occurrence](https://www.youtube.com/watch?v=G_AmAmS7ILc&list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF&index=5), and [eMoF](https://www.youtube.com/watch?v=EjM0HRrF1B4&list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF&index=6) tables,

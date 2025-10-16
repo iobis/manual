@@ -4,7 +4,7 @@
 
 OBIS has over 100 million records of marine data accessible for downloading. To download data from OBIS, there are several options:
 
-* [OBIS homepage](https://obis.org/) or [advanced dataset search](https://obis.org/datasets)
+* [OBIS homepage](https://obis.org/) or [advanced dataset search](https://obis.org/search/)
 * [OBIS Mapper](https://mapper.obis.org)
 * Accessible through the [R package robis](https://github.com/iobis/robis)
 * OBIS [API](https://api.obis.org/)
@@ -21,7 +21,7 @@ OBIS has over 100 million records of marine data accessible for downloading. To 
 
 From the OBIS homepage, you can search for data in the search bar in the middle of the page. You can search by particular taxonomic groups, common names, dataset names, OBIS nodes, institute name, areas (e.g., Exclusive Economic Zone (EEZ)), or by the data provider’s country.
 
-When you search by dataset you will notice an additional option appears for [advanced search options](https://obis.org/datasets). This will allow you to identify specific datasets, and apply filters for OBIS nodes and whether datasets include extensions.
+When you search by dataset you will notice an additional option appears for [advanced search options](https://obis.org/search/). This will allow you to identify specific datasets, and apply filters for OBIS nodes and whether datasets include extensions.
 
 ![*OBIS homepage search, showing where to find the advanced search link*](images/obis-homepagesearch.png){width=90%}
 
