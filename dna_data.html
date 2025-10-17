@@ -253,9 +253,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.5" data-path="dna_data.html"><a href="dna_data.html"><i class="fa fa-check"></i><b>13.5</b> DNA derived data</a>
 <ul>
 <li class="chapter" data-level="13.5.1" data-path="dna_data.html"><a href="dna_data.html#compiling-edna-and-metabarcoding-datasets"><i class="fa fa-check"></i><b>13.5.1</b> Compiling eDNA and metabarcoding datasets</a></li>
-<li class="chapter" data-level="13.5.2" data-path="dna_data.html"><a href="dna_data.html#unknown-sequences"><i class="fa fa-check"></i><b>13.5.2</b> Unknown sequences</a></li>
+<li class="chapter" data-level="13.5.2" data-path="dna_data.html"><a href="dna_data.html#edna-and-dna-derived-data-example"><i class="fa fa-check"></i><b>13.5.2</b> eDNA and DNA derived data example</a></li>
 <li class="chapter" data-level="13.5.3" data-path="dna_data.html"><a href="dna_data.html#compiling-qpcr-datasets"><i class="fa fa-check"></i><b>13.5.3</b> Compiling qPCR datasets</a></li>
 <li class="chapter" data-level="13.5.4" data-path="dna_data.html"><a href="dna_data.html#obis-bioinformatics-pipeline"><i class="fa fa-check"></i><b>13.5.4</b> OBIS Bioinformatics Pipeline</a></li>
+<li class="chapter" data-level="13.5.5" data-path="dna_data.html"><a href="dna_data.html#future-developments-of-edna-data-standards"><i class="fa fa-check"></i><b>13.5.5</b> Future developments of eDNA data standards</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>14</b> Controlled vocabulary for eMoF</a>
@@ -361,11 +362,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="dna_data.html#how-to-find-genetic-data-in-obis">How to find genetic data in OBIS</a></li>
 <li><a href="dna_data.html#compiling-edna-and-metabarcoding-datasets">Guidelines for compiling eDNA and metabarcoding data</a>
 <ul>
-<li><a href="dna_data.html#edna-and-dna-derived-data-example">eDNA &amp; DNA Derived use cases</a></li>
+<li><a href="dna_data.html#using-occurrence-core-and-dna-derived-data-extension">Using Occurrence core and DNA Derived Data extension</a></li>
+<li><a href="dna_data.html#using-the-event-core-occurrence-extension-and-dna-derived-data-extension">Using the event core, occurrence extension, and DNA Derived Data extension</a></li>
+<li><a href="dna_data.html#using-the-metabarcoding-data-toolkit">Using the metabarcoding data toolkit</a></li>
+<li><a href="dna_data.html#unknown-sequences">Unknown sequences</a></li>
+<li><a href="dna_data.html#sequences-without-a-worms-id-aphiaid">Sequences without a WoRMS-ID (AphiaID)</a></li>
+<li><a href="dna_data.html#control-samples">Control samples</a></li>
+<li><a href="dna_data.html#try-it-out-yourself">Try it out yourself</a></li>
+</ul></li>
+<li><a href="dna_data.html#edna-and-dna-derived-data-example">eDNA and DNA derived data example</a>
+<ul>
+<li><a href="dna_data.html#edna-data-from-monterey-bay-california">eDNA data from Monterey Bay, California</a></li>
 <li><a href="#id_16s-rrna-gene-metabarcoding-data-of-pico-to-mesoplankton">16S rRNA metabarcoding example</a></li>
 </ul></li>
-<li><a href="dna_data.html#unknown-sequences">Unknown sequences</a></li>
 <li><a href="dna_data.html#compiling-qpcr-datasets">Guidelines for compiling qPCR data</a></li>
+<li><a href="dna_data.html#obis-bioinformatics-pipeline">OBIS Bioinformatics pipeline</a></li>
+<li><a href="dna_data.html#future-developments-of-edna-data-standards">Future developments of eDNA data standards</a></li>
 </ul>
 <div id="introduction-to-dna-data" class="section level3 unlisted unnumbered hasAnchor">
 <h3>Introduction to DNA data<a href="dna_data.html#introduction-to-dna-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -380,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>For a guide and decision tree on determining which category your data falls into, see the <a href="https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping">Data packaging and mapping</a> section of the GBIF guide. Refer to the <a href="dna_data.html#edna--dna-derived-data">examples below</a> for use case examples of eDNA and DNA derived data (Category 1).</p>
 <blockquote>
-<p>Currently, genetic data <strong>must</strong> be published with Occurrence core, not Event core. eDNA and DNA derived data are then linked to the Occurrence core data table with the use of <code>occurrenceID</code> and/or <code>eventID</code>. See below for further guidance on compiling genetic data. A <a href="https://www.gbif.org/new-data-model">new data model</a> is being developed by GBIF and the OBIS community that may change this, however as it is not implemented yet, we focus on the current Darwin Core recommendations here.</p>
+<p>Genetic data may now be published using either the <strong>Occurrence core</strong> and DNA-derived data extension, or by utilising the <strong>Event core</strong> and adding both an occurrence extension and the DNA-derived data extension. eDNA and DNA derived data are linked to the Occurrence core data table with the use of <code>occurrenceID</code> and/or <code>eventID</code>. The DNA derived data can also be linked to both the Event core (by using <code>eventID</code>) and the Occurrence extension (by using the <code>occurrenceID</code>). Use of the Event core can help in decreasing the amount of data, as metadata linked to samples is recorded only once. See below for further guidance on compiling genetic data. In addition, a <a href="https://www.gbif.org/new-data-model">new data model</a> is being developed by GBIF and the OBIS community that would enable the linking of multiple different datatypes and tables , and will get rid of the start schema, enabling the linking of one sequence to multiple occurrences, therefore decreasing the amount of data needed. However as it is not implemented yet (as of September 2025), we focus on the current Darwin Core recommendations here.</p>
 </blockquote>
 <p>To format datasets, you will need to have information on the sequence and possible taxonomy for each occurrence record associated with a DNA sample. Genetic data is often recorded in multiple different files, and this might be the type of format received from data providers. Important data tables can include: an OTU-table, a taxonomy table, a sample information table, and a .fasta file with sequences. The OTU-table is a sequence by sample table, which records the quantity of each unique sequence found in each sample. Sequences are usually referred to by an ID, which is unique only in the dataset (e.g. asv1, asv2, asv3 …). The taxonomy table is a sequence by taxonomy table, which records the taxonomy linked to each unique sequence, as defined by the annotation method. The sample information table records the metadata of each sample (e.g. location, time, and collection method). Finally the .fasta file records the actual DNA sequence that is linked to each sequence id.</p>
 <p>Although this data is in multiple files, each unique sequence by sample combination is considered <strong>one</strong> occurrence. Therefore the data from these tables will need to be formatted to the “long format”, including a row for each sequence in each sample. See the figure below for a demonstration of how this can be done.</p>
@@ -428,9 +440,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Switch to the Layers tab</li>
 <li>Download the data from the layer by clicking the green button (see <a href="access#mapper.html">Data Access</a> for more on using the OBIS Mapper)</li>
 </ol>
+<p><strong>Tutorial resources</strong></p>
+<p>To run through an example of accessing data in OBIS you can access <a href="https://github.com/iobis/obon-2024-dna-training">this training</a> held for the Ocean Biomolecular Observation Network (OBON) in 2024.</p>
 </div>
 <div id="compiling-edna-and-metabarcoding-datasets" class="section level3 hasAnchor" number="13.5.1">
 <h3><span class="header-section-number">13.5.1</span> Compiling eDNA and metabarcoding datasets<a href="dna_data.html#compiling-edna-and-metabarcoding-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="using-occurrence-core-and-dna-derived-data-extension" class="section level4 hasAnchor" number="13.5.1.1">
+<h4><span class="header-section-number">13.5.1.1</span> Using Occurrence core and DNA Derived Data extension<a href="dna_data.html#using-occurrence-core-and-dna-derived-data-extension" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>As mentioned above, you will need to have information on the taxonomy and sequences for each occurrence record associated with a DNA sample. You should first fill in the <a href="format_occurrence.html">Occurrence core table</a>, and then complete the DNA Derived Data extension (as well as the eMoF extension, if applicable, for any measurements taken).</p>
 <p><strong>Occurrence core table</strong>
 In addition to the <a href="format_occurrence.html">usual required terms for Occurrence datasets</a>, you should consider the following additional terms:</p>
@@ -483,11 +499,56 @@ The DNADerivedData extension is meant to capture information related to the samp
 <p>The remaining metadata fields will help the person accessing the data to filter data of interest (e.g. specific genetic region with <code>target_gene</code>, <code>target_subfragment</code>, or <code>pcr_primer</code> fields), link to the public sequence databases with the MixS specific fields (e.g. <code>env_</code> fields), and evaluate the reliability of the sequence annotation method (e.g. <code>otu_</code> fields).</p>
 <p>Environmental systems are described in the two fields <code>env_broad_scale</code> and <code>env_local_scale</code> and it is recommended to use <a href="https://ontobee.org/ontology/ENVO?iri=http://purl.obolibrary.org/obo/ENVO_00000428">Environment Ontology (ENVO)’s biome classes</a> to describe the environmental system from which the sample was extracted. Like other identifiers, provide the exact ENVO reference identifier. <code>env_broad_scale</code> provides a coarse resolution for which environment your sample came from. Likely this will be <a href="https://ontobee.org/ontology/ENVO?iri=http://purl.obolibrary.org/obo/ENVO_00000447">marine biome (ENVO:00000447)</a> for OBIS data. For local scale, identify the specific environment your sample was obtained from (e.g., coastal water, benthic zone, etc.).</p>
 <p>When data tables are formatted and you are ready to publish it on the IPT, it will follow the same process for <a href="data_publication.html">publishing on an IPT</a>. You will upload your source files, and add the Occurrence core Darwin Core mappings, and then the DNA Derived Data Darwin Core mappings. However the extension must first be <a href="data_publication.html#ipt-administration">installed by the IPT administrator</a> (often the node manager). Once the extension is installed, you can add the Darwin Core DNA Derived Data mapping for that file.</p>
-<div id="edna-and-dna-derived-data-example" class="section level4 hasAnchor" number="13.5.1.1">
-<h4><span class="header-section-number">13.5.1.1</span> eDNA and DNA derived data example<a href="dna_data.html#edna-and-dna-derived-data-example" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="using-the-event-core-occurrence-extension-and-dna-derived-data-extension" class="section level4 hasAnchor" number="13.5.1.2">
+<h4><span class="header-section-number">13.5.1.2</span> Using the event core, occurrence extension, and DNA Derived Data extension<a href="dna_data.html#using-the-event-core-occurrence-extension-and-dna-derived-data-extension" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Using event core with DNA derived data may be helpful in cases where there is a lot of different information linked to the same samples. The workflow and required terms are in practice the same; as each Occurrence depicts a sequence in a location and time, it is necessary to copy the occurrence for each sample (i.e. format the OTU table with taxonomic information into a long format dataset).</p>
+<p>Simply, by adding the <code>occurrenceID</code> to the DNA derived data table, a link between the occurrence extension table and the event core table can be made.</p>
+<p>The following image shows the general structure of a dataset using event core, occurrence extension, and DNA derived data extension.</p>
+<div class="float">
+<img src="images/dna_data_event_core_structure.png" alt="Show general structure of a DNA dataset using the event core and occurrence extension tables" />
+<div class="figcaption">Show general structure of a DNA dataset using the event core and occurrence extension tables</div>
+</div>
+</div>
+<div id="using-the-metabarcoding-data-toolkit" class="section level4 hasAnchor" number="13.5.1.3">
+<h4><span class="header-section-number">13.5.1.3</span> Using the metabarcoding data toolkit<a href="dna_data.html#using-the-metabarcoding-data-toolkit" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>eDNA data can also be formatted using the <a href="https://mdt.obis.org/">metabarcoding data toolkit</a>. In this toolkit, you can upload your typical data files:</p>
+<ul>
+<li>An OTU table</li>
+<li>A taxonomy table</li>
+<li>A fasta file</li>
+<li>A sample information table</li>
+<li>Metadata file</li>
+</ul>
+<p>The purpose of the toolkit is to simplify the step of data formatting of eDNA data. A comprehensive <a href="https://docs.gbif-uat.org/mdt-user-guide/en/">manual</a> for the toolkit is available from gbif. For example, there are instructions in the manual on how to get datasets suitable for MDT directly from the phyloseq format, which is an output of the Phyloseq R-package, commonly used for community analyses of sequence data.</p>
+<p>The MDT, similar to the IPT, helps with mapping fields to the correct darwin core terms. It also gives an overview of the sample composition and geographic location, allowing the user to check for any mistakes in the data. From MDT, the user can then export a ready-made darwin-core archive file, or a standardized biom-formatted file. This can then be published to OBIS through the IPT. It is also possible to publish through the <a href="https://mdt.gbif.org/">GBIF MDT</a>, in cases where you are affiliated with a GBIF publishing node. In this case you can indicate that the dataset should also be shared to OBIS, through the associated networks field when publishing.</p>
+<p>The MDT also provides a possibility to opt for assigning taxonomy to sequences. However, considering the uniqueness of each eDNA dataset, and the general nature of this assignment tool, we do not currently recommend assigning taxonomy through the MDT toolkit.</p>
+<p>The MDT toolkit is designed for typical eDNA dataset: i.e. OTU/ASV tables and their associated metadata. It is not able to bioinformatically process raw sequencing data or handle metagenomic datasets or other DNA-associated biodiversity data types like specimen barcodes or qPCR data.
+The MDT is most useful when getting started with eDNA data formatting to Darwin Core. For large datasets or projects with regular outputs, we recommend developing a workflow script for formatting the datasets to darwin core, as these can easily be reused without manual work.</p>
+</div>
+<div id="unknown-sequences" class="section level4 hasAnchor" number="13.5.1.4">
+<h4><span class="header-section-number">13.5.1.4</span> Unknown sequences<a href="dna_data.html#unknown-sequences" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>It is important to understand the significance of unknown and uncharacterized sequences in genetic studies. Sequences are given taxonomic names based on comparisons to a reference database. The reference databases contain sequences that have been submitted with a name. Ideally, the reference database is a collection of sequences that are derived from vouchered, morphologically identified specimens. Notably, this is frequently often not the case and sequences can also have erratic annotations. Furthermore, only a small portion of species have sequences in reference databases. Due to this reason, typically many sequences in any given study will remain uncharacterized. This is especially the case for tropical regions with high biodiversity. By also recording all sequences, including uncharacterized sequences, we make sure that the information is not lost, even if the annotation is currently incorrect or missing. These uncharacterized sequences can then still be compared to other studies, and can be given a taxonomic name as more specimens are sequenced and added to the reference databases.</p>
+<p>For unknown sequences it is required to populate the <code>scientificName</code> field with <strong>“Biota incertae sedis”</strong>, or the lowest taxonomic information if available. For example, if it is only known which Class a sequence belongs to, populate <code>scientificName</code> with the associated Class name. Similarly, <code>scientificNameID</code> should be populated with the WoRMS LSID for the name given to <code>scientificName</code>. For records recorded as Biota <em>incertae sedis</em>, <code>scientificNameID</code> should be populated with <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=12">urn:lsid:marinespecies.org:taxname:12</a>. We recommend also populating <code>verbatimIdentification</code> with the name that was originally documented (e.g. phototrophic eukaryote).</p>
+</div>
+<div id="sequences-without-a-worms-id-aphiaid" class="section level4 hasAnchor" number="13.5.1.5">
+<h4><span class="header-section-number">13.5.1.5</span> Sequences without a WoRMS-ID (AphiaID)<a href="dna_data.html#sequences-without-a-worms-id-aphiaid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>As indicated, OBIS uses the WoRMS database as its only taxonomic backbone. WoRMS keeps up-to-date records of linnean names of marine species, confirmed by experts in each taxonomic group. However, as WoRMS is in the process of adding more protists and prokaryotes to their database, within eDNA datasets there are usually many taxonomic assignments that cannot be found in the WoRMS database currently (i.e. no AphiaID available). In many cases due to GBIF combining several taxonomic backbones, a name might be available and mapped to GBIF, making sharing datasets between GBIF and OBIS complicated. Therefore, <strong>the submitter of the data may in these cases record the known species name, in <code>scientificName</code>, the ID of the taxon in another database in <code>taxonConceptID</code> and leave <code>scientificNameID</code> empty.</strong> (Note; this is different from the case above, where no assignment has been made, or the assignment has only been made to a higher taxonomic level.) The OBIS ingestion workflow will be updated soon (end 2025) to allow searching for higher taxonomic levels that may be available in WoRMS and automatically adding these to the dataset, as well as the name of the corresponding <code>scientificName</code>, while keeping the original submitted species name in <code>originalScientificName</code>. In this way, all known species names are kept, while also enabling the mapping of the full datasets to OBIS with the best available information.</p>
+</div>
+<div id="control-samples" class="section level4 hasAnchor" number="13.5.1.6">
+<h4><span class="header-section-number">13.5.1.6</span> Control samples<a href="dna_data.html#control-samples" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The recommended way to connect control samples to your dataset, is to submit them as a separate files within the same dataset, that will not be mapped to avoid that they end up in the GBIF or OBIS occurrence indexes. In this way they are available for anyone who is looking for further information on your dataset, but it will not be confusing in the global OBIS search. <strong>Currently (October 2025), this feature has not been implemented yet in IPT (see <a href="https://github.com/gbif/ipt/issues/2109" class="uri">https://github.com/gbif/ipt/issues/2109</a>).</strong></p>
+</div>
+<div id="try-it-out-yourself" class="section level4 hasAnchor" number="13.5.1.7">
+<h4><span class="header-section-number">13.5.1.7</span> Try it out yourself<a href="dna_data.html#try-it-out-yourself" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To run through a simple example of formatting DNA data to OBIS, and an example dataset to try out the MDT tool, you can access <a href="https://github.com/iobis/obon-2024-dna-training">this training</a> held for the Ocean Biomolecular Observation Network (OBON) in 2024.</p>
+</div>
+</div>
+<div id="edna-and-dna-derived-data-example" class="section level3 hasAnchor" number="13.5.2">
+<h3><span class="header-section-number">13.5.2</span> eDNA and DNA derived data example<a href="dna_data.html#edna-and-dna-derived-data-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following example use cases draw on both the <a href="https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/">DNA-derived data guide</a> and the <a href="https://rs.gbif-uat.org/extensions.html#http">DNA derived data extension</a> to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA &amp; DNA specific terms. For additional Occurrence core terms, refer to <a href="darwin_core.html#occurrence">Occurrence</a>.</p>
-<div id="edna-data-from-monterey-bay-california" class="section level5 hasAnchor" number="13.5.1.1.1">
-<h5><span class="header-section-number">13.5.1.1.1</span> eDNA data from Monterey Bay, California<a href="dna_data.html#edna-data-from-monterey-bay-california" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="edna-data-from-monterey-bay-california" class="section level4 hasAnchor" number="13.5.2.1">
+<h4><span class="header-section-number">13.5.2.1</span> eDNA data from Monterey Bay, California<a href="dna_data.html#edna-data-from-monterey-bay-california" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The data for this example is from the use case <a href="https://ipt-obis.gbif.us/resource?r=18s_monterey_bay_time_series_edna">“18S Monterey Bay Time Series: an eDNA data set from Monterey Bay, California, including years 2006, 2013 - 2016’</a>. The data from this study originate from marine filtered seawater samples that have undergone metabarcoding of the 18S V9 region.</p>
 <p><strong>Occurrence core:</strong></p>
 <p>We can populate the Occurrence core with all the required and highly recommended fields, as well as considering the eDNA and DNA specific fields. The Occurrence core contain the taxonomic identification of each ASV observed; its number of reads, as well as relevant metadata including the sample collection location, references for the identification procedure, and links to archived sequences.</p>
@@ -758,8 +819,8 @@ The DNADerivedData extension is meant to capture information related to the samp
 </tbody>
 </table>
 </div>
-<div id="s-rrna-gene-metabarcoding-data-of-pico-to-mesoplankton" class="section level5 hasAnchor" number="13.5.1.1.2">
-<h5><span class="header-section-number">13.5.1.1.2</span> 16S rRNA gene metabarcoding data of Pico to Mesoplankton<a href="dna_data.html#s-rrna-gene-metabarcoding-data-of-pico-to-mesoplankton" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="s-rrna-gene-metabarcoding-data-of-pico-to-mesoplankton" class="section level4 hasAnchor" number="13.5.2.2">
+<h4><span class="header-section-number">13.5.2.2</span> 16S rRNA gene metabarcoding data of Pico to Mesoplankton<a href="dna_data.html#s-rrna-gene-metabarcoding-data-of-pico-to-mesoplankton" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>DNA derived datasets can also include an extendedMeasurementsOrFact (eMoF) extension file, in addition to the Occurrence and DNA derived extensions. In this example, environmental measurements were provided in an eMoF file, in addition to the DNA derived data and occurrence data. Here we show how to incorporate such measurements in the extensions.</p>
 <p>In the publication <a href="https://www.frontiersin.org/articles/10.3389/fmicb.2016.00679/full">“Diversity of Pico- to Mesoplankton along the 2000 km Salinity Gradient of the Baltic Sea”</a>, a dataset with 16S rRNA gene metabarcoding data of surface water microbial communities was created from 21 off-shore stations, following a transect from Kattegat to the Gulf of Bothnia in the Baltic Sea. The full dataset entitled <a href="https://www.gbif.org/dataset/9e29a2fe-d780-48a8-a93f-9ce041f9202f">“Diversity of Pico- to Mesoplankton along the 2000 km Salinity Gradient of the Baltic Sea (Hu et al. 2016)</a> is available from GBIF.</p>
 <p><strong>Occurrence core:</strong></p>
@@ -1119,12 +1180,6 @@ The DNADerivedData extension is meant to capture information related to the samp
 </table>
 </div>
 </div>
-</div>
-<div id="unknown-sequences" class="section level3 hasAnchor" number="13.5.2">
-<h3><span class="header-section-number">13.5.2</span> Unknown sequences<a href="dna_data.html#unknown-sequences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>It is important to understand the significance of unknown and uncharacterized sequences in genetic studies. Sequences are given taxonomic names based on comparisons to a reference database. The reference databases contain sequences that have been submitted with a name. Ideally, the reference database is a collection of sequences that are derived from vouchered, morphologically identified specimens. Notably, this is frequently often not the case and sequences can also have erratic annotations. Furthermore, only a small portion of species have sequences in reference databases. Due to this reason, typically many sequences in any given study will remain uncharacterized. This is especially the case for tropical regions with high biodiversity. By also recording all sequences, including uncharacterized sequences, we make sure that the information is not lost, even if the annotation is currently incorrect or missing. These uncharacterized sequences can then still be compared to other studies, and can be given a taxonomic name as more specimens are sequenced and added to the reference databases.</p>
-<p>For unknown sequences it is required to populate the <code>scientificName</code> field with <strong>“Biota incertae sedis”</strong>, or the lowest taxonomic information if available. For example, if it is only known which Class a sequence belongs to, populate <code>scientificName</code> with the associated Class name. Similarly, <code>scientificNameID</code> should be populated with the WoRMS LSID for the name given to <code>scientificName</code>. For records recorded as Biota <em>incertae sedis</em>, <code>scientificNameID</code> should be populated with <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=12">urn:lsid:marinespecies.org:taxname:12</a>. We recommend also populating <code>verbatimIdentification</code> with the name that was originally documented (e.g. phototrophic eukaryote).</p>
-</div>
 <div id="compiling-qpcr-datasets" class="section level3 hasAnchor" number="13.5.3">
 <h3><span class="header-section-number">13.5.3</span> Compiling qPCR datasets<a href="dna_data.html#compiling-qpcr-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Compiling qPCR data is a little bit different than compiling eDNA or metabarcoding data. One of the main differences is that there are no sequences recorded in the <code>DNA_sequence</code> field of the DNA derived data extension. Instead, occurrences are based on detections made using species-specific primers and either qPCR (Quantitative Polymerase Chain Reaction) or ddPCR (Droplet-Digital Polymerase Chain Reaction), no sequencing is done.</p>
@@ -1204,7 +1259,16 @@ For qPCR datasets, it is strongly recommended to document as much detail as poss
 <li><a href="other_data_types.html#tracking-data">Tracking</a></li>
 <li><a href="other_data_types.html#habitat-data">Habitat</a></li>
 </ul>
+</div>
+<div id="future-developments-of-edna-data-standards" class="section level3 hasAnchor" number="13.5.5">
+<h3><span class="header-section-number">13.5.5</span> Future developments of eDNA data standards<a href="dna_data.html#future-developments-of-edna-data-standards" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="faire-checklist-development" class="section level4 hasAnchor" number="13.5.5.1">
+<h4><span class="header-section-number">13.5.5.1</span> FAIRe checklist development<a href="dna_data.html#faire-checklist-development" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The project “Making eDNA data FAIR” led by Miwa Takahashi from CSIRO was a community-led effort to improve eDNA data standardization and the terms available for its use. A list of 138 terms were developed combining MixS and DwC terms, and developing new terms where they were deemed necessary. Extensive documentation of the group’s work and the outputs is available on the <a href="https://fair-edna.github.io/index.html">project website</a>.</p>
+<p>At the moment (September 2025), the project team is working with the Genomic Standards Consortium (GSC) to define a MixS extension from these terms. The team will also work with TDWG to suggest new DwC terms. The expectation is that these terms will be available also for the DNA-derived data extension in the next year(s).</p>
+<p>The FAIRe terms include critical terms for each eDNA processing step; including among others sampling, PCR protocols, bioinformatics and analysis. The checklist is available on the website and several tools exist to help with formatting the data to this checklist. The checklist may already be useful if you are planning a new eDNA project, to help with collecting a comprehensive set of metadata. As of now it can already be recorded in the eMOF tables in OBIS, and later it will then be ready for publishing with the DNA-derived data extension as well.</p>
 
+</div>
 </div>
 </div>
 </div>
