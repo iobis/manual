@@ -6,6 +6,7 @@
 **Contents:**
 
 - [Introduction](#introduction-to-dna-data)
+- [Quick start guide](#quick-start-guide)
 - [How to find genetic data in OBIS](#how-to-find-genetic-data-in-obis)
 - [Guidelines for compiling eDNA and metabarcoding data](#compiling-edna-and-metabarcoding-datasets)
   - [Using Occurrence core and DNA Derived Data extension](#using-occurrence-core-and-dna-derived-data-extension)
