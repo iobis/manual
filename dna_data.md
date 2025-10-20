@@ -1,8 +1,5 @@
 ## DNA derived data
 
-<div class="callbox-blue">
-
-*Note: OBIS guidelines have not yet been updated to reflect changes that allow DNA Derived data to be linked to Event core tables. We will update this page soon.*
 
 </div>
 
@@ -49,6 +46,11 @@ Although this data is in multiple files, each unique sequence by sample combinat
 ![Combining multiple DNA data tables into one "long format" table](images/DNA_4tables-to-one.jpg)
 
 Doing this will help you when following the guidelines below.
+
+
+### Quick start guide
+
+![Quick start guide to adding DNA data to OBIS](images/eDNA_quickguide.pdf)
 
 ### How to find genetic data in OBIS {.unlisted .unnumbered}
 
