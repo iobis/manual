@@ -92,6 +92,7 @@ what-data-goes-into-emof
 how-to-structure-emof
 stepwise-guidance-to-format-emof-table-in-excel
 dna-derived-data
+quick-start-guide
 compiling-edna-and-metabarcoding-datasets
 using-occurrence-core-and-dna-derived-data-extension
 using-the-event-core-occurrence-extension-and-dna-derived-data-extension
