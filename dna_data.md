@@ -50,7 +50,7 @@ Doing this will help you when following the guidelines below.
 
 ### Quick start guide
 
-![Quick start guide to adding DNA data to OBIS](images/eDNA_quickguide.pdf)
+![Quick start guide to adding DNA data to OBIS](images/eDNA_quickguide.png)
 
 ### How to find genetic data in OBIS {.unlisted .unnumbered}
 
