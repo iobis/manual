@@ -119,8 +119,6 @@ When selecting P01 codes, remember it is important to understand that each eleme
 
 The P01 collection is found [here](http://vocab.nerc.ac.uk/collection/P01/current/) and can be [searched through the NERC vocabulary server](https://vocab.nerc.ac.uk/search_nvs/P01/).
 
-You may notice when searching for measurement types related to an occurrence that specific taxonomic codes are available to you, e.g., abundance of Notommata. For OBIS, **all P01 codes should be generalized** - i.e. **do not** select species-specific codes. Instead only choose codes for “biological entities specified elsewhere” when the measurement is related to an occurrence record.
-
 There are several ways of searching for a P01 code, but we highly recommend using the [SeaDataNet P01 Facet Search](https://vocab.seadatanet.org/p01-facet-search). You may notice when searching for measurement types related to an occurrence that specific taxonomic options are available to you, e.g., abundance of Notommata. For OBIS, **all P01 codes should be generalized** - i.e. do not select species-specific codes. Instead, only choose codes for “biological entities specified elsewhere”! This is due to the Darwin Core Archive structure - taxonomic identification is already specified in the Occurrence table, but measurements are recorded in the ExtendedMeasurementOrFact table.
 
 When you are comfortable and understand P01 codes, you can also use the [BODC Vocabulary Builder](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/) or simply search for terms directly on the [NERC Vocabulary Server](http://vocab.nerc.ac.uk/search_nvs/).
