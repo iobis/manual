@@ -72,7 +72,7 @@ OBIS (YEAR) [Information product e.g. Global map showing the Hulbert index in a 
 
 While those citation formats cover a broad range of applications, users should always consult the OBIS manual for more detailed guidelines on how to properly attribute the data and information products provided by OBIS and its broader community.
 
-##### Section 5. Data Repositories and the IOC ocean data and information system (ODIS)
+#### Section 5. Data Repositories and the IOC ocean data and information system (ODIS)
 
 *Data should be quality controlled (using community adopted and documented best practices or standards), accompanied by complete metadata and stored in an openly discoverable and accessible long-term data repository and made available through standards-based data services. Member States shall encourage convergence and interoperability and, where possible, use IODE data centres (National Oceanographic Data Centres or Associate Data Units) or other IOC programme related data centres that share metadata and data using the IOC Ocean Data and Information System (ODIS). ODIS is an interoperability layer and supporting technology, to allow existing and emerging ocean data and information systems to interoperate with one another.*
 
