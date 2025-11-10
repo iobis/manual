@@ -1,0 +1,82 @@
+project:
+  type: website
+website:
+  title: The OBIS manual
+  navbar:
+    right:
+    - href: index.qmd
+      text: Home
+    - href: tutorials.qmd
+      text: Tutorials
+    - href: notebooks.qmd
+      text: Notebooks
+    - href: "https://obis.org/"
+      text: "OBIS ↗"
+  sidebar:
+    style: floating
+    search: true
+    id: manual
+    contents:
+    - section: Overview
+      contents:
+      - index.qmd
+      - policy.qmd
+      - gethelp.qmd
+      - FAQ.qmd
+      - linklist.qmd
+    - section: Contributing data to OBIS
+      contents:
+      - contribute.qmd
+      - data_standards.qmd
+      - nodes.qmd
+    - section: Access Data from OBIS
+      contents:
+      - access.qmd
+      - citing.qmd
+    - section: Data Standards
+      contents:
+      - darwin_core.qmd
+      - data_format.qmd
+      - relational_db.qmd
+      - eml.qmd
+    - section: Data Formatting
+      contents:
+      - formatting_intro.qmd
+      - formatting.qmd
+      - identifiers.qmd
+      - name_matching.qmd
+      - data_map.qmd
+      - checklist.qmd
+      - format_occurrence.qmd
+      - format_event.qmd
+      - format_emof.qmd
+      - dna_data.qmd
+      - vocabulary.qmd
+      - vocab_tree.qmd
+      - common_formatissues.qmd
+      - examples.qmd
+      - other_data_types.qmd
+    - section: Ensuring Data Quality
+      contents:
+      - data_qc.qmd
+      - mofreports.qmd
+      - lifewatch_qc.qmd
+      - dataquality.qmd
+      - common_qc.qmd
+    - section: Publishing Data
+      contents:
+      - data_publication.qmd
+      - ipt.qmd
+      - ipt_admin.qmd
+      - data_sharing.qmd
+    - section: Data Visualization and Analysis
+      contents:
+      - dataviz.qmd
+    - section: Additional Resources
+      contents:
+      - other_resources.qmd
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

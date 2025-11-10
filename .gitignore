@@ -5,3 +5,10 @@ _book
 .Rproj.user
 .Rhistory
 
+# Ignore patch folder content
+quarto-patch/*
+!quarto-patch/R
+!quarto-patch/_quarto.yml
+!quarto-patch/_model-quarto.yml
+!quarto-patch/styles.css
+!quarto-patch/README.md
