@@ -1,16 +1,10 @@
 # Dataset structure
 
-<div class="callbox-blue">
-
-*Note: OBIS guidelines have not yet been updated to reflect changes that allow DNA Derived data to be linked to Event core tables. We will update this page soon.*
-
-</div>
-
 Determining how your dataset will be structured is one of the first steps towards getting your data ready for publishing. At this first step it is important to determine which structure best suits your dataset before proceeding because it will determine which Darwin Core fields will need to be included in your data. Once you have decided on the dataset structure, you can continue formatting the dataset.
 
 We have created the following flow chart for an overview on how to determine what structure best suits your data.
 
-![*Flow chart to help determine which dataset structure will suit your data*](images/flowchart-dataStructure.png)
+![*Flow chart to help determine which dataset structure will suit your data*](images/flowchart-dataStructure-v2.png)
 
 For more guidance, see the sections below.
 
@@ -30,7 +24,7 @@ Occurrence Core datasets describe **observations** and **specimen records** and 
 
 * **No information** on how the data was sampled or how samples were processed is available
 * No abiotic measurements are taken or provided
-* You have [eDNA and DNA-derived data](examples.html#edna-dna-derived-data)
+* You have [eDNA and DNA-derived data](examples.html#edna-dna-derived-data) and do NOT have sampling information
 * Biological measurements are made on **individual specimens** (each specimen is a single occurrence record)
 
 Occurrence Core is also often the preferred structure for museum collections, citations of occurrences from literature, and sampling activities.
