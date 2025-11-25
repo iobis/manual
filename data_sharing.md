@@ -79,6 +79,7 @@ See the tables below for a quick comparative reference on which terms are requir
 | geodeticDatum | recommended | strongly recommended |
 | footprintWKT | recommended | strongly recommended |
 | occurrenceStatus | required in occurrence extension | strongly recommended |
+| minimumDepthInMeters & maximumDepthInMeters | strongly recommended | not required, accepted |
 
 **Occurrence Table:**
 
