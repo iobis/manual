@@ -13,3 +13,10 @@ The contribute to the manual, please follow these steps:
 - Enter a title and description for your pull request. If your pull request addresses specific GitHiub issues, mention them in the description.
 - Click `Create pull request`.
 
+## Build a PDF
+
+```r
+install.packages("webshot")
+install.packages("downloadthis")
+bookdown::render_book("index.Rmd", "bookdown::pdf_book")
+```
