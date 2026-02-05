@@ -181,7 +181,7 @@ The following image shows the general structure of a dataset using event core, o
 
 #### Using the metabarcoding data toolkit
 
-eDNA data can also be formatted using the [metabarcoding data toolkit](https://mdt.obis.org/). In this toolkit, you can upload your typical data files:
+eDNA data can also be formatted using the [Metabarcoding Data Toolkit](https://mdt.obis.org/) (MDT). In this toolkit, you can upload your typical data files:
 
 - An OTU table
 - A taxonomy table
