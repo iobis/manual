@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: OBIS manual
+type: dataset
+abstract: The OBIS manual
+url: https://github.com/iobis/manual
+license: CC-BY-IGO-4.0
+authors:
+  - given-names: Elizabeth
+    family-names: Lawrence
+    orcid: "https://orcid.org/0000-0002-5304-941X"
+  - given-names: Pieter
+    family-names: Provoost
+    orcid: "https://orcid.org/0000-0002-4236-0384"
+  - given-names: Serita van
+    family-names: Zweel
+  - family-names: SSuominen1
+    orcid: "https://orcid.org/0000-0001-9401-8460"
+  - given-names: Abby
+    family-names: Benson
+  - given-names: Yi-Ming
+    family-names: Gan
+  - given-names: Helen
+    family-names: Lillis
+  - family-names: Tylar
+  - given-names: David
+    family-names: Sean
+  - given-names: Mathew
+    family-names: Biddle
+  - given-names: Peter
+    family-names: Desmet
+  - given-names: Ruben Perez
+    family-names: Perez
+  - family-names: Elizabeth
+  - given-names: Serita Van der
+    family-names: Wal
+  - family-names: Benson
+  - family-names: meliezer
+  - name: Intergovernmental Oceanographic Commission of UNESCO
+    alias: IOC-UNESCO
+    website: "https://obis.org"
+date-released: 2025-10-20
