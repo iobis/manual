@@ -47,3 +47,20 @@ When creating tutorials or notebooks, organize each in a separate folder. For ex
 > We are still evaluating if this is the best approach.
 
 In both cases, you can also list external tutorials and notebooks. Those should be in the files `tutorials.yml` or `notebooks.yml`.
+
+### Working locally
+
+After modifying the files use the following to preview the website:
+
+``` bash
+quarto preview --no-watch-inputs
+```
+
+> [!IMPORTANT]
+> You should **always** add --no-watch-inputs. Otherwise the post-render code will not run and the .qmd files will be kept.
+
+To render the website use:
+
+``` bash
+quarto render
+```
