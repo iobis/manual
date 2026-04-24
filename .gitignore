@@ -5,3 +5,6 @@ _book
 .Rproj.user
 .Rhistory
 manual.log
+
+/.quarto/
+**/*.quarto_ipynb

@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/tutorials.html",
+    "items": [
+      "/tutorials/env-data/index.html"
+    ]
+  },
+  {
+    "listing": "/notebooks.html",
+    "items": []
+  },
+  {
+    "listing": "/obis-tutorials.html",
+    "items": [
+      "/tutorials/env-data/index.html"
+    ]
+  }
+]

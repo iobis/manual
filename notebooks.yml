@@ -1,0 +1,7 @@
+- title: "Remove records on land"
+  description: "Learn how to remove records on land using R"
+  path: "https://github.com/iobis/hackathon/blob/master/notebooks/R/remove_records_on_land.ipynb"
+  author: "OBIS"
+  date: 2024-10-09
+  tags: [R, data cleaning, spatial]
+  image: "notebooks/thumbnails/remove_records_on_land.png"

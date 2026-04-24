@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>vocabulary – The OBIS manual</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">The OBIS manual</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Manual</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorials.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./notebooks.html"> 
+<span class="menu-text">Notebooks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://obis.org/"> 
+<span class="menu-text">OBIS ↗</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formatting_intro.html">Data Formatting</a></li><li class="breadcrumb-item"><a href="./vocabulary.html">Controlled vocabulary for eMoF</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./policy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Policy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gethelp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting Help in OBIS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FAQ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Frequently Asked Questions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./linklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quick links to resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Contributing data to OBIS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contribute.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What can you contribute and how?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">OBIS Data Life Cycle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nodes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">OBIS Nodes, Coordination Groups, Secretariat</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Access Data from OBIS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./citing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Citing OBIS Data OBIS</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Standards</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./darwin_core.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Darwin Core</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_format.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Darwin Core Archive</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./relational_db.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Relational databases: the underlying framework of OBIS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./eml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metadata: Ecological Metadata Language</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Formatting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./formatting_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data formatting workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./formatting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataset structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./identifiers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Constructing and using identifiers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./name_matching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Match Taxonomic Names</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Map data fields to Darwin Core</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Formatting data tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./format_occurrence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to format Occurrence tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./format_event.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to format Event tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./format_emof.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to format extendedMeasurementOrFact tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dna_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DNA derived data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vocabulary.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Controlled vocabulary for eMoF</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vocab_tree.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vocabulary Decision Tree</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common_formatissues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other Important Data Formatting Steps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataset Examples: ENV-DATA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other_data_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other data types</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Ensuring Data Quality</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data quality control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mofreports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measurement Data QC</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lifewatch_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geographic and data format quality control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataquality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data quality flags</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Common Quality Control issues</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Publishing Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data publication and sharing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ipt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IPT: Integrated Publishing Toolkit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ipt_admin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IPT Admin Responsibilities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_sharing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maintaining and sharing published data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Visualization and Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataviz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Visualization</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Additional Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other_resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#controlled-vocabulary-for-emof" id="toc-controlled-vocabulary-for-emof" class="nav-link active" data-scroll-target="#controlled-vocabulary-for-emof">Controlled vocabulary for eMoF</a>
+  <ul class="collapse">
+  <li><a href="#content" id="toc-content" class="nav-link" data-scroll-target="#content">Content</a></li>
+  <li><a href="#map-emof-measurement-identifiers-to-preferred-vocabulary" id="toc-map-emof-measurement-identifiers-to-preferred-vocabulary" class="nav-link" data-scroll-target="#map-emof-measurement-identifiers-to-preferred-vocabulary">Map eMoF measurement identifiers to preferred vocabulary</a>
+  <ul class="collapse">
+  <li><a href="#measurementorfact-vocabulary-background" id="toc-measurementorfact-vocabulary-background" class="nav-link" data-scroll-target="#measurementorfact-vocabulary-background">MeasurementOrFact vocabulary background</a></li>
+  <li><a href="#populate-measurementunitid" id="toc-populate-measurementunitid" class="nav-link" data-scroll-target="#populate-measurementunitid">Populate measurementUnitID</a></li>
+  <li><a href="#populate-measurementvalueid" id="toc-populate-measurementvalueid" class="nav-link" data-scroll-target="#populate-measurementvalueid">Populate measurementValueID</a></li>
+  <li><a href="#populate-measurementtypeid" id="toc-populate-measurementtypeid" class="nav-link" data-scroll-target="#populate-measurementtypeid">Populate measurementTypeID</a></li>
+  <li><a href="#request-new-vocabulary-terms" id="toc-request-new-vocabulary-terms" class="nav-link" data-scroll-target="#request-new-vocabulary-terms">Request new vocabulary terms</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/iobis/manual/edit/main/vocabulary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/iobis/manual/blob/main/vocabulary.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/iobis/manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formatting_intro.html">Data Formatting</a></li><li class="breadcrumb-item"><a href="./vocabulary.html">Controlled vocabulary for eMoF</a></li></ol></nav></header>
+
+
+
+
+<section id="controlled-vocabulary-for-emof" class="level1">
+<h1>Controlled vocabulary for eMoF</h1>
+<section id="content" class="level2">
+<h2 class="anchored" data-anchor-id="content">Content</h2>
+<ul>
+<li><a href="#map-emof-measurement-identifiers-to-preferred-vocabulary">Map eMoF measurement identifiers</a>
+<ul>
+<li><a href="#measurementorfact-vocabulary-background">MeasurementOrFact vocabulary background</a></li>
+<li><a href="#populate-measurementunitid">Guidelines to populate measurementUnitID</a></li>
+<li><a href="#populate-measurementvalueid">Guidelines to populate measurementValueID</a></li>
+<li><a href="#populate-measurementtypeid">Guidelines to populate measurementTypeID</a></li>
+<li><a href="vocab_tree.html">Vocabulary decision tree</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="map-emof-measurement-identifiers-to-preferred-vocabulary" class="level2">
+<h2 class="anchored" data-anchor-id="map-emof-measurement-identifiers-to-preferred-vocabulary">Map eMoF measurement identifiers to preferred vocabulary</h2>
+<section id="measurementorfact-vocabulary-background" class="level3">
+<h3 class="anchored" data-anchor-id="measurementorfact-vocabulary-background">MeasurementOrFact vocabulary background</h3>
+<p>Although <a href="https://dwc.tdwg.org/list/#dwc_measurementType">Darwin Core guidance</a> recommends using controlled vocabulary to populate the MeasurementOrFact terms <code>measurementType</code>, <code>measurementValue</code>, and <code>measurementUnit</code>, in many cases these fields are completely unconstrained and are populated with free text. While free text offers the advantage of capturing complex and as yet unclassified information, there is inevitable semantic heterogeneity (e.g., of spelling, wording, or language) that becomes a challenge for effective data interoperability and analysis. For example, if you were interested in finding all records related to length measurements, you would have to try to account for all the different ways “length” was recorded by data providers (length, Length, len, fork length, etc.).</p>
+<div class="callbox-caution caution">
+<p><strong>Caution:</strong> You can use the <a href="https://mof.obis.org/">OBIS Measurement Type search tool</a> to see the diversity of <code>measurementTypes</code> that exist across published datasets in OBIS. However note that <strong>any <code>measurementTypeIDs</code> listed in this tool are <em>solely</em> for consultation purposes</strong>. In some cases codes may have been incorrectly chosen for the associated <code>measurementType</code>. You should always choose <code>measurementTypeIDs</code> based on your own data and the guidelines in this manual.</p>
+</div>
+<p>Thus the 3 identifier terms <code>measurementTypeID</code>, <code>measurementValueID</code> and <code>measurementUnitID</code> are used to standardize the measurement types, values and units. The identifiers provide clear and unambiguous definitions, ensuring dataset consistency and simplifying grouping and analysis of measurements by their Unique Resource Identifiers (URIs).</p>
+<p>These three terms should be populated using controlled vocabularies referenced using URIs. For OBIS, we recommend using the internationally recognized <a href="http://www.bodc.ac.uk/resources/products/web_services/vocab/">NERC Vocabulary Server</a>, developed by the British Oceanographic Data Centre (BODC). However, you may use any vocabulary source that has machine-interopable URIs. The NERC Vocabulary Server can be accessed through:</p>
+<ul>
+<li>SeaDataNet facet search <a href="https://vocab.seadatanet.org/p01-facet-search" class="uri">https://vocab.seadatanet.org/p01-facet-search</a> (recommended for searching the P01 collection, detailed below)</li>
+<li>NERC Vocabulary Server (NVS) search <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/" class="uri">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/</a></li>
+<li>Semantic Model Vocabulary Builder <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/" class="uri">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/</a></li>
+</ul>
+<p>Controlled vocabularies are incredibly important to ensure data are interoperable - readable by both humans and machines - and that the information is presented in an unambiguous manner. Vocabulary collections like NVS compile vocabularies from different institutions and authorities (e.g., ISO, ICES, EUNIS), allowing you to map your data to them. In this way, you could search for a single <code>measurementTypeID</code> and obtain all related records, regardless of differences in wording or language used in the data.</p>
+<p>Each vocabulary “term” in NVS is a concept that describes a specific idea or meaning. For consistency, we refer to individual vocabularies in NVS as <strong>concepts</strong>. Concepts within NVS are organized into <em>collections</em> that group concepts with commonalities (e.g.&nbsp;all concepts pertaining to units). Sometimes collections contain concepts that are deprecated. Terms can be deprecated due to duplication of concepts, or when a term becomes obsolete. You should not use any deprecated concepts for any measurement ID. Deprecated concepts can be identified from lists on NVS because their identifier will have a red warning symbol, and the page for the term itself will indicate the concept is deprecated in red lettering. Unfortunately, there is currently no notification system in place to automatically warn you if a previously used concept has become deprecated. We recommend occasionally confirming that the concepts you or your institution use are still available for use.</p>
+<p>Guidelines for populating each mesaurement ID are described below.</p>
+</section>
+<section id="populate-measurementunitid" class="level3">
+<h3 class="anchored" data-anchor-id="populate-measurementunitid">Populate measurementUnitID</h3>
+<p>The <code>measurementUnitID</code> field is the easiest measurement ID field to populate. It is used to provide a URI for the unit associated with the value provided to measurementValue (e.g.&nbsp;cm, kg, kg/m2). This field should be populated with concepts from the <strong>P06 collection</strong>, BODC-approved data storage units. Documentation for this collection can be found <a href="https://github.com/nvs-vocabs/P06">here</a>.</p>
+<p>The entire vocabulary list, including deprecated terms can be found at <a href="http://vocab.nerc.ac.uk/collection/P06/current" class="uri">http://vocab.nerc.ac.uk/collection/P06/current</a>. However, we strongly recommend using <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/" class="uri">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/</a> to avoid potentially selecting deprecated terms.</p>
+<p>Some examples of <code>measurementUnits</code> and the associated <code>measurementUnitID</code> include:</p>
+<ul>
+<li>Metres: <a href="http://vocab.nerc.ac.uk/collection/P06/current/ULAA/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/ULAA/</a></li>
+<li>Days: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UTAA/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UTAA/</a></li>
+<li>Metres per second: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UVAA/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UVAA/</a></li>
+<li>Percent: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UPCT/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UPCT/</a></li>
+<li>Milligrams per litre: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UMGL/" class="uri">http://vocab.nerc.ac.uk/collection/P06/current/UMGL/</a></li>
+</ul>
+</section>
+<section id="populate-measurementvalueid" class="level3">
+<h3 class="anchored" data-anchor-id="populate-measurementvalueid">Populate measurementValueID</h3>
+<p>The <code>measurementValueID</code> field is used to provide an identifying code for <code>measurementValues</code> that are <strong>non-numerical</strong> (e.g.&nbsp;sampling related, sex or life stage designation, etc.).</p>
+<div class="callbox-blue">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:darkblue;overflow:visible;position:relative;"><path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"></path></svg> measurementValueID is NOT used for standardizing numeric measurements!</p>
+</div>
+<p>Unlike <code>measurementUnitID</code>, there is more than one collection which may be used to search for and use concepts from. The collection is dependent on which type of <code>measurementValue</code> you have. See the table below for some common, non-exhaustive examples. Note that behaviour is an exception in that we recommend to use codes from the ICES vocabulary server, instead of NERC. The video below, from the <a href="https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul">OBIS YouTube Vocabulary series</a> <svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>, demonstrates how to find and select vocabularies for <code>measurementValueID</code> from both NERC and ICES.</p>
+<div style="overflow-x: auto;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type of measurementValue</th>
+<th>Collection</th>
+<th>Collection Documentation</th>
+<th>Complete Vocabulary List</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sex (gender)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/">S10</a></td>
+<td><a href="https://github.com/nvs-vocabs/S10" class="uri">https://github.com/nvs-vocabs/S10</a></td>
+<td>&lt;<a href="http://vocab.nerc.ac.uk/collection/S10/current/" class="uri">http://vocab.nerc.ac.uk/collection/S10/current/</a></td>
+</tr>
+<tr class="even">
+<td>Lifestage</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/">S11</a></td>
+<td><a href="https://github.com/nvs-vocabs/S11" class="uri">https://github.com/nvs-vocabs/S11</a></td>
+<td><a href="http://vocab.nerc.ac.uk/collection/S11/current/" class="uri">http://vocab.nerc.ac.uk/collection/S11/current/</a></td>
+</tr>
+<tr class="odd">
+<td>Sampling instruments and sensors (SeaVoX Device Catalogue)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/">L22</a></td>
+<td><a href="https://github.com/nvs-vocabs/L22" class="uri">https://github.com/nvs-vocabs/L22</a></td>
+<td><a href="http://vocab.nerc.ac.uk/collection/L22/current" class="uri">http://vocab.nerc.ac.uk/collection/L22/current</a></td>
+</tr>
+<tr class="even">
+<td>Sampling instrument categories (SeaDataNet device categories)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/">L05</a></td>
+<td><a href="https://github.com/nvs-vocabs/L05" class="uri">https://github.com/nvs-vocabs/L05</a></td>
+<td>&lt;<a href="http://vocab.nerc.ac.uk/collection/L05/current" class="uri">http://vocab.nerc.ac.uk/collection/L05/current</a></td>
+</tr>
+<tr class="odd">
+<td>Vessels (ICES Platform Codes)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/">C17</a></td>
+<td>-</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/C17/current" class="uri">http://vocab.nerc.ac.uk/collection/C17/current</a></td>
+</tr>
+<tr class="even">
+<td>European Nature Information System Level 3 Habitats</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C35/">C35</a></td>
+<td>-</td>
+<td><a href="https://vocab.nerc.ac.uk/collection/C35/current/" class="uri">https://vocab.nerc.ac.uk/collection/C35/current/</a></td>
+</tr>
+<tr class="odd">
+<td>Behaviour</td>
+<td>ICES Behaviour collection</td>
+<td></td>
+<td><a href="https://vocab.ices.dk/?codetypeguid=d0268a96-afc9-436e-a4db-4f61c2b9f6ba" class="uri">https://vocab.ices.dk/?codetypeguid=d0268a96-afc9-436e-a4db-4f61c2b9f6ba</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can also populate <code>measurementValueID</code> with references to papers or manuals that document the sampling protocol used to obtain the measurement. To do this you should use either:</p>
+<ul>
+<li>The DOI of the paper/manual</li>
+<li>Handle for publications on IOC’s <a href="http://www.oceanbestpractices.net/">Ocean Best Practices repository</a>, e.g.&nbsp;<a href="http://hdl.handle.net/11329/304">http://hdl.handle.net/11329/304</a></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_I235UwoH-o?si=Cu8-oxq9qqgUlYmU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+</iframe>
+</section>
+<section id="populate-measurementtypeid" class="level3">
+<h3 class="anchored" data-anchor-id="populate-measurementtypeid">Populate measurementTypeID</h3>
+<section id="the-nerc-p01-collection" class="level4">
+<h4 class="anchored" data-anchor-id="the-nerc-p01-collection">The NERC P01 Collection</h4>
+<p>One of the more important collections for OBIS is the <a href="http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">P01 collection</a>.</p>
+<div class="callbox-caution caution">
+<p>Important note! <strong>P01 codes are required for the <code>measurementTypeID</code> field when using NERC vocabulary</strong>.</p>
+</div>
+<p>The P01 is a large <a href="https://vocab.nerc.ac.uk/search_nvs/P01/">collection</a> with &gt;45,000 concepts. Each concept within this collection is composed of different elements that, together, construct a label used to describe a measurement. Frequently, concepts from the P01 collection are referred to as a “P01 code”. P01 codes are used to populate the <code>measurementTypeID</code> field. It is important to know that a <strong>semantic model</strong>, shown below, underlies each P01 code and the elements that compose them. There are 5 potential elements in this semantic model that, together, unambiguously describe a type of measurement.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/P01semantic-model.png" class="img-fluid figure-img"></p>
+<figcaption><em>The elements underlying the P01 semantic model</em></figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Property/attribute</strong>: the measurement or observation of either an object of interest or a matrix, or both</li>
+<li><strong>Object of interest</strong>: a chemical object, a biological object, a physical phenomenon, or a material object</li>
+<li><strong>In relation to</strong>: how the measurement is related to the environment</li>
+<li><strong>Environmental matrix</strong>: what environment the measurement is in (e.g.&nbsp;water body, seabed); needed for most environmental measurements, but may not be necessary for e.g.&nbsp;biological measurements</li>
+<li><strong>Method</strong>: any specific methods used that are important to interpret the measurement</li>
+</ul>
+<p>Note: Not every element is required, but it is important to think about each piece of the model and how it may or may not apply to your measurement. More details about this are described below.</p>
+<p>The <a href="https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf">P01 wheel</a>, a diagram created by NERC, is shown below as a simple visualisation of how P01 elements relate to and are populated by other NERC collections.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/P01_wheel.png" class="img-fluid figure-img"></p>
+<figcaption><em>The P01 wheel, demonstrating how P01 elements are represented by other NVS collections</em></figcaption>
+</figure>
+</div>
+<p>You can use codes from other collections (e.g.&nbsp;P06, QL22) for <code>measurementValueID</code> and <code>measurementUnitID</code> fields, but for <code>measurementTypeID</code> you must <strong>always</strong> use a code from the P01 collection.</p>
+</section>
+<section id="selecting-p01-codes-for-measurementtypeid" class="level4">
+<h4 class="anchored" data-anchor-id="selecting-p01-codes-for-measurementtypeid">Selecting P01 codes for measurementTypeID</h4>
+<p>When selecting P01 codes, remember it is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object or entity being measured, in what environment was the measurement taken, by what kind of methods, etc.? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. More documentation about the P01 code and the semantic model it is based on can be found <a href="https://github.com/nvs-vocabs/P01">here</a>.</p>
+<p>The P01 collection is found <a href="http://vocab.nerc.ac.uk/collection/P01/current/">here</a> and can be <a href="https://vocab.nerc.ac.uk/search_nvs/P01/">searched through the NERC vocabulary server</a>.</p>
+<p>There are several ways of searching for a P01 code, but we highly recommend using the <a href="https://vocab.seadatanet.org/p01-facet-search">SeaDataNet P01 Facet Search</a>. You may notice when searching for measurement types related to an occurrence that specific taxonomic options are available to you, e.g., abundance of Notommata. For OBIS, <strong>all P01 codes should be generalized</strong> - i.e.&nbsp;do not select species-specific codes. Instead, only choose codes for “biological entities specified elsewhere”! This is due to the Darwin Core Archive structure - taxonomic identification is already specified in the Occurrence table, but measurements are recorded in the ExtendedMeasurementOrFact table.</p>
+<p>When you are comfortable and understand P01 codes, you can also use the <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/">BODC Vocabulary Builder</a> or simply search for terms directly on the <a href="http://vocab.nerc.ac.uk/search_nvs/">NERC Vocabulary Server</a>.</p>
+<p>Vocabulary for measurements related to sampling instruments and/or sampling methods can also be found in the P01 collection and are mostly classified as sampling parameters (a search keyword that can be used in the SeaDataNet Facet search). These vocabulary used to fall under the <a href="https://vocab.nerc.ac.uk/search_nvs/Q01/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">Q01 collection</a>, however this collection has been deprecated and the terms have been remapped to P01 codes (see GitHub issue on this <a href="https://github.com/nvs-vocabs/P01/issues/227#event-12075354240">here</a>). See below for examples of sampling-related measurements and their associated P01 code:</p>
+<ul>
+<li>Description of sub-sampling protocol: <a href="https://vocab.nerc.ac.uk/collection/P01/current/DSPSSP01/" class="uri">https://vocab.nerc.ac.uk/collection/P01/current/DSPSSP01/</a></li>
+<li>Length of sampling track <a href="https://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/" class="uri">https://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/</a></li>
+<li>Height of sample collector (e.g.&nbsp;a grab) <a href="https://vocab.nerc.ac.uk/collection/P01/current/MTHHGHT1/0" class="uri">https://vocab.nerc.ac.uk/collection/P01/current/MTHHGHT1/0</a></li>
+<li>Name of sampling instrument <a href="https://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/" class="uri">https://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/</a></li>
+<li>Sample duration <a href="https://vocab.nerc.ac.uk/collection/P01/current/AZDRZZ01/" class="uri">https://vocab.nerc.ac.uk/collection/P01/current/AZDRZZ01/</a></li>
+</ul>
+<p>Click the <a href="vocab_tree.html">decision tree</a> below to help you select P01 codes for biological, chemical, physical, and/or sampling measurements. See the <a href="https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul">OBIS YouTube Vocabulary series</a> <svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg> for guidance on how to use this tree and examples for different types of <code>measurementTypeIDs</code>. The tree also helps identify vocabulary collections for <code>measurementUnitID</code> and non-numeric <code>measurementValueID</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="vocab_tree.html"><img src="images/vocab-decision-tree.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<figcaption><em>Decision tree to assist with finding and selecting appropriate controlled vocabulary to be used in the eMoF. Click the tree to be directed to a larger page.</em></figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="request-new-vocabulary-terms" class="level3">
+<h3 class="anchored" data-anchor-id="request-new-vocabulary-terms">Request new vocabulary terms</h3>
+<p>If you have already tried looking for a P01 code and were unable to identify a suitable code for your <code>measurementType</code> you must then request a code to be created. Before doing so, make sure you have not over filtered the search results. Then, to request a new term, your request must be submitted via:</p>
+<ul>
+<li>Submit request through the OBIS Vocabulary GitHub repository (<a href="https://github.com/nvs-vocabs/OBISVocabs/issues" class="uri">https://github.com/nvs-vocabs/OBISVocabs/issues</a>)
+<ul>
+<li>Requests can also be emailed to <a href="mailto:vocab.services@bodc.ac.uk" class="email">vocab.services@bodc.ac.uk</a> if you cannot access GitHub</li>
+</ul></li>
+<li>Registration with the <a href="http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/">BODC Vocabulary Builder</a>
+<ul>
+<li>Note: these requests should be based on combinations of existing concepts</li>
+</ul></li>
+</ul>
+<p>We strongly recommend you use GitHub if you can, as it allows longer-term documentation, and can be relevant for other users who may be interested in the same type of code creation.</p>
+<p>Finally, if you are unsure about whether a code fits your specific case, please feel free to ask questions to the Vocab channel on the <a href="https://join.slack.com/t/obishq/shared_invite/zt-1yiucrrrq-RZRPU7c4rm7OungiBseWVA">OBIS Slack</a>.</p>
+<section id="how-to-submit-a-github-vocabulary-request" class="level4">
+<h4 class="anchored" data-anchor-id="how-to-submit-a-github-vocabulary-request">How to Submit a GitHub Vocabulary Request</h4>
+<ol type="1">
+<li>Navigate to <a href="https://github.com/nvs-vocabs/OBISVocabs/issues" class="uri">https://github.com/nvs-vocabs/OBISVocabs/issues</a> and click on the New Issue button.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Vocab_GithubRequest_1-NewIssue.png" class="img-fluid figure-img"></p>
+<figcaption><em>Screenshot of how to request a new vocabulary on Github</em></figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Click Get started</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Vocab_GithubRequest_2-GetStarted.png" class="img-fluid figure-img"></p>
+<figcaption><em>Screenshot of submitting an issue to Github</em></figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Fill in the title with short details of your request or issue. Then fill in the description. It is recommended to list any existing terms that are similar to your request, or concepts that are sub-components of the request.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Vocab_GithubRequest_3-IssueSubmission.png" class="img-fluid figure-img"></p>
+<figcaption><em>Screenshot for how to request a new measurementType on Github</em></figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li><em>Example</em>: An issue was created to address difficulties in identifying P01 codes for sex rather than gender. Gender is a concept generally applied to humans, whereas “sex” is more applicable for animals. Thus the request was to either modify the current gender P01 code, or create a P01 code that specifies sex, not gender. At the time the request was issued, when users searched for a P01 term for “sex”, only species-specific terms were available.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Vocab_GithubRequest_4-example.png" class="img-fluid figure-img"></p>
+<figcaption><em>Example of previously requested new term on Github</em></figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iobis/manual/edit/main/vocabulary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/iobis/manual/blob/main/vocabulary.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/iobis/manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
