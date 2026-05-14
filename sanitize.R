@@ -97,7 +97,8 @@ for (path in md_files) {
 
   content_post <- readLines(out_path, warn = FALSE)
   clean <- sanitize_callouts(content_post)
-  if (any(grepl("`r ", clean))) {
+  if (any(grepl("`r ", clean)) || any(grepl("fontawesome", clean))) {
+    if (any(grepl("fontawesome", clean))) message("found in page", path)
     #message("Found in", out_path)
     clean <- c("---", "engine: knitr", "---", clean)
   }

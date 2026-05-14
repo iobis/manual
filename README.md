@@ -59,8 +59,12 @@ quarto preview --no-watch-inputs
 > [!IMPORTANT]
 > You should **always** add --no-watch-inputs. Otherwise the post-render code will not run and the .qmd files will be kept.
 
+If you are having problems with some pages, first render the website and then preview.
+
 To render the website use:
 
 ``` bash
 quarto render
 ```
+
+Check that you have the most recent version of Quarto.

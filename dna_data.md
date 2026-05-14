@@ -1,8 +1,5 @@
 ## DNA derived data
 
-
-</div>
-
 **Contents:**
 
 - [Introduction](#introduction-to-dna-data)
