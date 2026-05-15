@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/329575882.svg)](https://doi.org/10.5281/zenodo.20218566)
+
 # manual
 
 This is the OBIS manual which is published at https://manual.obis.org/.
