@@ -4,7 +4,7 @@ fig:fig-macroal
 fig:fig-cetus
 introduction
 guidelines-on-the-sharing-and-use-of-data-in-obis
-acknowledgements
+how-to-cite
 data-policy
 section-1.-preamble
 section-2.-purpose
