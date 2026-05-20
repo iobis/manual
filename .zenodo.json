@@ -1,0 +1,133 @@
+{
+  "title": "iobis/manual: v1.0 OBIS Manual bookdown version",
+  "upload_type": "software",
+  "description": "<p>Bookdown iteration of the OBIS Manual. Bookdown version began June 2022 (commit  <a href=\"https://github.com/iobis/manual/commit/f3ed813076e19e48bc99c26c5d7a91e2395fc49b\">f3ed813</a>).</p>",
+  "creators": [
+      {
+            "name": "Appeltans, Ward",
+            "orcid": "0000-0002-3237-4547",
+            "affiliation": "International Oceanographic Data and Information Exchange (IODE), IOC-UNESCO"
+        },
+      {
+            "name": "Benson, Abigail",
+            "orcid": "0000-0002-4391-107X",
+            "affiliation": "United States Fish and Wildlife Service"
+        },
+      {
+            "name": "Biddle, Mathew",
+            "orcid": "0000-0003-4897-1669",
+            "affiliation": "NOAA Integrated Ocean Observing System"
+        },
+      {
+            "name": "Bosch, Samuel",
+            "orcid": "0000-0002-2514-0283",
+            "affiliation": "International Oceanographic Data and Information Exchange (IODE), IOC-UNESCO"
+        },
+      {
+            "name": "Desmet, Peter",
+            "orcid": "0000-0002-8442-8025",
+            "affiliation": "Research Institute for Nature and Forest (INBO)"
+        },
+      {
+            "name": "Gan, Yi-Ming",
+            "orcid": "0000-0001-7087-2646",
+            "affiliation": "Institute of Natural Sciences"
+        },
+      {
+            "name": "Goldstein, Philip",
+            "orcid": "0000-0003-4174-9045",
+            "affiliation": "University of Colorado Boulder"
+        },
+      {
+            "name": "Kennedy, Mary",
+            "orcid": "",
+            "affiliation": "Fisheries and Oceans Canada"
+        },
+      {
+            "name": "Lawrence, Elizabeth",
+            "orcid": "0000-0002-5304-941X",
+            "affiliation": "International Oceanographic Data and Information Exchange (IODE), IOC-UNESCO"
+        },
+      {
+            "name": "Lillis, Helen",
+            "orcid": "0009-0000-7449-0821",
+            "affiliation": "Joint Nature Conservation Committee"
+        },
+      {
+            "name": "Murray, Tylar",
+            "orcid": "0000-0001-8241-1919",
+            "affiliation": "USF IMaRS"
+        },
+      {
+            "name": "Perez Perez, Ruben",
+            "orcid": "0000-0003-0974-3401",
+            "affiliation": "Consejo Superior de Investigaciones Científicas"
+        },
+      {
+            "name": "Provoost, Pieter",
+            "orcid": "0000-0002-4236-0384",
+            "affiliation": "International Oceanographic Data and Information Exchange (IODE), IOC-UNESCO"
+        },
+      {
+            "name": "Sean, David",
+            "orcid": "0000-0002-9264-2267",
+            "affiliation": "Fisheries and Oceans Canada"
+        },
+      {
+            "name": "Suominen, Saara",
+            "orcid": "0000-0001-9401-8460",
+            "affiliation": "International Oceanographic Data and Information Exchange (IODE), IOC-UNESCO"
+        },
+      {
+            "name": "Vandepitte, Leen",
+            "orcid": "0000-0002-4236-0384",
+            "affiliation": "Flanders Marine Institute"
+        },
+      {
+            "name": "van Zweel, Serita"
+            "orcid": "0000-0002-7426-8777",
+            "affiliation": "Flanders Marine Institute"
+        }
+    ],
+    "contributors": [
+        {
+            "name": "Ocean Biodiversity Information System",
+            "type": "Producer"
+        },
+        {
+            "name": "International Oceanographic Data and Information Exchange",
+            "type": "HostingInstitution"
+        },
+        {
+            "name": "Intergovernmental Oceanographic Commission of UNESCO",
+            "type": "RightsHolder"
+        }
+    ],
+  "license": "CC-BY-4.0",
+  "keywords": [
+        "marine biodiversity",
+        "OBIS",
+        "ocean biodiversity",
+        "Darwin Core",
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/iobis/manual/tree/v1.0",
+        "relation_type": {
+          "id": "issupplementto",
+          "title": {
+            "de": "Erg\u00e4nzt",
+            "en": "Is supplement to"
+          }
+        },
+        "resource_type": {
+          "id": "software",
+          "title": {
+            "de": "Software",
+            "en": "Software"
+          }
+        },
+        "scheme": "url"
+      }
+    ],
+}
