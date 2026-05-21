@@ -39,10 +39,23 @@ if (knitr::is_html_output()) {
   cat("[Click here to download the checklist](https://github.com/iobis/manual/raw/refs/heads/master/docs/OBIS-termchecklist.csv)\n\n")
 }
 
-# Highlight x1 values with bold + superscript for visual distinction
-checklist[] <- lapply(checklist, function(col) {
-  ifelse(col == "x1", "**x¹**", col)
-})
+# Highlight x1 values - HTML mode only (markdown bold won't work in LaTeX)
+if (knitr::is_html_output()) {
+  checklist[] <- lapply(checklist, function(col) {
+    ifelse(col == "x1", "**x¹**", col)
+  })
+}
+
+if (knitr::is_html_output()) {
+  kable(checklist, escape = FALSE) %>%
+    kable_styling(
+      bootstrap_options = c("striped", "bordered", "hover", "condensed"),
+      full_width = TRUE,
+      font_size = 13
+    )
+} else {
+  kable(checklist)
+}
 
 kable(checklist, escape = FALSE) %>%
   kable_styling(
