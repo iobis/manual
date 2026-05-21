@@ -57,10 +57,14 @@ if (knitr::is_html_output()) {
   kable(checklist)
 }
 
-kable(checklist, escape = FALSE) %>%
-  kable_styling(
-    bootstrap_options = c("striped", "bordered", "hover", "condensed"),
-    full_width = TRUE,
-    font_size = 13
-  )
+if (knitr::is_html_output()) {
+  kable(checklist, escape = FALSE) %>%
+    kable_styling(
+      bootstrap_options = c("striped", "bordered", "hover", "condensed"),
+      full_width = TRUE,
+      font_size = 13
+    )
+} else {
+  kable(checklist)
+}
 ```
