@@ -8,8 +8,11 @@ listing:
   contents: 
     - notebooks
     - notebooks.yml
+  template: custom-notebooks.ejs
   sort: "date desc"
-  max-items: 4
+  categories: true
+  filter-ui: true
+  #max-items: 4
 ---
 
 ```{=html}
@@ -33,6 +36,11 @@ listing:
         opacity: 1;
     }
 }
+
+#title-block-header h1 {
+    color: white;
+    font-size: 50px;
+}
 </style>
 ```
 
@@ -40,7 +48,7 @@ Notebooks make learning interactive — you can run code, experiment, and unders
 
 <br>
 
-## Recent notebooks
+## Explore the notebooks
 
 ::: {#notebooks-listings}
 :::

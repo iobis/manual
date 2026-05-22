@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-author','listing-date','listing-tags','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-description','listing-path','listing-author','listing-date','listing-categories','listing-image','listing-project','listing-website','listing-format','listing-engines','listing-language','listing-filename',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
-      searchColumns: ["listing-title","listing-description","listing-author","listing-date","listing-tags","listing-image"],
+      searchColumns: ["listing-title","listing-description","listing-path","listing-author","listing-date","listing-categories","listing-image","listing-project","listing-website","listing-format","listing-engines","listing-language","listing-filename"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -140,7 +140,7 @@ window.Quarto = {
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -148,7 +148,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">The OBIS manual</span>
+    <span class="navbar-title"><a class="navbar-brand" href="./"><img src="./images/ioc_logo_black_2.svg" style="height: 40px; margin-right: .7rem !important;" class="me-2"><img src="./images/logo_simple.png" style="height: 30px;"></a></span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -171,7 +171,7 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://obis.org/"> 
-<span class="menu-text">OBIS ↗</span></a>
+<span class="menu-text">Back to OBIS</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -200,7 +200,8 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ZGVyaXZlZCUyMGRhdGFzZXQ=">derived dataset <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c3BhdGlhbA==">spatial <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -228,41 +229,248 @@ window.Quarto = {
         opacity: 1;
     }
 }
+
+#title-block-header h1 {
+    color: white;
+    font-size: 50px;
+}
 </style>
 <p>Notebooks make learning interactive — you can run code, experiment, and understand concepts as they unfold on the screen.</p>
 <p><br></p>
-<section id="recent-notebooks" class="level2">
-<h2 class="anchored" data-anchor-id="recent-notebooks">Recent notebooks</h2>
-<div id="listing-notebooks-listings" class="quarto-listing quarto-listing-container-default">
+<section id="explore-the-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="explore-the-notebooks">Explore the notebooks</h2>
+<div id="listing-notebooks-listings" class="quarto-listing quarto-listing-container-custom">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1728424800000">
-<div class="thumbnail"><a href="https://github.com/iobis/hackathon/blob/master/notebooks/R/remove_records_on_land.ipynb" class="no-external">
+  
+    <div class="quarto-post image-right" data-index="0" data-categories="UHl0aG9uJTJDZGVyaXZlZCUyMGRhdGFzZXQlMkNzcGF0aWFs" data-listing-date-sort="1728511200000">
 
-<img loading="lazy" src="notebooks/thumbnails/remove_records_on_land.png" class="thumbnail-image">
+        
+        <div class="thumbnail">
+          <p>
+            <a href="https://github.com/iobis/hackathon/blob/master/notebooks/Python/speciesgrids_demo.ipynb" class="no-external">
+              <img src="notebooks/thumbnails/py-generic-thumb.png" class="thumbnail-image" loading="lazy">
+            </a>
+          </p>
+        </div>
+      
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="https://github.com/iobis/hackathon/blob/master/notebooks/R/remove_records_on_land.ipynb" class="no-external">Remove records on land</a>
-</h3>
-<div class="delink listing-description"><a href="https://github.com/iobis/hackathon/blob/master/notebooks/R/remove_records_on_land.ipynb" class="no-external">
-<p>Learn how to remove records on land using R</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="https://github.com/iobis/hackathon/blob/master/notebooks/R/remove_records_on_land.ipynb" class="no-external">
-<div class="listing-date">
-Oct 9, 2024
-</div>
-<div class="listing-author">
-OBIS
-</div>
-<div class="metadata-value listing-tags">
-R,data cleaning,spatial
-</div>
+      <div class="body">
+                <h3 class="no-anchor listing-title">
+          <a href="https://github.com/iobis/hackathon/blob/master/notebooks/Python/speciesgrids_demo.ipynb">
+        
+<p><code>speciesgrids</code> demo</p>
 </a>
-</div>
-</div>
+        </h3>
+        
+          <div class="listing-categories" style="margin-top: 4px; margin-bottom: 8px;">
+            
+              <div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+                Python
+              </div>
+            
+              <div class="listing-category" onclick="window.quartoListingCategory('derived dataset'); return false;">
+                derived dataset
+              </div>
+            
+              <div class="listing-category" onclick="window.quartoListingCategory('spatial'); return false;">
+                spatial
+              </div>
+            
+          </div>
+        
+        
+        
+
+          <div class="delink listing-description"><a href="https://github.com/iobis/hackathon/blob/master/notebooks/Python/speciesgrids_demo.ipynb" class="no-external">
+<p>This notebook demonstrates querying the speciesgrids data product using geopandas and duckdb. The examples use the s3://obis-products/speciesgrids/h3_7/ remote datasource as default. To query a local copy instead for better performance, use the local file path.</p>
+          </a></div>
+
+        
+
+        <div class="listing-actions" style="margin-top: 14px; align-items: center; margin-bottom: 15px;">
+          
+          
+            <a href="https://colab.research.google.com/github/iobis/hackathon/blob/master/notebooks/Python/speciesgrids_demo.ipynb" target="_blank" rel="noopener noreferrer" style="border: none;">
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height: 24px; vertical-align: middle;">
+            </a>
+          
+
+          
+            <a href="https://github.com/iobis/hackathon/blob/master/notebooks/Python/speciesgrids_demo.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary" style="padding: 2px 8px; font-size: 12px; height: 24px; display: inline-flex; align-items: center; gap: 4px; border-radius: 4px; text-decoration: none;">
+              <i class="bi bi-github" style="font-size: 14px;"></i> <span style="font-weight: 600;">Open in GitHub</span>
+            </a>
+          
+        </div>
+
+      </div>
+
+      
+      <div class="metadata">
+        
+          <div class="listing-date">
+            Oct 10, 2024
+          </div>
+        
+        
+          <div class="listing-author">
+            OBIS
+          </div>
+        
+      </div>
+
+    </div>
+  
+    <div class="quarto-post image-right" data-index="1" data-categories="UiUyQ3NwYXRpYWw=" data-listing-date-sort="1728511200000">
+
+        
+        <div class="thumbnail">
+          <p>
+            <a href="https://github.com/iobis/hackathon/blob/master/notebooks/R/remove_records_on_land.ipynb" class="no-external">
+              <img src="notebooks/thumbnails/r-generic-thumb.png" class="thumbnail-image" loading="lazy">
+            </a>
+          </p>
+        </div>
+      
+
+      <div class="body">
+                <h3 class="no-anchor listing-title">
+          <a href="https://github.com/iobis/hackathon/blob/master/notebooks/R/remove_records_on_land.ipynb">
+        
+<p>Removing records on land</p>
+</a>
+        </h3>
+        
+          <div class="listing-categories" style="margin-top: 4px; margin-bottom: 8px;">
+            
+              <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+                R
+              </div>
+            
+              <div class="listing-category" onclick="window.quartoListingCategory('spatial'); return false;">
+                spatial
+              </div>
+            
+          </div>
+        
+        
+        
+
+          <div class="delink listing-description"><a href="https://github.com/iobis/hackathon/blob/master/notebooks/R/remove_records_on_land.ipynb" class="no-external">
+<p>In this short notebook we will explore how to remove records on land.</p>
+          </a></div>
+
+        
+
+        <div class="listing-actions" style="margin-top: 14px; align-items: center; margin-bottom: 15px;">
+          
+          
+            <a href="https://colab.research.google.com/github/iobis/hackathon/blob/master/notebooks/R/remove_records_on_land.ipynb" target="_blank" rel="noopener noreferrer" style="border: none;">
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height: 24px; vertical-align: middle;">
+            </a>
+          
+
+          
+            <a href="https://github.com/iobis/hackathon/blob/master/notebooks/R/remove_records_on_land.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary" style="padding: 2px 8px; font-size: 12px; height: 24px; display: inline-flex; align-items: center; gap: 4px; border-radius: 4px; text-decoration: none;">
+              <i class="bi bi-github" style="font-size: 14px;"></i> <span style="font-weight: 600;">Open in GitHub</span>
+            </a>
+          
+        </div>
+
+      </div>
+
+      
+      <div class="metadata">
+        
+          <div class="listing-date">
+            Oct 10, 2024
+          </div>
+        
+        
+          <div class="listing-author">
+            OBIS
+          </div>
+        
+      </div>
+
+    </div>
+  
+    <div class="quarto-post image-right" data-index="2" data-categories="UiUyQ3NwYXRpYWw=" data-listing-date-sort="1728511200000">
+
+        
+        <div class="thumbnail">
+          <p>
+            <a href="./https:/github.com/iobis/hackathon/blob/master/notebooks/R/environmental_data_for_occurrences.qmd" class="no-external">
+              <img src="notebooks/thumbnails/r-generic-thumb.png" class="thumbnail-image" loading="lazy">
+            </a>
+          </p>
+        </div>
+      
+
+      <div class="body">
+                <h3 class="no-anchor listing-title">
+          <a href="./https:/github.com/iobis/hackathon/blob/master/notebooks/R/environmental_data_for_occurrences.qmd">
+        
+<p>Obtaining environmental information for species occurrences</p>
+</a>
+        </h3>
+        
+          <div class="listing-categories" style="margin-top: 4px; margin-bottom: 8px;">
+            
+              <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+                R
+              </div>
+            
+              <div class="listing-category" onclick="window.quartoListingCategory('spatial'); return false;">
+                spatial
+              </div>
+            
+          </div>
+        
+        
+        
+
+          <div class="delink listing-description"><a href="./https:/github.com/iobis/hackathon/blob/master/notebooks/R/environmental_data_for_occurrences.qmd" class="no-external">
+<p>In this notebook we will explore how to match environmental data to species occurrences.</p>
+          </a></div>
+
+        
+
+        <div class="listing-actions" style="margin-top: 14px; align-items: center; margin-bottom: 15px;">
+          
+          
+
+          
+            <a href="./https:/github.com/iobis/hackathon/blob/master/notebooks/R/environmental_data_for_occurrences.qmd" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary" style="padding: 2px 8px; font-size: 12px; height: 24px; display: inline-flex; align-items: center; gap: 4px; border-radius: 4px; text-decoration: none;">
+              <i class="bi bi-github" style="font-size: 14px;"></i> <span style="font-weight: 600;">Open in GitHub</span>
+            </a>
+          
+        </div>
+
+      </div>
+
+      
+      <div class="metadata">
+        
+          <div class="listing-date">
+            Oct 10, 2024
+          </div>
+        
+        
+          <div class="listing-author">
+            OBIS
+          </div>
+        
+      </div>
+
+    </div>
+  
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
@@ -677,4 +885,4 @@ R,data cleaning,spatial
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/iobis/manual/edit/main/notebooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/iobis/manual/blob/main/notebooks.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/iobis/manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/iobis/manual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

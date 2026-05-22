@@ -1,0 +1,200 @@
+---
+title: "Using DuckDB to query the OBIS occurrence dataset - Part 3 (`duckplyr` package)"
+description: "OBIS now has a occurrence dataset in GeoParquet format, but to work with large datasets you need the right tools. Here we explore how you can use DuckDB to (very) quickly retrieve data from this resource."
+authors: [silasprincipe]
+date: 2025-09-26
+categories: ["tutorial", "r", "data-manipulation"]
+tags: ["r", "obis", "parquet", "duckdb", "spatial"]
+output: 
+  md_document:
+    preserve_yaml: true
+---
+
+# `duckplyr`
+
+In the two previous tutorials we learned about how to use `[DuckDB for querying the Parquet exports]({{< ref "tutorials/duckdb-part1/index.md" >}})`{=markdown} and about `[the DuckDB spatial extension]({{< ref "tutorials/duckdb-part2/index.md" >}})`{=markdown}. Here we will explore the R package [`duckplyr`](https://duckplyr.tidyverse.org/index.html), a drop-in replacement for DuckDB on R which uses the `tidyverse` grammar.
+
+Again, we will work with a local copy of the occurrence dataset, which you can download here: https://obis.org/data/access/. You can also explore together through the Jupyter Notebook ([download it locally](https://github.com/iobis/resources/blob/main/content/tutorials/duckdb-part3/duckdb-part3.ipynb) or open it through **Google Colab** by [clicking here](https://colab.research.google.com/github/iobis/resources/blob/main/content/tutorials/duckdb-part3/duckdb-part3.ipynb)).
+
+We will work with the European sea-bass [_Dicentrarchus labrax_](https://obis.org/taxon/126975). Let's start by simply getting all records for it.
+
+```{r}
+#| warning: false
+suppressPackageStartupMessages(library(duckplyr)) # For queries
+suppressPackageStartupMessages(library(tictoc)) # To get timings
+suppressPackageStartupMessages(library(sf)) # To later work with the spatial results
+suppressPackageStartupMessages(library(ggplot2)) # For plotting
+
+# Put here the path to your downloaded occurrence dataset
+# In this case we need to add *.parquet
+fe_path <- "/Volumes/OBIS2/obis_20250318_parquet/occurrence/*.parquet"
+
+full_export <- read_parquet_duckdb(fe_path)
+
+head(full_export)
+```
+
+Note that differently from our previous tutorials, in this case `duckplyr` provides you with an overview (a sample) of the dataset once you open it. So far, we have not done any query. Let's proceed.
+
+```{r}
+#| warning: false
+species_id <- 126975
+
+seabass_rec <- full_export |>
+    select(aphiaid, occurrenceID) |>
+    filter(aphiaid == species_id) |>
+    collect()
+
+head(seabass_rec)
+nrow(seabass_rec)
+```
+
+We quickly got all records for the species. Under the hood, `duckplyr` is doing a SQL call just as we did on previous tutorials. You can check the query in two ways - using `explain()` or `show_query()`
+
+```{r}
+#| warning: false
+full_export |>
+    select(aphiaid, occurrenceID) |>
+    filter(aphiaid == species_id) |>
+    explain()
+
+full_export |>
+    # To use show_query, we first need to convert to tbl, the format used
+    # by the package dbplyr
+    as_tbl() |>
+    select(aphiaid, occurrenceID) |>
+    filter(aphiaid == species_id) |>
+    show_query()
+```
+
+By checking the queries you might notice that _sometimes_ the queries are overly complex. But even with that, the package make it easier to do the queries, since it uses a grammar that is well know by R users.
+
+Now, we will do a more complex query. Aggregate by year, and get the number of records.
+
+```{r}
+#| warning: false
+seabass_rec_year <- full_export |>
+    select(aphiaid, occurrenceID, date_year, sst) |>
+    filter(aphiaid == species_id) |>
+    filter(!is.na(date_year)) |>
+    group_by(date_year) |>
+    summarise(
+        records = n()
+    ) |>
+    collect()
+
+tail(seabass_rec_year, 3)
+```
+
+Now, and about the extensions? You can use them as usual! For example, to install the `httpfs` extension to work with online data you simply use `db_exec("INSTALL httpfs; LOAD httpfs;")`. Now we will try to use the spatial extension, that we saw on the last tutorial:
+
+```{r}
+# Install the extension
+db_exec("INSTALL spatial; LOAD spatial;")
+
+sel_area <- "POLYGON ((-14.414063 43.325178, 9.140625 43.325178, 9.140625 60.06484, -14.414063 60.06484, -14.414063 43.325178))"
+```
+
+```{r}
+#| warning: false
+#| eval: false
+seabass_rec_geom <- full_export |>
+    select(aphiaid, occurrenceID, date_year, sst, geometry) |>
+    filter(aphiaid == species_id) |>
+    filter(!is.na(date_year)) |>
+    filter(ST_Intersects(geometry, ST_GeomFromText(sel_area))) |>
+    collect()
+```
+
+``` {r}
+#| eval: false
+# Error in `filter()`: 
+# ℹ In argument: `ST_Intersects(geometry, ST_GeomFromText(sel_area))`.
+# Caused by error in `ST_Intersects()`:
+# ! could not find function "ST_Intersects"
+# Run `rlang::last_trace()` to see where the error occurred.
+```
+
+As you see it fails. That is because `ST_Intersects` is not an R function, but a DuckDB extension function. How can we deal with that? We have to use the `dbplyr` capabilities instead. If you convert to a `tbl` object, you can then pass arbitrary functions to it. If it is not found in R, it will assume it is a DuckDB function.
+
+```{r}
+#| warning: false
+seabass_rec_geom <- full_export |>
+    # convert to tbl, the format used by the package dbplyr
+    as_tbl() |>
+    # Do the queries
+    select(aphiaid, occurrenceID, date_year, sst, geometry) |>
+    filter(aphiaid == species_id) |>
+    filter(!is.na(date_year)) |>
+    # It will assume it is a DuckDB function
+    filter(ST_Intersects(geometry, ST_GeomFromText(sel_area))) |>
+    #show_query() # If you want to check the query
+    as_duckdb_tibble() |> # Go back to duckplyr, in this case not necessary as
+                          # we are not doing further queries
+    collect() # Materialize call
+
+head(seabass_rec_geom, 3)
+```
+
+One other nice extension is the H3 extension, which introduces the [H3 grid system](https://duckdb.org/community_extensions/extensions/h3.html) to DuckDB. Let's try it. We will do the same query as above, but now also get the H3 cells from it at the resolution 4, and plot the average SST and number of records in each heaxagon.
+
+```{r}
+#| warning: false
+db_exec("INSTALL h3 FROM community; LOAD h3;")
+
+seabass_rec_h3 <- full_export |>
+    # convert to tbl, the format used by the package dbplyr
+    as_tbl() |>
+    # Do the queries
+    select(aphiaid, occurrenceID, date_year, sst, geometry, decimalLongitude, decimalLatitude) |>
+    filter(aphiaid == species_id) |>
+    filter(!is.na(date_year)) |>
+    # It will assume it is a DuckDB function
+    filter(ST_Intersects(geometry, ST_GeomFromText(sel_area))) |>
+    # Note that the resolution should be passed as an integer, that is why we add the L to 4
+    mutate(h3_cell = h3_latlng_to_cell_string(decimalLatitude, decimalLongitude, 4L)) |>
+    mutate(h3_pol = h3_cell_to_boundary_wkt(h3_cell)) |>
+    #show_query() # If you want to check the query
+    as_duckdb_tibble() |> # Go back to duckplyr
+    group_by(h3_cell, h3_pol) |>
+    summarise(
+        records = n(),
+        average_sst = mean(sst, na.rm = T)
+    ) |>
+    collect() # Materialize call
+
+head(seabass_rec_h3, 3)
+```
+
+We can now plot it:
+
+```{r}
+#| warning: false
+seabass_rec_h3_sf <- st_as_sf(
+    seabass_rec_h3, wkt = "h3_pol", crs = 4326
+)
+
+sf_use_s2(FALSE)
+wrld <- rnaturalearth::ne_countries(returnclass = "sf")
+wrld <- st_crop(wrld, seabass_rec_h3_sf)
+
+ggplot() +
+    geom_sf(data = wrld, fill = "grey90") +
+    geom_sf(data = seabass_rec_h3_sf, aes(fill = records)) +
+    scale_fill_viridis_c(transform = "log10") +
+    theme_light() +
+    ggtitle("Number of records for the European sea-bass")
+
+ggplot() +
+    geom_sf(data = wrld, fill = "grey90") +
+    geom_sf(data = seabass_rec_h3_sf, aes(fill = average_sst)) +
+    scale_fill_viridis_c(transform = "log10") +
+    theme_light() +
+    ggtitle("Average SST")
+```
+
+![](image1.png)
+
+![](image2.png)
+
+And that concludes our series about the use of DuckDB for querying the OBIS Parquet exports. We hope this will give you more tools to work with OBIS data.

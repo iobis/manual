@@ -3,8 +3,8 @@ project:
   pre-render: 
     - sanitize.R
   render:
-    - "*.qmd"
-    - "tutorials/*/*.md"
+    - "./*.qmd"
+    - "tutorials/**/*.md"
   post-render: 
     - remove-old.R
   output-dir: docs
@@ -12,6 +12,9 @@ project:
 website:
   title: The OBIS manual
   navbar:
+    #logo: images/logo.png
+    title: | 
+      <a class="navbar-brand" href="/"><img src="/images/ioc_logo_black_2.svg" style="height: 40px; margin-right: .7rem !important;" class="me-2"><img src="/images/logo_simple.png" style="height: 30px;"></a>
     right:
     - href: index.qmd
       text: Manual
@@ -20,9 +23,9 @@ website:
     - href: notebooks.qmd
       text: Notebooks
     - href: "https://obis.org/"
-      text: "OBIS ↗"
+      text: "Back to OBIS"
   repo-url:  https://github.com/iobis/manual
-  repo-actions: [edit, source, issue]
+  repo-actions: [issue]
   search: 
     location: navbar
     type: overlay
@@ -97,7 +100,7 @@ website:
       style: floating
       search: false
       contents: 
-        - text: "Tutorials from OBIS"
+        - text: "All tutorials from OBIS"
           href: "obis-tutorials.qmd"
         # - section: "From OBIS"
           # contents:

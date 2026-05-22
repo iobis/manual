@@ -3,6 +3,8 @@
 ## Pages
 
 - [Matching environmental information with OBIS occurrences](tutorials/env-data/index.llms.md)
+- [Using DuckDB to query the OBIS occurrence dataset - Part 2 (spatial extension)](tutorials/duckdb-part2/index.llms.md)
+- [Using the Parquet format with OBIS data](tutorials/arrow-obis/index.llms.md)
 - [vocab_tree](vocab_tree.llms.md)
 - [Data visualization using R (deprecated)](visualization.llms.md)
 - [Tutorials](tutorials.llms.md)
@@ -39,7 +41,7 @@
 - [format_event](format_event.llms.md)
 - [formatting](formatting.llms.md)
 - [gethelp](gethelp.llms.md)
-- [index](index.llms.md)
+- [The OBIS manual](index.llms.md)
 - [ipt](ipt.llms.md)
 - [lifewatch_qc](lifewatch_qc.llms.md)
 - [mofreports](mofreports.llms.md)
@@ -50,3 +52,5 @@
 - [vis_map](vis_map.llms.md)
 - [vocab_WIPmaterials](vocab_WIPmaterials.llms.md)
 - [vocabulary](vocabulary.llms.md)
+- [Using DuckDB to query the OBIS occurrence dataset - Part 1](tutorials/duckdb-part1/index.llms.md)
+- [Using DuckDB to query the OBIS occurrence dataset - Part 3 (`duckplyr` package)](tutorials/duckdb-part3/index.llms.md)

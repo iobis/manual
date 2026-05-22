@@ -2,6 +2,10 @@
   {
     "listing": "/tutorials.html",
     "items": [
+      "/tutorials/duckdb-part1/index.html",
+      "/tutorials/duckdb-part2/index.html",
+      "/tutorials/duckdb-part3/index.html",
+      "/tutorials/arrow-obis/index.html",
       "/tutorials/env-data/index.html"
     ]
   },
@@ -12,6 +16,10 @@
   {
     "listing": "/obis-tutorials.html",
     "items": [
+      "/tutorials/duckdb-part1/index.html",
+      "/tutorials/duckdb-part2/index.html",
+      "/tutorials/duckdb-part3/index.html",
+      "/tutorials/arrow-obis/index.html",
       "/tutorials/env-data/index.html"
     ]
   }

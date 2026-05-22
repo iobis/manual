@@ -1,3 +1,5 @@
+# The OBIS manual
+
 # Introduction
 
 OBIS accepts a variety of data types, including species occurrence, associated environmental and measurement data, and more. This manual provides a comprehensive walk-through on how to contribute data to OBIS and how to access data in OBIS. It is divided into topical sections that provide detailed information on:
