@@ -1,203 +1,203 @@
- Term , OBIS Required , Term's DarwinCore Class , Event Table ,Occurrence Core,Occurrence Extension, eMoF Table , DNA Table  
- eventDate , required ,  event ,  x , x, ,  ,  
- eventID , required , event , x , ,x , x ,  
- decimalLatitude , required , location , x , x, ,  ,  
- decimalLongitude , required , location , x , x, ,  ,  
- occurrenceID , required , occurrence ,  , x,x , x , x 
- occurrenceStatus , required , occurrence ,  , x,x ,  ,  
- basisOfRecord , required , record ,  , x,x ,  ,  
- scientificName , required , taxon ,  , x,x ,  ,  
- scientificNameID ,  strongly recommended , taxon ,  , x,x ,  ,  
- DNA_sequence , strongly recommended , dna ,  , , ,  , x 
- env_broad_scale , strongly recommended , dna ,  , , ,  , x 
- env_local scale , recommended , dna ,  , , ,  , x 
- env_medium , strongly recommended , dna ,  , , ,  , x 
- lib_layout , recommended , dna ,  , , ,  , x 
- nucl_acid_amp , recommended , dna ,  , , ,  , x 
- nucl_acid_ext , recommended , dna ,  , , ,  , x 
- otu_class_appr , recommended , dna ,  , , ,  , x 
- otu_db , recommended , dna ,  , , ,  , x 
- otu_seq_comp_appr , recommended , dna ,  , , ,  , x 
- pcr_primer_forward , strongly recommended , dna ,  , , ,  , x 
- pcr_primer_name_forward , strongly recommended , dna ,  , , ,  , x 
- pcr_primer_name_reverse , strongly recommended , dna ,  , , ,  , x 
- pcr_primer_reference , strongly recommended , dna ,  ,  , , , x 
- pcr_primer_reverse , strongly recommended , dna ,  , , ,  , x 
- samp_name , recommended , dna ,  , , ,  , x 
- samp_vol_we_dna_ext , recommended , dna ,  , , ,  , x 
- seq_meth , recommended , dna ,  , , ,  , x 
- sop , recommended , dna ,  , , ,  , x 
- target_gene , strongly recommended , dna ,  , , ,  , x 
- target_subfragment , strongly recommended , dna ,  , , ,  , x 
- day , recommended , event , x , x,  ,  ,  
- endDayOfYear , recommended , event , x , x,  ,  ,  
- eventType , strongly recommended , event , x , , ,  ,  
- eventRemarks , optional , event , x , x,  ,  ,  
- eventTime , recommended , event , x , x,  ,  ,  
- fieldNotes , optional , event , x , x , ,  ,  
- fieldNumber , optional , event , x , x , ,  ,  
- habitat , recommended , event , x , x , , x ,  
- month , strongly recommended , event , x , x,  ,  ,  
- parentEventID , required (if exists) , event , x ,  ,  ,  ,
- sampleSizeUnit , strongly recommended , event , x1 , x1,  , x ,  
- sampleSizeValue , strongly recommended , event , x1 , x1,  , x ,  
- samplingEffort , strongly recommended , event , x1 , x1,  , x ,  
- samplingProtocol , strongly recommended , event , x1 , x1,  , x ,  
- startDayOfYear , recommended , event , x , x , ,  ,  
- verbatimEventDate , recommended , event , x , x , ,  ,  
- year , strongly recommended , event , x , x , ,  ,  
- bed , optional , geologicalContext , x , x , x ,  ,  
- earliestAgeOrLowestStage , optional , geologicalContext , x , x,x ,  ,  
- earliestEonOrLowestEonothem , optional , geologicalContext , x , x,x ,  ,  
- earliestEpochOrLowestSeries , optional , geologicalContext , x , x,x ,  ,  
- earliestEraOrLowestErathem , optional , geologicalContext , x , x,x ,  ,  
- earliestPeriodOrLowestSystem , optional , geologicalContext , x , x,x ,  ,  
- formation , optional , geologicalContext , x , x,x ,  ,  
- group , optional , geologicalContext , x , x,x ,  ,  
- highestBiostratigraphicZone , optional , geologicalContext , x , x,x ,  ,  
- latestAgeOrHighestStage , optional , geologicalContext , x , x,x ,  ,  
- latestEonOrHighestEonothem , optional , geologicalContext , x , x,x ,  ,  
- latestEpochOrHighestSeries , optional , geologicalContext , x , x,x ,  ,  
- latestEraOrHighestErathem , optional , geologicalContext , x , x,x ,  ,  
- latestPeriodOrHighestSystem , optional , geologicalContext , x , x,x ,  ,  
- lithostratigraphicTerms , optional , geologicalContext , x , x,x ,  ,  
- lowestBiostratigraphicZone , optional , geologicalContext , x , x,x ,  ,  
- member , optional , geologicalContext , x , x,x ,  ,  
- dateIdentified , optional , identification ,  , x,x ,  ,  
- identificationID , optional , identification ,  , x,x ,  ,  
- identificationQualifier , recommended , identification ,  , x,x ,  ,  
- identificationReferences , optional (required for imaging data) , identification ,  , x,x ,  ,  
- identificationRemarks , recommended , identification ,  , x,x ,  ,  
- identificationVerificationStatus , optional (required for imaging data) , identification ,  , x,x ,  ,  
- identifiedBy , optional (required for imaging data) , identification ,  , x,x ,  ,  
- identifiedByID , optional , identification ,  , x,x ,  ,  
- typeStatus , optional , identification ,  , x,x ,  ,  
- continent , strongly recommended , location , x , x,  ,  ,  
- coordinatePrecision , strongly recommended , location , x , x,  ,  ,  
- coordinateUncertaintyInMeters , strongly recommended , location , x , x,  ,  ,  
- country , recommended , location , x , x,  ,  ,  
- countryCode , optional , location , x , x,  ,  ,  
- county , optional , location , x , x,  ,  ,  
- footprintSpatialFit , optional , location , x , x,  ,  ,  
- footprintSRS , optional , location , x , x,  ,  ,  
- footprintWKT , recommended , location , x , x,  ,  ,  
- geodeticDatum , recommended , location , x , x,  ,  ,  
- georeferencedBy , optional , location , x , x,  ,  ,  
- georeferencedDate , optional , location , x , x,  ,  ,  
- georeferenceProtocol , optional , location , x , x,  ,  ,  
- georeferenceSources , optional , location , x , x,  ,  ,  
- higherGeography , optional , location , x , x,  ,  ,  
- higherGeographyID , optional , location , x , x,  ,  ,  
- island , optional , location , x , x,  ,  ,  
- islandGroup , optional , location , x , x,  ,  ,  
- locality , recommended , location , x , x,  ,  ,  
- locationAccordingTo , recommended , location , x , x,  ,  ,  
- locationID , strongly recommended , location , x , x,  ,  ,  
- locationRemarks , recommended , location , x , x,  ,  ,  
- maximumDepthInMeters , strongly recommended , location , x , x,  ,  ,  
- maximumDistanceAboveSurfaceInMeters , optional , location , x , x,  ,  ,  
- maximumElevationInMeters , optional , location , x , x,  ,  ,  
- minimumDepthInMeters , strongly recommended , location , x , x, ,  ,  
- minimumDistanceAboveSurfaceInMeters , optional , location , x , x,  ,  ,  
- minimumElevationInMeters , optional , location , x , x,  ,  ,  
- municipality , optional , location , x , x,  ,  ,  
- pointRadiusSpatialFit , optional , location , x , x,  ,  ,  
- stateProvince , optional , location , x , x,  ,  ,  
- verbatimCoordinates , optional , location , x , x,  ,  ,  
- verbatimCoordinateSystem , optional , location , x , x,  ,  ,  
- verbatimDepth , optional , location , x , x,  ,  ,  
- verbatimElevation , optional , location , x , x,  ,  ,  
- verbatimLatitude , optional , location , x , x,  ,  ,  
- verbatimLocality , optional , location , x , x,  ,  ,  
- verbatimLongitude , optional , location , x , x,  ,  ,  
- verbatimSRS , optional , location , x , x,  ,  ,  
- waterBody , recommended , location , x , x,  ,  ,  
- materialSampleID , recommended , materialSample ,  , x,x ,  ,  
- measurementAccuracy , recommended , measurementOrFact ,  , , , x ,  
- measurementDeterminedBy , optional , measurementOrFact ,  , , , x ,  
- measurementDeterminedDate , optional , measurementOrFact ,  , , , x ,  
- measurementID , recommended , measurementOrFact ,  , , , x ,  
- measurementMethod , recommended , measurementOrFact ,  , , , x ,  
- measurementRemarks , recommended , measurementOrFact ,  , , , x ,  
- measurementType , strongly recommended , measurementOrFact ,  , , , x ,  
- measurementTypeID , strongly recommended , measurementOrFact ,  , , , x ,  
- measurementUnit , strongly recommended , measurementOrFact ,  , , , x ,  
- measurementUnitID , strongly recommended , measurementOrFact ,  , , , x ,  
- measurementValue , strongly recommended , measurementOrFact ,  , , , x ,  
- measurementValueID , strongly recommended , measurementOrFact ,  , , , x ,  
- associatedMedia , recommended , occurrence ,  , x,x ,  ,  
- associatedReferences , optional , occurrence ,  , x,x ,  ,  
- associatedSequences , recommended , occurrence ,  , x,x ,  ,  
- associatedTaxa , optional , occurrence ,  , x,x ,  ,  
- behavior , optional , occurrence ,  , x1,x1 , x ,  
- catalogNumber , recommended , occurrence ,  , x,x ,  ,  
- disposition , optional , occurrence ,  , x,x ,  ,  
- establishmentMeans , optional , occurrence ,  , x,x ,  ,  
- georeferenceVerificationStatus , recommended , occurrence , x , x,  ,  ,  
- organismQuantity (preferred over individualCount) , strongly recommended , occurrence ,  , x1,x1 , x ,  
- organismQuantityType (preferred over individualCount) , strongly recommended , occurrence ,  , x1,x1 , x ,  
- individualCount , recommended , occurrence ,  , x1,x1 , x ,  
- lifeStage , optional , occurrence ,  , x1,x1 , x ,  
- occurrenceRemarks , recommended , occurrence ,  , x,x ,  ,  
- otherCatalogNumbers , optional , occurrence ,  , x,x ,  ,  
- preparations , optional , occurrence ,  , x,x ,  ,  
- recordedBy , recommended , occurrence ,  , x,x ,  ,  
- recordedByID , recommended , occurrence ,  , x,x ,  ,  
- recordNumber , recommended , occurrence ,  , x,x ,  ,  
- reproductiveCondition , optional , occurrence ,  , x1,x1 , x ,  
- sex , optional , occurrence ,  , x1,x1 , x ,  
- associatedOccurrences , optional , organsim ,  , x,x ,  ,  
- associatedOrganisms , optional , organsim ,  , x,x ,  ,  
- organismID , recommended , organsim ,  , x,x ,  ,  
- organismName , optional , organsim ,  , x,x ,  ,  
- organismRemarks , optional , organsim ,  , x,x ,  ,  
- organismScope , optional , organsim ,  , x,x ,  ,  
- previousIdentifications , recommended , organsim ,  , x,x ,  ,  
- accessRights , recommended , record , x , x,  ,  ,  
- bibliographicCitation , recommended , record , x , x,  ,  ,  
- collectionCode , optional , record , x , x,x ,  ,  
- collectionID , optional , record , x , x,x ,  ,  
- dataGeneralizations , optional , record , x , x,x ,  ,  
- datasetID , recommended , record , x , x,x ,  ,  
- datasetName , recommended , record , x , x,x ,  ,  
- dynamicProperties , recommended , record , x , x,x ,  ,  
- informationWithheld , optional , record , x , x,x ,  ,  
- institutionCode , optional , record , x , x,x ,  ,  
- institutionID , optional , record , x , x,x ,  ,  
- language , recommended , record , x , x,x ,  ,  
- license , strongly recommended , record , x , x,x ,  ,  
- modified , recommended , record , x , x,x ,  ,  
- ownerInstitutionCode , optional , record , x , x,x ,  ,  
- references , recommended , record , x , x,x ,  ,  
- rightsHolder , recommended , record , x , x,x ,  ,  
- type , strongly recommended , record , x , x,x , x ,  
- acceptedNameUsage , recommended , taxon ,  , x,x ,  ,  
- acceptedNameUsageID , recommended , taxon ,  , x,x ,  ,  
- higherClassification , recommended , taxon ,  , x,x ,  ,  
- infraspecificEpithet , recommended , taxon ,  , x,x,  ,  
- nameAccordingToID , recommended , taxon ,  , x,x ,  ,  
- namePublishedInID , optional , taxon ,  , x,x ,  ,  
- namePublishedInYear , optional , taxon ,  , x,x ,  ,  
- nomenclaturalCode , optional , taxon ,  , x,x ,  ,  
- nomenclaturalStatus , optional , taxon ,  , x,x ,  ,  
+ Term , OBIS Required , Term's DarwinCore Class , Event Table ,Occurrence Core,Occurrence Extension, eMoF Table , DNA Table Â 
+ eventDate , required , Â event , Â x , x, , Â , Â 
+ eventID , required , event , x , ,x , x , Â 
+ decimalLatitude , required , location , x , x, , Â , Â 
+ decimalLongitude , required , location , x , x, , Â , Â 
+ occurrenceID , required , occurrence , Â , x,x , x , x 
+ occurrenceStatus , required , occurrence , Â , x,x , Â , Â 
+ basisOfRecord , required , record , Â , x,x , Â , Â 
+ scientificName , required , taxon , Â , x,x , Â , Â 
+ scientificNameID , Â strongly recommended , taxon , Â , x,x , Â , Â 
+ DNA_sequence , strongly recommended , dna , Â , , , Â , x 
+ env_broad_scale , strongly recommended , dna , Â , , , Â , x 
+ env_local scale , recommended , dna , Â , , , Â , x 
+ env_medium , strongly recommended , dna , Â , , , Â , x 
+ lib_layout , recommended , dna , Â , , , Â , x 
+ nucl_acid_amp , recommended , dna , Â , , , Â , x 
+ nucl_acid_ext , recommended , dna , Â , , , Â , x 
+ otu_class_appr , recommended , dna , Â , , , Â , x 
+ otu_db , recommended , dna , Â , , , Â , x 
+ otu_seq_comp_appr , recommended , dna , Â , , , Â , x 
+ pcr_primer_forward , strongly recommended , dna , Â , , , Â , x 
+ pcr_primer_name_forward , strongly recommended , dna , Â , , , Â , x 
+ pcr_primer_name_reverse , strongly recommended , dna , Â , , , Â , x 
+ pcr_primer_reference , strongly recommended , dna , Â , Â , , , x 
+ pcr_primer_reverse , strongly recommended , dna , Â , , , Â , x 
+ samp_name , recommended , dna , Â , , , Â , x 
+ samp_vol_we_dna_ext , recommended , dna , Â , , , Â , x 
+ seq_meth , recommended , dna , Â , , , Â , x 
+ sop , recommended , dna , Â , , , Â , x 
+ target_gene , strongly recommended , dna , Â , , , Â , x 
+ target_subfragment , strongly recommended , dna , Â , , , Â , x 
+ day , recommended , event , x , x, Â , Â , Â 
+ endDayOfYear , recommended , event , x , x, Â , Â , Â 
+ eventType , strongly recommended , event , x , , , Â , Â 
+ eventRemarks , optional , event , x , x, Â , Â , Â 
+ eventTime , recommended , event , x , x, Â , Â , Â 
+ fieldNotes , optional , event , x , x , , Â , Â 
+ fieldNumber , optional , event , x , x , , Â , Â 
+ habitat , recommended , event , x , x , , x , Â 
+ month , strongly recommended , event , x , x, Â , Â , Â 
+ parentEventID , required (if exists) , event , x , Â , Â , Â ,
+ sampleSizeUnit , strongly recommended , event , x1 , x1, Â , x , Â 
+ sampleSizeValue , strongly recommended , event , x1 , x1, Â , x , Â 
+ samplingEffort , strongly recommended , event , x1 , x1, Â , x , Â 
+ samplingProtocol , strongly recommended , event , x1 , x1, Â , x , Â 
+ startDayOfYear , recommended , event , x , x , , Â , Â 
+ verbatimEventDate , recommended , event , x , x , , Â , Â 
+ year , strongly recommended , event , x , x , , Â , Â 
+ bed , optional , geologicalContext , x , x , x , Â , Â 
+ earliestAgeOrLowestStage , optional , geologicalContext , x , x,x , Â , Â 
+ earliestEonOrLowestEonothem , optional , geologicalContext , x , x,x , Â , Â 
+ earliestEpochOrLowestSeries , optional , geologicalContext , x , x,x , Â , Â 
+ earliestEraOrLowestErathem , optional , geologicalContext , x , x,x , Â , Â 
+ earliestPeriodOrLowestSystem , optional , geologicalContext , x , x,x , Â , Â 
+ formation , optional , geologicalContext , x , x,x , Â , Â 
+ group , optional , geologicalContext , x , x,x , Â , Â 
+ highestBiostratigraphicZone , optional , geologicalContext , x , x,x , Â , Â 
+ latestAgeOrHighestStage , optional , geologicalContext , x , x,x , Â , Â 
+ latestEonOrHighestEonothem , optional , geologicalContext , x , x,x , Â , Â 
+ latestEpochOrHighestSeries , optional , geologicalContext , x , x,x , Â , Â 
+ latestEraOrHighestErathem , optional , geologicalContext , x , x,x , Â , Â 
+ latestPeriodOrHighestSystem , optional , geologicalContext , x , x,x , Â , Â 
+ lithostratigraphicTerms , optional , geologicalContext , x , x,x , Â , Â 
+ lowestBiostratigraphicZone , optional , geologicalContext , x , x,x , Â , Â 
+ member , optional , geologicalContext , x , x,x , Â , Â 
+ dateIdentified , optional , identification , Â , x,x , Â , Â 
+ identificationID , optional , identification , Â , x,x , Â , Â 
+ identificationQualifier , recommended , identification , Â , x,x , Â , Â 
+ identificationReferences , optional (required for imaging data) , identification , Â , x,x , Â , Â 
+ identificationRemarks , recommended , identification , Â , x,x , Â , Â 
+ identificationVerificationStatus , optional (required for imaging data) , identification , Â , x,x , Â , Â 
+ identifiedBy , optional (required for imaging data) , identification , Â , x,x , Â , Â 
+ identifiedByID , optional , identification , Â , x,x , Â , Â 
+ typeStatus , optional , identification , Â , x,x , Â , Â 
+ continent , strongly recommended , location , x , x, Â , Â , Â 
+ coordinatePrecision , strongly recommended , location , x , x, Â , Â , Â 
+ coordinateUncertaintyInMeters , strongly recommended , location , x , x, Â , Â , Â 
+ country , recommended , location , x , x, Â , Â , Â 
+ countryCode , optional , location , x , x, Â , Â , Â 
+ county , optional , location , x , x, Â , Â , Â 
+ footprintSpatialFit , optional , location , x , x, Â , Â , Â 
+ footprintSRS , optional , location , x , x, Â , Â , Â 
+ footprintWKT , recommended , location , x , x, Â , Â , Â 
+ geodeticDatum , recommended , location , x , x, Â , Â , Â 
+ georeferencedBy , optional , location , x , x, Â , Â , Â 
+ georeferencedDate , optional , location , x , x, Â , Â , Â 
+ georeferenceProtocol , optional , location , x , x, Â , Â , Â 
+ georeferenceSources , optional , location , x , x, Â , Â , Â 
+ higherGeography , optional , location , x , x, Â , Â , Â 
+ higherGeographyID , optional , location , x , x, Â , Â , Â 
+ island , optional , location , x , x, Â , Â , Â 
+ islandGroup , optional , location , x , x, Â , Â , Â 
+ locality , recommended , location , x , x, Â , Â , Â 
+ locationAccordingTo , recommended , location , x , x, Â , Â , Â 
+ locationID , strongly recommended , location , x , x, Â , Â , Â 
+ locationRemarks , recommended , location , x , x, Â , Â , Â 
+ maximumDepthInMeters , strongly recommended , location , x , x, Â , Â , Â 
+ maximumDistanceAboveSurfaceInMeters , optional , location , x , x, Â , Â , Â 
+ maximumElevationInMeters , optional , location , x , x, Â , Â , Â 
+ minimumDepthInMeters , strongly recommended , location , x , x, , Â , Â 
+ minimumDistanceAboveSurfaceInMeters , optional , location , x , x, Â , Â , Â 
+ minimumElevationInMeters , optional , location , x , x, Â , Â , Â 
+ municipality , optional , location , x , x, Â , Â , Â 
+ pointRadiusSpatialFit , optional , location , x , x, Â , Â , Â 
+ stateProvince , optional , location , x , x, Â , Â , Â 
+ verbatimCoordinates , optional , location , x , x, Â , Â , Â 
+ verbatimCoordinateSystem , optional , location , x , x, Â , Â , Â 
+ verbatimDepth , optional , location , x , x, Â , Â , Â 
+ verbatimElevation , optional , location , x , x, Â , Â , Â 
+ verbatimLatitude , optional , location , x , x, Â , Â , Â 
+ verbatimLocality , optional , location , x , x, Â , Â , Â 
+ verbatimLongitude , optional , location , x , x, Â , Â , Â 
+ verbatimSRS , optional , location , x , x, Â , Â , Â 
+ waterBody , recommended , location , x , x, Â , Â , Â 
+ materialSampleID , recommended , materialSample , Â , x,x , Â , Â 
+ measurementAccuracy , recommended , measurementOrFact , Â , , , x , Â 
+ measurementDeterminedBy , optional , measurementOrFact , Â , , , x , Â 
+ measurementDeterminedDate , optional , measurementOrFact , Â , , , x , Â 
+ measurementID , recommended , measurementOrFact , Â , , , x , Â 
+ measurementMethod , recommended , measurementOrFact , Â , , , x , Â 
+ measurementRemarks , recommended , measurementOrFact , Â , , , x , Â 
+ measurementType , strongly recommended , measurementOrFact , Â , , , x , Â 
+ measurementTypeID , strongly recommended , measurementOrFact , Â , , , x , Â 
+ measurementUnit , strongly recommended , measurementOrFact , Â , , , x , Â 
+ measurementUnitID , strongly recommended , measurementOrFact , Â , , , x , Â 
+ measurementValue , strongly recommended , measurementOrFact , Â , , , x , Â 
+ measurementValueID , strongly recommended , measurementOrFact , Â , , , x , Â 
+ associatedMedia , recommended , occurrence , Â , x,x , Â , Â 
+ associatedReferences , optional , occurrence , Â , x,x , Â , Â 
+ associatedSequences , recommended , occurrence , Â , x,x , Â , Â 
+ associatedTaxa , optional , occurrence , Â , x,x , Â , Â 
+ behavior , optional , occurrence , Â , x1,x1 , x , Â 
+ catalogNumber , recommended , occurrence , Â , x,x , Â , Â 
+ disposition , optional , occurrence , Â , x,x , Â , Â 
+ establishmentMeans , optional , occurrence , Â , x,x , Â , Â 
+ georeferenceVerificationStatus , recommended , occurrence , x , x, Â , Â , Â 
+ organismQuantity (preferred over individualCount) , strongly recommended , occurrence , Â , x1,x1 , x , Â 
+ organismQuantityType (preferred over individualCount) , strongly recommended , occurrence , Â , x1,x1 , x , Â 
+ individualCount , recommended , occurrence , Â , x1,x1 , x , Â 
+ lifeStage , optional , occurrence , Â , x1,x1 , x , Â 
+ occurrenceRemarks , recommended , occurrence , Â , x,x , Â , Â 
+ otherCatalogNumbers , optional , occurrence , Â , x,x , Â , Â 
+ preparations , optional , occurrence , Â , x,x , Â , Â 
+ recordedBy , recommended , occurrence , Â , x,x , Â , Â 
+ recordedByID , recommended , occurrence , Â , x,x , Â , Â 
+ recordNumber , recommended , occurrence , Â , x,x , Â , Â 
+ reproductiveCondition , optional , occurrence , Â , x1,x1 , x , Â 
+ sex , optional , occurrence , Â , x1,x1 , x , Â 
+ associatedOccurrences , optional , organsim , Â , x,x , Â , Â 
+ associatedOrganisms , optional , organsim , Â , x,x , Â , Â 
+ organismID , recommended , organsim , Â , x,x , Â , Â 
+ organismName , optional , organsim , Â , x,x , Â , Â 
+ organismRemarks , optional , organsim , Â , x,x , Â , Â 
+ organismScope , optional , organsim , Â , x,x , Â , Â 
+ previousIdentifications , recommended , organsim , Â , x,x , Â , Â 
+ accessRights , recommended , record , x , x, Â , Â , Â 
+ bibliographicCitation , recommended , record , x , x, Â , Â , Â 
+ collectionCode , optional , record , x , x,x , Â , Â 
+ collectionID , optional , record , x , x,x , Â , Â 
+ dataGeneralizations , optional , record , x , x,x , Â , Â 
+ datasetID , recommended , record , x , x,x , Â , Â 
+ datasetName , recommended , record , x , x,x , Â , Â 
+ dynamicProperties , recommended , record , x , x,x , Â , Â 
+ informationWithheld , optional , record , x , x,x , Â , Â 
+ institutionCode , optional , record , x , x,x , Â , Â 
+ institutionID , optional , record , x , x,x , Â , Â 
+ language , recommended , record , x , x,x , Â , Â 
+ license , strongly recommended , record , x , x,x , Â , Â 
+ modified , recommended , record , x , x,x , Â , Â 
+ ownerInstitutionCode , optional , record , x , x,x , Â , Â 
+ references , recommended , record , x , x,x , Â , Â 
+ rightsHolder , recommended , record , x , x,x , Â , Â 
+ type , strongly recommended , record , x , x,x , x , Â 
+ acceptedNameUsage , recommended , taxon , Â , x,x , Â , Â 
+ acceptedNameUsageID , recommended , taxon , Â , x,x , Â , Â 
+ higherClassification , recommended , taxon , Â , x,x , Â , Â 
+ infraspecificEpithet , recommended , taxon , Â , x,x, Â , Â 
+ nameAccordingToID , recommended , taxon , Â , x,x , Â , Â 
+ namePublishedInID , optional , taxon , Â , x,x , Â , Â 
+ namePublishedInYear , optional , taxon , Â , x,x , Â , Â 
+ nomenclaturalCode , optional , taxon , Â , x,x , Â , Â 
+ nomenclaturalStatus , optional , taxon , Â , x,x , Â , Â 
  verbatimIdentification , recommended , identification , , x,x , , 
- originalNameUsage , recommended , taxon ,  , x,x ,  ,  
- originalNameUsageID , recommended , taxon ,  , x,x ,  ,  
- parentNameUsage , recommended , taxon ,  , x,x ,  ,  
- parentNameUsageID , recommended , taxon ,  , x,x ,  ,  
- phylum , recommended , taxon ,  , x,x ,  ,  
- scientificNameAuthorship , recommended , taxon ,  , x,x ,  ,  
- specificEpithet , recommended , taxon ,  , x,x ,  ,  
- subgenus , recommended , taxon ,  , x,x ,  ,  
- taxonConceptID , optional , taxon ,  , x,x ,  ,  
- taxonID , optional , taxon ,  , x,x ,  ,  
- taxonomicStatus , optional , taxon ,  , x,x ,  ,  
- taxonRank , strongly recommended , taxon ,  , x,x ,  ,  
- taxonRemarks , recommended , taxon ,  , x,x ,  ,  
- verbatimTaxonRank , recommended , taxon ,  , x,x ,  ,  
- vernacularName , recommended , taxon ,  , x,x ,  ,  
- class , recommended , taxon ,  , x,x ,  ,  
- family , recommended , taxon ,  , x,x ,  ,  
- genus , strongly recommended , taxon ,  , x,x ,  ,  
- kingdom , strongly recommended , taxon ,  , x,x ,  ,  
- order , strongly recommended , taxon ,  , x,x ,  ,  
+ originalNameUsage , recommended , taxon , Â , x,x , Â , Â 
+ originalNameUsageID , recommended , taxon , Â , x,x , Â , Â 
+ parentNameUsage , recommended , taxon , Â , x,x , Â , Â 
+ parentNameUsageID , recommended , taxon , Â , x,x , Â , Â 
+ phylum , recommended , taxon , Â , x,x , Â , Â 
+ scientificNameAuthorship , recommended , taxon , Â , x,x , Â , Â 
+ specificEpithet , recommended , taxon , Â , x,x , Â , Â 
+ subgenus , recommended , taxon , Â , x,x , Â , Â 
+ taxonConceptID , optional , taxon , Â , x,x , Â , Â 
+ taxonID , optional , taxon , Â , x,x , Â , Â 
+ taxonomicStatus , optional , taxon , Â , x,x , Â , Â 
+ taxonRank , strongly recommended , taxon , Â , x,x , Â , Â 
+ taxonRemarks , recommended , taxon , Â , x,x , Â , Â 
+ verbatimTaxonRank , recommended , taxon , Â , x,x , Â , Â 
+ vernacularName , recommended , taxon , Â , x,x , Â , Â 
+ class , recommended , taxon , Â , x,x , Â , Â 
+ family , recommended , taxon , Â , x,x , Â , Â 
+ genus , strongly recommended , taxon , Â , x,x , Â , Â 
+ kingdom , strongly recommended , taxon , Â , x,x , Â , Â 
+ order , strongly recommended , taxon , Â , x,x , Â , Â 
