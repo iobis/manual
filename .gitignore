@@ -9,3 +9,4 @@ manual.log
 /.quarto/
 **/*.quarto_ipynb
 docs/
+book/
