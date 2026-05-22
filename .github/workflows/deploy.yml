@@ -28,7 +28,7 @@ jobs:
       # 4. Install R dependencies required by your project
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("rmarkdown", "fontawesome", "webshot", "rsvg", "tinytex", "downloadthis"))'
+          Rscript -e 'install.packages(c("rmarkdown", "fontawesome", "webshot", "rsvg", "tinytex", "downloadthis", "kableExtra"))'
 
       # 5. Install TinyTeX via Quarto CLI for PDF rendering
       - name: Install TinyTeX
