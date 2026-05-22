@@ -5,6 +5,8 @@ project:
   render:
     - "./*.qmd"
     - "tutorials/**/*.md"
+    - "notebooks/**/*.md"
+    - "notebooks/*.md"
   post-render: 
     - remove-old.R
   output-dir: docs
