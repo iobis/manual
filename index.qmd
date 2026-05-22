@@ -32,7 +32,7 @@ The manual is designed to provide guidelines for OBIS nodes and data providers, 
 
 </div>
 
-The OBIS manual is a dynamic document and is revised on a regular basis. We welcome suggestions for additions and changes, which can be sent to [helpdesk@obis.org](mailto:helpdesk@obis.org), the OBIS Capacity Development Task Team at [training@obis.org](mailto:training@iobis.org), and/or submitted as issues at <https://github.com/iobis/manual/issues>.
+The OBIS manual is a dynamic document and is revised on a regular basis. We welcome suggestions for additions and changes, which can be sent to [helpdesk@obis.org](mailto:helpdesk@obis.org), the OBIS Capacity Development Task Team at [training@obis.org](mailto:training@iobis.org), and/or submitted as issues at <https://github.com/iobis/manual/issues>. You can also [download this manual as a PDF](https://manual.obis.org/The-OBIS-manual.pdf).
 
 ## Guidelines on the sharing and use of data in OBIS
 
