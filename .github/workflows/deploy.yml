@@ -26,6 +26,11 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       # 4. Install R dependencies required by your project
+      - name: Install System Dependencies for rsvg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-dev
+
       - name: Install R packages
         run: |
           Rscript -e 'install.packages(c("rmarkdown", "fontawesome", "webshot", "rsvg", "tinytex", "downloadthis", "kableExtra", "htmltools"))'
