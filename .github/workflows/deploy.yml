@@ -50,7 +50,7 @@ jobs:
       - name: Render Quarto PDF Profile
         run: |
           Rscript sanitize.R
-          quarto render --profile book --to pdf
+          quarto render --profile book --to pdf --no-clean
 
       # 8. Create custom domain mapping in the built tracking folder
       - name: Create CNAME file

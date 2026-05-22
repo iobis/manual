@@ -76,3 +76,4 @@ book:
 format:
   pdf:
     include-in-header: header.tex
+    papersize: a4paper
