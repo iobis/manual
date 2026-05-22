@@ -1,0 +1,78 @@
+project:
+  type: book
+  # pre-render: 
+  #   - sanitize.R
+  render:
+    - "./*.qmd"
+    - "tutorials/**/*.md"
+    - "notebooks/**/*.md"
+    - "notebooks/*.md"
+  post-render: 
+    - remove-old.R
+  output-dir: docs
+
+book:
+  title: "The OBIS manual"
+  chapters: 
+    - part: Overview
+      chapters:
+      - index.qmd
+      - policy.qmd
+      - gethelp.qmd
+      - FAQ.qmd
+      - linklist.qmd
+    - part: Contributing data to OBIS
+      chapters:
+      - contribute.qmd
+      - data_standards.qmd
+      - nodes.qmd
+    - part: Access Data from OBIS
+      chapters:
+      - access.qmd
+      - citing.qmd
+    - part: Data Standards
+      chapters:
+      - darwin_core.qmd
+      - data_format.qmd
+      - relational_db.qmd
+      - eml.qmd
+    - part: Data Formatting
+      chapters:
+      - formatting_intro.qmd
+      - formatting.qmd
+      - identifiers.qmd
+      - name_matching.qmd
+      - data_map.qmd
+      - checklist.qmd
+      - format_occurrence.qmd
+      - format_event.qmd
+      - format_emof.qmd
+      - dna_data.qmd
+      - vocabulary.qmd
+      - vocab_tree.qmd
+      - common_formatissues.qmd
+      - examples.qmd
+      - other_data_types.qmd
+    - part: Ensuring Data Quality
+      chapters:
+      - data_qc.qmd
+      - mofreports.qmd
+      - lifewatch_qc.qmd
+      - dataquality.qmd
+      - common_qc.qmd
+    - part: Publishing Data
+      chapters:
+      - data_publication.qmd
+      - ipt.qmd
+      - ipt_admin.qmd
+      - data_sharing.qmd
+    - part: Data Visualization and Analysis
+      chapters:
+      - dataviz.qmd
+    - part: Additional Resources
+      chapters:
+      - other_resources.qmd
+    
+format:
+  pdf:
+    include-in-header: header.tex

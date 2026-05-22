@@ -1,0 +1,243 @@
+---
+title: "Matching environmental information with OBIS occurrences"
+description: "Learn how to extract and match environmental data, such as temperature and salinity, with species occurrences obtained from the OBIS database."
+authors: [silasprincipe]
+date: 2023-08-01
+categories: ["tutorial", "r", "environmental-information"]
+tags: ["r", "obis"]
+output: 
+  md_document:
+    preserve_yaml: true
+---
+
+# Obtaining environmental information for species occurrences
+
+For many research questions, we are interested in the environmental conditions where a certain species, population, or community lives. OBIS already provides some environmental data along with the records. For example, if you download records for the species _Actinia equina_, you can obtain values for sea surface temperature (SST), salinity (SSS), and bathymetry:
+
+```{r}
+library(robis)
+
+occ <- occurrence("Actinia equina")
+
+head(occ[,c("sst", "sss", "bathymetry")], 4)
+```
+
+However, there are many other variables of interest. Also, depending on your question, you may need another source of environmental information or a different resolution. Here we will explore how to extract environmental information for these occurrences. This tutorial will explore extracting data from [**Bio-ORACLE**](Bio-Oracle), which provides essential physical, chemical, biological, and topographic data layers with global extent and uniform resolution. You can use the same code to extract data from any other data source in raster format.
+
+## Download data from Bio-ORACLE
+
+The new version of Bio-ORACLE (v3) is hosted in an ERDDAP server, which enable us to download only the data for the region and time period we need. We can use the package [`biooracler` to download the layers](https://github.com/bio-oracle/biooracler). First install the package. We also load the `terra` package, for spatial operations (see explanation on the next section).
+
+```{r eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("bio-oracle/biooracler")
+```
+
+```{r}
+library(biooracler)
+library(terra)
+```
+
+
+For our exercise we will obtain the data for species occurring in the Mediterranean sea. Thus, we can download the data for only this region. We download a shapefile of this area using the Marine Regions.
+
+```{r eval=FALSE}
+# Install the package
+install.packages("mregions2", repos = "https://ropensci.r-universe.dev")
+install.packages("wrapr")
+```
+
+```{r}
+library(mregions2)
+library(sf)
+
+med <- gaz_search(1905) %>%
+  gaz_geometry()
+
+plot(med, max.plot = 1, col = "grey90")
+```
+
+From the shapefile, we can see which are the limits (longitude and latitude) for this area:
+
+```{r}
+limits <- st_bbox(med)
+limits
+```
+
+With this information we can then download the data. We will obtain 4 parameters: SST, salinity, bathymetry and oxygen. You can see the dataset IDs using the function `list_layers`
+
+```{r}
+head(list_layers()[,1:2])
+```
+
+
+```{r}
+dataset_ids <- c("thetao_baseline_2000_2019_depthsurf",
+                "so_baseline_2000_2019_depthsurf",
+                "o2_baseline_2000_2018_depthsurf")
+
+time = c('2010-01-01T00:00:00Z', '2010-01-01T00:00:00Z')
+latitude = limits[c(2,4)]
+longitude = limits[c(1,3)]
+
+constraints = list(time, latitude, longitude)
+names(constraints) = c("time", "latitude", "longitude")
+
+# We also need to define which variables are needed from each one. 
+# In this case we will download the mean for all
+# You can see the variables by using info_layer:
+info_layer(dataset_ids[1])
+
+variables <- c("thetao_mean", "so_mean", "o2_mean")
+
+# To download, we need to pass the ids and variables to the function, one each time
+# You can do that using a for loop or mapply:
+download_data <- function(id, variable) {
+  download_layers(id, variable, constraints, directory = ".")
+}
+
+env_layers <- mapply(download_data, dataset_ids, variables)
+
+# We can easily convert the list of SpatRasters into a multilayer SpatRaster using `rast`
+env_layers <- rast(env_layers)
+env_layers
+```
+
+For bathymetry we need to supply a different time:
+
+```{r}
+constraints$time <- c("1970-01-01T00:00:00Z", "1970-01-01T00:00:00Z")
+
+bath <- download_layers("terrain_characteristics",
+                        "bathymetry_mean",
+                        constraints, directory = ".")
+bath
+```
+
+## The `terra` package
+
+For processing the raster files we will use the [`terra` package](https://rspatial.github.io/terra/). This package enable spatial operations on both rasters and vectors (shapefiles). Other packages exist for raster operations (e.g. [`stars`](https://r-spatial.github.io/stars/)), but for many of the main operations `terra` provides a simple syntax and is very fast. To learn how to use `terra`, a good resource is this website: [rspatial.org/terra](https://rspatial.org/index.html)
+
+Here we will use both **rasters** and **vectors**. In geospatial data, rasters represent data as a grid of cells or pixels, each with a specific value, suitable for continuous data like temperature or elevation. Rasters can have multiple layers, as the one we loaded as `env_layers`. Vectors represent data as points, lines, or polygons. In our case, we have a vector for the boundaries of the Mediterranean which we loaded using `sf`. We can convert to the terra format, `SpatVector` using `vect`:
+
+```{r, caption = "Raster and vector with "}
+med <- vect(med)
+
+par(mfrow = c(1,2))
+plot(env_layers[[1]], main = "Raster")
+plot(med, main = "Vector")
+```
+
+We will mask our raster, to ensure that we only have the data for the areas of the Mediterranean. To make easier to extract the data all at once, we will join the bathymetry layer with the others:
+
+```{r}
+all_layers <- c(env_layers, bath)
+
+all_layers <- terra::mask(all_layers, med)
+
+# Change names for easier handling
+names(all_layers) <- c("sst", "salinity", "o2", "depth")
+plot(all_layers, main = names(all_layers))
+```
+
+TIP: Note that for `mask` we used the package prefix (i.e. `terra::mask()`). Some names such as **mask** or **extract** are also used by other packages, namely those from `tidyverse`. Using the prefix avoid that the wrong function is used.
+
+## Extracting data
+
+Let's download some data from OBIS now. We will get data for all species in the order Actiniaria within that region:
+
+```{r}
+
+target_area <- st_as_text(st_as_sfc(st_bbox(env_layers[[1]])))
+
+actiniaria <- occurrence("Actiniaria", geometry = target_area,
+                         # Limit to some fields that we need here
+                         fields = c("taxonID", "scientificName", "decimalLongitude", "decimalLatitude", "speciesid"))
+
+# Filter for only those at species level
+actiniaria <- actiniaria[!is.na(actiniaria$speciesid), ]
+```
+
+For extraction operations with `terra` you can work with `data.frames`. But we will convert it to a `SpatVector` to use some other interesting functions. For example, we can mask our points according to the Mediterranean borders.
+
+```{r}
+actiniaria_vec <- vect(actiniaria, geom = c("decimalLongitude", "decimalLatitude"), crs = "EPSG:4326")
+
+actiniaria_vec_filt <- terra::mask(actiniaria_vec, med)
+
+par(mfrow = c(1,2))
+plot(actiniaria_vec, pch = 20, cex = 1, col = "blue", main = "Not masked");lines(med)
+plot(actiniaria_vec_filt, pch = 20, cex = 1, col = "blue", main = "Masked");lines(med)
+```
+
+Now we are ready to extract the data. This is very simple:
+
+```{r}
+extracted_data <- terra::extract(all_layers, actiniaria_vec_filt, ID = FALSE)
+
+head(extracted_data)
+```
+
+As you can see, it extracted the environmental infromation for all points. We can get a good summary with `summary`
+
+```{r}
+summary(extracted_data)
+```
+
+Note that we have `r sum(is.na(extracted_data[,1]))` NA points, i.e. with no information. Those points are probably on land. You may chose to remove those or you can find the nearest valid point. In our case we will simply remove them.
+
+```{r}
+actiniaria_vec_filt <- cbind(actiniaria_vec_filt, extracted_data)
+
+actiniaria_vec_filt <- actiniaria_vec_filt[!is.na(actiniaria_vec_filt$sst),]
+```
+
+# Plotting this information
+
+There are different ways to plot this information. A good way of having an overview is by using a histogram. We will use `dplyr`, `tidyr` and `ggplot2` for that.
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+extracted_data <- as.data.frame(actiniaria_vec_filt) %>%
+  select(sst, salinity, o2, depth)
+
+extracted_data_long <- pivot_longer(extracted_data, cols = 1:4, names_to = "variable", values_to = "value")
+
+head(extracted_data_long)
+
+ggplot(extracted_data_long) +
+  geom_histogram(aes(value, fill = variable)) +
+  scale_fill_manual(values = c("#fb8500", "#ffb703", "#023047", "#219ebc")) +
+  theme_light() + theme(legend.position = "none") +
+  facet_wrap(~ variable, scales = "free_x")
+```
+
+Another possible way is to display geographically. We can do that for temperature for example:
+
+```{r}
+# We get a shapefile of the continents
+wrld <- rnaturalearth::ne_countries(returnclass = "sf")
+
+# Convert the data to sf format, as ggplot2 have nice features for sf
+actiniaria_vec_filt <- st_as_sf(actiniaria_vec_filt)
+
+ggplot() +
+  geom_sf(data = wrld, color = "grey80", fill = "grey90") +
+  geom_sf(data = actiniaria_vec_filt, aes(color = sst), size = 2, alpha = .5) +
+  scale_color_distiller(palette = "BuPu", direction = 1) +
+  coord_sf(xlim = limits[c(1,3)], ylim = limits[c(2,4)]) +
+  ggtitle("Actiniaria") +
+  theme_light() +
+  theme(legend.position = "bottom")
+```
+
+In a next tutorial we will explore how to download environmental data from other sources, like Copernicus or NOAA, what opens many possibilities of research.
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+to_del <- list.files(".", pattern = ".nc", full.names = T)
+file.remove(to_del)
+```
+

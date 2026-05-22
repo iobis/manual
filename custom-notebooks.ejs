@@ -1,0 +1,102 @@
+``` {=html}
+<%
+// Helper functions to check paths
+function getColabUrl(path) {
+  if (path && path.includes('github.com') && path.endsWith('.ipynb')) {
+    return path.replace('github.com', 'colab.research.google.com/github');
+  }
+  return null;
+}
+
+function isGitHubUrl(path) {
+  return path && path.includes('github.com');
+}
+%>
+
+<div class="list quarto-listing-default">
+  <% for (const item of items) { %>
+    <div class="quarto-post image-right" <%= metadataAttrs(item) %>>
+
+        <% if (item.image) { %>
+        <div class="thumbnail">
+          <p>
+            <a href="<%= item.path %>" class="no-external">
+              <img src="<%= item.image %>" class="thumbnail-image" loading="lazy">
+            </a>
+          </p>
+        </div>
+      <% } %>
+
+
+      <div class="body">
+                <h3 class="no-anchor listing-title">
+          <a href="<%= item.path %>">
+        
+```
+
+<%- item.title %>
+
+``` {=html}
+</a>
+        </h3>
+        <% if (item.categories) { %>
+          <div class="listing-categories" style="margin-top: 4px; margin-bottom: 8px;">
+            <% for (const category of item.categories) { %>
+              <div class="listing-category" onclick="window.quartoListingCategory('<%= category %>'); return false;">
+                <%= category %>
+              </div>
+            <% } %>
+          </div>
+        <% } %>
+        
+        <% if (item.description) { %>
+
+          <div class="delink listing-description"><a href="<%- item.path %>" class="no-external">
+```
+
+
+<%- item.description %>
+
+
+``` {=html}
+          </a></div>
+
+        <% } %>
+
+        <div class="listing-actions" style="margin-top: 14px; align-items: center; margin-bottom: 15px;">
+          <% const colabUrl = getColabUrl(item.path); %>
+          <% if (colabUrl) { %>
+            <a href="<%= colabUrl %>" target="_blank" rel="noopener noreferrer" style="border: none;">
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height: 24px; vertical-align: middle;"/>
+            </a>
+          <% } %>
+
+          <% if (isGitHubUrl(item.path)) { %>
+            <a href="<%= item.path %>" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary" style="padding: 2px 8px; font-size: 12px; height: 24px; display: inline-flex; align-items: center; gap: 4px; border-radius: 4px; text-decoration: none;">
+              <i class="bi bi-github" style="font-size: 14px;"></i> <span style="font-weight: 600;">Open in GitHub</span>
+            </a>
+          <% } %>
+        </div>
+
+      </div>
+
+
+      
+      <div class="metadata">
+        <% if (item.date) { %>
+          <div class="listing-date">
+            <%= item.date %>
+          </div>
+        <% } %>
+        <% if (item.author) { %>
+          <div class="listing-author">
+            <%= item.author %>
+          </div>
+        <% } %>
+      </div>
+
+
+    </div>
+  <% } %>
+</div>
+```

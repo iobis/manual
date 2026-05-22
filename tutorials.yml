@@ -1,0 +1,24 @@
+# NOT IN USE, BUT CAN BE USED WHEN WE HAVE EXTERNAL TUTORIALS TO SHOW
+- title: "Cool Notebook"
+  description: "Demonstrates data visualization with Altair."
+  path: "https://github.com/user/project/blob/main/example.ipynb"
+  author: "Jane Doe"
+  date: 2025-10-10
+  categories: [visualization, altair, python]
+  image: "notebooks/thumbnails/Ocean_Zones.png"
+
+- title: "External Example"
+  description: "A notebook hosted on GitHub."
+  path: "https://github.com/user/project/blob/main/example.ipynb"
+  author: "John Smith"
+  date: 2025-09-15
+  categories: [external, reference]
+  image: "notebooks/thumbnails/Ocean_Zones.png"
+
+- title: "OBIS Example"
+  description: "A notebook hosted on GitHub."
+  path: "https://github.com/user/project/blob/main/example.ipynb"
+  author: ["John Smith", "OBIS"]
+  date: 2025-09-15
+  categories: [external, reference]
+  image: "notebooks/thumbnails/Ocean_Zones.png"

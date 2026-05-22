@@ -102,3 +102,107 @@ table {
 .book .book-header h1 {
   opacity: 1 !important;
 }
+
+/*New styles*/
+.sidebar-item-text.sidebar-link.text-start {
+  font-weight: bold;
+  color: #1e74ac;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+.navbar {
+    background-color: #ffffff;
+    color: rgb(84.32, 84.66, 85);
+}
+
+.navbar-logo {
+    height: 40px !important;
+    max-height: 50px !important;
+    width: auto;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.navbar-title {
+  display: none;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,900&display=swap'); */
+
+.collapse.navbar-collapse .nav-item{
+    font-family: var(--bs-font-sans-serif);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: black;
+    font-size: 16px;
+}
+
+#quarto-header .navbar-container.container-fluid {
+  max-width: 1320px !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: calc(var(--bs-gutter-x) * .5); /* var(--bs-gutter-x, .75rem); */
+  padding-left: calc(var(--bs-gutter-x) * .5); /* var(--bs-gutter-x, .75rem); */
+}
+
+#quarto-search {
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+#navbarCollapse .navbar-nav .nav-link {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+#navbarCollapse .navbar-nav .nav-link .menu-text {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: black;
+  font-size: 16px;
+}
+
+#navbarCollapse .navbar-nav .nav-link.active .menu-text {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--bs-navbar-active-color);
+}
+
+/* Target what happens when someone hovers over the links */
+#navbarCollapse .navbar-nav .nav-link:hover .menu-text {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--bs-nav-link-hover-color);
+}
+
+.navbar-brand {
+    display: contents;
+    padding-top: var(--bs-navbar-brand-padding-y);
+    padding-bottom: var(--bs-navbar-brand-padding-y);
+    margin-right: var(--bs-navbar-brand-margin-end);
+    font-size: var(--bs-navbar-brand-font-size);
+    color: var(--bs-navbar-brand-color);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar-brand-container.mx-auto {
+    padding-top: var(--bs-navbar-brand-padding-y);
+    padding-bottom: var(--bs-navbar-brand-padding-y);
+    margin-right: var(--bs-navbar-brand-margin-end) !important;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* @media (min-width: 1200px) {
+    .navbar-container {
+        max-width: 960px !important;
+        max-width: 1140px;
+    }
+} */

@@ -1,0 +1,54 @@
+---
+title: "Notebooks"
+#sidebar: tutorials
+toc: false
+title-block-banner: "#445599"
+listing:
+  id: notebooks-listings
+  contents: 
+    - notebooks
+    - notebooks.yml
+  template: custom-notebooks.ejs
+  sort: "date desc"
+  categories: true
+  filter-ui: true
+  #max-items: 4
+---
+
+```{=html}
+<style>
+.quarto-title-block .quarto-title-banner {
+    background: #7513f6;
+    background-image:
+        url("/images/purple-circles-bg.svg"),
+        linear-gradient(90deg, #7513f6 0%, #420a5e 100%);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 50% auto, cover;
+    background-position: right, center;
+    opacity: 0;
+    animation: fadeInBanner 0.2s ease-in forwards;
+}
+@keyframes fadeInBanner {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#title-block-header h1 {
+    color: white;
+    font-size: 50px;
+}
+</style>
+```
+
+Notebooks make learning interactive — you can run code, experiment, and understand concepts as they unfold on the screen.
+
+<br>
+
+## Explore the notebooks
+
+::: {#notebooks-listings}
+:::

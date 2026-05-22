@@ -13,8 +13,7 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 - Terms marked with 1 indicate that the specified term is accepted in the Event or Occurrence table, but preference is that they be recorded in the eMoF table in the measurementType column so they can be linked with controlled vocabulary
 - For the Occurrence table, distinction is made if the term could be used in the core or the extension table
 
-```{r echo=F, warning=F, message=F, results='asis'}
-
+```{r echo=F, results='asis', warning = FALSE, message = FALSE}
 library(downloadthis)
 library(readr)
 library(knitr)

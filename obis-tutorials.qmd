@@ -1,0 +1,48 @@
+---
+title: "Tutorials"
+sidebar: tutorials
+toc: false
+title-block-banner: "#445599"
+listing:
+  id: tutorials-listings
+  contents: 
+    - tutorials
+  sort: "date desc"
+---
+
+```{=html}
+<style>
+.quarto-title-block .quarto-title-banner {
+    background: #2A7B9B;
+    background-image:
+        url("/images/blue-square-bg.svg"),
+        linear-gradient(90deg, #469cd6 0%, #0c29ad 100%);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 50% auto, cover;
+    background-position: right, center;
+    opacity: 0;
+    animation: fadeInBanner 0.2s ease-in forwards;
+}
+@keyframes fadeInBanner {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.sidebar-item .menu-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#title-block-header h1 {
+    color: white;
+    font-size: 50px;
+}
+</style>
+```
+
+::: {#tutorials-listings}
+:::

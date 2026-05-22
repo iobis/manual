@@ -1,0 +1,131 @@
+project:
+  type: website
+  pre-render: 
+    - sanitize.R
+  render:
+    - "./*.qmd"
+    - "tutorials/**/*.md"
+    - "notebooks/**/*.md"
+    - "notebooks/*.md"
+  post-render: 
+    - remove-old.R
+  output-dir: docs
+
+website:
+  title: The OBIS manual
+  navbar:
+    #logo: images/logo.png
+    title: | 
+      <a class="navbar-brand" href="/"><img src="/images/ioc_logo_black_2.svg" style="height: 40px; margin-right: .7rem !important;" class="me-2"><img src="/images/logo_simple.png" style="height: 30px;"></a>
+    right:
+    - href: index.qmd
+      text: Manual
+    - href: tutorials.qmd
+      text: Tutorials
+    - href: notebooks.qmd
+      text: Notebooks
+    - href: "https://obis.org/"
+      text: "Back to OBIS"
+  repo-url:  https://github.com/iobis/manual
+  repo-actions: [issue]
+  search: 
+    location: navbar
+    type: overlay
+  llms-txt: true
+
+  sidebar:
+    - id: manual
+      title: "Manual"
+      style: floating
+      search: false
+      contents: 
+        - section: Overview
+          contents:
+          - index.qmd
+          - policy.qmd
+          - gethelp.qmd
+          - FAQ.qmd
+          - linklist.qmd
+        - section: Contributing data to OBIS
+          contents:
+          - contribute.qmd
+          - data_standards.qmd
+          - nodes.qmd
+        - section: Access Data from OBIS
+          contents:
+          - access.qmd
+          - citing.qmd
+        - section: Data Standards
+          contents:
+          - darwin_core.qmd
+          - data_format.qmd
+          - relational_db.qmd
+          - eml.qmd
+        - section: Data Formatting
+          contents:
+          - formatting_intro.qmd
+          - formatting.qmd
+          - identifiers.qmd
+          - name_matching.qmd
+          - data_map.qmd
+          - checklist.qmd
+          - format_occurrence.qmd
+          - format_event.qmd
+          - format_emof.qmd
+          - dna_data.qmd
+          - vocabulary.qmd
+          - vocab_tree.qmd
+          - common_formatissues.qmd
+          - examples.qmd
+          - other_data_types.qmd
+        - section: Ensuring Data Quality
+          contents:
+          - data_qc.qmd
+          - mofreports.qmd
+          - lifewatch_qc.qmd
+          - dataquality.qmd
+          - common_qc.qmd
+        - section: Publishing Data
+          contents:
+          - data_publication.qmd
+          - ipt.qmd
+          - ipt_admin.qmd
+          - data_sharing.qmd
+        - section: Data Visualization and Analysis
+          contents:
+          - dataviz.qmd
+        - section: Additional Resources
+          contents:
+          - other_resources.qmd
+    - id: tutorials
+      title: "Tutorials"
+      style: floating
+      search: false
+      contents: 
+        - text: "All tutorials from OBIS"
+          href: "obis-tutorials.qmd"
+        # - section: "From OBIS"
+          # contents:
+          #   - text: "Data quality"
+          #     href: "https://manual.obis.org/en/data-quality/"
+          #   - text: "Data standards"
+          #     href: "https://manual.obis.org/en/data-standards/"
+            # - text: "From partners"
+            #   href: obis-tutorials.qmd
+    # tools:
+    #   - icon: github
+    #     menu:
+    #       - text: Source Code
+    #         href:  https://github.com/iobis/manual
+    #       - text: Report a Bug
+    #         href:  https://github.com/iobis/manual/issues
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: style.css
+    toc: true
+    toc-depth: 3
+    toc-expand: 3
