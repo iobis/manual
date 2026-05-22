@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-08-01">
+<meta name="description" content="Learn how to extract and match environmental data, such as temperature and salinity, with species occurrences obtained from the OBIS database.">
+
+<title>Matching environmental information with OBIS occurrences – The OBIS manual</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-3e7735b7b22659e5fa437aca0bb49075.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../style.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title"><a class="navbar-brand" href="../../"><img src="../../images/ioc_logo_black_2.svg" style="height: 40px; margin-right: .7rem !important;" class="me-2"><img src="../../images/logo_simple.png" style="height: 30px;"></a></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Manual</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutorials.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notebooks.html"> 
+<span class="menu-text">Notebooks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://obis.org/"> 
+<span class="menu-text">Back to OBIS</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#obtaining-environmental-information-for-species-occurrences" id="toc-obtaining-environmental-information-for-species-occurrences" class="nav-link active" data-scroll-target="#obtaining-environmental-information-for-species-occurrences">Obtaining environmental information for species occurrences</a>
+  <ul class="collapse">
+  <li><a href="#download-data-from-bio-oracle" id="toc-download-data-from-bio-oracle" class="nav-link" data-scroll-target="#download-data-from-bio-oracle">Download data from Bio-ORACLE</a></li>
+  <li><a href="#the-terra-package" id="toc-the-terra-package" class="nav-link" data-scroll-target="#the-terra-package">The <code>terra</code> package</a></li>
+  <li><a href="#extracting-data" id="toc-extracting-data" class="nav-link" data-scroll-target="#extracting-data">Extracting data</a></li>
+  </ul></li>
+  <li><a href="#plotting-this-information" id="toc-plotting-this-information" class="nav-link" data-scroll-target="#plotting-this-information">Plotting this information</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/iobis/manual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Matching environmental information with OBIS occurrences</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">tutorial</div>
+    <div class="quarto-category">r</div>
+    <div class="quarto-category">environmental-information</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Learn how to extract and match environmental data, such as temperature and salinity, with species occurrences obtained from the OBIS database.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>silasprincipe </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 1, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="obtaining-environmental-information-for-species-occurrences" class="level1">
+<h1>Obtaining environmental information for species occurrences</h1>
+<p>For many research questions, we are interested in the environmental conditions where a certain species, population, or community lives. OBIS already provides some environmental data along with the records. For example, if you download records for the species <em>Actinia equina</em>, you can obtain values for sea surface temperature (SST), salinity (SSS), and bathymetry:</p>
+<pre><code>library(robis)
+
+occ &lt;- occurrence("Actinia equina")
+
+## Retrieved 5000 records of approximately 9583 (52%)Retrieved 9583 records of
+## approximately 9583 (100%)
+
+head(occ[,c("sst", "sss", "bathymetry")], 4)
+
+## # A tibble: 4 × 3
+##     sst   sss bathymetry
+##   &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;
+## 1  10.6  35.2        -50
+## 2  10.6  34.8        -49
+## 3  NA    NA           -7
+## 4  11.4  34.2         -4</code></pre>
+<p>However, there are many other variables of interest. Also, depending on your question, you may need another source of environmental information or a different resolution. Here we will explore how to extract environmental information for these occurrences. This tutorial will explore extracting data from <a href="Bio-Oracle"><strong>Bio-ORACLE</strong></a>, which provides essential physical, chemical, biological, and topographic data layers with global extent and uniform resolution. You can use the same code to extract data from any other data source in raster format.</p>
+<section id="download-data-from-bio-oracle" class="level2">
+<h2 class="anchored" data-anchor-id="download-data-from-bio-oracle">Download data from Bio-ORACLE</h2>
+<p>The new version of Bio-ORACLE (v3) is hosted in an ERDDAP server, which enable us to download only the data for the region and time period we need. We can use the package <a href="https://github.com/bio-oracle/biooracler"><code>biooracler</code> to download the layers</a>. First install the package. We also load the <code>terra</code> package, for spatial operations (see explanation on the next section).</p>
+<pre><code># install.packages("devtools")
+devtools::install_github("bio-oracle/biooracler")
+
+library(biooracler)
+library(terra)
+
+## terra 1.7.71
+
+## 
+## Attaching package: 'terra'
+
+## The following object is masked from 'package:robis':
+## 
+##     area</code></pre>
+<p>For our exercise we will obtain the data for species occurring in the Mediterranean sea. Thus, we can download the data for only this region. We download a shapefile of this area using the Marine Regions.</p>
+<pre><code># Install the package
+install.packages("mregions2", repos = "https://ropensci.r-universe.dev")
+install.packages("wrapr")
+
+library(mregions2)
+
+## Warning: package 'mregions2' was built under R version 4.3.3
+
+library(sf)
+
+## Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
+
+med &lt;- gaz_search(1905) %&gt;%
+  gaz_geometry()
+
+plot(med, max.plot = 1, col = "grey90")</code></pre>
+<p><img src="index_files/figure-markdown_strict/unnamed-chunk-5-1.png" class="img-fluid"></p>
+<p>From the shapefile, we can see which are the limits (longitude and latitude) for this area:</p>
+<pre><code>limits &lt;- st_bbox(med)
+limits
+
+##      xmin      ymin      xmax      ymax 
+## -6.032549 30.068087 36.215729 45.808914</code></pre>
+<p>With this information we can then download the data. We will obtain 4 parameters: SST, salinity, bathymetry and oxygen. You can see the dataset IDs using the function <code>list_layers</code></p>
+<pre><code>head(list_layers()[,1:2])
+
+## Registered S3 method overwritten by 'hoardr':
+##   method           from
+##   print.cache_info httr
+
+## # A tibble: 6 × 2
+##   dataset_id                       title                                        
+##   &lt;chr&gt;                            &lt;chr&gt;                                        
+## 1 tas_baseline_2000_2020_depthsurf Bio-Oracle AirTemperature [depthSurf] Baseli…
+## 2 tas_ssp119_2020_2100_depthsurf   Bio-Oracle AirTemperature [depthSurf] SSP119…
+## 3 tas_ssp126_2020_2100_depthsurf   Bio-Oracle AirTemperature [depthSurf] SSP126…
+## 4 tas_ssp245_2020_2100_depthsurf   Bio-Oracle AirTemperature [depthSurf] SSP245…
+## 5 tas_ssp370_2020_2100_depthsurf   Bio-Oracle AirTemperature [depthSurf] SSP370…
+## 6 tas_ssp460_2020_2100_depthsurf   Bio-Oracle AirTemperature [depthSurf] SSP460…
+
+dataset_ids &lt;- c("thetao_baseline_2000_2019_depthsurf",
+                "so_baseline_2000_2019_depthsurf",
+                "o2_baseline_2000_2018_depthsurf")
+
+time = c('2010-01-01T00:00:00Z', '2010-01-01T00:00:00Z')
+latitude = limits[c(2,4)]
+longitude = limits[c(1,3)]
+
+constraints = list(time, latitude, longitude)
+names(constraints) = c("time", "latitude", "longitude")
+
+# We also need to define which variables are needed from each one. 
+# In this case we will download the mean for all
+# You can see the variables by using info_layer:
+info_layer(dataset_ids[1])
+
+## &lt;ERDDAP info&gt; thetao_baseline_2000_2019_depthsurf 
+##  Base URL: http://erddap.bio-oracle.org/erddap 
+##  Dataset Type: griddap 
+##  Dimensions (range):  
+##      time: (2000-01-01T00:00:00Z, 2010-01-01T00:00:00Z) 
+##      latitude: (-89.975, 89.975) 
+##      longitude: (-179.975, 179.975) 
+##  Variables:  
+##      thetao_ltmax: 
+##          Units: degree_C 
+##      thetao_ltmin: 
+##          Units: degree_C 
+##      thetao_max: 
+##          Units: degree_C 
+##      thetao_mean: 
+##          Units: degree_C 
+##      thetao_min: 
+##          Units: degree_C 
+##      thetao_range: 
+##          Units: degree_C
+
+variables &lt;- c("thetao_mean", "so_mean", "o2_mean")
+
+# To download, we need to pass the ids and variables to the function, one each time
+# You can do that using a for loop or mapply:
+download_data &lt;- function(id, variable) {
+  download_layers(id, variable, constraints, directory = ".")
+}
+
+env_layers &lt;- mapply(download_data, dataset_ids, variables)
+
+## Selected dataset thetao_baseline_2000_2019_depthsurf.
+
+## Dataset info available at: http://erddap.bio-oracle.org/erddap/griddap/thetao_baseline_2000_2019_depthsurf.html
+
+## Selected 1 variables: thetao_mean
+
+## Selected dataset so_baseline_2000_2019_depthsurf.
+
+## Dataset info available at: http://erddap.bio-oracle.org/erddap/griddap/so_baseline_2000_2019_depthsurf.html
+
+## Selected 1 variables: so_mean
+
+## Selected dataset o2_baseline_2000_2018_depthsurf.
+
+## Dataset info available at: http://erddap.bio-oracle.org/erddap/griddap/o2_baseline_2000_2018_depthsurf.html
+
+## Selected 1 variables: o2_mean
+
+# We can easily convert the list of SpatRasters into a multilayer SpatRaster using `rast`
+env_layers &lt;- rast(env_layers)
+env_layers
+
+## class       : SpatRaster 
+## dimensions  : 316, 846, 3  (nrow, ncol, nlyr)
+## resolution  : 0.05, 0.05  (x, y)
+## extent      : -6.05, 36.25, 30.05, 45.85  (xmin, xmax, ymin, ymax)
+## coord. ref. : lon/lat WGS 84 
+## sources     : 605fc9b38decbff0cc9dbf7466ce9763.nc  
+##               0e41eda3a088ee25b29d4cf81ce5dd28.nc  
+##               a43ce5ec09281f9f807682ee717c2f5d.nc  
+## varnames    : thetao_mean (Average OceanTemperature) 
+##               so_mean (Average Salinity) 
+##               o2_mean (Average DissolvedMolecularOxygen) 
+## names       : thetao_bas~_depthsurf, so_baselin~_depthsurf, o2_baselin~_depthsurf 
+## unit        :              degree_C,                   PSU,            MMol' 'M-3 
+## time        : 2010-01-01 UTC</code></pre>
+<p>For bathymetry we need to supply a different time:</p>
+<pre><code>constraints$time &lt;- c("1970-01-01T00:00:00Z", "1970-01-01T00:00:00Z")
+
+bath &lt;- download_layers("terrain_characteristics",
+                        "bathymetry_mean",
+                        constraints, directory = ".")
+
+## Selected dataset terrain_characteristics.
+
+## Dataset info available at: http://erddap.bio-oracle.org/erddap/griddap/terrain_characteristics.html
+
+## Selected 1 variables: bathymetry_mean
+
+bath
+
+## class       : SpatRaster 
+## dimensions  : 316, 846, 1  (nrow, ncol, nlyr)
+## resolution  : 0.05, 0.05  (x, y)
+## extent      : -6.05, 36.25, 30.05, 45.85  (xmin, xmax, ymin, ymax)
+## coord. ref. : lon/lat WGS 84 
+## source      : 9e5d27b9659e2585cd3050d884cf5151.nc 
+## varname     : bathymetry_mean (Bathymetry Mean) 
+## name        : bathymetry_mean 
+## unit        :               m 
+## time        : 1970-01-01 UTC</code></pre>
+</section>
+<section id="the-terra-package" class="level2">
+<h2 class="anchored" data-anchor-id="the-terra-package">The <code>terra</code> package</h2>
+<p>For processing the raster files we will use the <a href="https://rspatial.github.io/terra/"><code>terra</code> package</a>. This package enable spatial operations on both rasters and vectors (shapefiles). Other packages exist for raster operations (e.g.&nbsp;<a href="https://r-spatial.github.io/stars/"><code>stars</code></a>), but for many of the main operations <code>terra</code> provides a simple syntax and is very fast. To learn how to use <code>terra</code>, a good resource is this website: <a href="https://rspatial.org/index.html">rspatial.org/terra</a></p>
+<p>Here we will use both <strong>rasters</strong> and <strong>vectors</strong>. In geospatial data, rasters represent data as a grid of cells or pixels, each with a specific value, suitable for continuous data like temperature or elevation. Rasters can have multiple layers, as the one we loaded as <code>env_layers</code>. Vectors represent data as points, lines, or polygons. In our case, we have a vector for the boundaries of the Mediterranean which we loaded using <code>sf</code>. We can convert to the terra format, <code>SpatVector</code> using <code>vect</code>:</p>
+<pre><code>med &lt;- vect(med)
+
+par(mfrow = c(1,2))
+plot(env_layers[[1]], main = "Raster")
+plot(med, main = "Vector")</code></pre>
+<p><img src="index_files/figure-markdown_strict/unnamed-chunk-10-1.png" class="img-fluid"></p>
+<p>We will mask our raster, to ensure that we only have the data for the areas of the Mediterranean. To make easier to extract the data all at once, we will join the bathymetry layer with the others:</p>
+<pre><code>all_layers &lt;- c(env_layers, bath)
+
+all_layers &lt;- terra::mask(all_layers, med)
+
+# Change names for easier handling
+names(all_layers) &lt;- c("sst", "salinity", "o2", "depth")
+plot(all_layers, main = names(all_layers))</code></pre>
+<p><img src="index_files/figure-markdown_strict/unnamed-chunk-11-1.png" class="img-fluid"></p>
+<p>TIP: Note that for <code>mask</code> we used the package prefix (i.e.&nbsp;<code>terra::mask()</code>). Some names such as <strong>mask</strong> or <strong>extract</strong> are also used by other packages, namely those from <code>tidyverse</code>. Using the prefix avoid that the wrong function is used.</p>
+</section>
+<section id="extracting-data" class="level2">
+<h2 class="anchored" data-anchor-id="extracting-data">Extracting data</h2>
+<p>Let’s download some data from OBIS now. We will get data for all species in the order Actiniaria within that region:</p>
+<pre><code>target_area &lt;- st_as_text(st_as_sfc(st_bbox(env_layers[[1]])))
+
+actiniaria &lt;- occurrence("Actiniaria", geometry = target_area,
+                         # Limit to some fields that we need here
+                         fields = c("taxonID", "scientificName", "decimalLongitude", "decimalLatitude", "speciesid"))
+
+## Retrieved 2289 records of approximately 2289 (100%)
+
+# Filter for only those at species level
+actiniaria &lt;- actiniaria[!is.na(actiniaria$speciesid), ]</code></pre>
+<p>For extraction operations with <code>terra</code> you can work with <code>data.frames</code>. But we will convert it to a <code>SpatVector</code> to use some other interesting functions. For example, we can mask our points according to the Mediterranean borders.</p>
+<pre><code>actiniaria_vec &lt;- vect(actiniaria, geom = c("decimalLongitude", "decimalLatitude"), crs = "EPSG:4326")
+
+actiniaria_vec_filt &lt;- terra::mask(actiniaria_vec, med)
+
+par(mfrow = c(1,2))
+plot(actiniaria_vec, pch = 20, cex = 1, col = "blue", main = "Not masked");lines(med)
+plot(actiniaria_vec_filt, pch = 20, cex = 1, col = "blue", main = "Masked");lines(med)</code></pre>
+<p><img src="index_files/figure-markdown_strict/unnamed-chunk-13-1.png" class="img-fluid"></p>
+<p>Now we are ready to extract the data. This is very simple:</p>
+<pre><code>extracted_data &lt;- terra::extract(all_layers, actiniaria_vec_filt, ID = FALSE)
+
+head(extracted_data)
+
+##        sst salinity       o2       depth
+## 1 19.87718 37.68975 232.8744   -82.69444
+## 2 20.48257 38.04504 225.7063 -1223.72217
+## 3 19.97063 37.62606 232.0623  -159.08333
+## 4 19.63475 37.98786 235.2972   -39.00000
+## 5 19.51212 36.99345 233.4251     0.00000
+## 6 20.04503 37.58446 231.0133   -52.30556</code></pre>
+<p>As you can see, it extracted the environmental infromation for all points. We can get a good summary with <code>summary</code></p>
+<pre><code>summary(extracted_data)
+
+##       sst           salinity           o2            depth         
+##  Min.   :16.66   Min.   :30.88   Min.   :216.9   Min.   :-3020.19  
+##  1st Qu.:19.41   1st Qu.:37.47   1st Qu.:231.1   1st Qu.:  -87.08  
+##  Median :19.83   Median :37.65   Median :232.6   Median :  -57.72  
+##  Mean   :19.51   Mean   :37.43   Mean   :234.5   Mean   : -131.32  
+##  3rd Qu.:20.00   3rd Qu.:37.83   3rd Qu.:235.3   3rd Qu.:  -29.36  
+##  Max.   :23.61   Max.   :39.35   Max.   :278.3   Max.   :    0.00  
+##  NA's   :135     NA's   :135     NA's   :135     NA's   :135</code></pre>
+<p>Note that we have 135 NA points, i.e.&nbsp;with no information. Those points are probably on land. You may chose to remove those or you can find the nearest valid point. In our case we will simply remove them.</p>
+<pre><code>actiniaria_vec_filt &lt;- cbind(actiniaria_vec_filt, extracted_data)
+
+actiniaria_vec_filt &lt;- actiniaria_vec_filt[!is.na(actiniaria_vec_filt$sst),]</code></pre>
+</section>
+</section>
+<section id="plotting-this-information" class="level1">
+<h1>Plotting this information</h1>
+<p>There are different ways to plot this information. A good way of having an overview is by using a histogram. We will use <code>dplyr</code>, <code>tidyr</code> and <code>ggplot2</code> for that.</p>
+<pre><code>library(dplyr)
+
+## 
+## Attaching package: 'dplyr'
+
+## The following objects are masked from 'package:terra':
+## 
+##     intersect, union
+
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+
+library(tidyr)
+
+## 
+## Attaching package: 'tidyr'
+
+## The following object is masked from 'package:terra':
+## 
+##     extract
+
+library(ggplot2)
+
+extracted_data &lt;- as.data.frame(actiniaria_vec_filt) %&gt;%
+  select(sst, salinity, o2, depth)
+
+extracted_data_long &lt;- pivot_longer(extracted_data, cols = 1:4, names_to = "variable", values_to = "value")
+
+head(extracted_data_long)
+
+## # A tibble: 6 × 2
+##   variable value
+##   &lt;chr&gt;    &lt;dbl&gt;
+## 1 sst       19.9
+## 2 salinity  37.7
+## 3 o2       233. 
+## 4 depth    -82.7
+## 5 sst       20.5
+## 6 salinity  38.0
+
+ggplot(extracted_data_long) +
+  geom_histogram(aes(value, fill = variable)) +
+  scale_fill_manual(values = c("#fb8500", "#ffb703", "#023047", "#219ebc")) +
+  theme_light() + theme(legend.position = "none") +
+  facet_wrap(~ variable, scales = "free_x")
+
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="index_files/figure-markdown_strict/unnamed-chunk-17-1.png" class="img-fluid"></p>
+<p>Another possible way is to display geographically. We can do that for temperature for example:</p>
+<pre><code># We get a shapefile of the continents
+wrld &lt;- rnaturalearth::ne_countries(returnclass = "sf")
+
+# Convert the data to sf format, as ggplot2 have nice features for sf
+actiniaria_vec_filt &lt;- st_as_sf(actiniaria_vec_filt)
+
+ggplot() +
+  geom_sf(data = wrld, color = "grey80", fill = "grey90") +
+  geom_sf(data = actiniaria_vec_filt, aes(color = sst), size = 2, alpha = .5) +
+  scale_color_distiller(palette = "BuPu", direction = 1) +
+  coord_sf(xlim = limits[c(1,3)], ylim = limits[c(2,4)]) +
+  ggtitle("Actiniaria") +
+  theme_light() +
+  theme(legend.position = "bottom")</code></pre>
+<p><img src="index_files/figure-markdown_strict/unnamed-chunk-18-1.png" class="img-fluid"></p>
+<p>In a next tutorial we will explore how to download environmental data from other sources, like Copernicus or NOAA, what opens many possibilities of research.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iobis/manual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

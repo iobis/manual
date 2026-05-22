@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>common_qc – The OBIS manual</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3e7735b7b22659e5fa437aca0bb49075.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title"><a class="navbar-brand" href="./"><img src="./images/ioc_logo_black_2.svg" style="height: 40px; margin-right: .7rem !important;" class="me-2"><img src="./images/logo_simple.png" style="height: 30px;"></a></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Manual</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorials.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./notebooks.html"> 
+<span class="menu-text">Notebooks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://obis.org/"> 
+<span class="menu-text">Back to OBIS</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_qc.html">Ensuring Data Quality</a></li><li class="breadcrumb-item"><a href="./common_qc.html">Common Quality Control issues</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The OBIS manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./policy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Policy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gethelp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting Help in OBIS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FAQ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Frequently Asked Questions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./linklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quick links to resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Contributing data to OBIS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contribute.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What can you contribute and how?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">OBIS Data Life Cycle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nodes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">OBIS Nodes, Coordination Groups, Secretariat</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Access Data from OBIS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./citing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Citing OBIS Data OBIS</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Standards</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./darwin_core.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Darwin Core</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_format.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Darwin Core Archive</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./relational_db.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Relational databases: the underlying framework of OBIS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./eml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metadata: Ecological Metadata Language</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Formatting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./formatting_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data formatting workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./formatting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataset structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./identifiers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Constructing and using identifiers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./name_matching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Match Taxonomic Names</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Map data fields to Darwin Core</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Formatting data tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./format_occurrence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to format Occurrence tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./format_event.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to format Event tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./format_emof.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to format extendedMeasurementOrFact tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dna_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DNA derived data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vocabulary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Controlled vocabulary for eMoF</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vocab_tree.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vocabulary Decision Tree</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common_formatissues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other Important Data Formatting Steps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataset Examples: ENV-DATA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other_data_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other data types</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Ensuring Data Quality</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data quality control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mofreports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measurement Data QC</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lifewatch_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geographic and data format quality control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataquality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data quality flags</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common_qc.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Common Quality Control issues</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Publishing Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data publication and sharing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ipt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IPT: Integrated Publishing Toolkit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ipt_admin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IPT Admin Responsibilities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_sharing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maintaining and sharing published data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Visualization and Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dataviz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Visualization</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Additional Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other_resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#common-quality-control-issues" id="toc-common-quality-control-issues" class="nav-link active" data-scroll-target="#common-quality-control-issues">Common Quality Control issues</a>
+  <ul class="collapse">
+  <li><a href="#uncertain-temporal-range" id="toc-uncertain-temporal-range" class="nav-link" data-scroll-target="#uncertain-temporal-range">Uncertain temporal range</a></li>
+  <li><a href="#uncertain-geolocation" id="toc-uncertain-geolocation" class="nav-link" data-scroll-target="#uncertain-geolocation">Uncertain geolocation</a>
+  <ul class="collapse">
+  <li><a href="#how-to-use-obis-map-tool" id="toc-how-to-use-obis-map-tool" class="nav-link" data-scroll-target="#how-to-use-obis-map-tool">How to use OBIS Map Tool</a></li>
+  <li><a href="#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates" id="toc-using-getty-thesaurus-google-maps-to-obtain-locality-coordinates" class="nav-link" data-scroll-target="#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates">Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
+  <li><a href="#how-to-use-marine-regions-gazetteer-tool" id="toc-how-to-use-marine-regions-gazetteer-tool" class="nav-link" data-scroll-target="#how-to-use-marine-regions-gazetteer-tool">How to use Marine Regions Gazetteer tool</a></li>
+  </ul></li>
+  <li><a href="#low-confidence-taxonomic-identification" id="toc-low-confidence-taxonomic-identification" class="nav-link" data-scroll-target="#low-confidence-taxonomic-identification">Low confidence taxonomic identification</a>
+  <ul class="collapse">
+  <li><a href="#changes-in-taxonomic-classification" id="toc-changes-in-taxonomic-classification" class="nav-link" data-scroll-target="#changes-in-taxonomic-classification">Changes in taxonomic classification</a></li>
+  </ul></li>
+  <li><a href="#uncertain-measurements" id="toc-uncertain-measurements" class="nav-link" data-scroll-target="#uncertain-measurements">Uncertain measurements</a>
+  <ul class="collapse">
+  <li><a href="#individualcount" id="toc-individualcount" class="nav-link" data-scroll-target="#individualcount">individualCount</a></li>
+  </ul></li>
+  <li><a href="#non-marine-species" id="toc-non-marine-species" class="nav-link" data-scroll-target="#non-marine-species">Non-marine species</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/iobis/manual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_qc.html">Ensuring Data Quality</a></li><li class="breadcrumb-item"><a href="./common_qc.html">Common Quality Control issues</a></li></ol></nav></header>
+
+
+
+
+<section id="common-quality-control-issues" class="level1">
+<h1>Common Quality Control issues</h1>
+<p><strong>Content:</strong></p>
+<ul>
+<li><a href="#uncertain-temporal-range">Uncertain temporal range</a></li>
+<li><a href="#uncertain-geolocation">Uncertain geolocation</a>
+<ul>
+<li><a href="#how-to-use-obis-map-tool">How to use OBIS Maptool</a></li>
+<li><a href="#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates">How to use Gazetteers to obtain geolocation information</a></li>
+</ul></li>
+<li><a href="#low-confidence-taxonomic-identification">Low confidence taxonomic information</a></li>
+<li><a href="#uncertain-measurements">Uncertain measurements</a></li>
+</ul>
+<section id="uncertain-temporal-range" class="level2">
+<h2 class="anchored" data-anchor-id="uncertain-temporal-range">Uncertain temporal range</h2>
+<p>When the eventDate or temporal scope of your dataset is in question or provided in an invalid format (e.g., textual description), there are a number of options to ensure the most accurate date is provided.</p>
+<ol type="1">
+<li>You may provide a range of dates in the ISO 8601 format if the range of dates is certain. Do not include a date range if you are making assumptions. Notes about any assumptions or interpretations on date ranges can be documented in the <code>eventRemarks</code> field.
+<ul>
+<li>Be careful when entering date ranges. For example, entering 1870/1875-08-04 is equivalent to any date between 1870 and 1875-08-04. Date ranges can be used in this way to capture some level of uncertainty in when an event occurred.</li>
+</ul></li>
+<li>If only parts of the date are known (e.g., year but not month and day), you may provide the date in ISO 8601 format while excluding the unknown elements. <strong>Do not use zero</strong> to populate incomplete dates, simply end the date with the known information (e.g., 2011-03 instead of 2011-03-00). Additionally, if the year is unknown, you should only populate the <code>month</code> and <code>day</code> fields because <code>eventDate</code> cannot be formatted to exclude year. In these cases, <code>eventDate</code> is not necessary to fill.</li>
+<li>If date was provided as a textual description that is accurately interpretable, include the text description in the <code>verbatimEventDate</code> field. Then provide the interpreted date in ISO 8601 format in the <code>eventDate</code> field. Be sure to document any other important information in ‘eventRemarks’.</li>
+<li>For historical dates that do not conform to the ISO 8601 format, <a href="common_formatissues.html#historical-data">guidelines</a> have been developed by the OBIS Historical Data Project team. The <a href="https://dwc.tdwg.org/terms/#geologicalcontext">dwc:class:GeologicalContext</a> can be used to capture some information for records pertaining to fossilized specimens, and the <a href="https://chrono.tdwg.org/">Chronometric Age Extension</a> can also be used. Note that currently when publishing, the Chronometric Age extension will not be aggregated with OBIS data, but this extension will be available when an individual dataset is downloaded. This applies to any other extensions not currently implemented.</li>
+</ol>
+</section>
+<section id="uncertain-geolocation" class="level2">
+<h2 class="anchored" data-anchor-id="uncertain-geolocation">Uncertain geolocation</h2>
+<p>Sometimes locality information can be difficult to interpret, especially if records originate from historical data with vague descriptions, or descriptions/names of areas that no longer exist. If your dataset is missing <code>decimalLongitude</code> and <code>decimalLatitude</code>, but the locality name is given, there are a number of approaches you can take. You can:</p>
+<ul>
+<li>Use the OBIS <a href="https://obis.org/maptool/">Map Tool</a> to <a href="access.html#mapper">obtain a WKT</a> string for point, line, or polygon features to put in the <code>footprintWKT</code> field. The corresponding projection should be placed in the <code>footprintSRS</code> field. Note the accepted spatial reference system for OBIS is EPSG:4326 (WGS84). The <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions Gazetteer</a> is available for use within the Map tool to help find locations.</li>
+<li>Search for locations with the <a href="https://www.marineregions.org/gazetteer.php?p=search">Marine Regions Gazetteer</a> to obtain coordinates and a <code>locationID</code>. For information on how to use this tool, <a href="#how-to-use-marine-regions-gazetteer-tool">see below</a>.
+<ul>
+<li>You can also use the <a href="http://www.getty.edu/research/tools/vocabularies/tgn/">Getty Thesaurus of Geographic Names</a> or Google Maps. <a href="#how-to-use-obis-map-tool">See below</a></li>
+</ul></li>
+</ul>
+<div class="callbox-blue">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:darkblue;overflow:visible;position:relative;"><path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"></path></svg> Always be sure to fill in the <code>georeferenceSources</code> field to indicate the source(s) you used to obtain locality information when appropriate</p>
+</div>
+<ul>
+<li>If you have a set of points, lines, or polygons (perhaps from the Map tool), you can find the centroid of the features using either <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> or <a href="https://postgis.net/docs/ST_PointOnSurface.html">PostGIS</a>, and then enter this coordinate into the <code>decimalLatitude</code> and <code>decimalLongitude</code> fields. This PostGIS guideline will help you select a centroid that is guaranteed to fall within your designated area.</li>
+<li>Estimate <code>coordinateUncertaintyinMeters</code> that is wide enough to cover the area
+<ul>
+<li>If the location is provided as an array or WKT format, you can use R package <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> to obtain coordinate uncertainty.</li>
+<li>Use the <a href="https://obis.org/maptool/">OBIS maptool</a> to obtain from the “radius” column. This is only applicable for lines or polygons, not point features.</li>
+</ul></li>
+</ul>
+<p>For data that only has <strong>textual descriptions</strong>:</p>
+<ul>
+<li>Try GBIF’s <a href="https://geo-locate.org/web/default.html">GEOLocate Web Application</a>. You can use this tool for one location at a time with the <a href="https://geo-locate.org/web/WebGeoref.aspx">Standard Client</a>, or upload a CSV file for <a href="https://geo-locate.org/web/WebFileGeoref.aspx">batch processing</a>. This tool lets you enter text descriptions in the “Locality String” field, and other relevant locality information (e.g.&nbsp;country, state, county) to obtain geographic coordinates.</li>
+<li>Use this <a href="https://localityservice.uc.r.appspot.com/">Biodiversity Enhanced Location Services</a> tool developed by VertNet. It can translate textual descriptions and provide decimalLatitude, decimalLongitude, geodeticDatum, and coordinateUncertaintyInMeters as a csv sent to an email address. For more information on this service, see the associated <a href="https://github.com/VertNet/bels">GitHub</a>.</li>
+</ul>
+<p>GBIF also provides some guidelines for <a href="https://docs.gbif.org/georeferencing-best-practices/1.0/en/#difficult-localities">difficult localities</a> as well as other <a href="https://docs.gbif.org/georeferencing-quick-reference-guide/1.0/en/#georeferencing-methods-by-locality-type">georeferencing tips</a> for different geographic features, such as when only a distance or heading is provided (e.g., 10 km off Sao Paulo’s coast, north of Fiji).</p>
+<div class="callbox-caution caution">
+<p>Important note: If you are making any inferences and/or decisions about locality coordinates, please record this in the <code>georeferenceRemarks</code> field. Additional information about the locality can also be stored in DwC terms such as <code>waterBody</code>, <code>islandGroup</code>, <code>island</code> and <code>country</code>. <code>locationAccordingTo</code> should provide the name of the gazetteer that was used to obtain the coordinates for the locality.</p>
+</div>
+<section id="how-to-use-obis-map-tool" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-obis-map-tool">How to use OBIS Map Tool</h3>
+<p>A video tutorial <svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg> on how to use our Map tool is available below. This video covers the following topics:</p>
+<ol type="1">
+<li>Estimating coordinates</li>
+<li>Using the line and polygon tool</li>
+<li>Obtaining and exporting WKT strings</li>
+</ol>
+<p><a href="https://en.wikipedia.org/wiki/Well-known_text">Well-Known Text (WKT)</a> strings are representations of the shape of the location and can be provided in the <code>footprintWKT</code> field. This is particularly useful for tracks, transects, tows, trawls, habitat extent, or when an exact location is not known. WKT strings can be created using the Map tool’s WKT function. The Map tool also calculates a midpoint and a radius for line or polygon features, which can then be added to <code>decimalLongitude</code>, <code>decimalLatitude</code>, and <code>coordinateUncertaintyInMeters</code>, respectively. As mentioned above, the <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries"><code>obistools::calculate_centroid</code></a> function can be used to calculate the centroid and radius for WKT polygons. This <a href="https://wktmap.com/">wktmap</a> tool can also be used to visualize and share WKT strings.</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/XM23WEvE364" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</section>
+<section id="using-getty-thesaurus-google-maps-to-obtain-locality-coordinates" class="level3">
+<h3 class="anchored" data-anchor-id="using-getty-thesaurus-google-maps-to-obtain-locality-coordinates">Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</h3>
+<p>For both the <a href="https://www.getty.edu/research/tools/vocabularies/tgn/">Getty thesaurus</a> and <a href="https://www.google.com/maps/">Google Maps</a> you can simply search the name of a locality, for example the Cook Strait in New Zealand. The search result on the Getty thesaurus will bring you to a page where you can obtain <code>decimalLatitude</code> and <code>decimalLongitdue</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/getty-thesaurus-NZexample.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><em>Screenshot of Cook Strait page on the Getty Thersaurus</em></figcaption>
+</figure>
+</div>
+<p>For Google Maps, the coordinates can be found in the url after searching.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/google-maps-coordinates.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><em>Screenshot of Google Maps showing where coordinates can be found in the URL</em></figcaption>
+</figure>
+</div>
+</section>
+<section id="how-to-use-marine-regions-gazetteer-tool" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-marine-regions-gazetteer-tool">How to use Marine Regions Gazetteer tool</h3>
+<p>Marine Regions offers a marine gazetteer search engine to obtain geographic information and unique identifiers for marine regions. Once you have navigated to the <a href="https://www.marineregions.org/gazetteer.php?p=search">gazetteer search engine</a>, you have two options to search by: enter the name of the desired locality, or enter an MRGID code. Most likely you will have a locality name but not an MRGID. You may also select a <a href="https://www.marineregions.org/gazetteer.php?p=popup&amp;name=placetype">placetype</a> to search instead for types of regions that may be physical (e.g., seamount, bay, fjord, etc.) or administrative (e.g., exclusive economic zones, countries, etc). You can specify specific sources if known (e.g., published paper, organization, etc.). Finally, you can give a latitude/longitude coordinate with a radius around it to obtain a list of regions near that point.</p>
+<p>For this example we will search by geographic name for the Bay of Fundy.</p>
+<p><img src="images/marinegazeeteer-search.png" class="img-fluid" style="width:80.0%"> <img src="images/marinegazeeteer-bayfundy.png" class="img-fluid" style="width:80.0%" alt="Marine regions gazetteer search"></p>
+<p>Our search returned 5 results from different sources (indicated in brackets). So how do we select the correct one? We can notice right away that the second result, from SeaVox SeaArea, has a preferred alternative, which when you click on the link brings you to the IHO Sea Area description for Bay of Fundy. So already we can likely drop SeaVox as a potential candidate. A good next step may be to compare the geographical extent for each to ensure it covers the desired area. If you are uncertain about exactly where your locality is, it may be better to be safe and choose a wider geographic region. Let’s compare the maps for all 5 results:</p>
+<p><img src="images/marinegazeeteer-bayfundy-1-IHO.png" class="img-fluid" style="width:50.0%" alt="Bay of Fundy source IHO"> <img src="images/marinegazeeteer-bayfundy-2-SeaVoX.png" class="img-fluid" style="width:50.0%" alt="Bay of Fundy source SeaVoX"> <img src="images/marinegazeeteer-bayfundy-3-MarRegion.png" class="img-fluid" style="width:50.0%" alt="Canadian part of Bay of Fundy source Marine Region"> <img src="images/marinegazeeteer-bayfundy-4-MEOW.png" class="img-fluid" style="width:50.0%" alt="Bay of Fundy source MEOW"> <img src="images/marinegazeeteer-bayfundy-5-MarRegion.png" class="img-fluid" style="width:50.0%" alt="United States part of Bay of Fundy source Marine Region"></p>
+<p>Notice that no region has the exact same geographic extent. Let’s select the IHO Bay of Fundy locality (the first search result) to ensure we are covering the entire area of the Bay of Fundy, but not the Gulf. Inspecting the rest of the page, there is a lot of other useful information we can use. We can populate the following OBIS fields for our dataset, copying the information outlined in the red boxes:</p>
+<ol type="1">
+<li><code>locationID</code> from MRGID: <a href="http://marineregions.org/mrgid/4289" class="uri">http://marineregions.org/mrgid/4289</a></li>
+<li><code>decimalLatitude</code> and <code>decimalLongitude</code> latitude and longitude coordinates of the location’s midpoint in decimal degrees: 44.97985204, -65.80601556</li>
+<li><code>coordinateUncertaintyInMeters</code> precision: 196726 meters</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MarineRegions-Gazetteer_placedetails.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><em>Screenshot of Marine Region placedetails, highlighting important information for OBIS</em></figcaption>
+</figure>
+</div>
+<p>Since we are obtaining all this locality data from Marine Regions, we must also populate the <code>locationAccordingTo</code> field. Here, we will provide the name of the gazetteer we used to obtain the coordinates for the locality - in this case you would write “Marine Regions”. In <code>georeferenceRemarks</code> we must document that the coordinates are the region’s midpoint, that locality information was inferred by geographic name, and, where applicable, place the original locality name in the field <code>verbatimLocality</code>. Finally, the location portion of our dataset would look something like this:</p>
+<div style="overflow-x: auto;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>locality</th>
+<th>locationID</th>
+<th>decimalLatitude</th>
+<th>decimalLongitude</th>
+<th>coordinateUncertaintyInMeters</th>
+<th>locationAccordingTo</th>
+<th>georeferenceRemarks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bay of Fundy</td>
+<td><a href="http://marineregions.org/mrgid/4289" class="uri">http://marineregions.org/mrgid/4289</a></td>
+<td>44.97985204</td>
+<td>-65.80601556</td>
+<td>196726</td>
+<td>Marine Regions</td>
+<td>Coordinates are a midpoint inferred from location name</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The OBIS Mapper has built-in access to the Marine Regions Gazetteer. The video <svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg> below demonstrates how to use this built-in tool, as well as how to navigate the Marine Regions Gazetter to obtain important georeferencing information to include in your data.</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/XM23WEvE364" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<section id="dwc-terms-obtained-from-maptool-and-gazetteers" class="level4">
+<h4 class="anchored" data-anchor-id="dwc-terms-obtained-from-maptool-and-gazetteers">DwC Terms obtained from Maptool and Gazetteers</h4>
+<p>Below is a table summarizing the different DwC terms you can obtain from the OBIS Maptool or from the Gazeteers discussed above.</p>
+<div style="overflow-x: auto;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>DarwinCore Term</th>
+<th>Maptool Term</th>
+<th>Marine Regions Term</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>decimalLatitude</td>
+<td>Latitude</td>
+<td>Latitude</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>decimalLongitude</td>
+<td>Longitude</td>
+<td>Longitude</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>locationID</td>
+<td></td>
+<td>MRGID</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>coordinateUncertaintyInMeters</td>
+<td>radius</td>
+<td>precision (not always available)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>footprintWKT</td>
+<td>WKT</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+<section id="low-confidence-taxonomic-identification" class="level2">
+<h2 class="anchored" data-anchor-id="low-confidence-taxonomic-identification">Low confidence taxonomic identification</h2>
+<p>In case of low confidence taxonomic identifications, and/or the scientific name contains qualifiers such as cf., ?, or aff., then you should:</p>
+<ul>
+<li>Put the name of the lowest possible taxon rank that can be determined with high-confidence in <code>scientificName</code> (e.g.&nbsp;the genus)</li>
+<li>Put any text regarding identification with low confidence and/or qualifiers in <a href="https://dwc.tdwg.org/terms/#dwciri:identificationQualifier"><code>identificationQualifier</code></a> (e.g., cf., aff.)</li>
+<li>Put the species name in <a href="https://dwc.tdwg.org/terms/#dwc:specificEpithet"><code>specificEpithet</code></a></li>
+<li>Place the rank of the taxon documented in scientificName (e.g., genus) in <a href="https://dwc.tdwg.org/terms/#dwc:taxonRank"><code>taxonRank</code></a></li>
+<li>Document any relevant comments in <a href="https://dwc.tdwg.org/terms/#dwc:taxonRemarks"><code>taxonRemarks</code></a> or <a href="https://dwc.tdwg.org/terms/#dwc:identificationRemarks"><code>identificationRemarks</code></a> (e.g.&nbsp;reasoning for identification)</li>
+</ul>
+<p>Take an example specimen named Pterois cf.&nbsp;volitans. The associated occurrence record would have the following taxonomic information:</p>
+<ul>
+<li><code>scientificName</code> = Pterois</li>
+<li><code>identificationQualifier</code> = cf.&nbsp;volitans</li>
+<li><code>specificEpithet</code> = <em>leave blank</em></li>
+<li><code>scientificNameID</code> = the one for Pterois</li>
+<li><code>taxonRank</code> = genus</li>
+</ul>
+<p>If the provided name is unaccepted in WoRMS, it is okay to use the unaccepted name in this field. <code>scientificNameID</code> should contain the <a href="name_matching.html">WoRMS LSID</a> for the genus.</p>
+<p>There is a new Darwin Core term <a href="https://dwc.tdwg.org/terms/#dwc:verbatimIdentification"><code>verbatimIdentification</code></a> meant for containing the originally documented name, however this term is not yet implemented in OBIS so if you populate this field it will not be indexed alongside your data. However you can use <code>identificationRemarks</code> to add extra information.</p>
+<p>The use and definitions for additional Open Nomenclature (ON) signs (<code>identificationQualifier</code>) can be found in <a href="https://doi.org/10.1111/2041-210X.12594">Open Nomenclature in the biodiversity era</a>, which provides examples for using the main Open Nomenclature qualifiers associated with physical specimens (Figure 1). Whereas the publication <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations</a> provides examples and definitions for identificationQualifiers for image-based non-physical specimens (Figure 2).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig1-openNomenclature.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><em>Figure 1. Flow diagram with the main Open Nomenclature qualifiers associated with physical specimens. The degree of confidence in the correct identifier increases from the top down. More info and figure copied from <a href="https://doi.org/10.1111/2041-210X.12594">Open Nomenclature in the biodiversity era</a>.</em></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig2-flowDiagram.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><em>Figure 2: Flow diagram with the main Open Nomenclature qualifiers for the identification of specimens from images (non-physical, image-based) . More information and figure copied from <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations</a></em></figcaption>
+</figure>
+</div>
+<p>If the occurrence is instead unknown or new to science, it should be documented according to recommendations by <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Horton et al.&nbsp;2021</a>. Populate the <code>scientificName</code> field with the genus, and in <code>identificationQualifer</code> provide the ON sign ‘sp.’. Be sure to also indicate the reason why species-level identification is unavailable by supplementing ‘sp.’ with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g.&nbsp;for undescribed new species), add a unique taxon identifier code after ‘sp.’ to <code>identificationQualifer</code>. For example Eurythenes sp. DISCOLL.PAP.JC165.674. When adding a taxon identifier code, please avoid simple alphanumeric codes (i.e.&nbsp;Eurythenes sp. 1, Eurythenes sp. A). Like creating <code>eventIDs</code> or <code>occurrenceIDs</code>, try to provide more complex and globally unique identifiers. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within OBIS. We also recommend including these temporary names on specimen labels for physical specimens.</p>
+<section id="changes-in-taxonomic-classification" class="level3">
+<h3 class="anchored" data-anchor-id="changes-in-taxonomic-classification">Changes in taxonomic classification</h3>
+<p>Taxonomic classification can change over time - so what does that mean for your datasets when records change classification?</p>
+<p>Because OBIS relies on WoRMS as the taxonomic backbone, changes in taxonomic classification will be updated between a day to a few weeks from the date of change, unless triggered manually. This means that the WoRMS LSID associated with a species in question will be used to automatically populate the taxonomic classification with the updated information.</p>
+<p>However we recognize that there may be issues when larger changes occur (e.g.&nbsp;Family level splits). Then, records that are only identified to the Family level may not get updated properly. For example, there was a shift in coral taxonomy where the family Nephtheidae was split into Capnellidae and Alyconiidae for species occurring in the Northern Atlantic. While species that were identified as belonging to Nephtheidae have now been updated to belong to one of those two families, records that were only identified down to family (i.e., Nephtheidae) are still documented as Nephtheidae. Unfortunately there is currently no solution for dealing with splits like this, aside from contacting data providers and asking them to change the taxonomy.</p>
+<p>A future solution may be an annotation registry that includes statements like “identifications of taxon x in geographic area y are misidentified and should be linked to taxon z”.</p>
+</section>
+</section>
+<section id="uncertain-measurements" class="level2">
+<h2 class="anchored" data-anchor-id="uncertain-measurements">Uncertain measurements</h2>
+<section id="individualcount" class="level3">
+<h3 class="anchored" data-anchor-id="individualcount">individualCount</h3>
+<p>In some cases <code>individualCount</code> may be uncertain due to only fragments of organisms being found, or only a range of individuals is known. The <code>occurrenceRemarks</code> can be used to document information about decisions made during data formatting.</p>
+<p>In cases where only certain body parts (e.g., head, tail, arm) are recorded, you can incorporate this information in <code>measurementTypeID</code> by finding a P01 code that contains elements from the <a href="https://vocab.nerc.ac.uk/search_nvs/S12/">S12 collection</a>, which documents sub-components of biological entities. If a P01 code for your sub-component does not exist, you can request the <a href="https://github.com/nvs-vocabs/OBISVocabs/issues">creation of a P01 code</a>. If you are uncertain whether fragments are from the same individual, a range can be provided and the uncertainty can be recorded in <code>occurrenceRemarks</code>.</p>
+<p>When providing a range to estimate the count, there are two <a href="https://github.com/tdwg/dwc/issues/338#issuecomment-828002051">suggested</a> approaches:</p>
+<ul>
+<li>Use MOF/eMoF: place the data in the (extended)MeasurementOrFact extension. This requires an additional two rows per Occurrence. One with the equivalent of a minimumIndividualCount and one with the equivalent of maximumIndividualCount.</li>
+<li>Place data into <code>dynamicProperties</code>: Include the information in the Occurrence record itself, with no extension, and instead document it in <code>dynamicProperties</code>, with a value such as {“minimumIndividualCount”:0, “maximumIndividualCount”:5}
+<ul>
+<li>We note that documenting the data in ‘dynamicProperties’ means the information will not be machine readable and may be more difficult for users to extract.</li>
+</ul></li>
+</ul>
+<p><strong>Abundance vs Count data:</strong> A brief clarification on abundance and count data: abundance is the number of individuals within an area or volume. This type of data is recorded in <code>organismQuantity</code>, where <a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType"><code>organismQuantityType</code></a> should be used to specify the type of quantity (e.g., individuals, percent biomass, Braun Blanquet Scale, etc.).</p>
+<p>However, if the value is just the number of individuals without reference to a space, this information is recorded in <code>individualCount</code>.</p>
+</section>
+</section>
+<section id="non-marine-species" class="level2">
+<h2 class="anchored" data-anchor-id="non-marine-species">Non-marine species</h2>
+<p>If you are given an error that your taxon is not marine, please confirm first whether the species is actually freshwater by cross referencing with WoRMS or <a href="https://www.irmng.org/">IRMNG</a>. If the species is not marine (i.e.&nbsp;belongs to a non-marine genus), check with the data provider as necessary for possible misidentification. Finally you can contact WoRMS at info@marinespecies.org to discuss adding the taxon to the WoRMS register. You will be required to provide documentation in this case to confirm marine status of the taxon.</p>
+<p>Otherwise, records marked as non-marine will be dropped from the published dataset, and this will be flagged in the data quality associated with your dataset.</p>
+<p>Let’s consider an example within <a href="https://obis.org/dataset/9fbaeb21-a0dc-4a29-8237-1cd7ada266e0">this dataset</a> on benthic macroalgae. Inspecting the data quality report we can see there are three dropped records due to species not being marine.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dropped-records1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><em>Dropped records from a benthic macroalgae dataset</em></figcaption>
+</figure>
+</div>
+<p>Clicking on the dropped records we can see which three species were dropped. By scrolling to the right of the table, we can see these records have two quality flags: NO_DEPTH and NOT_MARINE.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dropped-records2.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><em>Flags specifying why certain records were dropped</em></figcaption>
+</figure>
+</div>
+<p>Let’s take a look at the first species, Pseudochantransia venezuelensis. When we search for this species on <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=836900">WoRMS</a> we can see that the species is marked as freshwater.</p>
+<p><img src="images/nonmarine-spp-worms.png" class="img-fluid" style="width:80.0%"></p>
+<p>Cross-referencing with IRMNG, if we search for the genus-species, the species is not even found, an indication that it is not in the database (and also why it can be good to check multiple sources). Searching for just the genus, we can see that marine and brackish are stricken out, indicating the species is not marine.</p>
+<p><img src="images/nonmarine-spp-irmng.png" class="img-fluid" style="width:80.0%"></p>
+<p>If you have species that are marked as non-marine in these registers but are either supposed to be marine, or were found in a marine environment, then you should contact WoRMS to discuss adding it to the register. For additions and/or edits to environmental or distribution records of a species, contact the WoRMS Data Management Team at info@marinespecies.org with your request along with your record or publication substantiating the addition/change.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iobis/manual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
