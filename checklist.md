@@ -13,6 +13,9 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 - Terms marked with 1 indicate that the specified term is accepted in the Event or Occurrence table, but preference is that they be recorded in the eMoF table in the measurementType column so they can be linked with controlled vocabulary
 - For the Occurrence table, distinction is made if the term could be used in the core or the extension table
 
+
+::: {.column-page}
+
 ```{r echo=F, results='asis', warning = FALSE, message = FALSE}
 library(downloadthis)
 library(readr)
@@ -43,27 +46,28 @@ if (knitr::is_html_output()) {
   checklist[] <- lapply(checklist, function(col) {
     ifelse(col == "x1", "**x¹**", col)
   })
+
+  htmltools::tags$style("tr:nth-child(even) {
+      background-color: #f5f5f5;
+    }")
 }
 
-if (knitr::is_html_output()) {
-  kable(checklist, escape = FALSE) %>%
-    kable_styling(
-      bootstrap_options = c("striped", "bordered", "hover", "condensed"),
-      full_width = TRUE,
-      font_size = 13
-    )
-} else {
-  kable(checklist)
-}
+#if (knitr::is_html_output()) {
+#  kable(checklist, escape = FALSE) %>%
+#    kable_styling(
+#      bootstrap_options = c("striped", "bordered", "hover", "condensed"),
+#      full_width = TRUE,
+#      font_size = 13
+#    )
+#} else {
+#  kable(checklist)
+#}
 
 if (knitr::is_html_output()) {
-  kable(checklist, escape = FALSE) %>%
-    kable_styling(
-      bootstrap_options = c("striped", "bordered", "hover", "condensed"),
-      full_width = TRUE,
-      font_size = 13
-    )
+  kable(checklist, escape = FALSE, format = "pipe")
 } else {
   kable(checklist)
 }
 ```
+
+:::
