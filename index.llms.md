@@ -25,6 +25,8 @@ It is important that our data providers, as well as all data users, are aware an
 
 ![](data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImhlaWdodDoxZW07d2lkdGg6MWVtO3ZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO21hcmdpbi1sZWZ0OmF1dG87bWFyZ2luLXJpZ2h0OmF1dG87Zm9udC1zaXplOmluaGVyaXQ7ZmlsbDpkYXJrYmx1ZTtvdmVyZmxvdzp2aXNpYmxlO3Bvc2l0aW9uOnJlbGF0aXZlOyI+PHBhdGggZD0iTTI1NiA1MTJBMjU2IDI1NiAwIDEgMCAyNTYgMGEyNTYgMjU2IDAgMSAwIDAgNTEyem0wLTM4NGMxMy4zIDAgMjQgMTAuNyAyNCAyNFYyNjRjMCAxMy4zLTEwLjcgMjQtMjQgMjRzLTI0LTEwLjctMjQtMjRWMTUyYzAtMTMuMyAxMC43LTI0IDI0LTI0ek0yMjQgMzUyYTMyIDMyIDAgMSAxIDY0IDAgMzIgMzIgMCAxIDEgLTY0IDB6IiAvPjwvc3ZnPg==) **NB:** Data users should be aware of the licenses associated with any dataset downloaded from OBIS (e.g. CC0, CC-BY, CC-BY-NC).
 
-## Acknowledgements
+## How to Cite
 
-This manual received contributions from (in alphabetical order): [Ward Appeltans](https://www.oceanexpert.net/expert/11770), [Abby Benson](https://orcid.org/0000-0002-4391-107X), [Samuel Bosch](https://www.oceanexpert.net/expert/26577),[Yi-Ming Gan](https://orcid.org/0000-0001-7087-2646), [Philip Goldstein](https://www.oceanexpert.net/expert/18051),[Mary Kennedy](https://www.oceanexpert.net/expert/13557), [Elizabeth Lawrence](https://oceanexpert.org/expert/50997), [Carolina Peralta Brichtova](https://oceanexpert.org/expert/26345), [Pieter Provoost](https://www.oceanexpert.net/expert/26192), [Saara Suominen](https://oceanexpert.org/expert/43352), [Serita van der Wal](https://oceanexpert.org/expert/49876), and [Leen Vandepitte](https://www.oceanexpert.net/expert/12313).
+To cite this manual use the citation below (authors are in alphabetical order):
+
+Appeltans, W., Benson, A., Biddle, M., Bosch, S., Desmet, P., Gan, Y.-M., GOLDSTEIN, P., Kennedy, M., Lawrence, E., Lillis, H., Murray, T., Perez Perez, R., Provoost, P., Sean, D., Suominen, S., Vandepitte, L., & van Zweel, S. (2026). iobis/manual: v1.0 OBIS Manual bookdown version (v1.0). Zenodo. https://doi.org/10.5281/zenodo.20218567
