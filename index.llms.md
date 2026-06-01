@@ -27,6 +27,6 @@ It is important that our data providers, as well as all data users, are aware an
 
 ## How to Cite
 
-To cite this manual use the citation below (authors are in alphabetical order):
+To cite this manual use the citation below:
 
-Appeltans, W., Benson, A., Biddle, M., Bosch, S., Desmet, P., Gan, Y.-M., GOLDSTEIN, P., Kennedy, M., Lawrence, E., Lillis, H., Murray, T., Perez Perez, R., Provoost, P., Sean, D., Suominen, S., Vandepitte, L., & van Zweel, S. (2026). iobis/manual: v1.0 OBIS Manual bookdown version (v1.0). Zenodo. https://doi.org/10.5281/zenodo.20218567
+Lawrence, E., Benson, A., Biddle, M., Bosch, S., Desmet, P., Gan, Y.-M., Goldstein, P., Kennedy, M., Lillis, H., Murray, T., Perez Perez, R., Provoost, P., Sean, D., Suominen, S., Vandepitte, L., van Zweel, S., & Appeltans, W. (2026). iobis/manual: v1.0 OBIS Manual bookdown version (v1.0). Zenodo. https://doi.org/10.5281/zenodo.20218567
