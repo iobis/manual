@@ -1,7 +1,6 @@
 \AtBeginEnvironment{longtable}{\tiny}
 \AtBeginEnvironment{verbatim}{\scriptsize}
 \usepackage[utf8]{inputenc}
-% \DeclareUnicodeCharacter{3BC}{$\mu$}
 \usepackage{enumitem}
 \setlistdepth{20}
 \renewlist{itemize}{itemize}{20}
@@ -12,3 +11,29 @@
 \setlist[itemize,3]{label=*}
 \usepackage{fontspec}
 \setmainfont{TeX Gyre Heros}
+\usepackage{geometry}
+
+\makeatletter
+\renewcommand{\@maketitle}{}
+\makeatother
+
+\renewcommand{\maketitle}{%
+  % 1. Turn off headers/footers for this page
+  \thispagestyle{empty}%
+  
+  % 2. Paint the page background color safely
+  \pagecolor[rgb]{0.02,0.42,0.706}%
+  
+  % 3. Place the graphic relative to the absolute top-left corner of the paper canvas 
+  %    without messing with standard \newgeometry layout anchors.
+  \noindent
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[inner sep=0pt, shift={(0,0)}] at (current page.center) {%
+      \includegraphics[width=\paperwidth,height=\paperheight]{obis_manual_cover.pdf}%
+    };
+  \end{tikzpicture}%
+  
+  % 4. Flush the page cleanly and restore color styles for the next page
+  \clearpage
+  \nopagecolor
+}

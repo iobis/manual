@@ -70,3 +70,6 @@ quarto render
 ```
 
 Check that you have the most recent version of Quarto.
+
+> [!NOTE]
+> For the index, you should edit `index.qmd` instead of `index.Rmd`, which is deprecated.
