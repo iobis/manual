@@ -5,7 +5,7 @@ This page provides an overview of the Terms of Reference (ToR) that define the r
 **Content**
 
 - [OBIS Node Terms of Reference](#obis-nodes)
-- [OBIS Steering Group Terms of Reference](#obis-steering-group)
+- [OBIS Steering Group Terms of Reference](#obis-steering-group-sg)
 - [OBIS Co-Chair Terms of Reference](#obis-co-chairs)
 - [OBIS Secretariat Terms of Reference](#obis-secretariat)
 - [Terms of Reference for OBIS Coordination Groups](#obis-coordination-groups)
@@ -50,7 +50,7 @@ The procedure to become an OBIS node is as follows:
 - If you are not an existing NODC:
   - Email your [application form](http://iode.org/index.php?option=com_oe&task=viewDocumentRecord&docID=11793) to become an IODE Associate Data Unit (ADU), with a specific role as OBIS node. Applications for ADU membership in OBIS shall be reviewed by the IODE Officers in consultation with the IODE Steering Group for OBIS.
 
-## OBIS Steering Group
+## OBIS Steering Group (SG)
 
 **Required**
 
@@ -69,7 +69,7 @@ The procedure to become an OBIS node is as follows:
 **Membership**
 
 - Two Co-Chairs (2 seats), who are elected from the membership of the Steering Group
-- Co-Chairs of the OBIS coordination groups (6 seats). Appointments shall be for a term of 2 years, renewable for one further term.
+- Co-Chairs of the OBIS coordination groups (6 seats). Appointments shall be for a 2-year term with an optional rolling 2 year additional term subject to approval of SG-OBIS
 - OBIS nodes (up to 16 seats): OBIS node managers (or one alternate) who are not already represented as co-chairs or CG co-chairs. Each OBIS node should inform the OBIS secretariat of any changes to their representative(s) as soon as possible. OBIS nodes need reconfirmation after two 2-year terms
 - OBIS secretariat (2 seats) OBIS Programme manager as SG-OBIS technical secretary, and OBIS technical coordinator
 
@@ -138,7 +138,7 @@ Each of the coordination groups will have one or two Co-Chair(s) who will:
 4.  Report to and represent their group at the OBIS SG
 5.  Participate/report in OBIS Executive Committee meetings
 
-Each group should also maintain a secretary position to promote consistent notetaking across meetings.
+Coordination Group Co-chairs may hold a 2-year term with an optional rolling 2 year additional term subject to approval of SG-OBIS. It is recommended that the two Co-Chair roles be offset, so that each year there is one Co-Chair replaced. Each group should also maintain a secretary position to promote consistent notetaking across meetings.
 
 All coordination groups should use the same collaborative tools, proposed by the Secretariat and available in all countries, to maintain a clear record of group activities and progress accessible to the Secretariat and members of the OBIS Coordination Groups. The Coordination Group reports will be made public.
 
