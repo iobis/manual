@@ -10,7 +10,7 @@ Don’t know where to start? We suggest reading the OBIS manual where you will f
 - How to use the [OBIS MapTool](https://www.youtube.com/watch?v=XM23WEvE364&list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF&index=14)
 - A playlist dedicated to helping you [find and select controlled vocabulary](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul)
 
-  
+\
 
 ## Recent tutorials
 

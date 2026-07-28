@@ -1,6 +1,6 @@
 Notebooks make learning interactive — you can run code, experiment, and understand concepts as they unfold on the screen.
 
-  
+\
 
 ## Explore the notebooks
 

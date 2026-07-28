@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -74,10 +77,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6ac2aec46ad7f46b16024ee4409aa65c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -841,6 +844,37 @@ Otherwise, we recommend you use the parquet download which is available <a href=
 <a href="citing.html">How can I cite OBIS datasets and downloads?</a>
 </li>
 <li>
+<details>
+<summary>
+How can I track use of datasets I’ve published?
+</summary>
+<p>OBIS logs every download and exposes two API endpoints for accessing the counts. Both are read-only and require no authentication.</p>
+<p><strong>Yearly download counts</strong></p>
+<p>Use <code>/metrics</code> to see per-year totals for a dataset:</p>
+<p><code>https://api.obis.org/v3/metrics?datasetid=&lt;dataset-uuid&gt;</code></p>
+<p>Response:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"downloads"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span> <span class="dt">"year"</span><span class="fu">:</span> <span class="dv">2026</span><span class="fu">,</span> <span class="dt">"records"</span><span class="fu">:</span> <span class="dv">5586</span><span class="fu">,</span> <span class="dt">"downloads"</span><span class="fu">:</span> <span class="dv">138</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span> <span class="dt">"year"</span><span class="fu">:</span> <span class="dv">2025</span><span class="fu">,</span> <span class="dt">"records"</span><span class="fu">:</span> <span class="dv">12034</span><span class="fu">,</span> <span class="dt">"downloads"</span><span class="fu">:</span> <span class="dv">412</span> <span class="fu">}</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>records</code> is the total number of occurrence records served across all downloads that year. <code>downloads</code> is the number of distinct download events.</p>
+<p>You can also query at the OBIS node level with <code>nodeid=&lt;node-uuid&gt;</code> to see aggregate use across every dataset published by a node.</p>
+<p><strong>Downloads within a specific time window</strong></p>
+<p>For quarterly reports, annual reviews, or any window that doesn’t align to calendar years, use <code>/metrics/downloads</code>:</p>
+<p><code>https://api.obis.org/v3/metrics/downloads?datasetid=&lt;dataset-uuid&gt;&amp;startdate=2026-01-01&amp;enddate=2026-03-31</code></p>
+<p>Response:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">{</span> <span class="dt">"records"</span><span class="fu">:</span> <span class="dv">5586</span><span class="fu">,</span> <span class="dt">"downloads"</span><span class="fu">:</span> <span class="dv">138</span> <span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Both <code>startdate</code> and <code>enddate</code> are optional; leave them off to get totals across all history.</p>
+<p>To see every individual download event with its timestamp, add <code>groupby=time</code>:</p>
+<p><code>https://api.obis.org/v3/metrics/downloads?datasetid=&lt;dataset-uuid&gt;&amp;startdate=2026-01-01&amp;enddate=2026-03-31&amp;groupby=time</code></p>
+<p>This returns one entry per download, which is useful for spotting usage patterns — for example, how often the full dataset is being downloaded versus filtered subsets.</p>
+<p><strong>Finding your dataset UUID</strong></p>
+<p>Your dataset’s UUID appears in the URL of its OBIS dataset page (<code>https://obis.org/dataset/&lt;uuid&gt;</code>), and in the <code>id</code> field of <code>https://api.obis.org/v3/dataset?scientificname=&lt;name&gt;</code> search results.</p>
+</details>
+</li>
+<li>
 <a href="access.html#interpreting-downloaded-files-from-obis">What are the definitions of the field names in the downloads generated by OBIS?</a>
 </li>
 <li>
@@ -849,26 +883,26 @@ Otherwise, we recommend you use the parquet download which is available <a href=
 How do I obtain a taxon checklist for an area?
 </summary>
 <p>There are a few possible ways to obtain a taxon checklist for a given area. We will obtain a checklist of species in the Albain EEZ as an example. To do this we will create a bounding box around our area of interest, and then apply filters to simplify the geometry.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(mregions)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(robis)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(sf)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#obtain Albanian EEZ as sf</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  geom <span class="ot">&lt;-</span> <span class="fu">mr_shp</span>(<span class="at">key =</span> <span class="st">"MarineRegions:eez"</span>, <span class="at">filter =</span> <span class="st">"Albanian Exclusive Economic Zone"</span>, <span class="at">maxFeatures =</span> <span class="cn">NULL</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#get WKT for the bounding box</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  wkt <span class="ot">&lt;-</span> <span class="fu">st_as_text</span>(<span class="fu">st_as_sfc</span>(<span class="fu">st_bbox</span>(geom)), <span class="at">digits =</span> <span class="dv">6</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#fetch occurrences for bounding box</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  occ <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">geometry =</span> wkt) <span class="sc">%&gt;%</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"decimalLongitude"</span>, <span class="st">"decimalLatitude"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">#filter using geometry</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  occ_filtered <span class="ot">&lt;-</span> occ <span class="sc">%&gt;%</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">st_intersects</span>(geometry, geom, <span class="at">sparse =</span> <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>geometry)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#get taxa</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  alb_taxa <span class="ot">&lt;-</span> occ_filtered <span class="sc">%&gt;%</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(phylum, class, order, family, genus, species, scientificName) <span class="sc">%&gt;%</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(mregions)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(robis)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(sf)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#obtain Albanian EEZ as sf</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  geom <span class="ot">&lt;-</span> <span class="fu">mr_shp</span>(<span class="at">key =</span> <span class="st">"MarineRegions:eez"</span>, <span class="at">filter =</span> <span class="st">"Albanian Exclusive Economic Zone"</span>, <span class="at">maxFeatures =</span> <span class="cn">NULL</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#get WKT for the bounding box</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  wkt <span class="ot">&lt;-</span> <span class="fu">st_as_text</span>(<span class="fu">st_as_sfc</span>(<span class="fu">st_bbox</span>(geom)), <span class="at">digits =</span> <span class="dv">6</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#fetch occurrences for bounding box</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  occ <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">geometry =</span> wkt) <span class="sc">%&gt;%</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"decimalLongitude"</span>, <span class="st">"decimalLatitude"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">#filter using geometry</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  occ_filtered <span class="ot">&lt;-</span> occ <span class="sc">%&gt;%</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">st_intersects</span>(geometry, geom, <span class="at">sparse =</span> <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>geometry)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#get taxa</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  alb_taxa <span class="ot">&lt;-</span> occ_filtered <span class="sc">%&gt;%</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(phylum, class, order, family, genus, species, scientificName) <span class="sc">%&gt;%</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </li>
 <li>
@@ -898,48 +932,48 @@ How do I get data from multiple regions from OBIS?
 </summary>
 <p>If the areas OBIS currently uses does not work for your use case, then it is best to first define all the boundaries for the desired regions. OBIS can be queried using WKT polygons by providing a WKT string to the <code>geometry</code> parameter in the <code>robis::occurrence</code> function. <strong>HOWEVER</strong> there are some limitations with respect to polygon complexity, and if it is too complex you will likely receive the error <em>“The OBIS API was not able to process your request”</em>.</p>
 <p>For more complex spatial queries we recommend indexing OBIS and GBIF data against polygons and using (finely) gridded versions of these datasets to make the process faster. We note we have not yet properly documented this process, but see the example script produced by Pieter Provoost below. The script first indexes a polygon to the H3 spatial index, then queries a gridded version of OBIS+GBIF data on AWS to get the species list, and finally fetches taxonomy from WoRMS for every species, which may take some time.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(h3jsr)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sf_use_s2</span>(<span class="cn">FALSE</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Read WKT from text file, convert to sf, and index to H3 resolution 7</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># https://wktmap.com/?e6b28728</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>wkt <span class="ot">&lt;-</span> <span class="fu">read_file</span>(<span class="st">"wkt_21773.txt"</span>)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>geom <span class="ot">&lt;-</span> <span class="fu">st_as_sfc</span>(wkt, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>cells <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cell =</span> <span class="fu">polygon_to_cells</span>(geom, <span class="dv">7</span>)[[<span class="dv">1</span>]])</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up duckdb connection and register cells table</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">duckdb</span>())</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">dbSendQuery</span>(con, <span class="st">"install httpfs; load httpfs;"</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">duckdb_register</span>(con, <span class="st">"cells"</span>, cells)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Join cells list and gridded species dataset</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="st">  select species, AphiaID</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="st">  from cells</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="st">  inner join read_parquet('s3://obis-products/speciesgrids/h3_7/*') h3 on cells.cell = h3.h3_07</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="st">  group by species, AphiaID</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Add WoRMS taxonomy</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>id_batches <span class="ot">&lt;-</span> <span class="fu">split</span>(species<span class="sc">$</span>AphiaID, <span class="fu">ceiling</span>(<span class="fu">seq_along</span>(species<span class="sc">$</span>AphiaID) <span class="sc">/</span> <span class="dv">50</span>))</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>taxa_batches <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(id_batches, worrms<span class="sc">::</span>wm_record)</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(taxa_batches) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(AphiaID, scientificname, phylum, class, order, family, genus, <span class="at">scientificName =</span> scientificname)</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Mollusca species</span></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>mollusca <span class="ot">&lt;-</span> taxa <span class="sc">%&gt;%</span></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(phylum <span class="sc">==</span> <span class="st">"Mollusca"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(h3jsr)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sf_use_s2</span>(<span class="cn">FALSE</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Read WKT from text file, convert to sf, and index to H3 resolution 7</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># https://wktmap.com/?e6b28728</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>wkt <span class="ot">&lt;-</span> <span class="fu">read_file</span>(<span class="st">"wkt_21773.txt"</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>geom <span class="ot">&lt;-</span> <span class="fu">st_as_sfc</span>(wkt, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>cells <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cell =</span> <span class="fu">polygon_to_cells</span>(geom, <span class="dv">7</span>)[[<span class="dv">1</span>]])</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up duckdb connection and register cells table</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">duckdb</span>())</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="fu">dbSendQuery</span>(con, <span class="st">"install httpfs; load httpfs;"</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">duckdb_register</span>(con, <span class="st">"cells"</span>, cells)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Join cells list and gridded species dataset</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="st">  select species, AphiaID</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="st">  from cells</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="st">  inner join read_parquet('s3://obis-products/speciesgrids/h3_7/*') h3 on cells.cell = h3.h3_07</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="st">  group by species, AphiaID</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Add WoRMS taxonomy</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>id_batches <span class="ot">&lt;-</span> <span class="fu">split</span>(species<span class="sc">$</span>AphiaID, <span class="fu">ceiling</span>(<span class="fu">seq_along</span>(species<span class="sc">$</span>AphiaID) <span class="sc">/</span> <span class="dv">50</span>))</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>taxa_batches <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(id_batches, worrms<span class="sc">::</span>wm_record)</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(taxa_batches) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(AphiaID, scientificname, phylum, class, order, family, genus, <span class="at">scientificName =</span> scientificname)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Mollusca species</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>mollusca <span class="ot">&lt;-</span> taxa <span class="sc">%&gt;%</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(phylum <span class="sc">==</span> <span class="st">"Mollusca"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </li>
 </ul>

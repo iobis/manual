@@ -40,7 +40,7 @@ For OBIS, the following 4 terms are the bare minimum required: `Title`, `Citatio
     - `administrativeArea`
     - `postalCode`
     - `country`
-  - `phone`  
+  - `phone`\
   - `electronicMailAddress`
   - `onlineUrl` : personal website
   - `role`: used with `associatedParty` to indicate the role of the associated person or organization.

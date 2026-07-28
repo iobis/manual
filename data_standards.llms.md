@@ -21,7 +21,7 @@ Once your data has been published, you and others can [access](access.llms.md) d
 
 This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of [helpful resources](gethelp.llms.md). Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle.
 
-  
+\
 
 #### Who is responsible for each phase?
 

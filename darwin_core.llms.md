@@ -3,12 +3,12 @@
 **Contents**
 
 - [Introduction to Darwin Core](#introduction-to-darwin-core)
-- [Darwin Core terms](#darwin-core-dwc-terms)  
+- [Darwin Core terms](#darwin-core-dwc-terms)\
 - [Darwin Core guidelines](#darwin-core-guidelines)
   - [Taxonomy and identification](#taxonomy-and-identification)
-  - [Occurrence](#occurrence)  
-  - [Record level terms](#record-level-terms)  
-  - [Location](#location)  
+  - [Occurrence](#occurrence)\
+  - [Record level terms](#record-level-terms)\
+  - [Location](#location)\
   - [Event](#event)
   - [Time](#time)
   - [Sampling](#sampling)

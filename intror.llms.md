@@ -6,20 +6,20 @@
 
 - [What is R](#what_is_R)
 - [Installation](#installation)
-  - [RStudio basics](#rstudio)  
-  - [R packages](#packages)  
+  - [RStudio basics](#rstudio)\
+  - [R packages](#packages)\
 - [Data types](#datatypes)
-  - [Vectors](#vectors)  
-  - [Matrices](#matrices)  
-  - [Data frames](#dataframes)  
-  - [Lists](#lists)  
+  - [Vectors](#vectors)\
+  - [Matrices](#matrices)\
+  - [Data frames](#dataframes)\
+  - [Lists](#lists)\
 - [Writing and reading data](#writing-reading)
-  - [Delimited text files](#delimited)  
-  - [Excel files](#xlsx)  
+  - [Delimited text files](#delimited)\
+  - [Excel files](#xlsx)\
   - [ZIP files](#zip)
-  - [Shapefiles](#shapefiles)  
+  - [Shapefiles](#shapefiles)\
 - [Working with data](#working-with-data)
-  - [Inspecting data](#inspecting)  
+  - [Inspecting data](#inspecting)\
   - [Manipulating data](#manipulating)
     - [Filtering](#filtering)
     - [Reordering](#reordering)
@@ -28,7 +28,7 @@
     - [Aggregation](#aggregation)
     - [Restructuring (matrix to long format)](#restructuring1)
     - [Restructuring (long format to matrix)](#restructuring2)
-  - [Plotting](#plotting)  
+  - [Plotting](#plotting)\
   - [Mapping](#mapping)
 - [Online books, courses and other resources](#online)
 
@@ -104,10 +104,10 @@ vignette("ggplot2-specs")
 
 Generally, while doing programming in any programming language, you need to use various variables to store various information. The frequently used data types for storing variables are:
 
-- [Vectors](#vectors)  
-- [Matrices](#matrices)  
-- [Data frames](#dataframes)  
-- [Lists](#lists)  
+- [Vectors](#vectors)\
+- [Matrices](#matrices)\
+- [Data frames](#dataframes)\
+- [Lists](#lists)\
 - [Factors](#factors)
 
 ### Vectors
