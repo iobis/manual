@@ -2,12 +2,31 @@
 
 **Content**
 
+* [Introduction to identifiers](#introduction-to-identifiers)
 * [eventID](#eventid)
 * [occurrenceID](#occurrenceid)
 
+### Introduction to identifiers
+
+Using a unique identifier for each event, physical sample, or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance. For OBIS, the two main identifiers of concern are `occurrenceID` and `eventID`. However if you look at [TDWG's Darwin Core reference guide](https://dwc.tdwg.org/terms/), you may see that there are several other terms for identifiers. When creating identifiers for your data, or mapping an existing identifier field to Darwin Core vocabulary, you may hesitate between choosing between `eventID`, `occurrenceID`, `organismID`, `taxonID`, `scientificNameID`, `recordNumber`, `materialEntityID`, `materialSampleID`, and `catalogNumber`. Knowing the difference between these and when to use each may seem confusing at first. Review the table below for a quick comparison of definitions and when to use each DwC identifier term. Note this table is not exhaustive of all possible DwC identifer terms, but includes many that are relevant for occurrence records.
+
+|Identifier Name | Definition | When to Use |
+|----|----|----|
+| `eventID` | An identifier for the set of information associated with a dwc:Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set. | Used to distinguish between events in your data, *not* associated with an occurrence, e.g. a quadrat sample, an ROV deployment, a trolling event within a cruise |
+| `occurrenceID` | An identifier for the dwc:Occurrence (as opposed to a particular digital record of the dwc:Occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:occurrenceID globally unique. | Used to distinguish between occurrence records, i.e. when the presence of a taxon is detected (or not for absence records). If the same individual is detected multiple times, each detection will have unique a `occurrenceID` |
+| `organismID` | An identifier for the dwc:Organism instance (as opposed to a particular digital record of the dwc:Organism). May be a globally unique identifier or an identifier specific to the data set. | Use to identify a *specific* organism, an individual, or a specific group of organisms (e.g. a specific pod of cetaceans, a specific shark) |
+| `taxonID` | An identifier for the set of dwc:Taxon information. May be a global unique identifier or an identifier specific to the data set. | Used to identify a specific taxonomic rank, not commonly used in OBIS because `scientificNameID` is prioritized |
+| `scientificNameID` | An identifier for the nomenclatural (not taxonomic) details of a scientific name. | Used to provide an identifier for the name provided to `scientificName`. For OBIS, WoRMS LSIDs are recommended for this field |
+| `recordNumber` |  An identifier given to the dwc:Occurrence at the time it was recorded. Often serves as a link between field notes and a dwc:Occurrence record, such as a specimen collector's number. | Typically used when the occurrence is associated with a collected specimen. Different from `occurrenceID` because it may not be globally unique, whereas `occurrenceID` must be unique |
+| `materialEntityID` | An identifier for a particular instance of a dwc:MaterialEntity. Intended to uniquely and persistently identify a particular dwc:MaterialEntity within some context. | Used to identfy a physical object (i.e. the MaterialEntity: any kind of physical sample, preserved specimen, fossil, specific DNA molecule, etc.), instead of a digital representation of the object. E.g. an identifer for a specific tissue sample within an organization or institution |
+| `materialSampleID` | An identifier for the dwc:MaterialSample (as opposed to a particular digital record of the dwc:MaterialSample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:materialSampleID globally unique.| Used to identify a physical sample, can be whole or part of an entity, e.g. sediment sample, a tissue sample, a whole preserved organism in a collection. Different from `catalogNumber` and `recordNumber` because it must be globally unique. |
+| `catalogNumber` | An identifier (preferably unique) for the record within the data set or collection. | Usually used as an identifier given for a specimen within a musuem collection |
+
+Not every one of these identifiers will be relevant for your dataset, but remember that `eventID`, `occurenceID`, and `scientificNameID` are always required for datasets published to OBIS. See the below recommendations for populating `eventID` and `occurenceID`. `scientificNameID` guidelines can be found [here](darwin_core.html#taxonomy-and-identification).
+
 ### eventID
 
-Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance.  `eventID` is an identifier for an individual sampling or observation event, whereas `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (`eventIDs`).
+`eventID` is an identifier for an individual sampling or observation event, whereas `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (`eventIDs`).
 
 `eventID` can be used for replicated samples or sub-samples. It is important to make sure each replicate sample receives a unique `eventID`, which could be based on the unique sample ID in your dataset. Sample ID can also be recorded in `materialSampleID`, as OBIS does not need to have separate `eventID`s and `materialSampleIDs`. Rather OBIS can treat these two terms as equivalent. Be sure to still fill in the `eventID` field if you want to use `materialSampleID`, as OBIS only uses `eventID` and `parentEventID` for structuring datasets, not sample ID. This does not prevent you from using the field if you would like to.
 
