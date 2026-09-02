@@ -25,7 +25,7 @@ The GOOS approach to data management is aligned with open data and FAIR (Findabl
 
 **Please follow these practices carefully, as EOV data FAIRness relies on compliance[^2] with the guidelines below.**
 
-<details class="callout-box" id="what-is-metadata"><summary><h2 id="glossary">Glossary</h2></summary>
+<details class="collapsible" id="what-is-metadata"><summary><h2 id="glossary">Glossary</h2></summary>
 
 <b>Metadata:</b> data or information that describes data. It's information that helps others find, understand, and properly use data - i.e. the "Who, What, When, and Where". In the context of EOV monitoring, this can refer to the information about a monitoring effort (e.g. programme, project, institution, etc.) or about the data produced from that monitoring effort.
 <br><br>
@@ -34,8 +34,8 @@ The GOOS approach to data management is aligned with open data and FAIR (Findabl
 <b>Data Producer:</b> the entity responsible for generating or collecting EOV information. Can be an organization, project, institution, research group, or monitoring program. Metadata about data producers describes the <b>source</b> of the data, e.g. program name, geographic coverage, generic sampling approaches, sampling frequency.
 </details>
 
-<div class="bordered-box">
-<h2>Two Steps to Contribute</h2>
+## Two Steps to Contribute
+
 The main steps to contribute data to the global system are:
 <ol>
 <li><b>Become Discoverable</b>: add your monitoring programme metadata to the BioEco Portal</li>
@@ -50,7 +50,6 @@ The main steps to contribute data to the global system are:
 </ol>
 
 Making your data producer discoverable by adding your metadata to the BioEco Portal is the <b>minimum step</b>. Regardless of where the actual data is stored, metadata of its existence must be findable.
-</div>
 
 Please note the differentiation between the **EOV datasets** and the **EOV data producers** throughout this document (see <a href="#what-is-metadata">Glossary</a>). This distinction is made to emphasize that both the data and its source \- the data producer \- need to be managed and made visible.
 
@@ -77,7 +76,7 @@ Detailed metadata about the data producer is essential to help others find and u
 
 > If you're technically savvy and comfortable with JSON-LD files and sitemaps, you can create the metadata files yourself. See the [ODIS Book](https://book.odis.org/gettingStarted.html) for detailed guidance.
 
-<details class="bordered-box">
+<details class="collapsible">
 <summary><h4 id="minimum-required-metadata">Minimum required metadata for data producers</h4></summary>
 
 <table>
@@ -103,7 +102,7 @@ Detailed metadata about the data producer is essential to help others find and u
 
 We encourage the “Publish once harvest many times” principle: publish your data to one trusted repository, and it will flow automatically to connected systems. Where you publish depends on your data type, but the repository must be interoperable with the data systems used by GOOS, IODE, and other IOC entities. OBIS is the recommended repository for all BioEco EOV observation-based data.
 
-<details class="bordered-box" id="what-is-metadata">
+<details class="collapsible">
 <summary><h4 id="why-obis">Why OBIS?</h4></summary>
 All data in OBIS follows the international  <a href="https://dwc.tdwg.org/"><b>Darwin Core</b></a> (DwC) data standard, which ensures datasets are consistent, interoperable, and discoverable across global systems, including with other biological domains like terrestrial systems represented in GBIF. You don't need to be familiar with the standard to get started, but we recommend using <b><a href="https://dwc.tdwg.org/terms/">using DwC terms</a> as column names</b> in your data files from the outset if possible, as this will simplify the process.
 
@@ -125,7 +124,7 @@ There are three main scenarios for BioEco observational data:
 
 As opposed to data producer metadata, metadata describing the observational dataset should be **submitted directly** to the repository where the data is hosted (e.g. OBIS). Dataset metadata may include but is not limited to information about the taxonomic coverage, temporal and geographic area, sampling methods used, people involved, and the project producing the data (including identifiers to link the dataset with the data producer).
 
-<details class="bordered-box">
+<details class="collapsible">
 <summary><h4>Minimum required <u>metadata</u> for OBIS observation datasets</h4></summary>
 <table>
    <thead>
@@ -147,7 +146,7 @@ As opposed to data producer metadata, metadata describing the observational data
 
 All BioEco data published to OBIS must include three core elements: **when** the observation occurred, **where** it occurred, and **what** was observed (i.e. a taxonomic identification). These can be approximate - a date range, a geometry text string for a polygon or line, or a higher taxonomic rank are all acceptable. See the table below for details on the minimum requirements.
 
-<details class="bordered-box">
+<details class="collapsible">
 <summary><h4>Minimum required <u>data</u> for OBIS observation datasets</h4></summary>
 <table>
    <thead>
@@ -166,7 +165,7 @@ All BioEco data published to OBIS must include three core elements: **when** the
 
 > Note: Data published to OBIS can be **simultaneously published to GBIF (Global Biodiversity Information Facility),** so you do not need to submit separate datasets! See the [OBIS Manual](https://manual.obis.org/data_sharing.html#publish-obis-data-to-gbif) for more details, or contact OBIS Node who is helping you publish your data.
 
-<details class="bordered-box" id="what-is-metadata">
+<details class="collapsible">
 <summary><h4 id="how-darwin-core-structures-data">How Darwin Core structures data</h4></summary>
 
 DwC organises data into linked tables. Tables are connected by shared identifiers (eventIDs and occurrenceIDs), so data from different tables can be reliably combined. See Figure 3 for an example.
@@ -200,7 +199,7 @@ If your portal isn't already connected, this typically involves a workflow that:
 
 For help setting this up, contact the OBIS Secretariat at ([helpdesk@obis.org](mailto:helpdesk@obis.org)), or a regional/thematic [OBIS Node](https://obis.org/contact/). If you publish data from systems like NCEI or ERDDAP, becoming an OBIS Node (or partnering with one) may be the best path forward. The OBIS Secretariat can  guide you through [the process](https://manual.obis.org/nodes.html#tor-of-obis-nodes), or connect you with an appropriate OBIS node (Figure 4).
 
-<details class="bordered-box">
+<details class="collapsible">
 <summary><h4>Already publishing to EMODnet or ICES?</h4></summary>
 
 EMODnet Biology is managed through EurOBIS, a regional OBIS node - which means that data in EMODnet Biology is already flowing into OBIS. No additional steps are needed.

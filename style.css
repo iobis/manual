@@ -206,3 +206,16 @@ table {
         max-width: 1140px;
     }
 } */
+
+/* Collapsible boxes: add class="collapsible" to a <details> element */
+.collapsible {
+    padding: 5px;
+    margin: 2px 0;
+    border-radius: 5px;
+}
+.collapsible summary h2,
+.collapsible summary h3,
+.collapsible summary h4 {
+    display: inline;
+    margin: 0;
+}
