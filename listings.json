@@ -1,7 +1,8 @@
 [
   {
-    "listing": "/tutorials.html",
+    "listing": "/obis-tutorials.html",
     "items": [
+      "/tutorials/eov-data/index.html",
       "/tutorials/duckdb-part1/index.html",
       "/tutorials/duckdb-part2/index.html",
       "/tutorials/duckdb-part3/index.html",
@@ -14,8 +15,9 @@
     "items": []
   },
   {
-    "listing": "/obis-tutorials.html",
+    "listing": "/tutorials.html",
     "items": [
+      "/tutorials/eov-data/index.html",
       "/tutorials/duckdb-part1/index.html",
       "/tutorials/duckdb-part2/index.html",
       "/tutorials/duckdb-part3/index.html",

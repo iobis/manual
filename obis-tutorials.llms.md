@@ -1,3 +1,9 @@
+### [EOV Data Management](tutorials/eov-data/index.llms.md)
+
+Guidance on how to manage BioEco EOV data
+
+Jul 31, 2026
+
 ### [Using DuckDB to query the OBIS occurrence dataset - Part 1](tutorials/duckdb-part1/index.llms.md)
 
 OBIS now has a occurrence dataset in GeoParquet format, but to work with large datasets you need the right tools. Here we explore how you can use DuckDB to (very) quickly retrieve data from this resource.

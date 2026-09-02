@@ -14,6 +14,12 @@ Don’t know where to start? We suggest reading the OBIS manual where you will f
 
 ## Recent tutorials
 
+### [EOV Data Management](tutorials/eov-data/index.llms.md)
+
+Guidance on how to manage BioEco EOV data
+
+Jul 31, 2026
+
 ### [Using DuckDB to query the OBIS occurrence dataset - Part 1](tutorials/duckdb-part1/index.llms.md)
 
 OBIS now has a occurrence dataset in GeoParquet format, but to work with large datasets you need the right tools. Here we explore how you can use DuckDB to (very) quickly retrieve data from this resource.
@@ -31,9 +37,3 @@ Sep 26, 2025
 OBIS now has a occurrence dataset in GeoParquet format, but to work with large datasets you need the right tools. Here we explore how you can use DuckDB to (very) quickly retrieve data from this resource.
 
 Sep 26, 2025
-
-### [Using the Parquet format with OBIS data](tutorials/arrow-obis/index.llms.md)
-
-Working with large datasets can be hard due to memory constraints, but using Parquet files can make it possible.
-
-Aug 1, 2023
