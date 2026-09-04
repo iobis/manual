@@ -104,6 +104,8 @@ website:
       contents: 
         - text: "All tutorials from OBIS"
           href: "obis-tutorials.qmd"
+        - text: "OBIS training slide decks"
+          href: "https://iobis.github.io/obis_edna_slides/"
         # - section: "From OBIS"
           # contents:
           #   - text: "Data quality"
