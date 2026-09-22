@@ -52,16 +52,10 @@ jobs:
           Rscript sanitize.R
           quarto render --profile book --to pdf --no-clean
 
-      # 8. Create custom domain mapping in the built tracking folder
-      - name: Create CNAME file
-        uses: finnp/create-file-action@master
-        env:
-          FILE_NAME: "./docs/CNAME"
-          FILE_DATA: "manual.obis.org"
-
-      # 9. Deploy the completely compiled /docs directory (containing HTML + PDF) to gh-pages
+      # 8. Deploy the completely compiled /docs directory (containing HTML + PDF) to gh-pages
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
+          cname: manual.obis.org
