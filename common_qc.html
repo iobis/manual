@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -553,7 +553,7 @@ ul.task-list li input[type="checkbox"] {
 <p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:darkblue;overflow:visible;position:relative;"><path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"></path></svg> Always be sure to fill in the <code>georeferenceSources</code> field to indicate the source(s) you used to obtain locality information when appropriate</p>
 </div>
 <ul>
-<li>If you have a set of points, lines, or polygons (perhaps from the Map tool), you can find the centroid of the features using either <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> or <a href="https://postgis.net/docs/ST_PointOnSurface.html">PostGIS</a>, and then enter this coordinate into the <code>decimalLatitude</code> and <code>decimalLongitude</code> fields. This PostGIS guideline will help you select a centroid that is guaranteed to fall within your designated area.</li>
+<li>If you have a set of points, lines, or polygons (perhaps from the Map tool), you can calculate a single representative coordinate and enter it into the <code>decimalLatitude</code> and <code>decimalLongitude</code> fields. <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> returns the centroid of the shape’s convex hull, along with a <code>coordinateUncertaintyInMeters</code> large enough to cover the whole shape. Note that for concave or multi-part shapes (e.g., a crescent-shaped bay or a group of islands) this point can fall outside the shape itself. To get a point that is guaranteed to fall within the area, use PostGIS <a href="https://postgis.net/docs/ST_PointOnSurface.html">ST_PointOnSurface</a>, and calculate <code>coordinateUncertaintyInMeters</code> as the distance from that point to the farthest part of the shape.</li>
 <li>Estimate <code>coordinateUncertaintyinMeters</code> that is wide enough to cover the area
 <ul>
 <li>If the location is provided as an array or WKT format, you can use R package <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">obistools::calculate_centroid</a> to obtain coordinate uncertainty.</li>
