@@ -8,6 +8,8 @@
   - [How to use Gazetteers to obtain geolocation information](#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates)
 - [Low confidence taxonomic information](#low-confidence-taxonomic-identification)
 - [Uncertain measurements](#uncertain-measurements)
+- [Non-marine species](#non-marine-species)
+- [Hidden characters and non-breaking spaces](#hidden-characters-and-non-breaking-spaces)
 
 ## Uncertain temporal range
 
@@ -198,3 +200,17 @@ Cross-referencing with IRMNG, if we search for the genus-species, the species is
 ![](images/nonmarine-spp-irmng.png)
 
 If you have species that are marked as non-marine in these registers but are either supposed to be marine, or were found in a marine environment, then you should contact WoRMS to discuss adding it to the register. For additions and/or edits to environmental or distribution records of a species, contact the WoRMS Data Management Team at info@marinespecies.org with your request along with your record or publication substantiating the addition/change.
+
+## Hidden characters and non-breaking spaces
+
+Some characters look identical to a normal space but are not. The most common is the non-breaking space (Unicode `U+00A0`), which often ends up in data copied from web pages, Word documents, or PDFs. Because it is a different character, a value like `Abra alba` containing a non-breaking space will not match the same name typed with a normal space. This can cause taxon names to fail matching against WoRMS, and can break vocabulary matching or duplicate checks on any other field.
+
+OBIS removes leading and trailing whitespace from values during processing, but does not change spaces *inside* a value, so these need to be fixed before publishing. See [this GBIF discussion](https://discourse.gbif.org/t/a-nbsp-mystery/4315) for a real-world example.
+
+To find and replace non-breaking spaces:
+
+- **R:** `grepl("\u00a0", df$scientificName)` finds affected rows; `df[] <- lapply(df, function(x) if (is.character(x)) gsub("\u00a0", " ", x) else x)` replaces them in all text columns.
+- **Python (pandas):** `df = df.replace("\u00a0", " ", regex=True)`
+- **Excel:** `=SUBSTITUTE(A2, UNICHAR(160), " ")`, or use Find & Replace and type the non-breaking space in the Find box with Alt+0160 (Windows) or Option+Space (Mac).
+
+Other invisible characters, such as tabs, line breaks within a cell, and zero-width spaces (`U+200B`), can cause similar problems and can be found the same way.

@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -500,6 +500,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#individualcount" id="toc-individualcount" class="nav-link" data-scroll-target="#individualcount">individualCount</a></li>
   </ul></li>
   <li><a href="#non-marine-species" id="toc-non-marine-species" class="nav-link" data-scroll-target="#non-marine-species">Non-marine species</a></li>
+  <li><a href="#hidden-characters-and-non-breaking-spaces" id="toc-hidden-characters-and-non-breaking-spaces" class="nav-link" data-scroll-target="#hidden-characters-and-non-breaking-spaces">Hidden characters and non-breaking spaces</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iobis/manual/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -522,6 +523,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><a href="#low-confidence-taxonomic-identification">Low confidence taxonomic information</a></li>
 <li><a href="#uncertain-measurements">Uncertain measurements</a></li>
+<li><a href="#non-marine-species">Non-marine species</a></li>
+<li><a href="#hidden-characters-and-non-breaking-spaces">Hidden characters and non-breaking spaces</a></li>
 </ul>
 <section id="uncertain-temporal-range" class="level2">
 <h2 class="anchored" data-anchor-id="uncertain-temporal-range">Uncertain temporal range</h2>
@@ -781,6 +784,18 @@ ul.task-list li input[type="checkbox"] {
 <p>Cross-referencing with IRMNG, if we search for the genus-species, the species is not even found, an indication that it is not in the database (and also why it can be good to check multiple sources). Searching for just the genus, we can see that marine and brackish are stricken out, indicating the species is not marine.</p>
 <p><img src="images/nonmarine-spp-irmng.png" class="img-fluid" style="width:80.0%"></p>
 <p>If you have species that are marked as non-marine in these registers but are either supposed to be marine, or were found in a marine environment, then you should contact WoRMS to discuss adding it to the register. For additions and/or edits to environmental or distribution records of a species, contact the WoRMS Data Management Team at info@marinespecies.org with your request along with your record or publication substantiating the addition/change.</p>
+</section>
+<section id="hidden-characters-and-non-breaking-spaces" class="level2">
+<h2 class="anchored" data-anchor-id="hidden-characters-and-non-breaking-spaces">Hidden characters and non-breaking spaces</h2>
+<p>Some characters look identical to a normal space but are not. The most common is the non-breaking space (Unicode <code>U+00A0</code>), which often ends up in data copied from web pages, Word documents, or PDFs. Because it is a different character, a value like <code>Abra alba</code> containing a non-breaking space will not match the same name typed with a normal space. This can cause taxon names to fail matching against WoRMS, and can break vocabulary matching or duplicate checks on any other field.</p>
+<p>OBIS removes leading and trailing whitespace from values during processing, but does not change spaces <em>inside</em> a value, so these need to be fixed before publishing. See <a href="https://discourse.gbif.org/t/a-nbsp-mystery/4315">this GBIF discussion</a> for a real-world example.</p>
+<p>To find and replace non-breaking spaces:</p>
+<ul>
+<li><strong>R:</strong> <code>grepl("\u00a0", df$scientificName)</code> finds affected rows; <code>df[] &lt;- lapply(df, function(x) if (is.character(x)) gsub("\u00a0", " ", x) else x)</code> replaces them in all text columns.</li>
+<li><strong>Python (pandas):</strong> <code>df = df.replace("\u00a0", " ", regex=True)</code></li>
+<li><strong>Excel:</strong> <code>=SUBSTITUTE(A2, UNICHAR(160), " ")</code>, or use Find &amp; Replace and type the non-breaking space in the Find box with Alt+0160 (Windows) or Option+Space (Mac).</li>
+</ul>
+<p>Other invisible characters, such as tabs, line breaks within a cell, and zero-width spaces (<code>U+200B</code>), can cause similar problems and can be found the same way.</p>
 
 
 </section>
