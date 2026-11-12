@@ -130,12 +130,15 @@ For `organismQuantity` and `sampleSizeValue` in eDNA datasets, the quantities re
 
 `taxonConceptID` should include the taxonomic ID of the sequence (non-Linnean). Often genetic sequences can be assigned an ID linked to a reference database that is not a linnean name. These taxonomic names or IDs from other taxonomic databases (like the NCBI taxonomic database) can be recorded in this field. For example: NCBI:txid9771. The name linked to this ID can then be recorded in the field `verbatimIdentification`.
 
-`samplingProtocol` can contain free-text that briefly describes the methods used to obtain the sample, or a link to a protocol that is recorded elsewhere.
+`samplingProtocol` can contain free-text that briefly describes the methods used to obtain the sample, or a link to a protocol that is recorded elsewhere. In DNA datasets, this link should be related to the **sample** collection, not the methodology for the DNA analysis or bioinformatics pipelines (see the DNA section below for where to put links to these methods).
 
 **DNA Derived Data extension** The DNADerivedData extension is meant to capture information related to the sampled DNA, including sampling, processing, and other bioinformatic methods. The following (free-text) terms are required or highly recommended for eDNA and metabarcoding datasets. Note that some terms will be different for qPCR data (see [below](#compiling-qpcr-datasets))
 
 - DNA Derived \| DwC: DNA_sequence
 - DNA Derived \| DwC: sop
+- DNA Derived \| DwC: nucleic_acid_ext
+- DNA Derived \| DwC: nucleic_acid_amp
+- DNA Derived \| DwC: samp_size
 - DNA Derived \| DwC: target_gene
 - DNA Derived \| DwC: target_subfragment
 - DNA Derived \| DwC: pcr_primer_forward
@@ -159,6 +162,12 @@ For `organismQuantity` and `sampleSizeValue` in eDNA datasets, the quantities re
 For a complete list of terms you can map to, see [the DwC DNA Derived Data extension page](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml). See the [examples below](dna_data.llms.md#edna--dna-derived-data) for use case examples. The Marine Biological Data Mobilization Workshop also has a [tutorial](https://ioos.github.io/bio_mobilization_workshop/edna-extension.html) for this type of data.
 
 `DNA_sequence` is the most important field, where the ASV/OTU sequence will be recorded. This field can then be searched with sequence alignment methods to, for example, find closely related sequences recorded in other studies, and will allow very powerful data comparison and analysis in the future. It will also make your sequence available in the [OBIS sequence search tool](https://sequence.obis.org/).
+
+`sop` is used to provide a link to the standard operating procedures (SOP) used in assembly and/or annotation of genomes, metagenomes or environmental sequences - e.g., a link to the bioinformatics pipeline.
+
+`nucleic_acid_ext` and `nucleic_acid_amp` are used to provide links to a reference or a SOP for the sequencing protocols, for the extraction (`nucleic_acid_ext`) and amplification (`nucleic_acid_amp`) of the DNA.
+
+`samp_size` should be used to record the amount or size of sample (volume, mass or area) that was collected. Use this DNA table field instead of using `sampleSizeValue` in the Event table, because we are already using `sampleSizeValue` in the Occurrence table and the same field cannot be used in two different tables.
 
 The remaining metadata fields will help the person accessing the data to filter data of interest (e.g. specific genetic region with `target_gene`, `target_subfragment`, or `pcr_primer` fields), link to the public sequence databases with the MixS specific fields (e.g. `env_` fields), and evaluate the reliability of the sequence annotation method (e.g. `otu_` fields).
 
