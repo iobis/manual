@@ -38,7 +38,7 @@ if (knitr::is_html_output()) {
             margin-top: 5px; margin-bottom: 20px;"
   )
 } else {
-  cat("[Click here to download the checklist](https://github.com/iobis/manual/raw/refs/heads/master/docs/OBIS-termchecklist.csv)\n\n")
+  cat("[Click here to download the checklist](https://manual.obis.org/OBIS-termchecklist.csv)\n\n")
 }
 
 # Highlight x1 values - HTML mode only (markdown bold won't work in LaTeX)
