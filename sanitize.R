@@ -24,36 +24,7 @@ sanitize_content <- function(content) {
   content <- gsub("\\| fig.cap =", "| fig.cap:", content)
 
 
-  # 5. Wrap markdown tables in scrollable div
-  lines <- strsplit(content, "\n")[[1]]
-  result <- character()
-  i <- 1
-
-  while (i <= length(lines)) {
-    if (grepl("^\\s*\\|", lines[i])) {
-      # Collect the full table block
-      block <- character()
-      while (i <= length(lines) && grepl("^\\s*\\|", lines[i])) {
-        block <- c(block, lines[i])
-        i <- i + 1
-      }
-      # Only wrap if it has a separator row (real table)
-      if (any(grepl("^\\s*\\|[\\s|:|-]+\\|\\s*$", block, perl = TRUE))) {
-        result <- c(result,
-          "::: {style=\"overflow-x: auto;\"}",
-          block,
-          ":::"
-        )
-      } else {
-        result <- c(result, block)
-      }
-    } else {
-      result <- c(result, lines[i])
-      i <- i + 1
-    }
-  }
-
-  paste(result, collapse = "\n")
+  content
 }
 
 sanitize_callouts <- function(content) {
