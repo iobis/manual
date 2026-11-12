@@ -17,11 +17,14 @@ The contribute to the manual, please follow these steps:
 
 ## Build a PDF
 
-```r
-install.packages("webshot")
-install.packages("downloadthis")
-bookdown::render_book("index.Rmd", "bookdown::pdf_book")
+The PDF is built with Quarto's `book` profile (`_quarto-book.yml`), which needs TinyTeX (`quarto install tinytex`). The book profile does not run `sanitize.R` itself, so run it first:
+
+``` bash
+Rscript sanitize.R
+quarto render --profile book --to pdf --no-clean
 ```
+
+This is the same sequence the deploy workflow (`.github/workflows/deploy.yml`) runs.
 
 ## Quarto patch
 
@@ -70,6 +73,3 @@ quarto render
 ```
 
 Check that you have the most recent version of Quarto.
-
-> [!NOTE]
-> For the index, you should edit `index.qmd` instead of `index.Rmd`, which is deprecated.
