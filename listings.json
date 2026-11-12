@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/obis-tutorials.html",
+    "listing": "/tutorials.html",
     "items": [
       "/tutorials/eov-data/index.html",
       "/tutorials/duckdb-part1/index.html",
@@ -15,7 +15,7 @@
     "items": []
   },
   {
-    "listing": "/tutorials.html",
+    "listing": "/obis-tutorials.html",
     "items": [
       "/tutorials/eov-data/index.html",
       "/tutorials/duckdb-part1/index.html",
