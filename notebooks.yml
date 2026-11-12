@@ -25,3 +25,21 @@
   date: 2024-10-10
   categories: [R, spatial]
   image: "notebooks/thumbnails/r-generic-thumb.png"
+
+- title: "Accessing and using `obistherm` with R"
+  description: |
+    In this notebook we will explore how to use the `obistherm` dataset with R.
+  path: "https://github.com/iobis/obistherm/blob/main/notebooks/data_access_r.qmd"
+  author: "OBIS"
+  date: 2026-11-12
+  categories: [R, spatial, derived dataset]
+  image: "notebooks/thumbnails/r-generic-thumb.png"
+
+- title: "Accessing and using `obistherm` with Python"
+  description: |
+    In this notebook we will explore how to use the `obistherm` dataset with Python.
+  path: "https://github.com/iobis/obistherm/blob/main/notebooks/data_access_py.ipynb"
+  author: "OBIS"
+  date: 2026-11-12
+  categories: [Python, spatial, derived dataset]
+  image: "notebooks/thumbnails/py-generic-thumb.png"
