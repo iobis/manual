@@ -15,7 +15,7 @@ The general data formatting workflow you can follow is:
    * Rename data columns to match [Darwin Core terms](https://dwc.tdwg.org/terms/)
 5. Organize measurements, facts, and information
    * Structure measurement and fact data in long format  in the [extendedMeasurementOrFact table](format_emof.html)
-6. Identify [controlled vocabularies](vocabulary.md) to include with your measurements
+6. Identify [controlled vocabularies](vocabulary.html) to include with your measurements
    * Ensure measurements and facts reference appropriate controlled vocabularies for interoperability and clarity
 7. Standardize [other fields](common_formatissues.html)
    * Verify that all other fields, such as dates and coordinates, conform to standards
