@@ -1,6 +1,6 @@
 # Dataset Examples: ENV-DATA
 
-## Contents {.unlisted .unnumbered}
+## Contents
 
 - [Fish abundance & distribution](#fish-abundance-and-distribution)
 - [Hard coral cover & composition](#hard-coral-cover-and-composition)
@@ -16,7 +16,7 @@
 - [Seagrass cover & composition](#seagrass-cover-and-composition)
 - [Zooplankton biomass & diversity](#zooplankton-biomass-and-diversity)
 
-### Special data types {.unlisted .unnumbered}
+### Special data types
 
 - [DNA derived data](dna_data.html)
   - [eDNA data from Monterey Bay, California](dna_data.html#edna-data-from-monterey-bay-california)
@@ -25,15 +25,15 @@
 - [Tracking data](other_data_types.html#tracking-data.html)
 - [Habitat](other_data_types.html#habitat-data)
 
-#### Fish abundance and distribution {.unlisted .unnumbered}
+#### Fish abundance and distribution
 
 (example coming soon)
 
-#### Hard coral cover and composition {.unlisted .unnumbered}
+#### Hard coral cover and composition
 
 (example coming soon)
 
-#### Invertebrates abundance and distribution {.unlisted .unnumbered}
+#### Invertebrates abundance and distribution
 
 This example is based on a biodiversity dataset that uses a sampling grid to estimate percent cover of sessile invertebrates and algae titled ["MARINe/PISCO: Intertidal: MARINe Coastal Biodiversity Surveys: Point Contact Surveys Summarized"](https://obis.org/dataset/bb638343-bbc9-464d-88d8-18d9ba29ecdd).
 
@@ -89,7 +89,7 @@ Finally, we create the eMoF table. Although the percent cover was recorded in th
 | 3003_2003-08-25_2003-08-25_2 | Coverage (in assayed sample) of biological entity specified elsewhere of the bed | http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/ | 0 | percent | http://vocab.nerc.ac.uk/collection/P06/current/UPCT/ |
 | 3003_2003-08-25_2003-08-25_10 | Coverage (in assayed sample) of biological entity specified elsewhere of the bed | http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/ | 6.273062731 | percent | http://vocab.nerc.ac.uk/collection/P06/current/UPCT/ |
 
-#### Macroalgae canopy cover and composition {.unlisted .unnumbered}
+#### Macroalgae canopy cover and composition
 
 In this section we will encode a fictional macroalgal survey dataset (Figure 9.1) into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an extendedMeasurementOrFact extension.
 
@@ -144,11 +144,11 @@ And finally there is the extendedMeasurementOrFact extension table, which has at
 | transect_2 | occ_5 | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 4 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
 | transect_2 | occ_6 | cover | <http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL10/> | 16 || percent | <http://vocab.nerc.ac.uk/collection/P06/current/UPCT> |
 
-#### Mangroves cover and composition {.unlisted .unnumbered}
+#### Mangroves cover and composition
 
 (example coming soon)
 
-#### Marine birds abundance and distribution {.unlisted .unnumbered}
+#### Marine birds abundance and distribution
 
 The example for ENV-DATA collected with marine bird sightings/occurrences is based on the dataset ["RV Investigator Voyage IN2017_V02 Seabird Observations, Australia (2017)"](https://www.marine.csiro.au/ipt/resource?r=in2017_v02_wov). In this dataset, seabird sightings were recorded continuously during daylight hours during a voyage to recover and redeploy moorings at the SOTS site, southwest of Tasmania, Australia, in March 2017. Observations were made from c.30 minutes before sunrise to c.30 minutes after sunset, extending to 300m in the forward quadrant with the best viewing conditions. There were 1200 observations from 38 species of birds along with 3 cetacean species and one seal. This example will focus on the ENV-DATA associated with the bird sightings. The most frequently sighted bird species were *Puﬃnus tenuirostris* (Short-tailed Shearwater) and *Pachyptila turtur* (Fairy Prion).
 
@@ -199,7 +199,7 @@ As shown in previous examples, the MeasurementOrFact extension table contains ab
 | in2017_v02_00998 | in2017_v02_00998-wind_direction   | Wind direction (deg)            | <http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01>        | 283                   | NA                                                | degrees                         | <http://vocab.nerc.ac.uk/collection/P06/current/UABB> |
 | in2017_v02_00998 | in2017_v02_00998-wind_speed       | Wind Speed (knt)                | <http://vocab.nerc.ac.uk/collection/P01/current/ESSAZZ01>        | 5.49                  | NA                                                | Knots (nautical miles per hour) | <http://vocab.nerc.ac.uk/collection/P06/current/UKNT> |
 
-#### Marine mammals abundance and distribution {.unlisted .unnumbered}
+#### Marine mammals abundance and distribution
 
 In this section we will explore how to encode a marine mammal survey dataset into Darwin Core using the ENV-DATA approach. As an example, sections of the actual dataset [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans) are used.
 
@@ -270,9 +270,9 @@ And finally, the extendedMeasurementOrFact extension table has attributes of the
 | **Madeira:Cruise-001**:***Transect-01:Pos-0001*** | ***CIIMAR-CETUS-0001*** | Number of small ships (<20m) | | 0  |     |     |
 | **Madeira:Cruise-001**:***Transect-01:Pos-0001*** | ***CIIMAR-CETUS-0001*** | Vessel speed | <http://vocab.nerc.ac.uk/collection/P01/current/APSAGP01/> | 16 | Knots (nautical miles per hour) | <http://vocab.nerc.ac.uk/collection/P06/current/UKNT/> |
 
-#### Marine turtles abundance and distribution {.unlisted .unnumbered}
+#### Marine turtles abundance and distribution
 
-##### Survey and sighting data {.unlisted .unnumbered}
+##### Survey and sighting data
 
 This section deals with encoding survey and/or sighting data of sea turtles into Darwin Core using the ENV-DATA approach. Extracts from the actual dataset [Presence of sea turtles collected through Fixed-Line-Transect monitoring across the Western Mediterranean Sea (Civitavecchia-Barcelona route) between 2013 and 2017](https://ipt.vliz.be/eurobis/resource?r=cc_flt_cbar_13-17#anchor-description) are used as an example.
 
@@ -342,11 +342,11 @@ In addition to the measurements recorded by the example dataset, other measureme
 | SS199510-002 | SS199510-002-length | SS199510-002 | Length          | <http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX> | 1630   | Millimetres     | <http://vocab.nerc.ac.uk/collection/P06/current/UXMM> |
 | SS199510-002 | SS199510-002-weight | SS199510-002 | Weight          | <http://vocab.nerc.ac.uk/collection/P01/current/SPWGXX01> | 1477.7 | Grams           | <http://vocab.nerc.ac.uk/collection/P06/current/UGRM> |
 
-#### Microbes biomass and diversity {.unlisted .unnumbered}
+#### Microbes biomass and diversity
 
 (example coming soon)
 
-#### Phytoplankton biomass and diversity {.unlisted .unnumbered}
+#### Phytoplankton biomass and diversity
 
 This example deals with encoding phytoplankton observation data, including environmental data, into Darwin Core. Extracts from the actual dataset [LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea](https://obis.org/dataset/956d618f-91dc-4930-a253-cdf80ddb9371), are used as an example. Phytoplankton data should adhere to guidelines by Martin-Cabrera et al., 2022: [Best practices and recommendations for plankton imaging data management: Ensuring effective data flow towards European data infrastructures. Version 1](http://dx.doi.org/10.25607/OBP-1742). Specific guidelines for the Occurrence and eMoF tables are documented in this publication, and we emphasize important fields in this example.
 
@@ -409,7 +409,7 @@ The eMoF extension contains the environmental and measurement information and da
 | TripNR3242TripStationNR16781MidasTripActionID105598UW |   | Practical salinity of the water body | <http://vocab.nerc.ac.uk/collection/P01/current/PSALPR01/> | 34.295 |   | Grams per kilogram | <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> | Flanders Marine Institute | Practical salinity of the water body based on water from the UnderWaySystem of the ship |
 | TripNR3242TripStationNR16781MidasTripActionID105598UW | | Temperature of the water body | <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/> | 11.881 | | Degrees Celsius |  <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> | Flanders Marine Institute | Temperature of the water body based on water from the UnderWaySystem of the ship |
 
-#### Seagrass cover and composition {.unlisted .unnumbered}
+#### Seagrass cover and composition
 
 The structure of the Event, Occurrence and extendedMeasurementOrFact extensions for Seagrass Cover & Composition is based on community feedback organised through the the Scientific Committee on Oceanic Research (SCOR): [Coordinated Global Research Assessment of Seagrass System (C-GRASS)](https://scor-int.org/group/158/). We acknowledge the work that the C-grass SCOR work group has done to develop a proposed scheme for completing Seagrass related extension files.
 
@@ -477,7 +477,7 @@ The eMoF table contains the measurement information and data of each occurrence.
 | USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassRIZ    | Dry biomass of the rizome             | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0.02725          | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
 | USBsg-chengue-pastocoral | USBsg-chengue-pastocoral-tt | USBsg-chengue-pastocoral-T1N2-biomassOTH    | Dry biomass of other seagrass species | <http://vocab.nerc.ac.uk/collection/S06/current/S0600087/> | 0                | Grams per square metre  | <http://vocab.nerc.ac.uk/collection/P06/current/UGMS/> |
 
-#### Zooplankton biomass and diversity {.unlisted .unnumbered}
+#### Zooplankton biomass and diversity
 
 Here we will encode zooplankton observation and environmental data into Darwin Core. Extracts from the actual dataset [LifeWatch observatory data: zooplankton observations by imaging (ZooScan) in the Belgian Part of the North Sea](https://obis.org/dataset/afa5b0e8-826d-4433-b698-beb176ef7880), are used as an example. As with the phytoplankton example, zooplankton data should also adhere to guidelines by Martin-Cabrera et al., 2022: [Best practices and recommendations for plankton imaging data management: Ensuring effective data flow towards European data infrastructures. Version 1.](http://dx.doi.org/10.25607/OBP-1742). These Best Practices indicate that for imaging data like this example, the fields `identificationVerificationStatus` and `identifiedBy` are crucial to know whether the data has been validated, and by whom. `identificationReferences` is used to document the citation or algorithm software used in identification. When possible, `associatedMedia` should also be populated with the persistent URL of annotated images.
 

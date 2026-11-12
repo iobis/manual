@@ -1,6 +1,6 @@
 # Controlled vocabulary for eMoF
 
-## Content {.unlisted .unnumbered}
+## Content
 
 * [Map eMoF measurement identifiers](#map-emof-measurement-identifiers-to-preferred-vocabulary)
   * [MeasurementOrFact vocabulary background](#measurementorfact-vocabulary-background)
@@ -11,7 +11,7 @@
 
 ## Map eMoF measurement identifiers to preferred vocabulary
 
-### MeasurementOrFact vocabulary background {.unlisted .unnumbered}
+### MeasurementOrFact vocabulary background
 
 Although [Darwin Core guidance](https://dwc.tdwg.org/list/#dwc_measurementType) recommends using controlled vocabulary to populate the MeasurementOrFact terms `measurementType`, `measurementValue`, and `measurementUnit`, in many cases these fields are completely unconstrained and are populated with free text. While free text offers the advantage of capturing complex and as yet unclassified information, there is inevitable semantic heterogeneity (e.g., of spelling, wording, or language) that becomes a challenge for effective data interoperability and analysis. For example, if you were interested in finding all records related to length measurements, you would have to try to account for all the different ways “length” was recorded by data providers (length, Length, len, fork length, etc.).
 

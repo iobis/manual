@@ -157,7 +157,7 @@ The use and definitions for additional Open Nomenclature (ON) signs (`identifica
 
 If the occurrence is instead unknown or new to science, it should be documented according to recommendations by [Horton et al. 2021](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full). Populate the `scientificName` field with the genus, and in `identificationQualifer` provide the ON sign 'sp.'. Be sure to also indicate the reason why species-level identification is unavailable by supplementing 'sp.' with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after 'sp.' to `identificationQualifer`. For example Eurythenes sp. DISCOLL.PAP.JC165.674. When adding a taxon identifier code, please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Like creating `eventIDs` or `occurrenceIDs`, try to provide more complex and globally unique identifiers. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within OBIS. We also recommend including these temporary names on specimen labels for physical specimens.
 
-### Changes in taxonomic classification {.unlisted .unnumbered}
+### Changes in taxonomic classification
 
 Taxonomic classification can change over time - so what does that mean for your datasets when records change classification?
 
@@ -169,7 +169,7 @@ A future solution may be an annotation registry that includes statements like â€
 
 ## Uncertain measurements
 
-### individualCount {.unlisted .unnumbered}
+### individualCount
 
 In some cases `individualCount` may be uncertain due to only fragments of organisms being found, or only a range of individuals is known. The `occurrenceRemarks` can be used to document information about decisions made during data formatting.
 

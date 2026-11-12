@@ -1,4 +1,4 @@
-## Other data types {.unlisted .unnumbered}
+## Other data types
 
 **Content**
 

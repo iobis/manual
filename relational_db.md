@@ -22,7 +22,7 @@ We elaborate on how this structure is applied within OBIS [here](formatting.html
 
 Note that when OBIS harvests data, datasets are flattened - i.e., all separate data tables are combined into one. This is the kind of file you will receive when you [download data from OBIS](access.html). The reason for this is that querying relational databases significantly reduces computational time, as opposed to querying a flat database. Relational databases also facilitate requests for subsets that meet particular criteria - e.g., all data from Norway for one species above a certain depth.
 
-### How to avoid redundancy {.unlisted .unnumbered}
+### How to avoid redundancy
 
 Avoiding redundancy and data duplication within your dataset is built into the OBIS data structure. Utilizing the ENV-DATA approach, which delineates relationships between the core table and extension tables, we can limit the repetition of data.
 

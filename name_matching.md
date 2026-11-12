@@ -17,7 +17,7 @@ The identifiers (LSID, TSN, ID) from these registers will be used to populate th
 
 You can also use the [Interim Register of Marine and Nonmarine Genera (IRMNG)](https://www.irmng.org/aphia.php?p=search) to [distinguish marine genera from freshwater genera](common_qc.html#non-marine-species).
 
-### Taxon Matching Workflow {.unlisted .unnumbered}
+### Taxon Matching Workflow
 
 The OBIS node managers have agreed to match all the scientific names in their datasets according to the following Name Matching workflow:
 
@@ -84,7 +84,7 @@ matched_data
 
 Including `"all=T"` in the merge function ensures that all rows from both data frames are retained in the resulting merged object (`matched_data`), even if the `scientificName` values in `data` and `lsids` do not match perfectly. This approach is particularly helpful in cases where there may be typos in `scientificName`. For example, a mismatch like "Thunus" instead of "Thunnus" would prevent proper linking of data to the corresponding LSID. By including `all = TRUE`, unmatched rows will still appear in the output, making it easier to identify and review any discrepancies or extra rows that may need correction.
 
-### R packages for taxon matching {.unlisted .unnumbered}
+### R packages for taxon matching
 
 There are several R packages available to assist you with taxon matching:
 
@@ -162,7 +162,7 @@ Currently, this web service matches the scientific names with the following taxo
 
 The Interim Register of Marine and Non-marine Genera (IRMNG) matching services are available through [http://www.irmng.org/](http://www.irmng.org/), as well as through the [LifeWatch taxon match](http://www.lifewatch.be/data-services/). This service allows you to search for a genus (or other taxonomic rank when you uncheck the “genera” box) to check if it is known to be marine, brackish, freshwater, or terrestrial. You can find this information in the row labeled “Environment”. If the taxa is marine, you may have to contact the WoRMS data management team (<info@marinespecies.org>) to have the taxon added to the WoRMS register (note you may have to provide supporting information confirming taxonomic and marine status).
 
-### Taxon Match Tools Overview {.unlisted .unnumbered}
+### Taxon Match Tools Overview
 
 See the table below for a summary of the different tools available.
 

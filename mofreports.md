@@ -14,7 +14,7 @@ To locate datasets that may have possible `measurementTypeID` issues, use the Mo
 - Populating empty `measurementTypeID` fields
 - If the same measurementType (with the **same meaning/purpose**) is using multiple measurementTypeIDs, these should be fixed to a single, preferred NERC P01 vocabulary code (or other machine-readable vocabulary code)
 
-### Using MoF Tools to check quality in measurement data {.unlisted .unnumbered}
+### Using MoF Tools to check quality in measurement data
 
 To use the two MoF tools to QC measurement data, first navigate to the [MoF Statistics Report](https://r.obis.org/mof/). Select a node from the list and select a dataset that displays a high percentage of missing ID(s). Then, scroll down to the MEASUREMENT TYPE report. For example, we selected OBIS USA:
 

@@ -56,7 +56,7 @@ If you have a mix of dates and times for different aspects of a sampling event, 
 
 For uncertainty regarding the date of the event, see [guidelines](common_qc.html).
 
-### Tips {.unlisted .unnumbered}
+### Tips
 
 To ensure your date is formatted correctly, it may be easiest to begin by populating the `year`, `month`, and `day` fields first. If the specific time of sampling is known, populate that into `eventTime` as well. When you fill these fields, we recommend ensuring the numbers are encoded as Text, not as General or numeric as Excel often tries to interpret what it thinks the content “should” be. Otherwise you may run into problems with Excel auto formatting your numbers in ways you don’t want.
 
@@ -94,7 +94,7 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 
-### How to handle mixed date information {.unlisted .unnumbered}
+### How to handle mixed date information
 
 When the sampling date is unclear due to a mix of date types and durations, you can use the hierarchical event structure in the Event core to help format and associate dates (and other information) with the correct sampling event. Often times it is useful to break up each type of event into separate records according to the event hierarchy.
 
@@ -138,7 +138,7 @@ For historical data originating from old records, such as ship logs or other arc
 
 ## Spatial
 
-### Converting Coordinates {.unlisted .unnumbered}
+### Converting Coordinates
 
 All coordinates provided in the `decimalLatitude` or `decimalLongitude` fields in OBIS must be in decimal degrees. To convert coordinates from degrees-minutes-seconds into decimal degrees, you can use [this Coordinate Conversion tool](https://obis.shinyapps.io/coordinates/) that OBIS has developed. This tool will convert any coordinate (or list of coordinates on a separate line) in a degrees-minutes-seconds format into decimal degrees, even partial coordinates. To use it, simply copy and paste your coordinates into the box provided and click Convert. For example:
 
@@ -154,11 +154,11 @@ allowfullscreen></iframe>
 
 If your coordinates are in UTMs, then coordinate conversion can be a bit trickier. We suggest using the following [conversion tool](http://rcn.montana.edu/resources/Converter.aspx) to convert from UTM to decimal degrees. Note it is very important to ensure you have the correct UTM zone, otherwise the coordinate conversion will be incorrect. You can use this [ArcGIS map tool](https://www.arcgis.com/apps/View/index.html?appid=7fa64a25efd0420896c3336dc2238475) to visually confirm UTM zones.
 
-### Geographical format conversion {.unlisted .unnumbered}
+### Geographical format conversion
 
 In OBIS, the spatial reference system to be documented in `geodeticDatum` is [EPSG:4326 (WGS84)](https://epsg.io/4326). If your spatial data are not already in this format, you may have to convert it. To do this there are a few approaches: QGIS (or ArcGIS), R, or Python. We provide some short guidance for each, however if you are struggling to convert your data to WGS84 please contact helpdesk@obis.org or send a message on the [OBIS Slack](https://join.slack.com/t/obishq/shared_invite/zt-1nrokd987-aSah0CfXb5MoY10t1olnhQ).
 
-#### QGIS {.unlisted .unnumbered}
+#### QGIS
 
 You can load a .csv file containing your coordinates to be reprojected into [QGIS](https://qgis.org/en/site/forusers/download.html). Opening a new project, first set the global projection to WGS84 EPSG:4326. In the bottom right corner, click the Project Properties to change the Project Coordinate Reference System (CRS). A pop up window will allow you to search for and select WGS84 EPSG:4326. Click OK.
 
@@ -182,11 +182,11 @@ Make sure the input layer is your coordinate file. Under the `Calculate using`, 
 
 For more details see this [QGIS guide on reprojection](https://docs.qgis.org/3.22/en/docs/training_manual/processing/crs.html?highlight=reproject).
 
-#### R {.unlisted .unnumbered}
+#### R
 
 To reproject coordinates in R, you can use functions in the `sf` package. A thorough tutorial using this package can be found [here](https://geocompr.robinlovelace.net/reproj-geo-data.html#reproj-geo-data).
 
-#### Python {.unlisted .unnumbered}
+#### Python
 
 You also have the option to reproject data using the Python library [Geopandas](https://geopandas.org/en/stable/getting_started.html). In this package there is a utility called `to_crs` that will reproject data. A tutorial to do this can be found [here](https://geopandas.org/en/stable/docs/user_guide/projections.html#re-projecting).
 

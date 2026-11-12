@@ -9,7 +9,7 @@
   - [A special case: habitat types](#a-special-case-habitat-types)
 - [Recommended reading](#recommended-reading)
 
-## Darwin Core Archive {.unlisted .unnumbered}
+## Darwin Core Archive
 
 Darwin Core Archive (DwC-A) is the standard for packaging and publishing biodiversity data using Darwin Core terms. It is the preferred format for publishing data in OBIS and GBIF. The format is described in the [Darwin Core text guide](https://dwc.tdwg.org/text/). A Darwin Core Archive contains a number of text files, including data tables formatted as CSV.
 
@@ -56,7 +56,7 @@ DNA derived data are increasingly being used to document taxon occurrences. To e
 
 Including information on habitats (biological community, biotope, or habitat type) is possible and encouraged with the use of Event Core and eMoF. However, beware the unconstrained nature of the terms `measurementType`, `measurementValue`, and `measurementUnit` which can lead to inconsistently documented habitat measurements within the Darwin Core Archive standard. To ensure this data is more easily discoverable, understood or usable, refer to [Examples: habitat data](other_data_types.html#habitat-data) and/or [Duncan et al. (2021)](https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core) for use case examples and more details.
 
-## Recommended reading {.unlisted .unnumbered}
+## Recommended reading
 
 * [De Pooter et al. 2017](https://bdj.pensoft.net/articles.php?id=10989). Toward a new data standard for combined marine biological and environmental datasets - expanding OBIS beyond species occurrences. Biodiversity Data Journal 5: e10989. hdl.handle.net/10.3897/BDJ.5.e10989
 * [Duncan et al. (2021)](https://emodnet.ec.europa.eu/en/seabed-habitats-guidance-standard-approach-structuring-classified-habitat-data-using-darwin-core). A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension. EMODnet report.

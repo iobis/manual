@@ -20,7 +20,7 @@
 - [OBIS Bioinformatics pipeline](#obis-bioinformatics-pipeline)
 - [Future developments of eDNA data standards](#future-developments-of-edna-data-standards)
 
-### Introduction to DNA data {.unlisted .unnumbered}
+### Introduction to DNA data
 
 DNA derived data are increasingly being used to document taxon occurrences. This genetic data may come from a sampling event, an individual organism, may be linked to physical material (or not), or may result from DNA detection methods e.g., metabarcoding or qPCR. Thus genetic data may reflect a single organism, or may include information from bulk samples with many individuals. Still, DNA-derived occurrence data of species should be documented as standardized and as reproducible as possible.
 
@@ -50,7 +50,7 @@ Doing this will help you when following the guidelines below.
 
 ![Quick start guide to adding DNA data to OBIS](images/eDNA_quickguide.png)
 
-### How to find genetic data in OBIS {.unlisted .unnumbered}
+### How to find genetic data in OBIS
 
 To find genetic data in OBIS we recommend using the R package robis, using the `occurrence` function. You must set `extensions` and/or `hasextensions` to "DNADerivedData" to ensure extension records are included in the results. `hasextensions` will exclude any occurrence that does not have the specified extension, in our case, DNADerivedData. The `extensions` parameter specifies which extensions to include. To obtain the DNA data, you have to extract the information from the extension using the `unnest_extension()` function. You can specify as many fields from the Occurrence table to be included, and pass them to the `fields` parameter. See the code below for an example. See also this [vignette](https://iobis.github.io/notebook-dnaderiveddata/) for a more detailed example, including how you can work further with these sequences in R.
 

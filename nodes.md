@@ -144,7 +144,7 @@ Coordination Group Co-chairs may hold a 2-year term with an optional rolling 2 y
 
 All coordination groups should use the same collaborative tools, proposed by the Secretariat and available in all countries, to maintain a clear record of group activities and progress accessible to the Secretariat and members of the OBIS Coordination Groups. The Coordination Group reports will be made public.
 
-### OBIS Nodes Coordination group {.unlisted .unnumbered}
+### OBIS Nodes Coordination group
 
 The Nodes Coordination group (NCG) provides a forum for all OBIS nodes to discuss ongoing activities, priorities, and barriers they may be facing.
 
@@ -163,7 +163,7 @@ Group activities will include:
 * Identify and resolve training needs within the community
 * Coordinate and implement any inter-Node related activities agreed-upon by the SG to achieve the OBIS mission
 
-### OBIS Data Coordination group {.unlisted .unnumbered}
+### OBIS Data Coordination group
 
 The OBIS Data Coordination Group (DCG) will focus on topics/issues related to OBIS Priority Area 1: Data mobilisation and input.
 
@@ -182,7 +182,7 @@ The OBIS data coordination group will:
 * Maintain the OBIS Manual; especially regarding  standards or methods
 * Engage with activities of other relevant bodies (e.g. TDWG, GBIF, GOOS, SCOR) by identifying representatives who will report back to the group
 
-### OBIS Products Coordination group {.unlisted .unnumbered}
+### OBIS Products Coordination group
 
 The OBIS Products Coordination group (PCG) is a collaborative and interdisciplinary group that is driven by the importance of creating data and information products (i.e. indicators) that are scientifically sound, practical, and relevant to decision-makers in government, industry, and civil society. PCG focuses on OBIS Priority Area 2: Data application and output.
 

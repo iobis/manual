@@ -51,7 +51,7 @@ Once you have formatted your data for OBIS, or have received a formatted dataset
 * R package and function [Hmisc](https://hbiostat.org/r/hmisc/):: describe
   * Can give important summary statistics and identify numbers that don’t match
 
-### Conducting QC with obistools {.unlisted .unnumbered}
+### Conducting QC with obistools
 
 Installing `obistools`  requires the devtools package. Use the following code to install both packages:
 
@@ -77,7 +77,7 @@ To use `obistools` to conduct quality control, you can follow the general order 
 5. Check that `eventDate` is formatted properly [`obistools::check_eventdate`](https://github.com/iobis/obistools#check-eventdate)
 6. Check for statistical outliers or other anomalies with Hmisc (below)
 
-### QC with R package Hmisc {.unlisted .unnumbered}
+### QC with R package Hmisc
 
 The R package [Hmisc](https://hbiostat.org/r/hmisc/) has the function [`describe`](https://rdrr.io/cran/Hmisc/man/describe.html) which can help you identify any discrepancies or outliers in your dataset.
 
