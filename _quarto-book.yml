@@ -1,14 +1,10 @@
 project:
   type: book
-  # pre-render: 
-  #   - sanitize.R
   render:
     - "./*.qmd"
     - "tutorials/**/*.md"
     - "notebooks/**/*.md"
     - "notebooks/*.md"
-  post-render: 
-    - remove-old.R
   output-dir: docs
 
 book:

@@ -46,11 +46,9 @@ jobs:
       - name: Render Quarto HTML Site
         uses: quarto-dev/quarto-actions/render@v2
 
-      # 7. Run custom PDF sequence (Sanitize script + Book profile)
+      # 7. Render the PDF (book profile)
       - name: Render Quarto PDF Profile
-        run: |
-          Rscript sanitize.R
-          quarto render --profile book --to pdf --no-clean
+        run: quarto render --profile book --to pdf --no-clean
 
       # 8. Deploy the completely compiled /docs directory (containing HTML + PDF) to gh-pages
       - name: Deploy to gh-pages
