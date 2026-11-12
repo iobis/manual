@@ -1,4 +1,3 @@
-# (PART\*) Publishing Data {-}
 
 # Data publication and sharing
 

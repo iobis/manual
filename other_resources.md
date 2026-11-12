@@ -1,4 +1,3 @@
-# (PART\*) Additional Resources {-}
 
 # Other Resources
 

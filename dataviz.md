@@ -1,4 +1,3 @@
-# (PART\*) Data Visualization and Analysis {-}
 
 # Data Visualization
 

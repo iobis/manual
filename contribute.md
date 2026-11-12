@@ -1,4 +1,3 @@
-# (PART\*) Contributing data to OBIS {-}
 
 # What can you contribute and how?
 

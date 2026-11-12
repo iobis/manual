@@ -1,4 +1,3 @@
-# (PART\*) Access Data from OBIS {-}
 
 # Data access
 

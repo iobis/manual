@@ -1,4 +1,3 @@
-# (PART\*) Ensuring Data Quality {-}
 
 # Data quality control
 

@@ -1,4 +1,3 @@
-# (PART\*) Data Standards {-}
 # Darwin Core
 
 **Contents**

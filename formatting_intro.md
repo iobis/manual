@@ -1,4 +1,3 @@
-# (PART\*) Data Formatting {-}
 
 # Data formatting workflow
 
