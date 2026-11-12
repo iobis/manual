@@ -22,11 +22,11 @@ library(readr)
 library(knitr)
 library(kableExtra)
 
-checklist <- read_csv("docs/OBIS-termchecklist.csv", na = character(), show_col_types = FALSE)
+checklist <- read_csv("OBIS-termchecklist.csv", na = character(), show_col_types = FALSE)
 
 if (knitr::is_html_output()) {
   download_file(
-    path = "docs/OBIS-termchecklist.csv",
+    path = "OBIS-termchecklist.csv",
     output_name = "OBISchecklist",
     output_extension = ".csv",
     button_label = "Download checklist as csv",

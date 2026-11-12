@@ -78,5 +78,3 @@ for (path in md_files) {
 
 jsonlite::write_json(sanitized, "sanitized.json", pretty = T)
 
-fs::dir_create("docs")
-file.copy("OBIS-termchecklist.csv", "docs/OBIS-termchecklist.csv")
