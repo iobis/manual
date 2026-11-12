@@ -4,6 +4,34 @@ Notebooks make learning interactive — you can run code, experiment, and unders
 
 ## Explore the notebooks
 
+[![](notebooks/thumbnails/r-generic-thumb.png)](./https:/github.com/iobis/obistherm/blob/main/notebooks/data_access_r.qmd)
+
+### 
+
+Accessing and using `obistherm` with R
+
+In this notebook we will explore how to use the `obistherm` dataset with R.
+
+[ Open in GitHub](./https:/github.com/iobis/obistherm/blob/main/notebooks/data_access_r.qmd)
+
+Nov 12, 2026
+
+OBIS
+
+[![](notebooks/thumbnails/py-generic-thumb.png)](https://github.com/iobis/obistherm/blob/main/notebooks/data_access_py.ipynb)
+
+### 
+
+Accessing and using `obistherm` with Python
+
+In this notebook we will explore how to use the `obistherm` dataset with Python.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/iobis/obistherm/blob/main/notebooks/data_access_py.ipynb) [ Open in GitHub](https://github.com/iobis/obistherm/blob/main/notebooks/data_access_py.ipynb)
+
+Nov 12, 2026
+
+OBIS
+
 [![](notebooks/thumbnails/py-generic-thumb.png)](https://github.com/iobis/hackathon/blob/master/notebooks/Python/speciesgrids_demo.ipynb)
 
 ### 
