@@ -1,3 +1,6 @@
+---
+engine: knitr
+---
 # Other Important Data Formatting Steps
 
 After creating data tables and mapping terms to DwC, additional data formatting steps may be needed and/or some common issues may arise. On this page, you will find guidelines for specific data formatting cases, including:

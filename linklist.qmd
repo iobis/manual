@@ -1,3 +1,6 @@
+---
+engine: knitr
+---
 ## Quick links to resources
 
 Below you will find a convenient list of important or relevant websites and resources that are mentioned in this Manual. Links are organized by category.

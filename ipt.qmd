@@ -1,3 +1,6 @@
+---
+engine: knitr
+---
 ## IPT: Integrated Publishing Toolkit
 
 **Contents:**

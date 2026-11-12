@@ -1,3 +1,6 @@
+---
+engine: knitr
+---
 ## How to format extendedMeasurementOrFact tables
 
 #### What data goes into eMoF

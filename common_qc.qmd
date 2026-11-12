@@ -1,3 +1,6 @@
+---
+engine: knitr
+---
 # Common Quality Control issues
 
 **Content:**

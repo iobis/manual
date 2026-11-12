@@ -1,3 +1,6 @@
+---
+engine: knitr
+---
 ## Maintaining and sharing published data
 
 **Content**

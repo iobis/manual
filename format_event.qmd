@@ -1,3 +1,6 @@
+---
+engine: knitr
+---
 ## How to format Event tables
 
 If your dataset uses an Event Core structure, data fields included in your dataset should include the following required terms:

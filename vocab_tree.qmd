@@ -1,3 +1,6 @@
+---
+engine: knitr
+---
 ## Vocabulary Decision Tree
 
 This decision tree was developed by the OBIS Vocabulary Team. It is meant to guide you with finding and selecting appropriate controlled vocabulary to be used in the eMoF columns `measurementTypeID`, `measurementUnitID`, and for non-numeric `measurementValueID`.
