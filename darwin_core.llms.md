@@ -242,7 +242,7 @@ The name of the place or location can be provided in `locality`, and if possible
 
 ![](images/wkttool2.png)
 
-Figure 1: knitr::asis_output(“A screenshot demonstrating the OBIS Maptool’s WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively.”)
+Figure 1: A screenshot demonstrating the OBIS Maptool’s WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively.
 
 Some examples of WKT strings:
 

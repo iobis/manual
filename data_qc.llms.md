@@ -42,7 +42,7 @@ Once you have formatted your data for OBIS, or have received a formatted dataset
   - [Web UI](https://rshiny.lifewatch.be/BioCheck/) built on obistools. This tool requires your dataset to be published on an IPT (e.g., a test IPT such as <https://ipt.gbif.org/> where your dataset will not be harvested by GBIF or OBIS). Note you are [required to have a login](ipt.llms.md) to access an IPT
   - [R package](https://github.com/EMODnet/EMODnetBiocheck)
 - [Lifewatch data services](https://www.lifewatch.be/data-services/)
-- The US Integrated Ocean Observing System [Standardizing Marine Bio Data Guide](https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.html)
+- The US Integrated Ocean Observing System [Standardizing Marine Bio Data Guide](https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md)
 - [WoRMS taxon match tool](https://www.marinespecies.org/aphia.php?p=match)
   - [Other WoRMS web services, incl. taxon match](https://www.marinespecies.org/aphia.php?p=webservice)
 - Excel Conditional Formatting tool
