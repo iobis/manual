@@ -458,6 +458,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#constructing-and-using-identifiers" id="toc-constructing-and-using-identifiers" class="nav-link active" data-scroll-target="#constructing-and-using-identifiers">Constructing and using identifiers</a>
   <ul class="collapse">
+  <li><a href="#introduction-to-identifiers" id="toc-introduction-to-identifiers" class="nav-link" data-scroll-target="#introduction-to-identifiers">Introduction to identifiers</a></li>
   <li><a href="#eventid" id="toc-eventid" class="nav-link" data-scroll-target="#eventid">eventID</a></li>
   <li><a href="#occurrenceid" id="toc-occurrenceid" class="nav-link" data-scroll-target="#occurrenceid">occurrenceID</a></li>
   </ul></li>
@@ -474,12 +475,76 @@ ul.task-list li input[type="checkbox"] {
 <h1>Constructing and using identifiers</h1>
 <p><strong>Content</strong></p>
 <ul>
+<li><a href="#introduction-to-identifiers">Introduction to identifiers</a></li>
 <li><a href="#eventid">eventID</a></li>
 <li><a href="#occurrenceid">occurrenceID</a></li>
 </ul>
+<section id="introduction-to-identifiers" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-to-identifiers">Introduction to identifiers</h3>
+<p>Using a unique identifier for each event, physical sample, or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance. For OBIS, the two main identifiers of concern are <code>occurrenceID</code> and <code>eventID</code>. However if you look at <a href="https://dwc.tdwg.org/terms/">TDWG’s Darwin Core reference guide</a>, you may see that there are several other terms for identifiers. When creating identifiers for your data, or mapping an existing identifier field to Darwin Core vocabulary, you may hesitate between choosing between <code>eventID</code>, <code>occurrenceID</code>, <code>organismID</code>, <code>taxonID</code>, <code>scientificNameID</code>, <code>recordNumber</code>, <code>materialEntityID</code>, <code>materialSampleID</code>, and <code>catalogNumber</code>. Knowing the difference between these and when to use each may seem confusing at first. Review the table below for a quick comparison of definitions and when to use each DwC identifier term. Note this table is not exhaustive of all possible DwC identifer terms, but includes many that are relevant for occurrence records.</p>
+<div style="overflow-x: auto;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Identifier Name</th>
+<th>Definition</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>eventID</code></td>
+<td>An identifier for the set of information associated with a dwc:Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set.</td>
+<td>Used to distinguish between sampling events in your data, <em>not</em> associated with an occurrence, e.g.&nbsp;a quadrat sampling event, an ROV deployment, a trolling event within a cruise</td>
+</tr>
+<tr class="even">
+<td><code>occurrenceID</code></td>
+<td>An identifier for the dwc:Occurrence (as opposed to a particular digital record of the dwc:Occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:occurrenceID globally unique.</td>
+<td>Used to distinguish between occurrence records, i.e.&nbsp;when the presence of a taxon is detected (or not for absence records). If the same individual is detected multiple times, each detection will have unique a <code>occurrenceID</code></td>
+</tr>
+<tr class="odd">
+<td><code>organismID</code></td>
+<td>An identifier for the dwc:Organism instance (as opposed to a particular digital record of the dwc:Organism). May be a globally unique identifier or an identifier specific to the data set.</td>
+<td>Use to identify a <em>specific</em> organism, an individual, or a specific group of organisms (e.g.&nbsp;a specific pod of cetaceans, a specific shark)</td>
+</tr>
+<tr class="even">
+<td><code>taxonID</code></td>
+<td>An identifier for the set of dwc:Taxon information. May be a global unique identifier or an identifier specific to the data set.</td>
+<td>Optional in OBIS. Use it to reference the taxon record in the checklist your identification came from (for example, iNaturalist records use iNaturalist taxon IDs here e.g.&nbsp;<a href="https://obis.org/occurrence/006c6a16-c3b4-4f9a-8fb7-4bc29b07e833" class="uri">https://obis.org/occurrence/006c6a16-c3b4-4f9a-8fb7-4bc29b07e833</a>). Prefer a resolvable URI so the source is clear. It does not replace scientificNameID, which should still hold only a WoRMS LSID, ITIS TSN, or BOLD/NCBI identifiers</td>
+</tr>
+<tr class="odd">
+<td><code>scientificNameID</code></td>
+<td>An identifier for the nomenclatural (not taxonomic) details of a scientific name.</td>
+<td>Used to provide an identifier for the name provided to <code>scientificName</code>. For OBIS, WoRMS LSIDs are recommended for this field</td>
+</tr>
+<tr class="even">
+<td><code>recordNumber</code></td>
+<td>An identifier given to the dwc:Occurrence at the time it was recorded. Often serves as a link between field notes and a dwc:Occurrence record, such as a specimen collector’s number.</td>
+<td>Typically used when the occurrence is associated with a collected specimen. Different from <code>occurrenceID</code> because it may not be globally unique, whereas <code>occurrenceID</code> must be unique</td>
+</tr>
+<tr class="odd">
+<td><code>materialEntityID</code></td>
+<td>An identifier for a particular instance of a dwc:MaterialEntity. Intended to uniquely and persistently identify a particular dwc:MaterialEntity within some context.</td>
+<td>Used to identfy a physical object (i.e.&nbsp;the MaterialEntity: any kind of physical sample, preserved specimen, fossil, specific DNA molecule, etc.), instead of a digital representation of the object. E.g. an identifer for a specific tissue sample within an organization or institution</td>
+</tr>
+<tr class="even">
+<td><code>materialSampleID</code></td>
+<td>An identifier for the dwc:MaterialSample (as opposed to a particular digital record of the dwc:MaterialSample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:materialSampleID globally unique.</td>
+<td>Used to identify a physical sample, can be whole or part of an entity, e.g.&nbsp;sediment sample, a tissue sample, a whole preserved organism in a collection. Different from <code>catalogNumber</code> and <code>recordNumber</code> because it must be globally unique.</td>
+</tr>
+<tr class="odd">
+<td><code>catalogNumber</code></td>
+<td>An identifier (preferably unique) for the record within the data set or collection.</td>
+<td>Usually used as an identifier given for a specimen within a musuem collection</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Not every one of these identifiers will be relevant for your dataset, but remember that <code>eventID</code>, <code>occurenceID</code>, and <code>scientificNameID</code> are always required for datasets published to OBIS. See the below recommendations for populating <code>eventID</code> and <code>occurenceID</code>. <code>scientificNameID</code> guidelines can be found <a href="darwin_core.html#taxonomy-and-identification">here</a>.</p>
+</section>
 <section id="eventid" class="level3">
 <h3 class="anchored" data-anchor-id="eventid">eventID</h3>
-<p>Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance. <code>eventID</code> is an identifier for an individual sampling or observation event, whereas <code>parentEventID</code> is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (<code>eventIDs</code>).</p>
+<p><code>eventID</code> is an identifier for an individual sampling or observation event, whereas <code>parentEventID</code> is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (<code>eventIDs</code>).</p>
 <p><code>eventID</code> can be used for replicated samples or sub-samples. It is important to make sure each replicate sample receives a unique <code>eventID</code>, which could be based on the unique sample ID in your dataset. Sample ID can also be recorded in <code>materialSampleID</code>, as OBIS does not need to have separate <code>eventID</code>s and <code>materialSampleIDs</code>. Rather OBIS can treat these two terms as equivalent. Be sure to still fill in the <code>eventID</code> field if you want to use <code>materialSampleID</code>, as OBIS only uses <code>eventID</code> and <code>parentEventID</code> for structuring datasets, not sample ID. This does not prevent you from using the field if you would like to.</p>
 <p>If you do not already have a <code>materialSampleID</code>, creating a unique <code>eventID</code> for your data records can be as straightforward as combining different fields from your data.</p>
 <div class="callbox-caution caution">
@@ -614,7 +679,7 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </div>
-<p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10">Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)</a>.</em></p>
+<p>_Data from <a href="http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10">Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)</a>.</p>
 <p>We can see that each record has a similar <code>eventID</code> structure, except for the last part which indicates the event type - documented in the <code>eventRemarks</code> column. In this dataset, records with the <code>eventID</code> <code>IOF_benthos_Plominski_zaljev_2000_crs</code> has information applicable for records with <code>eventID</code>s ending with <code>_stat1</code>, <code>_stat2</code>, <code>_s01</code>, and <code>_s02</code> because <code>_crs</code> is their parent event. Similarly, information (e.g., date of station visit, coordinates) documented in records with <code>eventID</code> <code>IOF_benthos_Plominski_zaljev_2000_stat1</code> is applicable for the two sample records (<code>eventID</code> <code>_s01</code> and <code>_s02</code>), because these samples were taken at Station 1 (indicated by the <code>parentEventID</code>). These <code>eventID</code>s could have been nested in another way, such as <code>IOF_benthos_Plominsku_zaljev_2000_crs:stat1:s01</code> which would embed the <code>parentEventID</code> into the identifier.</p>
 <p>See also <a href="https://bdj.pensoft.net/articles.php?id=10989&amp;instance_id=3385375">De Pooter et al.&nbsp;2017</a> for an example of an event hierarchy in a complex benthos dataset.</p>
 <p>Watch this video <svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg> for a demonstration on how to construct eventIDs:</p>
@@ -692,7 +757,7 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </div>
-<p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=vegetation_gazi_bay_kenya_1987">Algal community on the pneumatophores of mangrove trees of Gazi Bay in July and August 1987</a>.</em></p>
+<p>_Data from <a href="http://ipt.vliz.be/eurobis/resource?r=vegetation_gazi_bay_kenya_1987">Algal community on the pneumatophores of mangrove trees of Gazi Bay in July and August 1987</a>.</p>
 
 
 </section>
