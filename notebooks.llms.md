@@ -4,7 +4,7 @@ Notebooks make learning interactive — you can run code, experiment, and unders
 
 ## Explore the notebooks
 
-[![](notebooks/thumbnails/r-generic-thumb.png)](./https:/github.com/iobis/obistherm/blob/main/notebooks/data_access_r.qmd)
+[![](notebooks/thumbnails/r-generic-thumb.png)](https://github.com/iobis/obistherm/blob/main/notebooks/data_access_r.qmd?plain=1)
 
 ### 
 
@@ -12,7 +12,7 @@ Accessing and using `obistherm` with R
 
 In this notebook we will explore how to use the `obistherm` dataset with R.
 
-[ Open in GitHub](./https:/github.com/iobis/obistherm/blob/main/notebooks/data_access_r.qmd)
+[ Open in GitHub](https://github.com/iobis/obistherm/blob/main/notebooks/data_access_r.qmd?plain=1)
 
 Nov 12, 2026
 
@@ -60,7 +60,7 @@ Oct 10, 2024
 
 OBIS
 
-[![](notebooks/thumbnails/r-generic-thumb.png)](./https:/github.com/iobis/hackathon/blob/master/notebooks/R/environmental_data_for_occurrences.qmd)
+[![](notebooks/thumbnails/r-generic-thumb.png)](https://github.com/iobis/hackathon/blob/master/notebooks/R/environmental_data_for_occurrences.qmd?plain=1)
 
 ### 
 
@@ -68,7 +68,7 @@ Obtaining environmental information for species occurrences
 
 In this notebook we will explore how to match environmental data to species occurrences.
 
-[ Open in GitHub](./https:/github.com/iobis/hackathon/blob/master/notebooks/R/environmental_data_for_occurrences.qmd)
+[ Open in GitHub](https://github.com/iobis/hackathon/blob/master/notebooks/R/environmental_data_for_occurrences.qmd?plain=1)
 
 Oct 10, 2024
 
