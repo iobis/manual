@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.5 Constructing and using indentifier codes | The OBIS manual</title>
   <meta name="description" content="3.5 Constructing and using indentifier codes | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.48 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.5 Constructing and using indentifier codes | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -62,6 +62,7 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -367,7 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tr class="odd">
 <td><code>eventID</code></td>
 <td>An identifier for the set of information associated with a dwc:Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set.</td>
-<td>Used to distinguish between events in your data, <em>not</em> associated with an occurrence, e.g. a quadrat sample, an ROV deployment, a trolling event within a cruise</td>
+<td>Used to distinguish between sampling events in your data, <em>not</em> associated with an occurrence, e.g. a quadrat sampling event, an ROV deployment, a trolling event within a cruise</td>
 </tr>
 <tr class="even">
 <td><code>occurrenceID</code></td>
@@ -382,7 +383,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tr class="even">
 <td><code>taxonID</code></td>
 <td>An identifier for the set of dwc:Taxon information. May be a global unique identifier or an identifier specific to the data set.</td>
-<td>Used to identify a specific taxonomic rank, not commonly used in OBIS because <code>scientificNameID</code> is prioritized</td>
+<td>Optional in OBIS. Use it to reference the taxon record in the checklist your identification came from (for example, iNaturalist records use iNaturalist taxon IDs here e.g. <a href="https://obis.org/occurrence/006c6a16-c3b4-4f9a-8fb7-4bc29b07e833" class="uri">https://obis.org/occurrence/006c6a16-c3b4-4f9a-8fb7-4bc29b07e833</a>). Prefer a resolvable URI so the source is clear. It does not replace scientificNameID, which should still hold only a WoRMS LSID, ITIS TSN, or BOLD/NCBI identifiers</td>
 </tr>
 <tr class="odd">
 <td><code>scientificNameID</code></td>
@@ -547,7 +548,7 @@ You should consider carefully what combination of fields will generate a <strong
 </tr>
 </tbody>
 </table>
-<p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10">Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)</a>.</em></p>
+<p>_Data from <a href="http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10">Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)</a>.</p>
 <p>We can see that each record has a similar <code>eventID</code> structure, except for the last part which indicates the event type - documented in the <code>eventRemarks</code> column. In this dataset, records with the <code>eventID</code> <code>IOF_benthos_Plominski_zaljev_2000_crs</code> has information applicable for records with <code>eventID</code>s ending with <code>_stat1</code>, <code>_stat2</code>, <code>_s01</code>, and <code>_s02</code> because <code>_crs</code> is their parent event. Similarly, information (e.g., date of station visit, coordinates) documented in records with <code>eventID</code> <code>IOF_benthos_Plominski_zaljev_2000_stat1</code> is applicable for the two sample records (<code>eventID</code> <code>_s01</code> and <code>_s02</code>), because these samples were taken at Station 1 (indicated by the <code>parentEventID</code>). These <code>eventID</code>s could have been nested in another way, such as <code>IOF_benthos_Plominsku_zaljev_2000_crs:stat1:s01</code> which would embed the <code>parentEventID</code> into the identifier.</p>
 <p>See also <a href="https://bdj.pensoft.net/articles.php?id=10989&amp;instance_id=3385375">De Pooter et al. 2017</a> for an example of an event hierarchy in a complex benthos dataset.</p>
 <p>Watch this video for a demonstration on how to construct eventIDs:</p>
@@ -625,7 +626,7 @@ allowfullscreen></iframe></p>
 </tr>
 </tbody>
 </table>
-<p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=vegetation_gazi_bay_kenya_1987">Algal community on the pneumatophores of mangrove trees of Gazi Bay in July and August 1987</a>.</em></p>
+<p>_Data from <a href="http://ipt.vliz.be/eurobis/resource?r=vegetation_gazi_bay_kenya_1987">Algal community on the pneumatophores of mangrove trees of Gazi Bay in July and August 1987</a>.</p>
 
 </div>
 </div>
@@ -650,42 +651,42 @@ allowfullscreen></iframe></p>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["manual.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "none"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["manual.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "none"
+  }
 });
 });
 </script>
