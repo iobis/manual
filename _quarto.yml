@@ -1,15 +1,13 @@
 project:
   type: website
-  pre-render: 
-    - sanitize.R
   render:
     - "./*.qmd"
     - "tutorials/**/*.md"
     - "notebooks/**/*.md"
     - "notebooks/*.md"
-  post-render: 
-    - remove-old.R
   output-dir: docs
+  resources:
+    - OBIS-termchecklist.csv
 
 website:
   title: The OBIS manual
@@ -128,6 +126,8 @@ format:
       - cosmo
       - brand
     css: style.css
+    filters:
+      - scroll-tables.lua
     toc: true
     toc-depth: 3
     toc-expand: 3

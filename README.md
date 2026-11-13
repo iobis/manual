@@ -17,26 +17,21 @@ The contribute to the manual, please follow these steps:
 
 ## Build a PDF
 
-The PDF is built with Quarto's `book` profile (`_quarto-book.yml`), which needs TinyTeX (`quarto install tinytex`). The book profile does not run `sanitize.R` itself, so run it first:
+The PDF is built with Quarto's `book` profile (`_quarto-book.yml`), which needs TinyTeX (`quarto install tinytex`):
 
 ``` bash
-Rscript sanitize.R
 quarto render --profile book --to pdf --no-clean
 ```
 
 This is the same sequence the deploy workflow (`.github/workflows/deploy.yml`) runs.
 
-## Quarto patch
+## How the manual is built
 
-We are transitioning to a new format for the manual, using [Quarto](https://quarto.org/) instead of Bookdown. We want to take advantage of the many features Quarto offers, while also being able to integrate in a single place the tutorials and notebooks that the OBIS secretariat and the community are producing (and that for now are residing at [resources.obis.org](https://resources.obis.org)).
+The manual is built with [Quarto](https://quarto.org/); it was previously built with Bookdown. We want to take advantage of the many features Quarto offers, while also being able to integrate in a single place the tutorials and notebooks that the OBIS secretariat and the community are producing (and that for now are residing at [resources.obis.org](https://resources.obis.org)).
 
-To achieve that while maintaining the history of contributions to the manual, we decided to patch the old manual, instead of fully modifying it. That way, the `.md` files are still the base for producing the final website. New pages should be created using Quarto extension `.qmd`, offering full access to its features. For instructions on how to use Quarto, check the [documentation](https://quarto.org/docs/guide/).
+Each manual page is a `.qmd` file in the repository root. New pages should also be `.qmd`. For instructions on how to use Quarto, check the [documentation](https://quarto.org/docs/guide/).
 
-### How the patch works
-
-An R script (`sanitize.R`) runs at render time (_pre-render_), removing some Bookdown specific markups, correcting the Markdown tables, and finally saving a `.qmd` cleaned file.
-
-Quarto then uses the `.qmd` files to render the website. Finally, the R script `remove-old.R` runs post-render to remove those files that were generated from the `.md`.
+Tables are made horizontally scrollable by the Lua filter `scroll-tables.lua`.
 
 ### How the sections are organized
 
@@ -58,13 +53,8 @@ In both cases, you can also list external tutorials and notebooks. Those should 
 After modifying the files use the following to preview the website:
 
 ``` bash
-quarto preview --no-watch-inputs
+quarto preview
 ```
-
-> [!IMPORTANT]
-> You should **always** add --no-watch-inputs. Otherwise the post-render code will not run and the .qmd files will be kept.
-
-If you are having problems with some pages, first render the website and then preview.
 
 To render the website use:
 
