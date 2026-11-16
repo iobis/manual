@@ -91,7 +91,7 @@ Finally, we create the eMoF table. Although the percent cover was recorded in th
 
 #### Macroalgae canopy cover and composition
 
-In this section we will encode a fictional macroalgal survey dataset (Figure 9.1) into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an extendedMeasurementOrFact extension.
+In this section we will encode a fictional macroalgal survey dataset (@fig-macroal) into Darwin Core using the ENV-DATA approach, i.e. using an Event core with an Occurrence extension and an extendedMeasurementOrFact extension.
 
 ```{r fig-macroal, fig.cap = "A fictional macroalgae survey with a single site, multiple zones, quadrats, and different types of transects.", echo=FALSE, out.width = "95%"}
 library(webshot)
