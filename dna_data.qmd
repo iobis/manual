@@ -15,7 +15,7 @@
   - [Try it out yourself](#try-it-out-yourself)
 - [eDNA and DNA derived data example](#edna-and-dna-derived-data-example)
   - [eDNA data from Monterey Bay, California](#edna-data-from-monterey-bay-california)
-  - [16S rRNA metabarcoding example](#16s-rrna-gene-metabarcoding-data-of-pico-to-mesoplankton)
+  - [16S rRNA metabarcoding example](#s-rrna-gene-metabarcoding-data-of-pico-to-mesoplankton)
 - [Guidelines for compiling qPCR data](#compiling-qpcr-datasets)
 - [OBIS Bioinformatics pipeline](#obis-bioinformatics-pipeline)
 - [Future developments of eDNA data standards](#future-developments-of-edna-data-standards)
@@ -32,7 +32,7 @@ To ensure DNA data are useful to the broadest possible community, a community gu
 4. Name references
 5. Metadata only
 
-For a guide and decision tree on determining which category your data falls into, see the [Data packaging and mapping](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping) section of the GBIF guide. Refer to the [examples below](dna_data.html#edna--dna-derived-data) for use case examples of eDNA and DNA derived data (Category 1).
+For a guide and decision tree on determining which category your data falls into, see the [Data packaging and mapping](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping) section of the GBIF guide. Refer to the [examples below](dna_data.html#edna-and-dna-derived-data-example) for use case examples of eDNA and DNA derived data (Category 1).
 
 > Genetic data may now be published using either the **Occurrence core** and DNA-derived data extension, or by utilising the **Event core** and adding both an occurrence extension and the DNA-derived data extension. eDNA and DNA derived data are linked to the Occurrence core data table with the use of `occurrenceID` and/or `eventID`. The DNA derived data can also be linked to both the Event core (by using `eventID`) and the Occurrence extension (by using the `occurrenceID`). Use of the Event core can help in decreasing the amount of data, as metadata linked to samples is recorded only once.  See below for further guidance on compiling genetic data. In addition, a [new data model](https://www.gbif.org/new-data-model) is being developed by GBIF and the OBIS community that would enable the linking of multiple different datatypes and tables , and will get rid of the start schema, enabling the linking of one sequence to multiple occurrences, therefore decreasing the amount of data needed. However as it is not implemented yet (as of September 2025), we focus on the current Darwin Core recommendations here.
  
@@ -159,7 +159,7 @@ The DNADerivedData extension is meant to capture information related to the samp
 - DNA Derived | DwC: otu_seq_comp_appr
 - DNA Derived | DwC: otu_db
 
-For a complete list of terms you can map to, see [the DwC DNA Derived Data extension page](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml). See the [examples below](dna_data.html#edna--dna-derived-data) for use case examples. The Marine Biological Data Mobilization Workshop also has a [tutorial](https://ioos.github.io/bio_mobilization_workshop/edna-extension.html) for this type of data.
+For a complete list of terms you can map to, see [the DwC DNA Derived Data extension page](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml). See the [examples below](dna_data.html#edna-and-dna-derived-data-example) for use case examples. The Marine Biological Data Mobilization Workshop also has a [tutorial](https://ioos.github.io/bio_mobilization_workshop/edna-extension.html) for this type of data.
 
 `DNA_sequence` is the most important field, where the ASV/OTU sequence will be recorded. This field can then be searched with sequence alignment methods to, for example, find closely related sequences recorded in other studies, and will allow very powerful data comparison and analysis in the future. It will also make your sequence available in the [OBIS sequence search tool](https://sequence.obis.org/).
 
@@ -173,7 +173,7 @@ The remaining metadata fields will help the person accessing the data to filter 
 
 Environmental systems are described in the two fields `env_broad_scale` and `env_local_scale` and it is recommended to use [Environment Ontology (ENVO)’s biome classes](https://ontobee.org/ontology/ENVO?iri=http://purl.obolibrary.org/obo/ENVO_00000428) to describe the environmental system from which the sample was extracted. Like other identifiers, provide the exact ENVO reference identifier. `env_broad_scale` provides a coarse resolution for which environment your sample came from. Likely this will be [marine biome (ENVO:00000447)](https://ontobee.org/ontology/ENVO?iri=http://purl.obolibrary.org/obo/ENVO_00000447) for OBIS data. For local scale, identify the specific environment your sample was obtained from (e.g., coastal water, benthic zone, etc.).
 
-When data tables are formatted and you are ready to publish it on the IPT, it will follow the same process for [publishing on an IPT](data_publication.html). You will upload your source files, and add the Occurrence core Darwin Core mappings, and then the DNA Derived Data Darwin Core mappings. However the extension must first be [installed by the IPT administrator](data_publication.html#ipt-administration) (often the node manager). Once the extension is installed, you can add the Darwin Core DNA Derived Data mapping for that file.
+When data tables are formatted and you are ready to publish it on the IPT, it will follow the same process for [publishing on an IPT](data_publication.html). You will upload your source files, and add the Occurrence core Darwin Core mappings, and then the DNA Derived Data Darwin Core mappings. However the extension must first be [installed by the IPT administrator](ipt_admin.html) (often the node manager). Once the extension is installed, you can add the Darwin Core DNA Derived Data mapping for that file.
 
 #### Using the event core, occurrence extension, and DNA Derived Data extension
 
@@ -445,8 +445,8 @@ Broadly speaking, it creates a framework that receives raw sequence data from eD
 
 OBIS is developing guidelines and pipelines to accept other data types, such as:
 
-- [Acoustic](other_data_types.html#multimedia-data)
-- [Imaging](other_data_types.html#multimedia-data)
+- [Acoustic](other_data_types.html#multimedia-data-acoustic-imaging)
+- [Imaging](other_data_types.html#multimedia-data-acoustic-imaging)
 - [Tracking](other_data_types.html#tracking-data)
 - [Habitat](other_data_types.html#habitat-data)
 

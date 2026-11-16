@@ -7,7 +7,7 @@ engine: knitr
 
 - [Introduction to Darwin Core](#introduction-to-darwin-core)
 - [Darwin Core terms](#darwin-core-dwc-terms)  
-- [Darwin Core guidelines](#darwin-core-guidelines)
+- [Darwin Core guidelines](#dwc-guidelines)
   - [Taxonomy and identification](#taxonomy-and-identification)
   - [Occurrence](#occurrence)  
   - [Record level terms](#record-level-terms)  

@@ -98,14 +98,14 @@ engine: knitr
 #### Vocabulary {.unnumbered}
 
 <ul>
-  <li><a href="vocabulary.html#map-emof-measurement-identifiers-to-preferred-bodc-vocabulary">How do I map Measurement or Fact terms in OBIS with preferred BODC vocabulary?</a></li>
-  <li><a href="vocabulary.html#requesting-new-vocabulary-terms">I can't find a suitable vocabulary, what do I do? How do I request a new vocabulary term?</a></li>
+  <li><a href="vocabulary.html#map-emof-measurement-identifiers-to-preferred-vocabulary">How do I map Measurement or Fact terms in OBIS with preferred BODC vocabulary?</a></li>
+  <li><a href="vocabulary.html#request-new-vocabulary-terms">I can't find a suitable vocabulary, what do I do? How do I request a new vocabulary term?</a></li>
   <li><details>
   <summary>Should I use taxon-specific P01 codes to populate for measurementTypeID? e.g. <link>http://vocab.nerc.ac.uk/collection/P01/current/A15985A1</link> </summary>
 
   No. You should never use taxon-specific P01 codes. This is because the taxa are already identified in the Occurrence table, in the fields `scientificName` and `scientificNameID`.
   </details></li>
-  <li><a href="vocabulary.html#map-data-fields-to-darwin-core">How should I match raw data fields with Darwin Core terminology?</a></li>
+  <li><a href="data_map.html#map-data-fields-to-darwin-core">How should I match raw data fields with Darwin Core terminology?</a></li>
 </ul>
 
 #### Taxonomy {.unnumbered}
@@ -162,7 +162,7 @@ engine: knitr
 * What do I do when I am uncertain about the:
   * [Temporal range of a dataset OR eventDate](common_qc.html#uncertain-temporal-range)
   * [Geospatial location](common_qc.html#uncertain-geolocation)
-  * [Taxonomic identification](common_qc.html#uncertain-taxonomic-information)
+  * [Taxonomic identification](common_qc.html#low-confidence-taxonomic-identification)
   * [Individual count](common_qc.html#individualcount)
 * [What do I do with freshwater species that are part of my marine dataset?](common_qc.html#non-marine-species)
 
@@ -175,7 +175,7 @@ engine: knitr
 * [How do I use the IPT?](ipt.html#create-your-resource-on-the-ipt)
 * [Are there instructions for IPT administrators?](ipt_admin.html)
 * [How do I add DOI to my dataset?](data_sharing.html#adding-a-doi-to-datasets)
-* [How do I publish to both GBIF and OBIS?](data_sharing.html#simultaneous-publishing-to-gbif)
+* [How do I publish to both GBIF and OBIS?](data_sharing.html#publish-obis-data-to-gbif)
 * [How do I update my already published dataset?](data_sharing.html#update-your-data-in-obis)
 
 #### Accessing data in OBIS {.unnumbered}
