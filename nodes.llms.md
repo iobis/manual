@@ -21,7 +21,7 @@ OBIS Nodes are either national projects, programmes, institutes, or organization
 - Be an IODE National Oceanographic Data Centre (NODC), or IODE Associate Data Unit (ADU)
 - Be responsible for ensuring the timely delivery of high-quality data (and metadata) and data flows from marine data providers to OBIS and/or other global aggregators (e.g. GBIF) following the principle of “publish once“, the guidelines in the OBIS manual (with respect to obtaining permission, licenses, QC…) and the FAIR Data Principles
 - At least one staff member holds a current OBIS certification (completing recognized training OBIS/OTGA course “Contributing and publishing datasets to OBIS”) with a 12 month grace period for acquiring said certification after a Node is established
-- Be compliant with the IOC data policy (<http://iode.org/policy>) and implementation guidelines from OBIS ([Data Policy](policy.llms.md)) with a 12 month grace period for achieving compliance after a Node is established
+- Be compliant with the IOC data policy (<https://unesdoc.unesco.org/ark:/48223/pf0000393235>) and implementation guidelines from OBIS ([Data Policy](policy.llms.md)) with a 12 month grace period for achieving compliance after a Node is established
 - Be a member of the Nodes Coordination Group (Nodes CG), and other OBIS coordination groups if desirable
 - Provide an annual work plan to the Nodes CG and report on activities to the Nodes CG
 - Provide user/community support (e.g data queries, data analyses, and feedback)
